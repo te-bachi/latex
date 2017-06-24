@@ -415,14 +415,54 @@
 			% Linie
 			\cline{1-2}
 			% 4. Zeile
-			i \left( t \right) & = \dbox{$C\left(t\right)$} \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} \\
+			i \left( t \right) & = \underbrace{\dbox{$C\left(t\right)$} \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t}}_{i_{h}} \\
 			% 5. Zeile
 			i \left( t \right) & = \dbox{$\left( \frac{u_{0}}{R^{2} + L^{2} \cdot \omega^{2}}
 			\left( R  \cdot \sin\left(\omega \cdot t \right) - L \omega \cdot 
 			\cos\left(\omega \cdot t \right) \right) \cdot \mathrm{e}\mkern3mu^{\frac{R}{L} \, t} + K \right)$} \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} \\
+			% 6. Zeile
+			i \left( t \right) & =
+			K \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} +
+			\frac{R \cdot u_{0}}{R^{2} + L^{2} \cdot \omega^{2}} \cdot \sin\left(\omega \cdot t \right) -
+			\frac{L \omega \cdot u_{0}}{R^{2} + L^{2} \cdot \omega^{2}} \cdot 
+			\cos\left(\omega \cdot t \right) \\
 		\end{align*}
 		\vspace{-1.75cm}
 	\end{mycapequ}
 
+	Eine \textit{spezielle Lösung} wird berechnet mit dem Anfangswert $i\left(0\right) = 0$
+	\begin{mycapequ}[!ht]
+		\vspace{-0.50cm}
+		\begin{align*}
+		% 1. Zeile
+		i \left( 0 \right) & =
+		K \cdot \underbrace{\dbox{$\mathrm{e}^{-\frac{R}{L} \, \cdot \, t}$}}_{= 1} && +
+		\frac{R \cdot u_{0}}{R^{2} + L^{2} \cdot \omega^{2}} \cdot  \underbrace{\dbox{$\sin\left(\omega \cdot t \right)$}}_{= 0} && -
+		\frac{L \omega \cdot u_{0}}{R^{2} + L^{2} \cdot \omega^{2}} \cdot 
+		 \underbrace{\dbox{$\cos\left(\omega \cdot t \right)$}}_{= 1} &= & \;\; 0\\
+		 % 2. Zeile
+		 i \left( 0 \right) & =
+		 K && + 0 && -
+		 \frac{L \omega \cdot u_{0}}{R^{2} + L^{2} \cdot \omega^{2}} &= & \;\; 0 \\
+		 % 3. Zeile
+		 &  &&  && \pushright{K} &= & \;\; \frac{L \omega \cdot u_{0}}{R^{2} + L^{2} \cdot \omega^{2}} \\
+		 % 4. Zeile
+		 i \left( t \right) & =
+		 \frac{L \omega \cdot u_{0}}{R^{2} + L^{2} \cdot \omega^{2}} \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} +
+		 \frac{R \cdot u_{0}}{R^{2} + L^{2} \cdot \omega^{2}} \cdot \sin\left(\omega \cdot t \right) -
+		 \frac{L \omega \cdot u_{0}}{R^{2} + L^{2} \cdot \omega^{2}} \cdot 
+		 \cos\left(\omega \cdot t \right) \span\span\span\span\span\span \\
+		 % 5. Zeile
+		 i \left( t \right) & =
+		 \frac{u_{0}}{R^{2} + L^{2} \cdot \omega^{2}} \cdot
+		 \left(
+		 	L \omega \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} +
+		 	R  \cdot \sin\left(\omega \cdot t \right) -
+		 	L \omega \cdot \cos\left(\omega \cdot t \right)
+		 \right) \span\span\span\span\span\span \\
+		\end{align*}
+		\vspace{-1.75cm}
+	\end{mycapequ}
+	
 
 \end{document}
