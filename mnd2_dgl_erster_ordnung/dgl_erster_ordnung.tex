@@ -1,0 +1,428 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[left=35mm,right=35mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{graphicx}
+\usepackage{scrpage2}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{mdframed}
+\usepackage{dashbox}
+
+\usepackage{multirow}% http://ctan.org/pkg/multirow
+\usepackage{hhline}% http://ctan.org/pkg/hhline
+
+%-------------------------------------------------------------------------------
+% Hintergrundfarbe von Packet 'framed' mit Kommando 'shaded' nutzen
+\colorlet{shadecolor}{gray!25}
+
+%-------------------------------------------------------------------------------
+% Für "align" Umgebung eine Zelle nach links/rechzs verschieben
+\makeatletter
+\newcommand{\pushright}[1]{\ifmeasuring@#1\else\omit\hfill$\displaystyle#1$\fi\ignorespaces}
+\newcommand{\pushleft}[1]{\ifmeasuring@#1\else\omit$\displaystyle#1$\hfill\fi\ignorespaces}
+\makeatother
+
+%-------------------------------------------------------------------------------
+% Kopf- und Fusszeile
+
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\cfoot[Seite \thepage]{Seite \thepage}
+
+%-------------------------------------------------------------------------------
+%
+\date{\today}
+
+%-------------------------------------------------------------------------------
+% Dokumenten Einstellungen
+
+% Section Abstände
+\RedeclareSectionCommand[
+	beforeskip=-1\baselineskip,
+	afterskip=0.001\baselineskip
+]{section}
+\RedeclareSectionCommand[
+	beforeskip=0\baselineskip,
+	afterskip=0.001\baselineskip
+]{subsection}
+
+% Formeln
+\DeclareCaptionType{mycapequ}[aa][bb]
+\captionsetup[mycapequ]{labelformat=empty}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+%-------------------------------------------------------------------------------
+% Listings
+\lstset{
+	language=Matlab,
+	breaklines=true,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	captionpos=b,
+	basicstyle=\footnotesize\ttfamily,
+	stringstyle=\color{magenta},
+	identifierstyle=\color{black},
+	keywordstyle=\color{blue}, 
+	commentstyle=\color{DarkGreen}
+}
+
+\newcommand{\mylisting}[2][]{%
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}%
+}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+	
+	\section*{Lösen einer DGL 1. Ordnung}
+	Die DGL ist wie folgt:
+	\begin{mycapequ}[!ht]
+		\vspace{-0.75cm}
+		\begin{align*}
+			a\left(x\right) \cdot y\mkern3mu' + b\left(x\right) \cdot y & = g\left(x\right) \\
+			y\mkern3mu' + f\left(x\right) \cdot y & = g\left(x\right) \\
+			% Linie
+			\cline{1-2}
+			L \cdot i\mkern3mu' + R \cdot i & = u_{0} \cdot \sin \left( \omega \cdot t \right) \\
+			i\mkern3mu' + \frac{R}{L} \cdot i & = \frac{u_{0}}{L} \cdot \sin \left( \omega \cdot t \right)
+		\end{align*}
+		\vspace{-1.0cm}
+	\end{mycapequ}
+	
+	\subsection*{Homogene Lösung: Trennung der Variablen}
+	Finde ein $y$, welches die homogene Differentialgleichung (DGL) löst.
+	\begin{mycapequ}[!ht]
+		\vspace{-0.25cm}
+		\begin{align*}
+		i' + \frac{R}{L} \cdot i & = 0 \\
+		\frac{\mathrm{d}i}{\mathrm{d}t} & = -\frac{R}{L} \cdot i \\
+		\int{\frac{1}{i} \cdot \mathrm{d}i} & = -\frac{R}{L} \int{1 \cdot \mathrm{d}t} \\
+		\ln{\left(\vert i \vert \right)} & = -\frac{R}{L} \cdot t + K \\
+		\vert i \vert  & = \mathrm{e}^{-\frac{R}{L} \, \cdot \, t\, + \,K} \\
+		i & = \pm\mathrm{e}^{K} \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} \\
+		i_{h} \left( t \right) & = C \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} \\
+		\end{align*}
+		\vspace{-1.75cm}
+	\end{mycapequ}
+
+	\begin{mycapequ}[!ht]
+		\begin{mdframed}[leftmargin=0cm,
+			skipabove=1cm,    
+			linecolor=black,
+			backgroundcolor=gray!10,
+			linewidth=0.75pt,
+			innerleftmargin=0em,
+			innerrightmargin=0em,
+			innertopmargin=0.75em,
+			innerbottommargin=0.5em,
+			]
+			\begin{addmargin}[1em]{2em}% 1em left, 2em right
+				\textbf{Integration einer homogenen linearen Differentialgleichung 1. Ordnung}
+				
+				\vspace{-0.50cm}
+				\begin{align*}
+					y\mkern3mu' + f\left(x\right) \cdot y & = 0 \\
+				\end{align*}
+				\vspace{-1.00cm}
+				
+				Durch \textit{Trennen der Variablen}. Die \textit{allgemeine Lösung} ist
+				
+				\vspace{-0.50cm}
+				\begin{align*}
+					y & = C \cdot \mathrm{e}^{-\int f\left(x\right)\; \mathrm{d}x}
+				\end{align*}
+				%\vspace{-1.00cm}
+				
+			\end{addmargin}
+		\end{mdframed}
+	\end{mycapequ}
+	
+	\subsection*{Inhomogene Lösung: Variante der Konstanten}
+	Eine \textit{inhomogene DGL 1. Ordnung} lässt sich durch die \textit{Variante der Konstanten} lösen.
+	Dazu benutzt man die \textit{allgemeine Lösung} der \textit{homogenen DGL} und ersetzt die Integrationskonstante $C$ durch eine (noch unbekannte) Funktion $C\left(x\right)$ und berechnet mit dem Lösungsansatz $y_{h} \left( x \right) $ die Ableitung $y_{h}\mkern3mu' \left( x \right) $ unter Verwendung der \textit{Produkt- und Kettenregel}.
+	\begin{mycapequ}[!ht]
+		\vspace{-0.75cm}
+		\begin{align*}
+			% 1. Zeile
+			y & = C\left(x\right) \cdot \mathrm{e}^{-\int f\left(x\right)\; \mathrm{d}x} \\
+			% 2. Zeile
+			y\hskip2pt' & = \dbox{$C\hskip2pt'\left(x\right)$} \cdot
+			                \mathrm{e}^{-\int f\left(x\right)\; \mathrm{d}x} - 
+			                C\left(x\right) \cdot \dbox{$f\left(x\right) \cdot \mathrm{e}^{-\int f\left(x\right)\; \mathrm{d}x}$} \\
+           % Linie
+           \cline{1-2}
+			% 3. Zeile
+			i \left( t \right) & = C \left( t \right) \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} \\
+			% 4. Zeile
+			i\hskip2pt'\left( t \right) & = \dbox{$C\hskip2pt'\left( t \right)$} \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} + C \left( t \right) \cdot \dbox{$\left(-\frac{R}{L}\right) \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t}$} \\
+		\end{align*}
+		\vspace{-1.75cm}
+	\end{mycapequ}
+
+	\begin{mycapequ}[!ht]
+		\begin{mdframed}[leftmargin=0cm,
+			skipabove=1cm,    
+			linecolor=black,
+			backgroundcolor=gray!10,
+			linewidth=0.75pt,
+			innerleftmargin=0em,
+			innerrightmargin=0em,
+			innertopmargin=0.75em,
+			innerbottommargin=0.5em,
+			]
+			\begin{addmargin}[1em]{2em}% 1em left, 2em right
+				\textbf{Produktregel}
+				\vspace{-0.90cm}
+				\begin{align*}
+					y\left(x\right) &= u\left(x\right) \cdot v\left(x\right) \\
+					y\hskip2pt'\left(x\right) &= u\hskip2pt'\left(x\right) \cdot v\left(x\right) + u\left(x\right) \cdot v\hskip2pt'\left(x\right)
+				\end{align*}
+				
+				%\vspace{-0.75cm}
+				\textbf{Kettenregel}
+				\vspace{-0.88cm}
+				\begin{align*}
+					y\left(x\right) & = f\left(x\right) \\
+					y\hskip2pt'\left(x\right) & = f\hskip2pt'\left(x\right) = F\hskip2pt'\left(u\right) \cdot u\hskip2pt'\left(x\right) \phantom{aaa\;} \\
+				\end{align*}
+				\vspace{-1.25cm}
+			\end{addmargin}
+		\end{mdframed}
+	\end{mycapequ}
+
+	%\vspace{-0.50cm}
+	Einsetzen der gefundenen Funktion und deren Ableitung in die DGL.
+	\begin{mycapequ}[!ht]
+		\vspace{-0.50cm}
+		\begin{alignat*}{3}
+			% 1. Zeile
+			\dbox{$y\mkern3mu'$} & + f\left(x\right) \cdot \dbox{$y$} && = g\left(x\right) \\
+			% 2. Zeile
+			\dbox{$C\hskip2pt'\left(x\right) \cdot
+			\mathrm{e}^{-\int f\left(x\right)\; \mathrm{d}x} - 
+			C\left(x\right) \cdot f\left(x\right) \cdot \mathrm{e}^{-\int f\left(x\right)\; \mathrm{d}x}$}
+			& + f\left(x\right) \cdot \dbox{$C\left(x\right) \cdot \mathrm{e}^{-\int f\left(x\right)\;
+			\mathrm{d}x}$} && = g\left(x\right) \\
+			% 3. Zeile
+			\phantom{\;}C\hskip2pt'\left(x\right) \cdot
+			\mathrm{e}^{-\int f\left(x\right)\; \mathrm{d}x} 
+			\underbrace{- C\left(x\right) \cdot f\left(x\right) \cdot \mathrm{e}^{-\int f\left(x\right)\;
+			\mathrm{d}x}  + f\left(x\right) \cdot C\left(x\right) \cdot \mathrm{e}^{-\int f\left(x\right)\;
+			\mathrm{d}x}}_{= 0} \span && = g\left(x\right) \\
+			% Linie
+			\cline{1-4}
+			% 4. Zeile
+			\dbox{$i\mkern3mu'$} & + \frac{R}{L} \cdot \dbox{$i$} && = \frac{u_{0}}{L} \cdot \sin \left( \omega \cdot t \right) \\
+			% 5. Zeile
+			\dbox{$C\hskip2pt'\left( t \right) \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} + C \left( t \right) \cdot \left(-\frac{R}{L}\right) \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t}$} & + \frac{R}{L} \, \cdot \dbox{$C \left( t \right) \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t}$} && = \frac{u_{0}}{L} \cdot \sin \left( \omega \cdot t \right) \\
+			% 6. Zeile
+			\phantom{aaaa\;\,}C\hskip2pt'\left( t \right) \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} \underbrace{- \frac{R}{L} \cdot C \left( t \right) \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} + \frac{R}{L} \, \cdot C \left( t \right) \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t}}_{= 0} \span && = \frac{u_{0}}{L} \cdot \sin \left( \omega \cdot t \right) \\
+		\end{alignat*}
+		\vspace{-2.0cm}
+	\end{mycapequ}
+
+    Durch Kürzen bekommt man wieder eine einfachere Form.
+	\begin{mycapequ}[!ht]
+		\vspace{-0.50cm}
+		\begin{align*}
+			% 1. Zeile
+			C\hskip2pt'\left(x\right) \cdot
+				\mathrm{e}^{-\int f\left(x\right)\; \mathrm{d}x} & = g\left(x\right) \\
+			% 2. Zeile
+			C\hskip2pt'\left(x\right)  & = g\left(x\right) \cdot
+			\mathrm{e}\mkern3mu^{\int f\left(x\right)\; \mathrm{d}x}\\
+			% 3. Zeile
+			C\left(x\right)  & = \int g\left(x\right) \cdot
+			\mathrm{e}\mkern3mu^{\int f\left(x\right)\; \mathrm{d}x} \; \mathrm{d}x + K\\
+			% Linie
+			\cline{1-2}
+			% 4. Zeile
+			C\hskip2pt'\left( t \right) \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} & = \frac{u_{0}}{L} \cdot \sin \left( \omega \cdot t \right) \\
+			% 5. Zeile
+			C\hskip2pt'\left( t \right) & = \frac{u_{0}}{L} \cdot \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}^{\frac{R}{L} \, \cdot \, t} \\
+			% 6. Zeile
+			C \left( t \right) & = \frac{u_{0}}{L} \cdot \int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}^{\frac{R}{L} \, \cdot \, t} \; \mathrm{d}t + K\\
+		\end{align*}
+		\vspace{-1.75cm}
+	\end{mycapequ}
+
+	\newpage
+
+	Das Integral ausrechnen geht so.
+	\begin{mycapequ}[!ht]
+		\vspace{-0.50cm}
+		\begin{align*}
+			% 1. Zeile
+			\int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}^{\frac{R}{L} \, \cdot \, t} \; \mathrm{d}t = \overbrace{\int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}\mkern3mu^{\tau \, t} \; \mathrm{d}t}^{I} = \left[...\right] \span \\
+			% Box
+			\fbox{$
+				\begin{aligned}
+				u &= \sin\left(\omega \cdot t \right) & v\hskip2pt' &= \mathrm{e}\mkern3mu^{\tau \, t}\\
+				   & \downarrow \scriptstyle\frac{u}{\mathrm{d}t} &  &\downarrow \scriptstyle\int \mathrm{d}t\\
+				u\hskip2pt' &= \omega \cdot \cos\left(\omega \cdot t \right) & v &= \frac{1}{\tau} \cdot \mathrm{e}\mkern3mu^{\tau \, t}\\
+				\end{aligned}
+			$} \span \\
+			% 2. Zeile
+			\left[...\right] = \underbrace{\dbox{$\sin\left(\omega \cdot t \right)$}}_{u} \cdot \underbrace{\dbox{$\frac{1}{\tau} \cdot \mathrm{e}\mkern3mu^{\tau \, t}$}}_{v} - \int \underbrace{\dbox{$\omega \cdot \cos\left(\omega \cdot t \right)$}}_{u\hskip2pt'} \cdot \underbrace{\dbox{$\frac{1}{\tau} \cdot \mathrm{e}\mkern3mu^{\tau \, t}$}}_{v}  \; \mathrm{d}t \span \\
+			% 3. Zeile
+			\left[...\right] = \frac{1}{\tau} \cdot \sin\left(\omega \cdot t \right) \cdot \mathrm{e}\mkern3mu^{\tau \, t} - \frac{\omega}{\tau} \int \cos\left(\omega \cdot t \right) \cdot \mathrm{e}\mkern3mu^{\tau \, t}  \; \mathrm{d}t \span\\
+			% Box
+			\fbox{$
+				\begin{aligned}
+				u &= \cos\left(\omega \cdot t \right) & v\hskip2pt' &= \mathrm{e}\mkern3mu^{\tau \, t}\\
+				& \downarrow \scriptstyle\frac{u}{\mathrm{d}t} &  &\downarrow \scriptstyle\int \mathrm{d}t\\
+				u\hskip2pt' &= -\omega \cdot \sin\left(\omega \cdot t \right) & v &= \frac{1}{\tau} \cdot \mathrm{e}\mkern3mu^{\tau \, t}\\
+				\end{aligned}
+			$} \span \\
+			% 4. Zeile
+			\left[...\right] = \frac{1}{\tau} \cdot \sin\left(\omega \cdot t \right) \cdot \mathrm{e}\mkern3mu^{\tau \, t} - \frac{\omega}{\tau}
+			\left[
+				\underbrace{\dbox{$\cos\left(\omega \cdot t \right)$}}_{u} \cdot
+				\underbrace{\dbox{$\frac{1}{\tau} \cdot \mathrm{e}\mkern3mu^{\tau \, t}$}}_{v} - \int
+				\underbrace{\dbox{$-\omega \cdot \sin\left(\omega \cdot t \right)$}}_{u\hskip2pt'} \cdot
+				\underbrace{\dbox{$\frac{1}{\tau} \cdot \mathrm{e}\mkern3mu^{\tau \, t}$}}_{v}   \; \mathrm{d}t
+			\right] \span\\
+			% 5. Zeile
+			\left[...\right] = \frac{1}{\tau} \cdot \sin\left(\omega \cdot t \right) \cdot \mathrm{e}\mkern3mu^{\tau \, t} - \frac{\omega}{\tau}
+			\left[
+				\cos\left(\omega \cdot t \right) \cdot
+				\frac{1}{\tau} \cdot \mathrm{e}\mkern3mu^{\tau \, t} + \frac{\omega}{\tau} \cdot \int
+				\sin\left(\omega \cdot t \right) \cdot
+				\mathrm{e}\mkern3mu^{\tau \, t}  \; \mathrm{d}t
+			\right] \span\\
+			% 6. Zeile
+			\underbrace{\int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}\mkern3mu^{\tau \, t} \; \mathrm{d}t}_{I}
+			=
+			\frac{1}{\tau} \cdot \sin\left(\omega \cdot t \right) \cdot \mathrm{e}\mkern3mu^{\tau \, t} - \frac{\omega}{\tau^{2}} \cdot \cos\left(\omega \cdot t \right) \cdot
+			\mathrm{e}\mkern3mu^{\tau \, t} - \frac{\omega^{2}}{\tau^{2}} \cdot
+			\underbrace{\int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}\mkern3mu^{\tau \, t} \; \mathrm{d}t}_{I} \span\\
+			% 7. Zeile
+			\underbrace{\int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}\mkern3mu^{\tau \, t} \; \mathrm{d}t}_{I} +
+			\frac{\omega^{2}}{\tau^{2}} \cdot
+			\underbrace{\int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}\mkern3mu^{\tau \, t} \; \mathrm{d}t}_{I}
+			=
+			\frac{1}{\tau} \cdot \sin\left(\omega \cdot t \right) \cdot \mathrm{e}\mkern3mu^{\tau \, t} - \frac{\omega}{\tau^{2}} \cdot \cos\left(\omega \cdot t \right) \cdot
+			\mathrm{e}\mkern3mu^{\tau \, t} \span\\
+			% 8. Zeile
+			\left[ \int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}\mkern3mu^{\tau \, t} \; \mathrm{d}t \right] \left( 1 + \frac{\omega^{2}}{\tau^{2}} \right)
+			=
+			\frac{1}{\tau} \cdot \sin\left(\omega \cdot t \right) \cdot \mathrm{e}\mkern3mu^{\tau \, t} - \frac{\omega}{\tau^{2}} \cdot \cos\left(\omega \cdot t \right) \cdot
+			\mathrm{e}\mkern3mu^{\tau \, t} \span\\
+			% 9. Zeile
+			\int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}\mkern3mu^{\tau \, t} \; \mathrm{d}t
+			=
+			\frac{1}{1 + \frac{\omega^{2}}{\tau^{2}}}
+			\left( \frac{1}{\tau} \cdot \sin\left(\omega \cdot t \right)  - \frac{\omega}{\tau^{2}} \cdot 
+			\cos\left(\omega \cdot t \right) \right) \cdot \mathrm{e}\mkern3mu^{\tau \, t} \span\\
+			% 10. Zeile
+			\int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}\mkern3mu^{\tau \, t} \; \mathrm{d}t
+			=
+			\frac{1}{\tau^{2} + \omega^{2}}
+			\left( \tau \cdot \sin\left(\omega \cdot t \right) - \omega \cdot 
+			\cos\left(\omega \cdot t \right) \right) \cdot \mathrm{e}\mkern3mu^{\tau \, t} \span\\
+			% 11. Zeile
+			\int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}\mkern3mu^{\frac{R}{L} \, t} \; \mathrm{d}t
+			=
+			\frac{1}{\frac{R^{2}}{L^{2}} + \omega^{2}}
+			\left( \frac{R}{L} \cdot \sin\left(\omega \cdot t \right) - \omega \cdot 
+			\cos\left(\omega \cdot t \right) \right) \cdot \mathrm{e}\mkern3mu^{\frac{R}{L} \, t} \span\\
+			% 12. Zeile
+			\int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}\mkern3mu^{\frac{R}{L} \, t} \; \mathrm{d}t
+			=
+			\frac{L}{R^{2} + L^{2} \cdot \omega^{2}}
+			\left( R  \cdot \sin\left(\omega \cdot t \right) - L \omega \cdot 
+			\cos\left(\omega \cdot t\right) \right) \cdot \mathrm{e}\mkern3mu^{\frac{R}{L} \, t} \span\\
+		\end{align*}
+		\vspace{-1.0cm}
+	\end{mycapequ}
+	
+	\begin{mycapequ}[!ht]
+		\begin{mdframed}[leftmargin=0cm,
+			skipabove=1cm,    
+			linecolor=black,
+			backgroundcolor=gray!10,
+			linewidth=0.75pt,
+			innerleftmargin=0em,
+			innerrightmargin=0em,
+			innertopmargin=0.75em,
+			innerbottommargin=0.5em,
+			]
+			\begin{addmargin}[1em]{2em}% 1em left, 2em right
+				\textbf{Partielle Integration}
+				\begin{align*}
+					\int u\left(x\right) \cdot v\hskip2pt'\left(x\right) \; \mathrm{d}t  & = 
+					u\left(x\right) \cdot v\left(x\right) - \int u\hskip2pt'\left(x\right) \cdot v\left(x\right)  \\
+				\end{align*}
+				\vspace{-1.25cm}
+			\end{addmargin}
+		\end{mdframed}
+	\end{mycapequ}
+
+	\newpage
+	
+	Einsetzen des gelösten Integrals.
+	\begin{mycapequ}[!ht]
+		\vspace{-0.50cm}
+		\begin{align*}
+			% 1. Zeile
+			C \left( t \right) & = \frac{u_{0}}{L} \cdot \int \sin \left( \omega \cdot t \right)   \cdot \mathrm{e}^{\frac{R}{L} \, \cdot \, t} \; \mathrm{d}t + K \\
+			% 2. Zeile
+			C \left( t \right) & = \frac{u_{0}}{L} \cdot \frac{L}{R^{2} + L^{2} \cdot \omega^{2}}
+			\left( R  \cdot \sin\left(\omega \cdot t \right) - L \omega \cdot 
+			\cos\left(\omega \cdot t \right) \right) \cdot \mathrm{e}\mkern3mu^{\frac{R}{L} \, t} + K \\
+			% 2. Zeile
+			C \left( t \right) & = \frac{u_{0}}{R^{2} + L^{2} \cdot \omega^{2}}
+			\left( R  \cdot \sin\left(\omega \cdot t \right) - L \omega \cdot 
+			\cos\left(\omega \cdot t \right) \right) \cdot \mathrm{e}\mkern3mu^{\frac{R}{L} \, t} + K \\
+		\end{align*}
+		\vspace{-1.75cm}
+	\end{mycapequ}
+	
+
+	...die dann in den Lösungsansatz eingefügt wird und erhält nun die \textit{allgemeine Lösung
+	der inhomogenen DGL}.
+	\begin{mycapequ}[!ht]
+		\vspace{-0.50cm}
+		\begin{align*}
+			% 1. Zeile
+			y & = \dbox{$C\left(x\right)$} \cdot \mathrm{e}^{-\int f\left(x\right)\; \mathrm{d}x} \\
+			% 2. Zeile
+			y & = \dbox{$\left(\int g\left(x\right) \cdot
+			\mathrm{e}\mkern3mu^{\int f\left(x\right)\; \mathrm{d}x} \; \mathrm{d}x + K \right)$} \cdot \mathrm{e}^{-\int f\left(x\right)\; \mathrm{d}x} \\
+			% Linie
+			\cline{1-2}
+			% 4. Zeile
+			i \left( t \right) & = \dbox{$C\left(t\right)$} \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} \\
+			% 5. Zeile
+			i \left( t \right) & = \dbox{$\left( \frac{u_{0}}{R^{2} + L^{2} \cdot \omega^{2}}
+			\left( R  \cdot \sin\left(\omega \cdot t \right) - L \omega \cdot 
+			\cos\left(\omega \cdot t \right) \right) \cdot \mathrm{e}\mkern3mu^{\frac{R}{L} \, t} + K \right)$} \cdot \mathrm{e}^{-\frac{R}{L} \, \cdot \, t} \\
+		\end{align*}
+		\vspace{-1.75cm}
+	\end{mycapequ}
+
+
+\end{document}
