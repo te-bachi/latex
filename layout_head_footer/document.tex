@@ -1,0 +1,56 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[left=25mm,
+            right=25mm,
+            top=25mm,
+            bottom=25mm]{geometry}
+\usepackage{graphicx}
+\usepackage[figuresleft]{rotating}
+\usepackage{scrpage2}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{layout}
+
+%-------------------------------------------------------------------------------
+% Kopf- und Fusszeile
+
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\chead{The Header}
+\cfoot[Page \thepage]{Page \thepage}
+
+%-------------------------------------------------------------------------------
+%
+\title{The Title}
+\subtitle{The Subtitle}
+\author{Andreas Bachmann \\ \href{mailto:bachman0@students.zhaw.ch}{bachman0@students.zhaw.ch}}
+\date{\today}
+
+%-------------------------------------------------------------------------------
+% Dokumenten Einstellungen
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+	\layout
+\end{document}
