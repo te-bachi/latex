@@ -9,6 +9,7 @@
 \usepackage{wrapfig}
 \usepackage[utf8]{inputenc}
 \usepackage{lipsum}
+\usepackage{tikz}
 
 \renewcommand{\figurename}{Abbildung}
 
@@ -63,14 +64,19 @@
 			
 				\begin{Figure}
 					\centering
-					\includegraphics[trim={9.8cm 0.6cm 0cm 5.4cm},clip,width=7cm]{images/I.PNG}
+					\includegraphics[width=7cm]{images/i_crop.PNG}
 					\captionof{figure}{2D reconstruction of some pictures from the CT scan.}
 					\label{fig:ct}
 				\end{Figure}
 				
 				\begin{Figure}
 					\centering
-					\includegraphics[trim={9.8cm 0.6cm 0cm 5.4cm},clip,width=7cm]{images/II.PNG}
+					\begin{tikzpicture}
+						\node[anchor=south west,inner sep=0] at (0,0) {
+							\includegraphics[width=7cm]{images/ii_crop.PNG}
+						};
+						\draw[red,ultra thick,rounded corners] (0,0) rectangle (1cm,1cm);
+					\end{tikzpicture}
 					\captionof{figure}{3D reconstruction of some pictures from the CT scan.}
 					\label{fig:3d}
 				\end{Figure}
