@@ -19,33 +19,117 @@ eee
 		\end{enumerate}
 		
 		Da meine CAD Konstruktions-Fähigkeiten beschränkt sind 	
+		
+
+\section{CAD Modellierung}
+
+\section{FEM Analyse}
+
+	\subsection{Materialdaten}
+		\begin{center}
+			\begin{tabular}{ | p{6cm} | p{3cm} | }
+				\multicolumn{1}{l}{\bfseries Material} & \multicolumn{1}{l}{\bfseries E-Modus } \\ \hline
+				Knochen (bone) & $ 1300 \frac{kg}{m^3} $ \\ \hline
+				Titanlegierung (titanium alloy) & $ 4620 \frac{kg}{m^3} $ \\ \hline
+			\end{tabular}
+			\captionof{table}{Materialdaten}
+			\label{fig:device3}
+		\end{center}
+
+	\subsection{Vernetzung}
+		\begin{Figure}
+			\centering
+			\includegraphics[width=15cm]{content/images/mesh_quality.png}
+			\captionof{figure}{Magic-Angle-Spinning (MAS) Aufbau}
+			\label{fig:device3}
+		\end{Figure}
+		
+		\begin{Figure}
+			\centering
+			\includegraphics[width=15cm]{content/images/mesh_quality_graph_2.png}
+			\captionof{figure}{Magic-Angle-Spinning (MAS) Aufbau}
+			\label{fig:device3}
+		\end{Figure}
+		
+		\begin{Figure}
+			\centering
+			\includegraphics[width=15cm]{content/images/mesh_quality_graph_3.png}
+			\captionof{figure}{Magic-Angle-Spinning (MAS) Aufbau}
+			\label{fig:device3}
+		\end{Figure}
+
+	\subsection{Lager- und Reaktionskräfte}
+		\begin{Figure}
+			\centering
+			\includegraphics[width=15cm]{content/images/kraefte.png}
+			\captionof{figure}{Magic-Angle-Spinning (MAS) Aufbau}
+			\label{fig:device3}
+		\end{Figure}
 
 
 \section{Resultate}
 
-	\subsubsection{Gesamtverformung}
+	\subsection{Gesamtverformung}
 	
 		\begin{Figure}
 			\centering
-			\includegraphics[trim={0cm 21.2cm 9.7cm 0},clip,width=7cm]{images/Device_3.pdf}
-			\captionof{figure}{Magic-Angle-Spinning (MAS) Aufbau}
-			\label{fig:device3}
-			\vspace*{0.5mm}
+			\includegraphics[width=15cm]{content/images/deformation.png}
+				\captionof{figure}{Gesamtdeformation der Osteosyntheseplatte}
+			\label{fig:deformation}
 		\end{Figure}
 	
-	\subsubsection{Vergleichsspannung}
+		\subsubsection{Vergleichsplatte}
+	
+			\begin{Figure}
+				\centering
+				\includegraphics[width=15cm]{content/images/vergleich_deformation.png}
+				\captionof{figure}{Gesamtdeformation der Vergleichsplatte}
+				\label{fig:vergleich_deformation}
+			\end{Figure}
+	
+	\subsection{Vergleichsspannung}
+	
+		\begin{Figure}
+			\centering
+			\includegraphics[width=15cm]{content/images/stress_side.png}
+			\captionof{figure}{Vergleichsspannung der Osteosyntheseplatte (vorne)}
+			\label{fig:stress_side}
+		\end{Figure}
+	
+		\begin{Figure}
+			\centering
+			\includegraphics[width=15cm]{content/images/stress_side_profile.png}
+			\captionof{figure}{Vergleichsspannung der Osteosyntheseplatte (vorne, im Querschnitt)}
+			\label{fig:stress_side_profile}
+		\end{Figure}
+	
+		\begin{Figure}
+			\centering
+			\includegraphics[width=15cm]{content/images/stress_top.png}
+			\captionof{figure}{Vergleichsspannung der Osteosyntheseplatte (oben)}
+			\label{fig:stress_top}
+		\end{Figure}
+		
+		\subsubsection{Vergleichsplatte}
+		
+			\begin{Figure}
+				\centering
+				\includegraphics[width=15cm]{content/images/vergleich_stress_side.png}
+				\captionof{figure}{Vergleichsspannung der Vergleichsplatte (vorne)}
+				\label{fig:vergleich_stress_side}
+			\end{Figure}
+		
+			\begin{Figure}
+				\centering
+				\includegraphics[width=15cm]{content/images/vergleich_stress_top.png}
+				\captionof{figure}{Vergleichsspannung der Vergleichsplatte (oben)}
+				\label{fig:vergleich_stress_top}
+			\end{Figure}
+	
+	
 
-
-
-bbb
-
-\vbox{\hbox{Two lines}\hbox{of type.}}
-
-%\demobox{Das ist ein Test}
-
-%\fbox{Das ist ein Test}
 
 \section{Diskussion}
 
-ccc
+	ccc
 
