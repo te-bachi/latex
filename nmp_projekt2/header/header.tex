@@ -1,0 +1,145 @@
+%!TEX root = ../bericht.tex
+
+%%% PACKAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% , numbers=enddot
+\documentclass[
+	a4paper,
+	12pt,
+	twoside,
+	headings=standardclasses,
+	headings=big,
+	bibliography=totoc,
+	index=totoc
+]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+
+\usepackage{graphicx}
+\usepackage{pdfpages}
+
+\usepackage{subfig}
+\usepackage{tikz}
+\usepackage{caption}
+
+\usepackage[left=3cm,right=2.5cm,top=2.7cm,bottom=3.2cm]{geometry}
+
+
+%%% GLOSSAR UND ABKÜRZUNGEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[
+%	nonumberlist,	% keine Seitenzahlen
+%	acronym,		% ermoeglicht Abkuerzungen+Abkuerzungsverz.
+%	xindy
+%]{glossaries}		% ermoeglicht Glossar
+
+%\usepackage{translator}
+
+%\GlsSetXdyCodePage{duden-utf8}
+
+%\makeglossaries
+%\setglossarystyle{meinglossar}
+%\loadglsentries{index/index.tex}
+
+%%% SCHRIFTART %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Computer Modern Bright
+\usepackage{cmbright}
+
+%%% Latin Modern
+% \usepackage{lmodern}
+
+%%% TITEL UND AUTOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Numerische Methoden Projekt}
+\author{Andreas Bachmann}
+\date{25.02.2018}
+
+
+%%% KOPF- UND FUSSZEILE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{scrlayer-scrpage}
+%\usepackage{titling}
+
+\pagestyle{scrheadings}
+\clearscrheadfoot
+
+\ifoot{Andreas Bachmann}
+\ofoot{\pagemark}
+%\ihead{\headmark}
+\ohead{Numerische Methoden Projekt}
+\automark[section]{section}
+
+
+%%% BILDER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{Figure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+\renewcommand{\figurename}{Abbildung}
+\captionsetup[figure]{skip=1.5mm}
+
+
+%%% KAPITEL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% JEDE SECTION AUF NEUER SEITE
+
+% New
+\addtokomafont{section}{\clearpage}
+
+% Old
+%\usepackage[compact]{titlesec}
+%\newcommand{\sectionbreak}{\clearpage}
+
+%%% ABSTÄNDE ZWISCHEN TITEL UND TEST
+
+%
+%\titlespacing*{\section}
+%{0pt}{1.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+%\titlespacing*{\subsection}
+%{0pt}{1.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+%\titlespacing*{\subsubsection}
+%{0pt}{0.5ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+
+
+%%% BOX AROUND CHARACTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\dolist{\afterassignment\dodolist\let\next= }
+
+\def\dodolist{\ifx\next\endlist \let\next\relax
+	\else \=\let\next\dolist \fi
+	\next}
+\def\endlist{\endlist}
+
+\def\hidehrule#1#2{\kern-#1%
+	\hrule height#1 depth#2 \kern-#2 }
+
+\def\hidevrule#1#2{\kern-#1{\dimen0=#1
+		\advance\dimen0 by#2\vrule width\dimen0}\kern-#2 }
+
+\def\makeblankbox#1#2{\hbox{\lower\dp0\vbox{\hidehrule{#1}{#2}%
+	\kern-#1 % overlap the rules at the corners
+	\hbox to \wd0{\hidevrule{#1}{#2}%
+		\raise\ht0\vbox to #1{}% set the vrule height
+		\lower\dp0\vtop to #1{}% set the vrule depth
+		\hfil\hidevrule{#2}{#1}}%
+	\kern-#1\hidehrule{#2}{#1}}}}
+
+\def\maketypebox{\makeblankbox{0pt}{1pt}}
+
+\def\makelightbox{\makeblankbox{.2pt}{.2pt}}
+
+\def\={\expandafter\if\space\next\
+	\else \setbox0=\hbox{\next}\maketypebox\fi}
+
+\def\demobox#1{\setbox0=\hbox{\dolist#1\endlist}%
+	\copy0\kern-\wd0\makelightbox}
+
+%%
+
+\def\boxit#1{%
+	\fboxsep=0pt%
+	\fboxrule=.1pt%
+	\@tfor\xx:=#1\do{%
+		\fbox{\phantom{\xx}}%
+	} #1%
+}
+

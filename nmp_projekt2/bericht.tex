@@ -1,0 +1,31 @@
+
+
+\input{header/header}
+
+\begin{document}
+	
+	%% ZHAW Title Page
+	\includepdf{content/Titelblatt.pdf}
+	
+	\begin{center}
+		This text is intentionally left blank.
+	\end{center}
+	\newpage
+	
+	%\maketitle
+	
+	%% Inhaltsverzeichnis
+	\tableofcontents
+	\newpage
+	
+	%% Inhalt
+	\input{content/inhalt}
+	
+	% normeles Glossar ausgeben
+	%\printglossary[title=Glossar]
+	
+	% Abkürzungsverzeichnis ausgeben
+	%\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
+	%\printglossary[type=\acronymtype]
+	
+\end{document}
