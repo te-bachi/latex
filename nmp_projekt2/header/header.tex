@@ -11,20 +11,30 @@
 	bibliography=totoc,
 	index=totoc
 ]{scrartcl}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8x]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb}
 
-\usepackage{graphicx}
-\usepackage{pdfpages}
 
-\usepackage{subfig}
-\usepackage{tikz}
-\usepackage{caption}
 
 \usepackage[inner=3cm,outer=2.5cm,top=2.7cm,bottom=3.2cm]{geometry}
 
+
+%%% GRAFIK %%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{caption}
+
+\usetikzlibrary{calc,patterns,decorations.pathmorphing,decorations.markings}
+
+%%% EINHEITEN %%%%%%%%%%%%%%%%%%%%%%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[
+	separate-uncertainty  = true,
+	output-decimal-marker ={.},
+	repeatunits           = false,
+	range-phrase          = {\,bis\,},
+]{siunitx}
 
 %%% GLOSSAR UND ABKÜRZUNGEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage[
@@ -48,6 +58,13 @@
 
 %%% Latin Modern
 % \usepackage{lmodern}
+
+%%% ABSATZ EINSTELLUNGEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Einzug
+\setlength{\parindent}{0mm}
+
+% Abstand zwischen Absätzen
+\setlength{\parskip}{2mm}
 
 %%% TITEL UND AUTOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Numerische Methoden Projekt}
@@ -77,6 +94,12 @@
 \renewcommand{\figurename}{Abbildung}
 \captionsetup[figure]{skip=1.5mm}
 
+
+%%% FORMELN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amssymb}
+
+\DeclareCaptionType{mycapequ}[aa][bb]
+\captionsetup[mycapequ]{labelformat=empty}
 
 %%% KAPITEL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

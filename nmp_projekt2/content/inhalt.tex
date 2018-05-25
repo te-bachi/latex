@@ -127,9 +127,48 @@ eee
 			\end{Figure}
 	
 	
-
+	\subsection{Gegenüberstellung zwischen den Platten}
+	
+		Die Gegenüberstellung zwischen der neuen Osteosyntheseplatte und der Vergleichsplatte zeigt,
+		dass die neue OSP in der Gesamtdeformation mit $ \SI{88.8}{mm} $ um ein Faktor von $ \SI{7}{} $
+		grösser ist	gegenüber der Vergleichsplatte mit $ \SI{12.2}{mm} $.
+		
+		Auch die Vergleichsspannung der neuen OSP ist mit $ \SI{5444.9}{MPa} $ um ein Faktor von $ \SI{5}{} $
+		grösser als die Vergleichsplatte mit $ \SI{10.176}{MPa} $.
+	
+	\subsection{Plausibilitätsrechnung}
+		Für die Berechnung der Durchbiegung $w\left(l\right)$ wird das Flächenträgheitsmoment $I_{y}$ benötigt.
+		Ein Röhrenknochen, wie im gegebenen Fall der Femur, besteht im Querschnitt aus \textit{Compacta},
+		\textit{Spongiosa} und einer \textit{Markhöhlen}. 
+		
+		\begin{mycapequ}[!ht]
+			\begin{align*}
+				a\left(x\right) \cdot y\mkern3mu' + b\left(x\right) \cdot y & = g\left(x\right)
+			\end{align*}
+		\end{mycapequ}
+	
+		\begin{Figure}
+			\centering
+			\begin{tikzpicture}
+				\node[anchor=south west,inner sep=0] at (0cm,0cm) {
+					\includegraphics[trim={0.5cm 25cm 15cm 0.5cm},clip,width=7cm]{content/moment_of_inertia.pdf}
+				};
+				\node (II) at (9cm,3cm) {
+					\parbox{1.5cm}{
+						\begin{align*}
+							I_{y} &= \frac{\pi}{4} \left( R^4 - r^4\right) \\
+							a &= b
+						\end{align*}
+					}
+				};
+			\end{tikzpicture}
+			\captionof{figure}{Magic-Angle-Spinning (MAS) Aufbau}
+			\label{fig:device3}
+			\vspace*{0.5mm}
+		\end{Figure}
 
 \section{Diskussion}
 
 	ccc
+	Die neu entwickelte Osteosyntheseplatte erfüllt die Anforderungen 
 
