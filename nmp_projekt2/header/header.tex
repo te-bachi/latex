@@ -20,11 +20,19 @@
 \usepackage[inner=3cm,outer=2.5cm,top=2.7cm,bottom=3.2cm]{geometry}
 
 
-%%% GRAFIK %%%%%%%%%%%%%%%%%%%%%%%%%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% GRAFIK UND BILDER %%%%%%%%%%%%%%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}
 \usepackage{pdfpages}
 \usepackage{tikz}
 \usepackage{caption}
+\usepackage{subcaption}
+
+\newenvironment{Figure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+\renewcommand{\figurename}{Abbildung}
+\captionsetup[figure]{skip=1.5mm}
 
 \usetikzlibrary{calc,patterns,decorations.pathmorphing,decorations.markings}
 
@@ -53,8 +61,12 @@
 
 %%% SCHRIFTART %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Computer Modern Bright
+%%% Computer Modern Bright (sans-serif)
 \usepackage{cmbright}
+
+%%% Overwrite Math-Mode Font: use Computer Modern (serif)
+\DeclareSymbolFont{letters}{OML}{lmodern}{m}{it}
+\DeclareSymbolFontAlphabet{\mathnormal}{letters}
 
 %%% Latin Modern
 % \usepackage{lmodern}
@@ -86,17 +98,11 @@
 \automark[section]{section}
 
 
-%%% BILDER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newenvironment{Figure}
-{\par\medskip\noindent\minipage{\linewidth}}
-{\endminipage\par\medskip}
-
-\renewcommand{\figurename}{Abbildung}
-\captionsetup[figure]{skip=1.5mm}
-
-
 %%% FORMELN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsmath,amssymb}
+
+%\setlength{\abovedisplayskip}{-10mm}
+%\setlength{\abovedisplayshortskip}{-10mm}
 
 \DeclareCaptionType{mycapequ}[aa][bb]
 \captionsetup[mycapequ]{labelformat=empty}
@@ -106,7 +112,7 @@
 %%% JEDE SECTION AUF NEUER SEITE
 
 % New
-\addtokomafont{section}{\clearpage}
+%\addtokomafont{section}{\clearpage}
 
 % Old
 %\usepackage[compact]{titlesec}
@@ -114,13 +120,15 @@
 
 %%% ABSTÄNDE ZWISCHEN TITEL UND TEST
 
-%
-%\titlespacing*{\section}
-%{0pt}{1.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
-%\titlespacing*{\subsection}
-%{0pt}{1.0ex plus 1ex minus .2ex}{0.0ex plus .2ex}
-%\titlespacing*{\subsubsection}
-%{0pt}{0.5ex plus 1ex minus .2ex}{0.0ex plus .2ex}
+\RedeclareSectionCommand[
+beforeskip=-\baselineskip,
+afterskip=.5\baselineskip]{section}
+\RedeclareSectionCommand[
+beforeskip=-.75\baselineskip,
+afterskip=.5\baselineskip]{subsection}
+\RedeclareSectionCommand[
+beforeskip=-.5\baselineskip,
+afterskip=.25\baselineskip]{subsubsection}
 
 
 %%% BOX AROUND CHARACTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
