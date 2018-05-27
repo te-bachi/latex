@@ -1,4 +1,5 @@
 \documentclass[a4paper]{article}
+\usepackage[ngerman]{babel}
 \usepackage[top=1cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 \usepackage{multicol,caption}
 \usepackage{lipsum}
@@ -13,7 +14,7 @@
 \usepackage{chemfig}
 \usepackage[version=3,arrows=pgf-filled]{mhchem}
 
-\renewcommand{\figurename}{Abbildung}
+%\renewcommand{\figurename}{Abbildung} % <== über babel Packet
 
 \newbox\one
 \newbox\two
@@ -35,6 +36,8 @@
 \titlespacing*{\subsubsection}
 {0pt}{0.5ex plus 1ex minus .2ex}{0.0ex plus .2ex}
 
+\captionsetup[figure]{skip=1.5mm}
+
 \title{NMR Spektroskopie Praktikumsbericht}
 \author{Andreas Bachmann, André de Jesus Morgado, Simon de Montmollin
 	\\
@@ -49,75 +52,96 @@
 	
 	%Body
 	\begin{multicols*}{2}
-		\section{Einleitung}
-			\loremlines{5}{4}
-			
-			\begin{Figure}
-				\centering
-				\begin{tikzpicture}
-					\node[anchor=south west,inner sep=0] at (1cm,0.5cm) {
-						\chemfig{C([:270]-C*6(=C(-H)-C(-H)=C(-H)-C(-H)=C(-H)-))(-[:200]H)(-[:160]H)([:45]-C([:135]-H)([:45]-H)([:315]-H))}
-					};
-					\node (A1) at (0.5cm,0.5cm) {\huge I};
-					\node (A2) at (3cm,0cm) {\large Aromatischer Ring};
-					\node (B1) at (0cm,6.25cm) {\huge II};
-					\node (B2) at (0.5cm,5cm) {\large \chemfig{CH_2}};
-					\node (C1) at (6cm,6.5cm) {\huge III};
-					\node (C2) at (5.75cm,5.25cm) {\large \chemfig{CH_3}};
-				\end{tikzpicture}
-				\captionof{figure}{XXX}
-				\label{fig:xray}
-				\vspace*{4mm}
-			\end{Figure}
-		
-			\loremlines{6}{4}
 		
 		\section{MAS-Rotor Testen}
-			\subsection{Methode}
-				\loremlines{10}{4}
+			\subsection{Protokoll des Rotortests}
+			
+				\begin{enumerate}
+					\setlength{\itemsep}{0mm}
+					\setlength{\parskip}{1mm}
+					\item öffnen der eintritt des Gasflasche bis den
+					\item von jetzt brauch man die Schutzbrille tragen
+					\item muss man das Sample in die Kappe einbringen. Die Turbine müss nach oben von den Kappe sein
+					\item nach das wir beginnen den software.
+					\item wir mussen insert der frequenz von 10 [Khz] einscheiben und um die Botton insert drücken.
+					\item warten das die frequenz ist im grün geschrieben vor dass, ein andere zhale als frequenz überschreiben.
+					\item  wiederholen die stuffe 5 und 6 von 0 bis 67 [Khz] mit schritt von 10 [Khz]
+					\item Am ende der Test, gehen sie zur 0 [Hz] in 2 Stuffen.
+					\item rausnehmen das Sample von die kappe
+					\item Schliessen die einkommen von der Gasflache.
+				\end{enumerate}
+			
 				
 				\begin{Figure}
 					\centering
-					\includegraphics[trim={0cm 21.2cm 9.7cm 0},clip,width=8cm]{images/Device_2.pdf}
-					\captionof{figure}{YYY}
-					\label{fig:xray}
-					\vspace*{4mm}
+					\includegraphics[trim={0cm 21.2cm 9.7cm 0},clip,width=7cm]{images/Device_2.pdf}
+					\captionof{figure}{NMR Spektroskopie Geräteaufbau}
+					\label{fig:device2}
+					\vspace*{0.5mm}
 				\end{Figure}
 				
-				\loremlines{13}{4}
-				
 				\begin{Figure}
 					\centering
-					\includegraphics[trim={0cm 21.2cm 9.7cm 0},clip,width=8cm]{images/Device_3.pdf}
-					\captionof{figure}{ZZZ}
-					\label{fig:xray}
-					\vspace*{4mm}
+					\includegraphics[trim={0cm 21.2cm 9.7cm 0},clip,width=7cm]{images/Device_3.pdf}
+					\captionof{figure}{Magic-Angle-Spinning (MAS) Aufbau}
+					\label{fig:device3}
+					\vspace*{0.5mm}
 				\end{Figure}
 				
 			\subsection{Resultate}
-				\loremlines{11}{8}
 				
 				\begin{Figure}
 					\centering
-					\includegraphics[width=8cm]{images/gruppe1_auf.png}
+					\includegraphics[width=7cm]{images/gruppe1_auf.png}
 					\captionof{figure}{Erhöhen der Rotationsfrequenz}
-					\label{fig:xray}
-					\vspace*{4mm}
+					\label{fig:topspin_up}
+					\vspace*{0.5mm}
 				\end{Figure}
 				
-				\loremlines{15}{4}
-				
 				\begin{Figure}
 					\centering
-					\includegraphics[width=8cm]{images/gruppe1_ab.png}
+					\includegraphics[width=7cm]{images/gruppe1_ab.png}
 					\captionof{figure}{Erniedrigen der Rotationsfrequenz}
-					\label{fig:xray}
-					\vspace*{4mm}
+					\label{fig:topspin_down}
+					\vspace*{0.5mm}
 				\end{Figure}
 			
 		\section{Spektrum in NMR-Software (Topspin) auswerten}
+		
+			\subsection{Einleitung}
+			\loremlines{5}{4}
+		
+			\begin{Figure}
+				\centering
+				\begin{tikzpicture}
+				\node[anchor=south west,inner sep=0] at (1cm,0cm) {
+					\chemfig{C([:270]-C*6(=C(-H)-C(-H)=C(-H)-C(-H)=C(-H)-))(-[:200]H)(-[:160]H)([:45]-C([:135]-H)([:45]-H)([:315]-H))}
+				};
+				\node (A1) at (6cm,1cm) {\huge I};
+				\node (A2) at (5.5cm,0cm) {\large Aromatischer Ring};
+				\node (B1) at (0cm,5.75cm) {\huge II};
+				\node (B2) at (0.5cm,4.75cm) {\large \chemfig{CH_2}};
+				\node (C1) at (6cm,5.75cm) {\huge III};
+				\node (C2) at (5.75cm,4.75cm) {\large \chemfig{CH_3}};
+				\end{tikzpicture}
+				\captionof{figure}{Valenzstrichformel von Enthylbenzen}
+				\label{fig:molekul}
+				\vspace*{0.5mm}
+			\end{Figure}
+		
 			\subsection{Resultate}
-				\lipsum[66]
+				Nach der Darstellung von Enthylbenzen in Spektrogramm mit der Topspin software, 
+				kann es in drei Teile Analysiert werden. In Abbildung \ref{fig:spektrum_gesamt} ist das gesamte Spektrum
+				ersichtlich. Die ersten Peaks bildet den aromatischen Ring ab. Der zweite das \cf{CH2}
+				Molekül und der dritte und grösste, das \cf{CH3} Molekül. Der aromatische Ring zeichnet
+				sich aus durch viele einzelne gleich hohe Peaks ab. Bei detaillierter Analyse haben
+				diese jeweils eine Entfernung von 7.5Hz. In Abbildung \ref{fig:spektrum_ii} sind weitere Peaks
+				erkenntlich, jedoch weniger als bei dem aromatischen Ring. Da das \cf{CH3} Molekül die
+				grösste Bindungskraft hat und somit das höchste Spektrum, ist dieses Spektrum dem
+				\cf{CH2} Molekül zuzuordnen. Auch hier ist wieder der Abstand der einzelnen Peaks auf
+				7.5Hz. Auf der letzten Abbildung \ref{fig:spektrum_iii} sind weniger Peaks zu sehen, jedoch höhere. Daraus
+				folgt, dass dieses Spektrum dem \cf{CH3} Molekül zugeordnet wird, aufgrund der starken
+				Bindungskraft.
 			
 				\begin{Figure}
 					\centering
@@ -137,11 +161,9 @@
 						\end{scope}
 					\end{tikzpicture}
 					\captionof{figure}{Gesamtspektrum von Ethylbenzen}
-					\label{fig:ct}
-					\vspace*{4mm}
+					\label{fig:spektrum_gesamt}
+					\vspace*{1mm}
 				\end{Figure}
-			
-				\loremlines{1}{4}
 			
 				\begin{Figure}
 					\centering
@@ -154,15 +176,13 @@
 							\node (shift) at (1.5cm,3.3cm) {$7.5$ Hz};
 							\draw(1.29cm,0.225cm) -- (1.29cm,3cm);
 							\draw(1.76cm,0.225cm) -- (1.76cm,3cm);
-							\draw[<->](1.29cm,2.8cm) -- (1.76cm,2.8cm);
+							\draw[<->](1.29cm,2.7cm) -- (1.76cm,2.7cm);
 						\end{scope}
 					\end{tikzpicture}
 					\captionof{figure}{Spektrum vom Aromatischen Ring}
-					\label{fig:ct}
-					\vspace*{4mm}
+					\label{fig:spektrum_i}
+					\vspace*{0.5mm}
 				\end{Figure}
-			
-				\loremlines{2}{4}
 				
 				\begin{Figure}
 					\centering
@@ -174,16 +194,14 @@
 						\begin {scope}[red]
 							\node (shift) at (4.5cm,3.3cm) {$7.5$ Hz};
 							\draw(4.32cm,0.225cm) -- (4.32cm,3cm);
-							\draw(4.78cm,0.225cm) -- (4.78cm,3cm);
-							\draw[<->](4.32cm,2.8cm) -- (4.78cm,2.8cm);
+							\draw(4.77cm,0.225cm) -- (4.77cm,3cm);
+							\draw[<->](4.32cm,2.7cm) -- (4.77cm,2.7cm);
 						\end{scope}
 					\end{tikzpicture}
-					\captionof{figure}{Spektrum von \cf{CH3}}
-					\label{fig:ct}
-					\vspace*{4mm}
+					\captionof{figure}{Spektrum von \cf{CH2}}
+					\label{fig:spektrum_ii}
+					\vspace*{0.5mm}
 				\end{Figure}
-			
-				\loremlines{3}{4}
 			
 				\begin{Figure}
 					\centering
@@ -199,13 +217,9 @@
 							\draw[<->](3.46cm,3.3cm) -- (4.84cm,3.3cm);
 						\end{scope}
 					\end{tikzpicture}
-					\captionof{figure}{Spektrum von \cf{CH2}}
-					\label{fig:ct}
-					\vspace*{4mm}
+					\captionof{figure}{Spektrum von \cf{CH3}}
+					\label{fig:spektrum_iii}
+					\vspace*{0.5mm}
 				\end{Figure}
-				
-				
-	
-			
 	\end{multicols*}
 \end{document}
