@@ -305,14 +305,18 @@
 		\begin{mycapequ}[!ht]
 			\vspace{-10mm}
 			\begin{align*}
-				D   &= \SI{30}{mm} \\
+				D   &= \SI{30}{mm} = \SI{0.03}{m} \\
 				I_y &= \frac{\pi}{64} \cdot D^4 \\
-				    &= \frac{\pi}{64} \cdot 0.03^4 = 3.9761 \cdot 10^{-8} \; \SI{}{m^2} = \SI{39761}{mm^2} \\
+				    &= \frac{\pi}{64} \cdot \left(\SI{0.03}{m}\right)^4 = 3.9761 \cdot 10^{-8} \; \mathrm{m^4} = \SI{39761}{mm^4} \\
 				\\
 				l   &= \SI{400}{mm} \\
 				F   &= \SI{500}{N} \\
+				E   &= \SI{17}{GPa} = 17 \cdot 10^{9} \; \mathrm{Pa}
+				                    = 17 \cdot 10^{9} \; \mathrm{\frac{N}{m^2}}\\
 				w   &= \frac{F \cdot l^3}{3 \cdot E \cdot I_y} \\
-				    &= \frac{500 \cdot 0.4^3}{3 \cdot 19 \cdot 3.9761 \cdot 10^{-8}} = \SI{0.028}{m} = \SI{28}{mm}
+				    &= \frac{\SI{500}{N} \cdot \left(\SI{0.4}{m}\right)^3}
+				            {3 \cdot 17 \cdot 10^{9} \; \mathrm{\frac{N}{m^2}} \cdot 3.9761 \cdot 10^{-8} \; \mathrm{m^4}}
+				     = \SI{0.0158}{m} = \SI{15.8}{mm} \approx \SI{16}{mm}
 			\end{align*}
 		\end{mycapequ}
 	
@@ -335,7 +339,7 @@
 					
 					FE-Analyse OSP              & \SI{88}{mm} & \SI{5444.9}{MPa} \\ \hline
 					FE-Analyse Vergleichsplatte & \SI{12}{mm} & \SI{1017.6}{MPa} \\ \hline
-					Handrechnung                & \SI{28}{mm} & - \\ \hline
+					Handrechnung                & \SI{16}{mm} & - \\ \hline
 					FE-Analyse nur mit Femur    & \SI{15}{mm} & - \\ \hline
 				\end{tabular}
 				\captionof{table}{Vergleich zwischen den Methoden}

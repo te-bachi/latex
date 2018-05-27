@@ -71,6 +71,9 @@
 %%% Latin Modern
 % \usepackage{lmodern}
 
+%%% DOPPELT UNTERSTRICHEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[normalem]{ulem}
+
 %%% ABSATZ EINSTELLUNGEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Einzug
 \setlength{\parindent}{0mm}
@@ -123,9 +126,11 @@
 \RedeclareSectionCommand[
 beforeskip=-\baselineskip,
 afterskip=.5\baselineskip]{section}
+
 \RedeclareSectionCommand[
 beforeskip=-.75\baselineskip,
 afterskip=.5\baselineskip]{subsection}
+
 \RedeclareSectionCommand[
 beforeskip=-.5\baselineskip,
 afterskip=.25\baselineskip]{subsubsection}
