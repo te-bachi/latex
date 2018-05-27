@@ -1,5 +1,5 @@
 \documentclass[a4paper]{article}
-\usepackage[top=2cm,bottom=2cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 \usepackage{multicol,caption}
 \usepackage{lipsum}
 \usepackage{graphicx}
@@ -13,8 +13,10 @@
 \usepackage{chemfig}
 \usepackage[version=3,arrows=pgf-filled]{mhchem}
 \usepackage{enumitem}
-
+\usepackage{siunitx}
 \usepackage[ngerman]{babel}
+
+\sloppy
 
 %\renewcommand{\figurename}{Abbildung} % <== über babel Packet
 
@@ -38,7 +40,10 @@
 \titlespacing*{\subsubsection}
 {0pt}{0.5ex plus 1ex minus .2ex}{0.0ex plus .2ex}
 
-\captionsetup[figure]{skip=1.5mm}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{2mm}
+
+\captionsetup[figure]{skip=1mm}
 
 \title{NMR Spektroskopie Praktikumsbericht}
 \author{Andreas Bachmann, André de Jesus Morgado, Simon de Montmollin
@@ -46,7 +51,7 @@
 	ZHAW Zurich University of Applied Sciences\\
 	School of Engineering
 }
-\date{10.05.2018}
+\date{27.05.2018}
 
 \begin{document}
 	\maketitle
@@ -55,46 +60,57 @@
 	\begin{multicols*}{2}
 		
 		\section{MAS-Rotor Testen}
-			\setlength{\parindent}{0mm}
-			\setlength{\parskip}{2mm}
 			Ein Kernspinresonanz-Spektrometer besteht aus einem Magneten mit integriertem Stator (MAS), einer
 			Kontrolleinheit (MAS-Controller), die Hochfrequenz-Signal generiert (Transmitter) und empfängt (Receiver/Detector),
-			einem Druckgas-Regelkreis und einem Computer, der die Signale von der Kontrolleinheit aufbereitet und anzeigt.
+			einem Druckgas-Kreislauf optional mit einem Wärmetauscher und einem Computer, der die Signale von der
+			Kontrolleinheit aufbereitet und anzeigt (Abbildung \ref{fig:NMRSchema}).
+			\begin{Figure}
+				\centering
+				\includegraphics[trim={0.5cm 25cm 9.7cm 0.75cm},clip,width=7cm]{images/NMR_Schema.pdf}
+				\captionof{figure}{Magic-Angle-Spinning (MAS) Aufbau}
+				\label{fig:NMRSchema}
+			\end{Figure}
+		
 			Dieses NMR-Spektrometer ist teuer in der Anschaffung. Zu Testzwecken wurde auf einen Magneten verzichtet.
+			Die für diesen Test notwendigen Komponenten sind in Abbildung \ref{fig:device2} zu sehen.
 			
+			\begin{Figure}
+				\centering
+				\includegraphics[trim={0cm 21.2cm 9.7cm 0},clip,width=7cm]{images/Device_2.pdf}
+				\captionof{figure}{NMR Spektroskopie Geräteaufbau}
+				\label{fig:device2}
+			\end{Figure}
+		
 			\subsection{Protokoll des Rotortests}
 				Mit einem Rotortest kann veranschaulicht werden, wie ein Messung einer unbekannten Substanz oder einer
-				Referenzsubstanz ablaufen könnte. 
-				Die Reihenfolge, wie der Test ausgeführt werden sollen, ist zu beachten. \\
-				f\\
-				ff\\
-				ff\\
-				ff
-				\begin{enumerate}[leftmargin=0em, label=\arabic*)]
+				Referenzsubstanz ablaufen könnte, auch wenn kein Magnet vorhanden ist.
+				
+				Die Reihenfolge, wie der Test ausgeführt werden sollen, ist zu beachten. Zu beachten ist, dass
+				immer eine Schutzbrille getragen werden muss.
+				
+				\begin{enumerate}[leftmargin=*, label=\arabic*.]
 					\setlength{\itemsep}{0mm}
 					\setlength{\parskip}{1mm}
 					\setlength{\parindent}{0mm}
-					\item öffnen der eintritt des Gasflasche bis den
-					\item von jetzt brauch man die Schutzbrille tragen
-					\item muss man das Sample in die Kappe einbringen. Die Turbine müss nach oben von den Kappe sein
-					\item nach das wir beginnen den software.
-					\item wir mussen insert der frequenz von 10 [Khz] einscheiben und um die Botton insert drücken.
-					\item warten das die frequenz ist im grün geschrieben vor dass, ein andere zhale als frequenz überschreiben.
-					\item  wiederholen die stuffe 5 und 6 von 0 bis 67 [Khz] mit schritt von 10 [Khz]
-					\item Am ende der Test, gehen sie zur 0 [Hz] in 2 Stuffen.
-					\item rausnehmen das Sample von die kappe
-					\item Schliessen die einkommen von der Gasflache.
+					\item Öffnen des Ventils der Gasflasche. Durch die Druckregelung wird ein konstanter Druck
+					      von $\SI{8}{bar}$ gehalten.
+					\item Aufschrauben der Verschlusskappe und die Versuchsprobe (Sample) in die Öffnung versenkten.
+					      Die Turbine muss nach oben zur Kappe hin zeigen. Danach die Kappe wieder verschliessen.
+					      Durch das Antriebsgas beginnt sich die Turbine mit dem ganzen Röhrchen (Rotor) zu Drehen.
+					      Ein Rotationssensor misst die aktuelle Drehgeschwindigkeit (Abbildung~\ref{fig:device3}).
+					\item In der Software kann nun die Rotationsfrequenz eingestellt werden. Der Benutzer erhöht
+					      die Frequenz von $\SI{10}{kHz}$ Schritt für Schritt bis auf $\SI{67}{kHz}$. Jedes Mal
+					      wenn die Soll-Frequenz (grün) erhöht wurde, regelt der MAS-Controller die Ist-Frequenz (weiss)
+					      nach. Der Druck wird dabei stetig gesenkt. In der Frequenz von $\SI{67}{kHz}$ ist der Druck
+					      konstant $\SI{7.1}{bar}$ (Abbildung~\ref{fig:topspin_up}).
+					\item Die Analyse ist nun zu Ende und die Rotationsfrequenz wird schrittweise verkleinert. Dabei erhöht 
+					      sich der Druck wieder bis der Rotor sich nicht mehr dreht. Der Enddruck hat den Wert von etwa
+					      $\SI{8.6}{bar}$ erreicht. Die Druckdifferenz zwischen Maximalfrequenz und Stillstand beträgt
+					      $ \Delta p = \SI{1.5}{bar}$ (Abbildung~\ref{fig:topspin_down}).
+					\item Das Sample kann nun wieder vom Stator hinausgenommen und die Gasflasche geschlossen werden.
+					\item Die NMR Signale vom Receiver werden in der Software noch Fourier-Transformiert und in einem
+					      kontinuierlichen Spektrum angezeigt.
 				\end{enumerate}
-			
-				\setlength{\parindent}{0mm}
-				\setlength{\parskip}{0mm}
-				
-				\begin{Figure}
-					\centering
-					\includegraphics[trim={0cm 21.2cm 9.7cm 0},clip,width=7cm]{images/Device_2.pdf}
-					\captionof{figure}{NMR Spektroskopie Geräteaufbau}
-					\label{fig:device2}
-				\end{Figure}
 				
 				\begin{Figure}
 					\centering
@@ -102,7 +118,7 @@
 					\captionof{figure}{Magic-Angle-Spinning (MAS) Aufbau}
 					\label{fig:device3}
 				\end{Figure}
-		
+			
 	\end{multicols*}
 
 
@@ -110,19 +126,18 @@
 	
 	\begin{Figure}
 		\centering
-		\includegraphics[width=10cm]{images/gruppe1_auf.png}
+		\includegraphics[width=13cm]{images/gruppe1_auf.png}
 		\captionof{figure}{Erhöhen der Rotationsfrequenz}
 		\label{fig:topspin_up}
 	\end{Figure}
 	
-	\begin{flushleft}
-		\begin{Figure}
-			\centering
-			\includegraphics[width=10cm]{images/gruppe1_ab.png}
-			\captionof{figure}{Erniedrigen der Rotationsfrequenz}
-			\label{fig:topspin_down}
-		\end{Figure}
-	\end{flushleft}
+	\begin{Figure}
+		\centering
+		\includegraphics[width=13cm]{images/gruppe1_ab.png}
+		\captionof{figure}{Erniedrigen der Rotationsfrequenz}
+		\label{fig:topspin_down}
+	\end{Figure}
+
 	\pagebreak
 	
 	%\newgeometry{top=1cm,bottom=2cm,left=1.5cm,right=1.5cm}
@@ -131,6 +146,8 @@
 		
 			\subsection{Methode}
 			
+			Nach der Darstellung von Enthylbenzen im Spektrogramm mit der Topspin Software, 
+			kann es in drei Teile analysiert werden.
 		
 			\begin{Figure}
 				\centering
@@ -152,31 +169,9 @@
 		
 			\subsection{Resultate}
 				
-				
-				\setlength{\parindent}{0mm}
-				\setlength{\parskip}{2mm}
-				
-				Nach der Darstellung von Enthylbenzen im Spektrogramm mit der Topspin Software, 
-				kann es in drei Teile analysiert werden.
-				
-				In Abbildung \ref{fig:spektrum_gesamt} ist das gesamte Spektrum ersichtlich
+				In Abbildung \ref{fig:spektrum_gesamt} ist das gesamte Spektrum ersichtlich.
 				Die ersten Peaks bildet den aromatischen Ring ab. Der zweite das \cf{CH2}
-				Molekül und der dritte und grösste, das \cf{CH3} Molekül. Der aromatische Ring zeichnet
-				sich aus durch viele einzelne gleich hohe Peaks ab. Bei detaillierter Analyse haben
-				diese jeweils eine Entfernung von 7.5Hz.
-				
-				In Abbildung \ref{fig:spektrum_ii} sind weitere Peaks
-				erkenntlich, jedoch weniger als bei dem aromatischen Ring. Da das \cf{CH3} Molekül die
-				grösste Bindungskraft hat und somit das höchstes Spektrum, ist dieses Spektrum dem
-				\cf{CH2} Molekül zuzuordnen, da es ein kleineres Spektrum aufweist.
-				Auch hier ist wieder der Abstand der einzelnen Peaks auf 7.5Hz.
-				
-				In der letzten Abbildung \ref{fig:spektrum_iii} sind weniger Peaks zu sehen, jedoch höhere.
-				Daraus folgt, dass dieses Spektrum dem \cf{CH3} Molekül zugeordnet wird, aufgrund der starken
-				Bindungskraft.
-				
-				\setlength{\parindent}{0mm}
-				\setlength{\parskip}{0mm}
+				Molekül und der dritte und grösste, das \cf{CH3} Molekül.
 				
 				\begin{Figure}
 					\centering
@@ -200,6 +195,10 @@
 					\vspace*{1mm}
 				\end{Figure}
 			
+				Der aromatische Ring in Abbildung \ref{fig:spektrum_i} zeichnet
+				sich aus durch viele einzelne gleich hohe Peaks ab. Bei detaillierter Analyse haben
+				diese jeweils eine Entfernung von 7.5Hz.
+			
 				\begin{Figure}
 					\centering
 					\begin{tikzpicture}
@@ -219,6 +218,12 @@
 					\vspace*{0.5mm}
 				\end{Figure}
 				
+				In Abbildung \ref{fig:spektrum_ii} sind weitere Peaks
+				erkenntlich, jedoch weniger als bei dem aromatischen Ring. Da das \cf{CH3} Molekül die
+				grösste Bindungskraft hat und somit das höchstes Spektrum, ist dieses Spektrum dem
+				\cf{CH2} Molekül zuzuordnen, da es ein kleineres Spektrum aufweist.
+				Auch hier ist wieder der Abstand der einzelnen Peaks auf 7.5Hz.
+				
 				\begin{Figure}
 					\centering
 					\begin{tikzpicture}
@@ -237,7 +242,11 @@
 					\label{fig:spektrum_ii}
 					\vspace*{0.5mm}
 				\end{Figure}
-			
+				
+				In der letzten Abbildung \ref{fig:spektrum_iii} sind weniger Peaks zu sehen, jedoch höhere.
+				Daraus folgt, dass dieses Spektrum dem \cf{CH3} Molekül zugeordnet wird, aufgrund der starken
+				Bindungskraft.
+				
 				\begin{Figure}
 					\centering
 					\begin{tikzpicture}
