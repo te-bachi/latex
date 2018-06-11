@@ -1,0 +1,251 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[left=35mm,right=35mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{graphicx}
+\usepackage{scrpage2}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{mdframed}
+\usepackage{dashbox}
+
+\usepackage{multirow}% http://ctan.org/pkg/multirow
+\usepackage{hhline}% http://ctan.org/pkg/hhline
+
+%-------------------------------------------------------------------------------
+% Hintergrundfarbe von Packet 'framed' mit Kommando 'shaded' nutzen
+\colorlet{shadecolor}{gray!25}
+
+%-------------------------------------------------------------------------------
+% Für "align" Umgebung eine Zelle nach links/rechzs verschieben
+\makeatletter
+\newcommand{\pushright}[1]{\ifmeasuring@#1\else\omit\hfill$\displaystyle#1$\fi\ignorespaces}
+\newcommand{\pushleft}[1]{\ifmeasuring@#1\else\omit$\displaystyle#1$\hfill\fi\ignorespaces}
+\makeatother
+
+%-------------------------------------------------------------------------------
+% Kopf- und Fusszeile
+
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\cfoot[Seite \thepage]{Seite \thepage}
+
+%-------------------------------------------------------------------------------
+%
+\date{\today}
+
+%-------------------------------------------------------------------------------
+% Dokumenten Einstellungen
+
+% Section Abstände
+\RedeclareSectionCommand[
+	beforeskip=-1\baselineskip,
+	afterskip=0.001\baselineskip
+]{section}
+\RedeclareSectionCommand[
+	beforeskip=0\baselineskip,
+	afterskip=0.001\baselineskip
+]{subsection}
+
+% Formeln
+\DeclareCaptionType{mycapequ}[aa][bb]
+\captionsetup[mycapequ]{labelformat=empty}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+%-------------------------------------------------------------------------------
+% Listings
+\lstset{
+	language=Matlab,
+	breaklines=true,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	captionpos=b,
+	basicstyle=\footnotesize\ttfamily,
+	stringstyle=\color{magenta},
+	identifierstyle=\color{black},
+	keywordstyle=\color{blue}, 
+	commentstyle=\color{DarkGreen}
+}
+
+\newcommand{\mylisting}[2][]{%
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}%
+}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+	
+	\section*{Lösen der Bindungsreaktions-Differentialgleichung}
+	Die DGL ist wie folgt:
+	\begin{mycapequ}[!ht]
+		\vspace{-0.5cm}
+		\begin{alignat}{3}
+			\frac{d}{dt}\Gamma\left(t\right) &= \frac{d}{dt}\Gamma_\textrm{on}\left(t\right) && - \frac{d}{dt}\Gamma_\textrm{off}\left(t\right) \\
+			\frac{d}{dt}\Gamma\left(t\right) &= k_\textrm{on} \cdot c \cdot \left( \Gamma_\textrm{max} - \Gamma\left(t\right)\right) && - k_\textrm{off} \cdot \Gamma\left(t\right)
+		\end{alignat}
+		\vspace{-0.5cm}
+	\end{mycapequ}
+
+	\begin{mycapequ}[!ht]
+		\begin{mdframed}[leftmargin=0cm,
+			skipabove=1cm,    
+			linecolor=black,
+			backgroundcolor=gray!10,
+			linewidth=0.75pt,
+			innerleftmargin=0em,
+			innerrightmargin=0em,
+			innertopmargin=0.75em,
+			innerbottommargin=0.5em,
+			]
+			\begin{addmargin}[1em]{2em}% 1em left, 2em right
+				\textbf{Integration einer Differentialgleichung durch Substitution}
+				
+				\vspace{-0.50cm}
+				\begin{align*}
+					y\mkern3mu' & = f\left(a x + b y + c \right) \\
+				\end{align*}
+				\vspace{-1.00cm}
+				
+				Mit Hilfe einer \textit{geeignete Substitution} kann sie auf eine
+				\textit{separable} Differentialgleichung 1. Ordnung zurückgeführt werden.
+				
+				\vspace{-0.50cm}
+				\begin{align*}
+					u  & = a \; x + b \; y + c \\
+					u\mkern3mu' & = a + b \; y\mkern3mu' \\
+					u\mkern3mu' - a & = b \; y' \\
+					\frac{u\mkern3mu' - a}{b} & = y' \\
+					\frac{u\mkern3mu' - a}{b} & = f \left( u \right)
+				\end{align*}
+				%\vspace{-1.00cm}
+				
+			\end{addmargin}
+		\end{mdframed}
+	\end{mycapequ}
+
+	Lösen durch Substitution
+	\begin{mycapequ}[!ht]
+		\vspace{-0.5cm}
+		\begin{alignat}{5}
+		%% 1.
+		\Gamma\mkern3mu' &= k_\textrm{on} \cdot c \cdot \left( \Gamma_\textrm{max} - \Gamma\right) - k_\textrm{off} \cdot \Gamma \span \span \span \span \label{eq:1}  \\
+		%% 2
+		u                & = c && + && \; b \; y && + a \; x\\
+		%% 3
+		u                & = c && + && \; b \; \Gamma && + a \; t\\
+		%% 4
+		u                &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} \; && - && \; k_\textrm{on} \cdot c \cdot \Gamma - k_\textrm{off} \cdot \Gamma \label{eq:4}\\
+		%% 5
+		u &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} \; && - && \; \left( k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \Gamma \label{eq:5} \\
+		%% 6
+		u\mkern3mu' &=  &&- && \; \left( k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \Gamma\mkern3mu' \\
+		%% 7
+		\frac{- u\mkern3mu'}{k_\textrm{on} \cdot c \cdot + k_\textrm{off}} &=  &&  && \; \Gamma\mkern3mu' \label{eq:7} 
+		\end{alignat}
+		\vspace{-0.5cm}
+	\end{mycapequ}
+
+	Gleichsetzen von \eqref{eq:7} mit \eqref{eq:1} respektive \eqref{eq:4}, Trennen der Variablen und Integrieren
+	
+	\begin{mycapequ}[!ht]
+		\vspace{-0.5cm}
+		\begin{alignat}{5}
+		%% 1
+		u &= \frac{- \dbox{$u\mkern3mu'$}}{k_\textrm{on} \cdot c \cdot + k_\textrm{off}} \\
+		%% 2
+		- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot u &= \dbox{$\frac{1}{dt} \cdot du$} \\
+		%% 3
+		- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \int{1 \cdot dt} &= \int{\frac{1}{u} \cdot du} \\
+		%% 4
+		- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t &= \ln \left(u\right) \\
+		%% 5
+		e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} &= u
+		\end{alignat}
+		\vspace{-0.5cm}
+	\end{mycapequ}
+
+	\newpage
+	
+	Rücksubstituieren von $u$ mit \eqref{eq:5}
+	
+	\begin{mycapequ}[!ht]
+		\vspace{-0.5cm}
+		\begin{alignat}{5}
+		%% 1
+		e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} &= u \\
+		%% 2
+		e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} \; && - && \; \left( k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \Gamma \\
+		%% 3
+		\left( k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \Gamma &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} \; && - && \; e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} \\
+		%% 4
+		\Gamma \left(t\right)&= \frac{k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max}}{k_\textrm{on} \cdot c + k_\textrm{off}} \; && - && \; \frac{e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t}}{k_\textrm{on} \cdot c + k_\textrm{off}} \\
+		%% 5
+		\Gamma \left(t\right)&= \Gamma_\textrm{max} \cdot \frac{c }{c + \frac{k_\textrm{off}}{k_\textrm{on}}} \; && - && \; \frac{e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t}}{k_\textrm{on} \cdot c \cdot + k_\textrm{off}}
+		\end{alignat}
+		\vspace{-0.5cm}
+	\end{mycapequ}
+
+	Laut meinem Taschenrechner (TI Voyage 200) und dem Befehl \\
+	\texttt{deSolve(g'\,=\,c\,$\cdot$\,kon\,$\cdot$\,(m\,-\,g)\,-\,koff\,$\cdot$\,g and g(0)\,=\,0,\,t,\,g)} \\
+	soll aber die Lösung wie folgt sein:
+
+	\begin{mycapequ}[!ht]
+		\vspace{-0.5cm}
+		\begin{align*}
+		%% 1
+		\texttt{g} &= \frac{\texttt{kon} \cdot \texttt{c} \cdot \texttt{m}}{\texttt{kon} \cdot \texttt{c} + \texttt{koff}} - \frac{\texttt{kon} \cdot \texttt{c} \cdot \texttt{m} \cdot e^{- \left(\texttt{kon} \cdot \texttt{c} \cdot + \texttt{koff} \right) \cdot \texttt{t}}}{\texttt{kon} \cdot \texttt{c} + \texttt{koff}} \\
+		%% 2
+		\texttt{g} &= \frac{\texttt{kon} \cdot \texttt{c} \cdot \texttt{m}}{\texttt{kon} \cdot \texttt{c} + \texttt{koff}} \left( 1 - e^{- \left(\texttt{kon} \cdot \texttt{c} \cdot + \texttt{koff} \right) \cdot \texttt{t}}\right)
+		\end{align*}
+		\vspace{-0.5cm}
+	\end{mycapequ}
+	Hat sich eine Konstante, die beim Integrieren hinzugekommen ist, bei der Rechnung oben nicht berücksichtigt?
+
+	Gleichgewicht bestimmen
+	
+	\begin{mycapequ}[!ht]
+		\vspace{-0.5cm}
+		\begin{align*}
+		%% 1
+		\frac{d}{dt}\Gamma\left(t\right) &= 0 \\
+		%% 2
+		 0 &= k_\textrm{on} \cdot c \cdot \left( \Gamma_\textrm{max} - \Gamma_{\textrm{Gleichgewicht}} \right) - k_\textrm{off} \cdot \Gamma_{\textrm{Gleichgewicht}} \\
+		%% 3
+		0 &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} - k_\textrm{on} \cdot c \cdot \Gamma_{\textrm{Gleichgewicht}} - k_\textrm{off} \cdot \Gamma_{\textrm{Gleichgewicht}} \\
+		%% 4
+		0 &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} - \left( k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \Gamma_{\textrm{Gleichgewicht}} \\
+		%% 5
+		\left( k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \Gamma_{\textrm{Gleichgewicht}} &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} \\
+		%% 6
+		\Gamma_{\textrm{Gleichgewicht}} &= \frac{k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max}}{k_\textrm{on} \cdot c \cdot + k_\textrm{off}} \\
+		%% 7
+		\Gamma_{\textrm{Gleichgewicht}} &= \Gamma_\textrm{max} \cdot \frac{c }{c + \frac{k_\textrm{off}}{k_\textrm{on}}}
+		\end{align*}
+		\vspace{-0.5cm}
+	\end{mycapequ}
+	
+	
+
+\end{document}
