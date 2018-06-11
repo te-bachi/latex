@@ -179,9 +179,9 @@
 		%% 3
 		- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \int{1 \cdot dt} &= \int{\frac{1}{u} \cdot du} \\
 		%% 4
-		- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t &= \ln \left(u\right) \\
+		- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t + C_1 &= \ln \left(u\right) \\
 		%% 5
-		e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} &= u
+		C_2 \cdot e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} &= u
 		\end{alignat}
 		\vspace{-0.5cm}
 	\end{mycapequ}
@@ -194,34 +194,46 @@
 		\vspace{-0.5cm}
 		\begin{alignat}{5}
 		%% 1
-		e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} &= u \\
+		C_2 \cdot e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} &= u \\
 		%% 2
-		e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} \; && - && \; \left( k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \Gamma \\
+		C_2 \cdot e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} \; && - && \; \left( k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \Gamma \\
 		%% 3
-		\left( k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \Gamma &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} \; && - && \; e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} \\
+		\left( k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot \Gamma &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} \; && - && \; C_2 \cdot e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t} \\
 		%% 4
-		\Gamma \left(t\right)&= \frac{k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max}}{k_\textrm{on} \cdot c + k_\textrm{off}} \; && - && \; \frac{e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t}}{k_\textrm{on} \cdot c + k_\textrm{off}} \\
-		%% 5
-		\Gamma \left(t\right)&= \Gamma_\textrm{max} \cdot \frac{c }{c + \frac{k_\textrm{off}}{k_\textrm{on}}} \; && - && \; \frac{e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t}}{k_\textrm{on} \cdot c \cdot + k_\textrm{off}}
+		\Gamma \left(t\right)&= \frac{k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max}}{k_\textrm{on} \cdot c + k_\textrm{off}} \; && - && \; \frac{C_2 \cdot e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t}}{k_\textrm{on} \cdot c + k_\textrm{off}} \\
 		\end{alignat}
 		\vspace{-0.5cm}
 	\end{mycapequ}
 
-	Laut meinem Taschenrechner (TI Voyage 200) und dem Befehl \\
-	\texttt{deSolve(g'\,=\,c\,$\cdot$\,kon\,$\cdot$\,(m\,-\,g)\,-\,koff\,$\cdot$\,g and g(0)\,=\,0,\,t,\,g)} \\
-	soll aber die Lösung wie folgt sein:
+	Konstante $C_2$ bestimmen durch Anfangswert $ \Gamma \left(0\right) = 0$
+	
+	\begin{mycapequ}[!ht]
+		\vspace{-0.5cm}
+		\begin{align*}
+			%% 1
+			\Gamma \left(0\right)&= 0 = \frac{k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max}}{k_\textrm{on} \cdot c + k_\textrm{off}} - \frac{C_2 \cdot \overbrace{e^{0}}^{=1}}{k_\textrm{on} \cdot c + k_\textrm{off}} \\
+			%% 1
+			\frac{C_2}{k_\textrm{on} \cdot c + k_\textrm{off}} &= \frac{k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max}}{k_\textrm{on} \cdot c + k_\textrm{off}} \\
+			%% 2
+			C_2 &= k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max}
+		\end{align*}
+		\vspace{-0.5cm}
+	\end{mycapequ}
+	
+	Die Lösung mit Anfangswert $ \Gamma \left(0\right) = 0$ lautet wie folgt
 
 	\begin{mycapequ}[!ht]
 		\vspace{-0.5cm}
 		\begin{align*}
 		%% 1
-		\texttt{g} &= \frac{\texttt{kon} \cdot \texttt{c} \cdot \texttt{m}}{\texttt{kon} \cdot \texttt{c} + \texttt{koff}} - \frac{\texttt{kon} \cdot \texttt{c} \cdot \texttt{m} \cdot e^{- \left(\texttt{kon} \cdot \texttt{c} \cdot + \texttt{koff} \right) \cdot \texttt{t}}}{\texttt{kon} \cdot \texttt{c} + \texttt{koff}} \\
+		\Gamma \left(t\right)&= \frac{k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max}}{k_\textrm{on} \cdot c + k_\textrm{off}} - \frac{k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max} \cdot e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t}}{k_\textrm{on} \cdot c + k_\textrm{off}} \\
 		%% 2
-		\texttt{g} &= \frac{\texttt{kon} \cdot \texttt{c} \cdot \texttt{m}}{\texttt{kon} \cdot \texttt{c} + \texttt{koff}} \left( 1 - e^{- \left(\texttt{kon} \cdot \texttt{c} \cdot + \texttt{koff} \right) \cdot \texttt{t}}\right)
+		\Gamma \left(t\right)&= \frac{k_\textrm{on} \cdot c \cdot \Gamma_\textrm{max}}{k_\textrm{on} \cdot c + k_\textrm{off}} \cdot \left( 1 - e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t}\right) \\
+		%% 3
+		\Gamma \left(t\right)&= \Gamma_\textrm{max} \cdot \frac{c }{c + \frac{k_\textrm{off}}{k_\textrm{on}}} \cdot \left( 1 - e^{- \left(k_\textrm{on} \cdot c \cdot + k_\textrm{off} \right) \cdot t}\right) \\
 		\end{align*}
 		\vspace{-0.5cm}
 	\end{mycapequ}
-	Hat sich eine Konstante, die beim Integrieren hinzugekommen ist, bei der Rechnung oben nicht berücksichtigt?
 
 	Gleichgewicht bestimmen
 	
