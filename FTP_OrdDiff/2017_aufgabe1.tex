@@ -1,0 +1,152 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=3mm,right=6mm,top=5mm,bottom=5mm,papersize={8cm,28.5cm}]{geometry}
+\usepackage{graphicx}
+\usepackage{scrpage2}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{mdframed}
+\usepackage{dashbox}
+\usepackage{enumitem}
+\usepackage{ulem}
+
+\mdfsetup{%
+	leftmargin=0cm,
+	skipabove=0.2cm,
+	linecolor=black,
+	backgroundcolor=gray!10,
+	linewidth=0.50pt,
+	innerleftmargin=0.2cm,
+	innerrightmargin=0.0cm,
+	innertopmargin=-0.2cm,
+	innerbottommargin=0.1cm
+}
+
+\newmdenv[
+	innerleftmargin=0.2cm,
+	innerrightmargin=0.0cm,
+	innertopmargin=-0.2cm,
+	innerbottommargin=0.1cm
+]{mdmath}
+
+\newmdenv[
+	font=\small,
+	innerleftmargin=0.2cm,
+	innerrightmargin=0.2cm,
+	innertopmargin=0.2cm,
+	innerbottommargin=0.2cm
+]{mdtext}
+
+%-------------------------------------------------------------------------------
+% Difference
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+
+%-------------------------------------------------------------------------------
+% Absolute Value + Norm
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+%-------------------------------------------------------------------------------
+% Euler
+\newcommand*\e[1]{\mathrm{e}^{#1}}
+
+%-------------------------------------------------------------------------------
+% Euler
+\newcommand*\fs[1]{{\scriptstyle#1}}
+
+%-------------------------------------------------------------------------------
+% Limes to Infinity
+\let\limintold\limint
+\renewcommand*\liminf[1]{\lim\limits_{#1 \to \infty}}
+
+%-------------------------------------------------------------------------------
+% Enge Align
+\apptocmd\normalsize{% 
+	\setlength\abovedisplayshortskip{0cm}% 
+	\setlength\belowdisplayshortskip{0cm}% 
+	\setlength\abovedisplayskip{0.2cm}% 
+	\setlength\belowdisplayskip{0.25cm}% 
+}{}{\undefined} 
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+	\textbf{Aufgabe 1} \; Eine Bakterienkultur mit beschränktem Nahrungsangebot
+	wächst nach dem Gesetz
+	% Float-Left align (& am Ende um es Links-Bündig zu machen)
+	\begin{flalign*}
+		\dot{a}(t) &= k \cdot \left( N - a(t) \right) &
+	\end{flalign*}
+	Dabei sind $k > 0$ und $N > 0$ gegebene Konstanten, und $a \left( t \right)$
+	bedeutet die Zahl der Bakterien zum Zeitpunkt $t$.
+	\renewcommand{\labelenumi}{\alph{enumi})}
+	\begin{enumerate}[leftmargin=0.5cm]
+		\item
+			Bestimmen und klassifizieren Sie den/""die Fixpunkt(e) dieses Systems
+			in Abhängigkeit von Parameter $k$, $N$.
+			\begin{mdmath}
+				\begin{flalign*}
+					\dot{a}(t) = f(a)    &= k \cdot \left( N - a(t) \right) & \\
+					              f'(a)  &= -k \\
+					             f(a^*)  &= kN - ka^* = 0\\
+					             ka^*    &= kN \\
+					             a^*     &= \tfrac{kN}{k} \longrightarrow \uuline{a^* = N} \\
+					             f'(a^*) &= -k < 0 \longrightarrow \uuline{stable}
+				\end{flalign*}
+			\end{mdmath}
+		\item 
+			Lösen Sie das Anfangswertproblem zum Anfangswert $a(0) = \frac{N}{2}$.
+			\begin{mdframed}
+				\begin{flalign*}
+				\tfrac{\diff a}{\diff t}       &= k \cdot \left( N - a \right) & \\
+				\int{\tfrac{1}{N - a}} \diff a &= k \int{1 \diff t} \\
+				- \ln(\fs{\abs{N - a}})        &= kt + C_1 \\
+				\ln(\fs{\abs{N - a}})          &= -kt - C_1 \\
+				\abs{N - a}                    &= \e{-kt - C_1} \\
+				N - a                          &= {\scriptstyle \pm } \, \e{-C_1} \e{-kt} = K \e{-kt} \\
+				a                              &= N - K \e{-kt} \\
+				a(0) = \tfrac{N}{2}            &= N - K \e{0} = N - K \\
+				K                              &= N - \tfrac{N}{2} = \tfrac{2N - N}{2} = \tfrac{N}{2} \\
+				& \hspace{-0.2cm} \uuline{a = N - \tfrac{N}{2} \cdot \e{-kt} }
+				\end{flalign*}
+			\end{mdframed}
+		\item
+			Bestimmen Sie $\liminf{t} a(t)$.
+			\begin{mdframed}
+				\begin{flalign*}
+					\liminf{t} \e{-kt} &= 0 & \\
+					a                  &= N - \tfrac{N}{2} \cdot 0 \\
+					& \hspace{-0.2cm} \uuline{a = N }
+				\end{flalign*}
+			\end{mdframed}
+		\item 
+			Erklären Sie, wie die Resultate der Teile a) und c) zusammenhängen.
+			\begin{mdtext}
+				Wenn der Fixpunkt stabil ist, zieht sich die Kurve
+				in $t \to \infty$ dem Fixpunkt an. Wenn instabil, dann
+				stösst die Kurve sich vom Fixpunkt ab.
+			\end{mdtext}
+	\end{enumerate}
+\end{document}
