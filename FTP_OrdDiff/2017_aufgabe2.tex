@@ -16,7 +16,7 @@
 \usepackage{ngerman,palatino,setspace}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[left=3mm,right=6mm,top=5mm,bottom=5mm,papersize={8cm,33cm}]{geometry}
+\usepackage[left=3mm,right=6mm,top=5mm,bottom=5mm,papersize={8cm,34cm}]{geometry}
 \usepackage{graphicx}
 \usepackage{scrpage2}
 \usepackage{listings}
@@ -201,12 +201,14 @@
 				\end{flalign*}
 				\sepline{-1.3cm}{-1.2cm}
 				\begin{flalign*}
-					\fs{y(0)}  &= \fs{ K_1 \cdot \underbrace{\fs{\cos(0)}}_{=1} + K_2 \cdot \underbrace{\fs{\sin(0)}}_{=0} + \tfrac{1}{\delta^2 + \omega^2} \cdot \e{0} \; = \; 0 } & \\
-					      & \hspace{0.4cm} K_1 + \tfrac{1}{\delta^2 + \omega^2} = 0  \\
-					      & \hspace{1.74cm} K_1  = - \tfrac{1}{\delta^2 + \omega^2}  \\
-					\fs{y'(0)} &= \fs{ - K_1 \cdot \omega \cdot \underbrace{\fs{\sin(0)}}_{=0} + K_2 \cdot \omega \cdot \underbrace{\fs{\cos(0)}}_{=1} - \tfrac{\delta}{\delta^2 + \omega^2} \cdot \e{0}\; = \; 0 } & \\
-					& \hspace{0.4cm} K_2 \cdot \omega - \tfrac{\delta}{\delta^2 + \omega^2} = 0  \\
-					& \hspace{2.21cm} K_2  = \tfrac{\delta}{\omega} \cdot \tfrac{1}{\delta^2 + \omega^2}
+					\fs{y(0)}  &= \fs{0} & \\
+					\fs{0}     & = \fs{ K_1 \cdot \underbrace{\fs{\cos(0)}}_{=1} + K_2 \cdot \underbrace{\fs{\sin(0)}}_{=0} + \tfrac{1}{\delta^2 + \omega^2} \cdot \e{0} } \\
+					           & \hspace{0.4cm} K_1 + \tfrac{1}{\delta^2 + \omega^2} = 0  \\
+					           & \hspace{1.74cm} K_1  = - \tfrac{1}{\delta^2 + \omega^2}  \\
+					\fs{y'(0)} &= \fs{0} \\
+					\fs{0}     &= \fs{ - K_1 \cdot \omega \cdot \underbrace{\fs{\sin(0)}}_{=0} + K_2 \cdot \omega \cdot \underbrace{\fs{\cos(0)}}_{=1} - \tfrac{\delta}{\delta^2 + \omega^2} \cdot \e{0} } & \\
+					           & \hspace{0.4cm} K_2 \cdot \omega - \tfrac{\delta}{\delta^2 + \omega^2} = 0  \\
+					           & \hspace{2.21cm} K_2  = \tfrac{\delta}{\omega} \cdot \tfrac{1}{\delta^2 + \omega^2}
 				\end{flalign*}
 				\sepline{-1.3cm}{-1.2cm}
 				\begin{flalign*}
