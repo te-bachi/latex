@@ -1,0 +1,219 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=3mm,right=6mm,top=5mm,bottom=5mm,papersize={8cm,33cm}]{geometry}
+\usepackage{graphicx}
+\usepackage{scrpage2}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{dashbox}
+\usepackage{enumitem}
+\usepackage{ulem}
+
+\mdfsetup{%
+	leftmargin=0cm,
+	skipabove=0.2cm,
+	linecolor=black,
+	backgroundcolor=gray!10,
+	linewidth=0.50pt,
+	innerleftmargin=0.2cm,
+	innerrightmargin=0.0cm,
+	innertopmargin=-0.2cm,
+	innerbottommargin=0.1cm
+}
+
+\newmdenv[
+	font=\small,
+	innerleftmargin=0.2cm,
+	innerrightmargin=0.0cm,
+	innertopmargin=-0.2cm,
+	innerbottommargin=0.1cm
+]{mdmath}
+
+\newmdenv[
+	font=\footnotesize,
+	innerleftmargin=0.2cm,
+	innerrightmargin=0.0cm,
+	innertopmargin=-0.2cm,
+	innerbottommargin=0.1cm
+]{mdmathss}
+
+\newmdenv[
+	font=\small,
+	innerleftmargin=0.2cm,
+	innerrightmargin=0.2cm,
+	innertopmargin=0.2cm,
+	innerbottommargin=0.2cm
+]{mdtext}
+
+% \draw[option] (x,y) (w,h)
+\newcommand{\sepline}[2]{
+	\vspace{#1}
+	\par\noindent\makebox[\linewidth][l]{%
+		\hspace*{-\mdflength{innerleftmargin}}%
+		\tikz\draw[thick,dashed,gray!60] (0,0) --%
+		(\textwidth+\the\mdflength{innerleftmargin}+\the\mdflength{innerrightmargin},0);
+	}\par\nobreak
+	\vspace{#2}
+}
+
+%-------------------------------------------------------------------------------
+% Array Spalten und Zeilen-Abstand
+\arraycolsep=1.5pt\def\arraystretch{1.2}
+
+%-------------------------------------------------------------------------------
+% Difference
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+
+%-------------------------------------------------------------------------------
+% Absolute Value + Norm
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+%-------------------------------------------------------------------------------
+% Euler
+\newcommand*\e[1]{\mathrm{e}^{#1}}
+
+%-------------------------------------------------------------------------------
+% Font Small
+\newcommand*\fs[1]{{\scriptstyle#1}}
+
+%-------------------------------------------------------------------------------
+% Plus-Minus Small
+\newcommand*\pms{{\scriptstyle \pm } \,}
+
+%-------------------------------------------------------------------------------
+% Limes to Infinity
+\let\limintold\limint
+\renewcommand*\liminf[1]{\lim\limits_{#1 \to \infty}}
+
+%-------------------------------------------------------------------------------
+% Enge Align
+\apptocmd\normalsize{% 
+	\setlength\abovedisplayshortskip{0cm}% 
+	\setlength\belowdisplayshortskip{0cm}% 
+	\setlength\abovedisplayskip{0.2cm}% 
+	\setlength\belowdisplayskip{0.25cm}% 
+}{}{\undefined} 
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+	\textbf{Aufgabe 2} \; Wir betrachten für beliebige $\omega, \delta > 0$ die
+	Differentialgleichung
+	% Float-Left align (& am Ende um es Links-Bündig zu machen)
+	\begin{flalign*}
+		y'' + \omega^2y &=\e{-\delta x} &
+	\end{flalign*}
+	\vspace{-0.75cm}
+	
+	\begin{mdmath}
+		\begin{flalign*}
+			y  &= C \cdot f(x) & \fs{\text{(Faktorregel)\quad}} & \\
+			y' &= C \cdot f'(x)
+		\end{flalign*}
+		\sepline{-1.3cm}{-1.2cm}
+		\begin{flalign*}
+			y  &= f_1(x) + f_2(x) & \fs{\text{(Summenregel)\quad}} & \\
+			y' &= f_1'(x) + f_2'(x)
+		\end{flalign*}
+		\sepline{-1.3cm}{-1.2cm}
+		\begin{flalign*}
+			y' &= F'(u) \cdot u'(x) & \fs{\text{(Kettenregel)\quad}} &
+		\end{flalign*}
+	\end{mdmath}
+	
+	\renewcommand{\labelenumi}{\alph{enumi})}
+	\begin{enumerate}[leftmargin=0.5cm]
+		\item
+			Bestimmen Sie die allgemeine Lösung der Differentialgleichung.
+			\begin{mdmath}
+				\begin{flalign*}
+					y'' + \omega^2y      &= 0 & \\
+					\lambda^2 + \omega^2 &= 0 \\
+					\lambda^2            &= -\omega^2 \\
+				\end{flalign*}
+				\vspace{-1.4cm}
+				\begin{flalign*}
+					\lambda_{1,2}        &= \pms \sqrt{\fs{-\omega^2}} = \pms \sqrt{\fs{-1}}  \sqrt{\fs{\omega^2}} & \\
+					\lambda_{1,2}        &= \pms \omega i \hspace{0.5cm} \fs{(\lambda_{1,2} = \alpha \pms \beta i)} \\
+					y_1                  &= \fs{ C_1 \e{\omega i} \; = \; K_1 \cdot \e{0} \cos(\omega x) + K_2 \cdot \e{0}  \sin(\omega x) } \\
+					y_2                  &= \fs{ C_2 \e{-\omega i} \; = \; K_3 \cdot \cos(-\omega x) + K_4 \cdot \sin(-\omega x) } \\
+					                     &= \fs{ K_3 \cdot \cos(\omega x) + K_4^* \cdot \sin(\omega x) } \\
+					y_1                  &= y_2 \\
+					& \hspace{-0.34cm} \uuline{y_h = K_1 \cdot \cos(\omega x) + K_2 \cdot \sin(\omega x)}
+				\end{flalign*}
+				\sepline{-1.2cm}{-1.2cm}
+				\begin{flalign*}
+					y_p                  &= A \cdot \e{-\delta x} & \\
+					y_p'                 &= -\delta \cdot A \cdot \e{-\delta x} \\
+					y_p''                &= \delta^2 \cdot A \cdot \e{-\delta x}
+				\end{flalign*}
+				\sepline{-1.3cm}{-1.2cm}
+				\begin{flalign*}
+					\begin{array}{lll}
+						y_p''                                 &+ \; \omega^2 \cdot y_p                       &= \e{-\delta x} \\
+						\delta^2 \cdot A \cdot \e{-\delta x}  &+ \; \omega^2 \cdot A \cdot \e{-\delta x}     &= \e{-\delta x} \\
+						\multicolumn{2}{r}{ A \cdot \left( \delta^2 + \omega^2 \right) \cdot \e{-\delta x} } &= \e{-\delta x} \\
+						\e{-\delta x}: & \multicolumn{1}{r}{ A \cdot \left( \delta^2 + \omega^2 \right) }    &= 1 \\
+						\multicolumn{2}{r}{ A }                                                              &= \tfrac{1}{\delta^2 + \omega^2}
+					\end{array} & &
+				\end{flalign*}
+				\sepline{-1.2cm}{-1.2cm}
+				\begin{flalign*}
+					y_p  &= A \cdot \e{-\delta x} & \\
+					& \hspace{-0.34cm} \uuline{y_p = \tfrac{1}{\delta^2 + \omega^2} \cdot \e{-\delta x}}
+				\end{flalign*}
+				\sepline{-1.2cm}{-1.2cm}
+				\begin{flalign*}
+					y &= y_h + y_p & \\
+					& \hspace{-0.2cm} \uuline{y = \fs{K_1 \cdot \cos(\omega x) + K_2 \cdot \sin(\omega x) + \tfrac{1}{\delta^2 + \omega^2} \cdot \e{-\delta x}}}
+				\end{flalign*}
+			\end{mdmath}
+		\item 
+			Lösen Sie (analytisch) Anfangswertproblem zu den Anfangswerten \\ $y(0) = 0$, $y'(0) = 0$.
+			\begin{mdmath}
+				\begin{flalign*}
+					\fs{y \;}  & \fs{ = \; K_1 \cdot \cos(\omega x) + K_2 \cdot \sin(\omega x) + \tfrac{1}{\delta^2 + \omega^2} \cdot \e{-\delta x}} & \\
+					\fs{y'}    & \fs{= \;  - K_1 \cdot \omega \cdot \sin(\omega x) + K_2 \cdot \omega \cdot \cos(\omega x) - \tfrac{\delta}{\delta^2 + \omega^2} \cdot \e{-\delta x}}
+				\end{flalign*}
+				\sepline{-1.3cm}{-1.2cm}
+				\begin{flalign*}
+					\fs{y(0)}  &= \fs{ K_1 \cdot \underbrace{\fs{\cos(0)}}_{=1} + K_2 \cdot \underbrace{\fs{\sin(0)}}_{=0} + \tfrac{1}{\delta^2 + \omega^2} \cdot \e{0} \; = \; 0 } & \\
+					      & \hspace{0.4cm} K_1 + \tfrac{1}{\delta^2 + \omega^2} = 0  \\
+					      & \hspace{1.74cm} K_1  = - \tfrac{1}{\delta^2 + \omega^2}  \\
+					\fs{y'(0)} &= \fs{ - K_1 \cdot \omega \cdot \underbrace{\fs{\sin(0)}}_{=0} + K_2 \cdot \omega \cdot \underbrace{\fs{\cos(0)}}_{=1} - \tfrac{\delta}{\delta^2 + \omega^2} \cdot \e{0}\; = \; 0 } & \\
+					& \hspace{0.4cm} K_2 \cdot \omega - \tfrac{\delta}{\delta^2 + \omega^2} = 0  \\
+					& \hspace{2.21cm} K_2  = \tfrac{\delta}{\omega} \cdot \tfrac{1}{\delta^2 + \omega^2}
+				\end{flalign*}
+				\sepline{-1.3cm}{-1.2cm}
+				\begin{flalign*}
+					y \;= \; & - \tfrac{1}{\delta^2 + \omega^2} \cdot \cos(\omega x) \; + & \\
+					    & \tfrac{\delta}{\omega} \cdot \tfrac{1}{\delta^2 + \omega^2} \cdot \sin(\omega x) \; + \\
+					    & \tfrac{1}{\delta^2 + \omega^2} \cdot \e{-\delta x}
+				\end{flalign*}
+			\end{mdmath}
+	\end{enumerate}
+\end{document}
