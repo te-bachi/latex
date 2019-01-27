@@ -73,8 +73,12 @@
 \newcommand*\e[1]{\mathrm{e}^{#1}}
 
 %-------------------------------------------------------------------------------
-% Euler
+% Font Small
 \newcommand*\fs[1]{{\scriptstyle#1}}
+
+%-------------------------------------------------------------------------------
+% Plus-Minus Small
+\newcommand*\pms{{\scriptstyle \pm } \,}
 
 %-------------------------------------------------------------------------------
 % Limes to Infinity
@@ -112,35 +116,35 @@
 					              f'(a)  &= -k \\
 					             f(a^*)  &= kN - ka^* = 0\\
 					             ka^*    &= kN \\
-					             a^*     &= \tfrac{kN}{k} \longrightarrow \uuline{a^* = N} \\
+					             a^*     &= \tfrac{kN}{k} \hspace{0.7cm} \longrightarrow \uuline{a^* = N} \\
 					             f'(a^*) &= -k < 0 \longrightarrow \uuline{stable}
 				\end{flalign*}
 			\end{mdmath}
 		\item 
 			Lösen Sie das Anfangswertproblem zum Anfangswert $a(0) = \frac{N}{2}$.
-			\begin{mdframed}
+			\begin{mdmath}
 				\begin{flalign*}
-				\tfrac{\diff a}{\diff t}       &= k \cdot \left( N - a \right) & \\
-				\int{\tfrac{1}{N - a}} \diff a &= k \int{1 \diff t} \\
-				- \ln(\fs{\abs{N - a}})        &= kt + C_1 \\
-				\ln(\fs{\abs{N - a}})          &= -kt - C_1 \\
-				\abs{N - a}                    &= \e{-kt - C_1} \\
-				N - a                          &= {\scriptstyle \pm } \, \e{-C_1} \e{-kt} = K \e{-kt} \\
-				a                              &= N - K \e{-kt} \\
-				a(0) = \tfrac{N}{2}            &= N - K \e{0} = N - K \\
-				K                              &= N - \tfrac{N}{2} = \tfrac{2N - N}{2} = \tfrac{N}{2} \\
-				& \hspace{-0.2cm} \uuline{a = N - \tfrac{N}{2} \cdot \e{-kt} }
+					\tfrac{\diff a}{\diff t}       &= k \cdot \left( N - a \right) & \\
+					\int{\tfrac{1}{N - a}} \diff a &= k \int{1 \diff t} \\
+					- \ln(\fs{\abs{N - a}})        &= kt + C_1 \\
+					\ln(\fs{\abs{N - a}})          &= -kt - C_1 \\
+					\abs{N - a}                    &= \e{-kt - C_1} \\
+					N - a                          &= {\scriptstyle \pm } \, \e{-C_1} \e{-kt} = K \e{-kt} \\
+					a                              &= N - K \e{-kt} \\
+					a(0) = \tfrac{N}{2}            &= N - K \e{0} = N - K \\
+					K                              &= N - \tfrac{N}{2} = \tfrac{2N - N}{2} = \tfrac{N}{2} \\
+					& \hspace{-0.2cm} \uuline{a = N - \tfrac{N}{2} \cdot \e{-kt} }
 				\end{flalign*}
-			\end{mdframed}
+			\end{mdmath}
 		\item
 			Bestimmen Sie $\liminf{t} a(t)$.
-			\begin{mdframed}
+			\begin{mdmath}
 				\begin{flalign*}
 					\liminf{t} \e{-kt} &= 0 & \\
 					a                  &= N - \tfrac{N}{2} \cdot 0 \\
 					& \hspace{-0.2cm} \uuline{a = N }
 				\end{flalign*}
-			\end{mdframed}
+			\end{mdmath}
 		\item 
 			Erklären Sie, wie die Resultate der Teile a) und c) zusammenhängen.
 			\begin{mdtext}
