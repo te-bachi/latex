@@ -16,7 +16,7 @@
 \usepackage{ngerman,palatino,setspace}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[left=3mm,right=6mm,top=5mm,bottom=5mm,papersize={8cm,34cm}]{geometry}
+\usepackage[left=3mm,right=6mm,top=5mm,bottom=5mm,papersize={14cm,34cm}]{geometry}
 \usepackage{graphicx}
 \usepackage{scrpage2}
 \usepackage{listings}
@@ -134,60 +134,58 @@
 %-------------------------------------------------------------------------------
 % Dokument
 \begin{document}
-	\textbf{Aufgabe 3} \; Wir betrachten das vom Parameter $a \in \mathbb{R}$
-	abhängige dynamische System
-	% Float-Left align (& am Ende um es Links-Bündig zu machen)
-	\vspace{-0.25cm}
-	\begin{flalign*}
-		\boldsymbol{\dot{x}} = \left(
-		\arraycolsep=3pt\def\arraystretch{1}
-		\begin{array}{rr}
+	\begin{minipage}{0.5\linewidth}
+		\textbf{Aufgabe 3} \; Wir betrachten das vom Parameter $a \in \mathbb{R}$
+		abhängige dynamische System
+		\vspace{-0.25cm}
+		\begin{flalign*}
+			\boldsymbol{\dot{x}} = \left(
+			\arraycolsep=3pt\def\arraystretch{1}
+			\begin{array}{rr}
 			-\alpha & -2 \\
 			\alpha  & 1
-		\end{array}
-		\right) \boldsymbol{x} &
-	\end{flalign*}
-	\vspace{-0.75cm}
-	
-	\renewcommand{\labelenumi}{\alph{enumi})}
-	\begin{enumerate}[leftmargin=0.5cm]
-		\item
-			Klassifizieren Sie den Fixpunkt $ \boldsymbol{x^*} = \boldsymbol{0} $
-			in Abhängigkeit von $\alpha$.
-			\begin{mdmath}
-				\begin{flalign*}
-					\tau              &= -\alpha + 1 = \uuline{1 - \alpha} & \\
-					\Delta            &= -\alpha + 2\alpha = 2\alpha - \alpha = \uuline{\alpha} \\
-					\tau^2 - 4 \Delta &= \left( 1 - \alpha \right)^2 - 4\alpha \\
-              &= 1 - 2\alpha + \alpha^2 - 4\alpha \\
-					0                 &= \alpha^2 - 6\alpha + 1 \\
-					\alpha_{1,2}      &= \tfrac{-b \pms \sqrt{b^2 - 4ac}}{2a} \\
-              &= \tfrac{1}{2} \left( 6 \pms \sqrt{36 - 4} \right) \\
-              &= 3 \pms \sqrt{\tfrac{32}{4}} \\
-              &= \uuline{3 \pms \sqrt{8}} \\
-              & \hspace{0.5cm} \alpha_{1} \approx 0.17 \quad \alpha_{2} \approx 5.83
-				\end{flalign*}
-				\vspace{-0.75cm}
-				\begin{Figure}
-					\centering
-					\includegraphics[width=5cm]{2017_aufgabe3_img.pdf}
-				\end{Figure}
-				\sepline{-0.1cm}{-0.4cm}
-				\text{Siehe Beilageblatt}
-				\sepline{-0.6cm}{-1.2cm}
-				\begin{flalign*}
-					\arraycolsep=6pt\def\arraystretch{1.2}
-					\begin{array}{lll}
-						\fs{\text{\RNum{1}}} & \alpha < 0                  & \fs{\text{saddle point}} \\
-						\fs{\text{\RNum{2}}} & 3 + \sqrt{8} \le \alpha     & \fs{\text{stable node}} \\
-						\fs{\text{\RNum{3}}} & 1 < \alpha < 3 + \sqrt{8}   & \fs{\text{stable spiral}} \\
-						\fs{\text{\RNum{4}}} & 0 < \alpha \le 3 - \sqrt{8} & \fs{\text{unstable node}} \\
-						\fs{\text{\RNum{5}}} & 3 - \sqrt{8} < \alpha < 1   & \fs{\text{unstable spiral}} \\
-						\fs{\text{\RNum{6}}} & \alpha = 1                  & \fs{\text{center, ellipse}} \\
-						\fs{\text{\RNum{7}}} & \alpha = 0                  & \fs{\text{not isolate}}
-					\end{array} & &
-				\end{flalign*}
-			\end{mdmath}
-		
-	\end{enumerate}
+			\end{array}
+			\right) \boldsymbol{x} &
+		\end{flalign*}
+		\vspace{-0.75cm}
+		\renewcommand{\labelenumi}{\alph{enumi})}
+		\begin{enumerate}[leftmargin=0.5cm]
+			\item
+				Klassifizieren Sie den Fixpunkt $ \boldsymbol{x^*} = \boldsymbol{0} $
+				in Abhängigkeit von $\alpha$.
+		\end{enumerate}
+	\end{minipage}
+	\begin{mdmath}[leftmargin=0.5cm]
+		\begin{flalign*}
+			\arraycolsep=8pt\def\arraystretch{1.2}
+			\begin{array}{lllllll}
+				\text{\RNum{1}} & \Delta < 0 & \alpha < 0 &         \\
+				\hline
+				\text{\RNum{2}} & \Delta > 0 & \alpha > 0 & \tau < 0 & \alpha > 1 & \tau^2 - 4 \Delta \ge 0 & 3 + \sqrt{8} \le \alpha    \\
+				\cline{6-7}
+				\text{\RNum{3}} &            &            &          &            & \tau^2 - 4 \Delta <   0 & 1 < \alpha < 3 + \sqrt{8} \\
+				\cline{4-7}
+				\text{\RNum{4}} &            &            & \tau > 0 & \alpha < 1 & \tau^2 - 4 \Delta \ge 0 & 0 < \alpha \le 3 - \sqrt{8} \\
+				\cline{6-7}
+				\text{\RNum{5}} &            &            &          &            & \tau^2 - 4 \Delta <   0 & 3 - \sqrt{8} < \alpha < 1 \\
+				\cline{4-7}
+				\text{\RNum{6}} &            &            & \tau = 0 & \alpha = 1 & \\
+				\hline
+				\text{\RNum{7}} & \Delta = 0 & \alpha = 0
+			\end{array} & &
+		\end{flalign*}
+		\sepline{-1cm}{-1cm}
+		\begin{flalign*}
+			\arraycolsep=8pt\def\arraystretch{1.2}
+			\begin{array}{lll}
+				\text{\RNum{1}} & \alpha < 0                  & \text{saddle point} \\
+				\text{\RNum{2}} & 3 + \sqrt{8} \le \alpha     & \text{stable node} \\
+				\text{\RNum{3}} & 1 < \alpha < 3 + \sqrt{8}   & \text{stable spiral} \\
+				\text{\RNum{4}} & 0 < \alpha \le 3 - \sqrt{8} & \text{unstable node} \\
+				\text{\RNum{5}} & 3 - \sqrt{8} < \alpha < 1   & \text{unstable spiral} \\
+				\text{\RNum{6}} & \alpha = 1                  & \text{center, ellipse} \\
+				\text{\RNum{7}} & \alpha = 0                  & \text{not isolate} 
+			\end{array} & &
+		\end{flalign*}
+	\end{mdmath}
 \end{document}
