@@ -1,0 +1,212 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=3mm,right=6mm,top=5mm,bottom=5mm,papersize={14cm,34cm}]{geometry}
+\usepackage{graphicx}
+\usepackage{scrpage2}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{dashbox}
+\usepackage{enumitem}
+\usepackage{ulem}
+\usepackage{multicol}
+\usepackage{svg}
+
+\mdfsetup{%
+	leftmargin=0cm,
+	skipabove=0.2cm,
+	linecolor=black,
+	backgroundcolor=gray!10,
+	linewidth=0.50pt,
+	innerleftmargin=0.2cm,
+	innerrightmargin=0.0cm,
+	innertopmargin=-0.2cm,
+	innerbottommargin=0.1cm
+}
+
+\newmdenv[
+	font=\small,
+	innerleftmargin=0.2cm,
+	innerrightmargin=0.0cm,
+	innertopmargin=-0.2cm,
+	innerbottommargin=0.1cm
+]{mdmath}
+
+\newmdenv[
+	font=\footnotesize,
+	innerleftmargin=0.2cm,
+	innerrightmargin=0.0cm,
+	innertopmargin=-0.2cm,
+	innerbottommargin=0.1cm
+]{mdmathss}
+
+\newmdenv[
+	font=\small,
+	innerleftmargin=0.2cm,
+	innerrightmargin=0.2cm,
+	innertopmargin=0.2cm,
+	innerbottommargin=0.2cm
+]{mdtext}
+
+% \draw[option] (x,y) (w,h)
+\newcommand{\sepline}[2]{
+	\vspace{#1}
+	\par\noindent\makebox[\linewidth][l]{%
+		\hspace*{-\mdflength{innerleftmargin}}%
+		\tikz\draw[thick,dashed,gray!60] (0,0) --%
+		(\textwidth+\the\mdflength{innerleftmargin}+\the\mdflength{innerrightmargin},0);
+	}\par\nobreak
+	\vspace{#2}
+}
+
+%-------------------------------------------------------------------------------
+% Array Spalten und Zeilen-Abstand
+\arraycolsep=1.5pt\def\arraystretch{1.2}
+
+%-------------------------------------------------------------------------------
+% Difference
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+
+%-------------------------------------------------------------------------------
+% Absolute Value + Norm
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+%-------------------------------------------------------------------------------
+% Euler
+\newcommand*\e[1]{\mathrm{e}^{#1}}
+
+%-------------------------------------------------------------------------------
+% Font Small
+\newcommand*\fs[1]{{\scriptstyle#1}}
+
+%-------------------------------------------------------------------------------
+% Plus-Minus Small
+\newcommand*\pms{{\scriptstyle \pm } \,}
+
+%-------------------------------------------------------------------------------
+% Limes to Infinity
+\let\limintold\limint
+\renewcommand*\liminf[1]{\lim\limits_{#1 \to \infty}}
+
+%-------------------------------------------------------------------------------
+% Eigene Figure Umgebung
+\newenvironment{Figure}
+	{\par\noindent\minipage{\linewidth}}
+	{\endminipage\par}
+
+%-------------------------------------------------------------------------------
+% Enge Align
+\apptocmd\normalsize{% 
+	\setlength\abovedisplayshortskip{0cm}% 
+	\setlength\belowdisplayshortskip{0cm}% 
+	\setlength\abovedisplayskip{0.2cm}% 
+	\setlength\belowdisplayskip{0.25cm}% 
+}{}{\undefined} 
+
+%-------------------------------------------------------------------------------
+% Römische Zahlen
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+	\begin{minipage}{0.5\linewidth}
+		\textbf{Aufgabe 3} \; Wir betrachten das vom Parameter $a \in \mathbb{R}$
+		abhängige dynamische System
+		% Float-Left align (& am Ende um es Links-Bündig zu machen)
+		\vspace{-0.25cm}
+		\begin{flalign*}
+			\boldsymbol{\dot{x}} = \left(
+			\arraycolsep=3pt\def\arraystretch{1}
+			\begin{array}{rr}
+				-\alpha & -2 \\
+				\alpha  & 1
+			\end{array}
+			\right) \boldsymbol{x} &
+		\end{flalign*}
+		\vspace{-0.75cm}
+		
+		\renewcommand{\labelenumi}{\alph{enumi})}
+		\begin{enumerate}[leftmargin=0.5cm]
+			\item
+				Klassifizieren Sie den Fixpunkt $ \boldsymbol{x^*} = \boldsymbol{0} $
+				in Abhängigkeit von $\alpha$.
+				\begin{mdmath}
+					\begin{flalign*}
+						\tau              &= -\alpha + 1 = \uuline{1 - \alpha} & \\
+						\Delta            &= -\alpha + 2\alpha = 2\alpha - \alpha = \uuline{\alpha} \\
+						\tau^2 - 4 \Delta &= \left( 1 - \alpha \right)^2 - 4\alpha \\
+                  &= 1 - 2\alpha + \alpha^2 - 4\alpha \\
+						0                 &= \alpha^2 - 6\alpha + 1 \\
+						\alpha_{1,2}      &= \tfrac{-b \pms \sqrt{b^2 - 4ac}}{2a} \\
+                  &= \tfrac{1}{2} \left( 6 \pms \sqrt{36 - 4} \right) \\
+                  &= 3 \pms \sqrt{\tfrac{32}{4}} \\
+                  &= \uuline{3 \pms \sqrt{8}} \\
+                  & \hspace{0.5cm} \alpha_{1} \approx 0.17 \quad \alpha_{2} \approx 5.83
+					\end{flalign*}
+					\vspace{-0.75cm}
+					\begin{Figure}
+						\centering
+						\includegraphics[width=5cm]{2017_aufgabe3_img.pdf}
+					\end{Figure}
+				\end{mdmath}
+		\end{enumerate}
+	\end{minipage}
+	\begin{mdmath}[leftmargin=0.5cm]
+		\begin{flalign*}
+			\arraycolsep=8pt\def\arraystretch{1.2}
+			\begin{array}{lllllll}
+				\text{\RNum{1}} & \Delta < 0 & \alpha < 0 &         \\
+				\hline
+				\text{\RNum{2}} & \Delta > 0 & \alpha > 0 & \tau < 0 & \alpha > 1 & \tau^2 - 4 \Delta \ge 0 & 3 + \sqrt{8} \le \alpha    \\
+				\cline{6-7}
+				\text{\RNum{3}} &            &            &          &            & \tau^2 - 4 \Delta <   0 & 1 < \alpha < 3 + \sqrt{8} \\
+				\cline{4-7}
+				\text{\RNum{4}} &            &            & \tau > 0 & \alpha < 1 & \tau^2 - 4 \Delta \ge 0 & 0 < \alpha \le 3 - \sqrt{8} \\
+				\cline{6-7}
+				\text{\RNum{5}} &            &            &          &            & \tau^2 - 4 \Delta <   0 & 3 - \sqrt{8} < \alpha < 1 \\
+				\cline{4-7}
+				\text{\RNum{6}} &            &            & \tau = 0 & \alpha = 1 & \\
+				\hline
+				\text{\RNum{7}} & \Delta = 0 & \alpha = 0
+			\end{array} & &
+		\end{flalign*}
+		\sepline{-1cm}{-1cm}
+		\begin{flalign*}
+			\arraycolsep=8pt\def\arraystretch{1.2}
+			\begin{array}{lll}
+				\text{\RNum{1}} & \alpha < 0                  & \text{saddle point} \\
+				\text{\RNum{2}} & 3 + \sqrt{8} \le \alpha     & \text{stable node} \\
+				\text{\RNum{3}} & 1 < \alpha < 3 + \sqrt{8}   & \text{stable spiral} \\
+				\text{\RNum{4}} & 0 < \alpha \le 3 - \sqrt{8} & \text{unstable node} \\
+				\text{\RNum{5}} & 3 - \sqrt{8} < \alpha < 1   & \text{unstable spiral} \\
+				\text{\RNum{6}} & \alpha = 1                  & \text{center, ellipse} \\
+				\text{\RNum{7}} & \alpha = 0                  & \text{not isolate} 
+			\end{array} & &
+		\end{flalign*}
+	\end{mdmath}
+\end{document}
