@@ -1,0 +1,414 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=45mm,right=35mm,top=25mm,bottom=25mm]{geometry}
+%\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{scrpage2}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{mdframed}
+\usepackage{dashbox}
+\usepackage{enumitem}
+\usepackage{ulem}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes,snakes}
+
+%\usepackage{tabularx}
+%\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+%\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+%\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+%-------------------------------------------------------------------------------
+% myident
+% mysep
+% myrule
+\def\myident{3cm}
+\def\mysep{0pt}
+\def\myrule{0pt}
+
+%-------------------------------------------------------------------------------
+% MyDef
+
+\newsavebox{\mybox}
+\newenvironment{MyDef}
+[2]
+{%
+    \setlength{\fboxsep}{\mysep}
+    \setlength{\fboxrule}{\myrule}
+    \hspace{-\myident}\fbox{\begin{minipage}[t]{\myident}\vspace{-0.5cm}\par\rule{\textwidth}{0.4pt}\par\hfill\textbf{#2}\enskip\,\end{minipage}}\begin{lrbox}{\mybox}\begin{minipage}[t]{\textwidth}\vspace{#1}
+}
+{%
+    \end{minipage}\end{lrbox}\fbox{\usebox{\mybox}}
+}
+
+\newenvironment{MyBsp}
+[2]
+{%
+    \setlength{\fboxsep}{\mysep}
+    \setlength{\fboxrule}{\myrule}
+    \hspace{-\myident}\fbox{\begin{minipage}[t]{\myident}\hfill\textbf{#2}\enskip\,\end{minipage}}\begin{lrbox}{\mybox}\begin{minipage}[t]{\textwidth}\vspace{#1}
+}
+{%
+    \end{minipage}\end{lrbox}\fbox{\usebox{\mybox}}
+}
+
+%-------------------------------------------------------------------------------
+% mysubsection
+\newcommand{\mysubsection}
+[1]
+{
+    \setlength{\fboxsep}{\mysep}
+    \setlength{\fboxrule}{\myrule}
+    \subsection*{#1}\vspace{-1cm}
+    \par
+    \fbox{\rule{\textwidth}{0.4pt}}
+    \par
+    \vspace{-0.9cm}
+    \fbox{\rule{\textwidth}{0.4pt}}
+}
+
+%-------------------------------------------------------------------------------
+% mycircle
+\newcommand{\mycircle}[1]{%
+    \tikz[baseline=(char.base)]\node[rectangle, rounded corners, draw=red, inner sep=2pt](char){#1} ;}
+
+%-------------------------------------------------------------------------------
+% mdframed
+\mdfsetup{%
+    leftmargin=0cm,
+    skipabove=0.2cm,
+    linecolor=black,
+    backgroundcolor=gray!10,
+    linewidth=0.50pt,
+    innerleftmargin=0.2cm,
+    innerrightmargin=0.0cm,
+    innertopmargin=-0.2cm,
+    innerbottommargin=0.1cm
+}
+
+\newmdenv[
+    innerleftmargin=0.2cm,
+    innerrightmargin=0.0cm,
+    innertopmargin=-0.2cm,
+    innerbottommargin=0.1cm
+]{mdmath}
+
+\newmdenv[
+    font=\small,
+    innerleftmargin=0.2cm,
+    innerrightmargin=0.2cm,
+    innertopmargin=0.2cm,
+    innerbottommargin=0.2cm
+]{mdtext}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+    \section*{Woche 1}
+    
+    %=== Sprache ===========================================================
+    \mysubsection{Sprache}
+    
+    %--- Menge / Folge -------------------------------------------------------
+    \begin{MyDef}{-0.26cm}{Def.}
+        \textbf{Menge:}
+        
+        ungeordnet, keine Doppeleinträge
+    \end{MyDef}
+
+    \begin{MyBsp}{-0.88cm}{Bsp.}
+        \begin{flalign*}
+            M_1                 &= \{ a, b, c, d\} & \\
+            M_2                 &= \{ c, d, e, f\} & \\
+            M_1 \cap M_2        &= \{ c, d\} & \\
+            M_1 \cup M_2        &= \{ a, b, c, d, e, f\} & \\
+            M_1 \setminus M_2   &= \{ a, b \} & \\
+            a                   & \in M_1 \\
+            b                   & \notin M_2
+        \end{flalign*}
+    \end{MyBsp}
+    
+    \begin{MyDef}{-0.26cm}{Def.}
+        \textbf{Folge:}
+        
+        geordnet, kann auch Doppeleinträge enthalten
+    \end{MyDef}
+
+    \begin{MyBsp}{-0.88cm}{Bsp.}
+        \begin{flalign*}
+        M &= \{ a, b, c, d\} & \\
+        F &= (a,b,a,b,d,d,c,c) & 
+        \end{flalign*}
+    \end{MyBsp}
+    
+    %--- Alphabet ------------------------------------------------------------
+    \begin{MyDef}{-0.26cm}{Def.}
+        \textbf{Alphabet:}
+        
+        nicht-leere endliche \mycircle{Menge} (von Zeichen)
+    \end{MyDef}
+    
+    \begin{MyBsp}{-0.36cm}{Bsp.}
+        \hspace{-0.2cm}
+        \begin{tabular}{ll}
+            $\Sigma_1 := \left\{ a, b, c, d \right\}$ & \color{Green}{// 'a'} \\
+            $\Sigma_2 := \left\{ 0 \right\} $         &
+        \end{tabular}
+    \end{MyBsp}
+
+    \begin{MyBsp}{-0.36cm}{Nicht Bsp.}
+            \hspace{-0.2cm}
+            \begin{tabular}{ll}
+                $\emptyset \not\subseteq \Sigma $                          & \color{Green}{// leere Menge} \\
+                $\left\{ a, b, c, d, \ldots \right\} \not\subseteq \Sigma$ & \color{Green}{// unendliche Menge}
+            \end{tabular}
+    \end{MyBsp}
+
+    %--- Wort ------------------------------------------------------------
+    \begin{MyDef}{-0.26cm}{Def.}
+        \textbf{Wort/String:}
+        
+        über Alphabet $\Sigma$ ist eine endliche \mycircle{Folge} von Zeichen aus $\Sigma$,
+        eventuell leer
+    \end{MyDef}
+
+    \begin{MyBsp}{-0.36cm}{Bsp.}
+        \hspace{-0.2cm}
+        \begin{tabular}{lll}
+            $acdcd$ & Wort über $\Sigma_1$ & \color{Green}{// ``acdcd``} \\
+            $0000 $ & Wort über $\Sigma_2$ &
+        \end{tabular}
+    \end{MyBsp}
+
+    \begin{MyDef}{-0.26cm}{Def.}
+        \textbf{Leeres Wort:}
+        
+        \hspace{-0.3cm}
+        \begin{tabular}{lll}
+            $\varepsilon$ über \uline{jedes} Alphabet         & \color{Green}{// `` ``} \\
+            \multicolumn{2}{l}{$\varepsilon$ \uline{nicht} Element vom Alphabet, sondern ein Meta-Zeichen } \\
+            & \\
+            \color{Blue}{Meta-Sprache}   & Über Programmiersprache sprechen \\
+            \color{Blue}{Objekt-Sprache} & Programmiersprache
+        \end{tabular}
+    \end{MyDef}
+
+    \begin{MyDef}{-0.26cm}{Def.}
+        \textbf{$\mathbf{\Sigma^*}$}:
+        
+        Menge \uline{aller} Wörter über $\Sigma$, immer unendlich gross
+    \end{MyDef}
+
+    \begin{MyBsp}{-0.36cm}{Bsp.}
+        \begin{tabular}{ll}
+            $\Sigma_1^* = \left( a, aa, aaa, \ldots, ab, aba, abab, \ldots \right)$ & über $\Sigma_1$ \\
+            $\Sigma_2^* =\left( 0, 00, 000 \ldots \right)$ & über $\Sigma_2$
+        \end{tabular}
+    \end{MyBsp}
+
+    \begin{MyDef}{-0.26cm}{Def.}
+        Konkatenation von Wörtern $x$ und $y$ über $\Sigma$ \\
+        
+        \hspace{-0.3cm}
+        \begin{tabular}{llll}
+            $x = x_1x_2 \ldots x_n$, & $x_i \in \Sigma$, & $n \geq 0 $ & \color{Green}{// $ x + y $ } \\
+            $y = y_1y_2 \ldots y_m$, & $y_i \in \Sigma$, & $m \geq 0 $ & \color{Green}{// ``acdcd`` + ``000`` }  \\
+        \end{tabular} \\
+        
+        $ xy = x \cdot y =  x_1x_2 \ldots x_ny_1y_2 \ldots y_m $ \\
+    \end{MyDef}
+
+    %=== Algebra ===========================================================
+    \mysubsection{Algebra}
+    
+    %---Monoid ------------------------------------------------------------
+    \begin{MyDef}{-0.26cm}{Def.}
+        \textbf{Monoid:}
+        
+        In der abstrakten Algebra ist ein Monoid eine algebraische Struktur bestehend
+        aus einer {\color{Blue}Menge} mit einer {\color{Blue}inneren Verknüpfung} und einem {\color{Blue}neutralen Element}. \\
+        
+        Sei $M$ eine Menge und $\circ: M \times M \to M$ eine Operation. Das Paar $\left(M, \circ:\right)$ heisst Monoid, falls: \\
+        
+        \hspace{-0.3cm}
+        \begin{tabular}{llll}
+            1) & Assoziativität der Verknüpfung & $\forall a,b,c \in M:$ & $(a \circ b) \circ c = a \circ (b \circ c)$ \\
+            2) & $e$ ist neutrales Element      & $\forall a\in M:$      & $e \circ a = a \circ e = a$ \\
+               &                                &                        & \\
+            \multicolumn{4}{l}{Es gilt aber \uline{kein} Kommunikativgesetz für Monoide} \\
+            3) & Kommutativität der Verknüpfung & $\forall a,b \in M:$   & $a \circ = b \circ a$ \\
+               &                                &                        & \\
+            \multicolumn{4}{l}{und nicht notwendigerweise ein inverse Elemente} \\
+            4) & $a^{-1}$ ist inverses Element  & $a, a^{-1} \in M:$     & $ a \circ a^{-1} = a^{-1} \circ a = e $ \\
+               &                                &                        & \\
+        \end{tabular} \\
+        
+        Ein Monoid ist also eine Halbgruppe mit neutralem Element, hat aber nicht
+        notwendigerweise ein inverses Element. Wenn ein inverses Element existiert,
+        gehört es zu einer Gruppe.
+    \end{MyDef}
+    
+    \begin{MyBsp}{-0.26cm}{}
+        Die natürlichen Zahlen sind nicht genau definiert.
+        Sie kann als die positiven ganzen Zahlen (also ohne die 0) \\
+        
+        $ \mathbb{N} = \{1, 2, 3, \ldots\} $ \\
+        
+        oder als die nichtnegativen ganzen Zahlen (also inklusive der 0) \\
+        
+        $ \mathbb{N} = \{0, 1, 2, 3, \ldots\} $ \\
+        
+        aufgefasst werden. Wir benutzen folgende Definition.
+        \begin{flalign*}
+            \mathbb{N}    & = \left\{ 0, 1, 2, 3, \ldots \right\} & \\
+            \mathbb{N^+}  & = \left\{ 1, 2, 3, \ldots \right\} &
+        \end{flalign*}
+    \end{MyBsp}
+    
+    \begin{MyBsp}{-0.36cm}{Bsp.}
+        \hspace{-0.3cm}
+        \begin{tabular}{lll}
+            1) & $ \left(\mathbb{N}, +\right) $       & Monoid mit $e = 0$ \\
+            2) & $ \left(\mathbb{N}^+, +\right) $     & Kein Monoid, $0$ fehlt \\
+            3) & $ \left(\mathbb{N}^+, \cdot\right) $ & Monoid mit $e = 1$ \\
+            4) & $ \left(\Sigma^*, \cdot\right) $     & Monoid mit $e = \varepsilon$ \\
+        \end{tabular}
+    \end{MyBsp}
+    
+    %--- Potenzen ------------------------------------------------------------
+    \begin{MyDef}{-0.26cm}{Def.}
+        \textbf{Potenzen:}
+        
+        Sei $\left( M, \circ \right)$ ein Monoid mit neuralem Element $e$.
+        
+        \hspace{-0.3cm}
+        \begin{tabular}{lll}
+            Sei $a \in M$ & $ a^0 = e $ &  \\
+                          & $ a^n = a \circ a^{n-1} $, & $ n \geq 1 $ \\
+                          & $ n^n = \underbrace{
+                                        a \circ a \circ a \circ \ldots \circ a
+                                    }_{
+                                        n \textrm{ mal } a, \; (n - 1) \textrm{ mal } \circ
+                                    } {\color{Blue} \circ \; e}$ &
+        \end{tabular}
+    \end{MyDef}
+
+    %=== Formale Sprache ===========================================================
+    \mysubsection{Formale Sprache}
+    
+    
+    %--- Sprache ------------------------------------------------------------
+    \begin{MyDef}{-0.26cm}{Def.}
+        \textbf{Sprache:}
+        
+        über das Alphabet $\Sigma$: \mycircle{Menge} von Wörtern über $\Sigma$, also $ \subseteq \Sigma^*$. \\
+        Kann unendlich sein!
+    \end{MyDef}
+    
+    \begin{MyBsp}{-0.36cm}{Bsp.}
+        \hspace{-0.3cm}
+        \begin{tabular}{lll}
+            $ \left\{ \; \right\} $                             & kleinste Sprache   & \\
+            $ \left\{ \varepsilon \right\} $                    & \multicolumn{2}{l}{ein Element: das leere Wort}             \\
+            $ \; \Sigma^* $                                     & \multicolumn{2}{l}{grösste Sprache $\to$ unendliche gross!} \\
+            $ \left\{ a, aa, ab, ac, dddd \right\}$             & über $\Sigma_1$    & \\
+            $ \left\{ 0, 00, 000, \ldots \right\}$              & über $\Sigma_2$    & {\color{Green}// codiert $\mathbb{N^+}$ } \\
+            $ \left\{ \varepsilon, 0, 00, 000, \ldots \right\}$ & über $\Sigma_2$    & {\color{Green}// codiert $\mathbb{N}$} \\
+        \end{tabular}
+    \end{MyBsp}
+    
+    \begin{MyBsp}{-0.36cm}{Bem.}
+        Wort hat hier \uline{keine} Bedeutung!
+    \end{MyBsp}
+
+    %--- Sprache ------------------------------------------------------------
+    \begin{MyDef}{-0.26cm}{Def.}
+        \textbf{Operationen auf Sprachen:}
+        
+        Seien $L_1$, $L_2$ Sprachen über $\Sigma$
+        
+        \hspace{-0.3cm}
+        \begin{tabular}{lll}
+            1) & $ L_1 \cup L_2 $: & normale Vereinigungsmenge \\
+            2) & \multicolumn{2}{l}{$ \underbrace{L_1 \cdot L_2}_{Konkat.} =
+                \left\{ \; \omega_1 \cdot \omega_2 \mid \omega_1 \in L_1, \; \omega_2 \in L_2 \; \right\} $} \\
+               & & \\
+               & \multicolumn{2}{l}{Konkatenation auf Sprachen ist Monoid mit $\left\{ \varepsilon \right\} $ als neutrales Element} \\
+               & \multicolumn{2}{l}{$\to L^n$ also definiert! } \\
+            3) & $L^* = L^0 \cup L^1 \cup L^2 \cup \ldots$ & Kleenescher Stern
+        \end{tabular}
+    \end{MyDef}
+    
+    \begin{MyBsp}{-0.87cm}{Bsp.}
+        \begin{flalign*}
+            \Sigma        & = \left\{ \; a, b, \ldots, z \; \right\} & \\
+            L_1           & = \left\{ \; \textrm{good}, \textrm{bad} \; \right\} \quad L_2 = \left\{ \; \textrm{dog}, \textrm{cat} \; \right\}& \\
+            L_1 \cup L_2  & = \left\{ \; \textrm{good}, \textrm{bad}, \textrm{dog}, \textrm{cat} \; \right\} & \\
+            L_1 \cdot L_2 & = \left\{ \; \textrm{gooddog}, \textrm{goodcat}, \textrm{baddog}, \textrm{badcat} \; \right\} & \\
+            L_2^0         & = \left\{ \; \varepsilon \; \right\} & \\
+            L_2^1         & = \left\{ \; \textrm{dog}, \textrm{cat} \; \right\} & \\
+            L_2^2         & = \left\{ \; \textrm{dogdog}, \textrm{dogcat}, \textrm{catdog}, \textrm{catcat} \; \right\} & \\
+            L_2^3         & = \left\{ \; \textrm{dogdog}, \textrm{dogcat}, \textrm{catdog}, \textrm{catcat} \; \right\} & \\
+            L^*           & = \L^0 \cup L^1 \cup L^2 \cup \ldots & \\
+                          & = \left\{ \; \underbrace{\quad \varepsilon \quad}_{L_0},
+                                         \underbrace{\textrm{dog}, \textrm{cat}}_{L_1},
+                                         \underbrace{\textrm{dogdog}, \textrm{dogcat}, \ldots }_{L_2} \; \right\} & \\
+        \end{flalign*} \\
+        
+        Ein Wort hat endlich viele Zeichen von einem endlichen Alphabet.\\
+        Eine Sprache kann unendlich viele Wörter besitzen.
+    \end{MyBsp}
+
+    \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (15.6,-9.8) circle (3);
+        \draw (15.6,-9.8) node {$q_1$};
+        \draw [black] (41.5,-9.8) circle (3);
+        \draw (41.5,-9.8) node {$q_3$};
+        \draw [black] (28.8,-9.8) circle (3);
+        \draw (28.8,-9.8) node {$q_2$};
+        \draw [black] (28.8,-9.8) circle (2.4);
+        \draw [black] (7.6,-9.8) -- (12.6,-9.8);
+        \fill [black] (12.6,-9.8) -- (11.8,-9.3) -- (11.8,-10.3);
+        \draw [black] (18.6,-9.8) -- (25.8,-9.8);
+        \fill [black] (25.8,-9.8) -- (25,-9.3) -- (25,-10.3);
+        \draw (22.2,-10.3) node [below] {$1$};
+        \draw [black] (31.571,-8.667) arc (105.72959:74.27041:13.202);
+        \fill [black] (38.73,-8.67) -- (38.09,-7.97) -- (37.82,-8.93);
+        \draw (35.15,-7.67) node [above] {$0$};
+        \draw [black] (14.277,-7.12) arc (234:-54:2.25);
+        \draw (15.6,-2.55) node [above] {$0$};
+        \fill [black] (16.92,-7.12) -- (17.8,-6.77) -- (16.99,-6.18);
+        \draw [black] (27.477,-7.12) arc (234:-54:2.25);
+        \draw (28.8,-2.55) node [above] {$1$};
+        \fill [black] (30.12,-7.12) -- (31,-6.77) -- (30.19,-6.18);
+        \draw [black] (38.696,-10.85) arc (-75.52313:-104.47687:14.184);
+        \fill [black] (31.6,-10.85) -- (32.25,-11.53) -- (32.5,-10.57);
+        \draw (35.15,-11.8) node [below] {$0,1$};
+    \end{tikzpicture}
+
+    
+\end{document}
