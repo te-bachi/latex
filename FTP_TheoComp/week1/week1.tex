@@ -549,6 +549,25 @@
     \end{MyDef}
     
     %--- Bsp 1  ------------------------------------------------------------
+    \begin{MyBsp}{-0.26cm}{Bem.}
+        \begin{tikzpicture}
+            \node (M) at (0,0) {$M$};
+            \node (A)  [text width=3cm]       at (3,0.5)    {akzeptiert Wort};
+            \node (A2) [text width=3cm, blue] at (6.5,0.5)  {accept};
+            \node (B)  [text width=3cm]       at (3.0,-0.5) {erkennt Sprache};
+            \node (B2) [text width=3cm, blue] at (6.5,-0.5) {recognize};
+            \draw[->,thick] (M) to [in = 180, out = +40] (A);
+            \draw[->,thick] (M) to [in = 180, out = -40] (B);
+        \end{tikzpicture}
+    \end{MyBsp}
+
+    %---Regulär ------------------------------------------------------------
+    \begin{MyDef}{-0.26cm}{Def.}
+        Eine Sprache $A$ heisst \uline{regulär}, falls ein DFA existiert,
+        der die Sprache erkennt.
+    \end{MyDef}
+    
+    %--- Bsp 1  ------------------------------------------------------------
     \begin{MyBsp}{-0.26cm}{Bsp.}
         
         $Q = \left\{ \; q_0 \; \right\} $ \quad
