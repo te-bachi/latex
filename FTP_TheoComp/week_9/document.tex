@@ -1,0 +1,174 @@
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+    final,
+    a4paper,
+    oneside,
+    parskip=full,
+    headings=standardclasses,
+    headings=big,
+    pointednumbers
+]{scrartcl}
+
+
+
+%-------------------------------------------------------------------------------
+% Dokument Sprache
+\usepackage[ngerman]{babel}
+
+%-------------------------------------------------------------------------------
+% Dokument Sprache
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%-------------------------------------------------------------------------------
+% Individuelle Kopf- und Fusszeilen
+
+\usepackage{scrlayer-scrpage}
+
+% Bisherige Einstellungen für Kopf- und Fußzeilen löschen:
+\clearpairofpagestyles
+
+% Zentriert auf linken Seiten die aktuelle Kapitelüberschrift,
+% auf rechten Seiten die Überschrift des aktuellen Abschnitts ausgeben:
+\chead{\headmark}
+
+% Zentriert die Seitenzahl ausgeben (auch beim Seitenstil "scrplain"):
+\cfoot*{\pagemark}
+
+\pagestyle{scrheadings}
+
+%-------------------------------------------------------------------------------
+% Text mit Unterstrich
+\usepackage{ulem}
+
+%-------------------------------------------------------------------------------
+% Seitenränder und Anmerkungen 
+\usepackage[marginparwidth=3cm,
+            left=5cm,
+            textwidth=12cm]{geometry}
+%\usepackage{marginnote}
+\reversemarginpar
+
+%\usepackage{showframe}
+%\usepackage{layout}
+
+%\usepackage{fourier} 
+%\usepackage{mparhack}
+
+%-------------------------------------------------------------------------------
+% AMS
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%\usepackage{multirow}
+
+%-------------------------------------------------------------------------------
+% 
+\newcommand{\anmerkung}[2]{%
+    \marginline{%
+        \vspace{#1} \rule{\marginparwidth}{0.4pt} #2
+    }
+}
+
+\newcommand{\mytitle}[1]{%
+    {\LARGE \bfseries #1}
+}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%-------------------------------------------------------------------------------
+% Blinktext
+%\usepackage{blindtext}
+
+\usepackage{csquotes}
+
+\usepackage{epigraph}
+%\epigraphfontsize{\small\itshape}
+\setlength\epigraphwidth{8cm}
+%\setlength\epigraphwidth{.8\textwidth}
+\setlength\epigraphrule{1pt}
+
+\renewcommand*{\dictumwidth}{\textwidth}
+\renewcommand*{\raggeddictum}{\raggedright}
+\renewcommand*{\raggeddictumtext}{\raggedright}
+\renewcommand*{\dictumrule}{}
+\renewcommand*{\dictumauthorformat}[1]{--- \textup{#1}}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+    %\layout
+    %\blindtext
+    
+    \mytitle{Komplexitästheorie}
+    
+    Aufgaben $\rightarrow$ Wie Lösen?
+    
+    Skalierbarkeit / Aufwand
+    
+    \section{Einführung}
+    algebraische Komplexitätstheorie (KT)
+    
+    \subsection{Rechnen mit Matrizen}
+    
+    \begin{tabular}{lll}
+        Gegeben: & $A = 
+                   \begin{pmatrix}
+                      a_{11} & a_{12} \\
+                      a_{21} & a_{22}
+                   \end{pmatrix}_{2\mathrm{x}2}$ &
+                   $B =
+                   \begin{pmatrix}
+                   b_{11} & b_{12} \\
+                   b_{21} & b_{22}
+                   \end{pmatrix}_{2\mathrm{x}2}$ \\
+                 & & \\
+        Frage:   & \multicolumn{2}{l}{Wieviele Multiplikationen benötigen wir um $A \cdot B$ zu berechnen?} \\
+                 & & \\
+        Aufwand: & \multicolumn{2}{l}{Addition, $2\mathrm{x}2$-Matrix: $n^2$ } \\
+                 & $\#mult \leq n^3$ &
+    \end{tabular}
+
+    \enquote{Gauss-Algorithm is not optimal!}, Volker Strassen, 1968
+    
+    %\epigraphfontsize{\small\itshape}
+    \epigraph{``Begin at the beginning," the King said gravely, ``and go on till you
+        come to the end: then stop."}{--- \textup{Lewis Carroll}, Alice in Wonderland}
+    
+    \dictum[Lewis Carroll, 1968]{
+        ``Begin at the beginning, and go on till you come to the end: then stop.''}
+    
+    \anmerkung{0.35cm}{Bemerkung}
+    $n^2 \leq \#mult\left( A  \cdot B \right) \leq n^3$
+    
+    \anmerkung{0.2cm}{Notation} 
+    $m\left( A \cdot B \right) = \min\left\{ \#mult\left( A  \cdot B \right) \right\}$
+    
+    $m\left( A \cdot B \right) \leq 7$ ?
+    
+    Sei $ C = A \cdot B = \begin{pmatrix}
+        c_{11} & c_{12} \\
+        c_{21} & c_{22}
+    \end{pmatrix} $
+    
+    \begin{tabular}{cl|l}
+        \rom{1} & $ \left(a_{11} + a_{22} \right) \left(b_{11} + b_{22} \right) $
+                & $ C_{11} = \rom{1} + \rom{4} - \rom{5} + \rom{7} $ \\
+        \rom{2} & $ \left(a_{21} + a_{22} \right) b_{11} $ 
+                & $ C_{21} = \rom{2} + \rom{4} $ \\
+        \rom{3} & \\
+        \rom{4} & \\
+        \rom{5} & \\
+        \rom{6} & \\
+        \rom{7} &
+    \end{tabular}
+    
+    Gehts noch schneller?
+    
+    Winograd (1971): $m\left( A \cdot B \right) = 7$ 
+    
+\end{document}
