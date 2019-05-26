@@ -1,0 +1,206 @@
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+    final,
+    a4paper,
+    oneside,
+    parskip=full,
+    headings=standardclasses,
+    headings=big,
+    pointednumbers
+]{scrartcl}
+
+
+
+%-------------------------------------------------------------------------------
+% Dokument Sprache
+\usepackage[ngerman]{babel}
+
+%-------------------------------------------------------------------------------
+% Dokument Sprache
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%-------------------------------------------------------------------------------
+% Individuelle Kopf- und Fusszeilen
+
+\usepackage{scrlayer-scrpage}
+
+% Bisherige Einstellungen für Kopf- und Fußzeilen löschen:
+\clearpairofpagestyles
+
+% Zentriert auf linken Seiten die aktuelle Kapitelüberschrift,
+% auf rechten Seiten die Überschrift des aktuellen Abschnitts ausgeben:
+\chead{\headmark}
+
+% Zentriert die Seitenzahl ausgeben (auch beim Seitenstil "scrplain"):
+\cfoot*{\pagemark}
+
+\pagestyle{scrheadings}
+
+%-------------------------------------------------------------------------------
+% Text mit Unterstrich
+\usepackage{ulem}
+
+%-------------------------------------------------------------------------------
+% Seitenränder und Anmerkungen 
+\usepackage[marginparwidth=3cm,
+            left=5cm,
+            textwidth=12cm]{geometry}
+%\usepackage{marginnote}
+\reversemarginpar
+
+%\usepackage{showframe}
+%\usepackage{layout}
+
+%\usepackage{fourier} 
+%\usepackage{mparhack}
+
+%-------------------------------------------------------------------------------
+% AMS
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%\usepackage{multirow}
+
+%-------------------------------------------------------------------------------
+% 
+\newcommand{\anmerkung}[2]{%
+    \marginline{%
+        \vspace{#1} \rule{\marginparwidth}{0.4pt} #2
+    }
+}
+
+\newcommand{\mytitle}[1]{%
+    {\LARGE \bfseries #1}
+}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%-------------------------------------------------------------------------------
+% Blinktext
+%\usepackage{blindtext}
+
+\usepackage{csquotes}
+
+\usepackage{epigraph}
+%\epigraphfontsize{\small\itshape}
+\setlength\epigraphwidth{8cm}
+%\setlength\epigraphwidth{.8\textwidth}
+\setlength\epigraphrule{1pt}
+
+\renewcommand*{\dictumwidth}{\textwidth}
+\renewcommand*{\raggeddictum}{\raggedright}
+\renewcommand*{\raggeddictumtext}{\raggedright}
+\renewcommand*{\dictumrule}{}
+\renewcommand*{\dictumauthorformat}[1]{--- \textup{#1}}
+
+%-------------------------------------------------------------------------------
+
+\usepackage{tikz}
+
+\usetikzlibrary{shapes,snakes,calc,arrows}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+    %\layout
+    %\blindtext
+    
+    \mytitle{Komplexitästheorie}
+    
+    \section{Polyzeit-Reduktion}
+    
+    \begin{itemize}
+    	\setlength{\itemindent}{-12pt}
+    	\setlength{\itemsep}{-10pt}
+    	%\itemsep-10pt
+    	\renewcommand{\labelitemi}{$-$}
+    	\item Beispiele zu Reduktionen
+    	\item Definition davon verstehen
+    	\item Intuitiv Verstehen was eine Reduktion ist
+    	\item Viele schwarze Punkt
+    	\item Jeder Punkt ist ein Entscheidungsproblem resp. eine formale Sprache
+    	\item Eine Reduktion ist eine Verbindung zwischen zwei Problemen
+    \end{itemize}
+
+    \begin{tikzpicture}[every node/.style={fill, circle, inner sep = 1pt}]
+	    \pgfmathsetseed{1}
+    	\foreach \x in {1,...,8} {
+    		\foreach \y in {1,...,8} {
+			    %\node[label=above:$\x \y$] (A\x\y) at (\x + rand, rand) {};
+			    \node (A\x\y) at (\x + rand, rand) {};
+			}
+		}
+	
+		\iffalse
+			\draw[red,thick,dashed] (A11) -- (A12);
+			\draw[blue,thick,dashed] (A11) -- (A13);
+			\draw[green,thick,dashed] (A11) -- (A14);
+			\draw (A11) -- (A15);
+			\draw (A11) -- (A16);
+			\draw (A11) -- (A17);
+			\draw (A11) -- (A18);
+			
+			\draw[red,thick,dashed] (A21) -- (A22);
+			\draw[blue,thick,dashed] (A21) -- (A23);
+			\draw[green,thick,dashed] (A21) -- (A24);
+			\draw[red,thick,dashed] (A21) -- (A25);
+			\draw[blue,thick,dashed] (A21) -- (A26);
+			\draw[green,thick,dashed] (A21) -- (A27);
+			\draw (A21) -- (A28);
+		\fi
+		
+		\draw (A14) -- (A28);
+    \end{tikzpicture}
+    
+    \iffalse
+    \begin{tikzpicture}
+		\node (M) at (0,0) {$M$};
+		\node (A)  [text width=3cm]       at (3,0.5)    {akzeptiert Wort};
+		\node (A2) [text width=3cm, blue] at (6.5,0.5)  {accept};
+		\node (B)  [text width=3cm]       at (3.0,-0.5) {erkennt Sprache};
+		\node (B2) [text width=3cm, blue] at (6.5,-0.5) {recognize};
+		\draw[->,thick] (M) to [in = 180, out = +40] (A);
+		\draw[->,thick] (M) to [in = 180, out = -40] (B);
+	\end{tikzpicture}
+	\fi
+
+	Denn es kommt häufig vor, dass man irgendwie erkennt: 2 Probleme sind ziemlich ähnlich.
+	
+	Oft sieht man \underline{ein} Problem ist nur ein \underline{anderes} Problem mit ein
+	bisschen anderer Verkleidung.
+	
+	Oder man stellt fest: wenn ich das \underline{eine} Problem lösen kann, dann kann ich mit dem
+	Entscheidungsverfahren für dieses auch das \underline{andere} ganz einfach lösen.
+	
+	Wenn man so etwas gefunden hat, dann ist es eine Reduktion, von dem \underline{einen} auf das
+	\underline{andere} Problem.
+	
+	\begin{tikzpicture}[every node/.style={draw, circle, inner sep = 5pt}]
+		\node (A) at (0, 0) [circle] {$A$};
+		\node (B) at (3, 0) [circle] {$B$};
+		\draw[line width=1pt, arrows=-angle 60] (A) to (B);
+	\end{tikzpicture}
+	
+	Wenn wir Problem $B$ lösen können und eine Reduktion von $A$ auf $B$, dann kann man
+	$A$ auch lösen. Es ist wie eine Übersetzung von einem in ein anderes Problem.
+	
+	Ihr kennt das sicher, wenn ihr code schreibt, denkt ihr, moment, so etwas habe ich
+	gleich schon mal geschrieben.
+	
+	Wenn ihr feststellt, Code, den man wiederverwenden kann. Denn er löst ein Problem, dass,
+	wenn man dieses Problem lösen kann, kann man mit diesem Problem andere Probleme einfacher
+	lösen.
+    
+    \subsection{Rechnen mit Matrizen}
+    
+    \begin{flalign*}
+    	L_1  & = \left\{ \omega \mid \textrm{ Länge } \vert w\vert_b \textrm{ lässt bei Division durch $3$ den Rest $1$ } \right\} & \\
+    	L_2  & = \left\{ \omega \mid \textrm{ Länge } \vert w\vert_b \textrm{ ist durch $3$ teilbar } \right\} &
+    \end{flalign*}
+    
+\end{document}
