@@ -99,6 +99,28 @@
 \renewcommand*{\dictumauthorformat}[1]{--- \textup{#1}}
 
 %-------------------------------------------------------------------------------
+% Listings
+\usepackage{listings}
+
+\lstset{
+	language=Java,
+	breaklines=true,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	captionpos=b,
+	basicstyle=\footnotesize\ttfamily,
+	stringstyle=\color{magenta},
+	identifierstyle=\color{black},
+	keywordstyle=\color{blue}, 
+	commentstyle=\color{DarkGreen}
+}
+
+\newcommand{\mylisting}[2][]{%
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}%
+}
+
+%-------------------------------------------------------------------------------
 
 \usepackage{tikz}
 
@@ -194,13 +216,59 @@
 	
 	Wenn ihr feststellt, Code, den man wiederverwenden kann. Denn er löst ein Problem, dass,
 	wenn man dieses Problem lösen kann, kann man mit diesem Problem andere Probleme einfacher
-	lösen.
+	lösen. Wenn $A$ und $B$ ganz ähnliche Probleme sind, und wir möchten den Code dafür nicht
+	zwei Mal schreiben sondern wir schreiben einmal wie man Problem B löst und dann schreiben
+	wir, wie übersetzt man Problem B in Problem A. Und dann können wir das Problem A ganz einfach
+	lösen indem wir das Problem B übersetzen und das Problem A lösen.
+	
+	Problem $A$:
+	\mylisting[frame=single]{solveL1.java}
+	
+	Problem $B$:
+	\mylisting[frame=single]{solveL2.java}
+	
+    Diese Reduktion übersetzt jedes Wort $\omega$ in der Sprache $L_1$ enthalten ist also wo die
+    Antwort \textbf{<<ja>>} lautet. Und auch jedes Wort $\omega$ wo die Antwort \textbf{<<nein>>}
+    lauten würde weil $L_1$ übersetzt es in ein Wort $\omega_2$ so dass die Antwort hierauf
+    \textbf{<<nein>>} lautet. So dafür machen wir jetzt Mal ein paar Beispiele.
     
-    \subsection{Rechnen mit Matrizen}
+    \subsection{Beispiel mit formalen Sprachen}
+    
+    Machen wir Mal ein Beispiel mit formalen Sprachen.
     
     \begin{flalign*}
-    	L_1  & = \left\{ \omega \mid \textrm{ Länge } \vert w\vert_b \textrm{ lässt bei Division durch $3$ den Rest $1$ } \right\} & \\
-    	L_2  & = \left\{ \omega \mid \textrm{ Länge } \vert w\vert_b \textrm{ ist durch $3$ teilbar } \right\} &
+	    L_1  & = \left\{ \omega \mid \textrm{ Länge } \vert w\vert_b \textrm{ lässt bei Division durch $3$ den Rest $1$ } \right\} & \\
+	    L_2  & = \left\{ \omega \mid \textrm{ Länge } \vert w\vert_b \textrm{ ist durch $3$ teilbar } \right\} &
     \end{flalign*}
+    
+    Also sagen wir Mal: für diese Sprache $L_2$
+    hier, das ist nämlich alle Worte bei denen die Anzahl der b's durch drei Teilbar ist.
+    Sagen wir Mal dafür haben wir schon einen Algorithmus gefunden. Wenn man so einen 
+    Algorithmus, dem geben wir ein Wort, und der gibt uns zurück einen \texttt{boolean}
+    und zwar gibt der \texttt{true} wenn die Anzahl der b's in diesem Wort durch drei Teilbar
+    ist und \texttt{false} falls es nicht durch drei Teilbar ist.
+    
+    Jetzt wollen wir das Problem $L_1$ lösen und zwar sind das all die Worte bei denen
+    die Anzahl der b's bei der Division durch drei den Rest 1 lässt und das wirkt irgendwie
+    ganz ähnlich wie Problem $L_2$ und tatsächlich können wir $L_1$ auf $L_2$ reduzieren.
+    Wir können wann immer wir ein Wort bekommen und wir wollen wissen, ist das in $L_1$,
+    können wir es auf eine ganz einfache Art übersetzen in eine Eingabe für $L_2$ und dann
+    führen wir einfach den Algorithmus auf diesem neue Wort. Führen wir einfach den Algorithmus
+    aus. Der checkt einfach nur, ist die Anzahl der b's in diesem Wort durch drei Teilbar.
+    \begin{center}
+    	\begin{tikzpicture}[every node/.style={inner sep = 5pt}]
+    	\node (L1) at (0, 0.5) {$L_1$:};
+    	\node (A) at (0, 0) {$\omega$};
+    	\node (L2) at (4, 0.5) {$L_2$:};
+    	\node (B) at (4, 0) {$\omega bb$};
+    	\node (C) at (1.8, 0.5) {Reduktion};
+    	\draw[->,decorate,decoration={snake,amplitude=0.8mm,segment length=2mm,post length=1mm}] (A) to (B);
+    	\end{tikzpicture}
+    \end{center}
+    
+    Was müssen wir da machen um das zu übersetzen? Wir können folgendes tun: man würde irgend
+    ein Wort $\omega$ bekommen, dann
+    
+    sd
     
 \end{document}
