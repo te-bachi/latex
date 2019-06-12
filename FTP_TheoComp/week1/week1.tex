@@ -377,8 +377,10 @@
             L_2^0         & = \left\{ \; \varepsilon \; \right\} & \\
             L_2^1         & = \left\{ \; \textrm{dog}, \textrm{cat} \; \right\} & \\
             L_2^2         & = \left\{ \; \textrm{dogdog}, \textrm{dogcat}, \textrm{catdog}, \textrm{catcat} \; \right\} & \\
-            L_2^3         & = \left\{ \; \textrm{dogdog}, \textrm{dogcat}, \textrm{catdog}, \textrm{catcat} \; \right\} & \\
-            L^*           & = \L^0 \cup L^1 \cup L^2 \cup \ldots & \\
+            L_2^3         & = L_2 \cdot L_2 \cdot L_2 & \\
+                          & = \left\{ \; \textrm{dog}, \textrm{cat} \; \right\} \cdot \left\{ \; \textrm{dog}, \textrm{cat} \; \right\} \cdot \left\{ \; \textrm{dog}, \textrm{cat} \; \right\} & \\
+                          & = \left\{ \; \textrm{dogdogdog}, \textrm{dogdogcat}, \textrm{dogcatdog}, \textrm{dogcatcat},  \ldots \; \right\} & \\
+            L_2^*         & = L_2^0 \cup L_2^1 \cup L_2^2 \cup \ldots & \\
                           & = \left\{ \; \underbrace{\quad \varepsilon \quad}_{L_0},
                                          \underbrace{\textrm{dog}, \textrm{cat}}_{L_1},
                                          \underbrace{\textrm{dogdog}, \textrm{dogcat}, \ldots }_{L_2} \; \right\} & \\
@@ -389,7 +391,7 @@
     \end{MyBsp}
     
     
-    %=== Formale Sprache ===========================================================
+    %=== Endlicher Automat ===========================================================
     \mysubsection{Endlicher Automat}
     
     Wort $\to$ Rater-Rater $\to$ gehört zu Sprache oder nicht

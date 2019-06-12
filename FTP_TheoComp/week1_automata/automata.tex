@@ -25,6 +25,40 @@
 
 \usetikzlibrary{automata, positioning, arrows}
 
+%{
+%\tikzset{
+%    ->, % makes the edges directed
+%    >=stealth, % makes the arrow heads bold
+%    node distance=2cm, % specifies the minimum distance between two nodes. Change if necessary.
+%    every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
+%    every edge/.append style={line width=0.25mm}, % sets the properties for each ’state’ node
+%    initial text=$ $, % sets the text that appears on the start arrow
+%}
+%}
+
+\tikzset{
+    node distance=2cm, % Minimum distance between two nodes. Change if necessary.
+    every state/.style={ % Sets the properties for each state
+        semithick,
+        fill=gray!10
+    },
+    initial text={}, % No label on start arrow
+    double distance=2pt, % Adjust appearance of accept states
+    every edge/.style={ % Sets the properties for each transition
+        draw,
+        ->,>=stealth, % Makes edges directed with bold arrowheads
+        auto,
+        semithick
+    },
+    shift left/.style ={commutative diagrams/shift left={#1}},
+    shift right/.style={commutative diagrams/shift right={#1}}
+}
+
+%-------------------------------------------------------------------------------
+% mycircle
+\newcommand{\mycircle}[1]{%
+    \tikz[baseline=(char.base)]\node[rectangle, rounded corners, draw=red, inner sep=2pt](char){#1} ;}
+
 %-------------------------------------------------------------------------------
 % Dokument
 \begin{document}
@@ -38,6 +72,142 @@
         (q2) edge[loop above] node{1} (q2)
         (q2) edge[bend left, above] node{0} (q3)
         (q3) edge[bend left, below] node{0, 1} (q2);
-    \end{tikzpicture}
+    \end{tikzpicture}
+
+    \begin{tikzpicture}
+        \node[state] at (0, 0) (q1) {normal};
+        \node[state, initial, left of=q1] (q2) {start};
+        \node[state, accepting] at (1.5, 2) (q3) {accept};
+    \end{tikzpicture}
+
     
+    \begin{tikzpicture}
+        \node[state, initial] (q1) {$q_1$};
+        \node[state, accepting, right of=q1] (q2) {$q_2$};
+        \node[state, right of=q2] (q3) {$q_3$};
+        \draw	(q1) edge[loop above] node{0} (q1)
+                (q1) edge[above] node{1} (q2)
+                (q2) edge[loop above] node{1} (q2)
+                (q2) edge[bend left, above] node{0} (q3)
+                (q3) edge[bend left, below] node{0, 1} (q2);
+    \end{tikzpicture}
+    
+    \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+        \node[state,initial] (q_0)   {$q_0$}; 
+        \node[state] (q_1) [above right=of q_0] {$q_1$}; 
+        \node[state] (q_2) [below right=of q_0] {$q_2$}; 
+        \node[state,accepting](q_3) [below right=of q_1] {$q_3$};
+        \path[->] 
+            (q_0) edge              node        {0} (q_1)
+                  edge              node [swap] {1} (q_2)
+            (q_1) edge              node        {1} (q_3)
+                  edge [loop above] node        {0} ()
+            (q_2) edge              node [swap] {0} (q_3) 
+                  edge [loop below] node        {1} ();
+    \end{tikzpicture}
+    
+    \begin{tikzpicture}
+        \node[state, initial] (q1) {$q_1$};
+        \node[state, initial above, right of=q1] (q2) {$q_2$};
+        \node[state, accepting, right of=q2] (q3) {$q_3$};
+        \draw	(q1) edge[loop above] node{0,1} (q1)
+                (q1) edge[above] node{0} (q2)
+                (q2) edge[above] node{0} (q3);
+    \end{tikzpicture}
+
+    
+    \begin{tikzpicture}[node distance=2.5cm]
+        % erste zeile
+        \node[state]                            (nul)       {$\emptyset$};
+        % zweite zeile
+        \node[state, above of=nul]              (q2)        {$q_2$};
+        \node[state, left of=q2]                (q1)        {$q_1$};
+        \node[state, accepting, right of=q2]    (q3)        {$q_3$};
+        % dritte zeile
+        \node[state, accepting, above of=q2]    (q1q3)      {$q_1q_3$};
+        \node[state, initial, left of=q1q3]     (q1q2)      {$q_1q_2$};
+        \node[state, accepting, right of=q1q3]  (q2q3)      {$q_2q_3$};
+        % vierte zeile
+        \node[state, accepting, above of=q1q3]  (q1q2q3)    {$q_1q_2q_3$};
+
+        \draw[->,>=stealth,auto,semithick]
+                % erste zeile
+                (nul)   edge[loop below]        node{0,1}   ()
+                % zweite zeile
+                (q1)    edge[loop below]        node{1}     ()
+                (q1)    edge[bend angle=15,
+                             bend right,right]  node{0}     (q1q2)
+                (q2)    edge                    node{0}     (q3)
+                (q2)    edge                    node{1}     (nul)
+                (q3)    edge                    node{0,1}   (nul)
+                % dritte zeile
+                (q1q2)  edge[bend angle=15,
+                             bend right,left]   node{1}     (q1)
+                (q1q2)  edge                    node{0}     (q1q2q3)
+                (q1q3)  edge[above]             node{0}     (q1q2)
+                (q1q3)  edge                    node{1}     (q1)
+                (q2q3)  edge                    node{0}     (q3)
+                %(q2q3)  to [out = -50, in = 0]
+                %          node{0}     (nul)
+                (q2q3)  .. controls (4,3)
+                           and      (3.5,0.5) .. node{1}    (nul)
+                % vierte zeile
+                (q1q2q3) edge[loop right]       node{0}     ()
+                (q1q2q3) .. controls (2,4)
+                            and      (0,3.5) .. node{1}     (q1)
+        ;
+        %\draw (q1q2q3) .. controls (0,4) and (4,0) .. (q1);
+        %\draw[step=1cm,gray,very thin] (-2,0) grid (2,4);
+    \end{tikzpicture}
+
+    
+    \begin{flalign*}
+        \Sigma        & = \left\{ \; a, b, \ldots, z \; \right\} & \\
+        L_1           & = \left\{ \; \textrm{good}, \textrm{bad} \; \right\} \quad L_2 = \left\{ \; \textrm{dog}, \textrm{cat} \; \right\}& \\
+        L_1 \cup L_2  & = \left\{ \; \textrm{good}, \textrm{bad}, \textrm{dog}, \textrm{cat} \; \right\} & \\
+        L_1 \cdot L_2 & = \left\{ \; \textrm{gooddog}, \textrm{goodcat}, \textrm{baddog}, \textrm{badcat} \; \right\} & \\
+        L_2^0         & = \left\{ \; \varepsilon \; \right\} & \\
+        L_2^1         & = \left\{ \; \textrm{dog}, \textrm{cat} \; \right\} & \\
+        L_2^2         & = \left\{ \; \textrm{dogdog}, \textrm{dogcat}, \textrm{catdog}, \textrm{catcat} \; \right\} & \\
+        L_2^3         & = L_2 \cdot L_2 \cdot L_2 & \\
+        & = \left\{ \; \textrm{dog}, \textrm{cat} \; \right\} \cdot \left\{ \; \textrm{dog}, \textrm{cat} \; \right\} \cdot \left\{ \; \textrm{dog}, \textrm{cat} \; \right\} & \\
+        & = \left\{ \; \textrm{dogdogdog}, \textrm{dogdogcat}, \textrm{dogcatdog}, \textrm{dogcatcat},  \ldots \; \right\} & \\
+        L_2^*         & = L_2^0 \cup L_2^1 \cup L_2^2 \cup \ldots & \\
+        & = \left\{ \; \varepsilon,
+        \textrm{dog}, \textrm{cat},
+        \textrm{dogdog}, \textrm{dogcat}, \ldots \; \right\} & \\
+    \end{flalign*} \\
+    
+    \textbf{Deterministic Finite Automaton (DFA):}\\
+    Ein DFA ist ein 5-Tupel $(Q,\Sigma,\delta, s, F)$ wobei \\
+    \hspace{-0.3cm}
+    \begin{tabular}{lll}
+        1) & $Q$                                             & endliche Menge von Zuständen \\
+        2) & $\Sigma$                                        & Eingangsalphabet \\
+        3) & $\delta: Q \times \Sigma \xrightarrow{\;\;} Q$: & einen nachfolgenden Zustand \\
+           & $\delta\left(r_{i},\omega_i \right) = r_{i+1} $ & $r_i \in Q$\\
+        4) & $s \in Q$                                       & Startzustand \\
+        5) & $F \subseteq Q$                                 & Menge akzeptierender Zustände
+    \end{tabular}
+
+    \textbf{Nondeterministic Finite Automaton (NFA):}\\
+    Ein NFA ist ein 5-Tupel $(Q,\Sigma,\delta, S, F)$ wobei \\
+    \hspace{-0.3cm}
+    \begin{tabular}{lll}
+        1) & $Q$                                             & endliche Menge von Zuständen \\
+        2) & $\Sigma$                                        & Eingangsalphabet \\
+        3) & $\delta: Q \times \Sigma_\varepsilon \xrightarrow{\;\;} \mathcal{P}\left(Q\right)$: & mehrere nachfolgende Zustände \\
+           &                                                 & Potenzmenge $\mathcal{P}\left(Q\right)$, $ \Sigma_\varepsilon = \Sigma \cup \left\{ \varepsilon \right\} $ \\
+        4) & $S \subseteq Q$                                 & Menge von Startzuständen \\
+        5) & $F \subseteq Q$                                 & Menge akzeptierender Zustände
+    \end{tabular} \\
+    Überführung in DFA $(Q',\Sigma,\delta', s', F')$\\
+    \begin{tabular}{lll}
+        1) & $Q'=2^{\vert Q \vert}$                          & \\
+        2) & \multicolumn{2}{l}{$ E\left( R \right) = \left\{ r \in Q \mid r \text{ erreichbar von } R \text{ mit } 0 \text{ oder mehr } \varepsilon \text{-Transitionen} \right\} $} \\
+        3) & $\bigcup\limits_{r \in R} E \left( \delta\left(r_{i},\omega_i \right) \right) $ & \\
+        4) & $s = E\left( \left\{ s \right\} \right) $                                 & \\
+        5) & $F'= \left\{ R \subseteq Q' \mid R \cap F \neq \emptyset \right\}$                                 &
+    \end{tabular}
+
 \end{document}
