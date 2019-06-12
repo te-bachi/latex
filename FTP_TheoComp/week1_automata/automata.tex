@@ -22,7 +22,6 @@
 \usepackage{mathtools}
 \usepackage{tikz}
 
-
 \usetikzlibrary{automata, positioning, arrows}
 
 %{
@@ -53,6 +52,33 @@
     shift left/.style ={commutative diagrams/shift left={#1}},
     shift right/.style={commutative diagrams/shift right={#1}}
 }
+
+%-------------------------------------------------------------------------------
+\usepackage{multirow}
+
+%-------------------------------------------------------------------------------
+% mdframed
+\usepackage[framemethod=tikz]{mdframed}
+
+\mdfsetup{%
+    leftmargin=0cm,
+    skipabove=0.2cm,
+    linecolor=black,
+    backgroundcolor=gray!10,
+    linewidth=0.50pt,
+    innerleftmargin=0.2cm,
+    innerrightmargin=0.0cm,
+    innertopmargin=-0.2cm,
+    innerbottommargin=0.1cm
+}
+
+\newmdenv[
+    font=\small,
+    innerleftmargin=0.2cm,
+    innerrightmargin=0.0cm,
+    innertopmargin=-0.2cm,
+    innerbottommargin=0.1cm
+]{mdmath}
 
 %-------------------------------------------------------------------------------
 % mycircle
@@ -106,6 +132,12 @@
                   edge [loop below] node        {1} ();
     \end{tikzpicture}
     
+    
+    $Q = \left\{ \; q_1, q_2, q_3 \; \right\} $ \quad
+    $\Sigma = \left\{ \; 0, 1 \; \right\} $ \quad
+    $S = \left\{ \; q_1, q_2 \; \right\} $ \quad
+    $F = \left\{ \; q_3 \; \right\} $
+    
     \begin{tikzpicture}
         \node[state, initial] (q1) {$q_1$};
         \node[state, initial above, right of=q1] (q2) {$q_2$};
@@ -114,7 +146,33 @@
                 (q1) edge[above] node{0} (q2)
                 (q2) edge[above] node{0} (q3);
     \end{tikzpicture}
-
+    
+    \begin{flalign*}
+	    Q' &= \mathcal{P}\left(Q\right) = 2^{\vert Q \vert} = \left\{ \; \emptyset, \left\{ q_1 \right\}, \left\{ q_2 \right\}, \left\{ q_3 \right\}, \left\{ q_1, q_2 \right\}, \left\{ q_1, q_3 \right\}, \left\{ q_2, q_3 \right\}, \left\{ q_1, q_2, q_3 \right\} \; \right\} \\
+	    s &= E\left( \left\{ S \right\} \right) = \left\{ \; q_1, q_2 \; \right\} \\
+	    F &= \left\{ R \subseteq Q' \mid R \cap F \neq \emptyset \right\} = \left\{ \; \left\{ q_3 \right\}, \left\{ q_1, q_3 \right\}, \left\{ q_2, q_3 \right\}, \left\{ q_1, q_2, q_3 \right\} \; \right\} \\
+	\end{flalign*}
+	    
+	\begin{tabular}{lll}
+		aa & $Q$                                             & endliche Menge von Zuständen \\
+		2) & $\Sigma$                                        & Eingangsalphabet \\
+		3) & $\delta: Q \times \Sigma \xrightarrow{\;\;} Q$: & einen nachfolgenden Zustand \\
+		& $\delta\left(r_{i},\omega_i \right) = r_{i+1} $ & $r_i \in Q$\\
+		4) & $s \in Q$                                       & Startzustand \\
+		5) & $F \subseteq Q$                                 & Menge akzeptierender Zustände
+	\end{tabular}
+    
+    \begin{tabular}{cc}
+        \begin{tabular}{|ccc|c} 
+            \multicolumn{1}{c}{$q_1q_2$} & $\xrightarrow{0}$ & \multicolumn{1}{c}{} &\\  
+            \cline{1-3}
+            $q_1$ & $\xrightarrow{0}$ & $q_1$ & \multirow{2}{*}{$\cup = q_1$} \\
+            $q_2$ & $\xrightarrow{0}$ & $\emptyset$ \\
+            \cline{1-3}
+        \end{tabular} &  % starting bottom right of the top level table
+        aa
+    \end{tabular}
+    
     
     \begin{tikzpicture}[node distance=2.5cm]
         % erste zeile
@@ -206,7 +264,7 @@
         1) & $Q'=2^{\vert Q \vert}$                          & \\
         2) & \multicolumn{2}{l}{$ E\left( R \right) = \left\{ r \in Q \mid r \text{ erreichbar von } R \text{ mit } 0 \text{ oder mehr } \varepsilon \text{-Transitionen} \right\} $} \\
         3) & $\bigcup\limits_{r \in R} E \left( \delta\left(r_{i},\omega_i \right) \right) $ & \\
-        4) & $s = E\left( \left\{ s \right\} \right) $                                 & \\
+        4) & $s = E\left( \left\{ S \right\} \right) $                                 & \\
         5) & $F'= \left\{ R \subseteq Q' \mid R \cap F \neq \emptyset \right\}$                                 &
     \end{tabular}
 
