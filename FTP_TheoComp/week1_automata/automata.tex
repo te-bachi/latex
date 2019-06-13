@@ -94,6 +94,8 @@
 % Dokument
 \begin{document}
     
+    
+    %--- Page 1 --------------------------------------------------------------------
     \begin{tikzpicture}
         \node[state, initial] (q1) {$q_1$};
         \node[state, accepting, right of=q1] (q2) {$q_2$};
@@ -137,6 +139,7 @@
                   edge [loop below] node        {1} ();
     \end{tikzpicture}
     
+    %--- Page 2 --------------------------------------------------------------------
     \newpage    
 
 	\begin{minipage}{0.7\textwidth}
@@ -338,8 +341,119 @@
         \end{tikzpicture}
 	\end{minipage}
 
+    %--- Page 3 --------------------------------------------------------------------
     \newpage
-    
+
+	\begin{minipage}{0.7\textwidth}
+        $Q = \left\{ \; q_1, q_2, q_3 \; \right\} $ \quad
+        $\Sigma = \left\{ \; 0, 1 \; \right\} $ \quad
+        $S = \left\{ \; q_1, q_2 \; \right\} $ \quad
+        $F = \left\{ \; q_3 \; \right\} $
+	\end{minipage}
+	\begin{minipage}{0.3\textwidth}
+        \begin{tikzpicture}
+            \node[state, initial] (q1) {$q_1$};
+            \node[state, initial above, right of=q1] (q2) {$q_2$};
+            \node[state, accepting, right of=q2] (q3) {$q_3$};
+            \draw	(q1) edge[loop above] node{0,1} (q1)
+                    (q1) edge[above] node{0} (q2)
+                    (q2) edge[above] node{0} (q3);
+        \end{tikzpicture}
+	\end{minipage}
+
+	\begin{minipage}[t]{0.5\textwidth}
+        \def\h{0.5cm}
+        \def\w{2cm}
+        \begin{tabular}[t]{c|cc}
+            $ \delta' $                         & a                             & b                             \\
+            \hline
+            $ \emptyset $                       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_2 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_3 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_2 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_3 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_2, q_3 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_2, q_3 \right\} $  & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}
+       \end{tabular}
+	\end{minipage}
+	\begin{minipage}[t]{0.5\textwidth}
+        \def\h{0.5cm}
+        \def\w{2cm}
+        \begin{tabular}[t]{c|cc}
+            $ \delta' $                          & a                                 & b                         \\
+            \hline
+            $ \emptyset $                       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_2 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_3 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_2 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_3 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_2, q_3 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_2, q_3 \right\} $  & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  
+        \end{tabular}
+	\end{minipage}
+
+    \quad
+
+    \quad
+
+    \quad
+
+	\begin{minipage}{0.7\textwidth}
+        $Q = \left\{ \; q_1, q_2, q_3 \; \right\} $ \quad
+        $\Sigma = \left\{ \; a, b \; \right\} $ \quad
+        $S = \left\{ \; q_1 \; \right\} $ \quad
+        $F = \left\{ \; q_1 \; \right\} $
+	\end{minipage}
+	\begin{minipage}{0.3\textwidth}
+        \begin{tikzpicture}
+            \node[state, accepting, initial above] (q1) {$q_1$};
+            \node[state, below left of=q1] (q2) {$q_2$};
+            \node[state, below right of=q1] (q3) {$q_3$};
+            \draw   (q1) edge[bend right, below left]   node{$\varepsilon$} (q3)
+                    (q1) edge[bend right, above left]   node{b}             (q2)
+                    (q2) edge[bend right, below]        node{a,b}           (q3)
+                    (q2) edge[loop left]                node{a}             (q2)
+                    (q3) edge[bend right, above right]  node{a}             (q1);
+        \end{tikzpicture}
+	\end{minipage}
+
+	\begin{minipage}[t]{0.5\textwidth}
+        \def\h{0.5cm}
+        \def\w{2cm}
+        \begin{tabular}[t]{c|cc}
+            $ \delta' $                         & a                             & b                             \\
+            \hline
+            $ \emptyset $                       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_2 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_3 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_2 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_3 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_2, q_3 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_2, q_3 \right\} $  & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}
+       \end{tabular}
+	\end{minipage}
+	\begin{minipage}[t]{0.5\textwidth}
+        \def\h{0.5cm}
+        \def\w{2cm}
+        \begin{tabular}[t]{c|cc}
+            $ \delta' $                          & a                                 & b                         \\
+            \hline
+            $ \emptyset $                       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_2 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_3 \right\} $            & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_2 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_3 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_2, q_3 \right\} $       & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  \\
+            $ \left\{ q_1, q_2, q_3 \right\} $  & \parbox[b][\h][c]{\w}{\quad}  & \parbox[b][\h][c]{\w}{\quad}  
+        \end{tabular}
+	\end{minipage}
+
+    %--- Page 4 --------------------------------------------------------------------
+    \newpage
     
 	\begin{minipage}{0.7\textwidth}
         $Q = \left\{ \; q_1, q_2, q_3 \; \right\} $ \quad
@@ -367,29 +481,29 @@
 	\end{flalign*}
    % \vspace{-1.6cm}
 
-	\begin{minipage}{0.5\textwidth}
-        \begin{tabular}{c|cc}
-            $ \delta' $                          & 0                                 & 1                         \\
+	\begin{minipage}[t]{0.5\textwidth}
+        \begin{tabular}[t]{c|cc}
+            $ \delta' $                         & a                                 & b                             \\
             \hline
-            $ \emptyset $                       & $\emptyset$                       & $\emptyset$               \\
-            $ \left\{ q_1 \right\} $            & $\left\{ q_1, q_2 \right\}$       & $\left\{ q_1 \right\}$    \\
-            $ \left\{ q_2 \right\} $            & $ \left\{ q_3 \right\}$           & $\emptyset$               \\
-            $ \left\{ q_3 \right\} $            & $\emptyset$                       & $\emptyset$               \\
-            $ \left\{ q_1, q_2 \right\} $       & $\left\{ q_1, q_2, q_3 \right\}$  & $\left\{ q_1 \right\}$    \\
-            $ \left\{ q_1, q_3 \right\} $       & $\left\{ q_1, q_2 \right\}$       & $\left\{ q_1 \right\}$    \\
-            $ \left\{ q_2, q_3 \right\} $       & $\left\{ q_3 \right\}$            & $\emptyset$               \\
-            $ \left\{ q_1, q_2, q_3 \right\} $  & $q_2$ & $q_2$
+            $ \emptyset $                       & $\emptyset$                       & $\emptyset$                   \\
+            $ \left\{ q_1 \right\} $            & $\emptyset$                       & $\left\{ q_2 \right\}$        \\
+            $ \left\{ q_2 \right\} $            & $\left\{ q_2, q_3 \right\}$       & $\left\{ q_3 \right\}$        \\
+            $ \left\{ q_3 \right\} $            & $\left\{ q_1, q_3 \right\}$       & $\emptyset$                   \\
+            $ \left\{ q_1, q_2 \right\} $       & $\left\{ q_1, q_3 \right\}$       & $\left\{ q_2, q_3 \right\}$   \\
+            $ \left\{ q_1, q_3 \right\} $       & $\left\{ q_1, q_3 \right\}$       & $\left\{ q_2 \right\}$        \\
+            $ \left\{ q_2, q_3 \right\} $       & $\left\{ q_1, q_2, q_3 \right\}$  & $\left\{ q_3 \right\}$        \\
+            $ \left\{ q_1, q_2, q_3 \right\} $  & $\left\{ q_1, q_2, q_3 \right\}$  & $\left\{ q_2, q_3 \right\}$
         \end{tabular}
 	\end{minipage}
-	\begin{minipage}{0.5\textwidth}
-        \begin{tabular}{c|cc}
-            $ \delta' $                          & 0                                 & 1                         \\
+	\begin{minipage}[t]{0.5\textwidth}
+        \begin{tabular}[t]{c|cc}
+            $ \delta' $                         & a                                 & b                             \\
             \hline
-            $ \left\{ q_1, q_3 \right\} $       & $\left\{ q_1, q_2 \right\}$       & $\left\{ q_1 \right\}$    \\
-            $ \left\{ q_2 \right\} $            & $ \left\{ q_3 \right\}$           & $\emptyset$               \\
-            $ \left\{ q_3 \right\} $            & $\emptyset$                       & $\emptyset$               \\
-            $ \left\{ q_2, q_3 \right\} $       & $\left\{ q_3 \right\}$            & $\emptyset$               \\
-            $ \left\{ q_1, q_2, q_3 \right\} $  & $q_2$                             & $q_2$                     \\
+            $ \left\{ q_1, q_3 \right\} $       & $\left\{ q_1, q_3 \right\}$       & $\left\{ q_2 \right\}$        \\
+            $ \left\{ q_2 \right\} $            & $\left\{ q_2, q_3 \right\}$       & $\left\{ q_3 \right\}$        \\
+            $ \left\{ q_2, q_3 \right\} $       & $\left\{ q_1, q_2, q_3 \right\}$  & $\left\{ q_3 \right\}$        \\
+            $ \left\{ q_1, q_2, q_3 \right\} $  & $\left\{ q_1, q_2, q_3 \right\}$  & $\left\{ q_2, q_3 \right\}$   \\
+            $ \left\{ q_3 \right\} $            & $\left\{ q_1, q_3 \right\}$       & $\emptyset$                   \\
             $ \emptyset $                       & $\emptyset$                       & $\emptyset$
         \end{tabular}
 	\end{minipage}
@@ -433,6 +547,7 @@
         %\draw[step=1cm,gray,very thin] (-2,0) grid (2,4);
     \end{tikzpicture}
 
+    %--- Page 5 --------------------------------------------------------------------
     \newpage
     
     \begin{flalign*}
@@ -480,8 +595,12 @@
         1) & $Q'=2^{\vert Q \vert}$                          & \\
         2) & \multicolumn{2}{l}{$ E\left( R \right) = \left\{ r \in Q \mid r \text{ erreichbar von } R \text{ mit } 0 \text{ oder mehr } \varepsilon \text{-Transitionen} \right\} $} \\
         3) & $\bigcup\limits_{r \in R} E \left( \delta\left(r_{i},\omega_i \right) \right) $ & \\
-        4) & $s = E\left( \left\{ S \right\} \right) $                                 & \\
+        4) & $s' = E\left( \left\{ S \right\} \right) $                                 & \\
         5) & $F'= \left\{ R \subseteq Q' \mid R \cap F \neq \emptyset \right\}$                                 &
     \end{tabular}
+
+    %--- Page 6 --------------------------------------------------------------------
+    \newpage
+
 
 \end{document}
