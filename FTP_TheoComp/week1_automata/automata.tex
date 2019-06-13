@@ -17,7 +17,7 @@
 \usepackage{ngerman,palatino,setspace}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[left=35mm,right=35mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[left=20mm,right=20mm,top=25mm,bottom=25mm]{geometry}
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{tikz}
@@ -162,17 +162,105 @@
 		5) & $F \subseteq Q$                                 & Menge akzeptierender Zustände
 	\end{tabular}
     
-    \begin{tabular}{cc}
-        \begin{tabular}{|ccc|c} 
-            \multicolumn{1}{c}{$q_1q_2$} & $\xrightarrow{0}$ & \multicolumn{1}{c}{} &\\  
-            \cline{1-3}
-            $q_1$ & $\xrightarrow{0}$ & $q_1$ & \multirow{2}{*}{$\cup = q_1$} \\
-            $q_2$ & $\xrightarrow{0}$ & $\emptyset$ \\
-            \cline{1-3}
-        \end{tabular} &  % starting bottom right of the top level table
-        aa
+    \begin{tabular}{ccc}
+        \begin{tabular}{l|ccc|c} 
+            \multicolumn{1}{c}{DFA:} & $q_1$    & $\xrightarrow{0}$ & \multicolumn{1}{c}{} &\\  
+            \cline{2-4}
+                                     & $q_1$    & $\xrightarrow{0}$ & $\left\{ q1,q2 \right\}$ \\
+            \cline{2-4}
+        \end{tabular} &
+        \begin{tabular}{l|ccc|c} 
+            \multicolumn{1}{c}{DFA:} & $q_1q_2$ & $\xrightarrow{0}$ & \multicolumn{1}{c}{} &\\  
+            \cline{2-4}
+            \multirow{2}{*}{NFA:}    & $q_1$    & $\xrightarrow{0}$ & $q_1$ & \multirow{2}{*}{$\cup = q_1$} \\
+                                     & $q_2$    & $\xrightarrow{0}$ & $\emptyset$ \\
+            \cline{2-4}
+        \end{tabular} &
+        \begin{tabular}{l|ccc|c} 
+            \multicolumn{1}{c}{DFA:} & $q_1q_2$ & $\xrightarrow{0}$ & \multicolumn{1}{c}{} &\\  
+            \cline{2-4}
+            \multirow{2}{*}{NFA:}    & $q_1$    & $\xrightarrow{0}$ & $q_1$ & \multirow{2}{*}{$\cup = q_1$} \\
+                                     & $q_2$    & $\xrightarrow{0}$ & $\emptyset$ \\
+            \cline{2-4}
+        \end{tabular} \\
+        \begin{tabular}{l|ccc|c} 
+            \multicolumn{1}{c}{DFA:} & $q_1q_2$ & $\xrightarrow{0}$ & \multicolumn{1}{c}{} &\\  
+            \cline{2-4}
+            \multirow{2}{*}{NFA:}    & $q_1$    & $\xrightarrow{0}$ & $q_1$ & \multirow{2}{*}{$\cup = q_1$} \\
+                                     & $q_2$    & $\xrightarrow{0}$ & $\emptyset$ \\
+            \cline{2-4}
+        \end{tabular} &
+        \begin{tabular}{l|ccc|c} 
+            \multicolumn{1}{c}{DFA:} & $q_1q_2$ & $\xrightarrow{0}$ & \multicolumn{1}{c}{} &\\  
+            \cline{2-4}
+            \multirow{2}{*}{NFA:}    & $q_1$    & $\xrightarrow{0}$ & $q_1$ & \multirow{2}{*}{$\cup = q_1$} \\
+                                     & $q_2$    & $\xrightarrow{0}$ & $\emptyset$ \\
+            \cline{2-4}
+        \end{tabular} &
+        \begin{tabular}{l|ccc|c} 
+            \multicolumn{1}{c}{DFA:} & $q_1q_2$ & $\xrightarrow{0}$ & \multicolumn{1}{c}{} &\\  
+            \cline{2-4}
+            \multirow{2}{*}{NFA:}    & $q_1$    & $\xrightarrow{0}$ & $q_1$ & \multirow{2}{*}{$\cup = q_1$} \\
+                                     & $q_2$    & $\xrightarrow{0}$ & $\emptyset$ \\
+            \cline{2-4}
+        \end{tabular}
     \end{tabular}
     
+    \begin{tabular}{l|ccc|cl|ccc|cl|ccc|c}
+        % 1. 3-Tabelle
+            \multicolumn{1}{c}{DFA:} & $q_1$    & $\xrightarrow{0}$ & \multicolumn{1}{c}{} & & 
+            \multicolumn{1}{c}{}     & $q_2$    & $\xrightarrow{0}$ & \multicolumn{1}{c}{} & & 
+            \multicolumn{1}{c}{}     & $q_3$    & $\xrightarrow{0}$ & \multicolumn{1}{c}{} &
+        \\  
+            \cline{2-4} \cline{7-9} \cline{12-14}
+            NFA:                     & $q_1$   & $\xrightarrow{0}$  & $q1,q2$     & $\cup = q1,q2 $      &
+                                     & $q_2$   & $\xrightarrow{0}$  & $q_3$       & $\cup = q_3$         &
+                                     & $q_3$   & $\xrightarrow{0}$  & $\emptyset$ & $\cup = \emptyset$
+        \\
+            \cline{2-4} \cline{7-9} \cline{12-14}
+            \multicolumn{1}{c}{} & & & \multicolumn{1}{c}{} & &
+            \multicolumn{1}{c}{} & & & \multicolumn{1}{c}{} & &
+            \multicolumn{1}{c}{} & & & \multicolumn{1}{c}{} &
+        \\
+        % 2. 3-Tabelle
+            \multicolumn{1}{c}{DFA:} & $q_1$    & $\xrightarrow{1}$ & \multicolumn{1}{c}{} & & 
+            \multicolumn{1}{c}{}     & $q_2$    & $\xrightarrow{1}$ & \multicolumn{1}{c}{} & & 
+            \multicolumn{1}{c}{}     & $q_3$    & $\xrightarrow{1}$ & \multicolumn{1}{c}{} &
+        \\  
+            \cline{2-4} \cline{7-9} \cline{12-14}
+            NFA:                     & $q_1$    & $\xrightarrow{1}$ & $q1,q2$  & $\cup = q1,q2$  &
+                                     & $q_2$    & $\xrightarrow{1}$ & $q_1$    & $\cup = q_1$    &
+                                     & $q_3$    & $\xrightarrow{1}$ & $q_1$    & $\cup = q_1$
+        \\
+            \cline{2-4} \cline{7-9} \cline{12-14}
+            \multicolumn{1}{c}{} & & & \multicolumn{1}{c}{} & &
+            \multicolumn{1}{c}{} & & & \multicolumn{1}{c}{} & &
+            \multicolumn{1}{c}{} & & & \multicolumn{1}{c}{} &
+        \\
+        % 2. 3-Tabelle
+            \multicolumn{1}{c}{DFA:} & $q_1$    & $\xrightarrow{0}$ & \multicolumn{1}{c}{} & & 
+            \multicolumn{1}{c}{}     & $q_1q_2$ & $\xrightarrow{0}$ & \multicolumn{1}{c}{} & & 
+            \multicolumn{1}{c}{}     & $q_1q_2$ & $\xrightarrow{0}$ & \multicolumn{1}{c}{} &
+        \\  
+            \cline{2-4} \cline{7-9} \cline{12-14}
+            \multirow{2}{*}{NFA:}    & $q_1$                    & $\xrightarrow{0}$
+                                     & $\left\{ q1,q2 \right\}$ & \multirow{2}{*}{$\cup = q_1$} &
+            \multirow{2}{*}{}        & $q_1$                    & $\xrightarrow{0}$
+                                     & $q_1$                    & \multirow{2}{*}{$\cup = q_1$} &
+            \multirow{2}{*}{}        & $q_1$                    & $\xrightarrow{0}$
+                                     & $q_1$                    & \multirow{2}{*}{$\cup = q_1$}
+        \\
+                                     & $q_2$    & $\xrightarrow{0}$ & $\emptyset$ & &
+                                     & $q_2$    & $\xrightarrow{0}$ & $\emptyset$ & &
+                                     & $q_2$    & $\xrightarrow{0}$ & $\emptyset$ &
+        \\
+            \cline{2-4} \cline{7-9} \cline{12-14}
+            \multicolumn{1}{c}{} & & & \multicolumn{1}{c}{} & &
+            \multicolumn{1}{c}{} & & & \multicolumn{1}{c}{} & &
+            \multicolumn{1}{c}{} & & & \multicolumn{1}{c}{} &
+        \\
+            
+    \end{tabular}
     
     \begin{tikzpicture}[node distance=2.5cm]
         % erste zeile
