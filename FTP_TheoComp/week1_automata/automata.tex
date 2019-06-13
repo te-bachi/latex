@@ -80,6 +80,11 @@
     innerbottommargin=0.1cm
 ]{mdmath}
 
+
+%-------------------------------------------------------------------------------
+% uline
+\usepackage{ulem}
+
 %-------------------------------------------------------------------------------
 % mycircle
 \newcommand{\mycircle}[1]{%
@@ -275,7 +280,7 @@
             \\
         \end{tabular} \\
         \begin{tabular}{c|cc}
-            $ \delta $                          & 0                                 & 1                         \\
+            $ \delta' $                          & 0                                 & 1                         \\
             \hline
             $ \emptyset $                       & $\emptyset$                       & $\emptyset$               \\
             $ \left\{ q_1 \right\} $            & $\left\{ q_1, q_2 \right\}$       & $\left\{ q_1 \right\}$    \\
@@ -333,6 +338,102 @@
         \end{tikzpicture}
 	\end{minipage}
 
+    \newpage
+    
+    
+	\begin{minipage}{0.7\textwidth}
+        $Q = \left\{ \; q_1, q_2, q_3 \; \right\} $ \quad
+        $\Sigma = \left\{ \; a, b \; \right\} $ \quad
+        $S = \left\{ \; q_1 \; \right\} $ \quad
+        $F = \left\{ \; q_1 \; \right\} $
+	\end{minipage}
+	\begin{minipage}{0.3\textwidth}
+        \begin{tikzpicture}
+            \node[state, accepting, initial above] (q1) {$q_1$};
+            \node[state, below left of=q1] (q2) {$q_2$};
+            \node[state, below right of=q1] (q3) {$q_3$};
+            \draw   (q1) edge[bend right, below left]   node{$\varepsilon$} (q3)
+                    (q1) edge[bend right, above left]   node{b}             (q2)
+                    (q2) edge[bend right, below]        node{a,b}           (q3)
+                    (q2) edge[loop left]                node{a}             (q2)
+                    (q3) edge[bend right, above right]  node{a}             (q1);
+        \end{tikzpicture}
+	\end{minipage}
+    \vspace{-0.4cm}
+    \begin{flalign*}
+	    Q' &= \mathcal{P}\left(Q\right) = 2^{\vert Q \vert} = \left\{ \; \emptyset, \left\{ q_1 \right\}, \left\{ q_2 \right\}, \left\{ q_3 \right\}, \left\{ q_1, q_2 \right\}, \left\{ q_1, q_3 \right\}, \left\{ q_2, q_3 \right\}, \left\{ q_1, q_2, q_3 \right\} \; \right\} & \\
+	    s' &= E\left( \left\{ S \right\} \right) = \left\{ \; q_1, q_3 \; \right\} & \\
+	    F' &= \left\{ R \subseteq Q' \mid R \cap F \neq \emptyset \right\} = \left\{ \; \left\{ \uline{q_1} \right\}, \left\{ \uline{q_1}, q_2 \right\}, \left\{ \uline{q_1}, q_3 \right\}, \left\{ \uline{q_1}, q_2, q_3 \right\} \; \right\} & \\
+	\end{flalign*}
+   % \vspace{-1.6cm}
+
+	\begin{minipage}{0.5\textwidth}
+        \begin{tabular}{c|cc}
+            $ \delta' $                          & 0                                 & 1                         \\
+            \hline
+            $ \emptyset $                       & $\emptyset$                       & $\emptyset$               \\
+            $ \left\{ q_1 \right\} $            & $\left\{ q_1, q_2 \right\}$       & $\left\{ q_1 \right\}$    \\
+            $ \left\{ q_2 \right\} $            & $ \left\{ q_3 \right\}$           & $\emptyset$               \\
+            $ \left\{ q_3 \right\} $            & $\emptyset$                       & $\emptyset$               \\
+            $ \left\{ q_1, q_2 \right\} $       & $\left\{ q_1, q_2, q_3 \right\}$  & $\left\{ q_1 \right\}$    \\
+            $ \left\{ q_1, q_3 \right\} $       & $\left\{ q_1, q_2 \right\}$       & $\left\{ q_1 \right\}$    \\
+            $ \left\{ q_2, q_3 \right\} $       & $\left\{ q_3 \right\}$            & $\emptyset$               \\
+            $ \left\{ q_1, q_2, q_3 \right\} $  & $q_2$ & $q_2$
+        \end{tabular}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+        \begin{tabular}{c|cc}
+            $ \delta' $                          & 0                                 & 1                         \\
+            \hline
+            $ \left\{ q_1, q_3 \right\} $       & $\left\{ q_1, q_2 \right\}$       & $\left\{ q_1 \right\}$    \\
+            $ \left\{ q_2 \right\} $            & $ \left\{ q_3 \right\}$           & $\emptyset$               \\
+            $ \left\{ q_3 \right\} $            & $\emptyset$                       & $\emptyset$               \\
+            $ \left\{ q_2, q_3 \right\} $       & $\left\{ q_3 \right\}$            & $\emptyset$               \\
+            $ \left\{ q_1, q_2, q_3 \right\} $  & $q_2$                             & $q_2$                     \\
+            $ \emptyset $                       & $\emptyset$                       & $\emptyset$
+        \end{tabular}
+	\end{minipage}
+
+    \begin{tikzpicture}[node distance=2.5cm]
+        % erste zeile
+        \node[state]                            (nul)       {$\emptyset$};
+        \node[state, accepting, right of=nul]   (q1)        {$q_1$};
+        \node[state, right of=q1]               (q2)        {$q_2$};
+        \node[state, accepting, right of=q2]    (q1q2)      {$q_1q_2$};
+        % zweite zeile
+        \node[state, below of=nul]              (q3)        {$q_3$};
+        \node[state, initial below, accepting, right of=q3]    (q1q3)      {$q_1q_3$};
+        \node[state, right of=q1q3]             (q2q3)      {$q_2q_3$};
+        \node[state, accepting, right of=q2q3]  (q1q2q3)    {$q_1q_2q_3$};
+
+        \draw[->,>=stealth,auto,semithick]
+                % erste zeile
+                (nul)   edge[loop left]             node{a,b}   ()
+                (q1)    edge[above]                 node{a}     (nul)
+                (q1)    edge[]                      node{b}     (q2)
+                (q2)    edge[]                      node{a}     (q2q3)
+                (q2)    edge[above left]            node{b}     (q3)
+                (q1q2)  edge[above left]            node{a,b}   (q2q3)
+                % zweite zeile
+                (q3)    edge[]                      node{b}     (nul)
+                (q3)    edge[]                      node{a}     (q1q3)
+                (q1q3)  edge[below right]           node{b}     (q2)
+                (q1q3)  edge [out=330,in=300,
+                              looseness=8,
+                              above right]          node{a}     (q1q3)
+                (q2q3)  edge[bend angle=15,
+                             bend left]             node{a}     (q1q2q3)
+                (q2q3)  .. controls (4,-4.5)
+                               and      (1,-4.5) .. node{b}     (q3)
+                (q1q2q3) edge[loop right]           node{a}     ()
+                (q1q2q3) edge[bend angle=15,
+                             bend left, below]      node{b}     (q2q3)
+        ;
+        %\draw (q1q2q3) .. controls (0,4) and (4,0) .. (q1);
+        %\draw[step=1cm,gray,very thin] (-2,0) grid (2,4);
+    \end{tikzpicture}
+
+    \newpage
     
     \begin{flalign*}
         \Sigma        & = \left\{ \; a, b, \ldots, z \; \right\} & \\
