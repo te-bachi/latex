@@ -89,6 +89,8 @@
     
     %--- Page 1 --------------------------------------------------------------------
     
+    % --- Sprache A ---
+
     $\Sigma = \left\{ \; a, b \; \right\} $ \quad
     $R = `` \left( \; ab \cup a \; \right)^* "{} $ \quad
     $\mathscr{L} = \llbracket \; \left( \; ab \cup a \; \right)^* \; \rrbracket $
@@ -132,12 +134,9 @@
             \draw   (aq1) edge[]        node{a} (aq2)
                     (bq1) edge[]        node{b} (bq2)
             ;
-            \draw[red, thick]
-                    ($(c1)+(\in,\in)$)   -- ($(c1)+(\out,\out)$)
-                    ($(c1)+(-\in,-\in)$) -- ($(c1)+(-\out,-\out)$)
-                    ($(c1)+(\in,-\in)$)  -- ($(c1)+(\out,-\out)$)
-                    ($(c1)+(-\in,\in)$)  -- ($(c1)+(-\out,\out)$)
-                    (aq2) edge[thick] node{$\boldeps$} (bq1)
+            \draw[red]
+                    \notaccept{c1}{\in}{\out}
+                    (aq2) edge[] node{$\boldeps$} (bq1)
             ;
         \end{tikzpicture}
     \end{minipage}
@@ -159,8 +158,8 @@
             \coordinate (x) at (aq2);
             \draw   (aq1) edge[]                        node{a}             (aq2)
                     (bq1) edge[]                        node{b}             (bq2)
-                    (aq2) edge[thick]                   node{$\boldeps$} (bq1)
-                    (aq3) edge[thick]                   node{a}             (aq4)
+                    (aq2) edge[]                        node{$\boldeps$} (bq1)
+                    (aq3) edge[]                        node{a}             (aq4)
             ;
             \draw[red, thick]
                     (aba) edge[bend left]               node{$\boldeps$} (aq1)
@@ -190,16 +189,16 @@
             \coordinate (x) at (bq2);
             \draw   (aq1) edge[]                        node{a}             (aq2)
                     (bq1) edge[]                        node{b}             (bq2)
-                    (aq2) edge[thick]                   node{$\boldeps$}    (bq1)
-                    (aq3) edge[thick]                   node{a}             (aq4)
+                    (aq2) edge[]                        node{$\boldeps$}    (bq1)
+                    (aq3) edge[]                        node{a}             (aq4)
                     (aba) edge[bend left,  below right] node{$\boldeps$}    (aq1)
                     (aba) edge[bend right, above right] node{$\boldeps$}    (aq3)
             ;
             %\draw[step=1cm,gray,very thin]
             %        (0, -3) grid (10,3);
             %;
-            \draw[red,thick]
-                    (start) edge[thick]                 node{$\boldeps$}    (aba);
+            \draw[red]
+                    (start) edge[]                      node{$\boldeps$}    (aba);
 
             \draw[rc]
                     let \p1 = (bq2),
@@ -221,13 +220,19 @@
             %;
         \end{tikzpicture}
     \end{minipage}
+
+    \quad
+    
+    \quad
+
+    % --- Sprache B ---
     
     $\Sigma = \left\{ \; 0, 1 \; \right\} $ \quad
     $R = `` \left( \; 0 \cup 1 \; \right)^* 10 "{} $ \quad
     $\mathscr{L} = \llbracket \; \left( \; 0 \cup 1 \; \right)^* 10 \; \rrbracket $
            
     \begin{minipage}{\pagein\textwidth}
-       $\left(ab \cup a\right)^*$:
+       $\left( \; 0 \cup 1 \; \right)^* 10$:
     \end{minipage}
     \begin{minipage}{\pageout\textwidth}
         \def\in{0.25}
@@ -238,18 +243,31 @@
             }
             \node[state,initial left,accepting]         (start) {};
             \node[state, right of=start]                (01)    {};
+            % oben
             \node[state, above right of=01]             (0q1)   {};
             \node[state, accepting, right of=0q1]       (0q2)   {};
+            % unten
             \node[state, below right of=01]             (1q1)   {};
             \node[state, accepting, right of=1q1]       (1q2)   {};
+            % rechts
+            \node[state, below right of=0q2]            (r1q1)  {};
+            \node[state, accepting, right of=r1q1]      (r1q2)  {};
+            \node[state, right of=r1q2]                 (r0q1)  {};
+            \node[state, accepting, right of=r0q1]      (r0q2)  {};
+            
             \coordinate (c1) at (0q2);
             \coordinate (c2) at (1q2);
-            %\coordinate (c3) at (aq2);
+            \coordinate (c3) at (r1q2);
             \draw   (0q1) edge[]                        node{0}             (0q2)
                     (1q1) edge[]                        node{1}             (1q2)
-                    (01) edge[bend left,  below right]  node{$\boldeps$}     (0q1)
-                    (01) edge[bend right, above right]  node{$\boldeps$}     (1q1)
-                    (start) edge[thick]                 node{$\boldeps$}    (aba)
+                    (01) edge[bend left,  below right]  node{$\boldeps$}    (0q1)
+                    (01) edge[bend right, above right]  node{$\boldeps$}    (1q1)
+                    (start) edge[]                      node{$\boldeps$}    (aba)
+                    (0q2) edge[bend left, below left]   node{$\boldeps$}    (r1q1)
+                    (1q2) edge[bend right, above left]  node{$\boldeps$}    (r1q1)
+                    (r1q1) edge[]                       node{1}             (r1q2)
+                    (r1q2) edge[]                       node{$\boldeps$}    (r0q1)
+                    (r0q1) edge[]                       node{0}             (r0q2)
             ;
 
             \draw[rc]
@@ -262,15 +280,17 @@
                         \p2 = (01)
                     in
                     (1q2) -- (\x1, \y1-22) -- (\x2,\y1-22) -- node[left]{$\boldeps$} (01);
+            \draw[rc]
+                    let \p1 = (start),
+                        \p2 = (r1q1)
+                    in
+                    (start) -- (\x1, \y1-80) -- (\x2,\y1-80) -- node[right]{$\boldeps$} (r1q1);
                     
             ;
             \draw[thick]
-                    ($(c1)+(\in,\in)$)   -- ($(c1)+(\out,\out)$)
-                    ($(c1)+(-\in,-\in)$) -- ($(c1)+(-\out,-\out)$)
-                    ($(c1)+(\in,-\in)$)  -- ($(c1)+(\out,-\out)$)
-                    ($(c1)+(-\in,\in)$)  -- ($(c1)+(-\out,\out)$)
+                    \notaccept{c1}{\in}{\out}
                     \notaccept{c2}{\in}{\out}
-                    (aq2) edge[thick] node{$\boldeps$} (bq1)
+                    \notaccept{c3}{\in}{\out}
             ;
             %\draw[->,>=stealth,red,thick]
             %        (bq2) .. controls (8,3)
