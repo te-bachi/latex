@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{blindtext}
+\usepackage{geometry}
+\usepackage{booktabs,
+            makecell, % for second example
+            tabularx}
+\renewcommand\theadfont{\itshape\normalsize}% for two lines column headers
+\renewcommand\theadgape{}
+\usepackage{siunitx}
+\usepackage[table]{xcolor}
+\usepackage{ragged2e}
+
+\renewcommand\tabularxcolumn[1]{>{\Centering}m{#1}}
+
+\newcommand\TEXT{%
+I want to draw the following table in Latex. In the first column the text should be left aligned. The text in all other cells should be centered.}% only for demo
+
+\begin{document}
+
+    \begin{table}[h]
+        \centering
+        \sisetup{table-align-text-post=false,
+                 table-space-text-post={\,\%},
+                 group-four-digits}
+        \caption[Material for SDS-PAGE]{Buffer compositions for SDS-PAGE.}
+        \label{tab:8899}
+        \begin{tabularx}{0.8\textwidth}{>{\raggedright}X
+                S[table-format=3.2]
+                S[table-format=3.2]
+                S[table-format=3.5]
+                l
+            }
+            \toprule &
+            {\thead{Resolving\\ gel}} & {\thead{Stacking\\ gel}} & 
+            {\thead{Laemmli\\ sample buffer}} & \thead{Running\\ buffer} \\
+
+            \midrule
+            Acrylamide                  & 10 \%     & 5 \%      &  {--}     &  {--} \\
+            Tris-HCl (1.5 M, pH 8.8)    & 25 \%     &  {--}     &  {--}     &  {--} \\
+            \addlinespace
+            Tris-HCl (1.0 M, pH 6.8)    &  {--}     & 12.5 \%   & 6.25 \%   &  {--} \\
+            SDS                         & 0.1 \%    & 0.1 \%    &  {--}     &  {--} \\
+            \addlinespace
+            Ammonium persulfate         & 0.1 \%    & 0.1 \%    &  {--}     &  {--} \\
+            TEMED                       & 0.04 \%   & 0.1 \%    &  {--}     &  {--} \\
+            \addlinespace
+            2-Mercaptoethanol           &  {--}     &  {--}     & 0.1 \%    &  {--} \\
+            Bromophenol blue            &  {--}     &  {--}     & 0.0005 \% &  {--} \\
+            \addlinespace
+            Glycerol                    &  {--}     &  {--}     & 10 \%     &  {--} \\
+            TRIS                        &  {--}     &  {--}     &  {--}     & 0.25 M\\
+            \addlinespace
+            Glycine                     &  {--}     &  {--}     &  {--}     & 1.92 M\\
+            pH                          &  {--}     &  {--}     &  {--}     & 8.3   \\
+            \addlinespace
+            H\textsubscript{2}O         & {Solvent} & {Solvent} & {Solvent} & Solvent\\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{l c S[table-format=10.9] S[retain-zero-exponent=true]}
+            \toprule
+            \multicolumn{4}{c}{SI Prefixes} \\
+            \addlinespace %\midrule
+            Prefix & Symbol & {Multiplication Factor} & {\dots\ in Scientific Notation} \\
+            \midrule
+            giga  & \si{\giga} & 1000000000 & e9 \\
+            mega  & \si{\mega} & 1000000    & e6 \\ 
+            kilo  & \si{\kilo} & 1000       & e3 \\
+            deca  & \si{\deka} & 10         & e1 \\
+            \rowcolor{gray!20}  -- & -- & 1 & e0 \\
+            deci  & \si{\deci} & 0.1        & e-1 \\
+            centi & \si{\centi}& 0.01       & e-2 \\
+            milli & \si{\milli}& 0.001      & e-3 \\
+            micro & \si{\micro}& 0.000001   & e-6 \\
+            nano  & \si{\nano} & 0.000000001& e-9 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+
+    \newpage
+    
+    \begin{table}[h]
+        \centering
+        \begin{tabularx}{\textwidth}{|m{4cm}*4{|X}|}\hline
+                       &  A  &   B &   C & D         \\\hline
+            \TEXT\TEXT & 123 & 123 & 123 & \TEXT\\\hline
+        \end{tabularx}
+    \end{table}
+
+    \begin{table}[h]
+        \begin{tabular}{|lp{2cm}m{2cm}b{2cm}r|}
+          \toprule
+          foo & long text in the first column
+          & long text in the second column
+          & even longer text in the third and second-last column
+          & bar \\
+          \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[h]
+        \renewcommand\tabularxcolumn[1]{m{#1}}
+        \centering
+        \begin{tabularx}{\textwidth}{|>{\RaggedRight}p{4cm}*{5}{|>{\Centering}X}|}
+            \hline
+                       &  A & B & C & D\\
+            \hline
+            \blindtext & 123 & 123 & 123 & 123\\
+            \hline
+        \end{tabularx}
+    \end{table}
+\end{document}

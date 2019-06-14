@@ -81,6 +81,13 @@
 \usepackage{stmaryrd}
 
 %-------------------------------------------------------------------------------
+% Better tables
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{ragged2e}
+\usepackage{array}
+
+%-------------------------------------------------------------------------------
 % Dokument
 \begin{document}
     
@@ -150,7 +157,7 @@
             ]
             \node[state, initial left, draw=red]                  (aba)   {};
             \node[state, above right of=aba]            (aq1)   {};
-            \node[state, accepting, right of=aq1]       (aq2)   {};
+            \node[state, right of=aq1]                  (aq2)   {};
             \node[state, right of=aq2]                  (bq1)   {};
             \node[state, accepting, right of=bq1]       (bq2)   {};
             \node[state, below right of=aba]            (aq3)   {};
@@ -304,6 +311,33 @@
     %--- Page 2 --------------------------------------------------------------------
     \newpage    
 
+    \textbf{Syntax und Semantik von regulären Ausdrücken (Regular Expression, RE)}
+
+    Sei $R$ ein $RE$. Dann $\mathscr{L} \llbracket R \rrbracket $ ist die Sprache,
+    die von $R$ beschrieben wird.
+
+    %\renewcommand\tabularxcolumn[1]{m{#1}}
+    %\setlength{\extrarowheight}{0.3cm}
+    %\newcolumntype{b}{l}
+    %\newcolumntype{s}{l}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{l|l|l}
+        \multicolumn{1}{l}{} &
+        \multicolumn{1}{l}{$R$ (Syntax)} &
+        \multicolumn{1}{l}{$\mathscr{L} \llbracket R \rrbracket$ (Semantik)} \\
+        \hline
+        1) & $a$ für $a \in \Sigma$                         & $\left\{ a \right\}$ \\
+        2) & $\emptyset$ (kein Zeichen)                     & $\emptyset$ \\
+        3) & $\varepsilon$ (leeres Wort)                    & $\left\{ \varepsilon \right\}$ \\
+        \hline
+        4) & $\left(R_1 \cup R_2\right)$                    & $\mathscr{L} \llbracket R_1 \rrbracket \cup
+                                                               \mathscr{L} \llbracket R_2 \rrbracket$ \\
+        5) & $\left(R_1 \cdot R_2\right)$                   & $\mathscr{L} \llbracket R_1 \rrbracket \cdot
+                                                               \mathscr{L} \llbracket R_2 \rrbracket$ \\
+        6) & $\left(R^*\right)$                             & $\left( \mathscr{L} \llbracket R_1
+                                                              \rrbracket \right)^*$
+    \end{tabular}
+    
     
 
     %--- Page 3 --------------------------------------------------------------------

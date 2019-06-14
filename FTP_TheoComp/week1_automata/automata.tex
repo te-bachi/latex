@@ -86,6 +86,10 @@
 \usepackage{ulem}
 
 %-------------------------------------------------------------------------------
+% blank symbol \fgeupbracket
+\usepackage{fge}
+
+%-------------------------------------------------------------------------------
 % mycircle
 \newcommand{\mycircle}[1]{%
     \tikz[baseline=(char.base)]\node[rectangle, rounded corners, draw=red, inner sep=2pt](char){#1} ;}
@@ -568,7 +572,12 @@
         \textrm{dog}, \textrm{cat},
         \textrm{dogdog}, \textrm{dogcat}, \ldots \; \right\} & \\
     \end{flalign*} \\
-    
+
+    %--- Page 6 --------------------------------------------------------------------
+    \newpage
+
+    \renewcommand{\arraystretch}{1.3}
+
     \textbf{Deterministic Finite Automaton (DFA):}\\
     Ein DFA ist ein 5-Tupel $(Q,\Sigma,\delta, s, F)$ wobei \\
     \hspace{-0.3cm}
@@ -601,8 +610,27 @@
         5) & $F'= \left\{ R \subseteq Q' \mid R \cap F \neq \emptyset \right\}$                                 &
     \end{tabular}
 
-    %--- Page 6 --------------------------------------------------------------------
-    \newpage
+    \textbf{Context-Free Grammar (CFG):}\\
+    Ein CFG ist ein 4-Tupel $(V,\Sigma,\delta, P, S)$ wobei \\
+    \hspace{-0.3cm}
+    \begin{tabular}{lll}
+        1) & $V$                                             & Alphabet der Nonterminalsymbole (NTS) \\
+        2) & $\Sigma$, $V \cap \Sigma = \emptyset$           & Alphabet der Terminalsymbole (TS) \\
+        3) & $P \in V \times \left(V \cup \Sigma \right)^*$  & Endliche Menge von Produktionen \\
+        4) & $s \in V$                                       & Startsymbol
+    \end{tabular}
 
-
+    \textbf{Turing Maschine (TM):}\\
+    Eine TM ist ein 7-Tupel $\left(Q,\Sigma, \Gamma, \delta, q_a, q_{acc}, q_{rej} \right)$ wobei \\
+    \hspace{-0.3cm}
+    \begin{tabular}{lll}
+        1) & $Q$                                            & Endliche Menge von Zuständen \\
+        2) & $\Sigma$, $\Sigma \subset \Gamma$              & Eingabealphabet \\
+        3) & $\Gamma$, $\fgeupbracket \in \Gamma$           & Bandalphabet (Blank $\fgeupbracket$) \\
+        4) & $\delta: Q' \times \Gamma \xrightarrow{\;\;} Q \times \Gamma \times \left\{ L, R \right\}$ & Startsymbol \\
+           & wobei $Q' = Q \setminus \left\{ q_{acc}, q_{rej} \right\}$ & \\
+        5) & $q_a \in Q$                                    & Startzustand \\
+        6) & $q_{acc} \in Q$                                & ein einziger akzeptierender Zustand  \\
+        7) & $q_{rej} \in Q$                                & ein einziger verwerfender Zustand \\
+    \end{tabular}
 \end{document}
