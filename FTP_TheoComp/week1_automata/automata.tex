@@ -327,15 +327,17 @@
                     (q1q3)  edge[above]             node{0}     (q1q2)
                     (q1q3)  edge                    node{1}     (q1)
                     (q2q3)  edge                    node{0}     (q3)
+                    % vierte zeile
+                    (q1q2q3) edge[loop right]       node{0}     ()
+            ;
+            \draw[->,>=stealth,auto,semithick]
                     %(q2q3)  to [out = -50, in = 0]
                     %          node{0}     (nul)
                     (q2q3)  .. controls (4,3)
-                               and      (3.5,0.5) .. node{1}    (nul)
-                    % vierte zeile
-                    (q1q2q3) edge[loop right]       node{0}     ()
+                               and      (3.5,0.5) .. node{1}    (nul);
+            \draw[->,>=stealth,auto,semithick]
                     (q1q2q3) .. controls (2,4)
-                                and      (0,3.5) .. node{1}     (q1)
-            ;
+                                and      (0,3.5) .. node{1}     (q1);
             %\draw (q1q2q3) .. controls (0,4) and (4,0) .. (q1);
             %\draw[step=1cm,gray,very thin] (-2,0) grid (2,4);
         \end{tikzpicture}
