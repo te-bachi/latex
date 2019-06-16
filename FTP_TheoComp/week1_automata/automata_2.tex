@@ -343,7 +343,188 @@
     %--- Page 3 --------------------------------------------------------------------
     \newpage
 
+    \begin{minipage}{\textwidth}
+        \def\in{0.12}
+        \def\out{0.27}
+        \def\inb{0.17}
+        \def\outb{0.32}
+        \def\spa{20}
+        \def\spb{35}
+        \def\spc{50}
+        \begin{tikzpicture}[]
+            \tikzset{
+                rc/.style={->,>=stealth,thick,rounded corners=2mm},
+                every state/.style={ % Sets the properties for each state
+                    semithick,
+                    fill=gray!10,
+                    inner sep=2pt,
+                    minimum size=2pt
+                },
+                node distance=1.25cm
+            }
+            \node[state, accepting,     initial left]   (q1)    {1};
+            \node[state,                right of=q1]    (q2)    {2};
+            \node[state, accepting,     right of=q2]    (q3)    {3};
+            \node[state, accepting,     right of=q3]    (q4)    {4};
+            \node[state,                right of=q4]    (q5)    {5};
+            \node[state, accepting,     right of=q5]    (q6)    {6};
+            \node[state, accepting,     right of=q6]    (q7)    {7};
+            \node[state,                right of=q7]    (q8)    {8};
+            \node[state, accepting,     right of=q8]    (q9)    {9};
+            \node[state,                right of=q9]    (q10)   {10};
+            \node[state, accepting,     right of=q10]   (q11)   {11};
+            \node[state, accepting,     right of=q11]   (q12)   {12};
+            \node[state,                right of=q12]   (q13)   {13};
+            \node[state, accepting,     right of=q13]   (q14)   {14};
+            
+            \coordinate (c1)    at (q1);
+            \coordinate (c3)    at (q3);
+            \coordinate (c6)    at (q6);
+            \coordinate (c7)    at (q7);
+            \coordinate (c9)    at (q9);
+            \coordinate (c11)   at (q11);
+            \draw   (q1)    edge    node{$\boldeps$}    (q2)
+                    (q2)    edge    node{1}             (q3)
+                    (q3)    edge    node{$\boldeps$}    (q4)
+                    (q4)    edge    node{$\boldeps$}    (q5)
+                    (q5)    edge    node{$1$}           (q6)
+                    (q6)    edge    node{$\boldeps$}    (q7)
+                    (q7)    edge    node{$\boldeps$}    (q8)
+                    (q8)    edge    node{$0$}           (q9)
+                    (q9)    edge    node{$\boldeps$}    (q10)
+                    (q10)   edge    node{$1$}           (q11)
+                    (q11)   edge    node{$\boldeps$}    (q12)
+                    (q12)   edge    node{$\boldeps$}    (q13)
+                    (q13)   edge    node{$0$}           (q14)
+            ;
+
+            % Forward
+            \draw[rc]
+                    let \p1 = (q1),
+                        \p2 = (q4)
+                    in
+                    (q1) -- (\x1, \y1-\spa) -- (\x1+54, \y1-\spa) node[below]{$\boldeps$} -- (\x2,\y1-\spa) -- (q4);
+            \draw[rc]
+                    let \p1 = (q7),
+                        \p2 = (q10)
+                    in
+                    (q7) -- (\x1, \y1-\spa) -- (\x1+54, \y1-\spa) node[below]{$\boldeps$} -- (\x2,\y1-\spa) -- (q10);
+            % Backward
+            \draw[rc]
+                    let \p1 = (q3),
+                        \p2 = (q2)
+                    in
+                    (q3) -- (\x1, \y1+\spa) -- (\x1-17, \y1+\spa) node[above]{$\boldeps$} -- (\x2,\y1+\spa) -- (q2);
+            \draw[rc]
+                    let \p1 = (q9),
+                        \p2 = (q8)
+                    in
+                    (q9) -- (\x1, \y1+\spa) -- (\x1-17, \y1+\spa) node[above]{$\boldeps$} -- (\x2,\y1+\spa) -- (q8);
+            \draw[rc]
+                    let \p1 = (q14),
+                        \p2 = (q13)
+                    in
+                    (q14.100) -- (\x1-5, \y1+\spa) -- (\x1-17, \y1+\spa) node[above]{$\boldeps$} -- (\x2,\y1+\spa) -- (q13);
+            \draw[rc]
+                    let \p1 = (q14),
+                        \p2 = (q5)
+                    in
+                    (q14.70) -- (\x1+3, \y1+\spc) -- (\x1-195, \y1+\spc) node[above]{$\boldeps$} -- (\x2-4,\y1+\spc) -- (q5.120);
+            \draw[rc]
+                    let \p1 = (q12),
+                        \p2 = (q5)
+                    in
+                    (q12) -- (\x1, \y1+\spb) -- (\x1-124, \y1+\spb) node[above]{$\boldeps$} -- (\x2+4,\y1+\spb) -- (q5.60);
+                    
+            \draw[thick]
+                    \notaccept{c1}{\in}{\out}
+                    \notaccept{c3}{\in}{\out}
+                    \notaccept{c6}{\in}{\out}
+                    \notaccept{c7}{\in}{\out}
+                    \notaccept{c9}{\in}{\out}
+                    \notaccept{c11}{\inb}{\outb}
+            ;
+        \end{tikzpicture}
+    \end{minipage}
 	
+
+    \begin{minipage}{\textwidth}
+        \def\spa{16}
+        \def\spb{35}
+        \def\spc{50}
+        \begin{tikzpicture}[]
+            \tikzset{
+                rc/.style={thick, densely dashed},
+                every state/.style={ % Sets the properties for each state
+                    semithick,
+                    fill=gray!10,
+                    inner sep=2pt,
+                    minimum size=2pt
+                },
+                node distance=1.25cm
+            }
+            % 1. Line
+            \node[state,                initial left]   (q1)    {1};
+            \node[state,                right of=q1]    (q2)    {2};
+            \node[state,                right of=q2]    (q4)    {4};
+            \node[state,                right of=q4]    (q5)    {5};
+            % 2. Line
+            \node[state,                below of=q2]    (0q3)   {3};
+            \node[state,                right of=0q3]   (0q4)   {4};
+            \node[state,                right of=0q4]   (0q5)   {5};
+            \node[state,                left of=0q3]    (0q2)   {2};
+            % 3. Line
+            \node[state,                below of=0q5]   (1q6)   {6};
+            \node[state,                right of=1q6]   (1q7)   {7};
+            \node[state,                right of=1q7]   (1q8)   {8};
+            \node[state,                right of=1q8]   (1q10)  {10};
+            % 4. Line
+            \node[state,                below of=1q10]  (1q11)  {11};
+            \node[state, accepting,     right of=1q11]  (1q12)  {12};
+            \node[state,                right of=1q12]  (1q13)  {13};
+            \node[state,                left of=1q11]   (1q5)  {5};
+            
+            \draw   
+                    % 1. Line
+                    (q1)    edge    node{$\boldeps$}    (q2)
+                    (q2)    edge    node{$\boldeps$}    (q4)
+                    (q4)    edge    node{$\boldeps$}    (q5)
+                    % 2. Line
+                    (q2)    edge                        (0q3)
+                    (0q2)   edge    node{$\boldeps$}    (0q3)
+                    (0q3)   edge    node{$\boldeps$}    (0q4)
+                    (0q4)   edge    node{$\boldeps$}    (0q5)
+                    % 3. Line
+                    (0q5)   edge                        (1q6)
+                    (1q6)   edge    node{$\boldeps$}    (1q7)
+                    (1q7)   edge    node{$\boldeps$}    (1q8)
+                    (1q8)   edge    node{$\boldeps$}    (1q10)
+                    % 3. Line
+                    (1q10)  edge                        (1q11)
+                    (1q5)   edge    node{$\boldeps$}    (1q11)
+                    (1q11)  edge    node{$\boldeps$}    (1q12)
+                    (1q12)  edge    node{$\boldeps$}    (1q13)
+            ;
+            % 1. Character: 0
+            \draw[rc]
+                    let \p1 = (q1)
+                    in
+                    (\x1-30, \y1-\spa) node[left]{$0$} -- (\x1+300,\y1-\spa);
+            % 2. Character: 1
+            \draw[rc]
+                    let \p1 = (q1),
+                        \p2 = (0q3)
+                    in
+                    (\x1-30, \y2-\spa) node[left]{$1$} -- (\x1+300,\y2-\spa);
+            % 3. Character: 1
+            \draw[rc]
+                    let \p1 = (q1),
+                        \p2 = (1q6)
+                    in
+                    (\x1-30, \y2-\spa) node[left]{$1$} -- (\x1+300,\y2-\spa);
+
+        \end{tikzpicture}
+    \end{minipage}
     %--- Page 4 --------------------------------------------------------------------
     \newpage
     
