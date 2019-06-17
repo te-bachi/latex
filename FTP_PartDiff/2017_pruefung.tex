@@ -1,0 +1,187 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% Für enumerate
+\usepackage{enumitem}
+\setlist[enumerate]{
+    wide=0pt,
+    leftmargin=*,
+    itemsep=-1ex,
+    parsep=2ex,
+    labelsep=1ex,
+    label=\alph*)
+}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\title{Prüfung 2017}
+\author{}
+\date{}
+\begin{document}
+    \maketitle
+    \vspace{-25mm}
+    \section*{Grundlagen / Analytisch}
+	\subsection*{Aufgabe 1}
+
+    Sei $0 < x_0 < 1 $ gegeben und $\Omega$ das Gebiet
+    \begin{align}
+        \Omega = \left\{\left(x, y\right) \mid x_0 < x < 1 \land 0 < y < 1 \right\}
+    \end{align}
+    Die Funktion $u$ erfüllt in $\Omega$ die partielle Differentialgleichung
+    \begin{align}
+        \frac{1}{x^2}\frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} = 1
+    \end{align}
+    und die Randbedingung
+    \begin{align*}
+        u{\left(x_0, y \right)} = \sin{\left(y\right)}, \quad 0 < y < 1.
+    \end{align*}
+    \begin{enumerate}
+        \item Finden Sie eine Funktion $u$ mit dieser Eigenschaft.
+        \item Ist die Lösung $u$ durch die gegebenen Randbedingungen eindeutig bestimmt?
+    \end{enumerate}
+
+	\subsection*{Aufgabe 2}
+
+    Gegeben ist die Differentialgleichung
+    \begin{align}
+        \frac{\partial^3 u}{\partial t^3} + \frac{\partial u}{\partial x} = 0
+    \end{align}
+    auf dem Gebiet
+    \begin{align*}
+        \Omega = \left\{\left(x, t\right) \mid t > 0 \land x > 0 \right\}
+    \end{align*}
+    mit Randbedingungen
+    \begin{align}
+        \begin{split}
+            u{\left(x,  0\right)} &= 0, \quad 
+                \frac{\partial u}{\partial t}{\left(x,  0\right)} = 0, \quad 
+                \frac{\partial^2 u}{\partial t^2}{\left(x,  0\right)} = 1, \\
+            u{\left(0,  t\right)} &= 1.
+        \end{split}
+    \end{align}
+    \begin{enumerate}
+        \item Führen Sie Laplace-Transformation nach der Variable $t$ durch und stellen Sie
+              eine Differentialgleichung für $\mathcal{L} u{\left( x, s \right)}$ samt
+              Anfangsbedingung auf.
+        \item Bestimmen Sie die Funktion $\mathcal{L} u{\left( x, s \right)}$.
+    \end{enumerate}
+    \textit{Hinweis.} \quad Die gewöhnliche Differentialgleichung $y' + ay = b$ mit Anfangsbedingung $y \left(0\right) = c$ hat die allgemeine Lösung
+    \begin{align*}
+        y \left(x\right) = \left( c - \frac{b}{a} \right) \mathrm{e}^{-ax} + \frac{b}{a}.
+    \end{align*}
+
+    \newgeometry{left=20mm,right=20mm,top=25mm,bottom=25mm}
+    \newpage
+    
+	\subsection*{Aufgabe 3}
+
+    Auf dem Gebiet
+    \begin{align*}
+        \Omega = \left\{\left(x, y\right) \mid 1 < x^2 + y^2 \right\}
+    \end{align*}
+    soll die folgende partielle Differentialgleichung in Polarkoordinaten
+    \begin{align}
+        \frac{\partial^2 u}{\partial r^2} + \frac{\partial^2 u}{\partial \varphi^2} = 0
+    \end{align}
+    gelöst werden. Auf welchem Teil des Randes $x^2 + y^2 = 1$ müssen Randwerte vorgegeben werden,
+    damit die Lösung $u{\left(x,  y\right)}$ für Punkte mit $x > 0$ und $x^2 + y^2 = 4$ eindeutig bestimmt ist?
+
+    \subsection*{Aufgabe 4}
+
+    Gegeben ist die nichtlineare partielle Differentialgleichung zweiter Ordnung
+    \begin{align}
+        \left( 1 + \left( \frac{\partial u}{\partial y} \right)^2 \right) \frac{\partial^2 u}{\partial x^2} -
+        2 \frac{\partial u}{\partial y} \frac{\partial u}{\partial x} \frac{\partial^2 u}{\partial x \partial y} +
+        \left( 1 + \left( \frac{\partial u}{\partial x} \right)^2 \right) \frac{\partial^2 u}{\partial y^2} = 0
+    \end{align}
+    für die Funktion $u{\left(x,  y\right)}$ auf dem Gebiet $\Omega = \mathbb{R}^2$. Die Funktion $u$ soll zudem
+    die Eigenschaft
+    \begin{align*}
+        u{\left(0, 0 \right)} = 0 \quad \text{und} \quad \operatorname{grad}{u{\left(0, 0\right)}} = 0
+    \end{align*}
+    haben.
+    \begin{enumerate}
+        \item Führen Sie Separation durch mit Hilfe eines Ansatzes der Form
+              $u{\left(x,  y\right)} = X{\left(x\right)} + Y{\left(y\right)}$ und stellen
+              Sie Differentialgleichung und Anfangsbedingungen für $X{\left(x\right)}$ und
+              $Y{\left(y\right)}$ auf.
+        \item Legen die Vorgaben die Separationslösung eindeutig fest?
+    \end{enumerate}
+
+    \newpage
+    
+    \section*{Numerik}
+
+    \subsection*{Aufgabe 5}
+    Die reelle Funktion $u{\left(x,  y\right)}$ ist auf dem Quadrat
+    \begin{align*}
+        \Omega = \left[ 0, 1 \right] \times \left[ 0, 1 \right]
+    \end{align*}
+    definiert. Sie erfüllt im Inneren von $\Omega$ die Bipotentialgleichung
+    \begin{align*}
+        \Delta{\left( \Delta u{\left(x,  y\right)} \right)} = 4
+    \end{align*}
+    und auf dem Rand von $\Omega$ die Bedingung
+    \begin{align*}
+        u{\left(x,  y\right)} = 0
+    \end{align*}
+    und
+    \begin{align*}
+        u{\left(x,  y\right)} =
+        \setlength{\arraycolsep}{0pt}
+        \renewcommand{\arraystretch}{1.2}
+        \left\{
+            \begin{array}{l @{\quad} l r l}
+                x^2-x & \text{falls\quad} & y &{}= 0 \\
+                x^2-x & \text{falls\quad} & y &{}= 1 \\
+                y^2-y & \text{falls\quad} & x &{}= 0 \\
+                y^2-y & \text{falls\quad} & x &{}= 1
+            \end{array}
+        \right.
+    \end{align*}
+    Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten von $\Omega$
+    \begin{align*}
+        \begin{pmatrix}
+            ^1/_3 \\
+            ^1/_3
+        \end{pmatrix},\quad
+        \begin{pmatrix}
+            ^2/_3 \\
+            ^1/_3
+        \end{pmatrix},\quad
+        \begin{pmatrix}
+            ^1/_3 \\
+            ^2/_3
+        \end{pmatrix},\quad
+        \begin{pmatrix}
+            ^2/_3 \\
+            ^2/_3
+        \end{pmatrix}
+    \end{align*}
+    Benutzen Sie hierzu geeignete Finite Differenzen.
+
+    \subsection*{Aufgabe 5}
+
+\end{document}
