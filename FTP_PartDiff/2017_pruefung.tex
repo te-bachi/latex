@@ -119,7 +119,7 @@
     für die Funktion $u{\left(x,  y\right)}$ auf dem Gebiet $\Omega = \mathbb{R}^2$. Die Funktion $u$ soll zudem
     die Eigenschaft
     \begin{align*}
-        u{\left(0, 0 \right)} = 0 \quad \text{und} \quad \operatorname{grad}{u{\left(0, 0\right)}} = 0
+        u{\left(0, 0 \right)} = 0 \qquad \text{und} \qquad \operatorname{grad}{u{\left(0, 0\right)}} = 0
     \end{align*}
     haben.
     \begin{enumerate}
@@ -164,24 +164,106 @@
     Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten von $\Omega$
     \begin{align*}
         \begin{pmatrix}
-            ^1/_3 \\
-            ^1/_3
+            {^1/_3} \\ {^1/_3}
         \end{pmatrix},\quad
         \begin{pmatrix}
-            ^2/_3 \\
-            ^1/_3
+            {^2/_3} \\ {^1/_3}
         \end{pmatrix},\quad
         \begin{pmatrix}
-            ^1/_3 \\
-            ^2/_3
+            {^1/_3} \\ {^2/_3}
         \end{pmatrix},\quad
         \begin{pmatrix}
-            ^2/_3 \\
-            ^2/_3
+            {^2/_3} \\ {^2/_3}
         \end{pmatrix}
     \end{align*}
     Benutzen Sie hierzu geeignete Finite Differenzen.
 
-    \subsection*{Aufgabe 5}
+    \subsection*{Aufgabe 6}
+    Die reelle Funktion $u{\left(x,  t\right)}$ ist auf dem Streifen
+    \begin{align*}
+        \Omega = \left[ 0, 1 \right] \times \left[ 0, \infty \right)
+    \end{align*}
+    definiert. Sie erfüllt im Inneren von $\Omega$ die Wärmeleitungsgleichung
+    \begin{align*}
+        u_t{\left(x,  t\right)} = u_{xx}{\left(x,  t\right)}
+    \end{align*}
+    und auf dem Rand von $\Omega$ die Bedingung
+    \begin{align*}
+        u{\left(0,  t\right)} = 1 \qquad \text{und} \quad u{\left(1,  t\right)} = 2
+    \end{align*}
+    sowie
+    \begin{align*}
+        u{\left(x,  0\right)} = 1 + 2 \cdot x - x^2
+    \end{align*}
+    Benutzen Sie hierzu das elementare Implizite Finite Differenzen Verfahren mit Schrittweite
+    \begin{align*}
+        \Delta{x} = {^1/_3} \qquad \text{und} \qquad \Delta{t} = {^1/_{12}}
+    \end{align*}
+
+    \subsection*{Aufgabe 7}
+    Die reelle Funktion $u{\left(x,  y\right)}$ ist auf dem Quadrat
+    \begin{align*}
+        \Omega = \left[ 0, 1 \right] \times \left[ 0, 1 \right]
+    \end{align*}
+    definiert. Sie erfüllt im Inneren von $\Omega$ die Laplacegleichung
+    \begin{align*}
+        \Delta u{\left(x,  y\right)} = 0
+    \end{align*}
+    und auf dem Rand von $\Omega$ die Randbedingung
+    \begin{align*}
+        u{\left(x,  y\right)} =
+        \setlength{\arraycolsep}{0pt}
+        \renewcommand{\arraystretch}{1.2}
+        \left\{
+            \begin{array}{l @{\quad} l r l}
+                0 & \text{falls\quad} & y &{}= 0 \\
+                x & \text{falls\quad} & y &{}= 1 \\
+                0 & \text{falls\quad} & x &{}= 0 \\
+                y & \text{falls\quad} & x &{}= 1
+            \end{array}
+        \right.
+    \end{align*}
+    Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten
+    \begin{align*}
+        \tilde{u}_1 = \tilde{u}{\begin{pmatrix}
+            {^1/_5} \\ {^1/_5}
+        \end{pmatrix}},\quad
+        \tilde{u}_2 = \tilde{u}{\begin{pmatrix}
+            {^3/_5} \\ {^1/_5}
+        \end{pmatrix}},\quad
+        \tilde{u}_3 = \tilde{u}{\begin{pmatrix}
+            {^1/_5} \\ {^3/_5}
+        \end{pmatrix}},\quad
+        \tilde{u}_4 = \tilde{u}{\begin{pmatrix}
+            {^3/_5} \\ {^3/_5}
+        \end{pmatrix}}
+    \end{align*}
+    Benutzen Sie hierzu Finite Volumina nach Voronoi.
+
+    \subsection*{Aufgabe 8}
+    Die reelle Funktion $u{\left(x\right)}$ ist auf dem Intervall
+    \begin{align*}
+        \Omega = \left[ 0, 1 \right]
+    \end{align*}
+    definiert. Sie erfüllt im Inneren von $\Omega$ die Differentialgleichung
+    \begin{align*}
+        u''{\left(x\right)} + u{\left(x\right)} = 1
+    \end{align*}
+    und auf dem Rand von $\Omega$ die Randbedingung
+    \begin{align*}
+        u{\left( 0 \right)} = 0, \qquad u{\left( 1 \right)} = 1
+    \end{align*}
+    Berechnen Sie $a_1$ und $a_2$ im Approximationsansatz für $u$
+    \begin{align*}
+        \tilde{u} = v_0{\left(x\right)} + a_1 \cdot v_1{\left(x\right)} + a_2 \cdot v_2{\left(x\right)}
+    \end{align*}
+    mit
+    \begin{align*}
+        v_0{\left(x\right)} = x, \quad v_1{\left(x\right)} = x^2 - x, \quad v_2{\left(x\right)} = x^3 - x^2.
+    \end{align*}
+    Benutzen Sie hierzu die Methode der Gewichteten Residuen mit Gewichtsfunktion
+    \begin{align*}
+        w_1{\left(x\right)} = 1, \quad w_2{\left(x\right)} = x
+    \end{align*}
 
 \end{document}
