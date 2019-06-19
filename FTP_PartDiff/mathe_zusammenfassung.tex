@@ -1,0 +1,74 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers,
+    fleqn
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% Für enumerate
+\usepackage{enumitem}
+\setlist[enumerate]{
+    wide=0pt,
+    leftmargin=*,
+    itemsep=-1ex,
+    parsep=2ex,
+    labelsep=1ex,
+    label=\alph*)
+}
+
+
+%-------------------------------------------------------------------------------
+% 
+\usepackage{xparse}
+% 1: Subscription  (default: '')
+% 2: Funktion Name (default: 'f')
+% 3: Argument      (default: 'x')
+% \fx         = f(x)
+% \fx[1]      = f_1(x)
+% \fx[][u]    = u(x)
+% \fx[][u][x] = u(x)
+% \fx[][f][u] = f(u)
+\NewDocumentCommand{\fx}{ O{} O{f} O{x} }{{#2_{#1}{\left( #3 \right)}}}
+\NewDocumentCommand{\dfx}{ O{} O{f} O{x} }{{#2'_{#1}{\left( #3 \right)}}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+
+    \subsection*{Ableitungsregeln}
+    
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{lll}
+        Faktorregel  & $ y = C \cdot \fx$                   & $ y' = C \cdot \dfx $ \\
+                     & $ y = 5 \cdot x^2 $                  & $ y' = 5 \cdot 2 \cdot x$ \\
+        Summenregel  & $ y = \fx[1] + \ldots +  \fx[n] $    & $ y' = \dfx[1] + \ldots + \dfx[n] $\\
+                     & $ y = x^2 + x^3$                     & $ y' = 2 \cdot x + 3 \cdot x^2$ \\
+        Produktregel & $ y = \fx[][u] \cdot \fx[][v] $      & $ y' = \fx[][u] \cdot \dfx[][v] + \dfx[][u] \cdot \fx[][v] $ \\
+                     & $ y = x^2 \cdot e^{2x}  $            & $ y' = x^2 \cdot 2\cdot e^{2x} + 2\cdot x \cdot e^{2x} $ \\
+                     &                                      & $ y' = {\left( 2x^2 + 2x \right)} e^{2x} $ \\
+        Kettenregel  & $ y = f\kl{u\kl{x}} $                & $ y' = \dfx[][f][u] \cdot \dfx[][u][x] $ \\
+                     & $ y = f\kl{x^2 - 5}, \; f = x^2 $    & $ y' = 2 u \cdot 2x = 4x \kl{x^2 - 5} $ \\
+                     & $ y = \ln\kl{1 + x^2} $              & $ y' = \frac{1}{u} \cdot 2x = \frac{2x}{1 + x^2} $ \\
+    \end{tabular} \\
+\end{document}
