@@ -1,0 +1,168 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=20mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\renewcommand{\bf}[1]{\textbf{#1}}
+\renewcommand{\it}[1]{\textit{#1}}
+\newcommand{\bi}[1]{\textit{\textbf{#1}}}
+
+
+%-------------------------------------------------------------------------------
+% itemize
+\usepackage{enumitem}
+
+
+%-------------------------------------------------------------------------------
+% uline
+\usepackage{ulem}
+
+
+%-------------------------------------------------------------------------------
+% tabular: blocksatz
+%\usepackage{array}
+%\newcolumntype{v}[1]{>{\raggedright\hspace{0pt}}p{#1}}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+
+    \section{Smart Antenna Systems}
+
+    \subsection{Introduction}
+
+	\begin{minipage}{0.5\textwidth}
+        omnidirectional vs. directive \\
+        radiation antenna \\
+        radiation pattern \\
+        radiation energy \\
+        beamforming
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+        antenna gain \\
+        channel capacity \\
+        space division multiple access (SDMA) \\
+        lobe, single vs. multiple lobes \\
+        far field vs. near field
+	\end{minipage} \\
+    combine several single antenna elements to \bi{antenna array} \\
+    control \bi{amplitude} or \bi{phase} of each antenna: \bi{smart antenna} \\
+    passive vs. active antennas in transmitting \bi{and} receiving case \\
+    distinguished (unterschieden) between: \\
+    %\begin{itemize}[topsep=-1cm,itemsep=-0.5cm,label=-,leftmargin=*]
+    %    \item \bi{switched beams}
+    %    \item \bi{adaptive arrays}
+    %\end{itemize}
+    %\vspace{0.7cm}
+    % \tabularnewline statt \\
+    \setlength{\tabcolsep}{0cm}
+    \begin{tabular}{p{5cm}p{8.5cm}}
+        \bi{switched beams}     & setup number of different patterns \\
+        \bi{adaptive arrays}    & optimize \bi{receiving signal quality} by
+                                  \bi{smart signal processing algorithms} \\
+                                & determine (bestimmen) \bi{direction of arrival (DOA)}
+                                  of the receiving signal \\
+                                & - to perform (durchführen) \bi{beamforming} \\
+                                & - to track antenna beam on target
+    \end{tabular} \\
+    phased array: working principle \\
+    \begin{tabular}{p{5cm}p{8.5cm}}
+        \bi{all individual radiators}   & - fed by single signal \\
+                                        & - equal phase \\
+                                        & - identical frequency \\
+                                        & - symmetry axis \\
+                                        & - perpendicular (senkrecht) to broadside \\
+                                        & - signal contribution \\
+                                        & - sum up constructively
+    \end{tabular} \\
+    relative phase: change between different \bi{radiation elements} by a defined amount \\
+    signal contribution (Beitrag zum Gesamtsignal): \\
+    sum up constructively towards another \bi{direction} \\
+    choosing individual \bi{amplitude} and \bi{phase}: \\
+    realize \bi{two} or \bi{more} \bi{main lobes} \\
+    distinguished (unterschieden) by their \uline{\bi{different}} \bi{direction of arrival (DOA)} \\
+    adaptive beamforming \\\
+    direct line-of-sight path \\
+    relay station \\
+    path loss (Pfadverlust, Dämpfung) \\
+    gain [dB] (Verstärkung): relative measurement: intensity \\
+
+    phased array: working principle \\
+    \begin{tabular}{rrp{5cm}}
+        -\bi{3} dB  &\quad\;& $\frac{1}{2}$ power\\
+        \bi{3} dB   &\quad\;& $2$ x power\\
+        \bi{10} dB  &\quad\;& $10$ x power \\
+        \bi{20} dB  &\quad\;& $100$ x power
+    \end{tabular} \\
+    How much \bi{more} signal an antenna can receive \\
+    narrow vs. wide/broad \\
+    narrow radiation pattern \\
+    attenuation (Abschwächung)
+
+    %-------------------------------------------------------------------------------
+    \newpage
+    \subsection{The phased array principle}
+
+	\begin{minipage}[t]{0.5\textwidth}
+        field distribution \\
+        radiated field \\
+        analyze situation: \\
+        \bi{Huygens principle} \\
+        quasi-optical wave propagation \\
+        transmitter to receiver: \\
+        path like ray \\ 
+        coherent signal \\
+        emitted from several positions
+	\end{minipage}
+	\begin{minipage}[t]{0.5\textwidth}
+        number of antennas $n$ \\
+        sender position, source $\vec{x}_n$ \\
+        receiver position, target $\vec{y}$ \\
+        phase shift $\Delta\varphi$ \\
+        distance $d = \vert \vec{x}_n - \vec{y} \vert$\\
+        complex amplitude, weight $\underline{\omega}_n$ \\
+        directivity of $n^{\text{th}}$ source $g_n$
+	\end{minipage}
+
+    \begin{tabular}{p{2.8cm}p{10cm}}
+        $n$, $N$                                & number of antennas, transmitters \\
+        $\vec{x}_n$                             & sender position, source \\
+        $\vec{y}$                               & receiver position, target \\
+        $\Delta\varphi$                         & phase shift \\
+        $d = \vert \vec{x}_n - \vec{y} \vert$   & distance \\
+        $\underline{\omega}_n$                  & complex amplitude, weight \\
+        $g_n\left(\phi\right)$                  & directivity of $n^{\text{th}}$ source \\
+        $ d \leqslant \lambda/2$                & antenna spacing to represent $-1 \leqslant u \leqslant 1$,
+                                                  $u = \sin\left(\phi\right)$ \\
+        $ \underline{g}_g\left(\cdot\right)$    & group pattern \\
+        $ \underline{g}_e\left(\cdot\right)$    & element pattern \\
+        $ L$                                    & total array length, $ L = \left(N - 1\right) \cdot d \gg \lambda $ \\
+        $ \phi$                                 & direction of wave front \\
+        $ \phi_p$                               & peak \\
+        $ \phi_z$                               & zeros
+    \end{tabular} \\
+
+    
+    
+
+\end{document}}
