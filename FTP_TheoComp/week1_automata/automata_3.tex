@@ -18,11 +18,12 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[left=20mm,right=20mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[svgnames]{xcolor}
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{tikz}
 
-\usetikzlibrary{automata, positioning, arrows, shapes}
+\usetikzlibrary{automata, positioning, arrows, shapes, calc}
 
 %{
 %\tikzset{
@@ -52,6 +53,13 @@
 }
 
 %-------------------------------------------------------------------------------
+% New Font package
+%\usepackage{bm}
+%\usepackage[sc]{mathpazo}
+
+\def\boldeps{\boldsymbol{\varepsilon}}
+
+%-------------------------------------------------------------------------------
 \usepackage{multirow}
 
 %-------------------------------------------------------------------------------
@@ -64,12 +72,41 @@
 \usepackage[mathcal]{euscript}
 
 %-------------------------------------------------------------------------------
+% blank symbol \fgeupbracket
+\usepackage{fge}
+
+
+%-------------------------------------------------------------------------------
+% besseres tabular
+\usepackage{array}
+
+%-------------------------------------------------------------------------------
 % Square brackets
 \usepackage{stmaryrd}
 
+\newcommand{\blank}{\fgeupbracket}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\green}[1]{{\color{Green}#1}}
 
 \newcommand{\newState}[4]{\node[state,#3](#1)[#4]{#2};}
 \newcommand{\newTransition}[4]{\path[->] (#1) edge [#4] node {#3} (#2);} 
+
+%-------------------------------------------------------------------------------
+% mycircle
+\newcommand{\mc}[1]{%
+    \tikz[baseline=(char.base)]{
+        \node[circle, draw=red, inner sep=1pt](char){#1};
+        \draw[->,>=stealth, draw=red] (char) -- (0,-0.5);
+    }
+}
+
+
+
+%\newcommand{\mc}[1]{%
+%    \tikz[baseline=(q.base)]
+%    \node[circle, draw=red, inner sep=1pt](q){#1};
+%    \draw (q) -- (1,0);}
 
 %-------------------------------------------------------------------------------
 % Dokument
@@ -168,4 +205,94 @@
         \draw[-stealth,rc] (b) -- ([sh2se]b.center) -| node[below,blue,pos=.25] {b to c} (c);
     \end{tikzpicture}
 
+    
+    %--- Page 2 --------------------------------------------------------------------
+    \newpage
+
+    
+    \begin{minipage}{\textwidth}
+        \def\in{0.12}
+        \def\out{0.27}
+        \def\inb{0.17}
+        \def\outb{0.32}
+        \def\spa{20}
+        \def\spb{35}
+        \def\spc{50}
+        \begin{tikzpicture}
+            \tikzset{
+                rc/.style={->,>=stealth,thick,rounded corners=2mm},
+                node distance=3cm
+            }
+            \node[state,                initial left]   (q1)    {$q_1$};
+            \node[state,                right of=q1]    (q2)    {$q_2$};
+            \node[state,                right of=q2]    (q3)    {$q_3$};
+            \node[state,                below of=q3]    (q4)    {$q_4$};
+            \node[state,                above of=q3]    (q5)    {$q_5$};
+            \node[state, accepting,     below of=q1]    (qrej)  {$q_{rej}$};
+            \node[state, accepting,     below=1.75cm of q2]    (qacc)  {$q_{acc}$};
+            
+            \draw   (q1)    edge                        node{$0 \rightarrow \blank, \red{R}$}         (q2)
+                    (q1)    edge [left]                 node[align=left]{$\blank \rightarrow \red{R}$ \\
+                                                                         $X \rightarrow \red{R}$}     (qrej)
+                    (q2)    edge [out=210,in=240,
+                                  looseness=8, blue,
+                                  below left]           node{$X \rightarrow \red{R}$}                 (q2)
+                    (q2)    edge                        node{$0 \rightarrow X, \red{R}$}              (q3)
+                    (q2)    edge [above right]          node{$\blank \rightarrow \red{R}$}            (qacc)
+                    (q3)    edge [out=30,in=60,
+                                  looseness=8, blue,
+                                  right]                node{$X \rightarrow \red{R}$}                 (q3)
+                    (q3)    edge [below left]           node{$0 \rightarrow \red{R}$}                 (q4)
+                    (q3)    edge [right]                node{$\blank \rightarrow \green{L}$}          (q5)
+                    (q4)    edge [out=300,in=330,
+                                  looseness=8, blue,
+                                  right]                node{$X \rightarrow \red{R}$}                 (q4)
+                    (q4)    edge [bend left]            node{$\blank \rightarrow \red{R}$}            (qrej)
+                    (q4)    edge [bend angle=90, bend right,
+                                  right]                node{$0 \rightarrow X, \red{R}$}              (q3)
+                    (q5)    edge [bend angle=45, bend right,
+                                  above left]           node{$\blank \rightarrow \red{R}$}            (q2)
+                    (q5)    edge [out=-15,in=15,
+                                  looseness=8, blue,
+                                  right]                node[align=left]{$0 \rightarrow \green{L}$ \\
+                                                                    $X \rightarrow \green{L}$ }   (q5)
+            ;
+
+        \end{tikzpicture}
+    \end{minipage}
+
+    {
+        \renewcommand{\arraystretch}{1}
+        \newcolumntype{x}{>{\centering\arraybackslash}p{0.5cm}}
+        \begin{tabular}{lxxxxxx}
+                & \mc{$q_1$} &            &            &            &            &          \\
+            1.  & $0$        & $0$        & $0$        & $0$        & $\blank$   & $\blank$ \\
+                &            & \mc{$q_2$} &            &            &            &          \\
+            2.  & $\blank$   & $0$        & $0$        & $0$        & $\blank$   & $\blank$ \\
+                &            &            & \mc{$q_3$} &            &            &          \\
+            3.  & $\blank$   & $X$        & $0$        & $0$        & $\blank$   & $\blank$ \\
+                &            &            &            & \mc{$q_4$} &            &          \\
+            4.  & $\blank$   & $X$        & $0$        & $0$        & $\blank$   & $\blank$ \\
+                &            &            &            &            & \mc{$q_3$} &          \\
+            5.  & $\blank$   & $X$        & $0$        & $X$        & $\blank$   & $\blank$ \\
+                &            &            &            & \mc{$q_5$} &            &          \\
+            6.  & $\blank$   & $X$        & $0$        & $X$        & $\blank$   & $\blank$ \\
+                & $\vdots$   & $\vdots$   & $\vdots$   & $\vdots$   & $\vdots$   & $\vdots$ \\
+                & \mc{$q_5$} &            &            &            &            &          \\
+            9.  & $\blank$   & $X$        & $0$        & $X$        & $\blank$   & $\blank$ \\
+                &            & \mc{$q_2$} &            &            &            &          \\
+            10. & $\blank$   & $X$        & $0$        & $X$        & $\blank$   & $\blank$ \\
+                &            &            & \mc{$q_2$} &            &            &          \\
+            11. & $\blank$   & $X$        & $0$        & $X$        & $\blank$   & $\blank$ \\
+                &            &            &            & \mc{$q_3$} &            &          \\
+            12. & $\blank$   & $X$        & $X$        & $X$        & $\blank$   & $\blank$ \\
+                &            &            &            &            & \mc{$q_3$} &          \\
+            13. & $\blank$   & $X$        & $X$        & $X$        & $\blank$   & $\blank$ \\
+                &            &            &            & \mc{$q_5$} &            &          \\
+            14. & $\blank$   & $X$        & $X$        & $X$        & $\blank$   & $\blank$ \\
+                & $\vdots$   & $\vdots$   & $\vdots$   & $\vdots$   & $\vdots$   & $\vdots$ \\
+                &            &            &            &            &            & \mc{$q_{acc}$} \\
+            21. & $\blank$   & $X$        & $0$        & $X$        & $\blank$   & $\blank$ \\
+        \end{tabular}
+    }
 \end{document}
