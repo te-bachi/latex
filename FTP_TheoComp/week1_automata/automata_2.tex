@@ -88,6 +88,13 @@
 \usepackage{array}
 
 %-------------------------------------------------------------------------------
+% 
+\newcommand{\st}[1]{%
+    \tikz[baseline=(char.base)]\node[circle, draw=black, inner sep=2pt](char){#1} ;}
+\newcommand{\sta}[1]{%
+    \tikz[baseline=(char.base)]\node[double, circle, draw=black, inner sep=2pt](char){#1} ;}
+
+%-------------------------------------------------------------------------------
 % Dokument
 \begin{document}
     
@@ -523,6 +530,61 @@
                     in
                     (\x1-30, \y2-\spa) node[left]{$1$} -- (\x1+300,\y2-\spa);
 
+        \end{tikzpicture}
+
+        \renewcommand{\arraystretch}{1.75}
+        \begin{tabular}{cl|cl|cl}
+            \multicolumn{1}{l}{} &
+            \multicolumn{1}{l}{} &
+            \multicolumn{1}{l}{} &
+            \multicolumn{1}{c}{$0$} &
+            \multicolumn{1}{l}{} &
+            \multicolumn{1}{c}{$1$} \\
+            \hline
+            \sta{A} & $1\;2\;4\;5$    & \st{B} & $2\;3\;4\;5$   & \st{C} & $6\;7\;8\;10$    \\
+            \sta{B} & $2\;3\;4\;5$    & \st{B} & $2\;3\;4\;5$   & \st{C} & $6\;7\;8\;10$    \\
+            \st{C}  & $6\;7\;8\;10$   & \st{D} & $8\;9\;10$     & \st{E} & $5\;11\;12\;13$  \\
+            \st{D}  & $8\;9\;10$      & \st{D} & $8\;9\;10$     & \st{E} & $5\;11\;12\;13$  \\
+            \sta{E} & $5\;11\;12\;13$ & \st{F} & $5\;13\;14$    & \st{C} & $6\;7\;8\;10$    \\
+            \sta{F} & $5\;13\;14$     & \st{F} & $5\;13\;14$    & \st{C} & $6\;7\;8\;10$    
+        \end{tabular}
+    \end{minipage}
+
+    \begin{minipage}{\textwidth}
+        \def\in{0.12}
+        \def\out{0.27}
+        \def\inb{0.17}
+        \def\outb{0.32}
+        \def\spa{20}
+        \def\spb{35}
+        \def\spc{50}
+        \begin{tikzpicture}[]
+            \tikzset{
+                rc/.style={->,>=stealth,thick,rounded corners=2mm},
+                every edge/.append style={
+                    bend angle=12
+                }
+            }
+            \node[state, accepting,     initial left]   (A)     {A};
+            \node[state, accepting, below right of=A]   (B)     {B};
+            \node[state,            above right of=B]   (C)     {C};
+            \node[state,            above right of=C]   (D)     {D};
+            \node[state, accepting, below right of=C]   (F)     {F};
+            \node[state, accepting, below right of=D]   (E)     {E};
+            
+            \draw   (A)     edge                node{1}     (C)
+                    (A)     edge[below left]    node{0}     (B)
+                    (B)     edge[loop below]    node{0}     ()
+                    (B)     edge[below right]   node{1}     (C)
+                    (C)     edge                node{0}     (D)
+                    (C)     edge[bend left]     node{1}     (E)
+                    (D)     edge[loop above]    node{0}     ()
+                    (D)     edge                node{1}     (E)
+                    (E)     edge[bend left]     node{1}     (C)
+                    (E)     edge                node{0}     (F)
+                    (F)     edge[]              node{1}     (C)
+                    (F)     edge[loop below]    node{0}     ()
+            ;
         \end{tikzpicture}
     \end{minipage}
     %--- Page 4 --------------------------------------------------------------------

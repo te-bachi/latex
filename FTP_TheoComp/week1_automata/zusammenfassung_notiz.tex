@@ -1,0 +1,177 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers,
+    fleqn
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+\usepackage{xcolor}
+
+%-------------------------------------------------------------------------------
+% dbox
+\usepackage{dashbox}
+
+%-------------------------------------------------------------------------------
+% uline
+\usepackage{ulem}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows}
+
+%\tikzset{
+%}
+
+%\tikzstyle{
+%}
+
+%-------------------------------------------------------------------------------
+% Für enumerate
+\usepackage{enumitem}
+\setlist[enumerate]{
+    wide=0pt,
+    leftmargin=*,
+    itemsep=-1ex,
+    parsep=2ex,
+    labelsep=1ex,
+    label=\alph*)
+}
+
+\usepackage{multirow}
+\usepackage{ifthen}
+
+%-------------------------------------------------------------------------------
+% tabu
+\usepackage{tabu} 
+
+%-------------------------------------------------------------------------------
+% table line breaks with \makecell
+\usepackage{makecell}
+\renewcommand\cellalign{bl}
+
+%-------------------------------------------------------------------------------
+% 
+\usepackage{xparse}
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+
+    \subsection*{Matrizen}
+    
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{ll}
+        Min. Mult       & $m_{\min}\kl{A,B} = \min\kq{\text{\#mult}\kl{A,B}}$ \\
+        $n$ zweierpot   & $m_{\min}\kl{A,B} \leqslant m\kl{A,B} = 7^{r} = n^{\log_2\kl{7}} = n^{2.81} \leqslant \kl{2^r}^3$ \\
+                        & $r = \log_2\kl{n}, \quad n = 2^r$ \\
+        $n$ gerade      & $n = m \cdot 2^r, \quad m\kl{A,B} = m^3 \cdot 7^r $ \\
+        $n$ ungerade    & aufrunden \\
+                        & ex. $ n = 19 \rightarrow n = 20 = 5 \cdot 2^2,  m\kl{A,B} = 5^3 \cdot 7^2 = 6125$
+    \end{tabular}
+
+    \subsection*{Additionsketten}
+
+    \begin{tabular}[t]{ll}
+        Gegeben $n$, wieviele Additionen benötigen \\
+        wir \uline{minimal} zur berechnung von $n$? \\
+        $r = \text{\#add}, \quad l\kl{n} = \min\kq{\text{\#add}} $ \\
+        $k = 4: l\kl{2^k - 1} \leqslant l\kl{k} + k - 1, \quad l\kl{16 - 1} \leqslant l\kl{k} + 4 - 1$ \\
+        \begin{tabular}[t]{lll}
+            $ l\kl{15} \leqslant l\kl{4} + 3: $ \\
+            $ 5 \leqslant 2 + 3 = 5 $
+        \end{tabular} 
+        \fbox{\begin{tabular}[t]{lll}
+            $a_0$ & $a_1$ & $a_2$ \\
+            $1$   & $2$   & $4$
+        \end{tabular}}
+        \fbox{\begin{tabular}[t]{llllll}
+            $a_0$ & $a_1$ & $a_2$ & $a_3$ & $a_4$ & $a_5$\\
+            $1$   & $2$   & $3$   & $5$   & $10$  & $15$ \\
+        \end{tabular}}
+    \end{tabular}
+
+    \subsection*{Binärer Algorithmus (Square-and-multiply)}
+    
+    \begin{tabular}{ll}
+        $\text{bA}\kl{n} = \lfloor \log_2\kl{n} \rfloor + \omega_2\kl{n} - 1 \leqslant 2 \cdot \log_2\kl{n}$ \\
+        $\text{bA}\kl{60} = 5 + 4 - 1 = 8 \leqslant 11.8138 $ \\
+        $\text{bA}\kl{31} = 4 + 5 - 1 = 8 \leqslant 9 $ \\
+        $\text{bA}\kl{32} = 5 + 1 - 1 = 5 \leqslant 10 $
+    \end{tabular}
+
+    \newpage
+
+    \subsection*{Multiplikation bezüglich einer Basis}
+
+    \begin{tabular}[t]{ll}
+        $x = x_{n-1} \cdot b^{n-1} + x_{n-2} \cdot b^{n-2} + \ldots + x_{1} \cdot b^{1} + x_{0} \cdot b^{0}$ \\
+        $y = \sum\limits_{i=0}^{n-1} y_{i} \cdot b^{i} $ \\
+        Sei $0 < m < n \qquad b^{n-1-m} \cdot b^m = b^{n-1-m+m} = b^{n-1}$\\
+        $x = \kl{x_{n-1} b^{n-1-m} + \ldots + x_{m}} b^m  + \kl{x_{m-1} b^{m-1} + \ldots + x_{1} b^1 + x_0 b^0}$ \\
+        $x = X_1 b^m  + X_0, \quad y = Y_1 b^m  + Y_0$ \\
+        ex. $Y\quad b = 10, \quad m = 2, \quad n = 4 \text{\;\;(Anzahl Ziffern)}$\\
+        \begin{tabular}[t]{lll}
+            $x = \overset{x_3}{1}\overset{x_2}{1}\overset{x_1}{2}\overset{x_0}{3}$ & $=$ & $\kl{1 \cdot 10^{4-1-2} + 1 \cdot 10^{4-2-2}} 10^2 +$ \\
+            & & $\kl{2 \cdot 10^{2-1} + 3 \cdot 10^{2-2}}$ \\
+            & $=$ & $\kl{1 \cdot 10^{1} + 1 \cdot 10^{0}} 10^2 +$ \\
+            & & $\kl{2 \cdot 10^{1} + 3 \cdot 10^{0}}$ \\
+            & $=$ & $\overset{X_1}{11} \cdot 10^2 + \overset{X_0}{23} $ \\
+            $y = 5261$ & $=$ & $\overset{Y_1}{52} \cdot 10^2 + \overset{Y_0}{61} $ \\
+            $x \cdot y $ & $=$ & $ \kl{X_1b^m + X_0} \cdot \kl{Y_1b^m + Y_0} $ \\
+                         & $=$ & $ X_1Y_1b^{2m} + \kl{X_1Y_0 + X_0Y_1}b^{m} + X_0Y_0 $ \\
+                         & $=$ & $ Z_2b^{2m} + Z_1b^{m} + Z_0 $ \\
+                         & $=$ & \begin{tabular}[t]{llll}
+                                          & $z_2$ & $\cdot$ & $\cdot$ \\
+                                    $ + $ &       & $z_1$ & $\cdot$ \\
+                                    $ + $ &       &       & $z_0$\\
+                                    \hline
+                                          & $z_2$ & $z_1$ & $z_0$
+                                 \end{tabular} \\
+            \cline{1-1} & & \\
+            % 12 * 34
+            $ 12 \cdot 32$ & $=$ & $\kl{\overset{X_1}{1}\cdot 10 + \overset{X_0}{2}} \cdot
+                                    \kl{\overset{Y_1}{3}\cdot 10 + \overset{Y_0}{2}}$ \\
+            $Z_2 = X_1Y1,$ & & $Z_1 = \kl{X_1Y_0 + X_0Y_1}, \quad Z_0 = X_0Y_0 $ \\
+            $Z_2 = 1\cdot 3 = 3,$ & & $Z_1 = 1 \cdot 2 + 2 \cdot 3 = 8, \quad Z_0 = 2 \cdot 2 = 4$ \\
+            $ 12 \cdot 32$ & $=$ & $384$ \\
+            \cline{1-1} & & \\
+            % 1234 * 5789
+            $ \overset{X_1}{12} \vert \overset{X_0}{34} \cdot \overset{Y_1}{57} \vert \overset{Y_0}{89}$ & $=$ & $\kl{\overset{X_1}{12}\cdot 10 + \overset{X_0}{34}} \cdot
+                                    \kl{\overset{Y_1}{57}\cdot 10 + \overset{Y_0}{89}}$ \\
+            $Z_2 = X_1Y1,$ & & $Z_1 = \kl{X_1Y_0 + X_0Y_1}, \quad Z_0 = X_0Y_0 $ \\
+            $Z_2 = 12\cdot 57 ,$ & & $Z_1 = 12 \cdot 89 + 34 \cdot 57, \quad Z_0 = 34 \cdot 89$ \\
+            rekursiv: & & $b = 10, \quad m = 2, \quad n = 4$ \\
+            $ 1234 \cdot 5789$ & $=$ & $684 \cdot 10^{2m} + 3006 \cdot 10^{m} + 3026 = 7143626$
+        \end{tabular}
+    \end{tabular}
+    
+
+    
+
+\end{document}
