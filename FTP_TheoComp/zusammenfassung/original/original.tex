@@ -1,0 +1,35 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers,
+    fleqn
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=5mm,right=5mm,top=5mm,bottom=5mm]{geometry}
+\usepackage{svg}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\setsvg{inkscape=inkscape -z -D}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+    \newpage
+    \includesvg{overview_p1}
+
+\end{document}

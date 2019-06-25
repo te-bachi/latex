@@ -1,0 +1,158 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=20mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[svgnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{tikz}
+
+\usetikzlibrary{automata, positioning, arrows, shapes, calc}
+
+%{
+%\tikzset{
+%    ->, % makes the edges directed
+%    >=stealth, % makes the arrow heads bold
+%    node distance=2cm, % specifies the minimum distance between two nodes. Change if necessary.
+%    every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
+%    every edge/.append style={line width=0.25mm}, % sets the properties for each ’state’ node
+%    initial text=$ $, % sets the text that appears on the start arrow
+%}
+%}
+
+\tikzset{
+    node distance=2cm, % Minimum distance between two nodes. Change if necessary.
+    every state/.style={ % Sets the properties for each state
+        semithick,
+        fill=gray!10
+    },
+    initial text={}, % No label on start arrow
+    double distance=2pt, % Adjust appearance of accept states
+    every edge/.style={ % Sets the properties for each transition
+        draw,
+        ->,>=stealth, % Makes edges directed with bold arrowheads
+        auto,
+        semithick
+    }
+}
+
+%-------------------------------------------------------------------------------
+% New Font package
+%\usepackage{bm}
+%\usepackage[sc]{mathpazo}
+
+\def\boldeps{\boldsymbol{\varepsilon}}
+
+%-------------------------------------------------------------------------------
+\usepackage{multirow}
+
+%-------------------------------------------------------------------------------
+% uline
+\usepackage{ulem}
+
+%-------------------------------------------------------------------------------
+% Anderer Font
+\usepackage{mathrsfs}
+\usepackage[mathcal]{euscript}
+
+%-------------------------------------------------------------------------------
+% blank symbol \fgeupbracket
+\usepackage{fge}
+
+
+%-------------------------------------------------------------------------------
+% besseres tabular
+\usepackage{array}
+
+%-------------------------------------------------------------------------------
+% Square brackets
+\usepackage{stmaryrd}
+
+\newcommand{\blank}{\fgeupbracket}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\green}[1]{{\color{Green}#1}}
+
+\newcommand{\newState}[4]{\node[state,#3](#1)[#4]{#2};}
+\newcommand{\newTransition}[4]{\path[->] (#1) edge [#4] node {#3} (#2);} 
+
+%-------------------------------------------------------------------------------
+% mycircle
+\newcommand{\mc}[1]{%
+    \tikz[baseline=(char.base)]{
+        \node[circle, draw=red, inner sep=1pt](char){#1};
+        \draw[->,>=stealth, draw=red] (char) -- (0,-0.5);
+    }
+}
+
+
+
+%\newcommand{\mc}[1]{%
+%    \tikz[baseline=(q.base)]
+%    \node[circle, draw=red, inner sep=1pt](q){#1};
+%    \draw (q) -- (1,0);}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+
+    
+    %--- Page 1 --------------------------------------------------------------------
+    \newpage
+
+    {
+        \renewcommand{\arraystretch}{1}
+        \newcolumntype{x}{>{\centering\arraybackslash}p{0.5cm}}
+        \begin{tabular}{lxxxxxxx}
+                & \mc{$q_1$} &            &            &            &            &          &          \\
+            1.  & $a$        & $a$        & $a$        & $b$        & $a$        & $b$      & $\blank$ \\
+            %--------------------------------------------------------------------------------------------
+                &            & \mc{$q_2$} &            &            &            &          &          \\
+            2.  & $\blank$   & $a$        & $a$        & $b$        & $a$        & $b$      & $\blank$ \\
+            %--------------------------------------------------------------------------------------------
+                &            &            & \mc{$q_3$} &            &            &          &          \\
+            3.  & $\blank$   & $X$        & $a$        & $b$        & $a$        & $b$      & $\blank$ \\
+            %--------------------------------------------------------------------------------------------
+                &            &            &            & \mc{$q_3$} &            &          &          \\
+            4.  & $\blank$   & $X$        & $a$        & $b$        & $a$        & $b$      & $\blank$ \\
+            %--------------------------------------------------------------------------------------------
+                &            &            & \mc{$q_6$} &            &            &          &          \\
+            5.  & $\blank$   & $X$        & $a$        & $X$        & $a$        & $b$      & $\blank$ \\
+            %--------------------------------------------------------------------------------------------
+                &            & \mc{$q_6$} &            &            &            &          &          \\
+            6.  & $\blank$   & $X$        & $a$        & $X$        & $a$        & $b$      & $\blank$ \\
+            %--------------------------------------------------------------------------------------------
+                & \mc{$q_6$} &            &            &            &            &          &          \\
+            7.  & $\blank$   & $X$        & $a$        & $X$        & $a$        & $b$      & $\blank$ \\
+            %--------------------------------------------------------------------------------------------
+                &            & \mc{$q_1$} &            &            &            &          &          \\
+            8.  & $\blank$   & $X$        & $a$        & $X$        & $a$        & $b$      & $\blank$ \\
+            %--------------------------------------------------------------------------------------------
+                &            &            & \mc{$q_1$} &            &            &          &          \\
+            9.  & $\blank$   & $X$        & $a$        & $X$        & $a$        & $b$      & $\blank$ \\
+            %--------------------------------------------------------------------------------------------
+                &            &            &            & \mc{$q_2$} &            &          &          \\
+            10. & $\blank$   & $X$        & $\blank$   & $X$        & $a$        & $b$      & $\blank$ \\
+            %--------------------------------------------------------------------------------------------
+                &            &            &            &            & \mc{$q_3$} &          &          \\
+            11. & $\blank$   & $X$        & $X$        & $X$        & $\blank$   & $\blank$ & $\blank$ \\
+            %--------------------------------------------------------------------------------------------
+        \end{tabular}
+    }
+\end{document}
