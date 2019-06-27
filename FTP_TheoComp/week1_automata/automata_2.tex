@@ -94,6 +94,12 @@
 \newcommand{\sta}[1]{%
     \tikz[baseline=(char.base)]\node[double, circle, draw=black, inner sep=2pt](char){#1} ;}
 
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
 %-------------------------------------------------------------------------------
 % Dokument
 \begin{document}
@@ -349,6 +355,8 @@
 
     %--- Page 3 --------------------------------------------------------------------
     \newpage
+
+    $ 0 \quad 0^* \quad 1 \quad 10^*10^* \quad \kl{10^*10^*}^* \quad 0^*\kl{10^*10^*}^* $
 
     \begin{minipage}{\textwidth}
         \def\in{0.12}
