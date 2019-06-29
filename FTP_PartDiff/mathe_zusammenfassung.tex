@@ -24,7 +24,7 @@
 \usepackage{mathtools}
 
 %-------------------------------------------------------------------------------
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 
 %-------------------------------------------------------------------------------
 % dbox
@@ -46,6 +46,11 @@
         >=stealth
     }
 }
+
+
+%-------------------------------------------------------------------------------
+% \ifthenelse
+\usepackage{ifthen}
 
 %-------------------------------------------------------------------------------
 % Für enumerate
@@ -89,6 +94,24 @@
 \NewDocumentCommand{\dt}{ O{} }{{\Delta t^{#1}}}
 \NewDocumentCommand{\gp}{ O{} }{}
 
+\NewDocumentCommand{\xyz}{ O{x} O{y} O{z} }{#1 #2 #3}
+% 1: Value
+% 2: Key
+% 3: Background Color
+\NewDocumentCommand{\tfill}{ O{} O{} O{blue!20} }{%
+    \tikz[baseline, every node/.style={inner sep=3pt,outer sep=0pt,minimum width=3mm,minimum height=4mm}]{
+        \node[fill=#3,anchor=base] (#2) {#1};
+    }
+}
+\NewDocumentCommand{\tfillc}{ O{} O{} }{%
+    \tikz[baseline, every node/.style={inner sep=2pt,outer sep=0pt}]{
+        \node[fill=#2,anchor=base] {#1};
+    }
+}
+\newcommand{\tfillb}[1]{\tfillc[#1][blue!20]}
+\newcommand{\tfillo}[1]{\tfillc[#1][orange!40]}
+\newcommand{\tfillg}[1]{\tfillc[#1][Green!20]}
+\newcommand{\tfilly}[1]{\tfillc[#1][yellow!40]}
 
 % 1: Funktion Name
 % 2: dx
@@ -115,10 +138,13 @@
 }
 
 \newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\scriptstyle\frac{#1}{#2}}}
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\kl}[1]{{\left( #1 \right)}}
 \newcommand{\kq}[1]{{\left\{ #1 \right\}}}
 \newcommand{\ks}[1]{{\left[ #1 \right]}}
+\newcommand{\dom}{{\Omega}}
+\newcommand{\bound}{{\partial \Omega}}
 
 %-------------------------------------------------------------------------------
 % Dokument
@@ -183,9 +209,41 @@
                     & $10.2 = 0.51 T_1 - 0.25 T_2$
     \end{tabular}
     
-    %===============================================================================
-    %--- Page 2 --------------------------------------------------------------------
+    %===================================================================================
     \newpage
+    
+    %FDM with $\dx = \f{1}{\tikz[baseline]{\node[fill=blue!20,anchor=base] (t1) {$5$};}} = \f{1}{\tikz[baseline]{\node[fill=blue!20,anchor=base] (t1) {$n$};}} $
+    
+    \tikzstyle{every picture}+=[remember picture]
+    FDM with $\dx = \f{1}{\tfill[$\scriptstyle{5}$][frac1][blue!20]} = \f{1}{\tfill[$\scriptstyle{n}$][frac2][red!20]} $
+    %\tfill[5][p5][red]
+    %\xyz[a][b][c]
+
+    \begin{tikzpicture}[
+        ]
+        % draw horizontal line   
+        \draw[myptr] (0,0) -- (3,0) node[right=3pt] {$x$};
+        
+        % draw vertical lines
+        \foreach \k in {0, 1, 2, 3, 4, 5}
+        {
+            \ifthenelse{\NOT 0 = \k \AND \NOT 5 = \k}{
+                \draw (\k*0.5 cm,2pt) -- (\k*0.5 cm,-2pt)  node[below=3pt] (k\k) {$\k$} node[below=20pt,shift={(0,3pt)}] (xk\k) {$\frac{\k}{5}$};
+            }{
+                \ifthenelse{5 = \k}{
+                    \draw (\k*0.5 cm,2pt) -- (\k*0.5 cm,-2pt)  node[below=3pt,shift={(0,3pt)}] (k\k) {\tfill[5][frac1b][blue!20]} node[below=20pt] (xk\k) {$1$};
+                }{
+                    \draw (\k*0.5 cm,2pt) -- (\k*0.5 cm,-2pt)  node[below=3pt] (k\k) {$\k$} node[below=20pt] (xk\k) {$\k$};
+                }
+            }
+        }
+        \node[left of=k0] {$k$};
+        \node[left of=xk0] {$x_k$};
+        % draw nodes
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay]
+        \draw[color=blue!60] (frac1b) -- (frac1);
+    \end{tikzpicture}
     
     \begin{tikzpicture}[
         ]
@@ -291,7 +349,7 @@
     \subsubsection*{Dirichlet Boundary Conditions}
     
     Discrete Laplace-Operator
-
+    
     \begin{align*}
         \Delta u & = u_{xx} + u_{yy} \\
         h        & = \dx = \dy \\
@@ -322,4 +380,62 @@
         u_{\dt + 1} & = \ks{\ldots}  u_{\dt}
     \end{align*}
 
+
+    %===================================================================================
+    \newpage
+
+    \subsection*{Hyperbolic PDEs}
+    \subsubsection*{Advection Equation / Transportgleichung}
+    
+    {\it{Problem 70}} \\
+    \begin{tabular}{p{5cm}l}
+        Domain $\dom$                 & $\Omega = \kl{-\infty, \infty} \times \left[ 0, \infty \right)$ \\
+        Advection Equation              & $u_x\kl{x,t} + u_t\kl{x,t} = 0$ \\
+        Dirichlet boundary-condition on $\bound$    & $u\kl{x,0} = f\kl{x}$
+    \end{tabular}
+
+    {\bf{Downwind Scheme}} \\
+    Forward Finite Difference in $t$ and $x$ \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        \f{u \kl{x,\;t + \dt} - u \kl{x, t}}{\dt} &+ \f{ \tfilly{$u \kl{x + \dx, t}$} - u\kl{x, t}}{\dx} = 0 \\
+        u_{j,k+1} - \tfillb{$u_{j,k}$}  &= \tfillo{${\fs{\dt}{\dx}}$} \kq{u_{j,k} - \tfilly{$u_{j+1,k}$}} \\
+        u_{j,k+1}                       &= \tfillo{$r$} \cdot \kq{u_{j,k} - \tfilly{$u_{j+1,k}$}} + \tfillb{$u_{j,k}$} \\
+        u_{j,k+1}                       &= \kl{\tfillb{$1$}+\tfillo{$r$}} \cdot u_{j,k} - \tfillo{$r$} \cdot \tfilly{$u_{j+1,k}$}
+    \end{align*}}
+
+    {\bf{Upwind Scheme}} \\
+    Forward Finite Difference in $t$, Backward Finite Difference in $x$ \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        \f{u \kl{x,\;t + \dt} - u \kl{x, t}}{\dt} &+ \f{u\kl{x, t} - \tfillg{$u \kl{x - \dx, t}$}}{\dx} = 0 \\
+        u_{j,k+1} - \tfillb{$u_{j,k}$}  &= \tfillo{${\fs{\dt}{\dx}}$} \kq{\tfillg{$u_{j-1,k}$} - u_{j,k}} \\
+        u_{j,k+1}                       &= \tfillo{$r$} \cdot \kq{\tfillg{$u_{j-1,k}$} - u_{j,k}} + \tfillb{$u_{j,k}$} \\
+        u_{j,k+1}                       &= \kl{\tfillb{$1$}-\tfillo{$r$}} \cdot u_{j,k} + \tfillo{$r$} \cdot \tfillg{$u_{j-1,k}$}
+    \end{align*}}
+
+    {\bf{Centred Scheme}} \\
+    Forward Finite Difference in $t$, Centered Finite Difference in $x$ \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        \f{u \kl{x,\;t + \dt} - u \kl{x, t}}{\dt} &+ \f{ \tfilly{$u \kl{x + \dx, t}$} - \tfillg{$u \kl{x - \dx, t}$}}{2 \cdot \dx} = 0 \\
+        u_{j,k+1} - \tfillb{$u_{j,k}$}  &= \tfillo{${\fs{\dt}{2 \cdot \dx}}$} \kq{\tfillg{$u_{j-1,k}$} - \tfilly{$u_{j+1,k}$}} \\
+        u_{j,k+1}                       &= \tfillo{$\fs{r}{2}$} \cdot \kq{\tfillg{$u_{j-1,k}$} - \tfilly{$u_{j+1,k}$}} + \tfillb{$u_{j,k}$} \\
+        u_{j,k+1}                       &= - \tfillo{$\fs{r}{2}$} \cdot \tfilly{$u_{j+1,k}$} + \tfillb{$u_{j,k}$} + \tfillo{$\fs{r}{2}$}  \cdot \tfillg{$u_{j-1,k}$}
+    \end{align*}}
+
+    {\bf{Lax-Wendroff Scheme}} \\
+    Forward Finite Difference in $t$, Centered Finite Difference in $x$ \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        u_{j,k+1} = A \cdot \tfilly{$u_{j+1,k}$} + B \cdot \tfillb{$u_{j,k}$} + C \cdot \tfillg{$u_{j-1,k}$} \\[0.25cm]
+        A = \f{r^2 - r}{2}, \qquad B = 1 - r^2, \qquad C = \f{r^2 + r}{r}
+    \end{align*}}
+    
+
+    
 \end{document}
