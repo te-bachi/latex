@@ -24,6 +24,10 @@ fleqn
 \usepackage{mathtools}
 
 %-------------------------------------------------------------------------------
+% use commends \begin{comment}
+\usepackage{verbatim}
+
+%-------------------------------------------------------------------------------
 \usepackage[dvipsnames]{xcolor}
 
 %-------------------------------------------------------------------------------
@@ -76,6 +80,10 @@ fleqn
 \usepackage{makecell}
 \renewcommand\cellalign{bl}
 
+
+%-------------------------------------------------------------------------------
+
+    
 %-------------------------------------------------------------------------------
 % 
 \usepackage{xparse}
@@ -108,11 +116,31 @@ fleqn
         \node[fill=#2,anchor=base] {#1};
     }
 }
+
+\NewDocumentCommand{\tdrawc}{ O{} O{} }{%
+    \tikz[baseline, every node/.style={inner sep=2pt,outer sep=0pt}]{
+        \node[rectangle,draw=#2,anchor=base] {#1};
+    }
+}
 \newcommand{\tfillb}[1]{\tfillc[#1][blue!20]}
 \newcommand{\tfillo}[1]{\tfillc[#1][orange!40]}
 \newcommand{\tfillg}[1]{\tfillc[#1][Green!20]}
 \newcommand{\tfilly}[1]{\tfillc[#1][yellow!40]}
 \newcommand{\tfillr}[1]{\tfillc[#1][red!20]}
+\newcommand{\tfillv}[1]{\tfillc[#1][Violet!20]}
+\newcommand{\tfillt}[1]{\tfillc[#1][Turquoise!20]}
+\newcommand{\tfillgr}[1]{\tfillc[#1][Gray!20]}
+
+
+\newcommand{\tdrawb}[1]{\tdrawc[#1][blue!40]}
+\newcommand{\tdrawo}[1]{\tdrawc[#1][orange!60]}
+\newcommand{\tdrawg}[1]{\tdrawc[#1][Green!40]}
+\newcommand{\tdrawy}[1]{\tdrawc[#1][yellow!60]}
+\newcommand{\tdrawr}[1]{\tdrawc[#1][red!40]}
+\newcommand{\tdrawv}[1]{\tdrawc[#1][Violet!40]}
+\newcommand{\tdrawt}[1]{\tdrawc[#1][Turquoise!40]}
+\newcommand{\tdrawgr}[1]{\tdrawc[#1][Gray!40]}
+\newcommand{\tdrawk}[1]{\tdrawc[#1][black]}
 
 % 1: Funktion Name
 % 2: dx
@@ -141,6 +169,7 @@ fleqn
 \newcommand*\difx{\; \mathop{}\!\mathrm{d}x}
 \newcommand{\f}[2]{\frac{#1}{#2}}
 \newcommand{\fs}[2]{{\scriptstyle\frac{#1}{#2}}}
+\newcommand{\sqrts}[1]{{\scriptstyle\sqrt{#1}}}
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\kl}[1]{{\left( #1 \right)}}
 \newcommand{\kq}[1]{{\left\{ #1 \right\}}}
@@ -156,7 +185,7 @@ fleqn
     {\setlength{\abovedisplayskip}{-6pt}
     \setlength{\belowdisplayskip}{-12pt}
     \begin{align*}
-    \widetilde{u}\kl{x} & = a_1 \cdot v_1\kl{x} + \ldots + a_n \cdot v_n\kl{x}
+        \widetilde{u}\kl{x} & = a_1 \cdot v_1\kl{x} + \ldots + a_n \cdot v_n\kl{x}
     \end{align*}}
 
     {\bf{Weighted Residuals}} \\
@@ -164,47 +193,47 @@ fleqn
     {\setlength{\abovedisplayskip}{-6pt}
     \setlength{\belowdisplayskip}{-12pt}
     \begin{align*}
-    \int_{0}^{1}&{\kl{u''\kl{x} + f\kl{x}} \cdot w_k\kl{x} \difx} = 0  \\[0.25cm]
-    M_{j,k} & = \int_{0}^{1}{v_j''\kl{x} \cdot w_k\kl{x} \difx}  \\[0.25cm]
-    m_k & = \int_{0}^{1}{f\kl{x} \cdot w_k\kl{x} \difx}   \\[0.25cm]
-    M &\cdot \uline{a} + \uline{m} = 0
+        \int_{0}^{1}&{\kl{u''\kl{x} + f\kl{x}} \cdot w_k\kl{x} \difx} = 0  \\[0.25cm]
+        M_{j,k} & = \int_{0}^{1}{v_j''\kl{x} \cdot w_k\kl{x} \difx}  \\[0.25cm]
+        m_k & = \int_{0}^{1}{f\kl{x} \cdot w_k\kl{x} \difx}   \\[0.25cm]
+        M &\cdot \uline{a} + \uline{m} = 0
     \end{align*}} \\
     Measures the distance between the approximation\\
     function and the exact solution: \\
     {\setlength{\abovedisplayskip}{-6pt}
     \setlength{\belowdisplayskip}{-12pt}
     \begin{align*}
-    r\kl{x} & = u''\kl{x} + f\kl{x} \\[0.25cm]
-    \int_{0}^{1}&{r\kl{x} \cdot w_k\kl{x} \difx}
+        r\kl{x} & = u''\kl{x} + f\kl{x} \\[0.25cm]
+        \int_{0}^{1}&{r\kl{x} \cdot w_k\kl{x} \difx}
     \end{align*}}
     
     {\bf{Method of Ritz}} \\
     {\setlength{\abovedisplayskip}{-6pt}
     \setlength{\belowdisplayskip}{-12pt}
     \begin{align*}
-    R_{j,k} & = \int_{0}^{1}{v_j'\kl{x} \cdot v_k'\kl{x} \difx}  \\[0.25cm]
-    r_k &= \int_{0}^{1}{f\kl{x} \cdot v_k\kl{x} \difx}   \\[0.25cm]
-    R &\cdot \uline{a} = \uline{r} \quad \text{or} \quad R \cdot \uline{a} + \uline{r} = 0
+        R_{j,k} & = \int_{0}^{1}{v_j'\kl{x} \cdot v_k'\kl{x} \difx}  \\[0.25cm]
+        r_k &= \int_{0}^{1}{f\kl{x} \cdot v_k\kl{x} \difx}   \\[0.25cm]
+        R &\cdot \uline{a} = \uline{r} \quad \text{or} \quad R \cdot \uline{a} + \uline{r} = 0
     \end{align*}}
 
     {\bf{Method of Galerkin}} \\
     {\setlength{\abovedisplayskip}{-6pt}
     \setlength{\belowdisplayskip}{-12pt}
     \begin{align*}
-    \int_{0}^{1}&{\kl{u''\kl{x} + f\kl{x}} \cdot v_k\kl{x} \difx} = 0  \\[0.25cm]
-    G_{j,k} & = \int_{0}^{1}{v_j''\kl{x} \cdot v_k\kl{x} \difx}  \\[0.25cm]
-    g_k &= \int_{0}^{1}{f\kl{x} \cdot v_k\kl{x} \difx}   \\[0.25cm]
-    G &\cdot \uline{a} + \uline{g} = 0
+        \int_{0}^{1}&{\kl{u''\kl{x} + f\kl{x}} \cdot v_k\kl{x} \difx} = 0  \\[0.25cm]
+        G_{j,k} & = \int_{0}^{1}{v_j''\kl{x} \cdot v_k\kl{x} \difx}  \\[0.25cm]
+        g_k &= \int_{0}^{1}{f\kl{x} \cdot v_k\kl{x} \difx}   \\[0.25cm]
+        G &\cdot \uline{a} + \uline{g} = 0
     \end{align*}}
     
     {\bf{Method of Gauss}} \\
     {\setlength{\abovedisplayskip}{-6pt}
     \setlength{\belowdisplayskip}{-12pt}
     \begin{align*}
-    \int_{0}^{1}&{\kl{u''\kl{x} + f\kl{x}}^2 \difx} = 0  \\[0.25cm]
-    Q_{j,k} & = \int_{0}^{1}{v_j''\kl{x} \cdot v_k''\kl{x} \difx}  \\[0.25cm]
-    q_k & = \int_{0}^{1}{f\kl{x} \cdot v_k''\kl{x} \difx}   \\[0.25cm]
-    Q &\cdot \uline{a} + \uline{q} = 0
+        \int_{0}^{1}&{\kl{u''\kl{x} + f\kl{x}}^2 \difx} = 0  \\[0.25cm]
+        Q_{j,k} & = \int_{0}^{1}{v_j''\kl{x} \cdot v_k''\kl{x} \difx}  \\[0.25cm]
+        q_k & = \int_{0}^{1}{f\kl{x} \cdot v_k''\kl{x} \difx}   \\[0.25cm]
+        Q &\cdot \uline{a} + \uline{q} = 0
     \end{align*}} \\
     
     
@@ -244,7 +273,7 @@ fleqn
     {\setlength{\abovedisplayskip}{-6pt}
     \setlength{\belowdisplayskip}{-12pt}
     \begin{align*}
-        \widetilde{u}\kl{x_k} + \tfillb{$20$} = 0, \quad x_1 = \tfillg{$\fs{1}{4}$}, \quad x_2 = \tfilly{$\fs{3}{4}$}
+        \widetilde{u}''\kl{x_k} + \tfillb{$20$} = 0, \quad x_1 = \tfillg{$\fs{1}{4}$}, \quad x_2 = \tfilly{$\fs{3}{4}$}
     \end{align*}}
     {\setlength{\abovedisplayskip}{6pt}
     \setlength{\belowdisplayskip}{-12pt}
@@ -254,14 +283,127 @@ fleqn
         \widetilde{u}''\kl{\tfillg{$\fs{1}{4}$}} &= v_0''\kl{\fs{1}{4}} + a_1 \cdot v_1''\kl{\fs{1}{4}} + a_2 \cdot v_2''\kl{\fs{1}{4}} = \tfillb{$-20$} \\
         \widetilde{u}''\kl{\tfilly{$\fs{3}{4}$}} &= v_0''\kl{\fs{3}{4}} + a_1 \cdot v_1''\kl{\fs{3}{4}} + a_2 \cdot v_2''\kl{\fs{3}{4}} = \tfillb{$-20$} \\
     \end{align*}}
-    \begin{minipage}{0.4\textwidth}
+    \begin{minipage}{0.8\textwidth}
         \setlength{\abovedisplayskip}{-6pt}
         \setlength{\belowdisplayskip}{-12pt}
         \begin{align*}
-        v_0''\kl{\fs{1}{4}} &= 0 & v_1''\kl{\fs{1}{4}} =& a & v_2''\kl{\fs{1}{4}} &= a \\
-        v_0''\kl{\fs{3}{4}} &= 0 & v_1''\kl{\fs{3}{4}} =& a & v_2''\kl{\fs{3}{4}} &= a \\
+        v_0''\kl{\fs{1}{4}} &= 0 &
+        v_1''\kl{\fs{1}{4}} &= -\pi^2 \cdot \sin\kl{\pi \fs{1}{4}} = \fs{-\pi^2 \sqrt{2}}{2} &
+        v_2''\kl{\fs{1}{4}} &= -4 \pi^2 \cdot \sin\kl{2 \pi \fs{1}{4}} = -4\pi^2\\
+        %
+        v_0''\kl{\fs{3}{4}} &= 0 &
+        v_1''\kl{\fs{3}{4}} &= -\pi^2 \cdot \sin\kl{\pi \fs{3}{4}} = \fs{-\pi^2 \sqrt{2}}{2} &
+        v_2''\kl{\fs{3}{4}} &= -4 \pi^2 \cdot \sin\kl{2 \pi \fs{3}{4}} = 4\pi^2\\
         \end{align*}
     \end{minipage}
-        
+    {\setlength{\abovedisplayskip}{-12pt}
+    \setlength{\belowdisplayskip}{3pt}
+    \begin{align*}
+        \begin{matrix}
+            \tfillg{$\fs{1}{4}$:} \\
+            \tfilly{$\fs{3}{4}$:} \\
+        \end{matrix}
+        \begin{bmatrix}
+            \fs{-\pi^2 \sqrt{2}}{2} & -4\pi^2 \\
+            \fs{-\pi^2 \sqrt{2}}{2} & +4\pi^2 \\
+        \end{bmatrix} \cdot
+        \begin{pmatrix}
+            a_1 \\
+            a_2
+        \end{pmatrix} = 
+        \begin{pmatrix}
+            -20 \\
+            -20
+        \end{pmatrix} 
+    \end{align*}} \\
+    Solution: \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-24pt}
+    \begin{align*}
+    a_1 &= \fs{20 \cdot \sqrt{2}}{\pi^2} = 2.8658 = 2.9, \quad a_2 = 0 \\
+    \end{align*}} \\
+    {\setlength{\abovedisplayskip}{-12pt}
+    \setlength{\belowdisplayskip}{-6pt}
+    \begin{alignat*}{8}
+        \widetilde{u}\kl{x} & = v_0\kl{x}       &{} \tfillgr{$+$} {} & a_1                           &{} \cdot {} &
+                                v_1\kl{x}       &{} \tfillgr{$+$} {} & a_2 &{} \cdot {} & v_2\kl{x} \\
+        \widetilde{u}\kl{x} & = 10 \cdot x + 10 &{} \tfillgr{$+$} {} & \fs{20 \cdot \sqrt{2}}{\pi^2} &{} \cdot {} &
+                                \sin\kl{\pi x}  &{} \tfillgr{$+$} {} & 0 &{} \cdot {} & \sin\kl{2 \pi x} \\
+    \end{alignat*}}
+
+    
+    {\bf{Galerkin}} \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        \int_{0}^{1}&{\kl{u''\kl{x} + f\kl{x}} \cdot v_k\kl{x} \difx} = 0  \\[0.1cm]
+        \int_{0}^{1}&{\kl{\tfillv{$v_0''$}\kl{x}   + \tfillgr{$a_1$} \cdot \tfillb{$v_1''$}\kl{x}   + \tfillgr{$a_2$} \cdot \tfillb{$v_2''$}\kl{x} + \tfilly{$20$}} \cdot \tfillr{$v_k$}\kl{x} \difx} = 0  \\[0.1cm]
+    \end{align*}} \\
+    \begin{comment}
+    \begin{bmatrix}
+    \int\limits_{0}^{1}{\tfillb{$v_1''$}\kl{x} \cdot \tfillr{$v_1$}\kl{x} \difx} &
+    \int\limits_{0}^{1}{\tfillb{$v_2''$}\kl{x} \cdot \tfillr{$v_1$}\kl{x} \difx} \\
+    \int\limits_{0}^{1}{\tfillb{$v_1''$}\kl{x} \cdot \tfillr{$v_2$}\kl{x} \difx} & 
+    \int\limits_{0}^{1}{\tfillb{$v_2''$}\kl{x} \cdot \tfillr{$v_2$}\kl{x} \difx} \\
+    \end{bmatrix} & \cdot &
+    \begin{pmatrix}
+    a_1 \\
+    a_2
+    \end{pmatrix} & + & 
+    \begin{pmatrix}
+    \int\limits_{0}^{1}{\tfillv{$v_0''$}\kl{x} \cdot \tfillr{$v_1$}\kl{x} \difx} + \int\limits_{0}^{1}{\tfilly{$20$}\kl{x} \cdot \tfillr{$v_1$}\kl{x} \difx} \\
+    \int\limits_{0}^{1}{\tfillv{$v_0''$}\kl{x} \cdot \tfillr{$v_1$}\kl{x} \difx} + \int\limits_{0}^{1}{\tfilly{$20$}\kl{x} \cdot \tfillr{$v_1$}\kl{x} \difx}
+    \end{pmatrix} & = & 0
+    \end{comment}
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        \begin{array}{r@{\ }c@{\ }c@{\ }c@{\ }c@{\ }c@{\ }l}
+            Q & \cdot & \uline{a} & + & \uline{q} & = & 0
+        \end{array}
+    \end{align*}} \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        \begin{array}{ll}
+            Q & = \begin{bmatrix}
+                \int\limits_{0}^{1}{\tfillb{$v_1''$}\kl{x} \cdot \tfillr{$v_1$}\kl{x} \difx} &
+                \int\limits_{0}^{1}{\tfillb{$v_2''$}\kl{x} \cdot \tfillr{$v_1$}\kl{x} \difx} \\
+                \int\limits_{0}^{1}{\tfillb{$v_1''$}\kl{x} \cdot \tfillr{$v_2$}\kl{x} \difx} & 
+                \int\limits_{0}^{1}{\tfillb{$v_2''$}\kl{x} \cdot \tfillr{$v_2$}\kl{x} \difx} \\
+            \end{bmatrix} \\
+            & \\
+            & = \begin{bmatrix}
+                \int\limits_{0}^{1}{\tfillb{$-\pi^2   \cdot \sin\kl{\pi x}$}   \cdot \tfillr{$\sin\kl{\pi x}$} \difx} &
+                \int\limits_{0}^{1}{\tfillb{$-4 \pi^2 \cdot \sin\kl{2 \pi x}$} \cdot \tfillr{$\sin\kl{\pi x}$} \difx} \\
+                \int\limits_{0}^{1}{\tfillb{$-\pi^2   \cdot \sin\kl{\pi x}$}   \cdot \tfillr{$\sin\kl{2 \pi x}$} \difx} & 
+                \int\limits_{0}^{1}{\tfillb{$-4 \pi^2 \cdot \sin\kl{2 \pi x}$} \cdot \tfillr{$\sin\kl{2 \pi x}$} \difx} \\
+            \end{bmatrix} \\
+            & \\
+            & = \begin{bmatrix}
+                \f{-\pi^2}{2} & 0 \\
+                0             & -2\pi^2
+            \end{bmatrix} \\
+            & \\
+            q & = \begin{pmatrix}
+                \int\limits_{0}^{1}{\tfillv{$v_0''$}\kl{x} \cdot \tfillr{$v_1$}\kl{x} \difx} + 
+                \int\limits_{0}^{1}{\tfilly{$20$}          \cdot \tfillr{$v_1$}\kl{x} \difx} \\
+                \int\limits_{0}^{1}{\tfillv{$v_0''$}\kl{x} \cdot \tfillr{$v_2$}\kl{x} \difx} + 
+                \int\limits_{0}^{1}{\tfilly{$20$}          \cdot \tfillr{$v_2$}\kl{x} \difx}
+            \end{pmatrix} \\
+            & \\
+            & = \begin{pmatrix}
+                \int\limits_{0}^{1}{\tfillv{$0$}       \cdot \tfillr{$v_1$}\kl{x} \difx} +
+                \int\limits_{0}^{1}{\tfilly{$20$}      \cdot \tfillr{$\sin\kl{\pi x}$} \difx} \\
+                \int\limits_{0}^{1}{\tfillv{$0$}       \cdot \tfillr{$v_2$}\kl{x} \difx} +
+                \int\limits_{0}^{1}{\tfilly{$20$}      \cdot \tfillr{$\sin\kl{2 \pi x}$} \difx}
+            \end{pmatrix} \\
+            & \\
+            & = \begin{pmatrix}
+                \f{40}{\pi} \\
+                0
+            \end{pmatrix}
+        \end{array}
+    \end{align*}}
     
 \end{document}
