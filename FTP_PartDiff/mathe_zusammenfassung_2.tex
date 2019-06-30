@@ -3,14 +3,14 @@
 %-------------------------------------------------------------------------------
 % Dokumenten Klasse
 \documentclass[
-	final,
-	a4paper,
-	oneside,
-	parskip=full,
-	headings=standardclasses,
-	headings=big,
-	pointednumbers,
-    fleqn
+final,
+a4paper,
+oneside,
+parskip=full,
+headings=standardclasses,
+headings=big,
+pointednumbers,
+fleqn
 ]{scrartcl}
 
 %-------------------------------------------------------------------------------
@@ -24,7 +24,7 @@
 \usepackage{mathtools}
 
 %-------------------------------------------------------------------------------
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 
 %-------------------------------------------------------------------------------
 % dbox
@@ -94,6 +94,7 @@
 \NewDocumentCommand{\dt}{ O{} }{{\Delta t^{#1}}}
 \NewDocumentCommand{\gp}{ O{} }{}
 
+\NewDocumentCommand{\xyz}{ O{x} O{y} O{z} }{#1 #2 #3}
 % 1: Value
 % 2: Key
 % 3: Background Color
@@ -102,7 +103,16 @@
         \node[fill=#3,anchor=base] (#2) {#1};
     }
 }
-\NewDocumentCommand{\xyz}{ O{x} O{y} O{z} }{#1 #2 #3}
+\NewDocumentCommand{\tfillc}{ O{} O{} }{%
+    \tikz[baseline, every node/.style={inner sep=2pt,outer sep=0pt}]{
+        \node[fill=#2,anchor=base] {#1};
+    }
+}
+\newcommand{\tfillb}[1]{\tfillc[#1][blue!20]}
+\newcommand{\tfillo}[1]{\tfillc[#1][orange!40]}
+\newcommand{\tfillg}[1]{\tfillc[#1][Green!20]}
+\newcommand{\tfilly}[1]{\tfillc[#1][yellow!40]}
+\newcommand{\tfillr}[1]{\tfillc[#1][red!20]}
 
 % 1: Funktion Name
 % 2: dx
@@ -128,18 +138,130 @@
     \kl{#1 - 2 \cdot #2 + #3}
 }
 
+\newcommand*\difx{\; \mathop{}\!\mathrm{d}x}
 \newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\scriptstyle\frac{#1}{#2}}}
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\kl}[1]{{\left( #1 \right)}}
 \newcommand{\kq}[1]{{\left\{ #1 \right\}}}
 \newcommand{\ks}[1]{{\left[ #1 \right]}}
+\newcommand{\dom}{{\Omega}}
+\newcommand{\bound}{{\partial \Omega}}
 
 %-------------------------------------------------------------------------------
 % Dokument
 \begin{document}
+    
+    %\section*{Finite Element Method (FEM)}
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+    \widetilde{u}\kl{x} & = a_1 \cdot v_1\kl{x} + \ldots + a_n \cdot v_n\kl{x}
+    \end{align*}}
 
-    \subsection*{Ableitungsregeln}
+    {\bf{Weighted Residuals}} \\
+    Generalization of Galerkin \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+    \int_{0}^{1}&{\kl{u''\kl{x} + f\kl{x}} \cdot w_k\kl{x} \difx} = 0  \\[0.25cm]
+    M_{j,k} & = \int_{0}^{1}{v_j''\kl{x} \cdot w_k\kl{x} \difx}  \\[0.25cm]
+    m_k & = \int_{0}^{1}{f\kl{x} \cdot w_k\kl{x} \difx}   \\[0.25cm]
+    M &\cdot \uline{a} + \uline{m} = 0
+    \end{align*}} \\
+    Measures the distance between the approximation\\
+    function and the exact solution: \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+    r\kl{x} & = u''\kl{x} + f\kl{x} \\[0.25cm]
+    \int_{0}^{1}&{r\kl{x} \cdot w_k\kl{x} \difx}
+    \end{align*}}
+    
+    {\bf{Method of Ritz}} \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+    R_{j,k} & = \int_{0}^{1}{v_j'\kl{x} \cdot v_k'\kl{x} \difx}  \\[0.25cm]
+    r_k &= \int_{0}^{1}{f\kl{x} \cdot v_k\kl{x} \difx}   \\[0.25cm]
+    R &\cdot \uline{a} = \uline{r} \quad \text{or} \quad R \cdot \uline{a} + \uline{r} = 0
+    \end{align*}}
+
+    {\bf{Method of Galerkin}} \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+    \int_{0}^{1}&{\kl{u''\kl{x} + f\kl{x}} \cdot v_k\kl{x} \difx} = 0  \\[0.25cm]
+    G_{j,k} & = \int_{0}^{1}{v_j''\kl{x} \cdot v_k\kl{x} \difx}  \\[0.25cm]
+    g_k &= \int_{0}^{1}{f\kl{x} \cdot v_k\kl{x} \difx}   \\[0.25cm]
+    G &\cdot \uline{a} + \uline{g} = 0
+    \end{align*}}
+    
+    {\bf{Method of Gauss}} \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+    \int_{0}^{1}&{\kl{u''\kl{x} + f\kl{x}}^2 \difx} = 0  \\[0.25cm]
+    Q_{j,k} & = \int_{0}^{1}{v_j''\kl{x} \cdot v_k''\kl{x} \difx}  \\[0.25cm]
+    q_k & = \int_{0}^{1}{f\kl{x} \cdot v_k''\kl{x} \difx}   \\[0.25cm]
+    Q &\cdot \uline{a} + \uline{q} = 0
+    \end{align*}} \\
     
     
+    %===================================================================================
+    \newpage
+    
+    {\bf{Problem 98}} \\
+    Modified Problem 1 \\
+    {\setlength{\abovedisplayskip}{-12pt}
+    \setlength{\belowdisplayskip}{-6pt}
+    \begin{align*}
+    u''\kl{x} &+ f\kl{x} = 0 \\
+    f\kl{x} &= 20, \quad u\kl{\tfillb{$0$}} = \tfillg{$10$} , \quad u\kl{\tfillr{$1$}} = \tfilly{$20$}
+    \end{align*}} \\
+    Inhomogeneous Boundary conditions: \\
+    {\setlength{\abovedisplayskip}{-12pt}
+    \setlength{\belowdisplayskip}{-22pt}
+    \begin{align*}
+    \widetilde{u}\kl{x} & = v_0\kl{x} + a_1 \cdot v_1\kl{x} + a_2 \cdot v_2\kl{x} \\[0.3cm]
+    \widetilde{u}\kl{\tfillb{$0$}} & = v_0\kl{0} + a_1 \cdot v_1\kl{0} + a_2 \cdot v_2\kl{0} = \tfillg{$10$}\\
+    v_0\kl{0} &= 10, \quad v_1\kl{0} = 0, \quad v_2\kl{0} = 0\\[0.3cm]
+    \widetilde{u}\kl{\tfillr{$1$}} & = v_0\kl{1} + a_1 \cdot v_1\kl{1} + a_2 \cdot v_2\kl{1} = \tfilly{$20$}\\
+    v_0\kl{1} &= 20, \quad v_1\kl{1} = 0, \quad v_2\kl{1} = 0\\
+    \end{align*}} \\
+    Basis Functions: \\
+    \begin{minipage}{0.6\textwidth}
+        \setlength{\abovedisplayskip}{0pt}
+        \setlength{\belowdisplayskip}{-12pt}
+        \begin{align*}
+        v_0\kl{x} &= 10 \cdot x + 10    &v_0'\kl{x} &= 10                            &v_0''\kl{x} &= 0 \\
+        v_1\kl{x} &= \sin\kl{\pi x}     &v_1'\kl{x} &= \pi \cdot \cos\kl{\pi x}      &v_1''\kl{x} &= -\pi^2 \cdot \sin\kl{\pi x}\\
+        v_2\kl{x} &= \sin\kl{2 \pi x}   &v_2'\kl{x} &= 2 \pi \cdot \cos\kl{2 \pi x}  &v_2''\kl{x} &= -4 \pi^2 \cdot \sin\kl{2 \pi x}
+        \end{align*}
+    \end{minipage}
 
+    {\bf{Point Collocation}} \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        \widetilde{u}\kl{x_k} + \tfillb{$20$} = 0, \quad x_1 = \tfillg{$\fs{1}{4}$}, \quad x_2 = \tfilly{$\fs{3}{4}$}
+    \end{align*}}
+    {\setlength{\abovedisplayskip}{6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        \widetilde{u}\kl{x}   &= v_0\kl{x}   + a_1 \cdot v_1\kl{x}   + a_2 \cdot v_2\kl{x} \\
+        \widetilde{u}''\kl{x} &= v_0''\kl{x} + a_1 \cdot v_1''\kl{x} + a_2 \cdot v_2''\kl{x} = -f\kl{x} \\
+        \widetilde{u}''\kl{\tfillg{$\fs{1}{4}$}} &= v_0''\kl{\fs{1}{4}} + a_1 \cdot v_1''\kl{\fs{1}{4}} + a_2 \cdot v_2''\kl{\fs{1}{4}} = \tfillb{$-20$} \\
+        \widetilde{u}''\kl{\tfilly{$\fs{3}{4}$}} &= v_0''\kl{\fs{3}{4}} + a_1 \cdot v_1''\kl{\fs{3}{4}} + a_2 \cdot v_2''\kl{\fs{3}{4}} = \tfillb{$-20$} \\
+    \end{align*}}
+    \begin{minipage}{0.4\textwidth}
+        \setlength{\abovedisplayskip}{-6pt}
+        \setlength{\belowdisplayskip}{-12pt}
+        \begin{align*}
+        v_0''\kl{\fs{1}{4}} &= 0 & v_1''\kl{\fs{1}{4}} =& a & v_2''\kl{\fs{1}{4}} &= a \\
+        v_0''\kl{\fs{3}{4}} &= 0 & v_1''\kl{\fs{3}{4}} =& a & v_2''\kl{\fs{3}{4}} &= a \\
+        \end{align*}
+    \end{minipage}
+        
+    
 \end{document}
