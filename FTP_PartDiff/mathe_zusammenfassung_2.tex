@@ -168,7 +168,8 @@ fleqn
 
 \newcommand*\difx{\; \mathop{}\!\mathrm{d}x}
 \newcommand{\f}[2]{\frac{#1}{#2}}
-\newcommand{\fs}[2]{{\scriptstyle\frac{#1}{#2}}}
+%\newcommand{\fs}[2]{{\scriptstyle\frac{#1}{#2}}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
 \newcommand{\sqrts}[1]{{\scriptstyle\sqrt{#1}}}
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\kl}[1]{{\left( #1 \right)}}
@@ -264,7 +265,7 @@ fleqn
         \setlength{\abovedisplayskip}{0pt}
         \setlength{\belowdisplayskip}{-12pt}
         \begin{align*}
-        v_0\kl{x} &= 10 \cdot x + 10    &v_0'\kl{x} &= 10                            &v_0''\kl{x} &= 0 \\
+        v_0\kl{x} &= \tfilly{$10 \cdot x$} + \tfillg{$10$}    &v_0'\kl{x} &= 10                            &v_0''\kl{x} &= 0 \\
         v_1\kl{x} &= \sin\kl{\pi x}     &v_1'\kl{x} &= \pi \cdot \cos\kl{\pi x}      &v_1''\kl{x} &= -\pi^2 \cdot \sin\kl{\pi x}\\
         v_2\kl{x} &= \sin\kl{2 \pi x}   &v_2'\kl{x} &= 2 \pi \cdot \cos\kl{2 \pi x}  &v_2''\kl{x} &= -4 \pi^2 \cdot \sin\kl{2 \pi x}
         \end{align*}
@@ -276,12 +277,13 @@ fleqn
     {\setlength{\abovedisplayskip}{-6pt}
     \setlength{\belowdisplayskip}{-12pt}
     \begin{align*}
-        \widetilde{u}''\kl{x_k} + \tfillb{$20$} = 0, \quad x_1 = \tfillg{$\fs{1}{4}$}, \quad x_2 = \tfilly{$\fs{3}{4}$}
+        \widetilde{u}''\kl{x_k} + \tfillb{$20$} = 0, \quad x_1 = \tfillg{$\fs{1}{4}$}, \quad x_3 = \tfilly{$\fs{3}{4}$}
     \end{align*}}
     {\setlength{\abovedisplayskip}{6pt}
     \setlength{\belowdisplayskip}{-12pt}
     \begin{align*}
         \widetilde{u}\kl{x}   &= v_0\kl{x}   + a_1 \cdot v_1\kl{x}   + a_2 \cdot v_2\kl{x} \\
+        u''\kl{x} &= -f\kl{x} \\
         \widetilde{u}''\kl{x} &= v_0''\kl{x} + a_1 \cdot v_1''\kl{x} + a_2 \cdot v_2''\kl{x} = -f\kl{x} \\
         \widetilde{u}''\kl{\tfillg{$\fs{1}{4}$}} &= v_0''\kl{\fs{1}{4}} + a_1 \cdot v_1''\kl{\fs{1}{4}} + a_2 \cdot v_2''\kl{\fs{1}{4}} = \tfillb{$-20$} \\
         \widetilde{u}''\kl{\tfilly{$\fs{3}{4}$}} &= v_0''\kl{\fs{3}{4}} + a_1 \cdot v_1''\kl{\fs{3}{4}} + a_2 \cdot v_2''\kl{\fs{3}{4}} = \tfillb{$-20$} \\
@@ -290,13 +292,13 @@ fleqn
         \setlength{\abovedisplayskip}{-6pt}
         \setlength{\belowdisplayskip}{-12pt}
         \begin{align*}
-        v_0''\kl{\fs{1}{4}} &= 0 &
-        v_1''\kl{\fs{1}{4}} &= -\pi^2 \cdot \sin\kl{\pi \fs{1}{4}} = \fs{-\pi^2 \sqrt{2}}{2} &
-        v_2''\kl{\fs{1}{4}} &= -4 \pi^2 \cdot \sin\kl{2 \pi \fs{1}{4}} = -4\pi^2\\
+        \tfillgr{$v_0''$}\kl{\fs{1}{4}} &= 0 &
+        \tfillgr{$v_1''$}\kl{\fs{1}{4}} &= -\pi^2 \cdot \sin\kl{\pi \fs{1}{4}} = \tfillr{$\fs{-\pi^2 \sqrt{2}}{2}$} &
+        \tfillgr{$v_2''$}\kl{\fs{1}{4}} &= -4 \pi^2 \cdot \sin\kl{2 \pi \fs{1}{4}} = \tfillt{$-4\pi^2$}\\
         %
-        v_0''\kl{\fs{3}{4}} &= 0 &
-        v_1''\kl{\fs{3}{4}} &= -\pi^2 \cdot \sin\kl{\pi \fs{3}{4}} = \fs{-\pi^2 \sqrt{2}}{2} &
-        v_2''\kl{\fs{3}{4}} &= -4 \pi^2 \cdot \sin\kl{2 \pi \fs{3}{4}} = 4\pi^2\\
+        \tfillgr{$v_0''$}\kl{\fs{3}{4}} &= 0 &
+        \tfillgr{$v_1''$}\kl{\fs{3}{4}} &= -\pi^2 \cdot \sin\kl{\pi \fs{3}{4}} = \fs{-\pi^2 \sqrt{2}}{2} &
+        \tfillgr{$v_2''$}\kl{\fs{3}{4}} &= -4 \pi^2 \cdot \sin\kl{2 \pi \fs{3}{4}} = 4\pi^2\\
         \end{align*}
     \end{minipage}
     {\setlength{\abovedisplayskip}{-12pt}
@@ -307,7 +309,7 @@ fleqn
             \tfilly{$\fs{3}{4}$:} \\
         \end{matrix}
         \begin{bmatrix}
-            \fs{-\pi^2 \sqrt{2}}{2} & -4\pi^2 \\
+            \tfillr{$\fs{-\pi^2 \sqrt{2}}{2}$} & \tfillt{$-4\pi^2$} \\
             \fs{-\pi^2 \sqrt{2}}{2} & +4\pi^2 \\
         \end{bmatrix} \cdot
         \begin{pmatrix}
@@ -501,16 +503,16 @@ fleqn
             \end{bmatrix} \\
             & \\
             r & = \begin{pmatrix}
-                \int\limits_{0}^{1}{\tfillv{$v_0'$}\kl{x} \cdot \tfillr{$v_1'$}\kl{x} \difx} -
+                \int\limits_{0}^{1}{\tfillv{$v_0'$}\kl{x} \cdot \tfillo{$v_1'$}\kl{x} \difx} -
                 \int\limits_{0}^{1}{\tfilly{$20$}         \cdot \tfillr{$v_1$}\kl{x} \difx} \\
-                \int\limits_{0}^{1}{\tfillv{$v_0'$}\kl{x} \cdot \tfillr{$v_2'$}\kl{x} \difx} -
+                \int\limits_{0}^{1}{\tfillv{$v_0'$}\kl{x} \cdot \tfillo{$v_2'$}\kl{x} \difx} -
                 \int\limits_{0}^{1}{\tfilly{$20$}         \cdot \tfillr{$v_2$}\kl{x} \difx}
             \end{pmatrix} \\
             & \\
             & = \begin{pmatrix}
-                \int\limits_{0}^{1}{\tfillv{$10$}       \cdot \tfillr{$\pi \cdot \cos\kl{\pi x}$} \difx} -
+                \int\limits_{0}^{1}{\tfillv{$10$}       \cdot \tfillo{$\pi \cdot \cos\kl{\pi x}$} \difx} -
                 \int\limits_{0}^{1}{\tfilly{$20$}      \cdot \tfillr{$\sin\kl{\pi x}$} \difx} \\
-                \int\limits_{0}^{1}{\tfillv{$10$}       \cdot \tfillr{$2 \pi \cdot \cos\kl{2 \pi x}$} \difx} -
+                \int\limits_{0}^{1}{\tfillv{$10$}       \cdot \tfillo{$2 \pi \cdot \cos\kl{2 \pi x}$} \difx} -
                 \int\limits_{0}^{1}{\tfilly{$20$}      \cdot \tfillr{$\sin\kl{2 \pi x}$} \difx}
             \end{pmatrix} \\
             & \\
@@ -626,7 +628,7 @@ fleqn
             \end{pmatrix} \\
             & \\
             & = \begin{pmatrix}
-                \f{-40}{\pi} \\
+                -40 \pi \\
                 0
             \end{pmatrix}
         \end{array}
@@ -635,7 +637,7 @@ fleqn
     \setlength{\belowdisplayskip}{-12pt}
     \begin{align*}
         \begin{array}{c@{\ }c@{\ }c@{\ }c@{\ }c@{\ }c@{\ }l}
-            R & \cdot & \uline{a} & + & \uline{r} & = & 0 \\
+            Q & \cdot & \uline{a} & + & \uline{q} & = & 0 \\
             \\
             \begin{bmatrix}
                 \f{\pi^4}{2} & 0 \\
@@ -646,7 +648,7 @@ fleqn
                 a_2
             \end{pmatrix} & + &
             \begin{pmatrix}
-                \f{-40}{\pi} \\
+                -40 \pi \\
                 0
             \end{pmatrix} & = & 0
             \\
@@ -664,7 +666,7 @@ fleqn
             0             & 8\pi^4
         \end{bmatrix}^{-1} \cdot
         \begin{pmatrix}
-            \f{40}{\pi} \\
+            40 \pi \\
             0
         \end{pmatrix} =
         \begin{pmatrix}

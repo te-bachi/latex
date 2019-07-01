@@ -138,7 +138,8 @@
 }
 
 \newcommand{\f}[2]{\frac{#1}{#2}}
-\newcommand{\fs}[2]{{\scriptstyle\frac{#1}{#2}}}
+%\newcommand{\fs}[2]{{\scriptstyle\frac{#1}{#2}}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\kl}[1]{{\left( #1 \right)}}
 \newcommand{\kq}[1]{{\left\{ #1 \right\}}}
@@ -170,44 +171,21 @@
     \begin{tabular}{ll}
         Forward FDM  & $g'\kl{x} = \frac{g \kl{x + \dx} - g \kl{x}}{\dx}$ \\
         Backward FDM & $g'\kl{x} = \frac{g \kl{x} - g \kl{x - \dx}}{\dx}$ \\
-        Central FDM  & $g'\kl{x} = \frac{g \kl{x + \dx} - g \kl{x - \dx}}{\dx}$
+        Central FDM  & $g'\kl{x} = \frac{g \kl{x + \dx} - g \kl{x - \dx}}{2\dx}$
     \end{tabular}}
-    
-    \begin{align*}
-        g'\kl{x}  &= \frac{g \kl{x + \dx} - g \kl{x}}{\dx} \\
-        g''\kl{x} &= \frac{g \kl{x + \dx} - 2 \cdot g\kl{x} + g \kl{x - \dx}}{\dx[2]}
-    \end{align*}
 
-
-    Stationary Temperature Profile $T\kl{x}$ in a long, slim, not isolated rod of length $L$:
-    \begin{align*}
-        \SwapAboveDisplaySkip
-        T''\kl{x} + h \cdot \kl{T_A - T\kl{x}} = 0, \qquad T\kl{0} = T_0, \quad T\kl{L}=T_L & &
-    \end{align*}
-    Concrete values:
-    \begin{align*}
-        \SwapAboveDisplaySkip
-        L = 10\mathrm{m} \quad
-        h = 0.01 {\textstyle \frac{1}{\mathrm{cm}^2}} \quad
-        T_A = 20^\circ\text{C} \quad
-        T_0 = 40^\circ\text{C} \quad
-        T_L = 200^\circ\text{C} & &
-    \end{align*}
-    FDM: \\
-    \begin{tabular}{p{1cm}l}
-        \multicolumn{2}{l}{$T\kl{x_0} = 40, \quad T\kl{x_5}=200$} \\
-        $T''\kl{x}$ & $\gpp[\widetilde{T}]$ \\
-        $x_1$       & $\gpp[\widetilde{T}][2][2^2][x_1][x_1][x_1]$ \\
-                    & $\gpp[\widetilde{T}][][2^2][x_2][x_1][x_0]$ \\
-                    & $\gppn[T_2][T_1][T_0][2^2]$ \\
-                    & $\gppn[40][T_1][T_0][2^2]$ \\
-        \multicolumn{2}{l}{$T''\kl{x} + h \cdot \kl{T_A - T\kl{x}} = 0$} \\
-        $x_1$       & $\gpp[\widetilde{T}][][4][x_2][x_1][x_0] + 0.01 \cdot \kl{ 20 - \widetilde{T}\kl{x_1}}$ = 0 \\
-                    & $\gppn[T_2][T_1][T_0][4] + 0.01 \cdot \kl{ 20 - T_1}$ = 0 \\
-                    & $\f{1}{4} T_0 - \f{2}{4}T_1 + \f{1}{4}T_2 + 0.2 - 0.01 T_1 = 0$ \\
-                    & $\f{40}{4} - \kl{\f{2}{4} + 0.01} T_1 + \f{1}{4}T_2 + 0.2 = 0$ \\
-                    & $10.2 = 0.51 T_1 - 0.25 T_2$
-    \end{tabular}
+	\begin{minipage}{0.3\textwidth}
+        \begin{align*}
+            g'\kl{x}  &= \frac{g \kl{x + \dx} - g \kl{x}}{\dx} \\
+            g''\kl{x} &= \frac{g \kl{x + \dx} - 2 \cdot g\kl{x} + g \kl{x - \dx}}{\dx[2]}
+        \end{align*}
+    \end{minipage}
+	\begin{minipage}{0.7\textwidth}
+        \begin{align*}
+            u_{x}  &= \fs{1}{\dx}    \; \kl{u_{k+1} - u_{k}} \\
+            u_{xx} &= \fs{1}{\dx[2]} \; \kl{u_{k+1} - 2\cdot u_{k} + u_{k-1}}
+        \end{align*}
+    \end{minipage}
     
     %===================================================================================
     \newpage
