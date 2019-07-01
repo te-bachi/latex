@@ -1,11 +1,14 @@
 
-\include{header}
+\input{header/header}
 
 %-------------------------------------------------------------------------------
 % Dokument
 \begin{document}
 	
-	\include{content/introduction}
-	\include{content/skin_thermal_properties}
-	
+	\begin{multicols*}{2}
+		\input{content/introduction}
+		\input{content/skin_thermal_properties}
+		\input{content/fundamentals_of_thermal_imaging}
+	\end{multicols*}
+
 \end{document}

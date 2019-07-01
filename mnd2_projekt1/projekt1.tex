@@ -60,22 +60,22 @@
 
 %-------------------------------------------------------------------------------
 % Listings
-\lstset{
-	language=Matlab,
-	breaklines=true,
-	numbers=left,
-	numberstyle=\tiny,
-	numbersep=5pt,
-	captionpos=b,
-	basicstyle=\footnotesize\ttfamily,
-	stringstyle=\color{magenta},
-	identifierstyle=\color{black},
-	keywordstyle=\color{blue}, 
-	commentstyle=\color{DarkGreen}
-}
 
-\newcommand{\mylisting}[2][]{%
-	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}%
+\newcommand{\listingMatlab}[2][]{
+	\lstset{
+		language=Matlab,
+		breaklines=true,
+		numbers=left,
+		numberstyle=\tiny,
+		numbersep=5pt,
+		captionpos=b,
+		basicstyle=\footnotesize\ttfamily,
+		stringstyle=\color{magenta},
+		identifierstyle=\color{black},
+		keywordstyle=\color{blue}, 
+		commentstyle=\color{DarkGreen}
+	}
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}
 }
 
 %-------------------------------------------------------------------------------
@@ -96,7 +96,7 @@
 	
 	\subsection*{Lösung}
 
-	\mylisting[frame=single]{aufgabe1.m}
+	\listingMatlab[frame=single]{aufgabe1.m}
 	
 	
 	%\vspace{-1.0cm}
@@ -110,7 +110,7 @@
 		\caption{Algorithmus}
 	\end{mycapequ}
 	
-	\mylisting[frame=single]{explicitRunge.m}
+	\listingMatlab[frame=single]{explicitRunge.m}
 	
 	
 	\begin{figure}[htbp] 
@@ -181,11 +181,11 @@ diff(g,s)
 	\section*{Aufgabe 3}
 	Setzen Sie den folgenden Algorithmus um
 	
-	\mylisting[frame=single]{aufgabe3.m}
+	\listingMatlab[frame=single]{aufgabe3.m}
 	
-	\mylisting[frame=single]{implizitEulerNewton.m}
+	\listingMatlab[frame=single]{implizitEulerNewton.m}
 	
-	\mylisting[frame=single]{newton.m}
+	\listingMatlab[frame=single]{newton.m}
 	
 	
 	\begin{figure}[htbp] 
@@ -202,9 +202,9 @@ diff(g,s)
 	
 	\subsection*{Lösung}
 	
-	\mylisting[frame=single]{aufgabe4.m}
+	\listingMatlab[frame=single]{aufgabe4.m}
 	
-	\mylisting[frame=single]{implicitTrapez.m}
+	\listingMatlab[frame=single]{implicitTrapez.m}
 	
 	\begin{figure}[htbp] 
 		\centering
@@ -223,7 +223,7 @@ diff(g,s)
 	
 	\subsection*{Lösung}
 	
-	\mylisting[frame=single]{aufgabe5.m}
+	\listingMatlab[frame=single]{aufgabe5.m}
 	
 	\begin{figure}[htbp] 
 		\centering
@@ -239,7 +239,7 @@ diff(g,s)
 	
 	\subsection*{Lösung}
 	
-	\mylisting[frame=single]{aufgabe6.m}
+	\listingMatlab[frame=single]{aufgabe6.m}
 	
 	\begin{figure}[htbp] 
 		\centering
@@ -274,7 +274,7 @@ diff(g,s)
 
 	\newpage
 
-	\mylisting[frame=single]{aufgabe7.m}
+	\listingMatlab[frame=single]{aufgabe7.m}
 	
 	\begin{figure}[htbp] 
 		\centering

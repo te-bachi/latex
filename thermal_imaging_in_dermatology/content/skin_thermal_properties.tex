@@ -38,3 +38,139 @@ processes. \textit{Langerhans cells} are professional antigen-presenting cells. 
 play a pivotal role in the immune defense of the body. \textit{Merkel cells} (initially
 called \textit{touch cells} by Merkel) are connected to sensory nerve endings and
 involved in the sensitive discrimination.
+
+\subsubsection*{Dermis}
+
+The dermis is a very dense layer that joins the epidermis at a thin basement membrane
+zone. Its thickness can vary from $0.4 mm$ (eyelids, prepuce) to $1 cm$ on the back.
+Dermis is a fibrous connective tissue that contains the blood supply for the skin.
+Through the very developed vascularization (around $1 m$ of capillaries per square
+centimeter of skin) the dermis brings nutrients to the epidermis, because it has no
+direct blood supply. The \textit{adnexae}, ie, \textit{sebaceous glands} that secrete the
+\textit{sebum}, \textit{apocrine}, and \textit{eccrine glands} that secrete the sweat,
+and the \textit{hair follicles}, are located in this skin layer (see Fig. 31.1A). The
+basis of the dermis is a supporting matrix made of \textit{mucopolysaccharides}, ie,
+\textit{macromolecules} that retain the water like sponges. Within this matrix, two
+kinds of fiber confer the strength properties of the skin: a great tensile strength
+from the \textit{collagen fibers} and the elasticity from the \textit{elastic fibers}.
+\textit{Dermal cells} are principally \textit{fibroblasts} that produce the
+\textit{collagen} and the \textit{elastic fibers}. Other cells like \textit{histiocytes}
+and \textit{mast cells} are involved in the immune system.
+
+\subsubsection*{Hypodermis}
+
+Hypodermis is also called \textit{subcutaneous fat}, though it is part of the skin.
+It is its innermost and thickest layer, attached to the dermis by \textit{collagen}
+and \textit{elastic fibers}. It is constituted of \textit{adipocytes} organized in
+lobules and connective tissue containing vessels and nerves (see 31.1.A). This deep
+layer of the skin can be extremely thin in some parts of the body (< $1 mm$ on eyelids)
+or extremely thick in others (several centimeters in abdomen or buttocks), with huge
+variations from person to person according to the body mass index.
+
+\subsection*{Skin Thermal Modeling}
+
+As discussed later in this capture thermal imaging achieves its full potential only
+in combination with a proper thermal modeling of the sample under investigation. The
+building of such thermal models is a requirement for the extraction of quantitative
+parameters from the experimental data. Heat transfer phenomena taking place in the
+different skin layers are a mix of heat conduction processes coupled with
+physiological mechanisms that include blood perfusion, metabolic heat generation,
+and sweating. The skin is an active medium that is regulating the bodily temperature.
+Absorption and emission of visible, UV, or IR radiation depends on the thickness and
+the pigmentation of the skin. Hypodermis and hairs isolate the body from the cold.
+Thermal regulation can also be achieved by the variations of the diameter of the skin
+vessels. Indeed, the skin is highly vascularized, containing about 10\% of the vessels
+of the all body. Thermoreceptors located in the skin detect levels and variations
+of temperature. If skin temperature drops, neuronal signals are sent to trigger
+vasoconstriction of dermal and hypodermal arterioles, limiting thermal loss by
+reducing the blood flow exposed to peripheral low temperatures. If the internal
+temperature rises, vasodilation allows heat transfers to external environment by
+the means of radiation, conduction, and convection. When ambient temperature is high,
+evaporation of sweat produced by eccrine and apocrine glands induces a lowering of the
+body temperature. In case of extreme temperature the metabolism will eventually slow
+down. Skin tissue is a complex active, nonhomogeneous and anisotropic medium; as a
+result, the building of a realistic thermal skin model remains challenging.
+
+Numerous heat-transfer skin models have been proposed in the literature (see, for
+example, Ref. [17] for a review on the subject). They can be classified into four
+categories: continuum models, vascular models, hybrid models, and models based on
+porous media theory. Continuum models are widely used because of their simplicity
+and because they can be either solved analytically or using finite elements or
+finite difference solvers. They are based on the Penne's bioheat equation describing
+the influence of blood perfusion on the skin temperature distribution in terms of
+volumetrically distributed heat sources [18].
+
+\begin{equation} 
+	\rho C \frac{\partial T}{\partial t} + \omega \rho_b C_b \left ( T - T_b \right ) - Q = k \nabla^2 T
+\end{equation}
+
+where $C, k, \rho, \omega$ and $Q$ are respectively the specific heat, the heat
+conductivity, the density, the blood perfusion rate, and the metabolic heat
+generation. $C_b, \rho_b$ and $T_b$ denote the blood specific heat, the blood
+density, and the blood temperature usually set to $C$. $T$ represents the local
+tissue temperature, $t$ denotes the time variable, and $\nabla^2$ is the Laplace
+operator. Eq. 31.1 states that the rate of change of thermal energy contained in
+a unit volume is equal to the sum of the rates at which the thermal energy enters
+or leaves the volume by conduction, perfusion, and metabolic heat generation. The
+term $\omega \rho_b C_b \left ( T - T_b \right )$ describes the volumetrically
+distributed heat sources or heat sinks, depending on whether the local tissue
+temperature is above or under blood temperature.
+
+For a simple one-layer model where the skin is considered as a semiinfinite,
+homogenous medium, closed-form analytical solutions of Eq. (31.1) can be
+obtained for different boundary conditions [19, 20]. Nonetheless, to achieve a
+more realistic description, skin tissue should be considered as composed of
+different layers, each layer exhibiting specific thermophysical properties.
+Beside, vasoconstriction and vasodilation mechanisms should be added to the
+model by making tissue perfusion a function of the local temperature. The
+complexity of such a system requires the use of numerical methods.
+
+Fig 31.1B represents the idealized model usually adopted to describe the skin
+structure [21]. Three different layers are considered: epidermis, dermis, and
+fat tissue. The size of each layer has to be adapted depending on the bodily
+location. Some models split the dermis into reticular and papillary dermis or
+take into account an additional muscle layer [22,23]. Table 31.1 summarizes
+the thermophysical properties of each of these layers taken from the
+literature.
+
+Eq. (31.1) is numerically solved imposing appropriate boundary conditions at
+the domain boaders and continuity conditions for the temperature and heat flux
+at each interface between the different tissue layers. The bottom surface of
+the skin is usually fixed at the core temperature $T_C = T_b = 37 grad C$
+(see Fig. 31.1B), whereas the boundary condition for the heat transfer
+occurring at the skin surface is generally composed of three parts, ie,
+convection, radiation and evaporation [21]:
+\begin{equation} 
+	-k \nabla^2 T_s = h \left( T_s - T_{amb} \right) + \epsilon \sigma \left( T_{s}^4 - T_{amb}^4 \right) + Q_e
+\end{equation}
+
+where $T_s$ is the skin surface temperature, $T_{amb}$ the ambient room
+temperature, $h$ the convective heat transfer coefficient (natural or forced),
+$\epsilon$ the skin emissivity, $\sigma$ the Stefan-Boltzmann constant, and
+$Q_e$ the evaporative heat losses caused by sweating.
+
+In skin thermal imaging, an IR camera measures the radiative component of
+Eq. (31.2). Even neglecting the atmospheric absorption happening between the
+skin and the camera detector, the ambient temperature, as well as the skin
+surface emissivity, should be known to calculate the absolute skin surface
+temperature $T_s$. This well-known difficulty in thermal imaging is discussed
+more in details in the ``Thermal Radiation Characteristics'' section.
+
+It follows from the skin thermal model that only pathological states affecting
+one or several of the thermophysical parameters presented in Table 31.1, or
+affecting the thickness of the different skin layers, can induce a potentially
+measureable variation of the skin surface temperature $T_s$. More restricting is
+the nonspecificity of thermal imaging. From static skin thermograms it is difficult
+to differentiate the origin of thermal signals. A way to overcome this limitation
+is to perform active or dynamic thermography measurements where the skin surface
+is monitored in a transient state. For example, the convection term of Eq. (31.2)
+can be periodically modulated by varying the ambient temperature or the heat
+transfer coefficient $h$. We suggested that monitoring the skin surface temperature
+response obtained for different modulation frequencies allows differentiating
+thermal signals originating from perfusion variations [24].
+
+By specifically designing an active thermography experiment, together with the
+development of a heat transfer model, thermal imaging has the ability to retreive
+quantitative information about distinct skin thermophysical properties. Different
+active thermography methods are presented in the ``Measurement Procedures'' section.
+

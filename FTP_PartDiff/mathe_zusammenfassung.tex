@@ -108,10 +108,31 @@
         \node[fill=#2,anchor=base] {#1};
     }
 }
+
+\NewDocumentCommand{\tdrawc}{ O{} O{} }{%
+    \tikz[baseline, every node/.style={inner sep=2pt,outer sep=0pt}]{
+        \node[rectangle,draw=#2,anchor=base] {#1};
+    }
+}
 \newcommand{\tfillb}[1]{\tfillc[#1][blue!20]}
 \newcommand{\tfillo}[1]{\tfillc[#1][orange!40]}
 \newcommand{\tfillg}[1]{\tfillc[#1][Green!20]}
 \newcommand{\tfilly}[1]{\tfillc[#1][yellow!40]}
+\newcommand{\tfillr}[1]{\tfillc[#1][red!20]}
+\newcommand{\tfillv}[1]{\tfillc[#1][Violet!20]}
+\newcommand{\tfillt}[1]{\tfillc[#1][Turquoise!20]}
+\newcommand{\tfillgr}[1]{\tfillc[#1][Gray!20]}
+
+
+\newcommand{\tdrawb}[1]{\tdrawc[#1][blue!40]}
+\newcommand{\tdrawo}[1]{\tdrawc[#1][orange!60]}
+\newcommand{\tdrawg}[1]{\tdrawc[#1][Green!40]}
+\newcommand{\tdrawy}[1]{\tdrawc[#1][yellow!60]}
+\newcommand{\tdrawr}[1]{\tdrawc[#1][red!40]}
+\newcommand{\tdrawv}[1]{\tdrawc[#1][Violet!40]}
+\newcommand{\tdrawt}[1]{\tdrawc[#1][Turquoise!40]}
+\newcommand{\tdrawgr}[1]{\tdrawc[#1][Gray!40]}
+\newcommand{\tdrawk}[1]{\tdrawc[#1][black]}
 
 % 1: Funktion Name
 % 2: dx
@@ -315,18 +336,35 @@
         Elliptische PDF                 & Laplace-/Poisson-Gleichung    & \multirow{2}{*}{$ B^2 - AC < 0$} \\
         Elliptic PDE                    & Laplace-/Poisson's equation   & \\
         \hline
-        Parabolische PDF                & Wärmeleitungsgleichung, Diffusionsgleichung         & \multirow{2}{*}{$ B^2 - AC = 0$} \\
-        Parabolic PDE                   & Heat equation, Diffusion equation                 & \\
+        Parabolische PDF                & Wärmeleitungsgleichung, Diffusionsgleichung   & \multirow{2}{*}{$ B^2 - AC = 0$} \\
+        Parabolic PDE                   & Heat Equation, Diffusion Equation             & \\
         \hline
-        Hyperbolische PDF               & Wellengleichung               & \multirow{2}{*}{$ B^2 - AC < 0 $} \\
-        Hyperbolic PDE                  & Wave equation                 &
+        Hyperbolische PDF               & Transportgleichung, Wellengleichung           & \multirow{2}{*}{$ B^2 - AC < 0 $} \\
+        Hyperbolic PDE                  & Advection Equation, Wave Equation             &
     \end{tabular}
+
+    \begin{tabular}{ll}
+        \hline
+        Elliptische PDF                 & Laplace-/Poisson-Gleichung                    \\
+        Elliptic PDE                    & Laplace-/Poisson's equation                   \\
+        \hline
+        Parabolische PDF                & Wärmeleitungsgleichung, Diffusionsgleichung   \\
+        Parabolic PDE                   & Heat Equation, Diffusion Equation             \\
+        \hline
+        Hyperbolische PDF               & Transportgleichung, Wellengleichung           \\
+        Hyperbolic PDE                  & Advection Equation, Wave Equation             
+    \end{tabular}
+
+
+    %===================================================================================
+    \newpage
 
     \subsection*{Finite Difference Method (FDM)}
     \subsection*{Elliptic PDEs}
+
     \subsubsection*{Dirichlet Boundary Conditions}
     
-    Discrete Laplace-Operator
+    Discrete Laplace-Operator / 5-Star-Operator
     
     \begin{align*}
         \Delta u & = u_{xx} + u_{yy} \\
@@ -340,9 +378,9 @@
     \begin{align*}
         u_x\kl{P_C} & \approx \f{u\kl{P_E} - u\kl{P_W}}{2\cdot h} \\
         u\kl{P_W}   & = u\kl{P_E} - 2\cdot h \cdot u_x\kl{P_C} \\
-        \Delta u    & \approx \f{1}{h^2} \kq{u\kl{P_E} + u\kl{P_N} + {\color{red}u\kl{P_W}} + u\kl{P_S} - 4 \cdot u\kl{P_C}} \\
-                    & \approx \f{1}{h^2} \kq{u\kl{P_E} + u\kl{P_N} + {\color{red}u\kl{P_E} - 2\cdot h \cdot u_x\kl{P_C}} + u\kl{P_S} - 4 \cdot u\kl{P_C}} \\
-                    & \approx \f{1}{h^2} \kq{{\color{red}2\cdot}u\kl{P_E} + u\kl{P_N} + u\kl{P_S} - 4 \cdot u\kl{P_C} {\color{red} - 2\cdot h \cdot u_x\kl{P_C}}} \\
+        \Delta u    & \approx \f{1}{h^2} \kq{u\kl{P_E} + u\kl{P_N} + \tfillr{$u\kl{P_W}$} + u\kl{P_S} - 4 \cdot u\kl{P_C}} \\
+                    & \approx \f{1}{h^2} \kq{u\kl{P_E} + u\kl{P_N} + \tfillr{$u\kl{P_E} - 2\cdot h \cdot u_x\kl{P_C}$} + u\kl{P_S} - 4 \cdot u\kl{P_C}} \\
+                    & \approx \f{1}{h^2} \kq{\tfillr{$2$} \cdot u\kl{P_E} + u\kl{P_N} + u\kl{P_S} - 4 \cdot u\kl{P_C} \tfillr{$- 2\cdot h \cdot u_x\kl{P_C}$}} \\
     \end{align*}
     
     \subsection*{Parabolic PDEs}

@@ -9,7 +9,7 @@
 	parskip=full,
 	headings=standardclasses,
 	headings=big,
-	pointednumbers
+	pointlessnumbers
 ]{scrartcl}
 
 %-------------------------------------------------------------------------------
@@ -23,14 +23,22 @@
 \usepackage{listings}
 \usepackage[usenames,dvipsnames,svgnames]{xcolor}
 \usepackage[hidelinks]{hyperref}
-\usepackage{amsmath}
 \usepackage{caption}
 \usepackage{mdframed}
 \usepackage{dashbox}
 \usepackage{cancel}
+\usepackage{csquotes}
 
 \usepackage{multirow}% http://ctan.org/pkg/multirow
 \usepackage{hhline}% http://ctan.org/pkg/hhline
+
+
+%\renewcommand{\thesection}{\arabic{section}}
+%\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+%\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}} 
+%\renewcommand{\thesubsection}{\Roman{section}.\alph{subsection})}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{section}.\alph{subsection})}
 
 %-------------------------------------------------------------------------------
 % Hintergrundfarbe von Packet 'framed' mit Kommando 'shaded' nutzen
@@ -42,6 +50,12 @@
 \newcommand{\pushright}[1]{\ifmeasuring@#1\else\omit\hfill$\displaystyle#1$\fi\ignorespaces}
 \newcommand{\pushleft}[1]{\ifmeasuring@#1\else\omit$\displaystyle#1$\hfill\fi\ignorespaces}
 \makeatother
+
+%-------------------------------------------------------------------------------
+% Mathematik
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
 
 %-------------------------------------------------------------------------------
 % Kopf- und Fusszeile
@@ -112,9 +126,88 @@ range-phrase          = {\,bis\,},
 % Dokument
 \begin{document}
 	
-	\section*{Gleichgewichtsreaktion}
+	\section{Blutsenkung}
+	Erythrozyten als Kugelvolumen
 	
-		\subsection*{Lösen der Bindungsreaktions-Differentialgleichung}
+	\begin{mycapequ}[!ht]
+		\vspace{-0.5cm}
+		\begin{align*}
+			%% 0
+			\text{Kugelradius}              && r            &= \; ? \\
+			%% 1
+			\text{Kugelvolumen}             && V_{K}        &= \frac{4}{3} \pi r^3 \\
+			%% 2
+			\text{Gewichtskraft}            && F_G          &= V_K \cdot \rho_K \cdot g \\
+			%% 3
+			\text{Auftriebskraft}           && F_A          &= V_K \cdot \rho_i \cdot g \\
+			%% 4
+			\text{Viskose Reibung}          && F_R          &= 6 \pi \cdot r \cdot \eta \cdot v \\
+			%% 5
+			\text{Gleichgewicht}            && F            &= F_A + F_R - F_G = m \cdot a = 0 \\
+			%% 6
+			\text{Viskosität}               && \eta         &= 1.73 \cdot 10^{-3} \mathrm{\;Pa\;s} \\
+			%% 7
+			\text{Dichte Erythozyten}       && \rho_{K}     &= 1.096 \; \frac{\mathrm{g}}{\mathrm{cm}^3} 
+			= 1096 \; \frac{\mathrm{kg}}{\mathrm{m}^3} \\
+			%% 8
+			\text{Dichte Plasma}            && \rho_{i}     &= 1.027 \; \frac{\mathrm{g}}{\mathrm{cm}^3}
+			= 1027 \; \frac{\mathrm{kg}}{\mathrm{m}^3} \\
+			%% 9
+			\text{Senkungsgeschwindigkeit}  && v            &= 10 \; \frac{\mathrm{mm}}{\mathrm{h}}
+			= 2.777 \cdot 10^{-6} \; \frac{\mathrm{m}}{\mathrm{s}} \\
+			%% 10
+			\text{Fallbeschleunigung}       && g            &= 9.81 \; \frac{\mathrm{m}}{\mathrm{s}^2}
+		\end{align*}
+		\vspace{-0.5cm}
+	\end{mycapequ}
+	
+	\begin{mycapequ}[!ht]
+		\vspace{-0.5cm}
+		\begin{align*}
+			%% 1
+			F = F_A + F_R - F_G &= 0 \\
+			%% 2
+			\left(V_K \cdot \rho_i \cdot g\right) +
+			\left( 6 \pi \cdot r \cdot \eta \cdot v \right) -
+			\left( V_K \cdot \rho_K \cdot g \right) &= 0 \\
+			%% 3
+			\left( \left[ \frac{4}{3} \pi r^3 \right] \cdot \rho_K \cdot g \right) -
+			\left( \left[ \frac{4}{3} \pi r^3 \right] \cdot \rho_i \cdot g\right) &=
+			\left( 6 \pi \cdot r \cdot \eta \cdot v \right) \\
+			%% 4
+			r^2 \cdot \left[ \left(  \frac{4}{3} \pi \cdot \rho_K \cdot g \right) -
+			\left( \frac{4}{3} \pi \cdot \rho_i \cdot g\right) \right] &=
+			6 \pi \cdot \eta \cdot v \\
+			%% 5
+			r &= \sqrt{\frac{6 \pi \cdot \eta \cdot v}{\frac{4}{3} \pi \cdot \rho_K \cdot g  -
+					\frac{4}{3} \pi \cdot \rho_i \cdot g }} \\
+			%% 6
+			r &= \sqrt{\frac{6 \cancel{\pi} \cdot \eta \cdot v}
+				{\frac{4}{3} \cancel{\pi} \cdot g \cdot \left(\rho_K - \rho_i \right)}} \\
+			%% 7
+			r &= \sqrt{\frac{9 \cdot \eta \cdot v}
+				{2 \cdot g \cdot \left(\rho_K - \rho_i \right)}} \\
+			%% 8
+			r &= \sqrt{\frac{9 \cdot 1.73 \cdot 10^{-3} \frac{kg}{m \cdot s} \cdot 2.777 \cdot 10^{-6} \; \frac{\mathrm{m}}{\mathrm{s}}}
+				{2 \cdot 9.81 \; \frac{\mathrm{m}}{\mathrm{s}^2} \cdot \left(1096 \; \frac{\mathrm{kg}}{\mathrm{m}^3} - 1027 \; \frac{\mathrm{kg}}{\mathrm{m}^3} \right)}} \\
+			%% 9
+			\left[ r^2 \right] &= \frac{\frac{\mathrm{kg}}{\mathrm{m} \cdot \mathrm{s}} \cdot \frac{\mathrm{m}}{\mathrm{s}}}
+			{\frac{\mathrm{m}}{\mathrm{s}^2} \cdot \frac{\mathrm{kg}}{\mathrm{m}^3}} =
+			\frac{\cancel{kg} \cdot \cancel{m}\cdot \cancel{s^2} \cdot m^3}{\cancel{m} \cdot \cancel{s^2} \cdot m \cdot \cancel{kg}} = \mathrm{m}^2\\
+			%% 10
+			r &= \sqrt{3.194 \cdot 10^{-11} \; \mathrm{m}^2} \\
+			%% 11
+			r &= 5.651 \cdot 10^{-6} \; \mathrm{m} = 5.651 \; \mu\mathrm{m} \\
+			%% 12
+			r_{\mathrm{Wikipedia}} &= 3.75 \; \mu\mathrm{m}
+		\end{align*}
+		\vspace{-0.5cm}
+	\end{mycapequ}
+	
+	\newpage
+	\section{Gleichgewichtsreaktion}
+	
+		\subsection{Lösen der Bindungsreaktions-Differentialgleichung}
 	
 			Die DGL ist wie folgt:
 			\begin{mycapequ}[!ht]
@@ -276,135 +369,143 @@ range-phrase          = {\,bis\,},
 				\vspace{-0.5cm}
 			\end{mycapequ}
 	
+	
 		\newpage
+		\subsection{Gleiches $K_D$, eine Grössenordnung höheres $k_{\mathrm{off}}$}
+			\begin{labeling}{$k_{\mathrm{off}}$}
+				\setlength{\itemsep}{0mm}
+				\setlength{\parskip}{0.5mm}
+				\setlength{\parindent}{0mm}
+				\item[$k_{\mathrm{on}}$] Rate der freien Ligangen, die sich an Rezeptoren binden.
+				\item[$k_{\mathrm{off}}$] Rate der gebundenen Ligangen, die sich von den Rezeptoren lösen.
+				\item[$K_D$] Verhältnis von $\frac{k_{\mathrm{off}}}{k_{\mathrm{on}}}$.
+			\end{labeling}
+			Da $K_D$ sich nicht ändert, muss auch $k_{\mathrm{on}}$ eine Grössenordnung höher sein. \\
+			Kleines $k_{\mathrm{on}}$ und $k_{\mathrm{off}}$: Langsame Rate für die Bindung und Lösung der Liganden. \\
+			Grosses $k_{\mathrm{on}}$ und $k_{\mathrm{off}}$: Schnelle Rate für die Bindung und Lösung der Liganden. \\
 		
-		\subsection*{Formeln und Tafeln}
-
-			\begin{center}
-				\renewcommand{\arraystretch}{1.5}
-				\begin{tabular}{ | l | l | l | p{3.75cm} | }
-					\multicolumn{1}{l}{\bfseries Name} &
-					\multicolumn{1}{l}{\bfseries FZ} &
-					\multicolumn{1}{l}{\bfseries Einheit}  &
-					\multicolumn{1}{l}{\bfseries Formel } \\ \hline
-					Kraft                      & $F$         & $N$, $\frac{kg \cdot m}{s^2}$  & $F = m \cdot a $ \\ \hline
-					Druck                      & $p$         & $Pa$, $\frac{N}{m^2}$  & $p = \frac{F}{A}$ \\ \hline
-					Dichte                     & $\rho$      & $\frac{kg}{m^3}$         & $\rho=\frac{m}{V}$ \\ \hline
-					Viskosität                 & $\eta$      & $Pa \cdot s$, $\frac{kg}{m \cdot s}$ & \\ \hline
-					Molekülmasse               & $m_M$       & $kg$, $g$                & \\ \hline
-					Avogadro-Konstante         & $N_A$       & $\frac{1}{mol}$          & \\ \hline
-					Teilchenanzahl             & $N$         & -                        & 
-					                           $ N = n \cdot N_A$ \\ \hline
-					Stoffmenge                 & $n$         & $mol$                   
-					                           & $n_{\mathrm{H}_2\mathrm{O}} = 
-					                             \frac{m_{\mathrm{H}_2\mathrm{O}}}{M_{\mathrm{H}_2\mathrm{O}}} = \newline
-					                             \frac{\SI{9}{g}}{\SI{18}{\frac{g}{mol}}} =
-					                             \SI{0.5}{mol}$\\ \hline
-					Molare Masse               & $m$         & $\frac{kg}{mol}$, $\frac{g}{mol}$ 
-					                           & $M = \frac{m}{n} = N_A \cdot m_M$ \newline 
-					                             $M_{\mathrm{H}_2\mathrm{O}} = 18.01528 \frac{g}{mol}$\\ \hline
-					Stoffmengenkonzentrationen & $c$         & $\frac{mol}{m^3}$       
-					                           & $c_i = \frac{n_i}{V} $ \\ \hline
-					Massenbelegung             & $\Gamma$    & $\frac{kg}{m^2}$,  $\frac{g}{mm^2}$
-					                           & $\Gamma = \frac{m}{A} $\\ \hline
-					Strömungsgeschwindigkeit   & $v$         & $\frac{m}{s}$                      
-					                           & \\ \hline
-					Gesetz von Stokes          & $F_R$       & $N$                      
-					                           & $F_R = 6 \pi \cdot r \cdot \eta \cdot v $ \\ \hline
-				\end{tabular}
-				\captionof{table}{Materialdaten}
-				\label{tab:materials}
-			\end{center}
+		\subsection{Kleinste Konzentration $c$ bestimmen}
+		Massenbelegung $\Gamma$ \\
+		Maximale Massenbelegung $\Gamma_{\mathrm{max}}$\\
+		Stoffmengenkonzentrationen (Liganden in Lösung) $c$
 		
+		\begin{mycapequ}[!ht]
+			\vspace{-0.5cm}
+			\begin{align*}
+			%% 1
+			c                                &= \;? \\
+			%% 2
+			K_D                              &= \frac{k_{\mathrm{off}}}{k_{\mathrm{on}}} = \frac{1}{10^{11}} = 1 \cdot 10^{-11} \; \frac{\mathrm{mol}}{\mathrm{m}^3} \\
+			%% 3
+			\shortintertext{Ansatz}
+			\frac{d}{dt}\Gamma\left(t\right) &= |1| \; \frac{\mathrm{pg}}{\mathrm{mm}^2} = |0.001| \; \frac{\mathrm{ng}}{\mathrm{mm}^2}\\
+			%% 4
+			|0.001| \; \frac{\mathrm{ng}}{\mathrm{mm}^2} &= k_\textrm{on} \cdot c \cdot \left( \Gamma_\textrm{max} - \Gamma \right) - k_\textrm{off} \cdot \Gamma \tag*{$\Rightarrow$ \parbox{4.5cm}{Nicht Zielführend, da $\Gamma$ nicht bekannt}}\\
+			%% 5
+			\shortintertext{Neuer Ansatz}
+			\Gamma_{\textrm{Gleichgewicht}} \left( c \right) &= \Gamma_\textrm{max} \cdot \frac{c}{c + K_D} \\
+			%% 6
+			\frac{d}{dc} \Gamma \left( c \right) &= \Gamma_\textrm{max} \cdot \frac{K_D}{\left(c + K_D\right)^2} = | 0.001 | \; \frac{\mathrm{ng}}{\mathrm{mm}^2} \\
+			%% 7
+			\left(c + K_D\right)^2 &= \Gamma_\textrm{max} \cdot \frac{K_D}{| 0.001 | \; \frac{\mathrm{ng}}{\mathrm{mm}^2}} \\
+			%% 8
+			c &= \sqrt{\Gamma_\textrm{max} \cdot \frac{K_D}{| 0.001 | \; \frac{\mathrm{ng}}{\mathrm{mm}^2}}} - K_D
+			\tag*{$\Rightarrow$ \parbox{4.5cm}{Nicht Zielführend, da schon im Gleichgewicht}}\\
+			\end{align*}
+			\vspace{-0.5cm}
+		\end{mycapequ}
+	
+		\begin{displayquote}
+			Mit optischen Verfahren können Änderungen in der Massenbelegung ($\frac{d}{dt}\Gamma\left(t\right)$ ?) von $1 \; \frac{\mathrm{pg}}{\mathrm{mm}^2}$
+			noch eindeutig nachgewiesen werden. Was ist die kleinste Konzentration (Stoffmengenkonzentrationen $c$) von Antigenen,
+			welche man mit dieser Anordnung noch detektieren kann?
+		\end{displayquote}
+		Änderungen in der Massenbelegung ist nicht konstant. Wie kann ich da eine Konzentration berechnen?
+		Jede Kurve flacht ab und die Änderungen der Massenbelegung geht gegen Null.
 		
-			\begin{Figure}
-				\centering
-				\includegraphics[width=15cm]{Stoffmenge.pdf}
-				\captionof{figure}{Vergleichsplatte}
-				\label{fig:drawing_compare}
-			\end{Figure}
+		\begin{Figure}
+			\centering
+			\includegraphics[width=14cm]{massenbelegung_kon.eps}
+			\captionof{figure}{Veränderung von $k_{\mathrm{on}}$}
+		\end{Figure}
+	
 		
-		\newpage
-
-		\subsection*{Blutsenkung}
-			Erythrozyten
-			
-			
-			\begin{mycapequ}[!ht]
-				\vspace{-0.5cm}
-				\begin{align*}
-				%% 0
-				\text{Kugelradius}              && r            &= \; ? \\
+		\begin{Figure}
+			\centering
+			\includegraphics[width=14cm]{massenbelegung_c.eps}
+			\captionof{figure}{Veränderung von $c$}
+		\end{Figure}
+	
+	\newpage
+	\section{Sensitivität / Spezifität}
+		
+		\subsection{Mit Worten}
+		\textbf{``Goldstandard''}\\
+		\textit{diagnostische Spezifität}: Gesund diagnostizierte bei einer Gruppe von gesunden Probanden. \\
+		\textit{diagnostische Sensitivität}: Krank diagnostizierte bei einer Gruppe von kranken Probanden.
+		
+		\subsection{Berechnen}
+		\begin{centering}
+			\includegraphics[trim={0.5cm 25cm 9cm 0.5cm},clip,width=14cm]{tuberkulosetest.pdf}
+			\captionof{figure}{Wahrscheinlichkeitsbaum}
+		\end{centering}
+		
+		Berechne WSK, dass negatives Testergebnis auch bedeutet, dass keine Erkrankung vorliegt.
+		\begin{mycapequ}[!ht]
+			\vspace{-0.5cm}
+			\begin{align*}
 				%% 1
-				\text{Kugelvolumen}             && V_{K}        &= \frac{4}{3} \pi r^3 \\
-				%% 2
-				\text{Gewichtskraft}            && F_G          &= V_K \cdot \rho_K \cdot g \\
-				%% 3
-				\text{Auftriebskraft}           && F_A          &= V_K \cdot \rho_i \cdot g \\
-				%% 4
-				\text{Viskose Reibung}          && F_R          &= 6 \pi \cdot r \cdot \eta \cdot v \\
-				%% 5
-				\text{Gleichgewicht}            && F            &= F_A + F_R - F_G = m \cdot a = 0 \\
-				%% 6
-				\text{Viskosität}               && \eta         &= 1.73 \cdot 10^{-3} \mathrm{\;Pa\;s} \\
-				%% 7
-				\text{Dichte Erythozyten}       && \rho_{K}     &= 1.096 \; \frac{\mathrm{g}}{\mathrm{cm}^3} 
-				                                                 = 1096 \; \frac{\mathrm{kg}}{\mathrm{m}^3} \\
-				%% 8
-				\text{Dichte Plasma}            && \rho_{i}     &= 1.027 \; \frac{\mathrm{g}}{\mathrm{cm}^3}
-				                                                 = 1027 \; \frac{\mathrm{kg}}{\mathrm{m}^3} \\
-				%% 9
-				\text{Senkungsgeschwindigkeit}  && v            &= 10 \; \frac{\mathrm{mm}}{\mathrm{h}}
-				                                                 = 2.777 \cdot 10^{-6} \; \frac{\mathrm{m}}{\mathrm{s}} \\
-				%% 10
-				\text{Fallbeschleunigung}       && g            &= 9.81 \; \frac{\mathrm{m}}{\mathrm{s}^2}
-				\end{align*}
-				\vspace{-0.5cm}
-			\end{mycapequ}
+				P\left(A\right) &= \frac{\mathrm{tn}}{\text{alle negativen}} = \frac{\mathrm{tn}}{\mathrm{tn} + \mathrm{fn}}
+				                 = \frac{0.8 \cdot 0.99}{0.8 \cdot 0.99 + 0.2 \cdot 0.7} \\
+				P\left(A\right) &= 0.848 \approx 85\%
+			\end{align*}
+			\vspace{-0.5cm}
+		\end{mycapequ}
 		
-			\begin{mycapequ}[!ht]
-				\vspace{-0.5cm}
-				\begin{align*}
-					%% 1
-					F = F_A + F_R - F_G &= 0 \\
-					%% 2
-					\left(V_K \cdot \rho_i \cdot g\right) +
-					\left( 6 \pi \cdot r \cdot \eta \cdot v \right) -
-					\left( V_K \cdot \rho_K \cdot g \right) &= 0 \\
-					%% 3
-					\left( \left[ \frac{4}{3} \pi r^3 \right] \cdot \rho_K \cdot g \right) -
-					\left( \left[ \frac{4}{3} \pi r^3 \right] \cdot \rho_i \cdot g\right) &=
-					\left( 6 \pi \cdot r \cdot \eta \cdot v \right) \\
-					%% 4
-					r^2 \cdot \left[ \left(  \frac{4}{3} \pi \cdot \rho_K \cdot g \right) -
-					\left( \frac{4}{3} \pi \cdot \rho_i \cdot g\right) \right] &=
-					6 \pi \cdot \eta \cdot v \\
-					%% 5
-					r &= \sqrt{\frac{6 \pi \cdot \eta \cdot v}{\frac{4}{3} \pi \cdot \rho_K \cdot g  -
-					\frac{4}{3} \pi \cdot \rho_i \cdot g }} \\
-					%% 6
-					r &= \sqrt{\frac{6 \cancel{\pi} \cdot \eta \cdot v}
-					{\frac{4}{3} \cancel{\pi} \cdot g \cdot \left(\rho_K - \rho_i \right)}} \\
-					%% 7
-					r &= \sqrt{\frac{9 \cdot \eta \cdot v}
-					{2 \cdot g \cdot \left(\rho_K - \rho_i \right)}} \\
-					%% 8
-					r &= \sqrt{\frac{9 \cdot 1.73 \cdot 10^{-3} \frac{kg}{m \cdot s} \cdot 2.777 \cdot 10^{-6} \; \frac{\mathrm{m}}{\mathrm{s}}}
-					{2 \cdot 9.81 \; \frac{\mathrm{m}}{\mathrm{s}^2} \cdot \left(1096 \; \frac{\mathrm{kg}}{\mathrm{m}^3} - 1027 \; \frac{\mathrm{kg}}{\mathrm{m}^3} \right)}} \\
-					%% 9
-					\left[ r^2 \right] &= \frac{\frac{\mathrm{kg}}{\mathrm{m} \cdot \mathrm{s}} \cdot \frac{\mathrm{m}}{\mathrm{s}}}
-					{\frac{\mathrm{m}}{\mathrm{s}^2} \cdot \frac{\mathrm{kg}}{\mathrm{m}^3}} =
-					\frac{\cancel{kg} \cdot \cancel{m}\cdot \cancel{s^2} \cdot m^3}{\cancel{m} \cdot \cancel{s^2} \cdot m \cdot \cancel{kg}} = \mathrm{m}^2\\
-					%% 10
-					r &= \sqrt{3.194 \cdot 10^{-11} \; \mathrm{m}^2} \\
-					%% 11
-					r &= 5.651 \cdot 10^{-6} \; \mathrm{m} = 5.651 \; \mu\mathrm{m} \\
-					%% 12
-					r_{\mathrm{Wikipedia}} &= 3.75 \; \mu\mathrm{m}
-				\end{align*}
-				\vspace{-0.5cm}
-			\end{mycapequ}
+	\newpage
+	\section*{Formeln und Tafeln}
 		
-		\newpage
-		\subsection*{Zwei Antikörper mit gleicher }
+		\begin{center}
+			\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}{ | l | l | l | p{3.75cm} | }
+				\multicolumn{1}{l}{\bfseries Name} &
+				\multicolumn{1}{l}{\bfseries FZ} &
+				\multicolumn{1}{l}{\bfseries Einheit}  &
+				\multicolumn{1}{l}{\bfseries Formel } \\ \hline
+				Kraft                      & $F$         & $N$, $\frac{kg \cdot m}{s^2}$  & $F = m \cdot a $ \\ \hline
+				Druck                      & $p$         & $Pa$, $\frac{N}{m^2}$  & $p = \frac{F}{A}$ \\ \hline
+				Dichte                     & $\rho$      & $\frac{kg}{m^3}$         & $\rho=\frac{m}{V}$ \\ \hline
+				Viskosität                 & $\eta$      & $Pa \cdot s$, $\frac{kg}{m \cdot s}$ & \\ \hline
+				Molekülmasse               & $m_M$       & $kg$, $g$                & \\ \hline
+				Avogadro-Konstante         & $N_A$       & $\frac{1}{mol}$          & \\ \hline
+				Teilchenanzahl             & $N$         & -                        & 
+				$ N = n \cdot N_A$ \\ \hline
+				Stoffmenge                 & $n$         & $mol$                   
+				& $n_{\mathrm{H}_2\mathrm{O}} = 
+				\frac{m_{\mathrm{H}_2\mathrm{O}}}{M_{\mathrm{H}_2\mathrm{O}}} = \newline
+				\frac{\SI{9}{g}}{\SI{18}{\frac{g}{mol}}} =
+				\SI{0.5}{mol}$\\ \hline
+				Molare Masse               & $m$         & $\frac{kg}{mol}$, $\frac{g}{mol}$ 
+				& $M = \frac{m}{n} = N_A \cdot m_M$ \newline 
+				$M_{\mathrm{H}_2\mathrm{O}} = 18.01528 \frac{g}{mol}$\\ \hline
+				Stoffmengenkonzentrationen & $c$         & $\frac{mol}{m^3}$       
+				& $c_i = \frac{n_i}{V} $ \\ \hline
+				Massenbelegung             & $\Gamma$    & $\frac{kg}{m^2}$,  $\frac{g}{mm^2}$
+				& $\Gamma = \frac{m}{A} $\\ \hline
+				Strömungsgeschwindigkeit   & $v$         & $\frac{m}{s}$                      
+				& \\ \hline
+				Gesetz von Stokes          & $F_R$       & $N$                      
+				& $F_R = 6 \pi \cdot r \cdot \eta \cdot v $ \\ \hline
+			\end{tabular}
+			\captionof{table}{Formeln}
+			\label{tab:materials}
+		\end{center}
+		
+		
+		\begin{Figure}
+			\centering
+			\includegraphics[width=15cm]{Stoffmenge.pdf}
+			\captionof{figure}{Stoffmengen Umrechnung}
+			\label{fig:drawing_compare}
+		\end{Figure}
 \end{document}

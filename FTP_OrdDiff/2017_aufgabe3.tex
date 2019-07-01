@@ -16,7 +16,7 @@
 \usepackage{ngerman,palatino,setspace}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[left=3mm,right=6mm,top=5mm,bottom=5mm,papersize={8cm,34cm}]{geometry}
+\usepackage[left=3mm,right=6mm,top=5mm,bottom=5mm,papersize={8cm,70cm}]{geometry}
 \usepackage{graphicx}
 \usepackage{scrpage2}
 \usepackage{listings}
@@ -32,6 +32,7 @@
 \usepackage{ulem}
 \usepackage{multicol}
 \usepackage{svg}
+\usepackage{array}
 
 \mdfsetup{%
 	leftmargin=0cm,
@@ -159,13 +160,13 @@
 					\tau              &= -\alpha + 1 = \uuline{1 - \alpha} & \\
 					\Delta            &= -\alpha + 2\alpha = 2\alpha - \alpha = \uuline{\alpha} \\
 					\tau^2 - 4 \Delta &= \left( 1 - \alpha \right)^2 - 4\alpha \\
-              &= 1 - 2\alpha + \alpha^2 - 4\alpha \\
+					                  &= 1 - 2\alpha + \alpha^2 - 4\alpha \\
 					0                 &= \alpha^2 - 6\alpha + 1 \\
 					\alpha_{1,2}      &= \tfrac{-b \pms \sqrt{b^2 - 4ac}}{2a} \\
-              &= \tfrac{1}{2} \left( 6 \pms \sqrt{36 - 4} \right) \\
-              &= 3 \pms \sqrt{\tfrac{32}{4}} \\
-              &= \uuline{3 \pms \sqrt{8}} \\
-              & \hspace{0.5cm} \alpha_{1} \approx 0.17 \quad \alpha_{2} \approx 5.83
+					                  &= \tfrac{1}{2} \left( 6 \pms \sqrt{36 - 4} \right) \\
+					                  &= 3 \pms \sqrt{\tfrac{32}{4}} \\
+					                  &= \uuline{3 \pms \sqrt{8}} \\
+					                  & \hspace{0.5cm} \alpha_{1} \approx 0.17 \quad \alpha_{2} \approx 5.83
 				\end{flalign*}
 				\vspace{-0.75cm}
 				\begin{Figure}
@@ -188,6 +189,262 @@
 					\end{array} & &
 				\end{flalign*}
 			\end{mdmath}
-		
+		\item
+			Bestimmen Sie im Fall $\alpha = -1$ (analytisch) die Lösung des Anfangswertproblems
+			zum Anfangswert \\ $\boldsymbol{x}(0) = \left(
+			\begin{array}{lll}
+				1 \\
+				1
+			\end{array} \right) $
+			
+			\begin{mdmath}
+				\begin{flalign*}
+					\alpha = -1 & & \boldsymbol{\dot{x}} = \left(
+					\arraycolsep=4pt\def\arraystretch{1}
+					\begin{array}{rr}
+						 1 & -2 \\
+						-1 &  1
+					\end{array} \right) \boldsymbol{x} \hspace{1cm}
+				\end{flalign*}
+				\vspace{-0.5cm}
+				\begin{flalign*}
+					\left|
+					\arraycolsep=4pt\def\arraystretch{1}
+					\begin{array}{cc}
+						 1 - \lambda & -2 \\
+						-1           &  1 - \lambda
+					\end{array}
+					\right|                               &= \boldsymbol{0} & \\
+					(1 - \lambda)(1 - \lambda) - 2        &= 0 \\
+					1 - \lambda - \lambda + \lambda^2 - 2 &= 0 \\
+					\lambda^2 - 2\lambda - 1              &= 0 \\
+					\lambda_{1,2}                         &= \tfrac{-b \pms \sqrt{b^2 - 4ac}}{2a} \\
+					\lambda_{1,2}                         &= \tfrac{1}{2} \left( 2 \pms \sqrt{4 + 4} \right) \\
+					                                      &= 1 \pms \sqrt{\tfrac{8}{4}} \\
+					                                      & \hspace{-0.6cm} \uuline{\lambda_{1,2} = 1 \pms \sqrt{2}} \\
+				\end{flalign*}
+				\vspace{-1.6cm}
+				\begin{flalign*}
+					\fs{\mathtt{cPolyRoots((1-a)(1-a)-2, a)}} & &
+				\end{flalign*}
+				\sepline{-1.3cm}{-1.0cm}
+				\begin{flalign*}
+					\fs{\mathtt{eigvec2 \left(
+					\left[
+					\arraycolsep=3pt\def\arraystretch{1}
+					\begin{array}{rr}
+						\fs{\mathtt{1}}  & \fs{\mathtt{-2}} \\
+						\fs{\mathtt{-1}} & \fs{\mathtt{1}}
+					\end{array}
+					\right], \left\{ 1 + \sqrt{2}, \; 1 - \sqrt{2} \right\}
+					\right)}} & &
+				\end{flalign*}
+				\sepline{-1.0cm}{-1.2cm}
+				%--- lambda 1 ---------------------------------------------
+				\begin{flalign*}
+					\boldsymbol{\lambda_1} & \boldsymbol{= 1 + \sqrt{2}} & 
+				\end{flalign*}
+				\vspace{-0.75cm}
+				\begin{flalign*}
+					& \left(
+						\arraycolsep=3pt\def\arraystretch{1}
+						\begin{array}{cc}
+							-\sqrt{2} & -2 \\
+							-1        & -\sqrt{2}
+						\end{array}
+					\right) & \\ %----------------------------
+					& \left(
+						\arraycolsep=3pt\def\arraystretch{1}
+						\begin{array}{cc}
+							1   & \sqrt{2} \\
+							0   & 0
+						\end{array}
+					\right) 
+					\left(
+						\arraycolsep=3pt\def\arraystretch{1}
+						\begin{array}{cc}
+							v_1 \\
+							v_2
+						\end{array}
+					\right) =
+					\left(
+					\arraycolsep=3pt\def\arraystretch{1}
+					\begin{array}{cc}
+					0 \\
+					0
+					\end{array}
+					\right) &
+				\end{flalign*}
+				\vspace{-0.5cm}
+				\begin{flalign*}
+					1 \cdot v_1 + \sqrt{2} \cdot v_2 &= 0 & \\
+					1 \cdot v_1                      &= -\sqrt{2} \cdot v_2 \\
+					v_2                              &= 1 \\
+					v_1                              &= -\sqrt{2} \\
+					v & =
+					\left(
+						\arraycolsep=0pt\def\arraystretch{1}
+						\begin{array}{cc}
+							\fs{-\sqrt{2}} \\
+							\fs{1}
+						\end{array}
+					\right) &
+				\end{flalign*}
+				\sepline{-1.0cm}{-1.0cm}
+				%--- lambda 2 ---------------------------------------------
+				\begin{flalign*}
+					\boldsymbol{\lambda_2} & \boldsymbol{= 1 - \sqrt{2}} & 
+				\end{flalign*}
+				\vspace{-0.75cm}
+				\begin{flalign*}
+					& \left(
+					\arraycolsep=3pt\def\arraystretch{1}
+					\begin{array}{cc}
+					\sqrt{2} & -2 \\
+					-1       & \sqrt{2}
+					\end{array}
+					\right) & \\ %----------------------------
+					& \left(
+					\arraycolsep=3pt\def\arraystretch{1}
+					\begin{array}{cc}
+					1   & -\sqrt{2} \\
+					0   & 0
+					\end{array}
+					\right) 
+					\left(
+					\arraycolsep=3pt\def\arraystretch{1}
+					\begin{array}{cc}
+					w_1 \\
+					w_2
+					\end{array}
+					\right) =
+					\left(
+					\arraycolsep=3pt\def\arraystretch{1}
+					\begin{array}{cc}
+					0 \\
+					0
+					\end{array}
+					\right) &
+				\end{flalign*}
+				\vspace{-0.5cm}
+				\begin{flalign*}
+					1 \cdot w_1 - \sqrt{2} \cdot w_2 &= 0 & \\
+					1 \cdot w_1                      &= \sqrt{2} \cdot w_2 \\
+					w_2                              &= 1 \\
+					w_1                              &= \sqrt{2} \\
+					w & =
+					\left(
+					\arraycolsep=0pt\def\arraystretch{1}
+					\begin{array}{cc}
+					\fs{\sqrt{2}} \\
+					\fs{1}
+					\end{array}
+					\right) &
+				\end{flalign*}
+				\sepline{-1.0cm}{-0.4cm}
+				\text{Allgemeine Lösung}
+				\vspace{-0.2cm}
+				\begin{flalign*}
+					\boldsymbol{x} &= C_1 \cdot \e{(1 + \sqrt{2})t} \left(
+					\arraycolsep=0pt\def\arraystretch{1}
+					\begin{array}{cc}
+						\fs{-\sqrt{2}} \\
+						\fs{1}
+					\end{array}
+					\right) + & \\
+					& \hspace{0.46cm} C_2 \cdot \e{(1 - \sqrt{2})t} \left(
+					\arraycolsep=0pt\def\arraystretch{1}
+					\begin{array}{cc}
+						\fs{\sqrt{2}} \\
+						\fs{1}
+					\end{array}
+					\right)
+				\end{flalign*}
+				\sepline{-1.0cm}{-0.4cm}
+				\text{Anfangsbedingung}
+				\vspace{-0.2cm}
+				\begin{flalign*}
+					%---------
+					% 1. Zeile
+					\boldsymbol{x}(0) &= \left(
+					\begin{array}{lll}
+						1 \\
+						1
+					\end{array} \right) & \\
+					%---------
+					% 2. Zeile
+					\boldsymbol{x}(0) &= C_1 \left(
+					\arraycolsep=0pt\def\arraystretch{1}
+					\begin{array}{cc}
+						\fs{-\sqrt{2}} \\
+						\fs{1}
+					\end{array}
+					\right) + C_2 \left(
+					\arraycolsep=0pt\def\arraystretch{1}
+					\begin{array}{cc}
+						\fs{\sqrt{2}} \\
+						\fs{1}
+					\end{array}
+					\right) =  \left(
+					\begin{array}{lll}
+						1 \\
+						1
+					\end{array} \right) \\
+					%---------
+					% 3. Zeile
+					& \hspace{-0.2cm} \left|
+					\arraycolsep=3pt\def\arraystretch{1}
+					\begin{array}{llll}
+						-\sqrt{2} C_1 & + \sqrt{2} C_2 & = & 1 \\
+						C_1           & + C_2          & = & 1
+					\end{array}
+					\right|
+				\end{flalign*}
+				\vspace{-0.5cm}
+				\begin{flalign*}
+					C_1 + C_2                                      & = 1 & \\
+					C_2                                            & = 1 - C_1 \\
+					-\sqrt{2} C_1 + \sqrt{2} C_2                   & = 1 \\
+					-\sqrt{2} C_1 + \sqrt{2} \left(1 - C_1 \right) & = 1 \\
+					-\sqrt{2} C_1 + \sqrt{2} - \sqrt{2} C_1        & = 1 \\
+					-2 \sqrt{2} C_1                                & = 1 - \sqrt{2}  \\
+					2 \sqrt{2} C_1                                 & = \sqrt{2} - 1  \\
+				\end{flalign*}
+				\vspace{-1.5cm}
+				\begin{align*}
+					\setlength\extrarowheight{6pt}
+					\arraycolsep=8pt\def\arraystretch{1}
+					\begin{array}{ll}
+						%-- C_1 -------------------------------
+						C_1 = \tfrac{\sqrt{2} - 1}{2 \sqrt{2}}              & \\
+						C_1 = \tfrac{\sqrt{2} \left(\sqrt{2} - 1 \right)}
+						            {2 \sqrt{2}\sqrt{2}}                    & C_1 = \tfrac{\sqrt{2}}{2 \sqrt{2}} - \tfrac{1}{2 \sqrt{2}} \\
+						\uuline{C_1 = \tfrac{2 - \sqrt{2}}{4}}              & \uuline{C_1 = \tfrac{1}{2} - \tfrac{1}{2 \sqrt{2}}} \\
+						%-- C_2 -------------------------------
+						C_2 = 1 - C_1                                       & \\
+						C_2 = 1 - \tfrac{2 - \sqrt{2}}{4}                   & C_2 = 1 - \fs{\left(\tfrac{1}{2} - \tfrac{1}{2 \sqrt{2}}\right)} \\
+						C_2 =\tfrac{4 - \left(2 - \sqrt{2}\right)}{4}       & C_2 = 1 - \tfrac{1}{2} + \tfrac{1}{2 \sqrt{2}} \\
+						\uuline{C_2 = \tfrac{2 + \sqrt{2}}{4}}              & \uuline{C_2 = \tfrac{1}{2} + \tfrac{1}{2 \sqrt{2}}}
+					\end{array}
+				\end{align*}
+				\vspace{-0.5cm}
+				\begin{flalign*}
+					\boldsymbol{x} &= \tfrac{2 - \sqrt{2}}{4} \cdot \e{(1 + \sqrt{2})t} \left(
+					\arraycolsep=0pt\def\arraystretch{1}
+					\begin{array}{cc}
+						\fs{-\sqrt{2}} \\
+						\fs{1}
+					\end{array}
+					\right) + & \\
+					& \hspace{0.46cm} \tfrac{2 + \sqrt{2}}{4} \cdot \e{(1 - \sqrt{2})t} \left(
+					\arraycolsep=0pt\def\arraystretch{1}
+					\begin{array}{cc}
+						\fs{\sqrt{2}} \\
+						\fs{1}
+					\end{array}
+					\right)
+				\end{flalign*}
+			\end{mdmath}
+			
 	\end{enumerate}
 \end{document}
