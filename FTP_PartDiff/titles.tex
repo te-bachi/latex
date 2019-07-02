@@ -196,35 +196,45 @@
 % Dokument
 \begin{document}
     
-    {\setlength{\abovedisplayskip}{-6pt}
-    \setlength{\belowdisplayskip}{-12pt}
-    \begin{align*}
-        & 0 \quad 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 7 \quad 8 \quad 9 \\
-        & 0 \quad -1 \quad -2 \quad -3 \quad -4 \quad -5 \quad -6 \quad -8 \quad -9 \\
-        & 0 \quad {-1} \quad {-2} \quad {-3} \quad {-4} \quad {-5} \quad {-6} \quad {-8} \quad {-9} \\
-        & X \quad x \quad t \\
-        & P_{{x-1},\;t} \quad P_{{x},\;t} \quad P_{{x+1},\;t} \quad P_{{x},\;{t+1}} \\
-        & x_0 \quad x_1 \quad x_2 \quad x_3 \quad x_4 \quad x_5 \quad x_6 \quad x_7 \quad x_8 \quad x_9 \quad x_{10} \\
-        & 0 \quad \fs{1}{4} \quad \fs{2}{4} \quad \fs{3}{4} \quad 1 \\
-        & h \quad \vec{n} \quad \fs{\partial}{\partial x} \quad \fs{\partial}{\partial \vec{n}} u = 17 \approx \fs{u_W - u_E}{h} \\
-        & w \cdot h \quad s \cdot h \quad e \cdot h \quad n \cdot h \\
-    \end{align*}}
-    \begin{align*}
-        \Delta u \approx \;& \f{2}{h^2} \cdot \kq{
-            \f{u\kl{x + \tfillb{$e$} \cdot h, y} - u\kl{x,y}}{\tfillb{$e$} \cdot \kl{\tfillb{$e$} + \tfillr{$w$}}} +
-            \f{u\kl{x - \tfillr{$w$} \cdot h, y} - u\kl{x,y}}{\tfillr{$w$} \cdot \kl{\tfillb{$e$} + \tfillr{$w$}}}
-        } + \\
-        & \f{2}{h^2} \cdot \kq{
-            \f{u\kl{x, y + \tfillg{$n$} \cdot h} - u\kl{x,y}}{\tfillg{$n$} \cdot \kl{\tfillg{$n$} + \tfilly{$s$}}} +
-            \f{u\kl{x, y - \tfilly{$s$} \cdot h} - u\kl{x,y}}{\tfilly{$s$} \cdot \kl{\tfillg{$n$} + \tfilly{$s$}}}
-        }
-    \end{align*}
-    \begin{minipage}{0.05\textwidth}
-        \begin{align*}
-            \fs{\partial}{\partial \vec{n}} u & = 17 && \approx \fs{u_W - u_E}{h} \\
-            \fs{\partial}{\partial x} u &= -17 &&\approx \fs{u_E - u_W }{h}
-        \end{align*}
-    \end{minipage}
+    \section{FDM}
+    a
+    \subsection{Two-Point Boundary Value Problems}
+    \subsection{Error Analysis}
+    \subsection{FDM for Elliptic PDEs}
+    \subsubsection{Dirichlet Boundary Conditions}
+    \subsubsection{Irregular Grids}
+    \subsubsection{Neumann Boundary Conditions}
 
+    \subsection{FDM for Parabolic PDEs}
+    \subsubsection{Explicit Method}
+    \subsubsection{Implicit Method}
+    \subsubsection{Method of Crank-Nicolson}
+
+    \subsection{FDM for Hyperpolic PDEs}
+    \subsubsection{Advection Equation}
+    \subsubsection{Wave Equation}
+
+    \section{FVM}
+    a
+
+    \section{FEM}
+    a
+
+    \subsection{A Variational Problem}
+    \subsubsection{The Method of Ritz}
+    \subsubsection{The Method of Galerkin}
+    \subsubsection{Weighted Residuals}
+    \subsubsection{The Method of Gauss}
+    \subsubsection{A Comparison of the Methods}
+
+    \subsection{Finite Elemente}
+
+    \subsubsection{Nodal Variables}
+    \subsubsection{Shape Functions}
+    \subsubsection{Element Matrices}
+    \subsubsection{Ritz Vector Revisited}
+    \subsubsection{Finite Elements by Hand}
+    \subsubsection{h-Strategy}
+    \subsubsection{p-Strategy}
 
 \end{document}
