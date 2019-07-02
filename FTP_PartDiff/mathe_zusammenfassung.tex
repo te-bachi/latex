@@ -158,6 +158,7 @@
     \kl{#1 - 2 \cdot #2 + #3}
 }
 
+\newcommand*\difx{\; \mathop{}\!\mathrm{d}x}
 \newcommand{\f}[2]{\frac{#1}{#2}}
 %\newcommand{\fs}[2]{{\scriptstyle\frac{#1}{#2}}}
 \newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
@@ -186,6 +187,14 @@
         Kettenregel  & $ y = f\kl{u\kl{x}} $                & $ y' = \dfx[][f][u] \cdot \dfx[][u][x] $ \\
                      & $ y = f\kl{x^2 - 5}, \; f = x^2 $    & $ y' = 2 u \cdot 2x = 4x \kl{x^2 - 5} $ \\
                      & $ y = \ln\kl{1 + x^2} $              & $ y' = \frac{1}{u} \cdot 2x = \frac{2x}{1 + x^2} $ \\
+    \end{tabular} \\
+
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{lll}
+        Bestimmtes Integral & $ \int\limits_{a}^{b}{f\kl{x} \difx} $                      & $ = \ks{F\kl{x}}_{a}^{b} = F\kl{b} - F\kl{a} $ \\
+        Faktorregel         & $ \int\limits_{a}^{b}{C \cdot f\kl{x} \difx} $              & $ = C \cdot \int\limits_{a}^{b}{f\kl{x} \difx} $     \\
+        Summenregel         & $ \int\limits_{a}^{b}{\ks{f_1\kl{x} + f_2\kl{x}} \difx} $   & $ = \int\limits_{a}^{b}{f_1\kl{x} \difx} + \int\limits_{a}^{b}{f_2\kl{x} \difx} $      \\
+        Zerlegungsregel     & $ \int\limits_{a}^{c}{f\kl{x} \difx} $                      & $ = \int\limits_{a}^{b}{f\kl{x} \difx} + \int\limits_{b}^{c}{f\kl{x} \difx}$  \\
     \end{tabular} \\
 
     {\renewcommand{\arraystretch}{1.75}
