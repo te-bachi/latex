@@ -392,19 +392,98 @@
                     & \approx \f{1}{h^2} \kq{\tfillr{$2$} \cdot u\kl{P_E} + u\kl{P_N} + u\kl{P_S} - 4 \cdot u\kl{P_C} \tfillr{$- 2\cdot h \cdot u_x\kl{P_C}$}} \\
     \end{align*}
     
+
+    
+    %===================================================================================
+    \newpage
+
     \subsection*{Parabolic PDEs}
     \subsubsection*{Richardson's Explicit Method}
-    
+
     \begin{align*}
         u_{t}\kl{x,t}                               & = u_{xx}\kl{x,t} \\
-        \f{u \kl{x, t + \dt} - u \kl{x, t}}{\dt}    & = \f{u \kl{x + \dx, t} - 2 \cdot u\kl{x, t} + u \kl{x - \dx, t}}{\dx[2]} \\
-        r                                           & = \f{\dt}{\dx[2]} \\
-        u \kl{x, t + \dt}                           & = r \cdot \kq{u \kl{x + \dx, t} - 2 \cdot u\kl{x, t} + u \kl{x - \dx, t}} - u \kl{x, t} \\
-        u_{x,t+1}                                   & = r \cdot \kq{u_{x+1,t} - 2 \cdot u_{x,t} + u_{x-1,t}} - u_{x, t} \\
-        u_{x,t+1}                                   & = r \cdot u_{x-1,t} + \kl{1 - 2\cdot r} \cdot u_{x,t} + u_{x+1,t} \\
         u_{\dt + 1} & = \ks{\ldots}  u_{\dt}
     \end{align*}
+    
+    Forward Finite Difference in $t$ and $x$ \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        % 1
+        \f{u \kl{x, t + \dt} - \tfillb{$u \kl{x, t}$}}{\dt}    & = \f{
+            \tfillr{$u \kl{x + \dx, t}$} -
+            2 \cdot \tfillg{$u\kl{x, t}$} +
+            \tfilly{$u \kl{x - \dx, t}$}
+        }{\dx[2]}, \quad \tfillo{$r$}   = \f{\dt}{\dx[2]}  \\
+        % 2
+        u \kl{x, t + \dt} & = \tfillo{$r$} \cdot \kq{
+            \tfillr{$u \kl{x + \dx, t}$} -
+            2 \cdot \tfillg{$u\kl{x, t}$} +
+            \tfilly{$u \kl{x - \dx, t}$}
+        } + \tfillb{$u \kl{x, t}$} \\
+        % 3
+        u_{x,t+1} & = \tfillo{$r$} \cdot \kq{u_{x+1,t} - 2 \cdot u_{x,t} + u_{x-1,t}} + \tfillb{$u \kl{x, t}$} \\
+        u_{x,t+1} & = \tfillo{$r$} \cdot \tfilly{$u_{x-1,t}$} + \kl{\tfillb{$1$} - \tfillg{$2\cdot r$}} \cdot u_{x,t} + \tfillo{$r$} \cdot \tfillr{$u_{x+1,t}$} \\
+        u_{j,k+1} & = \tfillo{$r$} \cdot \tfilly{$u_{j-1,k}$} + \kl{\tfillb{$1$} - \tfillg{$2\cdot r$}} \cdot u_{j,k} + \tfillo{$r$} \cdot \tfillr{$u_{j+1,k}$} \\
+        \uline{u}^{k+1} &= C \cdot \uline{u}^{k} \\
+        \uline{u}^{k} &= \kq{C}^{k} \cdot \uline{u}^{0}
+    \end{align*}}
 
+
+    \subsubsection*{Richardson's Implicit Method}
+    
+    Backward Finite Difference in $t$, Forward Finite Difference $x$ \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        % 1
+        \f{\tfillb{$u \kl{x, t}$} - u \kl{x, t - \dt} }{\dt} & = \f{
+            \tfillr{$u \kl{x + \dx, t}$} -
+            2 \cdot \tfillg{$u\kl{x, t}$} +
+            \tfilly{$u \kl{x - \dx, t}$}
+        }{\dx[2]}, \quad \tfillo{$r$}   = \f{\dt}{\dx[2]}  \\
+        % 2
+        u \kl{x, t - \dt} & = \tfillb{$u \kl{x, t}$} - \tfillo{$r$} \cdot \kq{
+            \tfillr{$u \kl{x + \dx, t}$} -
+            2 \cdot \tfillg{$u\kl{x, t}$} +
+            \tfilly{$u \kl{x - \dx, t}$}
+        } \\
+        % 3
+        u_{x,t-1} & = \tfillb{$u \kl{x, t}$} -\tfillo{$r$} \cdot \kq{u_{x+1,t} - 2 \cdot u_{x,t} + u_{x-1,t}} \\
+        u_{x,t-1} & = -\tfillo{$r$} \cdot \tfilly{$u_{x-1,t}$} + \kl{\tfillb{$1$} + \tfillg{$2\cdot r$}} \cdot u_{x,t} - \tfillo{$r$} \cdot \tfillr{$u_{x+1,t}$} \\
+        u_{j,k-1} & = -\tfillo{$r$} \cdot \tfilly{$u_{j+1,k}$} + \kl{\tfillb{$1$} + \tfillg{$2\cdot r$}} \cdot u_{j,k} - \tfillo{$r$} \cdot \tfillr{$u_{j+1,k}$} \\
+        \uline{u}^{k} &= E \cdot \uline{u}^{k+1} \\
+        \uline{u}^{k+1} &= E^{-1}\cdot \uline{u}^{k} \\
+        \uline{u}^{k} &= \kq{E^{-1}}^{k} \cdot \uline{u}^{0}
+    \end{align*}}
+
+    \subsubsection*{Method of Crank-Nicolson}
+    $\fs{1}{2}$ Explicit, $\fs{1}{2}$ Implicit + $\dt$ \\
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        % Explicit
+        \f{\tfillt{$u \kl{x, t + \dt}$} - \tfillb{$u \kl{x, t}$} }{\dt}    & = \f{
+            u \kl{x + \dx, t} -
+            2 \cdot u\kl{x, t} +
+            u \kl{x - \dx, t}
+        }{\dx[2]} \\
+        % Implicit + dt
+        \f{\tfillt{$u \kl{x, t + \dt}$} - \tfillb{$u \kl{x, t}$} }{\dt} & = \f{
+            u \kl{x + \dx, t + \dt} -
+            2 \cdot u\kl{x, t + \dt} +
+            u \kl{x - \dx, t + \dt}
+        }{\dx[2]} \\
+        % Method of Crank-Nicolson
+        % left
+        -\tfillo{$r$} \cdot u_{j-1,\tfilly{$\scriptstyle k+1$}}                 \tfillgr{$+$}
+        \kl{2 + 2\cdot \tfillo{$r$} } \cdot u_{j,\tfilly{$\scriptstyle k+1$}}   \tfillgr{$-$}
+        \tfillo{$r$}  u_{j+1,\tfilly{$\scriptstyle k+1$}}                       & =
+        % right
+        \tfillo{$r$} \cdot u_{j-1,\tfillg{$\scriptstyle k$}}                    \tfillgr{$+$}
+        \kl{2 - 2\cdot \tfillo{$r$}} \cdot u_{j,\tfillg{$\scriptstyle k$}}      \tfillgr{$+$}
+        \tfillo{$r$} \cdot u_{j+1,\tfillg{$\scriptstyle k$}}
+    \end{align*}}
 
     %===================================================================================
     \newpage
