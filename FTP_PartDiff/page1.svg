@@ -5997,12 +5997,11 @@
     </g>
     <g
        id="lend5-0">
-			<path
-   id="path73182"
-   style="stroke:none"
-   d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 " />
-
-		</g>
+      <path
+         id="path73182"
+         style="stroke:none"
+         d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 " />
+    </g>
     <marker
        overflow="visible"
        markerUnits="strokeWidth"
@@ -6013,12 +6012,11 @@
        v:arrowType="5"
        class="st3"
        id="mrkr5-9">
-			<use
-   id="use73185"
-   transform="scale(-3.88,-3.88) "
-   xlink:href="#lend5-0" />
-
-		</marker>
+      <use
+         id="use73185"
+         transform="scale(-3.88,-3.88) "
+         xlink:href="#lend5-0" />
+    </marker>
     <marker
        overflow="visible"
        markerUnits="strokeWidth"
@@ -6029,12 +6027,11 @@
        v:arrowType="5"
        class="st3"
        id="mrkr5-46">
-			<use
-   id="use73188"
-   transform="scale(3.88) "
-   xlink:href="#lend5-0" />
-
-		</marker>
+      <use
+         id="use73188"
+         transform="scale(3.88) "
+         xlink:href="#lend5-0" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -6043,9 +6040,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="113.27492"
-     inkscape:cy="470.23124"
+     inkscape:zoom="1.4"
+     inkscape:cx="-18.11581"
+     inkscape:cy="670.70321"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1-9"
      showgrid="false"
@@ -9843,6 +9840,7 @@
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 x</text>
         </g>
         <g
@@ -9893,6 +9891,7 @@ x</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 u</text>
         </g>
         <g
@@ -9929,6 +9928,7 @@ u</text>
              style="font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 0</text>
         </g>
         <g
@@ -10419,7 +10419,7 @@ u</text>
        id="layer1-9"
        inkscape:label="Ebene 1">
       <g
-         transform="matrix(0.9776158,0,0,0.9776158,48.478829,-14.618546)"
+         transform="matrix(0.9776158,0,0,0.9776158,5.6889514,-33.409867)"
          id="g56064">
         <path
            inkscape:connector-curvature="0"
@@ -10975,12 +10975,11 @@ u</text>
         </g>
       </g>
       <g
-         transform="translate(-28.464205,-99.958803)"
-         id="g56321">
+         id="g418652">
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50501"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11055,7 +11054,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50505"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11067,7 +11066,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50525"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11135,7 +11134,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50529"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11147,7 +11146,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50535"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11166,7 +11165,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50545"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11199,7 +11198,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50549"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11211,7 +11210,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50553"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11223,7 +11222,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50557"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11235,7 +11234,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50561"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11247,7 +11246,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50567"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11266,7 +11265,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50571"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11278,7 +11277,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50583"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11318,7 +11317,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50595"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11355,10 +11354,14 @@ u</text>
              y="280.34399"
              id="use50593" />
         </g>
+      </g>
+      <g
+         id="g418592"
+         transform="translate(-88.064091,4.5280295)">
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50603"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11384,7 +11387,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50621"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11445,7 +11448,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50625"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11457,7 +11460,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50631"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11476,7 +11479,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50637"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11495,7 +11498,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50651"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11542,7 +11545,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50655"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11554,7 +11557,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50659"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11563,10 +11566,14 @@ u</text>
              y="280.34399"
              id="use50657" />
         </g>
+      </g>
+      <g
+         id="g418558"
+         transform="translate(0,6.792044)">
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50663"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11578,7 +11585,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50669"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11597,7 +11604,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50673"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11609,7 +11616,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50677"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11621,7 +11628,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50681"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11633,7 +11640,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50685"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11645,7 +11652,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50689"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11657,7 +11664,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50693"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11669,7 +11676,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50697"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11681,7 +11688,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50701"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11693,7 +11700,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50705"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11705,7 +11712,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50709"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11717,7 +11724,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50713"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11729,7 +11736,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50717"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11741,7 +11748,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50721"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11753,7 +11760,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50727"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11772,7 +11779,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50731"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11784,7 +11791,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50735"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11796,7 +11803,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50739"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11805,10 +11812,14 @@ u</text>
              y="293.89301"
              id="use50737" />
         </g>
+      </g>
+      <g
+         id="g418516"
+         transform="translate(-56.272843,12.150212)">
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50743"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11820,7 +11831,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50751"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11846,7 +11857,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50755"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11858,7 +11869,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50759"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11870,7 +11881,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50763"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11882,7 +11893,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50767"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11894,7 +11905,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50771"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11906,7 +11917,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50775"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11918,7 +11929,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50779"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11930,7 +11941,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50783"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11942,7 +11953,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50787"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11954,7 +11965,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50791"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11966,7 +11977,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50795"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-80.852759)">
           <use
              height="100%"
              width="100%"
@@ -11975,130 +11986,133 @@ u</text>
              y="295.58099"
              id="use50793" />
         </g>
-        <g
-           style="fill:#000000;fill-opacity:1"
-           id="g50807"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-24-7"
-             x="56.693001"
-             y="318.401"
-             id="use50797" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-5-7"
-             x="64.427551"
-             y="318.401"
-             id="use50799" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-6-8"
-             x="70.383919"
-             y="318.401"
-             id="use50801" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-25-5"
-             x="76.733017"
-             y="318.401"
-             id="use50803" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-7-3"
-             x="81.57666"
-             y="318.401"
-             id="use50805" />
-        </g>
-        <g
-           style="fill:#000000;fill-opacity:1"
-           id="g50815"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-10-4"
-             x="85.689384"
-             y="318.401"
-             id="use50809" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-2-2"
-             x="90.914848"
-             y="318.401"
-             id="use50811" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-10-4"
-             x="94.471214"
-             y="318.401"
-             id="use50813" />
-        </g>
-        <g
-           style="fill:#000000;fill-opacity:1"
-           id="g50831"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-26-9"
-             x="102.42395"
-             y="318.401"
-             id="use50817" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-3-6"
-             x="108.58759"
-             y="318.401"
-             id="use50819" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-16-4"
-             x="114.04214"
-             y="318.401"
-             id="use50821" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-13-7"
-             x="117.21669"
-             y="318.401"
-             id="use50823" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-10-4"
-             x="123.79488"
-             y="318.401"
-             id="use50825" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-19-3"
-             x="129.02034"
-             y="318.401"
-             id="use50827" />
-          <use
-             height="100%"
-             width="100%"
-             xlink:href="#glyph7-23-0"
-             x="133.6458"
-             y="318.401"
-             id="use50829" />
-        </g>
+      </g>
+      <g
+         transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)"
+         id="g50807"
+         style="fill:#000000;fill-opacity:1">
+        <use
+           id="use50797"
+           y="318.401"
+           x="56.693001"
+           xlink:href="#glyph7-24-7"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50799"
+           y="318.401"
+           x="64.427551"
+           xlink:href="#glyph7-5-7"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50801"
+           y="318.401"
+           x="70.383919"
+           xlink:href="#glyph7-6-8"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50803"
+           y="318.401"
+           x="76.733017"
+           xlink:href="#glyph7-25-5"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50805"
+           y="318.401"
+           x="81.57666"
+           xlink:href="#glyph7-7-3"
+           width="100%"
+           height="100%" />
+      </g>
+      <g
+         transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)"
+         id="g50815"
+         style="fill:#000000;fill-opacity:1">
+        <use
+           id="use50809"
+           y="318.401"
+           x="85.689384"
+           xlink:href="#glyph7-10-4"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50811"
+           y="318.401"
+           x="90.914848"
+           xlink:href="#glyph7-2-2"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50813"
+           y="318.401"
+           x="94.471214"
+           xlink:href="#glyph7-10-4"
+           width="100%"
+           height="100%" />
+      </g>
+      <g
+         transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)"
+         id="g50831"
+         style="fill:#000000;fill-opacity:1">
+        <use
+           id="use50817"
+           y="318.401"
+           x="102.42395"
+           xlink:href="#glyph7-26-9"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50819"
+           y="318.401"
+           x="108.58759"
+           xlink:href="#glyph7-3-6"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50821"
+           y="318.401"
+           x="114.04214"
+           xlink:href="#glyph7-16-4"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50823"
+           y="318.401"
+           x="117.21669"
+           xlink:href="#glyph7-13-7"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50825"
+           y="318.401"
+           x="123.79488"
+           xlink:href="#glyph7-10-4"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50827"
+           y="318.401"
+           x="129.02034"
+           xlink:href="#glyph7-19-3"
+           width="100%"
+           height="100%" />
+        <use
+           id="use50829"
+           y="318.401"
+           x="133.6458"
+           xlink:href="#glyph7-23-0"
+           width="100%"
+           height="100%" />
+      </g>
+      <g
+         id="g418775">
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50835"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)">
           <use
              height="100%"
              width="100%"
@@ -12110,7 +12124,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50839"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)">
           <use
              height="100%"
              width="100%"
@@ -12122,7 +12136,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50847"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)">
           <use
              height="100%"
              width="100%"
@@ -12145,10 +12159,14 @@ u</text>
              y="331.95001"
              id="use50845" />
         </g>
+      </g>
+      <g
+         id="g418796"
+         transform="translate(-18.714814,4.5280293)">
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50851"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)">
           <use
              height="100%"
              width="100%"
@@ -12160,7 +12178,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50855"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)">
           <use
              height="100%"
              width="100%"
@@ -12172,7 +12190,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50859"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)">
           <use
              height="100%"
              width="100%"
@@ -12184,7 +12202,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50863"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)">
           <use
              height="100%"
              width="100%"
@@ -12196,7 +12214,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50869"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)">
           <use
              height="100%"
              width="100%"
@@ -12215,7 +12233,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50873"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)">
           <use
              height="100%"
              width="100%"
@@ -12227,12 +12245,12 @@ u</text>
         <path
            inkscape:connector-curvature="0"
            style="fill:none;stroke:#000000;stroke-width:0.15381111;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
-           d="m 81.498313,135.24849 h 5.282021"
+           d="m 53.034108,45.779622 h 5.282021"
            id="path50875" />
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50881"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)">
           <use
              height="100%"
              width="100%"
@@ -12251,7 +12269,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50885"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-9.854045,-70.362824)">
           <use
              height="100%"
              width="100%"
@@ -12260,10 +12278,14 @@ u</text>
              y="333.73001"
              id="use50883" />
         </g>
+      </g>
+      <g
+         id="g418738"
+         transform="translate(0,3.5469563)">
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50889"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12275,7 +12297,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50893"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12287,7 +12309,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50897"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12299,7 +12321,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50903"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12318,7 +12340,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50907"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12330,7 +12352,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50911"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12339,10 +12361,14 @@ u</text>
              y="331.95001"
              id="use50909" />
         </g>
+      </g>
+      <g
+         id="g418707"
+         transform="translate(-21.888803,8.6787228)">
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50915"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12354,7 +12380,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50919"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12366,7 +12392,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50923"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12378,7 +12404,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50929"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12397,7 +12423,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50933"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12409,7 +12435,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50937"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12418,10 +12444,14 @@ u</text>
              y="331.95001"
              id="use50935" />
         </g>
+      </g>
+      <g
+         id="g418723"
+         transform="translate(-43.033249,13.659554)">
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50941"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12433,7 +12463,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50945"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12445,7 +12475,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50949"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12457,7 +12487,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50957"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12483,7 +12513,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50961"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12495,7 +12525,7 @@ u</text>
         <g
            style="fill:#000000;fill-opacity:1"
            id="g50965"
-           transform="matrix(0.35277779,0,0,0.35277779,18.61016,19.106044)">
+           transform="matrix(0.35277779,0,0,0.35277779,-52.617328,-64.249985)">
           <use
              height="100%"
              width="100%"
@@ -12506,7 +12536,7 @@ u</text>
         </g>
       </g>
       <g
-         transform="translate(-38.096539,-113.85682)"
+         transform="translate(-38.096539,-84.122761)"
          id="g56612">
         <g
            style="fill:#000000;fill-opacity:1"
@@ -14245,7 +14275,7 @@ u</text>
         </g>
       </g>
       <g
-         transform="translate(-38.002423,-114.25773)"
+         transform="translate(-38.002423,-84.523671)"
          id="g57334">
         <path
            inkscape:connector-curvature="0"
@@ -18577,7 +18607,7 @@ u</text>
         </g>
       </g>
       <g
-         transform="translate(-4.1463615)"
+         transform="translate(-4.1463615,30.096922)"
          id="g59883">
         <g
            id="g59417"
@@ -20024,1428 +20054,1187 @@ u</text>
          v:groupContext="foregroundPage"
          v:index="1"
          v:mID="0">
-		<title
-   id="title73192">Zeichenblatt-1</title>
-
-		<v:pageProperties
-   v:shadowOffsetY="-8.50394"
-   v:shadowOffsetX="8.50394"
-   v:drawingUnits="24"
-   v:pageScale="0.0393701"
-   v:drawingScale="0.0393701" />
-
-		<g
-   transform="matrix(0.98058079,0.19611558,0.19611558,-0.98058079,4.57525,112.602)"
-   v:groupContext="shape"
-   v:mID="80"
-   id="shape80-1">
-			<title
-   id="title73194">Tabelle.80</title>
-
-			<path
-   id="path73196"
-   class="st1"
-   d="m 0,94.21 c 4.31,-5.93 12.27,-15.17 23.39,-16.68 2.77,-0.37 5.75,-0.27 8.35,0.25 10.25,2.05 14.86,10.54 21.19,18.17 3.33,4.02 7.15,7.8 11.84,8.94 10.96,2.66 26.69,-9.12 36.41,-10.68"
-   inkscape:connector-curvature="0"
-   style="stroke:#c00000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(14.5482,-65.1969)"
-   v:groupContext="shape"
-   v:mID="1"
-   id="shape1-4">
-			<title
-   id="title73199">Tabelle.1</title>
-
-			<path
-   id="path73201"
-   class="st2"
-   d="M 0,105.26 H 123.79"
-   inkscape:connector-curvature="0"
-   style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-9)" />
-
-		</g>
-
-		<g
-   transform="translate(61.3199,-43.937)"
-   v:groupContext="shape"
-   v:mID="2"
-   id="shape2-10">
-			<title
-   id="title73204">Tabelle.2</title>
-
-			<circle
-   id="ellipse73206"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(81.1624,-43.937)"
-   v:groupContext="shape"
-   v:mID="3"
-   id="shape3-12">
-			<title
-   id="title73209">Tabelle.3</title>
-
-			<circle
-   id="ellipse73211"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(41.4774,-43.937)"
-   v:groupContext="shape"
-   v:mID="4"
-   id="shape4-14">
-			<title
-   id="title73214">Tabelle.4</title>
-
-			<circle
-   id="ellipse73216"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="rotate(-90,1.6048,63.967)"
-   v:groupContext="shape"
-   v:mID="5"
-   id="shape5-16">
-			<title
-   id="title73219">Tabelle.5</title>
-
-			<path
-   id="path73221"
-   class="st5"
-   d="M 0,105.26 H 51.02"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="rotate(-90,11.52605,54.04575)"
-   v:groupContext="shape"
-   v:mID="6"
-   id="shape6-19">
-			<title
-   id="title73224">Tabelle.6</title>
-
-			<path
-   id="path73226"
-   class="st5"
-   d="M 0,105.26 H 51.02"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="rotate(-90,21.4473,44.1245)"
-   v:groupContext="shape"
-   v:mID="7"
-   id="shape7-22">
-			<title
-   id="title73229">Tabelle.7</title>
-
-			<path
-   id="path73231"
-   class="st5"
-   d="M 0,105.26 H 51.02"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="rotate(-90,31.36858,34.20322)"
-   v:groupContext="shape"
-   v:mID="8"
-   id="shape8-25">
-			<title
-   id="title73234">Tabelle.8</title>
-
-			<path
-   id="path73236"
-   class="st5"
-   d="M 0,105.26 H 51.02"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(14.5482,-45.3543)"
-   v:groupContext="shape"
-   v:mID="9"
-   id="shape9-28">
-			<title
-   id="title73239">Tabelle.9</title>
-
-			<path
-   id="path73241"
-   class="st5"
-   d="M 0,105.26 H 110.93"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(14.5482,-85.0394)"
-   v:groupContext="shape"
-   v:mID="10"
-   id="shape10-31">
-			<title
-   id="title73244">Tabelle.10</title>
-
-			<path
-   id="path73246"
-   class="st5"
-   d="M 0,105.26 H 110.36"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(101.005,-63.7796)"
-   v:groupContext="shape"
-   v:mID="11"
-   id="shape11-34">
-			<title
-   id="title73249">Tabelle.11</title>
-
-			<circle
-   id="ellipse73251"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(21.6348,-63.7795)"
-   v:groupContext="shape"
-   v:mID="12"
-   id="shape12-36">
-			<title
-   id="title73254">Tabelle.12</title>
-
-			<circle
-   id="ellipse73256"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(139.273,-59.5276)"
-   v:groupContext="shape"
-   v:mID="13"
-   id="shape13-38">
-			<title
-   id="title73259">Tabelle.13</title>
-
-			<desc
-   id="desc73261">x</desc>
-
-			<v:textBlock
-   v:tabSpace="42.5197"
-   v:margins="rect(0,0,0,0)" />
-
-			<v:textRect
-   height="11.3386"
-   width="17.01"
-   cy="99.5876"
-   cx="8.50394" />
-
-			<rect
-   id="rect73263"
-   class="st6"
-   height="11.3386"
-   width="17.0079"
-   y="93.918297"
-   x="0"
-   style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			<text
-   id="text73265"
-   v:langID="1033"
-   class="st7"
-   y="102.59"
-   x="6.1799998"
-   style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
+        <title
+           id="title73192">Zeichenblatt-1</title>
+        <v:pageProperties
+           v:shadowOffsetY="-8.50394"
+           v:shadowOffsetX="8.50394"
+           v:drawingUnits="24"
+           v:pageScale="0.0393701"
+           v:drawingScale="0.0393701" />
+        <g
+           transform="matrix(0.98058079,0.19611558,0.19611558,-0.98058079,4.57525,112.602)"
+           v:groupContext="shape"
+           v:mID="80"
+           id="shape80-1">
+          <title
+             id="title73194">Tabelle.80</title>
+          <path
+             id="path73196"
+             class="st1"
+             d="m 0,94.21 c 4.31,-5.93 12.27,-15.17 23.39,-16.68 2.77,-0.37 5.75,-0.27 8.35,0.25 10.25,2.05 14.86,10.54 21.19,18.17 3.33,4.02 7.15,7.8 11.84,8.94 10.96,2.66 26.69,-9.12 36.41,-10.68"
+             inkscape:connector-curvature="0"
+             style="stroke:#c00000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(14.5482,-65.1969)"
+           v:groupContext="shape"
+           v:mID="1"
+           id="shape1-4">
+          <title
+             id="title73199">Tabelle.1</title>
+          <path
+             id="path73201"
+             class="st2"
+             d="M 0,105.26 H 123.79"
+             inkscape:connector-curvature="0"
+             style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-9)" />
+        </g>
+        <g
+           transform="translate(61.3199,-43.937)"
+           v:groupContext="shape"
+           v:mID="2"
+           id="shape2-10">
+          <title
+             id="title73204">Tabelle.2</title>
+          <circle
+             id="ellipse73206"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(81.1624,-43.937)"
+           v:groupContext="shape"
+           v:mID="3"
+           id="shape3-12">
+          <title
+             id="title73209">Tabelle.3</title>
+          <circle
+             id="ellipse73211"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(41.4774,-43.937)"
+           v:groupContext="shape"
+           v:mID="4"
+           id="shape4-14">
+          <title
+             id="title73214">Tabelle.4</title>
+          <circle
+             id="ellipse73216"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="rotate(-90,1.6048,63.967)"
+           v:groupContext="shape"
+           v:mID="5"
+           id="shape5-16">
+          <title
+             id="title73219">Tabelle.5</title>
+          <path
+             id="path73221"
+             class="st5"
+             d="M 0,105.26 H 51.02"
+             inkscape:connector-curvature="0"
+             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="rotate(-90,11.52605,54.04575)"
+           v:groupContext="shape"
+           v:mID="6"
+           id="shape6-19">
+          <title
+             id="title73224">Tabelle.6</title>
+          <path
+             id="path73226"
+             class="st5"
+             d="M 0,105.26 H 51.02"
+             inkscape:connector-curvature="0"
+             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="rotate(-90,21.4473,44.1245)"
+           v:groupContext="shape"
+           v:mID="7"
+           id="shape7-22">
+          <title
+             id="title73229">Tabelle.7</title>
+          <path
+             id="path73231"
+             class="st5"
+             d="M 0,105.26 H 51.02"
+             inkscape:connector-curvature="0"
+             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="rotate(-90,31.36858,34.20322)"
+           v:groupContext="shape"
+           v:mID="8"
+           id="shape8-25">
+          <title
+             id="title73234">Tabelle.8</title>
+          <path
+             id="path73236"
+             class="st5"
+             d="M 0,105.26 H 51.02"
+             inkscape:connector-curvature="0"
+             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(14.5482,-45.3543)"
+           v:groupContext="shape"
+           v:mID="9"
+           id="shape9-28">
+          <title
+             id="title73239">Tabelle.9</title>
+          <path
+             id="path73241"
+             class="st5"
+             d="M 0,105.26 H 110.93"
+             inkscape:connector-curvature="0"
+             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(14.5482,-85.0394)"
+           v:groupContext="shape"
+           v:mID="10"
+           id="shape10-31">
+          <title
+             id="title73244">Tabelle.10</title>
+          <path
+             id="path73246"
+             class="st5"
+             d="M 0,105.26 H 110.36"
+             inkscape:connector-curvature="0"
+             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(101.005,-63.7796)"
+           v:groupContext="shape"
+           v:mID="11"
+           id="shape11-34">
+          <title
+             id="title73249">Tabelle.11</title>
+          <circle
+             id="ellipse73251"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(21.6348,-63.7795)"
+           v:groupContext="shape"
+           v:mID="12"
+           id="shape12-36">
+          <title
+             id="title73254">Tabelle.12</title>
+          <circle
+             id="ellipse73256"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(139.273,-59.5276)"
+           v:groupContext="shape"
+           v:mID="13"
+           id="shape13-38">
+          <title
+             id="title73259">Tabelle.13</title>
+          <desc
+             id="desc73261">x</desc>
+          <v:textBlock
+             v:tabSpace="42.5197"
+             v:margins="rect(0,0,0,0)" />
+          <v:textRect
+             height="11.3386"
+             width="17.01"
+             cy="99.5876"
+             cx="8.50394" />
+          <rect
+             id="rect73263"
+             class="st6"
+             height="11.3386"
+             width="17.0079"
+             y="93.918297"
+             x="0"
+             style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          <text
+             id="text73265"
+             v:langID="1033"
+             class="st7"
+             y="102.59"
+             x="6.1799998"
+             style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 x</text>
-		</g>
-
-		<g
-   transform="rotate(90,58.2977,70.0113)"
-   v:groupContext="shape"
-   v:mID="14"
-   id="shape14-41">
-			<title
-   id="title73268">Tabelle.14</title>
-
-			<path
-   id="path73270"
-   class="st8"
-   d="M 3.04,105.26 H 3.4 53.86"
-   inkscape:connector-curvature="0"
-   style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-start:url(#mrkr5-46)" />
-
-		</g>
-
-		<g
-   transform="translate(14.5482,-93.5433)"
-   v:groupContext="shape"
-   v:mID="15"
-   id="shape15-47">
-			<title
-   id="title73273">Tabelle.15</title>
-
-			<desc
-   id="desc73275">u</desc>
-
-			<v:textBlock
-   v:tabSpace="42.5197"
-   v:margins="rect(0,0,0,0)" />
-
-			<v:textRect
-   height="11.3386"
-   width="17.01"
-   cy="99.5876"
-   cx="8.50394" />
-
-			<rect
-   id="rect73277"
-   class="st6"
-   height="11.3386"
-   width="17.0079"
-   y="93.918297"
-   x="0"
-   style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			<text
-   id="text73279"
-   v:langID="2055"
-   class="st7"
-   y="102.59"
-   x="5.8200002"
-   style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
+        </g>
+        <g
+           transform="rotate(90,58.2977,70.0113)"
+           v:groupContext="shape"
+           v:mID="14"
+           id="shape14-41">
+          <title
+             id="title73268">Tabelle.14</title>
+          <path
+             id="path73270"
+             class="st8"
+             d="M 3.04,105.26 H 3.4 53.86"
+             inkscape:connector-curvature="0"
+             style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-start:url(#mrkr5-46)" />
+        </g>
+        <g
+           transform="translate(14.5482,-93.5433)"
+           v:groupContext="shape"
+           v:mID="15"
+           id="shape15-47">
+          <title
+             id="title73273">Tabelle.15</title>
+          <desc
+             id="desc73275">u</desc>
+          <v:textBlock
+             v:tabSpace="42.5197"
+             v:margins="rect(0,0,0,0)" />
+          <v:textRect
+             height="11.3386"
+             width="17.01"
+             cy="99.5876"
+             cx="8.50394" />
+          <rect
+             id="rect73277"
+             class="st6"
+             height="11.3386"
+             width="17.0079"
+             y="93.918297"
+             x="0"
+             style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          <text
+             id="text73279"
+             v:langID="2055"
+             class="st7"
+             y="102.59"
+             x="5.8200002"
+             style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 u</text>
-		</g>
-
-		<g
-   v:groupContext="group"
-   v:mID="16"
-   transform="translate(14.5482,-17.0079)"
-   id="group16-50">
-			<title
-   id="title73282">Tabelle.16</title>
-
-			<g
-   v:groupContext="shape"
-   v:mID="17"
-   id="shape17-51">
-				<title
-   id="title73284">Tabelle.17</title>
-
-				<rect
-   id="rect73286"
-   class="st9"
-   height="17.0079"
-   width="17.0079"
-   y="88.249001"
-   x="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   v:groupContext="group"
-   v:mID="18"
-   transform="translate(6.20706,-5.41639)"
-   id="group18-53">
-				<title
-   id="title73289">Tabelle.18</title>
-
-				<g
-   v:groupContext="shape"
-   v:mID="19"
-   id="shape19-54">
-					<title
-   id="title73291">path1061</title>
-
-					<path
-   id="path73293"
-   class="st10"
-   d="M 4.59,101.54 C 4.59,100.66 4.55,99.79 4.16,98.98 3.66,97.93 2.77,97.76 2.3,97.76 1.66,97.76 0.86,98.04 0.41,99.05 0.06,99.8 0,100.66 0,101.54 c 0,0.81 0.05,1.8 0.5,2.62 0.47,0.88 1.27,1.1 1.8,1.1 0.58,0 1.42,-0.22 1.89,-1.27 0.36,-0.75 0.4,-1.59 0.4,-2.45 z m -2.29,3.48 c -0.42,0 -1.08,-0.26 -1.27,-1.31 -0.12,-0.66 -0.12,-1.67 -0.12,-2.31 0,-0.69 0,-1.41 0.09,-2 0.2,-1.3 1.02,-1.41 1.3,-1.41 0.36,0 1.08,0.2 1.28,1.28 0.11,0.61 0.11,1.44 0.11,2.13 0,0.83 0,1.56 -0.13,2.26 -0.15,1.03 -0.78,1.36 -1.26,1.36 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:1;stroke-linecap:butt" />
-
-				</g>
-
-			</g>
-
-		</g>
-
-		<g
-   v:groupContext="group"
-   v:mID="44"
-   transform="translate(113.761,-17.0079)"
-   id="group44-56">
-			<title
-   id="title73298">Tabelle.44</title>
-
-			<g
-   v:groupContext="shape"
-   v:mID="45"
-   id="shape45-57">
-				<title
-   id="title73300">Tabelle.45</title>
-
-				<rect
-   id="rect73302"
-   class="st9"
-   height="17.0079"
-   width="17.0079"
-   y="88.249001"
-   x="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   v:groupContext="group"
-   v:mID="46"
-   transform="translate(6.84981,-5.65076)"
-   id="group46-59">
-				<title
-   id="title73305">Tabelle.46</title>
-
-				<g
-   v:groupContext="shape"
-   v:mID="47"
-   id="shape47-60">
-					<title
-   id="title73307">path1064</title>
-
-					<path
-   id="path73309"
-   class="st10"
-   d="m 2.23,98.27 c 0,-0.25 0,-0.28 -0.25,-0.28 -0.67,0.7 -1.64,0.7 -1.98,0.7 v 0.33 c 0.22,0 0.86,0 1.44,-0.28 v 5.66 c 0,0.39 -0.05,0.51 -1.02,0.51 H 0.06 v 0.35 c 0.39,-0.03 1.33,-0.03 1.77,-0.03 0.44,0 1.39,0 1.76,0.03 v -0.35 H 3.25 c -0.98,0 -1.02,-0.11 -1.02,-0.51 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:1;stroke-linecap:butt" />
-
-				</g>
-
-			</g>
-
-		</g>
-
-		<g
-   transform="translate(0.375,-59.5276)"
-   v:groupContext="shape"
-   v:mID="48"
-   id="shape48-62">
-			<title
-   id="title73314">Tabelle.48</title>
-
-			<desc
-   id="desc73316">0</desc>
-
-			<v:textBlock
-   v:tabSpace="42.5197"
-   v:margins="rect(0,0,0,0)" />
-
-			<v:textRect
-   height="11.3386"
-   width="17.01"
-   cy="99.5876"
-   cx="8.50394" />
-
-			<rect
-   id="rect73318"
-   class="st6"
-   height="11.3386"
-   width="17.0079"
-   y="93.918297"
-   x="0"
-   style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			<text
-   id="text73320"
-   v:langID="1033"
-   class="st11"
-   y="102.59"
-   x="6"
-   style="font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
+        </g>
+        <g
+           v:groupContext="group"
+           v:mID="16"
+           transform="translate(14.5482,-17.0079)"
+           id="group16-50">
+          <title
+             id="title73282">Tabelle.16</title>
+          <g
+             v:groupContext="shape"
+             v:mID="17"
+             id="shape17-51">
+            <title
+               id="title73284">Tabelle.17</title>
+            <rect
+               id="rect73286"
+               class="st9"
+               height="17.0079"
+               width="17.0079"
+               y="88.249001"
+               x="0"
+               style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             v:groupContext="group"
+             v:mID="18"
+             transform="translate(6.20706,-5.41639)"
+             id="group18-53">
+            <title
+               id="title73289">Tabelle.18</title>
+            <g
+               v:groupContext="shape"
+               v:mID="19"
+               id="shape19-54">
+              <title
+                 id="title73291">path1061</title>
+              <path
+                 id="path73293"
+                 class="st10"
+                 d="M 4.59,101.54 C 4.59,100.66 4.55,99.79 4.16,98.98 3.66,97.93 2.77,97.76 2.3,97.76 1.66,97.76 0.86,98.04 0.41,99.05 0.06,99.8 0,100.66 0,101.54 c 0,0.81 0.05,1.8 0.5,2.62 0.47,0.88 1.27,1.1 1.8,1.1 0.58,0 1.42,-0.22 1.89,-1.27 0.36,-0.75 0.4,-1.59 0.4,-2.45 z m -2.29,3.48 c -0.42,0 -1.08,-0.26 -1.27,-1.31 -0.12,-0.66 -0.12,-1.67 -0.12,-2.31 0,-0.69 0,-1.41 0.09,-2 0.2,-1.3 1.02,-1.41 1.3,-1.41 0.36,0 1.08,0.2 1.28,1.28 0.11,0.61 0.11,1.44 0.11,2.13 0,0.83 0,1.56 -0.13,2.26 -0.15,1.03 -0.78,1.36 -1.26,1.36 z"
+                 inkscape:connector-curvature="0"
+                 style="fill:#000000;stroke:none;stroke-width:1;stroke-linecap:butt" />
+            </g>
+          </g>
+        </g>
+        <g
+           v:groupContext="group"
+           v:mID="44"
+           transform="translate(113.761,-17.0079)"
+           id="group44-56">
+          <title
+             id="title73298">Tabelle.44</title>
+          <g
+             v:groupContext="shape"
+             v:mID="45"
+             id="shape45-57">
+            <title
+               id="title73300">Tabelle.45</title>
+            <rect
+               id="rect73302"
+               class="st9"
+               height="17.0079"
+               width="17.0079"
+               y="88.249001"
+               x="0"
+               style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             v:groupContext="group"
+             v:mID="46"
+             transform="translate(6.84981,-5.65076)"
+             id="group46-59">
+            <title
+               id="title73305">Tabelle.46</title>
+            <g
+               v:groupContext="shape"
+               v:mID="47"
+               id="shape47-60">
+              <title
+                 id="title73307">path1064</title>
+              <path
+                 id="path73309"
+                 class="st10"
+                 d="m 2.23,98.27 c 0,-0.25 0,-0.28 -0.25,-0.28 -0.67,0.7 -1.64,0.7 -1.98,0.7 v 0.33 c 0.22,0 0.86,0 1.44,-0.28 v 5.66 c 0,0.39 -0.05,0.51 -1.02,0.51 H 0.06 v 0.35 c 0.39,-0.03 1.33,-0.03 1.77,-0.03 0.44,0 1.39,0 1.76,0.03 v -0.35 H 3.25 c -0.98,0 -1.02,-0.11 -1.02,-0.51 z"
+                 inkscape:connector-curvature="0"
+                 style="fill:#000000;stroke:none;stroke-width:1;stroke-linecap:butt" />
+            </g>
+          </g>
+        </g>
+        <g
+           transform="translate(0.375,-59.5276)"
+           v:groupContext="shape"
+           v:mID="48"
+           id="shape48-62">
+          <title
+             id="title73314">Tabelle.48</title>
+          <desc
+             id="desc73316">0</desc>
+          <v:textBlock
+             v:tabSpace="42.5197"
+             v:margins="rect(0,0,0,0)" />
+          <v:textRect
+             height="11.3386"
+             width="17.01"
+             cy="99.5876"
+             cx="8.50394" />
+          <rect
+             id="rect73318"
+             class="st6"
+             height="11.3386"
+             width="17.0079"
+             y="93.918297"
+             x="0"
+             style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          <text
+             id="text73320"
+             v:langID="1033"
+             class="st11"
+             y="102.59"
+             x="6"
+             style="font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 0</text>
-		</g>
-
-		<g
-   transform="translate(20.2175,-81.9213)"
-   v:groupContext="shape"
-   v:mID="49"
-   id="shape49-65">
-			<title
-   id="title73323">Tabelle.49</title>
-
-			<circle
-   id="ellipse73325"
-   class="st12"
-   cy="102.422"
-   cx="2.83465"
-   r="2.83465"
-   style="fill:none;stroke:#c00000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(14.5482)"
-   v:groupContext="shape"
-   v:mID="52"
-   id="shape52-67">
-			<title
-   id="title73328">Tabelle.52</title>
-
-			<path
-   id="path73330"
-   class="st9"
-   d="m 0,88.25 v 17.01 H 17.01 V 88.25 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(18.1613,-6.87389)"
-   v:groupContext="shape"
-   v:mID="53"
-   id="shape53-69">
-			<title
-   id="title73333">Tabelle.53</title>
-
-			<path
-   id="path73335"
-   class="st13"
-   d="m 3.35,101.82 c 0,-0.26 0.26,-1.23 1.06,-1.23 0,0 0.26,0 0.52,0.08 -0.26,0.09 -0.52,0.36 -0.52,0.62 0,0.18 0.08,0.35 0.44,0.35 0.26,0 0.61,-0.17 0.61,-0.61 0,-0.53 -0.7,-0.71 -1.05,-0.71 -0.62,0 -1.06,0.62 -1.15,0.79 -0.26,-0.7 -0.88,-0.79 -1.15,-0.79 -1.14,0 -1.76,1.41 -1.76,1.68 0,0.08 0.09,0.08 0.09,0.08 0.09,0 0.18,0 0.18,-0.08 0.35,-1.15 1.05,-1.41 1.41,-1.41 0.26,0 0.61,0.08 0.61,0.7 0,0.35 -0.17,1.06 -0.61,2.64 -0.18,0.62 -0.53,1.06 -0.97,1.06 -0.09,0 -0.36,0 -0.53,-0.09 0.17,-0.08 0.44,-0.35 0.44,-0.61 0,-0.27 -0.27,-0.36 -0.35,-0.36 -0.36,0 -0.62,0.27 -0.62,0.62 0,0.53 0.53,0.71 1.06,0.71 0.7,0 1.05,-0.8 1.05,-0.8 0.18,0.36 0.53,0.8 1.24,0.8 1.06,0 1.76,-1.41 1.76,-1.68 0,-0.09 -0.09,-0.09 -0.18,-0.09 -0.08,0 -0.08,0 -0.08,0.09 -0.44,1.15 -1.15,1.41 -1.5,1.41 -0.44,0 -0.62,-0.35 -0.62,-0.7 0,-0.27 0.09,-0.44 0.18,-0.97 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(24.4181,-5.19948)"
-   v:groupContext="shape"
-   v:mID="54"
-   id="shape54-71">
-			<title
-   id="title73338">Tabelle.54</title>
-
-			<path
-   id="path73340"
-   class="st13"
-   d="m 3.52,102.52 c 0,-0.79 -0.08,-1.32 -0.35,-1.85 -0.35,-0.7 -0.97,-0.88 -1.41,-0.88 -0.97,0 -1.41,0.8 -1.5,0.97 C 0,101.38 0,102.17 0,102.52 c 0,0.53 0,1.33 0.35,2.03 0.35,0.53 0.97,0.71 1.41,0.71 0.35,0 1.06,-0.09 1.5,-0.88 0.26,-0.62 0.26,-1.33 0.26,-1.86 z m -1.76,2.47 c -0.26,0 -0.79,-0.09 -0.97,-0.88 -0.09,-0.53 -0.09,-1.23 -0.09,-1.67 0,-0.53 0,-1.06 0.09,-1.5 0.18,-0.79 0.8,-0.88 0.97,-0.88 0.27,0 0.8,0.09 0.97,0.79 0.09,0.44 0.09,1.06 0.09,1.59 0,0.44 0,1.23 -0.09,1.67 -0.17,0.79 -0.7,0.88 -0.97,0.88 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(34.3907)"
-   v:groupContext="shape"
-   v:mID="56"
-   id="shape56-73">
-			<title
-   id="title73343">Tabelle.56</title>
-
-			<path
-   id="path73345"
-   class="st9"
-   d="m 0,88.25 v 17.01 H 17.01 V 88.25 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(38.1801,-6.78576)"
-   v:groupContext="shape"
-   v:mID="57"
-   id="shape57-75">
-			<title
-   id="title73348">Tabelle.57</title>
-
-			<path
-   id="path73350"
-   class="st13"
-   d="m 3.26,101.82 c 0.09,-0.26 0.35,-1.23 1.15,-1.23 0,0 0.26,0 0.52,0.08 -0.26,0.09 -0.52,0.36 -0.52,0.62 0,0.18 0.08,0.35 0.44,0.35 0.26,0 0.53,-0.17 0.53,-0.61 0,-0.53 -0.62,-0.71 -0.97,-0.71 -0.62,0 -1.06,0.53 -1.15,0.79 -0.26,-0.7 -0.88,-0.79 -1.15,-0.79 -1.14,0 -1.76,1.41 -1.76,1.68 0,0.08 0.09,0.08 0.09,0.08 0.09,0 0.18,0 0.18,-0.08 0.35,-1.15 1.05,-1.41 1.41,-1.41 0.26,0 0.61,0.08 0.61,0.7 0,0.35 -0.17,1.06 -0.61,2.56 -0.18,0.7 -0.53,1.14 -0.97,1.14 -0.09,0 -0.36,0 -0.62,-0.09 0.26,-0.08 0.53,-0.35 0.53,-0.61 0,-0.27 -0.27,-0.36 -0.35,-0.36 -0.36,0 -0.62,0.27 -0.62,0.62 0,0.44 0.53,0.71 0.97,0.71 0.79,0 1.14,-0.8 1.14,-0.8 0.18,0.36 0.53,0.8 1.24,0.8 1.06,0 1.76,-1.41 1.76,-1.68 0,-0.09 -0.09,-0.09 -0.18,-0.09 -0.08,0 -0.08,0 -0.17,0.09 -0.35,1.15 -1.06,1.41 -1.41,1.41 -0.44,0 -0.62,-0.35 -0.62,-0.7 0,-0.27 0.09,-0.44 0.18,-0.97 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(44.8775,-5.28761)"
-   v:groupContext="shape"
-   v:mID="58"
-   id="shape58-77">
-			<title
-   id="title73353">Tabelle.58</title>
-
-			<path
-   id="path73355"
-   class="st13"
-   d="m 1.67,100.15 c 0,-0.18 0,-0.18 -0.17,-0.18 -0.35,0.35 -0.8,0.53 -1.5,0.53 v 0.26 c 0.18,0 0.62,0 1.06,-0.26 v 4.14 c 0,0.26 0,0.35 -0.8,0.35 H 0 v 0.27 0 c 0.35,0 1.06,0 1.41,0 0.35,0 1.06,0 1.32,0 v -0.27 H 2.47 v 0 c -0.71,0 -0.8,-0.09 -0.8,-0.35 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(54.2333)"
-   v:groupContext="shape"
-   v:mID="60"
-   id="shape60-79">
-			<title
-   id="title73358">Tabelle.60</title>
-
-			<path
-   id="path73360"
-   class="st9"
-   d="m 0,88.25 v 17.01 H 17.01 V 88.25 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(57.9345,-6.78576)"
-   v:groupContext="shape"
-   v:mID="61"
-   id="shape61-81">
-			<title
-   id="title73363">Tabelle.61</title>
-
-			<path
-   id="path73365"
-   class="st13"
-   d="m 3.26,101.82 c 0.09,-0.26 0.35,-1.23 1.15,-1.23 0,0 0.26,0 0.52,0.08 -0.35,0.09 -0.52,0.36 -0.52,0.62 0,0.18 0.08,0.35 0.35,0.35 0.26,0 0.62,-0.17 0.62,-0.61 0,-0.53 -0.62,-0.71 -0.97,-0.71 -0.71,0 -1.06,0.53 -1.15,0.79 -0.26,-0.7 -0.88,-0.79 -1.23,-0.79 -1.15,0 -1.77,1.41 -1.77,1.68 0,0.08 0.18,0.08 0.18,0.08 0.09,0 0.09,0 0.09,-0.08 0.44,-1.15 1.14,-1.41 1.5,-1.41 0.17,0 0.61,0.08 0.61,0.7 0,0.35 -0.17,1.06 -0.61,2.56 -0.18,0.7 -0.53,1.14 -1.06,1.14 -0.09,0 -0.27,0 -0.53,-0.09 0.26,-0.08 0.53,-0.35 0.53,-0.61 0,-0.27 -0.27,-0.36 -0.44,-0.36 -0.27,0 -0.53,0.27 -0.53,0.62 0,0.44 0.53,0.71 0.97,0.71 0.7,0 1.14,-0.8 1.14,-0.8 0.18,0.36 0.53,0.8 1.24,0.8 1.06,0 1.67,-1.41 1.67,-1.68 0,-0.09 -0.09,-0.09 -0.09,-0.09 -0.08,0 -0.17,0 -0.17,0.09 -0.35,1.15 -1.06,1.41 -1.41,1.41 -0.44,0 -0.62,-0.35 -0.62,-0.7 0,-0.27 0.09,-0.44 0.18,-0.97 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(64.1912,-5.28761)"
-   v:groupContext="shape"
-   v:mID="62"
-   id="shape62-83">
-			<title
-   id="title73368">Tabelle.62</title>
-
-			<path
-   id="path73370"
-   class="st13"
-   d="m 1.85,103.67 c 0.18,-0.18 0.44,-0.44 0.62,-0.53 0.44,-0.44 0.97,-0.88 0.97,-1.58 0,-0.97 -0.8,-1.59 -1.85,-1.59 -0.97,0 -1.59,0.7 -1.59,1.41 0,0.44 0.35,0.44 0.44,0.44 0.18,0 0.44,-0.09 0.44,-0.35 0,-0.44 -0.44,-0.44 -0.53,-0.44 0.27,-0.62 0.8,-0.8 1.15,-0.8 0.79,0 1.14,0.62 1.14,1.33 0,0.79 -0.53,1.41 -1.49,2.37 l -1.06,1.06 C 0,105.08 0,105.08 0,105.26 h 3.17 l 0.27,-1.41 H 3.17 v 0 c 0,0.17 -0.09,0.53 -0.17,0.7 -0.09,0.09 -0.71,0.09 -0.8,0.09 H 0.79 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(74.0758,-0.0857694)"
-   v:groupContext="shape"
-   v:mID="64"
-   id="shape64-85">
-			<title
-   id="title73373">Tabelle.64</title>
-
-			<path
-   id="path73375"
-   class="st9"
-   d="m 0,88.33 v 16.93 H 16.92 V 88.33 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(77.6705,-6.92475)"
-   v:groupContext="shape"
-   v:mID="65"
-   id="shape65-87">
-			<title
-   id="title73378">Tabelle.65</title>
-
-			<path
-   id="path73380"
-   class="st13"
-   d="m 3.33,101.84 c 0,-0.27 0.26,-1.23 1.05,-1.23 0.09,0 0.27,0 0.53,0.09 -0.26,0.09 -0.53,0.35 -0.53,0.61 0,0.18 0.09,0.35 0.44,0.35 0.18,0 0.53,-0.17 0.53,-0.61 0,-0.53 -0.62,-0.7 -0.97,-0.7 -0.61,0 -1.05,0.61 -1.14,0.79 -0.26,-0.71 -0.87,-0.79 -1.22,-0.79 -1.06,0 -1.67,1.4 -1.67,1.66 0,0.09 0.09,0.09 0.09,0.09 0.09,0 0.09,0 0.17,-0.09 0.35,-1.14 1.06,-1.4 1.41,-1.4 0.26,0 0.61,0.09 0.61,0.7 0,0.35 -0.18,1.05 -0.61,2.63 -0.18,0.62 -0.53,1.05 -0.97,1.05 -0.09,0 -0.35,0 -0.61,-0.08 0.35,-0.09 0.52,-0.35 0.52,-0.62 0,-0.26 -0.17,-0.35 -0.35,-0.35 -0.35,0 -0.61,0.26 -0.61,0.62 0,0.52 0.53,0.7 0.96,0.7 0.79,0 1.14,-0.79 1.23,-0.79 0.09,0.35 0.44,0.79 1.14,0.79 1.14,0 1.67,-1.41 1.67,-1.67 0,-0.09 -0.09,-0.09 -0.09,-0.09 -0.09,0 -0.09,0 -0.09,0.09 -0.35,1.14 -1.14,1.4 -1.49,1.4 -0.44,0 -0.61,-0.35 -0.61,-0.7 0,-0.26 0.09,-0.44 0.17,-0.96 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(83.8955,-5.25885)"
-   v:groupContext="shape"
-   v:mID="66"
-   id="shape66-89">
-			<title
-   id="title73383">Tabelle.66</title>
-
-			<path
-   id="path73385"
-   class="st13"
-   d="m 1.67,102.45 c 0.61,0 1.05,0.44 1.05,1.32 0,0.96 -0.62,1.22 -1.05,1.22 -0.44,0 -1.06,-0.08 -1.32,-0.52 0.35,0 0.53,-0.18 0.53,-0.44 0,-0.26 -0.18,-0.44 -0.44,-0.44 -0.26,0 -0.44,0.09 -0.44,0.44 0,0.7 0.79,1.23 1.67,1.23 1.05,0 1.84,-0.7 1.84,-1.49 0,-0.71 -0.53,-1.32 -1.32,-1.49 0.62,-0.18 1.05,-0.71 1.05,-1.32 0,-0.7 -0.7,-1.14 -1.49,-1.14 -0.87,0 -1.49,0.44 -1.49,1.05 0,0.35 0.18,0.44 0.35,0.44 0.27,0 0.44,-0.17 0.44,-0.44 0,-0.26 -0.26,-0.35 -0.44,-0.35 0.35,-0.44 0.97,-0.44 1.06,-0.44 0.26,0 0.78,0 0.78,0.88 0,0.53 -0.17,0.88 -0.26,0.97 -0.26,0.26 -0.44,0.26 -0.96,0.35 -0.09,0 -0.18,0 -0.18,0.08 0,0.09 0.09,0.09 0.18,0.09 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(93.9183,-0.0857694)"
-   v:groupContext="shape"
-   v:mID="68"
-   id="shape68-91">
-			<title
-   id="title73388">Tabelle.68</title>
-
-			<path
-   id="path73390"
-   class="st9"
-   d="m 0,88.33 v 16.93 H 16.92 V 88.33 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(97.4254,-6.83708)"
-   v:groupContext="shape"
-   v:mID="69"
-   id="shape69-93">
-			<title
-   id="title73393">Tabelle.69</title>
-
-			<path
-   id="path73395"
-   class="st13"
-   d="m 3.33,101.84 c 0.09,-0.27 0.35,-1.23 1.05,-1.23 0.09,0 0.35,0 0.62,0.09 -0.35,0.09 -0.53,0.35 -0.53,0.61 0,0.18 0.09,0.35 0.35,0.35 0.27,0 0.62,-0.17 0.62,-0.61 0,-0.53 -0.62,-0.7 -1.06,-0.7 -0.61,0 -0.96,0.52 -1.14,0.79 -0.26,-0.71 -0.79,-0.79 -1.14,-0.79 -1.14,0 -1.75,1.4 -1.75,1.66 0,0.09 0.09,0.09 0.09,0.09 0.17,0 0.17,0 0.17,-0.09 0.35,-1.14 1.14,-1.4 1.49,-1.4 0.18,0 0.53,0.09 0.53,0.7 0,0.35 -0.18,1.05 -0.53,2.54 -0.17,0.71 -0.61,1.14 -1.05,1.14 -0.09,0 -0.35,0 -0.52,-0.08 0.26,-0.09 0.52,-0.35 0.52,-0.62 0,-0.26 -0.26,-0.35 -0.44,-0.35 -0.35,0 -0.61,0.26 -0.61,0.62 0,0.43 0.61,0.7 1.05,0.7 0.7,0 1.14,-0.79 1.14,-0.79 0.09,0.35 0.53,0.79 1.14,0.79 1.14,0 1.76,-1.41 1.76,-1.67 C 5.09,103.5 5,103.5 5,103.5 c -0.18,0 -0.18,0 -0.18,0.09 -0.35,1.14 -1.14,1.4 -1.49,1.4 -0.35,0 -0.52,-0.35 -0.52,-0.7 0,-0.26 0.08,-0.44 0.17,-0.96 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(103.563,-5.34653)"
-   v:groupContext="shape"
-   v:mID="70"
-   id="shape70-95">
-			<title
-   id="title73398">Tabelle.70</title>
-
-			<path
-   id="path73400"
-   class="st13"
-   d="m 2.89,100.17 c 0,-0.17 0,-0.26 -0.17,-0.26 -0.09,0 -0.09,0 -0.18,0.09 L 0,103.68 v 0.26 h 2.28 v 0.7 0 c 0,0.27 -0.09,0.35 -0.7,0.35 H 1.4 v 0.27 0 c 0.7,0 0.7,0 1.14,0 0.44,0 0.53,0 1.14,0 v -0.27 H 3.51 v 0 c -0.62,0 -0.62,-0.08 -0.62,-0.35 v -0.7 h 0.88 v -0.26 H 2.89 Z m -0.61,0.62 v 2.89 H 0.26 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(81.1624,-83.622)"
-   v:groupContext="shape"
-   v:mID="71"
-   id="shape71-97">
-			<title
-   id="title73403">Tabelle.71</title>
-
-			<circle
-   id="ellipse73405"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(61.3199,-83.622)"
-   v:groupContext="shape"
-   v:mID="72"
-   id="shape72-99">
-			<title
-   id="title73408">Tabelle.72</title>
-
-			<circle
-   id="ellipse73410"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(41.4774,-83.622)"
-   v:groupContext="shape"
-   v:mID="73"
-   id="shape73-101">
-			<title
-   id="title73413">Tabelle.73</title>
-
-			<circle
-   id="ellipse73415"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(81.1624,-63.7795)"
-   v:groupContext="shape"
-   v:mID="74"
-   id="shape74-103">
-			<title
-   id="title73418">Tabelle.74</title>
-
-			<circle
-   id="ellipse73420"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(61.3199,-63.7795)"
-   v:groupContext="shape"
-   v:mID="75"
-   id="shape75-105">
-			<title
-   id="title73423">Tabelle.75</title>
-
-			<circle
-   id="ellipse73425"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(41.4774,-63.7795)"
-   v:groupContext="shape"
-   v:mID="76"
-   id="shape76-107">
-			<title
-   id="title73428">Tabelle.76</title>
-
-			<circle
-   id="ellipse73430"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(101.005,-83.622)"
-   v:groupContext="shape"
-   v:mID="77"
-   id="shape77-109">
-			<title
-   id="title73433">Tabelle.77</title>
-
-			<circle
-   id="ellipse73435"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(101.005,-43.937)"
-   v:groupContext="shape"
-   v:mID="78"
-   id="shape78-111">
-			<title
-   id="title73438">Tabelle.78</title>
-
-			<circle
-   id="ellipse73440"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(21.6348,-43.937)"
-   v:groupContext="shape"
-   v:mID="79"
-   id="shape79-113">
-			<title
-   id="title73443">Tabelle.79</title>
-
-			<circle
-   id="ellipse73445"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(0.375,-79.3701)"
-   v:groupContext="shape"
-   v:mID="81"
-   id="shape81-115">
-			<title
-   id="title73448">Tabelle.81</title>
-
-			<desc
-   id="desc73450">1</desc>
-
-			<v:textBlock
-   v:tabSpace="42.5197"
-   v:margins="rect(0,0,0,0)" />
-
-			<v:textRect
-   height="11.3386"
-   width="17.01"
-   cy="99.5876"
-   cx="8.50394" />
-
-			<rect
-   id="rect73452"
-   class="st6"
-   height="11.3386"
-   width="17.0079"
-   y="93.918297"
-   x="0"
-   style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			<text
-   id="text73454"
-   v:langID="2055"
-   class="st11"
-   y="102.59"
-   x="6"
-   style="font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
+        </g>
+        <g
+           transform="translate(20.2175,-81.9213)"
+           v:groupContext="shape"
+           v:mID="49"
+           id="shape49-65">
+          <title
+             id="title73323">Tabelle.49</title>
+          <circle
+             id="ellipse73325"
+             class="st12"
+             cy="102.422"
+             cx="2.83465"
+             r="2.83465"
+             style="fill:none;stroke:#c00000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(14.5482)"
+           v:groupContext="shape"
+           v:mID="52"
+           id="shape52-67">
+          <title
+             id="title73328">Tabelle.52</title>
+          <path
+             id="path73330"
+             class="st9"
+             d="m 0,88.25 v 17.01 H 17.01 V 88.25 Z"
+             inkscape:connector-curvature="0"
+             style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(18.1613,-6.87389)"
+           v:groupContext="shape"
+           v:mID="53"
+           id="shape53-69">
+          <title
+             id="title73333">Tabelle.53</title>
+          <path
+             id="path73335"
+             class="st13"
+             d="m 3.35,101.82 c 0,-0.26 0.26,-1.23 1.06,-1.23 0,0 0.26,0 0.52,0.08 -0.26,0.09 -0.52,0.36 -0.52,0.62 0,0.18 0.08,0.35 0.44,0.35 0.26,0 0.61,-0.17 0.61,-0.61 0,-0.53 -0.7,-0.71 -1.05,-0.71 -0.62,0 -1.06,0.62 -1.15,0.79 -0.26,-0.7 -0.88,-0.79 -1.15,-0.79 -1.14,0 -1.76,1.41 -1.76,1.68 0,0.08 0.09,0.08 0.09,0.08 0.09,0 0.18,0 0.18,-0.08 0.35,-1.15 1.05,-1.41 1.41,-1.41 0.26,0 0.61,0.08 0.61,0.7 0,0.35 -0.17,1.06 -0.61,2.64 -0.18,0.62 -0.53,1.06 -0.97,1.06 -0.09,0 -0.36,0 -0.53,-0.09 0.17,-0.08 0.44,-0.35 0.44,-0.61 0,-0.27 -0.27,-0.36 -0.35,-0.36 -0.36,0 -0.62,0.27 -0.62,0.62 0,0.53 0.53,0.71 1.06,0.71 0.7,0 1.05,-0.8 1.05,-0.8 0.18,0.36 0.53,0.8 1.24,0.8 1.06,0 1.76,-1.41 1.76,-1.68 0,-0.09 -0.09,-0.09 -0.18,-0.09 -0.08,0 -0.08,0 -0.08,0.09 -0.44,1.15 -1.15,1.41 -1.5,1.41 -0.44,0 -0.62,-0.35 -0.62,-0.7 0,-0.27 0.09,-0.44 0.18,-0.97 z"
+             inkscape:connector-curvature="0"
+             style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(24.4181,-5.19948)"
+           v:groupContext="shape"
+           v:mID="54"
+           id="shape54-71">
+          <title
+             id="title73338">Tabelle.54</title>
+          <path
+             id="path73340"
+             class="st13"
+             d="m 3.52,102.52 c 0,-0.79 -0.08,-1.32 -0.35,-1.85 -0.35,-0.7 -0.97,-0.88 -1.41,-0.88 -0.97,0 -1.41,0.8 -1.5,0.97 C 0,101.38 0,102.17 0,102.52 c 0,0.53 0,1.33 0.35,2.03 0.35,0.53 0.97,0.71 1.41,0.71 0.35,0 1.06,-0.09 1.5,-0.88 0.26,-0.62 0.26,-1.33 0.26,-1.86 z m -1.76,2.47 c -0.26,0 -0.79,-0.09 -0.97,-0.88 -0.09,-0.53 -0.09,-1.23 -0.09,-1.67 0,-0.53 0,-1.06 0.09,-1.5 0.18,-0.79 0.8,-0.88 0.97,-0.88 0.27,0 0.8,0.09 0.97,0.79 0.09,0.44 0.09,1.06 0.09,1.59 0,0.44 0,1.23 -0.09,1.67 -0.17,0.79 -0.7,0.88 -0.97,0.88 z"
+             inkscape:connector-curvature="0"
+             style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(34.3907)"
+           v:groupContext="shape"
+           v:mID="56"
+           id="shape56-73">
+          <title
+             id="title73343">Tabelle.56</title>
+          <path
+             id="path73345"
+             class="st9"
+             d="m 0,88.25 v 17.01 H 17.01 V 88.25 Z"
+             inkscape:connector-curvature="0"
+             style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(38.1801,-6.78576)"
+           v:groupContext="shape"
+           v:mID="57"
+           id="shape57-75">
+          <title
+             id="title73348">Tabelle.57</title>
+          <path
+             id="path73350"
+             class="st13"
+             d="m 3.26,101.82 c 0.09,-0.26 0.35,-1.23 1.15,-1.23 0,0 0.26,0 0.52,0.08 -0.26,0.09 -0.52,0.36 -0.52,0.62 0,0.18 0.08,0.35 0.44,0.35 0.26,0 0.53,-0.17 0.53,-0.61 0,-0.53 -0.62,-0.71 -0.97,-0.71 -0.62,0 -1.06,0.53 -1.15,0.79 -0.26,-0.7 -0.88,-0.79 -1.15,-0.79 -1.14,0 -1.76,1.41 -1.76,1.68 0,0.08 0.09,0.08 0.09,0.08 0.09,0 0.18,0 0.18,-0.08 0.35,-1.15 1.05,-1.41 1.41,-1.41 0.26,0 0.61,0.08 0.61,0.7 0,0.35 -0.17,1.06 -0.61,2.56 -0.18,0.7 -0.53,1.14 -0.97,1.14 -0.09,0 -0.36,0 -0.62,-0.09 0.26,-0.08 0.53,-0.35 0.53,-0.61 0,-0.27 -0.27,-0.36 -0.35,-0.36 -0.36,0 -0.62,0.27 -0.62,0.62 0,0.44 0.53,0.71 0.97,0.71 0.79,0 1.14,-0.8 1.14,-0.8 0.18,0.36 0.53,0.8 1.24,0.8 1.06,0 1.76,-1.41 1.76,-1.68 0,-0.09 -0.09,-0.09 -0.18,-0.09 -0.08,0 -0.08,0 -0.17,0.09 -0.35,1.15 -1.06,1.41 -1.41,1.41 -0.44,0 -0.62,-0.35 -0.62,-0.7 0,-0.27 0.09,-0.44 0.18,-0.97 z"
+             inkscape:connector-curvature="0"
+             style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(44.8775,-5.28761)"
+           v:groupContext="shape"
+           v:mID="58"
+           id="shape58-77">
+          <title
+             id="title73353">Tabelle.58</title>
+          <path
+             id="path73355"
+             class="st13"
+             d="m 1.67,100.15 c 0,-0.18 0,-0.18 -0.17,-0.18 -0.35,0.35 -0.8,0.53 -1.5,0.53 v 0.26 c 0.18,0 0.62,0 1.06,-0.26 v 4.14 c 0,0.26 0,0.35 -0.8,0.35 H 0 v 0.27 0 c 0.35,0 1.06,0 1.41,0 0.35,0 1.06,0 1.32,0 v -0.27 H 2.47 v 0 c -0.71,0 -0.8,-0.09 -0.8,-0.35 z"
+             inkscape:connector-curvature="0"
+             style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(54.2333)"
+           v:groupContext="shape"
+           v:mID="60"
+           id="shape60-79">
+          <title
+             id="title73358">Tabelle.60</title>
+          <path
+             id="path73360"
+             class="st9"
+             d="m 0,88.25 v 17.01 H 17.01 V 88.25 Z"
+             inkscape:connector-curvature="0"
+             style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(57.9345,-6.78576)"
+           v:groupContext="shape"
+           v:mID="61"
+           id="shape61-81">
+          <title
+             id="title73363">Tabelle.61</title>
+          <path
+             id="path73365"
+             class="st13"
+             d="m 3.26,101.82 c 0.09,-0.26 0.35,-1.23 1.15,-1.23 0,0 0.26,0 0.52,0.08 -0.35,0.09 -0.52,0.36 -0.52,0.62 0,0.18 0.08,0.35 0.35,0.35 0.26,0 0.62,-0.17 0.62,-0.61 0,-0.53 -0.62,-0.71 -0.97,-0.71 -0.71,0 -1.06,0.53 -1.15,0.79 -0.26,-0.7 -0.88,-0.79 -1.23,-0.79 -1.15,0 -1.77,1.41 -1.77,1.68 0,0.08 0.18,0.08 0.18,0.08 0.09,0 0.09,0 0.09,-0.08 0.44,-1.15 1.14,-1.41 1.5,-1.41 0.17,0 0.61,0.08 0.61,0.7 0,0.35 -0.17,1.06 -0.61,2.56 -0.18,0.7 -0.53,1.14 -1.06,1.14 -0.09,0 -0.27,0 -0.53,-0.09 0.26,-0.08 0.53,-0.35 0.53,-0.61 0,-0.27 -0.27,-0.36 -0.44,-0.36 -0.27,0 -0.53,0.27 -0.53,0.62 0,0.44 0.53,0.71 0.97,0.71 0.7,0 1.14,-0.8 1.14,-0.8 0.18,0.36 0.53,0.8 1.24,0.8 1.06,0 1.67,-1.41 1.67,-1.68 0,-0.09 -0.09,-0.09 -0.09,-0.09 -0.08,0 -0.17,0 -0.17,0.09 -0.35,1.15 -1.06,1.41 -1.41,1.41 -0.44,0 -0.62,-0.35 -0.62,-0.7 0,-0.27 0.09,-0.44 0.18,-0.97 z"
+             inkscape:connector-curvature="0"
+             style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(64.1912,-5.28761)"
+           v:groupContext="shape"
+           v:mID="62"
+           id="shape62-83">
+          <title
+             id="title73368">Tabelle.62</title>
+          <path
+             id="path73370"
+             class="st13"
+             d="m 1.85,103.67 c 0.18,-0.18 0.44,-0.44 0.62,-0.53 0.44,-0.44 0.97,-0.88 0.97,-1.58 0,-0.97 -0.8,-1.59 -1.85,-1.59 -0.97,0 -1.59,0.7 -1.59,1.41 0,0.44 0.35,0.44 0.44,0.44 0.18,0 0.44,-0.09 0.44,-0.35 0,-0.44 -0.44,-0.44 -0.53,-0.44 0.27,-0.62 0.8,-0.8 1.15,-0.8 0.79,0 1.14,0.62 1.14,1.33 0,0.79 -0.53,1.41 -1.49,2.37 l -1.06,1.06 C 0,105.08 0,105.08 0,105.26 h 3.17 l 0.27,-1.41 H 3.17 v 0 c 0,0.17 -0.09,0.53 -0.17,0.7 -0.09,0.09 -0.71,0.09 -0.8,0.09 H 0.79 Z"
+             inkscape:connector-curvature="0"
+             style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(74.0758,-0.0857694)"
+           v:groupContext="shape"
+           v:mID="64"
+           id="shape64-85">
+          <title
+             id="title73373">Tabelle.64</title>
+          <path
+             id="path73375"
+             class="st9"
+             d="m 0,88.33 v 16.93 H 16.92 V 88.33 Z"
+             inkscape:connector-curvature="0"
+             style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(77.6705,-6.92475)"
+           v:groupContext="shape"
+           v:mID="65"
+           id="shape65-87">
+          <title
+             id="title73378">Tabelle.65</title>
+          <path
+             id="path73380"
+             class="st13"
+             d="m 3.33,101.84 c 0,-0.27 0.26,-1.23 1.05,-1.23 0.09,0 0.27,0 0.53,0.09 -0.26,0.09 -0.53,0.35 -0.53,0.61 0,0.18 0.09,0.35 0.44,0.35 0.18,0 0.53,-0.17 0.53,-0.61 0,-0.53 -0.62,-0.7 -0.97,-0.7 -0.61,0 -1.05,0.61 -1.14,0.79 -0.26,-0.71 -0.87,-0.79 -1.22,-0.79 -1.06,0 -1.67,1.4 -1.67,1.66 0,0.09 0.09,0.09 0.09,0.09 0.09,0 0.09,0 0.17,-0.09 0.35,-1.14 1.06,-1.4 1.41,-1.4 0.26,0 0.61,0.09 0.61,0.7 0,0.35 -0.18,1.05 -0.61,2.63 -0.18,0.62 -0.53,1.05 -0.97,1.05 -0.09,0 -0.35,0 -0.61,-0.08 0.35,-0.09 0.52,-0.35 0.52,-0.62 0,-0.26 -0.17,-0.35 -0.35,-0.35 -0.35,0 -0.61,0.26 -0.61,0.62 0,0.52 0.53,0.7 0.96,0.7 0.79,0 1.14,-0.79 1.23,-0.79 0.09,0.35 0.44,0.79 1.14,0.79 1.14,0 1.67,-1.41 1.67,-1.67 0,-0.09 -0.09,-0.09 -0.09,-0.09 -0.09,0 -0.09,0 -0.09,0.09 -0.35,1.14 -1.14,1.4 -1.49,1.4 -0.44,0 -0.61,-0.35 -0.61,-0.7 0,-0.26 0.09,-0.44 0.17,-0.96 z"
+             inkscape:connector-curvature="0"
+             style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(83.8955,-5.25885)"
+           v:groupContext="shape"
+           v:mID="66"
+           id="shape66-89">
+          <title
+             id="title73383">Tabelle.66</title>
+          <path
+             id="path73385"
+             class="st13"
+             d="m 1.67,102.45 c 0.61,0 1.05,0.44 1.05,1.32 0,0.96 -0.62,1.22 -1.05,1.22 -0.44,0 -1.06,-0.08 -1.32,-0.52 0.35,0 0.53,-0.18 0.53,-0.44 0,-0.26 -0.18,-0.44 -0.44,-0.44 -0.26,0 -0.44,0.09 -0.44,0.44 0,0.7 0.79,1.23 1.67,1.23 1.05,0 1.84,-0.7 1.84,-1.49 0,-0.71 -0.53,-1.32 -1.32,-1.49 0.62,-0.18 1.05,-0.71 1.05,-1.32 0,-0.7 -0.7,-1.14 -1.49,-1.14 -0.87,0 -1.49,0.44 -1.49,1.05 0,0.35 0.18,0.44 0.35,0.44 0.27,0 0.44,-0.17 0.44,-0.44 0,-0.26 -0.26,-0.35 -0.44,-0.35 0.35,-0.44 0.97,-0.44 1.06,-0.44 0.26,0 0.78,0 0.78,0.88 0,0.53 -0.17,0.88 -0.26,0.97 -0.26,0.26 -0.44,0.26 -0.96,0.35 -0.09,0 -0.18,0 -0.18,0.08 0,0.09 0.09,0.09 0.18,0.09 z"
+             inkscape:connector-curvature="0"
+             style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(93.9183,-0.0857694)"
+           v:groupContext="shape"
+           v:mID="68"
+           id="shape68-91">
+          <title
+             id="title73388">Tabelle.68</title>
+          <path
+             id="path73390"
+             class="st9"
+             d="m 0,88.33 v 16.93 H 16.92 V 88.33 Z"
+             inkscape:connector-curvature="0"
+             style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(97.4254,-6.83708)"
+           v:groupContext="shape"
+           v:mID="69"
+           id="shape69-93">
+          <title
+             id="title73393">Tabelle.69</title>
+          <path
+             id="path73395"
+             class="st13"
+             d="m 3.33,101.84 c 0.09,-0.27 0.35,-1.23 1.05,-1.23 0.09,0 0.35,0 0.62,0.09 -0.35,0.09 -0.53,0.35 -0.53,0.61 0,0.18 0.09,0.35 0.35,0.35 0.27,0 0.62,-0.17 0.62,-0.61 0,-0.53 -0.62,-0.7 -1.06,-0.7 -0.61,0 -0.96,0.52 -1.14,0.79 -0.26,-0.71 -0.79,-0.79 -1.14,-0.79 -1.14,0 -1.75,1.4 -1.75,1.66 0,0.09 0.09,0.09 0.09,0.09 0.17,0 0.17,0 0.17,-0.09 0.35,-1.14 1.14,-1.4 1.49,-1.4 0.18,0 0.53,0.09 0.53,0.7 0,0.35 -0.18,1.05 -0.53,2.54 -0.17,0.71 -0.61,1.14 -1.05,1.14 -0.09,0 -0.35,0 -0.52,-0.08 0.26,-0.09 0.52,-0.35 0.52,-0.62 0,-0.26 -0.26,-0.35 -0.44,-0.35 -0.35,0 -0.61,0.26 -0.61,0.62 0,0.43 0.61,0.7 1.05,0.7 0.7,0 1.14,-0.79 1.14,-0.79 0.09,0.35 0.53,0.79 1.14,0.79 1.14,0 1.76,-1.41 1.76,-1.67 C 5.09,103.5 5,103.5 5,103.5 c -0.18,0 -0.18,0 -0.18,0.09 -0.35,1.14 -1.14,1.4 -1.49,1.4 -0.35,0 -0.52,-0.35 -0.52,-0.7 0,-0.26 0.08,-0.44 0.17,-0.96 z"
+             inkscape:connector-curvature="0"
+             style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(103.563,-5.34653)"
+           v:groupContext="shape"
+           v:mID="70"
+           id="shape70-95">
+          <title
+             id="title73398">Tabelle.70</title>
+          <path
+             id="path73400"
+             class="st13"
+             d="m 2.89,100.17 c 0,-0.17 0,-0.26 -0.17,-0.26 -0.09,0 -0.09,0 -0.18,0.09 L 0,103.68 v 0.26 h 2.28 v 0.7 0 c 0,0.27 -0.09,0.35 -0.7,0.35 H 1.4 v 0.27 0 c 0.7,0 0.7,0 1.14,0 0.44,0 0.53,0 1.14,0 v -0.27 H 3.51 v 0 c -0.62,0 -0.62,-0.08 -0.62,-0.35 v -0.7 h 0.88 v -0.26 H 2.89 Z m -0.61,0.62 v 2.89 H 0.26 Z"
+             inkscape:connector-curvature="0"
+             style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(81.1624,-83.622)"
+           v:groupContext="shape"
+           v:mID="71"
+           id="shape71-97">
+          <title
+             id="title73403">Tabelle.71</title>
+          <circle
+             id="ellipse73405"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(61.3199,-83.622)"
+           v:groupContext="shape"
+           v:mID="72"
+           id="shape72-99">
+          <title
+             id="title73408">Tabelle.72</title>
+          <circle
+             id="ellipse73410"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(41.4774,-83.622)"
+           v:groupContext="shape"
+           v:mID="73"
+           id="shape73-101">
+          <title
+             id="title73413">Tabelle.73</title>
+          <circle
+             id="ellipse73415"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(81.1624,-63.7795)"
+           v:groupContext="shape"
+           v:mID="74"
+           id="shape74-103">
+          <title
+             id="title73418">Tabelle.74</title>
+          <circle
+             id="ellipse73420"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(61.3199,-63.7795)"
+           v:groupContext="shape"
+           v:mID="75"
+           id="shape75-105">
+          <title
+             id="title73423">Tabelle.75</title>
+          <circle
+             id="ellipse73425"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(41.4774,-63.7795)"
+           v:groupContext="shape"
+           v:mID="76"
+           id="shape76-107">
+          <title
+             id="title73428">Tabelle.76</title>
+          <circle
+             id="ellipse73430"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(101.005,-83.622)"
+           v:groupContext="shape"
+           v:mID="77"
+           id="shape77-109">
+          <title
+             id="title73433">Tabelle.77</title>
+          <circle
+             id="ellipse73435"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(101.005,-43.937)"
+           v:groupContext="shape"
+           v:mID="78"
+           id="shape78-111">
+          <title
+             id="title73438">Tabelle.78</title>
+          <circle
+             id="ellipse73440"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(21.6348,-43.937)"
+           v:groupContext="shape"
+           v:mID="79"
+           id="shape79-113">
+          <title
+             id="title73443">Tabelle.79</title>
+          <circle
+             id="ellipse73445"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(0.375,-79.3701)"
+           v:groupContext="shape"
+           v:mID="81"
+           id="shape81-115">
+          <title
+             id="title73448">Tabelle.81</title>
+          <desc
+             id="desc73450">1</desc>
+          <v:textBlock
+             v:tabSpace="42.5197"
+             v:margins="rect(0,0,0,0)" />
+          <v:textRect
+             height="11.3386"
+             width="17.01"
+             cy="99.5876"
+             cx="8.50394" />
+          <rect
+             id="rect73452"
+             class="st6"
+             height="11.3386"
+             width="17.0079"
+             y="93.918297"
+             x="0"
+             style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          <text
+             id="text73454"
+             v:langID="2055"
+             class="st11"
+             y="102.59"
+             x="6"
+             style="font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 1</text>
-		</g>
-
-		<g
-   transform="rotate(-90,41.28985,24.28195)"
-   v:groupContext="shape"
-   v:mID="101"
-   id="shape101-118">
-			<title
-   id="title73457">Tabelle.101</title>
-
-			<path
-   id="path73459"
-   class="st5"
-   d="M 0,105.26 H 51.02"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(120.847,-63.7796)"
-   v:groupContext="shape"
-   v:mID="102"
-   id="shape102-121">
-			<title
-   id="title73462">Tabelle.102</title>
-
-			<circle
-   id="ellipse73464"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(119.43,-62.3622)"
-   v:groupContext="shape"
-   v:mID="103"
-   id="shape103-123">
-			<title
-   id="title73467">Tabelle.103</title>
-
-			<circle
-   id="ellipse73469"
-   class="st12"
-   cy="102.422"
-   cx="2.83465"
-   r="2.83465"
-   style="fill:none;stroke:#c00000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(120.847,-83.622)"
-   v:groupContext="shape"
-   v:mID="104"
-   id="shape104-125">
-			<title
-   id="title73472">Tabelle.104</title>
-
-			<circle
-   id="ellipse73474"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(120.847,-43.937)"
-   v:groupContext="shape"
-   v:mID="105"
-   id="shape105-127">
-			<title
-   id="title73477">Tabelle.105</title>
-
-			<circle
-   id="ellipse73479"
-   class="st4"
-   cy="103.84"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   v:groupContext="group"
-   v:mID="358"
-   transform="translate(34.3907,-17.4537)"
-   id="group358-129">
-			<title
-   id="title73482">Tabelle.358</title>
-
-			<g
-   v:groupContext="shape"
-   v:mID="342"
-   id="shape342-130">
-				<title
-   id="title73484">Tabelle.342</title>
-
-				<path
-   id="path73486"
-   class="st9"
-   d="m 0,88.69 v 16.57 H 16.56 V 88.69 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.95068,-9.69697)"
-   v:groupContext="shape"
-   v:mID="343"
-   id="shape343-132">
-				<title
-   id="title73489">Tabelle.343</title>
-
-				<path
-   id="path73491"
-   class="st13"
-   d="m 1.72,100.28 c 0,-0.17 0,-0.17 -0.26,-0.17 -0.34,0.26 -0.69,0.43 -1.46,0.43 v 0.25 c 0.26,0 0.69,0 1.12,-0.17 v 3.95 c 0,0.34 -0.09,0.43 -0.78,0.43 H 0.09 v 0.26 0 c 0.25,-0.09 0.94,-0.09 1.28,-0.09 0.35,0 1.03,0 1.38,0.09 V 105 H 2.49 v 0 c -0.77,0 -0.77,-0.09 -0.77,-0.43 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.17838,-8.15232)"
-   v:groupContext="shape"
-   v:mID="344"
-   id="shape344-134">
-				<title
-   id="title73494">Tabelle.344</title>
-
-				<path
-   id="path73496"
-   class="st14"
-   d="M 0,105.26 H 4.2"
-   inkscape:connector-curvature="0"
-   style="stroke:#000000;stroke-width:0.299997;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.60744,-1.71628)"
-   v:groupContext="shape"
-   v:mID="345"
-   id="shape345-137">
-				<title
-   id="title73499">Tabelle.345</title>
-
-				<path
-   id="path73501"
-   class="st13"
-   d="m 0.69,100.71 c 0.08,0.08 0.43,0.17 0.77,0.17 0.94,0 1.54,-0.69 1.54,-0.86 0,-0.08 -0.08,-0.08 -0.08,-0.08 0,0 -0.09,0 -0.09,0 -0.34,0.17 -0.68,0.25 -1.11,0.25 -0.43,0 -0.78,-0.08 -1.03,-0.25 -0.09,0 -0.09,0 -0.18,0 -0.08,0 -0.08,0.08 -0.08,0.25 v 2.24 c 0,0.17 0,0.25 0.17,0.25 0,0 0.09,0 0.09,-0.08 0.08,-0.17 0.43,-0.52 1.03,-0.52 0.43,0 0.68,0.35 0.77,0.52 0.08,0.25 0.08,0.6 0.08,0.94 0,0.26 0,0.69 -0.17,1.03 -0.17,0.26 -0.51,0.43 -0.94,0.43 -0.43,0 -0.95,-0.26 -1.12,-0.77 0,0 0.09,0 0.09,0 0.17,0 0.43,-0.17 0.43,-0.43 0,-0.26 -0.26,-0.35 -0.43,-0.35 -0.17,0 -0.43,0.09 -0.43,0.43 0,0.69 0.6,1.38 1.54,1.38 0.95,0 1.81,-0.78 1.81,-1.72 0,-0.86 -0.69,-1.72 -1.63,-1.72 -0.35,0 -0.69,0.18 -1.03,0.43 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-		</g>
-
-		<g
-   v:groupContext="group"
-   v:mID="359"
-   transform="translate(54.2333,-17.5742)"
-   id="group359-139">
-			<title
-   id="title73505">Tabelle.359</title>
-
-			<g
-   v:groupContext="shape"
-   v:mID="346"
-   id="shape346-140">
-				<title
-   id="title73507">Tabelle.346</title>
-
-				<path
-   id="path73509"
-   class="st9"
-   d="m 0,88.82 v 16.44 H 16.44 V 88.82 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.55934,-9.62638)"
-   v:groupContext="shape"
-   v:mID="347"
-   id="shape347-142">
-				<title
-   id="title73512">Tabelle.347</title>
-
-				<path
-   id="path73514"
-   class="st13"
-   d="m 1.79,103.64 c 0.08,-0.09 0.42,-0.34 0.51,-0.43 0.51,-0.42 0.94,-0.85 0.94,-1.62 0,-0.85 -0.77,-1.44 -1.71,-1.44 -0.93,0 -1.53,0.68 -1.53,1.36 0,0.42 0.26,0.42 0.43,0.42 0.17,0 0.42,-0.08 0.42,-0.42 0,-0.43 -0.42,-0.43 -0.51,-0.43 0.17,-0.51 0.68,-0.68 1.11,-0.68 0.68,0 1.11,0.6 1.11,1.19 0,0.86 -0.6,1.45 -1.54,2.3 l -0.93,1.03 C 0,105 0,105 0,105.26 h 3.07 l 0.17,-1.37 H 2.98 v 0 c 0,0.09 0,0.51 -0.17,0.69 0,0 -0.6,0 -0.77,0 H 0.68 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.13341,-8.09297)"
-   v:groupContext="shape"
-   v:mID="348"
-   id="shape348-144">
-				<title
-   id="title73517">Tabelle.348</title>
-
-				<path
-   id="path73519"
-   class="st14"
-   d="M 0,105.26 H 4.09"
-   inkscape:connector-curvature="0"
-   style="stroke:#000000;stroke-width:0.299997;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.55934,-1.70378)"
-   v:groupContext="shape"
-   v:mID="349"
-   id="shape349-147">
-				<title
-   id="title73522">Tabelle.349</title>
-
-				<path
-   id="path73524"
-   class="st13"
-   d="m 0.68,100.74 c 0.09,0.09 0.34,0.17 0.68,0.17 1.03,0 1.62,-0.68 1.62,-0.85 0,-0.08 -0.08,-0.08 -0.17,-0.08 0,0 0,0 -0.08,0 -0.26,0.17 -0.69,0.25 -1.03,0.25 -0.51,0 -0.85,-0.08 -1.1,-0.25 -0.09,0 -0.09,0 -0.09,0 -0.08,0 -0.08,0.08 -0.08,0.25 v 2.22 c 0,0.17 0,0.25 0.08,0.25 0.09,0 0.09,0 0.17,-0.08 0.09,-0.17 0.34,-0.52 1.02,-0.52 0.43,0 0.6,0.35 0.69,0.52 0.17,0.25 0.17,0.59 0.17,0.93 0,0.26 0,0.68 -0.26,1.03 -0.17,0.25 -0.43,0.42 -0.85,0.42 -0.51,0 -0.94,-0.25 -1.19,-0.77 0.08,0 0.08,0 0.08,0 0.26,0 0.43,-0.17 0.43,-0.42 0,-0.26 -0.26,-0.34 -0.43,-0.34 -0.08,0 -0.34,0.08 -0.34,0.42 0,0.69 0.6,1.37 1.45,1.37 1.02,0 1.79,-0.77 1.79,-1.71 0,-0.85 -0.6,-1.7 -1.54,-1.7 -0.42,0 -0.76,0.17 -1.02,0.43 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-		</g>
-
-		<g
-   v:groupContext="group"
-   v:mID="360"
-   transform="translate(74.0758,-17.5742)"
-   id="group360-149">
-			<title
-   id="title73528">Tabelle.360</title>
-
-			<g
-   v:groupContext="shape"
-   v:mID="350"
-   id="shape350-150">
-				<title
-   id="title73530">Tabelle.350</title>
-
-				<path
-   id="path73532"
-   class="st9"
-   d="m 0,88.82 v 16.44 H 16.44 V 88.82 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.55934,-9.456)"
-   v:groupContext="shape"
-   v:mID="351"
-   id="shape351-152">
-				<title
-   id="title73535">Tabelle.351</title>
-
-				<path
-   id="path73537"
-   class="st13"
-   d="m 1.62,102.53 c 0.59,0 0.94,0.43 0.94,1.19 0,1.03 -0.52,1.28 -0.94,1.28 -0.43,0 -1.02,-0.17 -1.28,-0.6 0.26,0 0.51,-0.17 0.51,-0.42 0,-0.26 -0.25,-0.43 -0.42,-0.43 -0.26,0 -0.43,0.17 -0.43,0.51 0,0.69 0.77,1.2 1.62,1.2 1.02,0 1.79,-0.77 1.79,-1.54 0,-0.59 -0.51,-1.19 -1.37,-1.36 0.6,-0.26 1.11,-0.77 1.11,-1.36 0,-0.6 -0.68,-1.02 -1.53,-1.02 -0.77,0 -1.45,0.42 -1.45,1.02 0,0.25 0.26,0.42 0.43,0.42 0.25,0 0.42,-0.17 0.42,-0.42 0,-0.26 -0.25,-0.43 -0.42,-0.43 0.34,-0.42 0.93,-0.42 1.02,-0.42 0.17,0 0.77,0.08 0.77,0.85 0,0.51 -0.18,0.85 -0.35,1.02 -0.17,0.17 -0.34,0.26 -0.85,0.26 -0.17,0 -0.17,0 -0.17,0.08 0,0.17 0.09,0.17 0.17,0.17 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.21859,-8.09297)"
-   v:groupContext="shape"
-   v:mID="352"
-   id="shape352-154">
-				<title
-   id="title73540">Tabelle.352</title>
-
-				<path
-   id="path73542"
-   class="st14"
-   d="M 0,105.26 H 4.09"
-   inkscape:connector-curvature="0"
-   style="stroke:#000000;stroke-width:0.299997;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.64453,-1.70378)"
-   v:groupContext="shape"
-   v:mID="353"
-   id="shape353-157">
-				<title
-   id="title73545">Tabelle.353</title>
-
-				<path
-   id="path73547"
-   class="st13"
-   d="m 0.6,100.74 c 0.17,0.09 0.42,0.17 0.76,0.17 0.94,0 1.54,-0.68 1.54,-0.85 0,-0.08 0,-0.08 -0.09,-0.08 0,0 0,0 -0.08,0 -0.34,0.17 -0.69,0.25 -1.11,0.25 -0.43,0 -0.77,-0.08 -1.02,-0.25 -0.09,0 -0.09,0 -0.17,0 -0.09,0 -0.09,0.08 -0.09,0.25 v 2.22 c 0,0.17 0,0.25 0.17,0.25 0,0 0.09,0 0.09,-0.08 0.08,-0.17 0.42,-0.52 1.1,-0.52 0.43,0 0.6,0.35 0.69,0.52 0.08,0.25 0.08,0.59 0.08,0.93 0,0.26 0,0.68 -0.17,1.03 -0.17,0.25 -0.51,0.42 -0.85,0.42 -0.51,0 -1.02,-0.25 -1.19,-0.77 0,0 0.08,0 0.08,0 0.17,0 0.43,-0.17 0.43,-0.42 0,-0.26 -0.26,-0.34 -0.43,-0.34 -0.17,0 -0.34,0.08 -0.34,0.42 0,0.69 0.51,1.37 1.45,1.37 0.94,0 1.79,-0.77 1.79,-1.71 0,-0.85 -0.68,-1.7 -1.54,-1.7 -0.42,0 -0.76,0.17 -1.1,0.43 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-		</g>
-
-		<g
-   v:groupContext="group"
-   v:mID="361"
-   transform="translate(93.9183,-17.0073)"
-   id="group361-159">
-			<title
-   id="title73551">Tabelle.361</title>
-
-			<g
-   v:groupContext="shape"
-   v:mID="354"
-   id="shape354-160">
-				<title
-   id="title73553">Tabelle.354</title>
-
-				<path
-   id="path73555"
-   class="st9"
-   d="m 0,88.25 v 17.01 H 17.01 V 88.25 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.60928,-9.95832)"
-   v:groupContext="shape"
-   v:mID="355"
-   id="shape355-162">
-				<title
-   id="title73558">Tabelle.355</title>
-
-				<path
-   id="path73560"
-   class="st13"
-   d="m 2.91,100.15 c 0,-0.18 0,-0.27 -0.18,-0.27 -0.09,0 -0.09,0 -0.17,0.18 L 0,103.76 v 0.17 h 2.2 v 0.71 0 c 0,0.26 0,0.35 -0.61,0.35 H 1.41 v 0.27 0 c 0.7,0 0.7,0 1.15,0 0.44,0 0.44,0 1.14,0 v -0.27 H 3.52 v 0 c -0.61,0 -0.61,-0.09 -0.61,-0.35 v -0.71 H 3.7 v -0.17 H 2.91 Z m -0.62,0.61 v 3 H 0.26 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.34491,-8.37204)"
-   v:groupContext="shape"
-   v:mID="356"
-   id="shape356-164">
-				<title
-   id="title73563">Tabelle.356</title>
-
-				<path
-   id="path73565"
-   class="st14"
-   d="M 0,105.26 H 4.23"
-   inkscape:connector-curvature="0"
-   style="stroke:#000000;stroke-width:0.299997;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(6.78552,-1.67441)"
-   v:groupContext="shape"
-   v:mID="357"
-   id="shape357-167">
-				<title
-   id="title73568">Tabelle.357</title>
-
-				<path
-   id="path73570"
-   class="st13"
-   d="m 0.7,100.59 c 0.09,0 0.45,0.08 0.8,0.08 0.97,0 1.58,-0.7 1.58,-0.79 C 3.08,99.79 3,99.79 3,99.79 c -0.09,0 -0.09,0 -0.18,0 -0.26,0.09 -0.62,0.18 -1.06,0.18 -0.44,0 -0.88,-0.09 -1.14,-0.18 -0.09,0 -0.09,0 -0.09,0 -0.09,0 -0.09,0.09 -0.09,0.18 v 2.38 c 0,0.09 0,0.17 0.09,0.17 0.09,0 0.09,0 0.17,-0.08 0.09,-0.09 0.36,-0.53 1.06,-0.53 0.44,0 0.62,0.35 0.71,0.53 0.17,0.26 0.17,0.7 0.17,0.97 0,0.26 0,0.7 -0.26,1.05 -0.09,0.27 -0.44,0.53 -0.88,0.53 -0.53,0 -0.97,-0.35 -1.15,-0.88 0,0 0.09,0 0.09,0 0.18,0 0.35,-0.09 0.35,-0.35 0,-0.27 -0.26,-0.44 -0.35,-0.44 -0.18,0 -0.44,0.09 -0.44,0.44 0,0.7 0.62,1.5 1.5,1.5 1.06,0 1.85,-0.8 1.85,-1.77 0,-0.97 -0.62,-1.76 -1.59,-1.76 -0.35,0 -0.79,0.09 -1.06,0.35 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-		</g>
-
-		<g
-   v:groupContext="group"
-   v:mID="367"
-   transform="translate(113.761,-0.566357)"
-   id="group367-169">
-			<title
-   id="title73574">Tabelle.367</title>
-
-			<g
-   v:groupContext="shape"
-   v:mID="364"
-   id="shape364-170">
-				<title
-   id="title73576">Tabelle.364</title>
-
-				<path
-   id="path73578"
-   class="st9"
-   d="m 0,88.82 v 16.44 H 16.44 V 88.82 Z"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(3.49264,-6.64476)"
-   v:groupContext="shape"
-   v:mID="365"
-   id="shape365-172">
-				<title
-   id="title73581">Tabelle.365</title>
-
-				<path
-   id="path73583"
-   class="st13"
-   d="m 3.24,101.93 c 0.08,-0.25 0.34,-1.19 1.02,-1.19 0.08,0 0.34,0 0.6,0.09 -0.35,0.08 -0.52,0.34 -0.52,0.59 0,0.17 0.09,0.34 0.35,0.34 0.25,0 0.59,-0.17 0.59,-0.59 0,-0.51 -0.59,-0.68 -0.94,-0.68 -0.68,0 -1.02,0.51 -1.1,0.76 -0.34,-0.68 -0.85,-0.76 -1.2,-0.76 -1.1,0 -1.7,1.36 -1.7,1.61 0,0.09 0.17,0.09 0.17,0.09 0.09,0 0.09,0 0.09,-0.09 0.34,-1.1 1.1,-1.36 1.44,-1.36 0.17,0 0.6,0.09 0.6,0.68 0,0.34 -0.25,1.03 -0.6,2.47 -0.17,0.69 -0.51,1.11 -1.02,1.11 -0.08,0 -0.25,0 -0.51,-0.08 0.26,-0.09 0.51,-0.34 0.51,-0.6 0,-0.26 -0.25,-0.34 -0.42,-0.34 -0.26,0 -0.6,0.25 -0.6,0.6 0,0.42 0.6,0.68 1.02,0.68 0.68,0 1.11,-0.77 1.11,-0.86 0.17,0.43 0.51,0.86 1.19,0.86 1.02,0 1.62,-1.37 1.62,-1.62 0,-0.09 -0.08,-0.09 -0.08,-0.09 -0.09,0 -0.17,0 -0.17,0.09 -0.35,1.11 -1.03,1.36 -1.37,1.36 -0.42,0 -0.59,-0.34 -0.59,-0.68 0,-0.26 0.08,-0.43 0.17,-0.94 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-			<g
-   transform="translate(9.62605,-5.02616)"
-   v:groupContext="shape"
-   v:mID="366"
-   id="shape366-174">
-				<title
-   id="title73586">Tabelle.366</title>
-
-				<path
-   id="path73588"
-   class="st13"
-   d="m 0.68,100.74 c 0.09,0.09 0.43,0.17 0.77,0.17 0.94,0 1.53,-0.68 1.53,-0.85 0,-0.08 -0.08,-0.08 -0.08,-0.08 0,0 0,0 -0.09,0.08 -0.34,0.09 -0.68,0.17 -1.11,0.17 -0.42,0 -0.85,-0.08 -1.02,-0.17 -0.08,-0.08 -0.17,-0.08 -0.17,-0.08 -0.08,0 -0.08,0.08 -0.08,0.25 v 2.22 c 0,0.17 0,0.25 0.17,0.25 0.08,0 0.08,-0.08 0.08,-0.08 0.09,-0.09 0.43,-0.52 1.02,-0.52 0.43,0 0.69,0.35 0.77,0.52 0.09,0.25 0.09,0.59 0.09,0.85 0,0.34 0,0.76 -0.17,1.11 -0.18,0.25 -0.52,0.42 -0.86,0.42 -0.51,0 -1.02,-0.25 -1.19,-0.77 0,0 0.09,0 0.09,0 0.17,0 0.34,-0.17 0.34,-0.42 0,-0.26 -0.17,-0.34 -0.34,-0.34 -0.17,0 -0.43,0.08 -0.43,0.42 0,0.69 0.68,1.37 1.53,1.37 0.94,0 1.79,-0.77 1.79,-1.71 0,-0.85 -0.68,-1.7 -1.62,-1.7 -0.34,0 -0.68,0.17 -1.02,0.43 z"
-   inkscape:connector-curvature="0"
-   style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			</g>
-
-		</g>
-
-	</g>
+        </g>
+        <g
+           transform="rotate(-90,41.28985,24.28195)"
+           v:groupContext="shape"
+           v:mID="101"
+           id="shape101-118">
+          <title
+             id="title73457">Tabelle.101</title>
+          <path
+             id="path73459"
+             class="st5"
+             d="M 0,105.26 H 51.02"
+             inkscape:connector-curvature="0"
+             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(120.847,-63.7796)"
+           v:groupContext="shape"
+           v:mID="102"
+           id="shape102-121">
+          <title
+             id="title73462">Tabelle.102</title>
+          <circle
+             id="ellipse73464"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(119.43,-62.3622)"
+           v:groupContext="shape"
+           v:mID="103"
+           id="shape103-123">
+          <title
+             id="title73467">Tabelle.103</title>
+          <circle
+             id="ellipse73469"
+             class="st12"
+             cy="102.422"
+             cx="2.83465"
+             r="2.83465"
+             style="fill:none;stroke:#c00000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(120.847,-83.622)"
+           v:groupContext="shape"
+           v:mID="104"
+           id="shape104-125">
+          <title
+             id="title73472">Tabelle.104</title>
+          <circle
+             id="ellipse73474"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           transform="translate(120.847,-43.937)"
+           v:groupContext="shape"
+           v:mID="105"
+           id="shape105-127">
+          <title
+             id="title73477">Tabelle.105</title>
+          <circle
+             id="ellipse73479"
+             class="st4"
+             cy="103.84"
+             cx="1.41732"
+             r="1.41732"
+             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
+        </g>
+        <g
+           v:groupContext="group"
+           v:mID="358"
+           transform="translate(34.3907,-17.4537)"
+           id="group358-129">
+          <title
+             id="title73482">Tabelle.358</title>
+          <g
+             v:groupContext="shape"
+             v:mID="342"
+             id="shape342-130">
+            <title
+               id="title73484">Tabelle.342</title>
+            <path
+               id="path73486"
+               class="st9"
+               d="m 0,88.69 v 16.57 H 16.56 V 88.69 Z"
+               inkscape:connector-curvature="0"
+               style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.95068,-9.69697)"
+             v:groupContext="shape"
+             v:mID="343"
+             id="shape343-132">
+            <title
+               id="title73489">Tabelle.343</title>
+            <path
+               id="path73491"
+               class="st13"
+               d="m 1.72,100.28 c 0,-0.17 0,-0.17 -0.26,-0.17 -0.34,0.26 -0.69,0.43 -1.46,0.43 v 0.25 c 0.26,0 0.69,0 1.12,-0.17 v 3.95 c 0,0.34 -0.09,0.43 -0.78,0.43 H 0.09 v 0.26 0 c 0.25,-0.09 0.94,-0.09 1.28,-0.09 0.35,0 1.03,0 1.38,0.09 V 105 H 2.49 v 0 c -0.77,0 -0.77,-0.09 -0.77,-0.43 z"
+               inkscape:connector-curvature="0"
+               style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.17838,-8.15232)"
+             v:groupContext="shape"
+             v:mID="344"
+             id="shape344-134">
+            <title
+               id="title73494">Tabelle.344</title>
+            <path
+               id="path73496"
+               class="st14"
+               d="M 0,105.26 H 4.2"
+               inkscape:connector-curvature="0"
+               style="stroke:#000000;stroke-width:0.299997;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.60744,-1.71628)"
+             v:groupContext="shape"
+             v:mID="345"
+             id="shape345-137">
+            <title
+               id="title73499">Tabelle.345</title>
+            <path
+               id="path73501"
+               class="st13"
+               d="m 0.69,100.71 c 0.08,0.08 0.43,0.17 0.77,0.17 0.94,0 1.54,-0.69 1.54,-0.86 0,-0.08 -0.08,-0.08 -0.08,-0.08 0,0 -0.09,0 -0.09,0 -0.34,0.17 -0.68,0.25 -1.11,0.25 -0.43,0 -0.78,-0.08 -1.03,-0.25 -0.09,0 -0.09,0 -0.18,0 -0.08,0 -0.08,0.08 -0.08,0.25 v 2.24 c 0,0.17 0,0.25 0.17,0.25 0,0 0.09,0 0.09,-0.08 0.08,-0.17 0.43,-0.52 1.03,-0.52 0.43,0 0.68,0.35 0.77,0.52 0.08,0.25 0.08,0.6 0.08,0.94 0,0.26 0,0.69 -0.17,1.03 -0.17,0.26 -0.51,0.43 -0.94,0.43 -0.43,0 -0.95,-0.26 -1.12,-0.77 0,0 0.09,0 0.09,0 0.17,0 0.43,-0.17 0.43,-0.43 0,-0.26 -0.26,-0.35 -0.43,-0.35 -0.17,0 -0.43,0.09 -0.43,0.43 0,0.69 0.6,1.38 1.54,1.38 0.95,0 1.81,-0.78 1.81,-1.72 0,-0.86 -0.69,-1.72 -1.63,-1.72 -0.35,0 -0.69,0.18 -1.03,0.43 z"
+               inkscape:connector-curvature="0"
+               style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+        </g>
+        <g
+           v:groupContext="group"
+           v:mID="359"
+           transform="translate(54.2333,-17.5742)"
+           id="group359-139">
+          <title
+             id="title73505">Tabelle.359</title>
+          <g
+             v:groupContext="shape"
+             v:mID="346"
+             id="shape346-140">
+            <title
+               id="title73507">Tabelle.346</title>
+            <path
+               id="path73509"
+               class="st9"
+               d="m 0,88.82 v 16.44 H 16.44 V 88.82 Z"
+               inkscape:connector-curvature="0"
+               style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.55934,-9.62638)"
+             v:groupContext="shape"
+             v:mID="347"
+             id="shape347-142">
+            <title
+               id="title73512">Tabelle.347</title>
+            <path
+               id="path73514"
+               class="st13"
+               d="m 1.79,103.64 c 0.08,-0.09 0.42,-0.34 0.51,-0.43 0.51,-0.42 0.94,-0.85 0.94,-1.62 0,-0.85 -0.77,-1.44 -1.71,-1.44 -0.93,0 -1.53,0.68 -1.53,1.36 0,0.42 0.26,0.42 0.43,0.42 0.17,0 0.42,-0.08 0.42,-0.42 0,-0.43 -0.42,-0.43 -0.51,-0.43 0.17,-0.51 0.68,-0.68 1.11,-0.68 0.68,0 1.11,0.6 1.11,1.19 0,0.86 -0.6,1.45 -1.54,2.3 l -0.93,1.03 C 0,105 0,105 0,105.26 h 3.07 l 0.17,-1.37 H 2.98 v 0 c 0,0.09 0,0.51 -0.17,0.69 0,0 -0.6,0 -0.77,0 H 0.68 Z"
+               inkscape:connector-curvature="0"
+               style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.13341,-8.09297)"
+             v:groupContext="shape"
+             v:mID="348"
+             id="shape348-144">
+            <title
+               id="title73517">Tabelle.348</title>
+            <path
+               id="path73519"
+               class="st14"
+               d="M 0,105.26 H 4.09"
+               inkscape:connector-curvature="0"
+               style="stroke:#000000;stroke-width:0.299997;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.55934,-1.70378)"
+             v:groupContext="shape"
+             v:mID="349"
+             id="shape349-147">
+            <title
+               id="title73522">Tabelle.349</title>
+            <path
+               id="path73524"
+               class="st13"
+               d="m 0.68,100.74 c 0.09,0.09 0.34,0.17 0.68,0.17 1.03,0 1.62,-0.68 1.62,-0.85 0,-0.08 -0.08,-0.08 -0.17,-0.08 0,0 0,0 -0.08,0 -0.26,0.17 -0.69,0.25 -1.03,0.25 -0.51,0 -0.85,-0.08 -1.1,-0.25 -0.09,0 -0.09,0 -0.09,0 -0.08,0 -0.08,0.08 -0.08,0.25 v 2.22 c 0,0.17 0,0.25 0.08,0.25 0.09,0 0.09,0 0.17,-0.08 0.09,-0.17 0.34,-0.52 1.02,-0.52 0.43,0 0.6,0.35 0.69,0.52 0.17,0.25 0.17,0.59 0.17,0.93 0,0.26 0,0.68 -0.26,1.03 -0.17,0.25 -0.43,0.42 -0.85,0.42 -0.51,0 -0.94,-0.25 -1.19,-0.77 0.08,0 0.08,0 0.08,0 0.26,0 0.43,-0.17 0.43,-0.42 0,-0.26 -0.26,-0.34 -0.43,-0.34 -0.08,0 -0.34,0.08 -0.34,0.42 0,0.69 0.6,1.37 1.45,1.37 1.02,0 1.79,-0.77 1.79,-1.71 0,-0.85 -0.6,-1.7 -1.54,-1.7 -0.42,0 -0.76,0.17 -1.02,0.43 z"
+               inkscape:connector-curvature="0"
+               style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+        </g>
+        <g
+           v:groupContext="group"
+           v:mID="360"
+           transform="translate(74.0758,-17.5742)"
+           id="group360-149">
+          <title
+             id="title73528">Tabelle.360</title>
+          <g
+             v:groupContext="shape"
+             v:mID="350"
+             id="shape350-150">
+            <title
+               id="title73530">Tabelle.350</title>
+            <path
+               id="path73532"
+               class="st9"
+               d="m 0,88.82 v 16.44 H 16.44 V 88.82 Z"
+               inkscape:connector-curvature="0"
+               style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.55934,-9.456)"
+             v:groupContext="shape"
+             v:mID="351"
+             id="shape351-152">
+            <title
+               id="title73535">Tabelle.351</title>
+            <path
+               id="path73537"
+               class="st13"
+               d="m 1.62,102.53 c 0.59,0 0.94,0.43 0.94,1.19 0,1.03 -0.52,1.28 -0.94,1.28 -0.43,0 -1.02,-0.17 -1.28,-0.6 0.26,0 0.51,-0.17 0.51,-0.42 0,-0.26 -0.25,-0.43 -0.42,-0.43 -0.26,0 -0.43,0.17 -0.43,0.51 0,0.69 0.77,1.2 1.62,1.2 1.02,0 1.79,-0.77 1.79,-1.54 0,-0.59 -0.51,-1.19 -1.37,-1.36 0.6,-0.26 1.11,-0.77 1.11,-1.36 0,-0.6 -0.68,-1.02 -1.53,-1.02 -0.77,0 -1.45,0.42 -1.45,1.02 0,0.25 0.26,0.42 0.43,0.42 0.25,0 0.42,-0.17 0.42,-0.42 0,-0.26 -0.25,-0.43 -0.42,-0.43 0.34,-0.42 0.93,-0.42 1.02,-0.42 0.17,0 0.77,0.08 0.77,0.85 0,0.51 -0.18,0.85 -0.35,1.02 -0.17,0.17 -0.34,0.26 -0.85,0.26 -0.17,0 -0.17,0 -0.17,0.08 0,0.17 0.09,0.17 0.17,0.17 z"
+               inkscape:connector-curvature="0"
+               style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.21859,-8.09297)"
+             v:groupContext="shape"
+             v:mID="352"
+             id="shape352-154">
+            <title
+               id="title73540">Tabelle.352</title>
+            <path
+               id="path73542"
+               class="st14"
+               d="M 0,105.26 H 4.09"
+               inkscape:connector-curvature="0"
+               style="stroke:#000000;stroke-width:0.299997;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.64453,-1.70378)"
+             v:groupContext="shape"
+             v:mID="353"
+             id="shape353-157">
+            <title
+               id="title73545">Tabelle.353</title>
+            <path
+               id="path73547"
+               class="st13"
+               d="m 0.6,100.74 c 0.17,0.09 0.42,0.17 0.76,0.17 0.94,0 1.54,-0.68 1.54,-0.85 0,-0.08 0,-0.08 -0.09,-0.08 0,0 0,0 -0.08,0 -0.34,0.17 -0.69,0.25 -1.11,0.25 -0.43,0 -0.77,-0.08 -1.02,-0.25 -0.09,0 -0.09,0 -0.17,0 -0.09,0 -0.09,0.08 -0.09,0.25 v 2.22 c 0,0.17 0,0.25 0.17,0.25 0,0 0.09,0 0.09,-0.08 0.08,-0.17 0.42,-0.52 1.1,-0.52 0.43,0 0.6,0.35 0.69,0.52 0.08,0.25 0.08,0.59 0.08,0.93 0,0.26 0,0.68 -0.17,1.03 -0.17,0.25 -0.51,0.42 -0.85,0.42 -0.51,0 -1.02,-0.25 -1.19,-0.77 0,0 0.08,0 0.08,0 0.17,0 0.43,-0.17 0.43,-0.42 0,-0.26 -0.26,-0.34 -0.43,-0.34 -0.17,0 -0.34,0.08 -0.34,0.42 0,0.69 0.51,1.37 1.45,1.37 0.94,0 1.79,-0.77 1.79,-1.71 0,-0.85 -0.68,-1.7 -1.54,-1.7 -0.42,0 -0.76,0.17 -1.1,0.43 z"
+               inkscape:connector-curvature="0"
+               style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+        </g>
+        <g
+           v:groupContext="group"
+           v:mID="361"
+           transform="translate(93.9183,-17.0073)"
+           id="group361-159">
+          <title
+             id="title73551">Tabelle.361</title>
+          <g
+             v:groupContext="shape"
+             v:mID="354"
+             id="shape354-160">
+            <title
+               id="title73553">Tabelle.354</title>
+            <path
+               id="path73555"
+               class="st9"
+               d="m 0,88.25 v 17.01 H 17.01 V 88.25 Z"
+               inkscape:connector-curvature="0"
+               style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.60928,-9.95832)"
+             v:groupContext="shape"
+             v:mID="355"
+             id="shape355-162">
+            <title
+               id="title73558">Tabelle.355</title>
+            <path
+               id="path73560"
+               class="st13"
+               d="m 2.91,100.15 c 0,-0.18 0,-0.27 -0.18,-0.27 -0.09,0 -0.09,0 -0.17,0.18 L 0,103.76 v 0.17 h 2.2 v 0.71 0 c 0,0.26 0,0.35 -0.61,0.35 H 1.41 v 0.27 0 c 0.7,0 0.7,0 1.15,0 0.44,0 0.44,0 1.14,0 v -0.27 H 3.52 v 0 c -0.61,0 -0.61,-0.09 -0.61,-0.35 v -0.71 H 3.7 v -0.17 H 2.91 Z m -0.62,0.61 v 3 H 0.26 Z"
+               inkscape:connector-curvature="0"
+               style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.34491,-8.37204)"
+             v:groupContext="shape"
+             v:mID="356"
+             id="shape356-164">
+            <title
+               id="title73563">Tabelle.356</title>
+            <path
+               id="path73565"
+               class="st14"
+               d="M 0,105.26 H 4.23"
+               inkscape:connector-curvature="0"
+               style="stroke:#000000;stroke-width:0.299997;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(6.78552,-1.67441)"
+             v:groupContext="shape"
+             v:mID="357"
+             id="shape357-167">
+            <title
+               id="title73568">Tabelle.357</title>
+            <path
+               id="path73570"
+               class="st13"
+               d="m 0.7,100.59 c 0.09,0 0.45,0.08 0.8,0.08 0.97,0 1.58,-0.7 1.58,-0.79 C 3.08,99.79 3,99.79 3,99.79 c -0.09,0 -0.09,0 -0.18,0 -0.26,0.09 -0.62,0.18 -1.06,0.18 -0.44,0 -0.88,-0.09 -1.14,-0.18 -0.09,0 -0.09,0 -0.09,0 -0.09,0 -0.09,0.09 -0.09,0.18 v 2.38 c 0,0.09 0,0.17 0.09,0.17 0.09,0 0.09,0 0.17,-0.08 0.09,-0.09 0.36,-0.53 1.06,-0.53 0.44,0 0.62,0.35 0.71,0.53 0.17,0.26 0.17,0.7 0.17,0.97 0,0.26 0,0.7 -0.26,1.05 -0.09,0.27 -0.44,0.53 -0.88,0.53 -0.53,0 -0.97,-0.35 -1.15,-0.88 0,0 0.09,0 0.09,0 0.18,0 0.35,-0.09 0.35,-0.35 0,-0.27 -0.26,-0.44 -0.35,-0.44 -0.18,0 -0.44,0.09 -0.44,0.44 0,0.7 0.62,1.5 1.5,1.5 1.06,0 1.85,-0.8 1.85,-1.77 0,-0.97 -0.62,-1.76 -1.59,-1.76 -0.35,0 -0.79,0.09 -1.06,0.35 z"
+               inkscape:connector-curvature="0"
+               style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+        </g>
+        <g
+           v:groupContext="group"
+           v:mID="367"
+           transform="translate(113.761,-0.566357)"
+           id="group367-169">
+          <title
+             id="title73574">Tabelle.367</title>
+          <g
+             v:groupContext="shape"
+             v:mID="364"
+             id="shape364-170">
+            <title
+               id="title73576">Tabelle.364</title>
+            <path
+               id="path73578"
+               class="st9"
+               d="m 0,88.82 v 16.44 H 16.44 V 88.82 Z"
+               inkscape:connector-curvature="0"
+               style="fill:#ffffff;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(3.49264,-6.64476)"
+             v:groupContext="shape"
+             v:mID="365"
+             id="shape365-172">
+            <title
+               id="title73581">Tabelle.365</title>
+            <path
+               id="path73583"
+               class="st13"
+               d="m 3.24,101.93 c 0.08,-0.25 0.34,-1.19 1.02,-1.19 0.08,0 0.34,0 0.6,0.09 -0.35,0.08 -0.52,0.34 -0.52,0.59 0,0.17 0.09,0.34 0.35,0.34 0.25,0 0.59,-0.17 0.59,-0.59 0,-0.51 -0.59,-0.68 -0.94,-0.68 -0.68,0 -1.02,0.51 -1.1,0.76 -0.34,-0.68 -0.85,-0.76 -1.2,-0.76 -1.1,0 -1.7,1.36 -1.7,1.61 0,0.09 0.17,0.09 0.17,0.09 0.09,0 0.09,0 0.09,-0.09 0.34,-1.1 1.1,-1.36 1.44,-1.36 0.17,0 0.6,0.09 0.6,0.68 0,0.34 -0.25,1.03 -0.6,2.47 -0.17,0.69 -0.51,1.11 -1.02,1.11 -0.08,0 -0.25,0 -0.51,-0.08 0.26,-0.09 0.51,-0.34 0.51,-0.6 0,-0.26 -0.25,-0.34 -0.42,-0.34 -0.26,0 -0.6,0.25 -0.6,0.6 0,0.42 0.6,0.68 1.02,0.68 0.68,0 1.11,-0.77 1.11,-0.86 0.17,0.43 0.51,0.86 1.19,0.86 1.02,0 1.62,-1.37 1.62,-1.62 0,-0.09 -0.08,-0.09 -0.08,-0.09 -0.09,0 -0.17,0 -0.17,0.09 -0.35,1.11 -1.03,1.36 -1.37,1.36 -0.42,0 -0.59,-0.34 -0.59,-0.68 0,-0.26 0.08,-0.43 0.17,-0.94 z"
+               inkscape:connector-curvature="0"
+               style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+          <g
+             transform="translate(9.62605,-5.02616)"
+             v:groupContext="shape"
+             v:mID="366"
+             id="shape366-174">
+            <title
+               id="title73586">Tabelle.366</title>
+            <path
+               id="path73588"
+               class="st13"
+               d="m 0.68,100.74 c 0.09,0.09 0.43,0.17 0.77,0.17 0.94,0 1.53,-0.68 1.53,-0.85 0,-0.08 -0.08,-0.08 -0.08,-0.08 0,0 0,0 -0.09,0.08 -0.34,0.09 -0.68,0.17 -1.11,0.17 -0.42,0 -0.85,-0.08 -1.02,-0.17 -0.08,-0.08 -0.17,-0.08 -0.17,-0.08 -0.08,0 -0.08,0.08 -0.08,0.25 v 2.22 c 0,0.17 0,0.25 0.17,0.25 0.08,0 0.08,-0.08 0.08,-0.08 0.09,-0.09 0.43,-0.52 1.02,-0.52 0.43,0 0.69,0.35 0.77,0.52 0.09,0.25 0.09,0.59 0.09,0.85 0,0.34 0,0.76 -0.17,1.11 -0.18,0.25 -0.52,0.42 -0.86,0.42 -0.51,0 -1.02,-0.25 -1.19,-0.77 0,0 0.09,0 0.09,0 0.17,0 0.34,-0.17 0.34,-0.42 0,-0.26 -0.17,-0.34 -0.34,-0.34 -0.17,0 -0.43,0.08 -0.43,0.42 0,0.69 0.68,1.37 1.53,1.37 0.94,0 1.79,-0.77 1.79,-1.71 0,-0.85 -0.68,-1.7 -1.62,-1.7 -0.34,0 -0.68,0.17 -1.02,0.43 z"
+               inkscape:connector-curvature="0"
+               style="fill:#000000;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
+          </g>
+        </g>
+      </g>
     </g>
   </g>
   <style
@@ -21466,8 +21255,7 @@ u</text>
 	]]></style>
   <style
      id="style73180"
-     type="text/css">
-	<![CDATA[
+     type="text/css"><![CDATA[
 		.st1 {stroke:#c00000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {marker-end:url(#mrkr5-9);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
 		.st3 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.25773195876289}
@@ -21483,6 +21271,5 @@ u</text>
 		.st13 {fill:#000000;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st14 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.299997}
 		.st15 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
-	]]>
-	</style>
+	]]></style>
 </svg>

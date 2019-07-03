@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export wave_equation_graph.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="8.26772in" height="11.6929in"
+		viewBox="0 0 595.276 841.889" xml:space="preserve" color-interpolation-filters="sRGB" class="st22">
+	<v:documentProperties v:langID="1033">
+		<v:userDefs>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#c00000;stroke:none;stroke-linecap:butt;stroke-width:0.999999}
+		.st2 {marker-end:url(#mrkr5-9);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.499999}
+		.st3 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.25773168608175}
+		.st4 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.749999}
+		.st5 {fill:#000000;font-family:CMU Serif;font-size:0.833336em;font-style:italic}
+		.st6 {fill:#f2dcda;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.530329}
+		.st7 {fill:none;stroke:#0070c0;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.176776}
+		.st8 {fill:none}
+		.st9 {stroke:#0070c0;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.176776}
+		.st10 {marker-start:url(#mrkr5-48);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.353553}
+		.st11 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.19712431636798}
+		.st12 {marker-start:url(#mrkr5-73);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.499999}
+		.st13 {stroke:#c00000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.749999}
+		.st14 {stroke:#0066ff;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st15 {marker-end:url(#mrkr1-90);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st16 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.25773195876289}
+		.st17 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st18 {fill:#0066ff;stroke:none;stroke-linecap:butt;stroke-width:1}
+		.st19 {fill:none;stroke:#c00000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st20 {stroke:#009900;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st21 {fill:#009900;stroke:none;stroke-linecap:butt;stroke-width:1}
+		.st22 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend5">
+			<path d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr5-9" class="st3" v:arrowType="5" v:arrowSize="0" v:setback="0" refX="-0" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(-3.8800041050552,-3.8800041050552) "/>
+		</marker>
+		<marker id="mrkr5-48" class="st11" v:arrowType="5" v:arrowSize="0" v:setback="0" refX="0" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(5.0729408650593) "/>
+		</marker>
+		<marker id="mrkr5-73" class="st3" v:arrowType="5" v:arrowSize="0" v:setback="0" refX="0" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(3.8800041050552) "/>
+		</marker>
+		<g id="lend1">
+			<path d="M 1 -1 L 0 0 L 1 1 " style="stroke-linecap:round;stroke-linejoin:round;fill:none"/>
+		</g>
+		<marker id="mrkr1-90" class="st16" v:arrowType="1" v:arrowSize="0" orient="auto" markerUnits="strokeWidth"
+				overflow="visible">
+			<use xlink:href="#lend1" transform="scale(-3.88,-3.88) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50393"
+				v:shadowOffsetY="-8.50393"/>
+		<g id="group27-1" transform="translate(90.208,-788.03)" v:mID="27" v:groupContext="group">
+			<title>Tabelle.68</title>
+			<g id="shape28-2" v:mID="28" v:groupContext="shape">
+				<title>path240650</title>
+				<path d="M6.91 840.12 L6.63 840.12 C6.58 840.41 6.53 840.66 6.44 840.92 C6.38 841.09 6.34 841.19 5.7 841.19 L4.84
+							 841.19 C4.98 840.58 5.31 840.05 5.81 839.33 C6.33 838.55 6.77 837.8 6.77 836.94 C6.77 835.42 5.3 834.2
+							 3.45 834.2 C1.58 834.2 0.13 835.44 0.13 836.94 C0.13 837.8 0.58 838.55 1.09 839.33 C1.56 840.05 1.92
+							 840.58 2.06 841.19 L1.19 841.19 C0.55 841.19 0.52 841.09 0.47 840.94 C0.38 840.69 0.33 840.39 0.27 840.12
+							 L0 840.12 L0.36 841.89 L2.09 841.89 C2.34 841.89 2.38 841.89 2.38 841.66 C2.38 840.89 2.03 839.94 1.78
+							 839.23 C1.56 838.61 1.25 837.75 1.25 836.92 C1.25 835.19 2.45 834.44 3.44 834.44 C4.48 834.44 5.64 835.23
+							 5.64 836.92 C5.64 837.75 5.34 838.58 5.03 839.47 C4.88 839.92 4.52 840.91 4.52 841.66 C4.52 841.89 4.55
+							 841.89 4.81 841.89 L6.55 841.89 L6.91 840.12 Z" class="st1"/>
+			</g>
+		</g>
+		<g id="shape36-4" v:mID="36" v:groupContext="shape" transform="translate(36.4028,-756.848) rotate(5.38653E-07)">
+			<title>Tabelle.196</title>
+			<path d="M0 841.89 L99.79 841.89 L103.18 841.89" class="st2"/>
+		</g>
+		<g id="shape37-10" v:mID="37" v:groupContext="shape" transform="translate(139.585,-751.18)">
+			<title>Tabelle.208</title>
+			<desc>x</desc>
+			<v:userDefs/>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5196"/>
+			<v:textRect cx="8.50358" cy="836.219" width="17.01" height="11.3386"/>
+			<rect x="0" y="830.55" width="17.0079" height="11.3386" class="st4"/>
+			<text x="6.18" y="839.22" class="st5" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>x</text>		</g>
+		<g id="shape39-13" v:mID="39" v:groupContext="shape" transform="translate(58.7948,-757.132)">
+			<title>Tabelle.194</title>
+			<path d="M-9.64 841.89 L68.6 841.89 L87.87 822.61 L9.64 822.61 L-9.64 841.89 Z" class="st6"/>
+		</g>
+		<g id="shape41-15" v:mID="41" v:groupContext="shape" transform="translate(86.5748,-756.141)">
+			<title>Tabelle.197</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape42-17" v:mID="42" v:groupContext="shape" transform="translate(106.417,-756.141)">
+			<title>Tabelle.198</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape43-19" v:mID="43" v:groupContext="shape" transform="translate(66.7322,-756.141)">
+			<title>Tabelle.199</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape44-21" v:mID="44" v:groupContext="shape" transform="translate(-527.155,-510.266) rotate(-45)">
+			<title>Tabelle.200</title>
+			<path d="M0 841.89 L32.07 841.89 L0 841.89 Z" class="st8"/>
+			<path d="M0 841.89 L32.07 841.89" class="st9"/>
+		</g>
+		<g id="shape45-24" v:mID="45" v:groupContext="shape" transform="translate(-507.313,-510.266) rotate(-45)">
+			<title>Tabelle.201</title>
+			<path d="M0 841.89 L32.07 841.89 L0 841.89 Z" class="st8"/>
+			<path d="M0 841.89 L32.07 841.89" class="st9"/>
+		</g>
+		<g id="shape46-27" v:mID="46" v:groupContext="shape" transform="translate(-487.47,-510.266) rotate(-45)">
+			<title>Tabelle.202</title>
+			<path d="M0 841.89 L32.07 841.89 L0 841.89 Z" class="st8"/>
+			<path d="M0 841.89 L32.07 841.89" class="st9"/>
+		</g>
+		<g id="shape47-30" v:mID="47" v:groupContext="shape" transform="translate(-467.628,-510.266) rotate(-45)">
+			<title>Tabelle.203</title>
+			<path d="M0 841.89 L32.07 841.89 L0 841.89 Z" class="st8"/>
+			<path d="M0 841.89 L32.07 841.89" class="st9"/>
+		</g>
+		<g id="shape48-33" v:mID="48" v:groupContext="shape" transform="translate(49.7241,-766.77)">
+			<title>Tabelle.204</title>
+			<path d="M0 841.89 L96.38 841.89 L0 841.89 Z" class="st8"/>
+			<path d="M0 841.89 L96.38 841.89" class="st9"/>
+		</g>
+		<g id="shape49-36" v:mID="49" v:groupContext="shape" transform="translate(59.6453,-776.691)">
+			<title>Tabelle.205</title>
+			<path d="M0 841.89 L96.38 841.89 L0 841.89 Z" class="st8"/>
+			<path d="M0 841.89 L96.38 841.89" class="st9"/>
+		</g>
+		<g id="shape50-39" v:mID="50" v:groupContext="shape" transform="translate(136.181,-766.062)">
+			<title>Tabelle.206</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape51-41" v:mID="51" v:groupContext="shape" transform="translate(66.7323,-775.983)">
+			<title>Tabelle.207</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape52-43" v:mID="52" v:groupContext="shape" transform="translate(667.709,656.248) rotate(135)">
+			<title>Tabelle.209</title>
+			<path d="M0 841.89 L2.15 841.89 L2.4 841.89 L34.08 841.89" class="st10"/>
+		</g>
+		<g id="shape54-49" v:mID="54" v:groupContext="shape" transform="translate(126.26,-775.983)">
+			<title>Tabelle.211</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape55-51" v:mID="55" v:groupContext="shape" transform="translate(106.417,-775.983)">
+			<title>Tabelle.212</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape56-53" v:mID="56" v:groupContext="shape" transform="translate(86.5747,-775.983)">
+			<title>Tabelle.213</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape57-55" v:mID="57" v:groupContext="shape" transform="translate(116.338,-766.062)">
+			<title>Tabelle.214</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape58-57" v:mID="58" v:groupContext="shape" transform="translate(96.496,-766.062)">
+			<title>Tabelle.215</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape59-59" v:mID="59" v:groupContext="shape" transform="translate(76.6534,-766.062)">
+			<title>Tabelle.216</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape60-61" v:mID="60" v:groupContext="shape" transform="translate(126.26,-756.141)">
+			<title>Tabelle.217</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape62-63" v:mID="62" v:groupContext="shape" transform="translate(56.811,-766.062)">
+			<title>Tabelle.219</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape63-65" v:mID="63" v:groupContext="shape" transform="translate(68.1512,-780.944)">
+			<title>Tabelle.63</title>
+			<desc>y</desc>
+			<v:userDefs/>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5196"/>
+			<v:textRect cx="8.50358" cy="836.219" width="17.01" height="11.3386"/>
+			<rect x="0" y="830.55" width="17.0079" height="11.3386" class="st4"/>
+			<text x="6.08" y="839.22" class="st5" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>y</text>		</g>
+		<g id="shape64-68" v:mID="64" v:groupContext="shape" transform="translate(890.197,45.3488) rotate(90)">
+			<title>Tabelle.65</title>
+			<path d="M0 841.89 L2.86 841.89 L3.2 841.89 L45.36 841.89" class="st12"/>
+		</g>
+		<g id="shape65-74" v:mID="65" v:groupContext="shape" transform="translate(39.8047,-796.535)">
+			<title>Tabelle.66</title>
+			<desc>y</desc>
+			<v:userDefs/>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:tabSpace="42.5196"/>
+			<v:textRect cx="8.50358" cy="836.219" width="17.01" height="11.3386"/>
+			<rect x="0" y="830.55" width="17.0079" height="11.3386" class="st4"/>
+			<text x="5.82" y="839.22" class="st5" v:langID="2055"><v:paragraph v:horizAlign="1"/><v:tabList/>u</text>		</g>
+		<g id="shape35-77" v:mID="35" v:groupContext="shape" transform="translate(-720.845,265.851) rotate(-103.431)">
+			<title>Tabelle.193</title>
+			<path d="M0 841.89 L14.02 841.89 L0 841.89 Z" class="st8"/>
+			<path d="M0 841.89 L14.02 841.89" class="st13"/>
+		</g>
+		<g id="shape66-80" v:mID="66" v:groupContext="shape" transform="translate(48.3087,-745.237) rotate(5.38337E-07)">
+			<title>Tabelle.66</title>
+			<path d="M0 830.28 C3.21 828.07 5.8 823.64 10.6 822.26 C14.87 821.03 20.88 822.21 24.78 824.13 C29.64 826.51 31.22 830.02
+						 33.77 834.19 C35.87 837.61 38.63 841.48 41.76 841.89 C46.23 842.48 51.44 836.04 57.02 832.27 C59.9 830.33
+						 62.87 829.1 66.43 828.63 C70.93 828.03 76.37 828.64 79.2 830.28" class="st14"/>
+		</g>
+		<g id="shape61-83" v:mID="61" v:groupContext="shape" transform="translate(46.8898,-756.141)">
+			<title>Tabelle.218</title>
+			<path d="M3 840.81 a1.62159 0.619391 166.72 1 0 -3.15641 0.745128 a1.62159 0.619391 166.72 1 0 3.15641 -0.745128 Z"
+					class="st7"/>
+		</g>
+		<g id="shape275-85" v:mID="275" v:groupContext="shape" transform="translate(113.386,-788.031)">
+			<title>Tabelle.275</title>
+			<path d="M0 841.89 L17.01 841.89" class="st15"/>
+		</g>
+		<g id="shape276-91" v:mID="276" v:groupContext="shape" transform="translate(-549.868,-520.757) rotate(-45.7622)">
+			<title>Tabelle.276</title>
+			<path d="M0 841.89 L13.8 841.89" class="st15"/>
+		</g>
+		<g id="shape277-96" v:mID="277" v:groupContext="shape" transform="translate(130.394,-782.362)">
+			<title>Tabelle.277</title>
+			<desc>j</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)"/>
+			<v:textRect cx="8.50394" cy="836.22" width="17.01" height="11.3386"/>
+			<rect x="0" y="830.55" width="17.0079" height="11.3386" class="st17"/>
+			<text x="6.97" y="839.22" class="st5" v:langID="2055"><v:paragraph v:horizAlign="1"/><v:tabList/>j</text>		</g>
+		<g id="shape278-99" v:mID="278" v:groupContext="shape" transform="translate(45.9213,-780.094)">
+			<title>Tabelle.278</title>
+			<desc>k</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)"/>
+			<v:textRect cx="8.50394" cy="836.22" width="17.01" height="11.3386"/>
+			<rect x="0" y="830.55" width="17.0079" height="11.3386" class="st17"/>
+			<text x="6.21" y="839.22" class="st5" v:langID="2055"><v:paragraph v:horizAlign="1"/><v:tabList/>k</text>		</g>
+		<g id="group4049-102" transform="translate(36.8504,-741.271)" v:mID="4049" v:groupContext="group">
+			<title>Tabelle.4049</title>
+			<g id="group3745-103" transform="translate(-1.29896E-14,-1.68501)" v:mID="3745" v:groupContext="group">
+				<title>Tabelle.3745</title>
+				<g id="shape3746-104" v:mID="3746" v:groupContext="shape">
+					<title>path419783</title>
+					<path d="M2.27 841.41 C2.35 841.71 2.6 841.89 2.9 841.89 C3.16 841.89 3.32 841.73 3.43 841.49 C3.55 841.24 3.64
+								 840.81 3.64 840.79 C3.64 840.72 3.58 840.72 3.56 840.72 C3.49 840.72 3.48 840.75 3.46 840.85 C3.36
+								 841.25 3.23 841.73 2.93 841.73 C2.78 841.73 2.71 841.64 2.71 841.4 C2.71 841.25 2.79 840.91 2.85
+								 840.67 L3.05 839.9 C3.07 839.8 3.14 839.52 3.17 839.42 C3.21 839.26 3.28 838.99 3.28 838.95 C3.28
+								 838.81 3.18 838.75 3.07 838.75 C3.04 838.75 2.85 838.76 2.79 839.01 C2.66 839.52 2.34 840.76 2.26
+								 841.14 C2.25 841.16 1.97 841.73 1.45 841.73 C1.09 841.73 1.02 841.41 1.02 841.15 C1.02 840.75 1.22
+								 840.19 1.4 839.71 C1.48 839.49 1.52 839.39 1.52 839.26 C1.52 838.93 1.29 838.67 0.93 838.67 C0.26
+								 838.67 0 839.71 0 839.77 C0 839.84 0.07 839.84 0.09 839.84 C0.16 839.84 0.16 839.83 0.2 839.71 C0.38
+								 839.1 0.65 838.83 0.91 838.83 C0.98 838.83 1.1 838.84 1.1 839.07 C1.1 839.24 1.02 839.44 0.97 839.54
+								 C0.71 840.24 0.56 840.69 0.56 841.04 C0.56 841.71 1.06 841.89 1.43 841.89 C1.9 841.89 2.15 841.56
+								 2.27 841.41 Z" class="st18"/>
+				</g>
+			</g>
+			<g id="group3747-106" transform="translate(4.55439,1.13687E-13)" v:mID="3747" v:groupContext="group">
+				<title>Tabelle.3747</title>
+				<g id="shape3748-107" v:mID="3748" v:groupContext="shape">
+					<title>path419771</title>
+					<path d="M1.64 841.83 C1.64 841.8 1.64 841.79 1.52 841.67 C0.64 840.77 0.42 839.43 0.42 838.36 C0.42 837.12 0.68
+								 835.89 1.55 835 C1.64 834.92 1.64 834.91 1.64 834.87 C1.64 834.83 1.61 834.81 1.57 834.81 C1.5 834.81
+								 0.86 835.29 0.45 836.19 C0.08 836.97 0 837.76 0 838.36 C0 838.9 0.08 839.76 0.47 840.56 C0.89 841.43
+								 1.5 841.89 1.57 841.89 C1.61 841.89 1.64 841.87 1.64 841.83 Z" class="st18"/>
+				</g>
+			</g>
+			<g id="group3749-109" transform="translate(6.81279,-0.395875)" v:mID="3749" v:groupContext="group">
+				<title>g420039</title>
+				<g id="group3750-110" transform="translate(-2.67286E-14,-1.28913)" v:mID="3750" v:groupContext="group">
+					<title>Tabelle.3750</title>
+					<g id="shape3751-111" v:mID="3751" v:groupContext="shape">
+						<title>path419786</title>
+						<path d="M2.16 839.67 C2.2 839.48 2.37 838.83 2.86 838.83 C2.9 838.83 3.07 838.83 3.22 838.92 C3.02 838.96
+									 2.88 839.14 2.88 839.31 C2.88 839.42 2.95 839.55 3.15 839.55 C3.31 839.55 3.53 839.42 3.53 839.15
+									 C3.53 838.77 3.12 838.67 2.87 838.67 C2.46 838.67 2.21 839.05 2.13 839.22 C1.95 838.74 1.56
+									 838.67 1.36 838.67 C0.63 838.67 0.22 839.59 0.22 839.77 C0.22 839.84 0.29 839.84 0.3 839.84
+									 C0.37 839.84 0.39 839.83 0.4 839.76 C0.64 839.01 1.11 838.83 1.35 838.83 C1.48 838.83 1.74 838.89
+									 1.74 839.31 C1.74 839.52 1.61 840 1.35 841 C1.24 841.43 0.98 841.73 0.68 841.73 C0.63 841.73
+									 0.47 841.73 0.32 841.64 C0.5 841.6 0.65 841.45 0.65 841.26 C0.65 841.07 0.5 841.01 0.4 841.01
+									 C0.18 841.01 0 841.19 0 841.42 C0 841.75 0.36 841.89 0.67 841.89 C1.14 841.89 1.39 841.39 1.41
+									 841.35 C1.5 841.6 1.76 841.89 2.18 841.89 C2.9 841.89 3.31 840.98 3.31 840.79 C3.31 840.72 3.25
+									 840.72 3.23 840.72 C3.17 840.72 3.15 840.75 3.14 840.8 C2.9 841.56 2.42 841.73 2.19 841.73 C1.92
+									 841.73 1.81 841.5 1.81 841.26 C1.81 841.11 1.85 840.95 1.92 840.64 L2.16 839.67 Z"
+								class="st18"/>
+					</g>
+				</g>
+				<g id="group3752-113" transform="translate(4.45625,1.13687E-13)" v:mID="3752" v:groupContext="group">
+					<title>Tabelle.3752</title>
+					<g id="shape3753-114" v:mID="3753" v:groupContext="shape">
+						<title>path419777</title>
+						<path d="M0.83 840.51 C0.83 840.04 0.65 839.77 0.38 839.77 C0.14 839.77 0 839.94 0 840.14 C0 840.34 0.14
+									 840.52 0.38 840.52 C0.46 840.52 0.55 840.49 0.62 840.43 C0.65 840.42 0.65 840.41 0.66 840.41
+									 C0.67 840.41 0.67 840.42 0.67 840.51 C0.67 841.04 0.43 841.46 0.19 841.7 C0.11 841.78 0.11 841.79
+									 0.11 841.81 C0.11 841.86 0.15 841.89 0.18 841.89 C0.26 841.89 0.83 841.34 0.83 840.51 Z"
+								class="st18"/>
+					</g>
+				</g>
+			</g>
+			<g id="group3754-116" transform="translate(14.0845,1.13687E-13)" v:mID="3754" v:groupContext="group">
+				<title>g420045</title>
+				<g id="group3755-117" transform="translate(0,-1.61395)" v:mID="3755" v:groupContext="group">
+					<title>Tabelle.3755</title>
+					<g id="shape3756-118" v:mID="3756" v:groupContext="shape">
+						<title>path419762</title>
+						<path d="M2.98 839.47 C2.98 838.9 2.95 838.34 2.7 837.81 C2.38 837.13 1.8 837.02 1.49 837.02 C1.08 837.02
+									 0.56 837.2 0.26 837.86 C0.04 838.35 0 838.9 0 839.47 C0 840 0.03 840.64 0.32 841.18 C0.63 841.75
+									 1.15 841.89 1.49 841.89 C1.87 841.89 2.42 841.75 2.72 841.07 C2.95 840.58 2.98 840.03 2.98 839.47
+									 ZM1.49 841.74 C1.22 841.74 0.79 841.56 0.67 840.88 C0.59 840.46 0.59 839.8 0.59 839.38 C0.59
+									 838.93 0.59 838.47 0.65 838.08 C0.78 837.24 1.31 837.17 1.49 837.17 C1.73 837.17 2.19 837.3
+									 2.32 838 C2.4 838.4 2.4 838.93 2.4 839.38 C2.4 839.92 2.4 840.4 2.31 840.85 C2.21 841.52 1.81
+									 841.74 1.49 841.74 Z" class="st18"/>
+					</g>
+				</g>
+				<g id="group3757-120" transform="translate(3.67546,1.13687E-13)" v:mID="3757" v:groupContext="group">
+					<title>Tabelle.3757</title>
+					<g id="shape3758-121" v:mID="3758" v:groupContext="shape">
+						<title>path419768</title>
+						<path d="M1.64 838.36 C1.64 837.8 1.56 836.95 1.18 836.14 C0.75 835.27 0.14 834.81 0.07 834.81 C0.03 834.81
+									 0 834.83 0 834.87 C0 834.91 0 834.92 0.13 835.05 C0.82 835.75 1.23 836.87 1.23 838.36 C1.23
+									 839.56 0.96 840.81 0.09 841.71 C0 841.79 0 841.8 0 841.83 C0 841.87 0.03 841.89 0.07 841.89
+									 C0.14 841.89 0.78 841.41 1.2 840.51 C1.55 839.74 1.64 838.95 1.64 838.36 Z" class="st18"/>
+					</g>
+				</g>
+			</g>
+			<g id="group3759-123" transform="translate(22.4761,-2.71022)" v:mID="3759" v:groupContext="group">
+				<title>Tabelle.3759</title>
+				<g id="shape3760-124" v:mID="3760" v:groupContext="shape">
+					<title>path419756</title>
+					<path d="M4.48 840.52 C4.58 840.52 4.71 840.52 4.71 840.38 C4.71 840.23 4.58 840.23 4.48 840.23 L0.23 840.23
+								 C0.13 840.23 0 840.23 0 840.38 C0 840.52 0.13 840.52 0.24 840.52 L4.48 840.52 ZM4.48 841.89 C4.58
+								 841.89 4.71 841.89 4.71 841.75 C4.71 841.6 4.58 841.6 4.48 841.6 L0.24 841.6 C0.13 841.6 0 841.6
+								 0 841.75 C0 841.89 0.13 841.89 0.23 841.89 L4.48 841.89 Z" class="st18"/>
+				</g>
+			</g>
+			<g id="group3761-126" transform="translate(29.9346,-0.31467)" v:mID="3761" v:groupContext="group">
+				<title>Tabelle.3761</title>
+				<g id="shape3762-127" v:mID="3762" v:groupContext="shape">
+					<title>path419792</title>
+					<path d="M2.22 837.61 L2.83 837.61 C2.97 837.61 3.05 837.61 3.05 837.46 C3.05 837.38 2.97 837.38 2.85 837.38
+								 L2.26 837.38 L2.42 836.58 C2.45 836.43 2.55 835.92 2.59 835.84 C2.65 835.71 2.77 835.6 2.92 835.6
+								 C2.94 835.6 3.14 835.6 3.27 835.73 C2.95 835.76 2.88 836 2.88 836.11 C2.88 836.28 3.01 836.36 3.15
+								 836.36 C3.33 836.36 3.53 836.2 3.53 835.93 C3.53 835.61 3.21 835.44 2.92 835.44 C2.68 835.44 2.23
+								 835.56 2.02 836.28 C1.98 836.42 1.96 836.49 1.79 837.38 L1.3 837.38 C1.16 837.38 1.09 837.38 1.09
+								 837.51 C1.09 837.61 1.15 837.61 1.28 837.61 L1.75 837.61 L1.22 840.41 C1.09 841.09 0.97 841.74 0.6
+								 841.74 C0.58 841.74 0.4 841.74 0.26 841.6 C0.59 841.58 0.65 841.33 0.65 841.22 C0.65 841.06 0.53
+								 840.98 0.39 840.98 C0.2 840.98 0 841.13 0 841.4 C0 841.72 0.31 841.89 0.6 841.89 C0.99 841.89 1.28
+								 841.47 1.4 841.2 C1.63 840.75 1.8 839.9 1.8 839.85 L2.22 837.61 Z" class="st18"/>
+				</g>
+			</g>
+			<g id="group3763-129" transform="translate(34.4918,1.13687E-13)" v:mID="3763" v:groupContext="group">
+				<title>Tabelle.3763</title>
+				<g id="shape3764-130" v:mID="3764" v:groupContext="shape">
+					<title>path419771</title>
+					<path d="M1.64 841.83 C1.64 841.8 1.64 841.79 1.52 841.67 C0.64 840.77 0.42 839.43 0.42 838.36 C0.42 837.12 0.68
+								 835.89 1.55 835 C1.64 834.92 1.64 834.91 1.64 834.87 C1.64 834.83 1.61 834.81 1.57 834.81 C1.5 834.81
+								 0.86 835.29 0.45 836.19 C0.08 836.97 0 837.76 0 838.36 C0 838.9 0.08 839.76 0.47 840.56 C0.89 841.43
+								 1.5 841.89 1.57 841.89 C1.61 841.89 1.64 841.87 1.64 841.83 Z" class="st18"/>
+				</g>
+			</g>
+			<g id="group3765-132" transform="translate(36.7509,-1.68501)" v:mID="3765" v:groupContext="group">
+				<title>Tabelle.3765</title>
+				<g id="shape3766-133" v:mID="3766" v:groupContext="shape">
+					<title>path419786</title>
+					<path d="M2.16 839.67 C2.2 839.48 2.37 838.83 2.86 838.83 C2.9 838.83 3.07 838.83 3.22 838.92 C3.02 838.96 2.88
+								 839.14 2.88 839.31 C2.88 839.42 2.95 839.55 3.15 839.55 C3.31 839.55 3.53 839.42 3.53 839.15 C3.53
+								 838.77 3.12 838.67 2.87 838.67 C2.46 838.67 2.21 839.05 2.13 839.22 C1.95 838.74 1.56 838.67 1.36
+								 838.67 C0.63 838.67 0.22 839.59 0.22 839.77 C0.22 839.84 0.29 839.84 0.3 839.84 C0.37 839.84 0.39
+								 839.83 0.4 839.76 C0.64 839.01 1.11 838.83 1.35 838.83 C1.48 838.83 1.74 838.89 1.74 839.31 C1.74
+								 839.52 1.61 840 1.35 841 C1.24 841.43 0.98 841.73 0.68 841.73 C0.63 841.73 0.47 841.73 0.32 841.64
+								 C0.5 841.6 0.65 841.45 0.65 841.26 C0.65 841.07 0.5 841.01 0.4 841.01 C0.18 841.01 0 841.19 0 841.42
+								 C0 841.75 0.36 841.89 0.67 841.89 C1.14 841.89 1.39 841.39 1.41 841.35 C1.5 841.6 1.76 841.89 2.18
+								 841.89 C2.9 841.89 3.31 840.98 3.31 840.79 C3.31 840.72 3.25 840.72 3.23 840.72 C3.17 840.72 3.15
+								 840.75 3.14 840.8 C2.9 841.56 2.42 841.73 2.19 841.73 C1.92 841.73 1.81 841.5 1.81 841.26 C1.81
+								 841.11 1.85 840.95 1.92 840.64 L2.16 839.67 Z" class="st18"/>
+				</g>
+			</g>
+			<g id="group3767-135" transform="translate(41.0038,1.13687E-13)" v:mID="3767" v:groupContext="group">
+				<title>Tabelle.3767</title>
+				<g id="shape3768-136" v:mID="3768" v:groupContext="shape">
+					<title>path419768</title>
+					<path d="M1.64 838.36 C1.64 837.8 1.56 836.95 1.18 836.14 C0.75 835.27 0.14 834.81 0.07 834.81 C0.03 834.81 0
+								 834.83 0 834.87 C0 834.91 0 834.92 0.13 835.05 C0.82 835.75 1.23 836.87 1.23 838.36 C1.23 839.56
+								 0.96 840.81 0.09 841.71 C0 841.79 0 841.8 0 841.83 C0 841.87 0.03 841.89 0.07 841.89 C0.14 841.89
+								 0.78 841.41 1.2 840.51 C1.55 839.74 1.64 838.95 1.64 838.36 Z" class="st18"/>
+				</g>
+			</g>
+		</g>
+		<g id="shape4051-138" v:mID="4051" v:groupContext="shape" transform="translate(45.3543,-754.016)">
+			<title>Tabelle.4051</title>
+			<ellipse cx="2.83465" cy="839.054" rx="2.83465" ry="2.83465" class="st19"/>
+		</g>
+		<g id="shape4052-140" v:mID="4052" v:groupContext="shape" transform="translate(124.724,-754.016)">
+			<title>Tabelle.4052</title>
+			<ellipse cx="2.83465" cy="839.054" rx="2.83465" ry="2.83465" class="st19"/>
+		</g>
+		<g id="shape4054-142" v:mID="4054" v:groupContext="shape" transform="translate(-510.266,-494.527) rotate(-45)">
+			<title>Tabelle.4054</title>
+			<path d="M0 841.89 L12.84 841.89" class="st20"/>
+		</g>
+		<g id="shape4055-145" v:mID="4055" v:groupContext="shape" transform="translate(-537.12,-514.046) rotate(-45)">
+			<title>Tabelle.4055</title>
+			<path d="M0 841.89 L12.84 841.89" class="st20"/>
+		</g>
+		<g id="shape4056-148" v:mID="4056" v:groupContext="shape" transform="translate(-482.491,-506.86) rotate(-45)">
+			<title>Tabelle.4056</title>
+			<path d="M0 841.89 L12.84 841.89" class="st20"/>
+		</g>
+		<g id="group4057-151" transform="translate(102.047,-741.271)" v:mID="4057" v:groupContext="group">
+			<title>Tabelle.4057</title>
+			<g id="group3771-152" transform="translate(-1.9984E-15,-1.68501)" v:mID="3771" v:groupContext="group">
+				<title>Tabelle.3771</title>
+				<g id="shape3772-153" v:mID="3772" v:groupContext="shape">
+					<title>path419783</title>
+					<path d="M2.27 841.41 C2.35 841.71 2.6 841.89 2.9 841.89 C3.16 841.89 3.32 841.73 3.43 841.49 C3.55 841.24 3.64
+								 840.81 3.64 840.79 C3.64 840.72 3.58 840.72 3.56 840.72 C3.49 840.72 3.48 840.75 3.46 840.85 C3.36
+								 841.25 3.23 841.73 2.93 841.73 C2.78 841.73 2.71 841.64 2.71 841.4 C2.71 841.25 2.79 840.91 2.85
+								 840.67 L3.05 839.9 C3.07 839.8 3.14 839.52 3.17 839.42 C3.21 839.26 3.28 838.99 3.28 838.95 C3.28
+								 838.81 3.18 838.75 3.07 838.75 C3.04 838.75 2.85 838.76 2.79 839.01 C2.66 839.52 2.34 840.76 2.26
+								 841.14 C2.25 841.16 1.97 841.73 1.45 841.73 C1.09 841.73 1.02 841.41 1.02 841.15 C1.02 840.75 1.22
+								 840.19 1.4 839.71 C1.48 839.49 1.52 839.39 1.52 839.26 C1.52 838.93 1.29 838.67 0.93 838.67 C0.26
+								 838.67 0 839.71 0 839.77 C0 839.84 0.07 839.84 0.09 839.84 C0.16 839.84 0.16 839.83 0.2 839.71 C0.38
+								 839.1 0.65 838.83 0.91 838.83 C0.98 838.83 1.1 838.84 1.1 839.07 C1.1 839.24 1.02 839.44 0.97 839.54
+								 C0.71 840.24 0.56 840.69 0.56 841.04 C0.56 841.71 1.06 841.89 1.43 841.89 C1.9 841.89 2.15 841.56
+								 2.27 841.41 Z" class="st21"/>
+				</g>
+			</g>
+			<g id="group3773-155" transform="translate(3.98596,-0.652646)" v:mID="3773" v:groupContext="group">
+				<title>Tabelle.3773</title>
+				<g id="shape3774-156" v:mID="3774" v:groupContext="shape">
+					<title>path419813</title>
+					<path d="M1.02 839.78 L1.52 839.78 C1.61 839.78 1.67 839.78 1.67 839.68 C1.67 839.6 1.61 839.6 1.52 839.6 L1.06
+								 839.6 L1.24 838.87 C1.26 838.79 1.26 838.77 1.26 838.76 C1.26 838.65 1.18 838.6 1.09 838.6 C0.91
+								 838.6 0.87 838.74 0.82 838.98 L0.66 839.6 L0.16 839.6 C0.06 839.6 0 839.6 0 839.71 C0 839.78 0.06
+								 839.78 0.15 839.78 L0.62 839.78 L0.3 841.02 C0.27 841.15 0.23 841.33 0.23 841.4 C0.23 841.72 0.49
+								 841.89 0.76 841.89 C1.31 841.89 1.62 841.16 1.62 841.1 C1.62 841.04 1.58 841.03 1.55 841.03 C1.49
+								 841.03 1.49 841.05 1.45 841.13 C1.35 841.38 1.09 841.75 0.77 841.75 C0.67 841.75 0.6 841.68 0.6
+								 841.5 C0.6 841.4 0.62 841.35 0.63 841.28 L1.02 839.78 Z" class="st21"/>
+				</g>
+			</g>
+			<g id="group3775-158" transform="translate(6.86452,1.13687E-13)" v:mID="3775" v:groupContext="group">
+				<title>Tabelle.3775</title>
+				<g id="shape3776-159" v:mID="3776" v:groupContext="shape">
+					<title>path419771</title>
+					<path d="M1.64 841.83 C1.64 841.8 1.64 841.79 1.52 841.67 C0.64 840.77 0.42 839.43 0.42 838.36 C0.42 837.12 0.68
+								 835.89 1.55 835 C1.64 834.92 1.64 834.91 1.64 834.87 C1.64 834.83 1.61 834.81 1.57 834.81 C1.5 834.81
+								 0.86 835.29 0.45 836.19 C0.08 836.97 0 837.76 0 838.36 C0 838.9 0.08 839.76 0.47 840.56 C0.89 841.43
+								 1.5 841.89 1.57 841.89 C1.61 841.89 1.64 841.87 1.64 841.83 Z" class="st21"/>
+				</g>
+			</g>
+			<g id="group3777-161" transform="translate(9.12356,-0.395875)" v:mID="3777" v:groupContext="group">
+				<title>g420141</title>
+				<g id="group3778-162" transform="translate(-2.67286E-14,-1.28913)" v:mID="3778" v:groupContext="group">
+					<title>Tabelle.3778</title>
+					<g id="shape3779-163" v:mID="3779" v:groupContext="shape">
+						<title>path419786</title>
+						<path d="M2.16 839.67 C2.2 839.48 2.37 838.83 2.86 838.83 C2.9 838.83 3.07 838.83 3.22 838.92 C3.02 838.96
+									 2.88 839.14 2.88 839.31 C2.88 839.42 2.95 839.55 3.15 839.55 C3.31 839.55 3.53 839.42 3.53 839.15
+									 C3.53 838.77 3.12 838.67 2.87 838.67 C2.46 838.67 2.21 839.05 2.13 839.22 C1.95 838.74 1.56
+									 838.67 1.36 838.67 C0.63 838.67 0.22 839.59 0.22 839.77 C0.22 839.84 0.29 839.84 0.3 839.84
+									 C0.37 839.84 0.39 839.83 0.4 839.76 C0.64 839.01 1.11 838.83 1.35 838.83 C1.48 838.83 1.74 838.89
+									 1.74 839.31 C1.74 839.52 1.61 840 1.35 841 C1.24 841.43 0.98 841.73 0.68 841.73 C0.63 841.73
+									 0.47 841.73 0.32 841.64 C0.5 841.6 0.65 841.45 0.65 841.26 C0.65 841.07 0.5 841.01 0.4 841.01
+									 C0.18 841.01 0 841.19 0 841.42 C0 841.75 0.36 841.89 0.67 841.89 C1.14 841.89 1.39 841.39 1.41
+									 841.35 C1.5 841.6 1.76 841.89 2.18 841.89 C2.9 841.89 3.31 840.98 3.31 840.79 C3.31 840.72 3.25
+									 840.72 3.23 840.72 C3.17 840.72 3.15 840.75 3.14 840.8 C2.9 841.56 2.42 841.73 2.19 841.73 C1.92
+									 841.73 1.81 841.5 1.81 841.26 C1.81 841.11 1.85 840.95 1.92 840.64 L2.16 839.67 Z"
+								class="st21"/>
+					</g>
+				</g>
+				<g id="group3780-165" transform="translate(4.45626,1.13687E-13)" v:mID="3780" v:groupContext="group">
+					<title>Tabelle.3780</title>
+					<g id="shape3781-166" v:mID="3781" v:groupContext="shape">
+						<title>path419777</title>
+						<path d="M0.83 840.51 C0.83 840.04 0.65 839.77 0.38 839.77 C0.14 839.77 0 839.94 0 840.14 C0 840.34 0.14
+									 840.52 0.38 840.52 C0.46 840.52 0.55 840.49 0.62 840.43 C0.65 840.42 0.65 840.41 0.66 840.41
+									 C0.67 840.41 0.67 840.42 0.67 840.51 C0.67 841.04 0.43 841.46 0.19 841.7 C0.11 841.78 0.11 841.79
+									 0.11 841.81 C0.11 841.86 0.15 841.89 0.18 841.89 C0.26 841.89 0.83 841.34 0.83 840.51 Z"
+								class="st21"/>
+					</g>
+				</g>
+			</g>
+			<g id="group3782-168" transform="translate(16.3946,1.13687E-13)" v:mID="3782" v:groupContext="group">
+				<title>g420147</title>
+				<g id="group3783-169" transform="translate(0,-1.61395)" v:mID="3783" v:groupContext="group">
+					<title>Tabelle.3783</title>
+					<g id="shape3784-170" v:mID="3784" v:groupContext="shape">
+						<title>path419762</title>
+						<path d="M2.98 839.47 C2.98 838.9 2.95 838.34 2.7 837.81 C2.38 837.13 1.8 837.02 1.49 837.02 C1.08 837.02
+									 0.56 837.2 0.26 837.86 C0.04 838.35 0 838.9 0 839.47 C0 840 0.03 840.64 0.32 841.18 C0.63 841.75
+									 1.15 841.89 1.49 841.89 C1.87 841.89 2.42 841.75 2.72 841.07 C2.95 840.58 2.98 840.03 2.98 839.47
+									 ZM1.49 841.74 C1.22 841.74 0.79 841.56 0.67 840.88 C0.59 840.46 0.59 839.8 0.59 839.38 C0.59
+									 838.93 0.59 838.47 0.65 838.08 C0.78 837.24 1.31 837.17 1.49 837.17 C1.73 837.17 2.19 837.3
+									 2.32 838 C2.4 838.4 2.4 838.93 2.4 839.38 C2.4 839.92 2.4 840.4 2.31 840.85 C2.21 841.52 1.81
+									 841.74 1.49 841.74 Z" class="st21"/>
+					</g>
+				</g>
+				<g id="group3785-172" transform="translate(3.67546,1.13687E-13)" v:mID="3785" v:groupContext="group">
+					<title>Tabelle.3785</title>
+					<g id="shape3786-173" v:mID="3786" v:groupContext="shape">
+						<title>path419768</title>
+						<path d="M1.64 838.36 C1.64 837.8 1.56 836.95 1.18 836.14 C0.75 835.27 0.14 834.81 0.07 834.81 C0.03 834.81
+									 0 834.83 0 834.87 C0 834.91 0 834.92 0.13 835.05 C0.82 835.75 1.23 836.87 1.23 838.36 C1.23
+									 839.56 0.96 840.81 0.09 841.71 C0 841.79 0 841.8 0 841.83 C0 841.87 0.03 841.89 0.07 841.89
+									 C0.14 841.89 0.78 841.41 1.2 840.51 C1.55 839.74 1.64 838.95 1.64 838.36 Z" class="st21"/>
+					</g>
+				</g>
+			</g>
+			<g id="group3787-175" transform="translate(24.7862,-2.71022)" v:mID="3787" v:groupContext="group">
+				<title>Tabelle.3787</title>
+				<g id="shape3788-176" v:mID="3788" v:groupContext="shape">
+					<title>path419756</title>
+					<path d="M4.48 840.52 C4.58 840.52 4.71 840.52 4.71 840.38 C4.71 840.23 4.58 840.23 4.48 840.23 L0.23 840.23
+								 C0.13 840.23 0 840.23 0 840.38 C0 840.52 0.13 840.52 0.24 840.52 L4.48 840.52 ZM4.48 841.89 C4.58
+								 841.89 4.71 841.89 4.71 841.75 C4.71 841.6 4.58 841.6 4.48 841.6 L0.24 841.6 C0.13 841.6 0 841.6
+								 0 841.75 C0 841.89 0.13 841.89 0.23 841.89 L4.48 841.89 Z" class="st21"/>
+				</g>
+			</g>
+			<g id="group3789-178" transform="translate(31.9707,-0.31467)" v:mID="3789" v:groupContext="group">
+				<title>Tabelle.3789</title>
+				<g id="shape3790-179" v:mID="3790" v:groupContext="shape">
+					<title>path419798</title>
+					<path d="M3.24 837.77 C3.24 837.73 3.26 837.69 3.26 837.64 C3.26 837.51 3.17 837.44 3.06 837.44 C2.98 837.44
+								 2.79 837.49 2.76 837.75 C2.63 837.49 2.39 837.3 2.1 837.3 C1.3 837.3 0.42 838.3 0.42 839.32 C0.42
+								 840.02 0.85 840.44 1.36 840.44 C1.78 840.44 2.11 840.1 2.18 840.03 C2.04 840.66 1.95 840.95 1.95
+								 840.97 C1.93 841.04 1.69 841.74 0.93 841.74 C0.8 841.74 0.57 841.73 0.37 841.67 C0.58 841.59 0.66
+								 841.41 0.66 841.29 C0.66 841.18 0.58 841.05 0.39 841.05 C0.23 841.05 0 841.18 0 841.46 C0 841.75
+								 0.26 841.89 0.94 841.89 C1.84 841.89 2.34 841.34 2.45 840.91 L3.24 837.77 ZM2.31 839.53 C2.27 839.72
+								 2.11 839.89 1.95 840.03 C1.81 840.15 1.58 840.28 1.38 840.28 C1.03 840.28 0.92 839.91 0.92 839.63
+								 C0.92 839.29 1.13 838.46 1.32 838.09 C1.5 837.75 1.81 837.46 2.11 837.46 C2.58 837.46 2.68 838.03
+								 2.68 838.07 C2.68 838.1 2.66 838.15 2.66 838.17 L2.31 839.53 Z" class="st21"/>
+				</g>
+			</g>
+			<g id="group3791-181" transform="translate(36.2043,1.13687E-13)" v:mID="3791" v:groupContext="group">
+				<title>Tabelle.3791</title>
+				<g id="shape3792-182" v:mID="3792" v:groupContext="shape">
+					<title>path419771</title>
+					<path d="M1.64 841.83 C1.64 841.8 1.64 841.79 1.52 841.67 C0.64 840.77 0.42 839.43 0.42 838.36 C0.42 837.12 0.68
+								 835.89 1.55 835 C1.64 834.92 1.64 834.91 1.64 834.87 C1.64 834.83 1.61 834.81 1.57 834.81 C1.5 834.81
+								 0.86 835.29 0.45 836.19 C0.08 836.97 0 837.76 0 838.36 C0 838.9 0.08 839.76 0.47 840.56 C0.89 841.43
+								 1.5 841.89 1.57 841.89 C1.61 841.89 1.64 841.87 1.64 841.83 Z" class="st21"/>
+				</g>
+			</g>
+			<g id="group3793-184" transform="translate(38.4627,-1.68501)" v:mID="3793" v:groupContext="group">
+				<title>Tabelle.3793</title>
+				<g id="shape3794-185" v:mID="3794" v:groupContext="shape">
+					<title>path419786</title>
+					<path d="M2.16 839.67 C2.2 839.48 2.37 838.83 2.86 838.83 C2.9 838.83 3.07 838.83 3.22 838.92 C3.02 838.96 2.88
+								 839.14 2.88 839.31 C2.88 839.42 2.95 839.55 3.15 839.55 C3.31 839.55 3.53 839.42 3.53 839.15 C3.53
+								 838.77 3.12 838.67 2.87 838.67 C2.46 838.67 2.21 839.05 2.13 839.22 C1.95 838.74 1.56 838.67 1.36
+								 838.67 C0.63 838.67 0.22 839.59 0.22 839.77 C0.22 839.84 0.29 839.84 0.3 839.84 C0.37 839.84 0.39
+								 839.83 0.4 839.76 C0.64 839.01 1.11 838.83 1.35 838.83 C1.48 838.83 1.74 838.89 1.74 839.31 C1.74
+								 839.52 1.61 840 1.35 841 C1.24 841.43 0.98 841.73 0.68 841.73 C0.63 841.73 0.47 841.73 0.32 841.64
+								 C0.5 841.6 0.65 841.45 0.65 841.26 C0.65 841.07 0.5 841.01 0.4 841.01 C0.18 841.01 0 841.19 0 841.42
+								 C0 841.75 0.36 841.89 0.67 841.89 C1.14 841.89 1.39 841.39 1.41 841.35 C1.5 841.6 1.76 841.89 2.18
+								 841.89 C2.9 841.89 3.31 840.98 3.31 840.79 C3.31 840.72 3.25 840.72 3.23 840.72 C3.17 840.72 3.15
+								 840.75 3.14 840.8 C2.9 841.56 2.42 841.73 2.19 841.73 C1.92 841.73 1.81 841.5 1.81 841.26 C1.81
+								 841.11 1.85 840.95 1.92 840.64 L2.16 839.67 Z" class="st21"/>
+				</g>
+			</g>
+			<g id="group3795-187" transform="translate(42.7162,1.13687E-13)" v:mID="3795" v:groupContext="group">
+				<title>Tabelle.3795</title>
+				<g id="shape3796-188" v:mID="3796" v:groupContext="shape">
+					<title>path419768</title>
+					<path d="M1.64 838.36 C1.64 837.8 1.56 836.95 1.18 836.14 C0.75 835.27 0.14 834.81 0.07 834.81 C0.03 834.81 0
+								 834.83 0 834.87 C0 834.91 0 834.92 0.13 835.05 C0.82 835.75 1.23 836.87 1.23 838.36 C1.23 839.56
+								 0.96 840.81 0.09 841.71 C0 841.79 0 841.8 0 841.83 C0 841.87 0.03 841.89 0.07 841.89 C0.14 841.89
+								 0.78 841.41 1.2 840.51 C1.55 839.74 1.64 838.95 1.64 838.36 Z" class="st21"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
