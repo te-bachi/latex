@@ -16,7 +16,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg5895"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="page1.svg">
   <defs
      id="defs5889">
@@ -6041,10 +6041,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="-18.11581"
-     inkscape:cy="670.70321"
+     inkscape:cx="-179.54438"
+     inkscape:cy="556.4175"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1-9"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="3840"
      inkscape:window-height="2035"
@@ -9841,6 +9841,7 @@
    v:horizAlign="1" />
 <v:tabList />
 
+
 x</text>
         </g>
         <g
@@ -9892,6 +9893,7 @@ x</text>
    v:horizAlign="1" />
 <v:tabList />
 
+
 u</text>
         </g>
         <g
@@ -9928,6 +9930,7 @@ u</text>
              style="font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 
 0</text>
         </g>
@@ -20048,7 +20051,7 @@ u</text>
     <g
        style="font-size:12px;overflow:visible;color-interpolation-filters:sRGB;fill:none;fill-rule:evenodd;stroke-linecap:square;stroke-miterlimit:3"
        id="g73848"
-       transform="matrix(0.35277654,0,0,0.35277654,116.69329,199.25545)">
+       transform="matrix(0.35277654,0,0,0.35277654,151.83095,89.387934)">
       <g
          id="g73592"
          v:groupContext="foregroundPage"
@@ -20283,7 +20286,6 @@ u</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
-
 x</text>
         </g>
         <g
@@ -20334,7 +20336,6 @@ x</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
-
 u</text>
         </g>
         <g
@@ -20459,7 +20460,6 @@ u</text>
              style="font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
-
 0</text>
         </g>
         <g
@@ -20856,7 +20856,6 @@ u</text>
              style="font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
-
 1</text>
         </g>
         <g

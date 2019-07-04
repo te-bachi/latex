@@ -1,0 +1,221 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+    final,
+    a4paper,
+    oneside,
+    parskip=full,
+    headings=standardclasses,
+    headings=big,
+    pointednumbers,
+    fleqn,
+    numbers=noenddot
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=20mm,top=20mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+
+%-------------------------------------------------------------------------------
+% Headers
+\usepackage{scrlayer-scrpage} 
+\clearpairofpagestyles
+\ohead{}
+\chead{}
+\ihead{}
+\ifoot{}
+\cfoot{}
+\ofoot{}
+
+%-------------------------------------------------------------------------------
+% use commends \begin{comment}
+\usepackage{verbatim}
+
+%-------------------------------------------------------------------------------
+\usepackage[dvipsnames]{xcolor}
+
+%-------------------------------------------------------------------------------
+% dbox
+\usepackage{dashbox}
+
+%-------------------------------------------------------------------------------
+% uline
+\usepackage{ulem}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+%\usetikzlibrary{positioning, arrows, decorations}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+
+\tikzset{
+    myptr/.style={
+        ->,
+        >=stealth
+    }
+}
+
+
+%-------------------------------------------------------------------------------
+% \ifthenelse
+\usepackage{ifthen}
+
+%-------------------------------------------------------------------------------
+% Für enumerate
+\usepackage{enumitem}
+\setlist[enumerate]{
+    wide=0pt,
+    leftmargin=*,
+    itemsep=-1ex,
+    parsep=2ex,
+    labelsep=1ex,
+    label=\alph*)
+}
+
+\usepackage{multirow}
+\usepackage{ifthen}
+
+%-------------------------------------------------------------------------------
+% tabu
+\usepackage{tabu} 
+
+%-------------------------------------------------------------------------------
+% table line breaks with \makecell
+\usepackage{makecell}
+\renewcommand\cellalign{bl}
+
+
+%-------------------------------------------------------------------------------
+% for "\newcolumntype" macro
+\usepackage{array}
+\newlength\mylen
+\settowidth{\mylen}{$50$}
+\newcolumntype{Q}{>{\raggedright$}p{1cm}<{$}}
+
+%-------------------------------------------------------------------------------
+% 
+\usepackage{xparse}
+% 1: Subscription  (default: '')
+% 2: Funktion Name (default: 'f')
+% 3: Argument      (default: 'x')
+% \fx         = f(x)
+% \fx[1]      = f_1(x)
+% \fx[][u]    = u(x)
+% \fx[][u][x] = u(x)
+% \fx[][f][u] = f(u)
+\NewDocumentCommand{\fx}{ O{} O{f} O{x} }{{#2_{#1}{\left( #3 \right)}}}
+\NewDocumentCommand{\dfx}{ O{} O{f} O{x} }{{#2'_{#1}{\left( #3 \right)}}}
+\NewDocumentCommand{\dx}{ O{} }{{\Delta x^{#1}}}
+\NewDocumentCommand{\dy}{ O{} }{{\Delta y^{#1}}}
+\NewDocumentCommand{\dt}{ O{} }{{\Delta t^{#1}}}
+\NewDocumentCommand{\gp}{ O{} }{}
+
+\NewDocumentCommand{\xyz}{ O{x} O{y} O{z} }{#1 #2 #3}
+% 1: Value
+% 2: Key
+% 3: Background Color
+\NewDocumentCommand{\tfill}{ O{} O{} O{blue!20} }{%
+    \tikz[baseline, every node/.style={inner sep=3pt,outer sep=0pt,minimum width=3mm,minimum height=4mm}]{
+        \node[fill=#3,anchor=base] (#2) {#1};
+    }
+}
+\NewDocumentCommand{\tfillc}{ O{} O{} }{%
+    \tikz[baseline, every node/.style={inner sep=2pt,outer sep=0pt}]{
+        \node[fill=#2,anchor=base] {#1};
+    }
+}
+
+\NewDocumentCommand{\tdrawc}{ O{} O{} }{%
+    \tikz[baseline, every node/.style={inner sep=2pt,outer sep=0pt}]{
+        \node[rectangle,draw=#2,anchor=base] {#1};
+    }
+}
+\newcommand{\tfillb}[1]{\tfillc[#1][blue!20]}
+\newcommand{\tfillo}[1]{\tfillc[#1][orange!40]}
+\newcommand{\tfillg}[1]{\tfillc[#1][Green!20]}
+\newcommand{\tfilly}[1]{\tfillc[#1][yellow!40]}
+\newcommand{\tfillr}[1]{\tfillc[#1][red!20]}
+\newcommand{\tfillv}[1]{\tfillc[#1][Violet!20]}
+\newcommand{\tfillt}[1]{\tfillc[#1][Turquoise!20]}
+\newcommand{\tfillgr}[1]{\tfillc[#1][Gray!20]}
+
+
+\newcommand{\tdrawb}[1]{\tdrawc[#1][blue!40]}
+\newcommand{\tdrawo}[1]{\tdrawc[#1][orange!60]}
+\newcommand{\tdrawg}[1]{\tdrawc[#1][Green!40]}
+\newcommand{\tdrawy}[1]{\tdrawc[#1][yellow!60]}
+\newcommand{\tdrawr}[1]{\tdrawc[#1][red!40]}
+\newcommand{\tdrawv}[1]{\tdrawc[#1][Violet!40]}
+\newcommand{\tdrawt}[1]{\tdrawc[#1][Turquoise!40]}
+\newcommand{\tdrawgr}[1]{\tdrawc[#1][Gray!40]}
+\newcommand{\tdrawk}[1]{\tdrawc[#1][black]}
+
+% 1: Funktion Name
+% 2: dx
+% 3: dx^2
+% 4: x_1
+% 5: x_2
+% 5: x_3
+\NewDocumentCommand{\gpp}{ O{} O{\dx} O{\dx[2]} O{x} O{x} O{x} }{%
+    \frac{1}{#3}
+    \kl{#1 
+        \kl{#4 \ifthenelse{\equal{#2}{}}{}{+ #2}} - 
+        2 \cdot #1\kl{#5} +
+        #1 \kl{#6\ifthenelse{\equal{#2}{}}{}{- #2}}
+    }
+}
+
+% 1: x_1
+% 2: x_2
+% 3: x_3
+% 4: dx^2
+\NewDocumentCommand{\gppn}{ O{x_1} O{x_2} O{x_3} O{?}}{%
+    \frac{1}{#4}
+    \kl{#1 - 2 \cdot #2 + #3}
+}
+
+\newcommand*\difx{\; \mathop{}\!\mathrm{d}x}
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+\newcommand{\sqrts}[1]{{\scriptstyle\sqrt{#1}}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+\newcommand{\dom}{{\Omega}}
+\newcommand{\bound}{{\partial \Omega}}
+
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+    
+    {\setlength{\abovedisplayskip}{-6pt}
+    \setlength{\belowdisplayskip}{-12pt}
+    \begin{align*}
+        \begin{array}{l@{\ }l@{\ }}
+            1D  & \f{\partial^2 u}{\partial t^2} = \f{\partial^2 u}{\partial x^2} \\
+            2D  & \f{\partial^2 u}{\partial t^2} = \f{\partial^2 u}{\partial x^2} + \f{\partial^2 u}{\partial y^2} \\
+            3D  & \f{\partial^2 u}{\partial t^2} = \f{\partial^2 u}{\partial x^2} + \f{\partial^2 u}{\partial y^2} + \f{\partial^2 u}{\partial z^2}
+        \end{array}
+    \end{align*}} \\
+    \begin{minipage}{0.05\textwidth}
+        \begin{align*}
+             &  \\
+        \end{align*}
+    \end{minipage}
+
+    iterate step-by-step
+
+    one step calc everything
+
+\end{document}
