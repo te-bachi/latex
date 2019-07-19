@@ -1,0 +1,487 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=25mm,top=20mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% Für enumerate
+\usepackage{enumitem}
+\setlist[enumerate]{
+    wide=0pt,
+    leftmargin=*,
+    itemsep=-1ex,
+    parsep=2ex,
+    labelsep=1ex,
+    label=\alph*)
+}
+
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations}
+
+
+%-------------------------------------------------------------------------------
+% \ifthenelse
+\usepackage{ifthen}
+
+\usepackage{multirow}
+
+%-------------------------------------------------------------------------------
+% 
+\usepackage{xparse}
+\NewDocumentCommand{\dx}{ O{} }{{\Delta x^{#1}}}
+\NewDocumentCommand{\dy}{ O{} }{{\Delta y^{#1}}}
+\NewDocumentCommand{\dt}{ O{} }{{\Delta t^{#1}}}
+\NewDocumentCommand{\du}{ O{} }{{\Delta u^{#1}}}
+\NewDocumentCommand{\px}{ O{} }{{\partial x^{#1}}}
+\NewDocumentCommand{\py}{ O{} }{{\partial y^{#1}}}
+\NewDocumentCommand{\pt}{ O{} }{{\partial t^{#1}}}
+\NewDocumentCommand{\pu}{ O{} }{{\partial u^{#1}}}
+\NewDocumentCommand{\p}{ O{} }{{\partial^{#1}}}
+\NewDocumentCommand{\re}{ O{} }{{\mathbb{R}^{#1}}}
+\NewDocumentCommand{\lap}{}{\mathcal{L}}
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+\newcommand{\dom}{{\Omega}}
+\newcommand{\bound}{{\partial \Omega}}
+\newcommand{\e}{\mathrm{e}}
+
+
+\newcommand{\writen}[2]{%  
+    \begin{tikzpicture}[]
+        
+        % draw vertical lines
+        \foreach \x in {0,...,#1}
+        {
+            \draw[lightgray] (\x * 4mm, 0mm) -- (\x * 4mm, #2 * 4mm);
+        }
+
+        % draw horizontal lines
+        \foreach \y in {0,...,#2}
+        {
+            \draw[lightgray] (0mm, \y * 4mm) -- (#1 * 4mm, \y * 4mm);
+        }
+
+        % border
+        \draw[black] (0mm, 0mm) -- (#1 * 4mm, 0mm);
+        \draw[black] (0mm, 0mm) -- (0mm, #2 * 4mm);
+        \draw[black] (#1 * 4mm, 0mm) -- (#1 * 4mm, #2 * 4mm);
+        \draw[black] (0mm, #2 * 4mm) -- (#1 * 4mm, #2 * 4mm);
+    \end{tikzpicture}
+}
+
+%-------------------------------------------------------------------------------
+% Paragraph
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.35em}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\title{Module exam 2019}
+\author{}
+\date{}
+\begin{document}
+
+    %-- Page 1 -----------------------------------------------------------------
+    \maketitle
+
+    %-- Page 2 -----------------------------------------------------------------
+    \newpage
+
+    \section*{Part 1: Theory}
+	\subsection*{Exercise 1}
+
+    For the second order partial differential equation
+    \begin{align}
+        -x\f{\pu}{\pt} + \f{\p[2] u}{\px[2]} = 0 \label{eq1}
+    \end{align}
+    on the domain
+    \begin{align*}
+        \dom = \kq{\kl{t, x} \in \re[2] \mid t > 0 \; \text{and} \; x > 0 }
+    \end{align*}
+    boundary conditions
+    \begin{center}
+        \vspace{-6mm}
+        \begin{tabular}{ l l l l l }
+            % 1
+            $\begin{aligned}
+                u\kl{0,x} &= 0 \\
+                u\kl{t,0} &= \e^{-t}
+            \end{aligned}$ &
+            % 2
+            $\begin{aligned}
+                \\
+                \text{and}
+            \end{aligned}$ &
+            % 3
+            $\begin{aligned}
+                \\
+                \f{\pu}{\px}\kl{t,0} = 1
+            \end{aligned}$ &
+            % 4
+            $\begin{aligned}
+                \text{for} \\
+                \text{for}
+            \end{aligned}$ &
+            % 5
+            $\begin{aligned}
+                x &> 0 \\
+                t &> 0
+            \end{aligned}$
+        \end{tabular}
+        \vspace{-6mm}
+    \end{center}
+    are given.
+
+    \begin{enumerate}
+        \item{
+            Convert the partial differential equation $\kl{\ref{eq1}}$ into a family of
+            ordinary differential equations using the Laplace transform with respect to
+            the variable $t$.
+        }
+        \item{
+            Assume that there are solutions $A\kl{x}$ and $B\kl{x}$ of the ordinary
+            differential equation
+
+            \begin{center}
+                \vspace{-3mm}
+                $\begin{aligned}
+                    y'' - xy = 0
+                \end{aligned}$
+                \vspace{-3mm}
+            \end{center}
+
+            with initial conditions
+
+            \begin{center}
+                \vspace{-3mm}
+                \begin{tabular}{@{} l l }
+                    % 1
+                    \rule{0pt}{4ex}$\begin{aligned}
+                        A\kl{0} = 1 \\
+                        B\kl{0} = 0
+                    \end{aligned}$ &
+                    % 2
+                    $\begin{aligned}
+                        A'\kl{0} = 0 \\
+                        B'\kl{0} = 1
+                    \end{aligned}$
+                \end{tabular}
+                \vspace{-3mm}
+            \end{center}
+
+            Show that the functions $A\kl{\sqrt{s} \cdot x}$ and $B\kl{\sqrt{s} \cdot x}$ are
+            solutions of the ordinary differential equation obtained in $a)$.
+        }
+        \item{
+            Express the Laplace transform $\lap u \kl{s,x}$ by means of the
+            functions $A\kl{x}$ and $B\kl{x}$.
+        }
+    \end{enumerate}
+
+    \writen{42}{22}
+
+    %-- Page 3 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 4 -----------------------------------------------------------------
+    \newpage
+
+	\subsection*{Exercise 2}
+
+    Consider the partial differential equation
+    \begin{align}
+        \f{1}{2} \f{\p[2] u}{\px[2]} +
+        \kl{\sin\kl{x} + \cos\kl{x}} \frac{\p[2] u}{\px \py} +
+        \kl{\sin\kl{x} \cdot \cos\kl{x}} \frac{\p[2] u}{\py[2]}= 0
+    \end{align}
+    in the domain
+    \begin{align*}
+        \dom = \re[2]
+    \end{align*}
+
+    \begin{enumerate}
+        \item{
+            Is the differential equation elliptic, parabolic or hyperbolic?
+        }
+        \item{
+            Do boundary conditions
+            \begin{center}
+                \begin{tabular}{ c c c }
+                    % 1
+                    $\begin{aligned}
+                        u\kl{0,y} = f\kl{y}
+                    \end{aligned}$ &
+                    % 2
+                    $\begin{aligned}
+                        \text{and}
+                    \end{aligned}$ &
+                    % 3
+                    $\begin{aligned}
+                        \f{\pu}{\px}\kl{0,y} = g\kl{y}
+                    \end{aligned}$
+                \end{tabular}
+            \end{center}
+
+            on the boundary of the smaller domain $\dom_0 = \kq{\kl{x,y} \in \re[2] \mid x > 0}$
+            uniquely determine the solution?
+        }
+    \end{enumerate}
+
+    \writen{42}{40}
+
+
+    %-- Page 5 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+    
+
+    %-- Page 6 -----------------------------------------------------------------
+    \newpage
+	\subsection*{Exercise 3}
+
+    Consider the partial differential equation
+    \begin{align*}
+        u \f{\pu}{\px} - u \frac{\pu}{\py} = 0
+    \end{align*}
+    on the domain
+    \begin{align}
+        \dom = \kq{\kl{x,y} \in \re[2] \mid y < x}
+    \end{align}
+    Find a solution that satisfies the boundary condition $u\kl{x,y} = {\sin\kl{x}}$ on $\bound$.
+
+    \writen{42}{46}
+
+
+    %-- Page 7 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 8 -----------------------------------------------------------------
+    \newpage
+    \subsection*{Exercise 4}
+
+    The air column in a wind instrument with conical bore can be described as a cone
+    with center at the origin where the mouthpiece is located. The oboe fits this model
+    quite well, a saxophone also has a conical bore although twisted into an S-shape.
+    
+    The most suitable coordinate system for this problem is spherical coordinates.
+
+    One can safely assume that the density of the air does not depend on the angle
+    $\varphi$ and $\vartheta$, so that it suffices to model the air density $\varrho$
+    as a function of time and the radius alone, i.e. as a function $\varrho\kl{t,r}$.
+    More precisely, $\varrho\kl{t,r}$ is the density deviation with respect to the
+    density of the air surrounding the instrument. The wave equation then becomes
+
+    \begin{align}
+        \f{\p[2]}{\pt[2]} \varrho - a^2 \kl{\f{\p[2]}{\p r^2} + \f{2}{r} \f{\p}{\p r}} \varrho = 0
+    \end{align}
+
+    where $a$ is the speed of sound. The boundary conditions are
+
+    \begin{center}
+        \vspace{-3mm}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{ l l l }
+            $ \displaystyle \f{\p \varrho}{\p r}\kl{t, 0} = 0 $ & & (instrument closed at mouthpiece) \\
+            $ \displaystyle \; \varrho \kl{t, 2\pi} = 0 $ & & (density of surrounding air at the bell of the instrument)
+        \end{tabular}
+        \vspace{-3mm}
+    \end{center}
+
+    In addition, initial conditions at $t = 0$ are given as
+
+    \begin{center}
+        \begin{tabular}{ c c c }
+            % 1
+            $\varrho \kl{0, r} = f\kl{r}$ & and & $\displaystyle \f{\p}{\pt} \varrho \kl{0, r} = g\kl{r}$
+        \end{tabular}
+    \end{center}
+
+    \begin{enumerate}
+        \item {
+            Perform separation of variables and find ordinary differential equations that can be used
+            to find a solution for this partial differential equation. Solve one of those equations.
+        }
+        \item {
+            Write the factor $R\kl{r}$ in the separation as $\f{p\kl{r}}{r}$ and use this to simplify
+            the equation for $R\kl{r}$ into an equation for $p\kl{r}$.
+        }
+        \item {
+            Solve the equation for $R\kl{r}$ and determine the possible frequencies of the oboe.
+        }
+    \end{enumerate}
+
+    \writen{42}{24}
+
+
+    %-- Page 9 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 10 -----------------------------------------------------------------
+    \newpage
+    
+    \section*{Numerics}
+
+    \subsection*{Exercise 5}
+    A plane Cartesian coordinate system is given. The circle $\dom$ is centered at its origin
+    $\kl{0, 0}$ and has a radius $r = 5$. The function $u\kl{x,y}$ is defined on the circle $\dom$.
+
+    The function $u\kl{x,y}$ satisfies in $\dom$ Poisson's equation
+    \begin{align*}
+        \Delta u\kl{x,y} + x \cdot y = 0
+    \end{align*}
+    and on the boundary of $\dom$ the Dirichlet condition
+    \begin{align*}
+        u\kl{x,y} = 0
+    \end{align*}
+    Determine approximate values for $u$ in the four points of $\dom$
+    \begin{align*}
+       \kl{3,3}, \qquad \kl{-3,3}, \qquad \kl{-3,-3}, \qquad \kl{3,-3}
+    \end{align*}
+    by the method of finite differences.
+
+    \writen{42}{40}
+
+    %-- Page 11 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 12 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Exercise 6}
+    The function $u\kl{x,t}$ is defined on the strip
+    \begin{align*}
+        \Omega = \ks{0, \pi} \times \left[ 0, \infty \right)
+    \end{align*}
+    The function $u\kl{x,t}$ satisfies in $\dom$ the wave equation
+    \begin{align*}
+        u_{xx}\kl{x,  t} = u_{tt}\kl{x,  t}
+    \end{align*}
+    and on the boundary of $\dom$ the conditions
+    \begin{align*}
+        u\kl{0,  t} = 0 \qquad \text{and} \qquad u\kl{\pi,  t} = 0
+    \end{align*}
+    as well as
+    \begin{align*}
+        u\kl{x,  0} = \sin\kl{x}^4 \qquad \text{and} \qquad u_t\kl{x,  0} = \sin\kl{x}^2
+    \end{align*}
+    Determine approximate values for $u$ in the three points for $\dom$
+    \begin{align*}
+        \kl{\fs{\pi}{4},2}, \qquad \kl{\fs{\pi}{2},2}, \qquad \kl{\fs{3\pi}{4},2}
+    \end{align*}
+    by the method of finite differences. Use the leapfrog method with
+    \begin{align*}
+        \dx = \f{\pi}{4} \qquad \text{and} \qquad \dt = 1
+    \end{align*}
+    
+    \writen{42}{36}
+
+    %-- Page 13 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 14 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Exercise 7}
+    A plane Cartesian coordinate system is given. The triangle $\dom$ is defined by its vertices
+    \begin{align*}
+        \kl{0,0}, \qquad \kl{8,0}, \qquad \kl{0,8}
+    \end{align*}
+    The function $u\kl{x,y}$ is defined on the triangle $\dom$. The function $u\kl{x,y}$
+    satisfies in $\dom$ Poisson's equation
+    \begin{align*}
+        \Delta u\kl{x,y} + 1 = 0
+    \end{align*}
+    and on the boundary of $\dom$ the Dirichlet condition
+    \begin{align*}
+        u\kl{x,y} = 0
+    \end{align*}
+    Determine approximate values for $u$ in the four points of $\dom$
+    \begin{align*}
+        \kl{1,5}, \qquad \kl{1,3}, \qquad \kl{3,1}, \qquad \kl{5,1}
+    \end{align*}
+    by the method of finite volumes à la Voronoi.
+    
+    \writen{42}{40}
+
+    %-- Page 15 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 16 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Exercise 8}
+    The real function $u\kl{x}$ is defined on the interval
+    \begin{align*}
+        \dom = \ks{0, 1}
+    \end{align*}
+    The function satisfies in $\dom$ the differential equation
+    \begin{align*}
+        u''{\left(x\right)} + 2 = 0
+    \end{align*}
+    and on the boundary of $\dom$ the conditions
+    \begin{align*}
+        u\kl{0} = 1 \qquad \text{and} \qquad u\kl{1} = 1
+    \end{align*}
+    Determine an approximation function $\widetilde{u}\kl{x}$ for $u\kl{x}$.
+    
+    Apply the finite elements method.
+
+    Use meshes
+    \begin{align*}
+        \ks{0,0.25}, \qquad \ks{0.25,0.75}, \qquad \ks{0.75,1}
+    \end{align*}
+    and linear shape functions.
+
+    \writen{42}{40}
+
+    %-- Page 17 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+\end{document}
