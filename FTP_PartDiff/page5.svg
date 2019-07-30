@@ -23567,12 +23567,11 @@
     </marker>
     <g
        id="lend5-492">
-			<path
-   id="path91972"
-   style="stroke:none"
-   d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 " />
-
-		</g>
+      <path
+         id="path91972"
+         style="stroke:none"
+         d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 " />
+    </g>
     <marker
        overflow="visible"
        markerUnits="strokeWidth"
@@ -23583,12 +23582,11 @@
        v:arrowType="5"
        class="st2"
        id="mrkr5-6-28">
-			<use
-   id="use91975"
-   transform="scale(-2.92,-2.92) "
-   xlink:href="#lend5-492" />
-
-		</marker>
+      <use
+         id="use91975"
+         transform="scale(-2.92,-2.92) "
+         xlink:href="#lend5-492" />
+    </marker>
     <marker
        overflow="visible"
        markerUnits="strokeWidth"
@@ -23599,12 +23597,11 @@
        v:arrowType="5"
        class="st4"
        id="mrkr5-12-97">
-			<use
-   id="use91978"
-   transform="scale(-3.88,-3.88) "
-   xlink:href="#lend5-492" />
-
-		</marker>
+      <use
+         id="use91978"
+         transform="scale(-3.88,-3.88) "
+         xlink:href="#lend5-492" />
+    </marker>
     <marker
        overflow="visible"
        markerUnits="strokeWidth"
@@ -23615,12 +23612,11 @@
        v:arrowType="5"
        class="st4"
        id="mrkr5-75">
-			<use
-   id="use91981"
-   transform="scale(3.88) "
-   xlink:href="#lend5-492" />
-
-		</marker>
+      <use
+         id="use91981"
+         transform="scale(3.88) "
+         xlink:href="#lend5-492" />
+    </marker>
     <marker
        overflow="visible"
        markerUnits="strokeWidth"
@@ -23631,12 +23627,11 @@
        v:arrowType="5"
        class="st12"
        id="mrkr5-109">
-			<use
-   id="use91984"
-   transform="scale(-2.92,-2.92) "
-   xlink:href="#lend5-492" />
-
-		</marker>
+      <use
+         id="use91984"
+         transform="scale(-2.92,-2.92) "
+         xlink:href="#lend5-492" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -23645,9 +23640,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="282.97707"
-     inkscape:cy="760.95758"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="229.87709"
+     inkscape:cy="794.41091"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -23762,6 +23757,7 @@
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 x</text>
         </g>
         <g
@@ -24129,6 +24125,7 @@ x</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 y</text>
         </g>
         <g
@@ -24180,6 +24177,7 @@ y</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 u</text>
         </g>
         <g
@@ -24291,6 +24289,7 @@ u</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 j</text>
         </g>
         <g
@@ -24326,6 +24325,7 @@ j</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 k</text>
         </g>
         <g
@@ -25429,6 +25429,7 @@ k</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 t</text>
         </g>
         <g
@@ -25479,6 +25480,7 @@ t</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 t</text>
         </g>
         <g
@@ -26125,6 +26127,7 @@ t</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 x</text>
         </g>
         <g
@@ -26175,6 +26178,7 @@ x</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 x</text>
         </g>
         <g
@@ -26701,6 +26705,7 @@ x</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 x</text>
         </g>
         <g
@@ -26765,6 +26770,7 @@ x</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 x</text>
         </g>
         <g
@@ -26801,6 +26807,7 @@ x</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 t</text>
         </g>
         <g
@@ -26851,6 +26858,7 @@ t</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 t</text>
         </g>
         <g
@@ -27312,6 +27320,7 @@ t</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 x</text>
         </g>
         <g
@@ -27376,6 +27385,7 @@ x</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 x</text>
         </g>
         <g
@@ -27412,6 +27422,7 @@ x</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 t</text>
         </g>
         <g
@@ -27462,6 +27473,7 @@ t</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 t</text>
         </g>
         <g
@@ -28008,6 +28020,7 @@ t</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 x</text>
         </g>
         <g
@@ -28072,6 +28085,7 @@ x</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 x</text>
         </g>
         <g
@@ -28108,6 +28122,7 @@ x</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 t</text>
         </g>
         <g
@@ -28158,6 +28173,7 @@ t</text>
              style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 t</text>
         </g>
         <g
@@ -28333,6 +28349,7 @@ t</text>
              style="font-size:7.99996805px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 Domain / Chain</text>
         </g>
         <g
@@ -28378,6 +28395,7 @@ Domain / Chain</text>
              style="font-size:7.99996805px;font-family:'CMU Serif';fill:#000000"><v:paragraph
    v:horizAlign="1" />
 <v:tabList />
+
 Characteristic</text>
         </g>
       </g>
@@ -46497,1535 +46515,6 @@ Characteristic</text>
            id="use370435-6" />
       </g>
     </g>
-    <g
-       style="font-size:12px;overflow:visible;color-interpolation-filters:sRGB;fill:none;fill-rule:evenodd;stroke-linecap:square;stroke-miterlimit:3"
-       id="g68367"
-       transform="matrix(0.35277725,0,0,0.35277725,58.325363,45.970215)">
-      <g
-         id="g68209"
-         v:groupContext="foregroundPage"
-         v:index="1"
-         v:mID="0">
-        <title
-           id="title67986">Zeichenblatt-1</title>
-        <v:pageProperties
-           v:shadowOffsetY="-8.50394"
-           v:shadowOffsetX="8.50394"
-           v:drawingUnits="24"
-           v:pageScale="0.0393701"
-           v:drawingScale="0.0393701" />
-        <g
-           transform="matrix(-0.68179282,-0.73154531,-0.73154531,0.68179282,720.762,-503.169)"
-           v:groupContext="shape"
-           v:mID="1"
-           id="shape1-1-4">
-          <title
-             id="title67988">Sheet.1</title>
-          <path
-             style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-6-80)"
-             id="path67990"
-             class="st1"
-             d="M 0,841.89 H 19.45"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="translate(39.685,-748.346)"
-           v:groupContext="shape"
-           v:mID="2"
-           id="shape2-7-2">
-          <title
-             id="title67993">Sheet.2</title>
-          <path
-             style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-12-1)"
-             id="path67995"
-             class="st3"
-             d="M 0,841.89 H 99.79"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="rotate(-90,-340.15735,433.70065)"
-           v:groupContext="shape"
-           v:mID="7"
-           id="shape7-13-3">
-          <title
-             id="title67998">Sheet.7</title>
-          <path
-             id="path68000"
-             class="st5"
-             d="M 0,841.89 H 45.35"
-             inkscape:connector-curvature="0"
-             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="rotate(-90,-330.23635,423.77965)"
-           v:groupContext="shape"
-           v:mID="8"
-           id="shape8-16-8">
-          <title
-             id="title68003">Sheet.8</title>
-          <path
-             id="path68005"
-             class="st5"
-             d="M 0,841.89 H 45.35"
-             inkscape:connector-curvature="0"
-             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="rotate(-90,-320.31485,413.85815)"
-           v:groupContext="shape"
-           v:mID="9"
-           id="shape9-19-1">
-          <title
-             id="title68008">Sheet.9</title>
-          <path
-             id="path68010"
-             class="st5"
-             d="M 0,841.89 H 45.35"
-             inkscape:connector-curvature="0"
-             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="rotate(-90,-310.39385,403.93715)"
-           v:groupContext="shape"
-           v:mID="11"
-           id="shape11-22-8">
-          <title
-             id="title68013">Sheet.11</title>
-          <path
-             id="path68015"
-             class="st5"
-             d="M 0,841.89 H 45.35"
-             inkscape:connector-curvature="0"
-             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(39.685,-768.189)"
-           v:groupContext="shape"
-           v:mID="12"
-           id="shape12-25-1">
-          <title
-             id="title68018">Sheet.12</title>
-          <path
-             id="path68020"
-             class="st5"
-             d="M 0,841.89 H 93.54"
-             inkscape:connector-curvature="0"
-             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(39.685,-788.032)"
-           v:groupContext="shape"
-           v:mID="13"
-           id="shape13-28-2">
-          <title
-             id="title68023">Sheet.13</title>
-          <path
-             id="path68025"
-             class="st5"
-             d="M 0,841.89 H 93.54"
-             inkscape:connector-curvature="0"
-             style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(86.4567,-766.772)"
-           v:groupContext="shape"
-           v:mID="14"
-           id="shape14-31-3">
-          <title
-             id="title68028">Sheet.14</title>
-          <circle
-             id="ellipse68030"
-             class="st6"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(106.299,-766.772)"
-           v:groupContext="shape"
-           v:mID="15"
-           id="shape15-33-2">
-          <title
-             id="title68033">Sheet.15</title>
-          <circle
-             id="ellipse68035"
-             class="st6"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(66.6142,-766.772)"
-           v:groupContext="shape"
-           v:mID="16"
-           id="shape16-35-9">
-          <title
-             id="title68038">Sheet.16</title>
-          <circle
-             id="ellipse68040"
-             class="st6"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(46.7717,-766.772)"
-           v:groupContext="shape"
-           v:mID="17"
-           id="shape17-37-5">
-          <title
-             id="title68043">Sheet.17</title>
-          <circle
-             id="ellipse68045"
-             class="st7"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(126.142,-766.772)"
-           v:groupContext="shape"
-           v:mID="18"
-           id="shape18-39-2">
-          <title
-             id="title68048">Sheet.18</title>
-          <circle
-             id="ellipse68050"
-             class="st7"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(86.4567,-786.614)"
-           v:groupContext="shape"
-           v:mID="19"
-           id="shape19-41-3">
-          <title
-             id="title68053">Sheet.19</title>
-          <circle
-             id="ellipse68055"
-             class="st6"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(106.299,-786.614)"
-           v:groupContext="shape"
-           v:mID="20"
-           id="shape20-43-7">
-          <title
-             id="title68058">Sheet.20</title>
-          <circle
-             id="ellipse68060"
-             class="st7"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(66.6142,-786.614)"
-           v:groupContext="shape"
-           v:mID="21"
-           id="shape21-45-1">
-          <title
-             id="title68063">Sheet.21</title>
-          <circle
-             id="ellipse68065"
-             class="st7"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(46.7717,-786.614)"
-           v:groupContext="shape"
-           v:mID="22"
-           id="shape22-47-5">
-          <title
-             id="title68068">Sheet.22</title>
-          <circle
-             id="ellipse68070"
-             class="st7"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(126.142,-786.614)"
-           v:groupContext="shape"
-           v:mID="23"
-           id="shape23-49-2">
-          <title
-             id="title68073">Sheet.23</title>
-          <circle
-             id="ellipse68075"
-             class="st7"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(142.866,-742.677)"
-           v:groupContext="shape"
-           v:mID="24"
-           id="shape24-51-9">
-          <title
-             id="title68078">Sheet.24</title>
-          <desc
-             id="desc68080">x</desc>
-          <v:textBlock
-             v:tabSpace="42.5197"
-             v:margins="rect(0,0,0,0)" />
-          <v:textRect
-             height="11.3386"
-             width="17.01"
-             cy="836.22"
-             cx="8.50394" />
-          <rect
-             id="rect68082"
-             class="st8"
-             height="11.3386"
-             width="17.0079"
-             y="830.55103"
-             x="0"
-             style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-          <text
-             id="text68084"
-             v:langID="1033"
-             class="st9"
-             y="839.21997"
-             x="6.1799998"
-             style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
-   v:horizAlign="1" />
-<v:tabList />
-x</text>
-        </g>
-        <g
-           transform="translate(73.7008,-739.843)"
-           v:groupContext="shape"
-           v:mID="25"
-           id="shape25-54-7">
-          <title
-             id="title68087">Sheet.25</title>
-          <path
-             style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr1-59-7)"
-             id="path68089"
-             class="st10"
-             d="M 0,841.89 H 17.01"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="rotate(-90,-362.8348,447.8742)"
-           v:groupContext="shape"
-           v:mID="26"
-           id="shape26-60-9">
-          <title
-             id="title68092">Sheet.26</title>
-          <path
-             style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr1-59-7)"
-             id="path68094"
-             class="st10"
-             d="M 0,841.89 H 17.01"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="translate(90.7087,-734.173)"
-           v:groupContext="shape"
-           v:mID="27"
-           id="shape27-65-5">
-          <title
-             id="title68097">Sheet.27</title>
-          <desc
-             id="desc68099">x</desc>
-          <v:textBlock
-             v:tabSpace="42.5197"
-             v:margins="rect(0,0,0,0)" />
-          <v:textRect
-             height="11.3386"
-             width="17.01"
-             cy="836.22"
-             cx="8.50394" />
-          <rect
-             id="rect68101"
-             class="st8"
-             height="11.3386"
-             width="17.0079"
-             y="830.55103"
-             x="0"
-             style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-          <text
-             id="text68103"
-             v:langID="1033"
-             class="st9"
-             y="839.21997"
-             x="6.1799998"
-             style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
-   v:horizAlign="1" />
-<v:tabList />
-x</text>
-        </g>
-        <g
-           transform="translate(22.6772,-776.693)"
-           v:groupContext="shape"
-           v:mID="28"
-           id="shape28-68-5">
-          <title
-             id="title68106">Sheet.28</title>
-          <desc
-             id="desc68108">t</desc>
-          <v:textBlock
-             v:tabSpace="42.5197"
-             v:margins="rect(0,0,0,0)" />
-          <v:textRect
-             height="11.3386"
-             width="17.01"
-             cy="836.22"
-             cx="8.50394" />
-          <rect
-             id="rect68110"
-             class="st8"
-             height="11.3386"
-             width="17.0079"
-             y="830.55103"
-             x="0"
-             style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-          <text
-             id="text68112"
-             v:langID="1033"
-             class="st9"
-             y="839.21997"
-             x="6.8400002"
-             style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
-   v:horizAlign="1" />
-<v:tabList />
-t</text>
-        </g>
-        <g
-           transform="rotate(90,422.36235,467.71665)"
-           v:groupContext="shape"
-           v:mID="29"
-           id="shape29-71-8">
-          <title
-             id="title68115">Sheet.29</title>
-          <path
-             style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-start:url(#mrkr5-76-86)"
-             id="path68117"
-             class="st11"
-             d="m 3.03,841.89 h 0.36 44.8"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="translate(39.685,-796.535)"
-           v:groupContext="shape"
-           v:mID="30"
-           id="shape30-77-3">
-          <title
-             id="title68120">Sheet.30</title>
-          <desc
-             id="desc68122">t</desc>
-          <v:textBlock
-             v:tabSpace="42.5197"
-             v:margins="rect(0,0,0,0)" />
-          <v:textRect
-             height="11.3386"
-             width="17.01"
-             cy="836.22"
-             cx="8.50394" />
-          <rect
-             id="rect68124"
-             class="st8"
-             height="11.3386"
-             width="17.0079"
-             y="830.55103"
-             x="0"
-             style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-          <text
-             id="text68126"
-             v:langID="1033"
-             class="st9"
-             y="839.21997"
-             x="6.8400002"
-             style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
-   v:horizAlign="1" />
-<v:tabList />
-t</text>
-        </g>
-        <g
-           transform="rotate(-47.5026,-840.65509,375.85532)"
-           v:groupContext="shape"
-           v:mID="31"
-           id="shape31-80-5">
-          <title
-             id="title68129">Sheet.31</title>
-          <path
-             style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-6-80)"
-             id="path68131"
-             class="st1"
-             d="M 0,841.89 H 19.41"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="rotate(-90.8479,-336.00701,412.82292)"
-           v:groupContext="shape"
-           v:mID="32"
-           id="shape32-85-5">
-          <title
-             id="title68134">Sheet.32</title>
-          <path
-             style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-6-80)"
-             id="path68136"
-             class="st1"
-             d="M 0,841.89 H 12.77"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="translate(86.4567,-746.929)"
-           v:groupContext="shape"
-           v:mID="33"
-           id="shape33-90-9">
-          <title
-             id="title68139">Sheet.33</title>
-          <circle
-             id="ellipse68141"
-             class="st6"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(106.299,-746.929)"
-           v:groupContext="shape"
-           v:mID="34"
-           id="shape34-92-9">
-          <title
-             id="title68144">Sheet.34</title>
-          <circle
-             id="ellipse68146"
-             class="st6"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(66.6142,-746.929)"
-           v:groupContext="shape"
-           v:mID="35"
-           id="shape35-94-1">
-          <title
-             id="title68149">Sheet.35</title>
-          <circle
-             id="ellipse68151"
-             class="st6"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(126.142,-746.929)"
-           v:groupContext="shape"
-           v:mID="36"
-           id="shape36-96-7">
-          <title
-             id="title68154">Sheet.36</title>
-          <circle
-             id="ellipse68156"
-             class="st6"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="translate(46.7717,-746.929)"
-           v:groupContext="shape"
-           v:mID="38"
-           id="shape38-98-0">
-          <title
-             id="title68159">Sheet.38</title>
-          <circle
-             id="ellipse68161"
-             class="st6"
-             cy="840.47198"
-             cx="1.41732"
-             r="1.41732"
-             style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-        </g>
-        <g
-           transform="rotate(-90.8479,-326.45412,422.49623)"
-           v:groupContext="shape"
-           v:mID="39"
-           id="shape39-100-9">
-          <title
-             id="title68164">Sheet.39</title>
-          <path
-             style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-6-80)"
-             id="path68166"
-             class="st1"
-             d="M 0,841.89 H 12.77"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="rotate(-90.8479,-316.53262,412.72048)"
-           v:groupContext="shape"
-           v:mID="40"
-           id="shape40-105-6">
-          <title
-             id="title68169">Sheet.40</title>
-          <path
-             style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-110-19)"
-             id="path68171"
-             class="st12"
-             d="M 0,841.89 H 12.77"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="rotate(-90.8479,-336.37512,432.27149)"
-           v:groupContext="shape"
-           v:mID="41"
-           id="shape41-111-3">
-          <title
-             id="title68174">Sheet.41</title>
-          <path
-             style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-110-19)"
-             id="path68176"
-             class="st12"
-             d="M 0,841.89 H 12.77"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="rotate(-47.5026,-828.03029,408.32212)"
-           v:groupContext="shape"
-           v:mID="42"
-           id="shape42-116-5">
-          <title
-             id="title68179">Sheet.42</title>
-          <path
-             style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-110-19)"
-             id="path68181"
-             class="st12"
-             d="M 0,841.89 H 19.41"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="rotate(-47.5026,-817.82579,385.13205)"
-           v:groupContext="shape"
-           v:mID="43"
-           id="shape43-121-2">
-          <title
-             id="title68184">Sheet.43</title>
-          <path
-             style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-6-80)"
-             id="path68186"
-             class="st1"
-             d="M 0,841.89 H 19.41"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="rotate(-47.5026,-807.90429,362.58512)"
-           v:groupContext="shape"
-           v:mID="44"
-           id="shape44-126-8">
-          <title
-             id="title68189">Sheet.44</title>
-          <path
-             style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-110-19)"
-             id="path68191"
-             class="st12"
-             d="M 0,841.89 H 19.41"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="matrix(-0.68179282,-0.73154531,-0.73154531,0.68179282,720.195,-483.286)"
-           v:groupContext="shape"
-           v:mID="45"
-           id="shape45-131-1">
-          <title
-             id="title68194">Sheet.45</title>
-          <path
-             style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-6-80)"
-             id="path68196"
-             class="st1"
-             d="M 0,841.89 H 19.45"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="matrix(-0.68179282,-0.73154531,-0.73154531,0.68179282,700.353,-483.286)"
-           v:groupContext="shape"
-           v:mID="46"
-           id="shape46-136-4">
-          <title
-             id="title68199">Sheet.46</title>
-          <path
-             style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-110-19)"
-             id="path68201"
-             class="st12"
-             d="M 0,841.89 H 19.45"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           transform="matrix(-0.68179282,-0.73154531,-0.73154531,0.68179282,740.605,-483.286)"
-           v:groupContext="shape"
-           v:mID="47"
-           id="shape47-141-0">
-          <title
-             id="title68204">Sheet.47</title>
-          <path
-             style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr3-110-19)"
-             id="path68206"
-             class="st12"
-             d="M 0,841.89 H 19.45"
-             inkscape:connector-curvature="0" />
-        </g>
-      </g>
-    </g>
-    <g
-       style="font-size:12px;overflow:visible;color-interpolation-filters:sRGB;fill:none;fill-rule:evenodd;stroke-linecap:square;stroke-miterlimit:3"
-       id="g92363"
-       transform="matrix(0.35277725,0,0,0.35277725,110.86405,44.269314)">
-      <g
-         id="g92211"
-         v:groupContext="foregroundPage"
-         v:index="1"
-         v:mID="0">
-		<title
-   id="title91988">Zeichenblatt-1</title>
-
-		<v:pageProperties
-   v:shadowOffsetY="-8.50394"
-   v:shadowOffsetX="8.50394"
-   v:drawingUnits="24"
-   v:pageScale="0.0393701"
-   v:drawingScale="0.0393701" />
-
-		<g
-   transform="matrix(-0.68179282,-0.73154531,-0.73154531,0.68179282,720.762,-503.169)"
-   v:groupContext="shape"
-   v:mID="1"
-   id="shape1-1-1">
-			<title
-   id="title91990">Sheet.1</title>
-
-			<path
-   style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-6-28)"
-   id="path91992"
-   class="st1"
-   d="M 0,841.89 H 15.61"
-   inkscape:connector-curvature="0" />
-
-		</g>
-
-		<g
-   transform="translate(39.685,-748.346)"
-   v:groupContext="shape"
-   v:mID="2"
-   id="shape2-7-7">
-			<title
-   id="title91995">Sheet.2</title>
-
-			<path
-   style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-12-97)"
-   id="path91997"
-   class="st3"
-   d="M 0,841.89 H 99.79"
-   inkscape:connector-curvature="0" />
-
-		</g>
-
-		<g
-   transform="rotate(-90,-340.15735,433.70065)"
-   v:groupContext="shape"
-   v:mID="7"
-   id="shape7-13-7">
-			<title
-   id="title92000">Sheet.7</title>
-
-			<path
-   id="path92002"
-   class="st5"
-   d="M 0,841.89 H 45.35"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="rotate(-90,-330.23635,423.77965)"
-   v:groupContext="shape"
-   v:mID="8"
-   id="shape8-16-84">
-			<title
-   id="title92005">Sheet.8</title>
-
-			<path
-   id="path92007"
-   class="st5"
-   d="M 0,841.89 H 45.35"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="rotate(-90,-320.31485,413.85815)"
-   v:groupContext="shape"
-   v:mID="9"
-   id="shape9-19-9">
-			<title
-   id="title92010">Sheet.9</title>
-
-			<path
-   id="path92012"
-   class="st5"
-   d="M 0,841.89 H 45.35"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="rotate(-90,-310.39385,403.93715)"
-   v:groupContext="shape"
-   v:mID="11"
-   id="shape11-22-15">
-			<title
-   id="title92015">Sheet.11</title>
-
-			<path
-   id="path92017"
-   class="st5"
-   d="M 0,841.89 H 45.35"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(39.685,-768.189)"
-   v:groupContext="shape"
-   v:mID="12"
-   id="shape12-25-5">
-			<title
-   id="title92020">Sheet.12</title>
-
-			<path
-   id="path92022"
-   class="st5"
-   d="M 0,841.89 H 93.54"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(39.685,-788.032)"
-   v:groupContext="shape"
-   v:mID="13"
-   id="shape13-28-24">
-			<title
-   id="title92025">Sheet.13</title>
-
-			<path
-   id="path92027"
-   class="st5"
-   d="M 0,841.89 H 93.54"
-   inkscape:connector-curvature="0"
-   style="stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(86.4567,-766.772)"
-   v:groupContext="shape"
-   v:mID="14"
-   id="shape14-31-4">
-			<title
-   id="title92030">Sheet.14</title>
-
-			<circle
-   id="ellipse92032"
-   class="st6"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(106.299,-766.772)"
-   v:groupContext="shape"
-   v:mID="15"
-   id="shape15-33-0">
-			<title
-   id="title92035">Sheet.15</title>
-
-			<circle
-   id="ellipse92037"
-   class="st6"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(66.6142,-766.772)"
-   v:groupContext="shape"
-   v:mID="16"
-   id="shape16-35-7">
-			<title
-   id="title92040">Sheet.16</title>
-
-			<circle
-   id="ellipse92042"
-   class="st6"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(46.7717,-766.772)"
-   v:groupContext="shape"
-   v:mID="17"
-   id="shape17-37-0">
-			<title
-   id="title92045">Sheet.17</title>
-
-			<circle
-   id="ellipse92047"
-   class="st7"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(126.142,-766.772)"
-   v:groupContext="shape"
-   v:mID="18"
-   id="shape18-39-6">
-			<title
-   id="title92050">Sheet.18</title>
-
-			<circle
-   id="ellipse92052"
-   class="st7"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(86.4567,-786.614)"
-   v:groupContext="shape"
-   v:mID="19"
-   id="shape19-41-6">
-			<title
-   id="title92055">Sheet.19</title>
-
-			<circle
-   id="ellipse92057"
-   class="st6"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(106.299,-786.614)"
-   v:groupContext="shape"
-   v:mID="20"
-   id="shape20-43-39">
-			<title
-   id="title92060">Sheet.20</title>
-
-			<circle
-   id="ellipse92062"
-   class="st7"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(66.6142,-786.614)"
-   v:groupContext="shape"
-   v:mID="21"
-   id="shape21-45-0">
-			<title
-   id="title92065">Sheet.21</title>
-
-			<circle
-   id="ellipse92067"
-   class="st7"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(46.7717,-786.614)"
-   v:groupContext="shape"
-   v:mID="22"
-   id="shape22-47-2">
-			<title
-   id="title92070">Sheet.22</title>
-
-			<circle
-   id="ellipse92072"
-   class="st7"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(126.142,-786.614)"
-   v:groupContext="shape"
-   v:mID="23"
-   id="shape23-49-4">
-			<title
-   id="title92075">Sheet.23</title>
-
-			<circle
-   id="ellipse92077"
-   class="st7"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:none;stroke:#0070c0;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(142.866,-742.677)"
-   v:groupContext="shape"
-   v:mID="24"
-   id="shape24-51-4">
-			<title
-   id="title92080">Sheet.24</title>
-
-			<desc
-   id="desc92082">x</desc>
-
-			<v:textBlock
-   v:tabSpace="42.5197"
-   v:margins="rect(0,0,0,0)" />
-
-			<v:textRect
-   height="11.3386"
-   width="17.01"
-   cy="836.22"
-   cx="8.50394" />
-
-			<rect
-   id="rect92084"
-   class="st8"
-   height="11.3386"
-   width="17.0079"
-   y="830.55103"
-   x="0"
-   style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			<text
-   id="text92086"
-   v:langID="1033"
-   class="st9"
-   y="839.21997"
-   x="6.1799998"
-   style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
-   v:horizAlign="1" />
-<v:tabList />
-x</text>
-		</g>
-
-		<g
-   transform="translate(73.7008,-739.843)"
-   v:groupContext="shape"
-   v:mID="25"
-   id="shape25-54-0">
-			<title
-   id="title92089">Sheet.25</title>
-
-			<path
-   style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-12-97)"
-   id="path92091"
-   class="st3"
-   d="M 0,841.89 H 13.61"
-   inkscape:connector-curvature="0" />
-
-		</g>
-
-		<g
-   transform="rotate(-90,-362.8348,447.8742)"
-   v:groupContext="shape"
-   v:mID="26"
-   id="shape26-59">
-			<title
-   id="title92094">Sheet.26</title>
-
-			<path
-   style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-12-97)"
-   id="path92096"
-   class="st3"
-   d="M 0,841.89 H 13.61"
-   inkscape:connector-curvature="0" />
-
-		</g>
-
-		<g
-   transform="translate(90.7087,-734.173)"
-   v:groupContext="shape"
-   v:mID="27"
-   id="shape27-64">
-			<title
-   id="title92099">Sheet.27</title>
-
-			<desc
-   id="desc92101">x</desc>
-
-			<v:textBlock
-   v:tabSpace="42.5197"
-   v:margins="rect(0,0,0,0)" />
-
-			<v:textRect
-   height="11.3386"
-   width="17.01"
-   cy="836.22"
-   cx="8.50394" />
-
-			<rect
-   id="rect92103"
-   class="st8"
-   height="11.3386"
-   width="17.0079"
-   y="830.55103"
-   x="0"
-   style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			<text
-   id="text92105"
-   v:langID="1033"
-   class="st9"
-   y="839.21997"
-   x="6.1799998"
-   style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
-   v:horizAlign="1" />
-<v:tabList />
-x</text>
-		</g>
-
-		<g
-   transform="translate(22.6772,-776.693)"
-   v:groupContext="shape"
-   v:mID="28"
-   id="shape28-67">
-			<title
-   id="title92108">Sheet.28</title>
-
-			<desc
-   id="desc92110">t</desc>
-
-			<v:textBlock
-   v:tabSpace="42.5197"
-   v:margins="rect(0,0,0,0)" />
-
-			<v:textRect
-   height="11.3386"
-   width="17.01"
-   cy="836.22"
-   cx="8.50394" />
-
-			<rect
-   id="rect92112"
-   class="st8"
-   height="11.3386"
-   width="17.0079"
-   y="830.55103"
-   x="0"
-   style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			<text
-   id="text92114"
-   v:langID="1033"
-   class="st9"
-   y="839.21997"
-   x="6.8400002"
-   style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
-   v:horizAlign="1" />
-<v:tabList />
-t</text>
-		</g>
-
-		<g
-   transform="rotate(90,422.36235,467.71665)"
-   v:groupContext="shape"
-   v:mID="29"
-   id="shape29-70">
-			<title
-   id="title92117">Sheet.29</title>
-
-			<path
-   id="path92119"
-   class="st10"
-   d="m 3.03,841.89 h 0.36 44.8"
-   inkscape:connector-curvature="0"
-   style="stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;marker-start:url(#mrkr5-75)" />
-
-		</g>
-
-		<g
-   transform="translate(39.685,-796.535)"
-   v:groupContext="shape"
-   v:mID="30"
-   id="shape30-76">
-			<title
-   id="title92122">Sheet.30</title>
-
-			<desc
-   id="desc92124">t</desc>
-
-			<v:textBlock
-   v:tabSpace="42.5197"
-   v:margins="rect(0,0,0,0)" />
-
-			<v:textRect
-   height="11.3386"
-   width="17.01"
-   cy="836.22"
-   cx="8.50394" />
-
-			<rect
-   id="rect92126"
-   class="st8"
-   height="11.3386"
-   width="17.0079"
-   y="830.55103"
-   x="0"
-   style="fill:none;stroke:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round" />
-
-			<text
-   id="text92128"
-   v:langID="1033"
-   class="st9"
-   y="839.21997"
-   x="6.8400002"
-   style="font-style:italic;font-size:10.00003242px;font-family:'CMU Serif';fill:#000000"><v:paragraph
-   v:horizAlign="1" />
-<v:tabList />
-t</text>
-		</g>
-
-		<g
-   transform="rotate(-47.5026,-840.65509,375.85532)"
-   v:groupContext="shape"
-   v:mID="31"
-   id="shape31-79">
-			<title
-   id="title92131">Sheet.31</title>
-
-			<path
-   style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-6-28)"
-   id="path92133"
-   class="st1"
-   d="M 0,841.89 H 15.58"
-   inkscape:connector-curvature="0" />
-
-		</g>
-
-		<g
-   transform="rotate(-90.8479,-336.00701,412.82292)"
-   v:groupContext="shape"
-   v:mID="32"
-   id="shape32-84">
-			<title
-   id="title92136">Sheet.32</title>
-
-			<path
-   style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-6-28)"
-   id="path92138"
-   class="st1"
-   d="M 0,841.89 H 8.94"
-   inkscape:connector-curvature="0" />
-
-		</g>
-
-		<g
-   transform="translate(86.4567,-746.929)"
-   v:groupContext="shape"
-   v:mID="33"
-   id="shape33-89">
-			<title
-   id="title92141">Sheet.33</title>
-
-			<circle
-   id="ellipse92143"
-   class="st6"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(106.299,-746.929)"
-   v:groupContext="shape"
-   v:mID="34"
-   id="shape34-91">
-			<title
-   id="title92146">Sheet.34</title>
-
-			<circle
-   id="ellipse92148"
-   class="st6"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(66.6142,-746.929)"
-   v:groupContext="shape"
-   v:mID="35"
-   id="shape35-93">
-			<title
-   id="title92151">Sheet.35</title>
-
-			<circle
-   id="ellipse92153"
-   class="st6"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(126.142,-746.929)"
-   v:groupContext="shape"
-   v:mID="36"
-   id="shape36-95">
-			<title
-   id="title92156">Sheet.36</title>
-
-			<circle
-   id="ellipse92158"
-   class="st6"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="translate(46.7717,-746.929)"
-   v:groupContext="shape"
-   v:mID="38"
-   id="shape38-97">
-			<title
-   id="title92161">Sheet.38</title>
-
-			<circle
-   id="ellipse92163"
-   class="st6"
-   cy="840.47198"
-   cx="1.41732"
-   r="1.41732"
-   style="fill:#c00000;stroke:none;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
-
-		</g>
-
-		<g
-   transform="rotate(-90.8479,-326.45412,422.49623)"
-   v:groupContext="shape"
-   v:mID="39"
-   id="shape39-99">
-			<title
-   id="title92166">Sheet.39</title>
-
-			<path
-   style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-6-28)"
-   id="path92168"
-   class="st1"
-   d="M 0,841.89 H 8.94"
-   inkscape:connector-curvature="0" />
-
-		</g>
-
-		<g
-   transform="rotate(-90.8479,-316.53262,412.72048)"
-   v:groupContext="shape"
-   v:mID="40"
-   id="shape40-104">
-			<title
-   id="title92171">Sheet.40</title>
-
-			<path
-   id="path92173"
-   class="st11"
-   d="M 0,841.89 H 8.94"
-   inkscape:connector-curvature="0"
-   style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-109)" />
-
-		</g>
-
-		<g
-   transform="rotate(-90.8479,-336.37512,432.27149)"
-   v:groupContext="shape"
-   v:mID="41"
-   id="shape41-110">
-			<title
-   id="title92176">Sheet.41</title>
-
-			<path
-   id="path92178"
-   class="st11"
-   d="M 0,841.89 H 8.94"
-   inkscape:connector-curvature="0"
-   style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-109)" />
-
-		</g>
-
-		<g
-   transform="rotate(-47.5026,-828.03029,408.32212)"
-   v:groupContext="shape"
-   v:mID="42"
-   id="shape42-115">
-			<title
-   id="title92181">Sheet.42</title>
-
-			<path
-   id="path92183"
-   class="st11"
-   d="M 0,841.89 H 15.58"
-   inkscape:connector-curvature="0"
-   style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-109)" />
-
-		</g>
-
-		<g
-   transform="rotate(-47.5026,-817.82579,385.13205)"
-   v:groupContext="shape"
-   v:mID="43"
-   id="shape43-120">
-			<title
-   id="title92186">Sheet.43</title>
-
-			<path
-   style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-6-28)"
-   id="path92188"
-   class="st1"
-   d="M 0,841.89 H 15.58"
-   inkscape:connector-curvature="0" />
-
-		</g>
-
-		<g
-   transform="rotate(-47.5026,-807.90429,362.58512)"
-   v:groupContext="shape"
-   v:mID="44"
-   id="shape44-125">
-			<title
-   id="title92191">Sheet.44</title>
-
-			<path
-   id="path92193"
-   class="st11"
-   d="M 0,841.89 H 15.58"
-   inkscape:connector-curvature="0"
-   style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-109)" />
-
-		</g>
-
-		<g
-   transform="matrix(-0.68179282,-0.73154531,-0.73154531,0.68179282,720.195,-483.286)"
-   v:groupContext="shape"
-   v:mID="45"
-   id="shape45-130">
-			<title
-   id="title92196">Sheet.45</title>
-
-			<path
-   style="stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-6-28)"
-   id="path92198"
-   class="st1"
-   d="M 0,841.89 H 15.61"
-   inkscape:connector-curvature="0" />
-
-		</g>
-
-		<g
-   transform="matrix(-0.68179282,-0.73154531,-0.73154531,0.68179282,700.353,-483.286)"
-   v:groupContext="shape"
-   v:mID="46"
-   id="shape46-135">
-			<title
-   id="title92201">Sheet.46</title>
-
-			<path
-   id="path92203"
-   class="st11"
-   d="M 0,841.89 H 15.61"
-   inkscape:connector-curvature="0"
-   style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-109)" />
-
-		</g>
-
-		<g
-   transform="matrix(-0.68179282,-0.73154531,-0.73154531,0.68179282,740.605,-483.286)"
-   v:groupContext="shape"
-   v:mID="47"
-   id="shape47-140">
-			<title
-   id="title92206">Sheet.47</title>
-
-			<path
-   id="path92208"
-   class="st11"
-   d="M 0,841.89 H 15.61"
-   inkscape:connector-curvature="0"
-   style="stroke:#7f7f7f;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-109)" />
-
-		</g>
-
-	</g>
-    </g>
   </g>
   <style
      id="style41137"
@@ -48459,8 +46948,7 @@ t</text>
 	]]></style>
   <style
      id="style91970"
-     type="text/css">
-	<![CDATA[
+     type="text/css"><![CDATA[
 		.st1 {marker-end:url(#mrkr5-6);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.34246575342466}
 		.st3 {marker-end:url(#mrkr5-12);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
@@ -48474,6 +46962,5 @@ t</text>
 		.st11 {marker-end:url(#mrkr5-109);stroke:#7f7f7f;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st12 {fill:#7f7f7f;fill-opacity:1;stroke:#7f7f7f;stroke-opacity:1;stroke-width:0.34246575342466}
 		.st13 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
-	]]>
-	</style>
+	]]></style>
 </svg>
