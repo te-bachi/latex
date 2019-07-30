@@ -14,7 +14,6 @@
 
 %-------------------------------------------------------------------------------
 % Packete nutzen
-\usepackage{ngerman,palatino,setspace}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
@@ -35,13 +34,86 @@
 }
 
 %-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations}
+
+%-------------------------------------------------------------------------------
+% \ifthenelse
+\usepackage{ifthen}
+
+%-------------------------------------------------------------------------------
+% 
+\usepackage{xparse}
+\NewDocumentCommand{\dx}{ O{} }{{\Delta x^{#1}}}
+\NewDocumentCommand{\dy}{ O{} }{{\Delta y^{#1}}}
+\NewDocumentCommand{\dt}{ O{} }{{\Delta t^{#1}}}
+\NewDocumentCommand{\du}{ O{} }{{\Delta u^{#1}}}
+\NewDocumentCommand{\px}{ O{} }{{\partial x^{#1}}}
+\NewDocumentCommand{\py}{ O{} }{{\partial y^{#1}}}
+\NewDocumentCommand{\pt}{ O{} }{{\partial t^{#1}}}
+\NewDocumentCommand{\pu}{ O{} }{{\partial u^{#1}}}
+\NewDocumentCommand{\p}{ O{} }{{\partial^{#1}}}
+\NewDocumentCommand{\re}{ O{} }{{\mathbb{R}^{#1}}}
+\NewDocumentCommand{\lap}{}{\mathcal{L}}
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+\newcommand{\dom}{{\Omega}}
+\newcommand{\bound}{{\partial \Omega}}
+\newcommand{\e}{\mathrm{e}}
+
+
+\newcommand{\writen}[2]{%  
+    \begin{tikzpicture}[]
+        
+        % draw vertical lines
+        \foreach \x in {0,...,#1}
+        {
+            \draw[lightgray] (\x * 4mm, 0mm) -- (\x * 4mm, #2 * 4mm);
+        }
+
+        % draw horizontal lines
+        \foreach \y in {0,...,#2}
+        {
+            \draw[lightgray] (0mm, \y * 4mm) -- (#1 * 4mm, \y * 4mm);
+        }
+
+        % border
+        \draw[black] (0mm, 0mm) -- (#1 * 4mm, 0mm);
+        \draw[black] (0mm, 0mm) -- (0mm, #2 * 4mm);
+        \draw[black] (#1 * 4mm, 0mm) -- (#1 * 4mm, #2 * 4mm);
+        \draw[black] (0mm, #2 * 4mm) -- (#1 * 4mm, #2 * 4mm);
+    \end{tikzpicture}
+}
+
+%-------------------------------------------------------------------------------
+% Paragraph
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.35em}
+
+%-------------------------------------------------------------------------------
 % Dokument
 \title{Prüfung 2017}
 \author{}
 \date{}
 \begin{document}
+
+    %-- Page 1 -----------------------------------------------------------------
     \maketitle
-    \vspace{-25mm}
+
+    %-- Page 2 -----------------------------------------------------------------
+    \newpage
     \section*{Grundlagen / Analytisch}
 	\subsection*{Aufgabe 1}
 
@@ -61,6 +133,16 @@
         \item Finden Sie eine Funktion $u$ mit dieser Eigenschaft.
         \item Ist die Lösung $u$ durch die gegebenen Randbedingungen eindeutig bestimmt?
     \end{enumerate}
+
+    \writen{42}{44}
+
+    %-- Page 3 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 4 -----------------------------------------------------------------
+    \newpage
 
 	\subsection*{Aufgabe 2}
 
@@ -92,7 +174,14 @@
         y \left(x\right) = \left( c - \frac{b}{a} \right) \mathrm{e}^{-ax} + \frac{b}{a}.
     \end{align*}
 
-    \newgeometry{left=20mm,right=20mm,top=25mm,bottom=25mm}
+    \writen{42}{40}
+
+    %-- Page 5 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+    
+    %-- Page 6 -----------------------------------------------------------------
     \newpage
     
 	\subsection*{Aufgabe 3}
@@ -107,6 +196,16 @@
     \end{align}
     gelöst werden. Auf welchem Teil des Randes $x^2 + y^2 = 1$ müssen Randwerte vorgegeben werden,
     damit die Lösung $u{\left(x,  y\right)}$ für Punkte mit $x > 0$ und $x^2 + y^2 = 4$ eindeutig bestimmt ist?
+
+    \writen{42}{50}
+
+    %-- Page 7 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 8 -----------------------------------------------------------------
+    \newpage
 
     \subsection*{Aufgabe 4}
 
@@ -130,6 +229,14 @@
         \item Legen die Vorgaben die Separationslösung eindeutig fest?
     \end{enumerate}
 
+    \writen{42}{46}
+
+    %-- Page 9 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 10 -----------------------------------------------------------------
     \newpage
     
     \section*{Numerik}
@@ -178,6 +285,16 @@
     \end{align*}
     Benutzen Sie hierzu geeignete Finite Differenzen.
 
+    \writen{42}{33}
+
+    %-- Page 11 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 12 -----------------------------------------------------------------
+    \newpage
+
     \subsection*{Aufgabe 6}
     Die reelle Funktion $u{\left(x,  t\right)}$ ist auf dem Streifen
     \begin{align*}
@@ -199,6 +316,16 @@
     \begin{align*}
         \Delta{x} = {^1/_3} \qquad \text{und} \qquad \Delta{t} = {^1/_{12}}
     \end{align*}
+    
+    \writen{42}{40}
+
+    %-- Page 13 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 14 -----------------------------------------------------------------
+    \newpage
 
     \subsection*{Aufgabe 7}
     Die reelle Funktion $u{\left(x,  y\right)}$ ist auf dem Quadrat
@@ -239,6 +366,16 @@
         \end{pmatrix}}
     \end{align*}
     Benutzen Sie hierzu Finite Volumina nach Voronoi.
+    
+    \writen{42}{38}
+
+    %-- Page 15 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 16 -----------------------------------------------------------------
+    \newpage
 
     \subsection*{Aufgabe 8}
     Die reelle Funktion $u{\left(x\right)}$ ist auf dem Intervall
@@ -265,5 +402,12 @@
     \begin{align*}
         w_1{\left(x\right)} = 1, \quad w_2{\left(x\right)} = x
     \end{align*}
+
+    \writen{42}{40}
+
+    %-- Page 17 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
 
 \end{document}
