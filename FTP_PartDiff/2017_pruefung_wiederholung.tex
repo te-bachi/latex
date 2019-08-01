@@ -1,0 +1,445 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% Für enumerate
+\usepackage{enumitem}
+\setlist[enumerate]{
+    wide=0pt,
+    leftmargin=*,
+    itemsep=-1ex,
+    parsep=2ex,
+    labelsep=1ex,
+    label=\alph*)
+}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations}
+
+%-------------------------------------------------------------------------------
+% \ifthenelse
+\usepackage{ifthen}
+
+%-------------------------------------------------------------------------------
+% 
+\usepackage{xparse}
+\NewDocumentCommand{\dx}{ O{} }{{\Delta x^{#1}}}
+\NewDocumentCommand{\dy}{ O{} }{{\Delta y^{#1}}}
+\NewDocumentCommand{\dt}{ O{} }{{\Delta t^{#1}}}
+\NewDocumentCommand{\du}{ O{} }{{\Delta u^{#1}}}
+\NewDocumentCommand{\px}{ O{} }{{\partial x^{#1}}}
+\NewDocumentCommand{\py}{ O{} }{{\partial y^{#1}}}
+\NewDocumentCommand{\pt}{ O{} }{{\partial t^{#1}}}
+\NewDocumentCommand{\pu}{ O{} }{{\partial u^{#1}}}
+\NewDocumentCommand{\p}{ O{} }{{\partial^{#1}}}
+\NewDocumentCommand{\re}{ O{} }{{\mathbb{R}^{#1}}}
+\NewDocumentCommand{\lap}{}{\mathcal{L}}
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+\newcommand{\dom}{{\Omega}}
+\newcommand{\bound}{{\partial \Omega}}
+\newcommand{\e}{\mathrm{e}}
+
+
+\newcommand{\writen}[2]{%  
+    \begin{tikzpicture}[]
+        
+        % draw vertical lines
+        \foreach \x in {0,...,#1}
+        {
+            \draw[lightgray] (\x * 4mm, 0mm) -- (\x * 4mm, #2 * 4mm);
+        }
+
+        % draw horizontal lines
+        \foreach \y in {0,...,#2}
+        {
+            \draw[lightgray] (0mm, \y * 4mm) -- (#1 * 4mm, \y * 4mm);
+        }
+
+        % border
+        \draw[black] (0mm, 0mm) -- (#1 * 4mm, 0mm);
+        \draw[black] (0mm, 0mm) -- (0mm, #2 * 4mm);
+        \draw[black] (#1 * 4mm, 0mm) -- (#1 * 4mm, #2 * 4mm);
+        \draw[black] (0mm, #2 * 4mm) -- (#1 * 4mm, #2 * 4mm);
+    \end{tikzpicture}
+}
+
+% Einzug mit Dimension (z.B. 1cm)
+\newenvironment{myindent}[1]{% 
+    \parskip=6pt \parindent=0pt \raggedright 
+    \def\lititem{\hangindent=#1 \hangafter=1}
+}{%
+    \par\ignorespaces
+}
+
+\newenvironment{hint}[2]{% 
+    \begin{minipage}[t]{#2}
+        \textit{#1}
+    \end{minipage}
+    \begin{minipage}[t]{\linewidth - #2}
+}{%
+    \end{minipage}
+} 
+
+%-------------------------------------------------------------------------------
+% Paragraph
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.35em}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\title{Wiederholungsprüfung 2017}
+\author{}
+\date{}
+\begin{document}
+
+    %-- Page 1 -----------------------------------------------------------------
+    \maketitle
+
+    %-- Page 2 -----------------------------------------------------------------
+    \newpage
+    \section*{Grundlagen / Analytisch}
+    \subsection*{Aufgabe 1}
+
+    Gegeben ist die Differentialgleichung
+    \begin{align}
+        \frac{\p[4] u}{\pt[4]} + \frac{\pu}{\px} = 0
+    \end{align}
+    auf dem Gebiet
+    \begin{align*}
+        \Omega = \kq{\kl{x, t} \mid t > 0 \land x > 0}
+    \end{align*}
+    mit Randbedingungen
+    \begin{align}
+        u\kl{x, 0} &= 0, & \f{\pu}{\pt}\kl{x, 0} &= 0, & \f{\p[2] u}{\pt[2]}\kl{x, 0} &= 0, & \f{\p[3] u}{\pt[3]}\kl{x, 0} &= 1,\\
+        u\kl{0, t} &= \e^{-t}
+    \end{align}
+    \begin{enumerate}
+        \item{
+            Führen Sie Laplace-Transformation nach der Variablen $t$ durch und stellen Sie eine
+            Differentialgleichung für $\lap u \kl{x, s}$ samt Anfangsbedingungen auf.
+        }
+        \item{
+            Bestimmen Sie die Funktion $\lap u \kl{x, s}$.
+        }
+    \end{enumerate}
+    \begin{hint}{Hinweis.}{2cm}
+        Die gewöhnliche Differentialgleichung $y' + ay = b$ mit Anfangsbedingung
+        $y\kl{0} = c$ hat die allgemeine Lösung
+    \end{hint}
+    \begin{align*}
+        y\kl{x} = \kl{c - \f{b}{a}} \cdot \e^{-a x} + \f{b}{a}
+    \end{align*}
+
+    \writen{42}{36}
+
+    %-- Page 3 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{61}
+
+    %-- Page 4 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Aufgabe 2}
+
+    Sei $0 < y_0 < 1$ gegeben und $\dom$ sei das Gebiet
+    \begin{align}
+        \dom = \kq{\kl{x, y} \mid 0 < x < 1 \land y_0 < y < 1 }
+    \end{align}
+    Die Funktion $u$ erfüllt in $\dom$ die partielle Differentialgleichung
+    \begin{align}
+        \f{\pu}{\px} + \f{1}{y^2}\f{\pu}{\py} = 1
+    \end{align}
+    und die Randbedingung
+    \begin{align*}
+        u\kl{x, y_0} = \cos\kl{x}, \qquad 0 < x < 1.
+    \end{align*}
+    \begin{enumerate}
+        \item{
+            Finden Sie eine Funktion $u$ mit diesen Eigenschaften.
+        }
+        \item{
+            Ist die Lösung $u$ durch die gegebenen Randbedingungen eindeutig bestimmt?
+        }
+    \end{enumerate}
+
+    \writen{42}{48}
+
+    %-- Page 5 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+    
+    %-- Page 6 -----------------------------------------------------------------
+    \newpage
+    
+	\subsection*{Aufgabe 3}
+
+    Auf dem Gebiet
+    \begin{align*}
+        \Omega = \left\{\left(x, y\right) \mid 1 < x^2 + y^2 \right\}
+    \end{align*}
+    soll die folgende partielle Differentialgleichung in Polarkoordinaten
+    \begin{align}
+        \frac{\partial^2 u}{\partial r^2} - \frac{\partial^2 u}{\partial \varphi^2} = 0
+    \end{align}
+    gelöst werden. Auf welchem Teil des Randes $x^2 + y^2 = 1$ müssen Randwerte vorgegeben werden,
+    damit die Lösung $u{\left(x,  y\right)}$ für Punkte mit $x > 0$ und $x^2 + y^2 = 4$ eindeutig bestimmt ist?
+
+    \writen{42}{50}
+
+    %-- Page 7 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+    %-- Page 8 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Aufgabe 4}
+
+    Die biharmonische Gleichung
+    \begin{align}
+        \Delta \du = 0
+    \end{align}
+    soll gelöst werden. Man kann sie auch als
+    \begin{align*}
+        \f{\p[4]u}{\px[4]} + 2 \f{\p[4]u}{\px[2]\py[2]} + \f{\p[4]u}{\py[4]} = 0
+    \end{align*}
+    schreiben. Verwenden Sie einen Separationsansatz der Form $u\kl{x,y} = X\kl{x} \cdot Y\kl{y}$
+    und leiten Sie gewöhnliche Differentialgleichungen für $X(x)$ und $Y(y)$ her,
+    mit denen das Problem gelöst werden kann.
+    
+    \begin{hint}{Hinweis.}{2cm}
+        Unmittelbar nach Einsetzen des Separationsansatzes lässt sich die Differentialgleichung ???
+        noch nicht separieren. Schreiben Sie sie in der Form
+        \begin{align*}
+            E\kl{x} + F\kl{x} \cdot G\kl{y} + H\kl{y} = 0
+        \end{align*}
+        und leiten Sie nach $x$ und nach $y$ ab. Zeigen Sie dann, dass mindestens einer der Terme
+        $F\kl{x}$ und $G\kl{y}$ konstant sein muss, schreiben Sie $F\kl{x} = \lambda_1$ im
+        ersten Fall und $G\kl{y} = \lambda_2$ im zweiten Fall. In jedem dieser zwei Fälle
+        wird die Separation möglich.
+        
+        \vspace{2mm}
+        Die Differentialgleichungen müssen nicht gelöst werden.
+    \end{hint}
+
+
+    \writen{42}{40}
+
+    %-- Page 9 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+    %-- Page 10 -----------------------------------------------------------------
+    \newpage
+    
+    \section*{Numerik}
+
+    \subsection*{Aufgabe 5}
+    Die reelle Funktion $u{\left(x,  y\right)}$ ist auf dem Quadrat
+    \begin{align*}
+        \Omega = \left[ 0, 1 \right] \times \left[ 0, 1 \right]
+    \end{align*}
+    definiert. Sie erfüllt im Inneren von $\Omega$ die Bipotentialgleichung
+    \begin{align*}
+        \Delta{\left( \Delta u{\left(x,  y\right)} \right)} = 4
+    \end{align*}
+    und auf dem Rand von $\Omega$ die Bedingung
+    \begin{align*}
+        u{\left(x,  y\right)} = 0
+    \end{align*}
+    und
+    \begin{align*}
+        u{\left(x,  y\right)} =
+        \setlength{\arraycolsep}{0pt}
+        \renewcommand{\arraystretch}{1.2}
+        \left\{
+            \begin{array}{l @{\quad} l r l}
+                x^2-x & \text{falls\quad} & y &{}= 0 \\
+                x^2-x & \text{falls\quad} & y &{}= 1 \\
+                y^2-y & \text{falls\quad} & x &{}= 0 \\
+                y^2-y & \text{falls\quad} & x &{}= 1
+            \end{array}
+        \right.
+    \end{align*}
+    Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten von $\Omega$
+    \begin{align*}
+        \begin{pmatrix}
+            {^1/_3} \\ {^1/_3}
+        \end{pmatrix},\quad
+        \begin{pmatrix}
+            {^2/_3} \\ {^1/_3}
+        \end{pmatrix},\quad
+        \begin{pmatrix}
+            {^1/_3} \\ {^2/_3}
+        \end{pmatrix},\quad
+        \begin{pmatrix}
+            {^2/_3} \\ {^2/_3}
+        \end{pmatrix}
+    \end{align*}
+    Benutzen Sie hierzu geeignete Finite Differenzen.
+
+    \writen{42}{33}
+
+    %-- Page 11 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+    %-- Page 12 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Aufgabe 6}
+    Die reelle Funktion $u{\left(x,  t\right)}$ ist auf dem Streifen
+    \begin{align*}
+        \Omega = \left[ 0, 1 \right] \times \left[ 0, \infty \right)
+    \end{align*}
+    definiert. Sie erfüllt im Inneren von $\Omega$ die Wärmeleitungsgleichung
+    \begin{align*}
+        u_t{\left(x,  t\right)} = u_{xx}{\left(x,  t\right)}
+    \end{align*}
+    und auf dem Rand von $\Omega$ die Bedingung
+    \begin{align*}
+        u{\left(0,  t\right)} = 1 \qquad \text{und} \quad u{\left(1,  t\right)} = 2
+    \end{align*}
+    sowie
+    \begin{align*}
+        u{\left(x,  0\right)} = 1 + 2 \cdot x - x^2
+    \end{align*}
+    Benutzen Sie hierzu das elementare Implizite Finite Differenzen Verfahren mit Schrittweite
+    \begin{align*}
+        \Delta{x} = {^1/_3} \qquad \text{und} \qquad \Delta{t} = {^1/_{12}}
+    \end{align*}
+    
+    \writen{42}{40}
+
+    %-- Page 13 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+    %-- Page 14 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Aufgabe 7}
+    Die reelle Funktion $u{\left(x,  y\right)}$ ist auf dem Quadrat
+    \begin{align*}
+        \Omega = \left[ 0, 1 \right] \times \left[ 0, 1 \right]
+    \end{align*}
+    definiert. Sie erfüllt im Inneren von $\Omega$ die Laplacegleichung
+    \begin{align*}
+        \Delta u{\left(x,  y\right)} = 0
+    \end{align*}
+    und auf dem Rand von $\Omega$ die Randbedingung
+    \begin{align*}
+        u{\left(x,  y\right)} =
+        \setlength{\arraycolsep}{0pt}
+        \renewcommand{\arraystretch}{1.2}
+        \left\{
+            \begin{array}{l @{\quad} l r l}
+                0 & \text{falls\quad} & y &{}= 0 \\
+                x & \text{falls\quad} & y &{}= 1 \\
+                0 & \text{falls\quad} & x &{}= 0 \\
+                y & \text{falls\quad} & x &{}= 1
+            \end{array}
+        \right.
+    \end{align*}
+    Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten
+    \begin{align*}
+        \tilde{u}_1 = \tilde{u}{\begin{pmatrix}
+            {^1/_5} \\ {^1/_5}
+        \end{pmatrix}},\quad
+        \tilde{u}_2 = \tilde{u}{\begin{pmatrix}
+            {^3/_5} \\ {^1/_5}
+        \end{pmatrix}},\quad
+        \tilde{u}_3 = \tilde{u}{\begin{pmatrix}
+            {^1/_5} \\ {^3/_5}
+        \end{pmatrix}},\quad
+        \tilde{u}_4 = \tilde{u}{\begin{pmatrix}
+            {^3/_5} \\ {^3/_5}
+        \end{pmatrix}}
+    \end{align*}
+    Benutzen Sie hierzu Finite Volumina nach Voronoi.
+    
+    \writen{42}{38}
+
+    %-- Page 15 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+    %-- Page 16 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Aufgabe 8}
+    Die reelle Funktion $u{\left(x\right)}$ ist auf dem Intervall
+    \begin{align*}
+        \Omega = \left[ 0, 1 \right]
+    \end{align*}
+    definiert. Sie erfüllt im Inneren von $\Omega$ die Differentialgleichung
+    \begin{align*}
+        u''{\left(x\right)} + u{\left(x\right)} = 1
+    \end{align*}
+    und auf dem Rand von $\Omega$ die Randbedingung
+    \begin{align*}
+        u{\left( 0 \right)} = 0, \qquad u{\left( 1 \right)} = 1
+    \end{align*}
+    Berechnen Sie $a_1$ und $a_2$ im Approximationsansatz für $u$
+    \begin{align*}
+        \tilde{u} = v_0{\left(x\right)} + a_1 \cdot v_1{\left(x\right)} + a_2 \cdot v_2{\left(x\right)}
+    \end{align*}
+    mit
+    \begin{align*}
+        v_0{\left(x\right)} = x, \quad v_1{\left(x\right)} = x^2 - x, \quad v_2{\left(x\right)} = x^3 - x^2.
+    \end{align*}
+    Benutzen Sie hierzu die Methode der Gewichteten Residuen mit Gewichtsfunktion
+    \begin{align*}
+        w_1{\left(x\right)} = 1, \quad w_2{\left(x\right)} = x
+    \end{align*}
+
+    \writen{42}{40}
+
+    %-- Page 17 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+\end{document}
