@@ -16,6 +16,7 @@
 % Packete nutzen
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
 \usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -117,7 +118,7 @@
     \section*{Grundlagen / Analytisch}
 	\subsection*{Aufgabe 1}
 
-    Sei $0 < x_0 < 1 $ gegeben und $\Omega$ das Gebiet
+    Sei $0 < x_0 < 1 $ gegeben und $\Omega$ sei das Gebiet
     \begin{align}
         \Omega = \left\{\left(x, y\right) \mid x_0 < x < 1 \land 0 < y < 1 \right\}
     \end{align}
@@ -139,7 +140,7 @@
     %-- Page 3 -----------------------------------------------------------------
     \newpage
 
-    \writen{42}{61}
+    \writen{42}{66}
 
     %-- Page 4 -----------------------------------------------------------------
     \newpage
@@ -164,9 +165,9 @@
         \end{split}
     \end{align}
     \begin{enumerate}
-        \item Führen Sie Laplace-Transformation nach der Variable $t$ durch und stellen Sie
+        \item Führen Sie Laplace-Transformation nach der Variablen $t$ durch und stellen Sie
               eine Differentialgleichung für $\mathcal{L} u{\left( x, s \right)}$ samt
-              Anfangsbedingung auf.
+              Anfangsbedingungen auf.
         \item Bestimmen Sie die Funktion $\mathcal{L} u{\left( x, s \right)}$.
     \end{enumerate}
     \textit{Hinweis.} \quad Die gewöhnliche Differentialgleichung $y' + ay = b$ mit Anfangsbedingung $y \left(0\right) = c$ hat die allgemeine Lösung
@@ -179,7 +180,7 @@
     %-- Page 5 -----------------------------------------------------------------
     \newpage
 
-    \writen{42}{61}
+    \writen{42}{66}
     
     %-- Page 6 -----------------------------------------------------------------
     \newpage
@@ -202,7 +203,7 @@
     %-- Page 7 -----------------------------------------------------------------
     \newpage
 
-    \writen{42}{61}
+    \writen{42}{66}
 
     %-- Page 8 -----------------------------------------------------------------
     \newpage
@@ -224,7 +225,7 @@
     \begin{enumerate}
         \item Führen Sie Separation durch mit Hilfe eines Ansatzes der Form
               $u{\left(x,  y\right)} = X{\left(x\right)} + Y{\left(y\right)}$ und stellen
-              Sie Differentialgleichung und Anfangsbedingungen für $X{\left(x\right)}$ und
+              Sie Differentialgleichungen und Anfangsbedingungen für $X{\left(x\right)}$ und
               $Y{\left(y\right)}$ auf.
         \item Legen die Vorgaben die Separationslösung eindeutig fest?
     \end{enumerate}
@@ -234,7 +235,7 @@
     %-- Page 9 -----------------------------------------------------------------
     \newpage
 
-    \writen{42}{61}
+    \writen{42}{66}
 
     %-- Page 10 -----------------------------------------------------------------
     \newpage
@@ -256,7 +257,7 @@
     \end{align*}
     und
     \begin{align*}
-        u{\left(x,  y\right)} =
+        \du{\left(x,  y\right)} =
         \setlength{\arraycolsep}{0pt}
         \renewcommand{\arraystretch}{1.2}
         \left\{
@@ -290,7 +291,7 @@
     %-- Page 11 -----------------------------------------------------------------
     \newpage
 
-    \writen{42}{61}
+    \writen{42}{66}
 
     %-- Page 12 -----------------------------------------------------------------
     \newpage
@@ -312,7 +313,16 @@
     \begin{align*}
         u{\left(x,  0\right)} = 1 + 2 \cdot x - x^2
     \end{align*}
-    Benutzen Sie hierzu das elementare Implizite Finite Differenzen Verfahren mit Schrittweite
+    Gesucht ist eine Approximation der Werte von $u$ in den zwei Punkten von
+    \begin{align*}
+        \begin{pmatrix}
+            {^1/_3} \\ {^1/_4}
+        \end{pmatrix},\quad
+        \begin{pmatrix}
+            {^2/_3} \\ {^1/_4}
+        \end{pmatrix}
+    \end{align*}
+    Benutzen Sie hierzu das elementare Implizite Finite Differenzen Verfahren mit Schrittweiten
     \begin{align*}
         \Delta{x} = {^1/_3} \qquad \text{und} \qquad \Delta{t} = {^1/_{12}}
     \end{align*}
@@ -322,7 +332,7 @@
     %-- Page 13 -----------------------------------------------------------------
     \newpage
 
-    \writen{42}{61}
+    \writen{42}{66}
 
     %-- Page 14 -----------------------------------------------------------------
     \newpage
@@ -372,7 +382,7 @@
     %-- Page 15 -----------------------------------------------------------------
     \newpage
 
-    \writen{42}{61}
+    \writen{42}{66}
 
     %-- Page 16 -----------------------------------------------------------------
     \newpage
@@ -408,6 +418,6 @@
     %-- Page 17 -----------------------------------------------------------------
     \newpage
 
-    \writen{42}{61}
+    \writen{42}{66}
 
 \end{document}

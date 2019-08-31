@@ -16,8 +16,8 @@
 % Packete nutzen
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
 \usepackage[ngerman]{babel}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
@@ -42,6 +42,16 @@
 %-------------------------------------------------------------------------------
 % \ifthenelse
 \usepackage{ifthen}
+
+%-------------------------------------------------------------------------------
+% Links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
 
 %-------------------------------------------------------------------------------
 % 
@@ -146,7 +156,7 @@
     mit Randbedingungen
     \begin{align}
         u\kl{x, 0} &= 0, & \f{\pu}{\pt}\kl{x, 0} &= 0, & \f{\p[2] u}{\pt[2]}\kl{x, 0} &= 0, & \f{\p[3] u}{\pt[3]}\kl{x, 0} &= 1,\\
-        u\kl{0, t} &= \e^{-t}
+        u\kl{0, t} &= \e^{-t} \nonumber
     \end{align}
     \begin{enumerate}
         \item{
@@ -170,7 +180,7 @@
     %-- Page 3 -----------------------------------------------------------------
     \newpage
 
-    \writen{42}{61}
+    \writen{42}{66}
 
     %-- Page 4 -----------------------------------------------------------------
     \newpage
@@ -238,18 +248,18 @@
         \Delta \du = 0
     \end{align}
     soll gelöst werden. Man kann sie auch als
-    \begin{align*}
-        \f{\p[4]u}{\px[4]} + 2 \f{\p[4]u}{\px[2]\py[2]} + \f{\p[4]u}{\py[4]} = 0
-    \end{align*}
+    \begin{align}
+        \f{\p[4]u}{\px[4]} + 2 \f{\p[4]u}{\px[2]\py[2]} + \f{\p[4]u}{\py[4]} = 0 \label{eq:biharm}
+    \end{align}
     schreiben. Verwenden Sie einen Separationsansatz der Form $u\kl{x,y} = X\kl{x} \cdot Y\kl{y}$
     und leiten Sie gewöhnliche Differentialgleichungen für $X(x)$ und $Y(y)$ her,
     mit denen das Problem gelöst werden kann.
     
     \begin{hint}{Hinweis.}{2cm}
-        Unmittelbar nach Einsetzen des Separationsansatzes lässt sich die Differentialgleichung ???
+        Unmittelbar nach Einsetzen des Separationsansatzes lässt sich die Differentialgleichung $\kl{\ref{eq:biharm}}$
         noch nicht separieren. Schreiben Sie sie in der Form
         \begin{align*}
-            E\kl{x} + F\kl{x} \cdot G\kl{y} + H\kl{y} = 0
+            E\kl{x} + \ks{F\kl{x} \cdot G\kl{y}} + H\kl{y} = 0
         \end{align*}
         und leiten Sie nach $x$ und nach $y$ ab. Zeigen Sie dann, dass mindestens einer der Terme
         $F\kl{x}$ und $G\kl{y}$ konstant sein muss, schreiben Sie $F\kl{x} = \lambda_1$ im
@@ -274,31 +284,24 @@
     \section*{Numerik}
 
     \subsection*{Aufgabe 5}
-    Die reelle Funktion $u{\left(x,  y\right)}$ ist auf dem Quadrat
+    In der Ebene ist ein kartesisches Koordinatensystem vorgegeben. \\
+    Die reelle Funktion $u\kl{x,y}$ ist auf dem Quadrat
     \begin{align*}
-        \Omega = \left[ 0, 1 \right] \times \left[ 0, 1 \right]
+        \Omega = \ks{0, 1} \times \ks{0, 1}
     \end{align*}
-    definiert. Sie erfüllt im Inneren von $\Omega$ die Bipotentialgleichung
+    definiert. Sie erfüllt im Inneren von $\Omega$ die Differentialgleichung
     \begin{align*}
-        \Delta{\left( \Delta u{\left(x,  y\right)} \right)} = 4
+        \du \kl{x,  y} = 0
     \end{align*}
     und auf dem Rand von $\Omega$ die Bedingung
     \begin{align*}
-        u{\left(x,  y\right)} = 0
+        u{\left(x,  0\right)} = 0, \quad
+        u{\left(0,  y\right)} = 0, \quad
+        u{\left(x,  1\right)} = 0
     \end{align*}
-    und
+    sowie
     \begin{align*}
-        u{\left(x,  y\right)} =
-        \setlength{\arraycolsep}{0pt}
-        \renewcommand{\arraystretch}{1.2}
-        \left\{
-            \begin{array}{l @{\quad} l r l}
-                x^2-x & \text{falls\quad} & y &{}= 0 \\
-                x^2-x & \text{falls\quad} & y &{}= 1 \\
-                y^2-y & \text{falls\quad} & x &{}= 0 \\
-                y^2-y & \text{falls\quad} & x &{}= 1
-            \end{array}
-        \right.
+        \f{\pu}{\p n}\kl{1,  y} = 1
     \end{align*}
     Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten von $\Omega$
     \begin{align*}
@@ -317,7 +320,7 @@
     \end{align*}
     Benutzen Sie hierzu geeignete Finite Differenzen.
 
-    \writen{42}{33}
+    \writen{42}{35}
 
     %-- Page 11 -----------------------------------------------------------------
     \newpage
@@ -330,23 +333,27 @@
     \subsection*{Aufgabe 6}
     Die reelle Funktion $u{\left(x,  t\right)}$ ist auf dem Streifen
     \begin{align*}
-        \Omega = \left[ 0, 1 \right] \times \left[ 0, \infty \right)
+        \Omega = \left[ 0, 4 \right] \times \left[ 0, \infty \right)
     \end{align*}
     definiert. Sie erfüllt im Inneren von $\Omega$ die Wärmeleitungsgleichung
     \begin{align*}
-        u_t{\left(x,  t\right)} = u_{xx}{\left(x,  t\right)}
+        u_{xx}\kl{x,  t} = u_{t}\kl{x,  t}
     \end{align*}
     und auf dem Rand von $\Omega$ die Bedingung
     \begin{align*}
-        u{\left(0,  t\right)} = 1 \qquad \text{und} \quad u{\left(1,  t\right)} = 2
+        u{\left(0,  t\right)} = 0 \qquad \text{und} \qquad u{\left(4,  t\right)} = 0
     \end{align*}
     sowie
     \begin{align*}
-        u{\left(x,  0\right)} = 1 + 2 \cdot x - x^2
+        u{\left(x,  0\right)} = x^2 \cdot \kl{4 - x}^2
     \end{align*}
-    Benutzen Sie hierzu das elementare Implizite Finite Differenzen Verfahren mit Schrittweite
+    Gesucht ist eine Approximation der Werte von $u$ in den drei Punkten von $\Omega$
     \begin{align*}
-        \Delta{x} = {^1/_3} \qquad \text{und} \qquad \Delta{t} = {^1/_{12}}
+        \kl{^1/_{2}}, \qquad \kl{^2/_{2}}, \qquad \kl{^3/_{2}}
+    \end{align*}
+    Benutzen Sie hierzu das Verfahren von Richardson mit Schrittweiten
+    \begin{align*}
+        \Delta{x} = 1 \qquad \text{und} \qquad \Delta{t} = 1
     \end{align*}
     
     \writen{42}{40}
@@ -360,44 +367,31 @@
     \newpage
 
     \subsection*{Aufgabe 7}
-    Die reelle Funktion $u{\left(x,  y\right)}$ ist auf dem Quadrat
+    In der Ebene ist ein kartesisches Koordinatensystem vorgegeben. \\
+    Das Gebiet $\Omega$ wird durch das Polygon mit Eckpunkten (in Reihenfolge)
     \begin{align*}
-        \Omega = \left[ 0, 1 \right] \times \left[ 0, 1 \right]
+        \kl{0, 0}, \quad \kl{6, 0}, \quad \kl{6, 2}, \quad
+        \kl{4, 2}, \quad \kl{4, 4}, \quad \kl{0, 4}, \quad \kl{0, 0}
     \end{align*}
-    definiert. Sie erfüllt im Inneren von $\Omega$ die Laplacegleichung
+    berandet. Die reelle Funktion $u\kl{x,y}$ ist auf $\Omega$ definiert.
+    Sie erfüllt im Innern von $\Omega$ die Differentialgleichung
     \begin{align*}
-        \Delta u{\left(x,  y\right)} = 0
+        \du\kl{x,y} = 0
     \end{align*}
-    und auf dem Rand von $\Omega$ die Randbedingung
+    und auf dem Rand von $\Omega$ die Bedingungen
     \begin{align*}
-        u{\left(x,  y\right)} =
-        \setlength{\arraycolsep}{0pt}
-        \renewcommand{\arraystretch}{1.2}
-        \left\{
-            \begin{array}{l @{\quad} l r l}
-                0 & \text{falls\quad} & y &{}= 0 \\
-                x & \text{falls\quad} & y &{}= 1 \\
-                0 & \text{falls\quad} & x &{}= 0 \\
-                y & \text{falls\quad} & x &{}= 1
-            \end{array}
-        \right.
+        u\kl{x,y} = 0 \quad \text{falls} \quad y \neq 0.
     \end{align*}
-    Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten
+    Weiter sind folgende Werte von $u$ bekannt:
     \begin{align*}
-        \tilde{u}_1 = \tilde{u}{\begin{pmatrix}
-            {^1/_5} \\ {^1/_5}
-        \end{pmatrix}},\quad
-        \tilde{u}_2 = \tilde{u}{\begin{pmatrix}
-            {^3/_5} \\ {^1/_5}
-        \end{pmatrix}},\quad
-        \tilde{u}_3 = \tilde{u}{\begin{pmatrix}
-            {^1/_5} \\ {^3/_5}
-        \end{pmatrix}},\quad
-        \tilde{u}_4 = \tilde{u}{\begin{pmatrix}
-            {^3/_5} \\ {^3/_5}
-        \end{pmatrix}}
+        u\kl{1,0} = 10, \quad u\kl{3,0} = 10, \quad u\kl{5,0} = 10
     \end{align*}
-    Benutzen Sie hierzu Finite Volumina nach Voronoi.
+    Gesucht ist eine Approximation der Werte von $u$ in den fünf
+    Punkten von $\Omega$
+    \begin{align*}
+        \kl{1, 1}, \quad \kl{3, 1}, \quad \kl{5, 1}, \quad \kl{1, 3}, \quad \kl{3, 3}
+    \end{align*}
+    Benutzen Sie hierzu geeignete Finite Volumina.
     
     \writen{42}{38}
 
@@ -416,26 +410,20 @@
     \end{align*}
     definiert. Sie erfüllt im Inneren von $\Omega$ die Differentialgleichung
     \begin{align*}
-        u''{\left(x\right)} + u{\left(x\right)} = 1
+        -u''\kl{x} = 20
     \end{align*}
     und auf dem Rand von $\Omega$ die Randbedingung
     \begin{align*}
-        u{\left( 0 \right)} = 0, \qquad u{\left( 1 \right)} = 1
+        u\kl{0} = 0, \qquad u\kl{1} = 0
     \end{align*}
-    Berechnen Sie $a_1$ und $a_2$ im Approximationsansatz für $u$
+    Gesucht ist eine Approximationsfunktion $\tilde{u}\kl{x}$ für $u\kl{x}$. \\
+    Benutzen Sie das Verfahren von Gauss. Benutzen Sie die Masche $\ks{0,1}$
+    und den Approximationsansatz
     \begin{align*}
-        \tilde{u} = v_0{\left(x\right)} + a_1 \cdot v_1{\left(x\right)} + a_2 \cdot v_2{\left(x\right)}
-    \end{align*}
-    mit
-    \begin{align*}
-        v_0{\left(x\right)} = x, \quad v_1{\left(x\right)} = x^2 - x, \quad v_2{\left(x\right)} = x^3 - x^2.
-    \end{align*}
-    Benutzen Sie hierzu die Methode der Gewichteten Residuen mit Gewichtsfunktion
-    \begin{align*}
-        w_1{\left(x\right)} = 1, \quad w_2{\left(x\right)} = x
+        v\kl{x} = a \cdot \kl{x - x^2}
     \end{align*}
 
-    \writen{42}{40}
+    \writen{42}{44}
 
     %-- Page 17 -----------------------------------------------------------------
     \newpage
