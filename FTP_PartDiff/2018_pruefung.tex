@@ -1,0 +1,446 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% Für enumerate
+\usepackage{enumitem}
+\setlist[enumerate]{
+    wide=0pt,
+    leftmargin=*,
+    itemsep=-1ex,
+    parsep=2ex,
+    labelsep=1ex,
+    label=\alph*)
+}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations}
+
+%-------------------------------------------------------------------------------
+% \ifthenelse
+\usepackage{ifthen}
+
+%-------------------------------------------------------------------------------
+% Links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+%-------------------------------------------------------------------------------
+% 
+\usepackage{xparse}
+\NewDocumentCommand{\dx}{ O{} }{{\Delta x^{#1}}}
+\NewDocumentCommand{\dy}{ O{} }{{\Delta y^{#1}}}
+\NewDocumentCommand{\dt}{ O{} }{{\Delta t^{#1}}}
+\NewDocumentCommand{\du}{ O{} }{{\Delta u^{#1}}}
+\NewDocumentCommand{\px}{ O{} }{{\partial x^{#1}}}
+\NewDocumentCommand{\py}{ O{} }{{\partial y^{#1}}}
+\NewDocumentCommand{\pt}{ O{} }{{\partial t^{#1}}}
+\NewDocumentCommand{\pu}{ O{} }{{\partial u^{#1}}}
+\NewDocumentCommand{\p}{ O{} }{{\partial^{#1}}}
+\NewDocumentCommand{\re}{ O{} }{{\mathbb{R}^{#1}}}
+\NewDocumentCommand{\lap}{}{\mathcal{L}}
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+\newcommand{\dom}{{\Omega}}
+\newcommand{\bound}{{\partial \Omega}}
+\newcommand{\e}{\mathrm{e}}
+
+
+\newcommand{\writen}[2]{%  
+    \begin{tikzpicture}[]
+        
+        % draw vertical lines
+        \foreach \x in {0,...,#1}
+        {
+            \draw[lightgray] (\x * 4mm, 0mm) -- (\x * 4mm, #2 * 4mm);
+        }
+
+        % draw horizontal lines
+        \foreach \y in {0,...,#2}
+        {
+            \draw[lightgray] (0mm, \y * 4mm) -- (#1 * 4mm, \y * 4mm);
+        }
+
+        % border
+        \draw[black] (0mm, 0mm) -- (#1 * 4mm, 0mm);
+        \draw[black] (0mm, 0mm) -- (0mm, #2 * 4mm);
+        \draw[black] (#1 * 4mm, 0mm) -- (#1 * 4mm, #2 * 4mm);
+        \draw[black] (0mm, #2 * 4mm) -- (#1 * 4mm, #2 * 4mm);
+    \end{tikzpicture}
+}
+
+% Einzug mit Dimension (z.B. 1cm)
+\newenvironment{myindent}[1]{% 
+    \parskip=6pt \parindent=0pt \raggedright 
+    \def\lititem{\hangindent=#1 \hangafter=1}
+}{%
+    \par\ignorespaces
+}
+
+\newenvironment{hint}[2]{% 
+    \begin{minipage}[t]{#2}
+        \textit{#1}
+    \end{minipage}
+    \begin{minipage}[t]{\linewidth - #2}
+}{%
+    \end{minipage}
+} 
+
+%-------------------------------------------------------------------------------
+% Paragraph
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.35em}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\title{Prüfung 2018}
+\author{}
+\date{}
+\begin{document}
+
+    %-- Page 1 -----------------------------------------------------------------
+    \maketitle
+
+    %-- Page 2 -----------------------------------------------------------------
+    \newpage
+    \section*{Grundlagen / Analytisch}
+    \subsection*{Aufgabe 1}
+
+    Betrachten Sie die Differentialgleichung
+    \begin{align}
+        \f{\pu}{\pt} + \f{\p[4] u}{\px[4]} = 0
+    \end{align}
+    auf dem Gebiet
+    \begin{align*}
+        \dom = \kq{\kl{t, x} \mid t > 0, x \in \re}
+    \end{align*}
+    mit den Bedingungen
+    \begin{align*}
+        u\kl{t, 0} &= 1, & \f{\pu}{\px}\kl{t, 0} &= 0, & \f{\p[2] u}{\px[2]}\kl{t, 0} &= 0, & \f{\p[3] u}{\px[3]}\kl{t, 0} &= 0, \\
+        u\kl{0, x} &= 0
+    \end{align*}
+    für $x \in \re$ und $t > 0$.
+    \begin{enumerate}
+        \item{
+            Verwenden Sie die Laplace-Transformation und finden Sie eine gewöhnliche Differentialgleichung
+            samt Anfangsbedingungen, mit deren Hilfe das Problem gelöst werden kann.
+        }
+        \item{
+            Ist das Problem gut gestellt?
+        }
+    \end{enumerate}
+    \begin{hint}{Hinweis.}{2cm}
+        Es wird nicht verlangt, dass Sie die gewöhnliche Differentialgleichung lösen.
+    \end{hint}
+
+    \writen{42}{36}
+
+    %-- Page 3 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+    %-- Page 4 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Aufgabe 2}
+
+    Betrachten Sie die Differentialgleichung
+    \begin{align}
+                {\cos\kl{x}} \; \f{\p[2] u}{\px[2]} +
+        2 \cdot {\sin\kl{x}} \; \f{\p[2]  }{\dx\dy} -
+                {\cos\kl{x}} \; \f{\p[2] u}{\py[2]} = 0
+    \end{align}
+    auf dem Gebiet
+    \begin{align}
+        \dom = \kq{\kl{x, y} \mid 0 < x < 1 \; \land \; 0 < y < 1 }
+    \end{align}
+    mit den Randbedingungen
+    \begin{align*}
+        u\kl{x, 0} = f\kl{x} \qquad \text{und} \qquad u\kl{0, y} = g\kl{y}
+    \end{align*}
+    mit glatten Funktionen $f\kl{x}$ und $g\kl{y}$. Ist das Problem gut gestellt?
+
+    \begin{hint}{Hinweis.}{2cm}
+        Im Laufe der Lösung werden Sie auf eine gewöhnliche Differentialgleichung für $y\kl{x}$
+        stossen, die relativ schwierig zu lösen ist. Versuchen Sie nicht, diese zu lösen.
+        Leiten Sie vielmehr aus der Differentialgleichung eine Formel für $y'\kl{x}$ ab,
+        untersuchen Sie das Vorzeichen von $y'\kl{x}$ und leiten Sie daraus ab, ob das
+        Problem gut gestellt ist.
+    \end{hint}
+
+    \writen{42}{40}
+
+    %-- Page 5 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+    
+    %-- Page 6 -----------------------------------------------------------------
+    \newpage
+    
+	\subsection*{Aufgabe 3}
+
+    Gegeben ist die Differentialgleichung
+    \begin{align}
+        {\sin\kl{y}} \; \f{\pu}{\px} + \f{\pu}{\py} = 1 \label{eq:ex3}
+    \end{align}
+    auf dem Gebiet
+    \begin{align*}
+        \dom = \kq{\kl{x, y} \mid -1 < x < 1 \; \land \; 0 < y < \infty }
+    \end{align*}
+    mit der Randbedingung
+    \begin{align*}
+        u\kl{x, 0} = x^2
+    \end{align*}
+    \begin{enumerate}
+        \item{
+            Finden Sie eine Lösung der Differentialgleichung $\kl{\ref{eq:ex3}}$.
+        }
+        \item{
+            Ist die Lösung durch die Vorgaben eindeutig bestimmt?
+        }
+    \end{enumerate}
+
+    \writen{42}{40}
+
+    %-- Page 7 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+    %-- Page 8 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Aufgabe 4}
+
+    Auf dem Quadrat
+    \begin{align}
+        \dom = \kq{\kl{x, y} \mid 0 < x < \pi \; \land \; 0 < y < \pi }
+    \end{align}
+    soll die Differentialgleichung
+    \begin{align}
+        \du = \sin\kl{x}\cos\kl{y}
+    \end{align}
+    mit den Randbedingungen
+    \begin{align}
+        u = 0 \qquad \text{auf } \p\dom
+    \end{align}
+    gelöst werden. Die Lösung soll in der Form
+    \begin{align}
+        u = u_p + u_h
+    \end{align}
+    gefunden werden, wobei $u_h$ eine Lösung der homogenen Gleichung $\Delta u_h = 0$ ist.
+    
+    \begin{enumerate}
+        \item{
+            Finden sie eine partikuläre Lösung $u_p$.
+        }
+        \item{
+            Bestimmen Sie die Randbedingungen von $u_h$.
+        }
+        \item{
+            Verwenden Sie einen Separationsansatz für $u_h$,
+            stellen Sie die Differentialgleichungen \\ und Randbedinungen für die Faktoren auf.
+        }
+        \item{
+            Lösen Sie die Differentialgleichungen.
+        }
+        \item{
+            Führen Sie den Koeffizientenvergleich durch und bestimmen sie $u_h$.
+        }
+    \end{enumerate}
+
+
+    \writen{42}{32}
+
+    %-- Page 9 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+    %-- Page 10 -----------------------------------------------------------------
+    \newpage
+    
+    \section*{Numerik}
+
+    \subsection*{Aufgabe 5}
+
+    Die reelle Funktion $u{\left(x,  t\right)}$ ist auf dem Streifen
+    \begin{align*}
+        \dom = \ks{0, 4} \times \ks{0, \infty}
+    \end{align*}
+    definiert. Sie erfüllt im Inneren von $\dom$ die Wellengleichung
+    \begin{align*}
+        u_{tt}\kl{x,  t} = 2 \cdot u_{xx}\kl{x,  t}
+    \end{align*}
+    und auf dem Rand von $\dom$ die Bedingung
+    \begin{align*}
+        u\kl{0, t} = 0 \qquad \text{und} \qquad u\kl{4, t} = 0
+    \end{align*}
+    sowie
+    \begin{align*}
+        u\kl{x, 0} = 4 \cdot x - x^2 \qquad \text{und} \qquad u_{t}\kl{x, 0} = 3
+    \end{align*}
+    Gesucht ist eine Approximation der Werte von $u$ in den drei Punkten von $\dom$
+    \begin{align*}
+        \kl{^1/_{3}}, \qquad \kl{^2/_{3}}, \qquad \kl{^3/_{3}}
+    \end{align*}
+    Benutzen Sie hierzu geeignete Finite Differenzen mit Schrittweiten
+    \begin{align*}
+        \Delta{x} = 1 \qquad \text{und} \qquad \Delta{t} = 1
+    \end{align*}
+
+    \writen{42}{35}
+
+    %-- Page 11 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+    %-- Page 12 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Aufgabe 6}
+    Die reelle Funktion $u\kl{x, t}$ ist auf dem Streifen
+    \begin{align*}
+        \dom = \ks{0, 1} \times \ks{0, \infty}
+    \end{align*}
+    definiert. Sie erfüllt im Inneren von $\dom$ die Wärmeleitungsgleichung
+    \begin{align*}
+        u_{xx}\kl{x, t} = u_{t}\kl{x, t}
+    \end{align*}
+    und auf dem Rand von $\dom$ die Bedingung
+    \begin{align*}
+        u\kl{0, t} = 0 \qquad \text{und} \qquad u\kl{1, t} = 0
+    \end{align*}
+    sowie
+    \begin{align*}
+        u{\left(x,  0\right)} = 16 \cdot \kl{x - x^2}
+    \end{align*}
+    Gesucht ist eine Approximation der Werte von $u$ in den zwei Punkten von $\dom$
+    \begin{align*}
+        \begin{pmatrix}
+            {^1/_3} \\ {^1/_2}
+        \end{pmatrix},\quad
+        \begin{pmatrix}
+            {^2/_3} \\ {^1/_2}
+        \end{pmatrix}
+    \end{align*}
+    Benutzen Sie hierzu das Verfahren von Crank-Nicolson mit Schrittweiten
+    \begin{align*}
+        \dx = {^1/_3} \qquad \text{und} \qquad \dt = {^1/_{4}}
+    \end{align*}
+    
+    \writen{42}{40}
+
+    %-- Page 13 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+    %-- Page 14 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Aufgabe 7}
+    In der Ebene ist ein kartesisches Koordinatensystem vorgegeben. \\
+    Das Gebiet $\dom$ wird durch das Polygon mit Eckpunkten (in Reihenfolge)
+    \begin{align*}
+        \kl{0, 0}, \quad \kl{4, 0}, \quad \kl{4, 2}, \quad
+        \kl{2, 2}, \quad \kl{2, 4}, \quad \kl{0, 4}, \quad \kl{0, 0}
+    \end{align*}
+    berandet. Die reelle Funktion $u\kl{x,y}$ ist auf $\dom$ definiert.
+    Sie erfüllt im Innern von $\dom$ die Differentialgleichung
+    \begin{align*}
+        \du\kl{x,y} = 10
+    \end{align*}
+    und auf dem Rand von $\dom$ die Bedingungen
+    \begin{align*}
+        u\kl{x,y} = 0
+    \end{align*}
+    Gesucht ist eine Approximation der Werte von $u$ in den drei Punkten von $\dom$
+    \begin{align*}
+        \kl{1, 1}, \quad \kl{3, 1}, \quad \kl{1, 3}
+    \end{align*}
+    Benutzen Sie hierzu geeignete Finite Volumina.
+    
+    \writen{42}{38}
+
+    %-- Page 15 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+    %-- Page 16 -----------------------------------------------------------------
+    \newpage
+
+    \subsection*{Aufgabe 8}
+    Die reelle Funktion $u{\left(x\right)}$ ist auf dem Intervall
+    \begin{align*}
+        \dom = \ks{0, 2\pi}
+    \end{align*}
+    definiert. Sie erfüllt im Inneren von $\dom$ die Differentialgleichung
+    \begin{align*}
+        u''\kl{x} + 2 \cdot u\kl{x} = x
+    \end{align*}
+    und auf dem Rand von $\dom$ die Randbedingung
+    \begin{align*}
+        u\kl{0} = 0, \qquad u\kl{2\pi} = 0
+    \end{align*}
+    Berechnen Sie $a_1$, $a_2$, $a_3$ im Approximationsansatz für $u$
+    \begin{align*}
+        \tilde{u} = a_1 \cdot v_1\kl{x} + a_2 \cdot v_2\kl{x} + a_3 \cdot v_3\kl{x}
+    \end{align*}
+    mit
+    \begin{align*}
+        v_1\kl{x} = {\sin\kl{x}}, \quad v_2\kl{x} = {\sin\kl{2x}}, \quad v_3\kl{x} = {\sin\kl{3x}} 
+    \end{align*}
+    Benutzen Sie hierzu die Methode von Galerkin.
+
+    \writen{42}{44}
+
+    %-- Page 17 -----------------------------------------------------------------
+    \newpage
+
+    \writen{42}{66}
+
+\end{document}
