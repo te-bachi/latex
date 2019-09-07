@@ -38,7 +38,7 @@
 % TikZ
 \usepackage{tikz}
 %\usetikzlibrary{positioning, arrows, decorations}
-\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri,decorations.pathreplacing}
 
 \tikzset{
     myptr/.style={
@@ -46,6 +46,8 @@
         >=stealth
     }
 }
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture,baseline=(#1.base)] \node (#1) {\strut};}
 
 
 %-------------------------------------------------------------------------------
@@ -70,6 +72,11 @@
 %-------------------------------------------------------------------------------
 % tabu
 \usepackage{tabu} 
+
+%-------------------------------------------------------------------------------
+% tabu
+%\usepackage{tabularx}
+\usepackage{array}
 
 %-------------------------------------------------------------------------------
 % table line breaks with \makecell
@@ -162,12 +169,16 @@
 \newcommand{\f}[2]{\frac{#1}{#2}}
 %\newcommand{\fs}[2]{{\scriptstyle\frac{#1}{#2}}}
 \newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
-\newcommand{\e}{\mathrm{e}}
 \newcommand{\kl}[1]{{\left( #1 \right)}}
 \newcommand{\kq}[1]{{\left\{ #1 \right\}}}
 \newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+
 \newcommand{\dom}{{\Omega}}
 \newcommand{\bound}{{\partial \Omega}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\lap}{\mathcal{L}}
+\newcommand{\ddt}{\mathrm{d}t}
 
 %-------------------------------------------------------------------------------
 % Dokument
@@ -196,6 +207,98 @@
         Summenregel         & $ \int\limits_{a}^{b}{\ks{f_1\kl{x} + f_2\kl{x}} \difx} $   & $ = \int\limits_{a}^{b}{f_1\kl{x} \difx} + \int\limits_{a}^{b}{f_2\kl{x} \difx} $      \\
         Zerlegungsregel     & $ \int\limits_{a}^{c}{f\kl{x} \difx} $                      & $ = \int\limits_{a}^{b}{f\kl{x} \difx} + \int\limits_{b}^{c}{f\kl{x} \difx}$  \\
     \end{tabular} \\
+
+    %===================================================================================
+    \newpage
+
+    \begin{flalign*}
+        s \mapsto F\kl{s} = \lap \kq{f}\kl{s} = \int\limits_{0}^{\infty} f\kl{t} \cdot e^{-st} \cdot \ddt & &
+    \end{flalign*}
+    \begin{enumerate}
+        \item{\begin{tabular}[t]{l}
+                $f\kl{t} = a$ \\ \\
+                {$\!\begin{aligned}[t]
+                    % line 1
+                    \int\limits_{0}^{\infty} a \cdot e^{-st} \cdot \ddt &=
+                    \ks{ a \cdot \f{1}{-s} \cdot \e^{-st}}_{0}^{\infty} \\
+                    % line 2
+                    &= \ks{\kl{a \cdot \f{1}{-s} \cdot \tikzmark{p1l}\e^{-s\infty}\tikzmark{p1r}} - \kl{a \cdot \f{1}{-s} \cdot \tikzmark{p2l}\e^{-s0}\tikzmark{p2r}} } \\[1.5em]
+                    % line 3
+                    &= \ks{\kl{0} - \kl{a \cdot \f{1}{-s}}} \\[1em]
+                    % line 4
+                    &= \f{a}{s}
+                \end{aligned}
+                \def\yshift{2pt}
+                \tikz[overlay, remember picture, decoration={brace, amplitude=3pt}] {
+                   \draw[decorate] ([yshift=\yshift]p1r.south) -- ([yshift=\yshift]p1l.south)
+                       node [midway,below=5pt] {$0$};
+                   \draw[decorate] ([yshift=\yshift]p2r.south) -- ([yshift=\yshift]p2l.south)
+                       node [midway,below=5pt] {$1$};
+                }$}
+            \end{tabular}
+        }
+        \item{\begin{tabular}[t]{l}
+                $f\kl{t} = \e^{-ct}$ \\ \\
+                {$\!\begin{aligned}[t]
+                    % line 1
+                    \int\limits_{0}^{\infty} \e^{-ct} \cdot e^{-st} \cdot \ddt &=
+                    \int\limits_{0}^{\infty} \e^{-ct-st} \cdot \ddt \\
+                    % line 2
+                    &= \int\limits_{0}^{\infty} \e^{\kl{-c-s}t} \cdot \ddt \\
+                    % line 3
+                    &= \ks{\f{1}{-c-s} \cdot \e^{\kl{-c-s}t}}_{0}^{\infty} \\
+                    % line 4
+                    &= \ks{\kl{\f{1}{-c-s} \cdot \tikzmark{p1l}\e^{\kl{-c-s}\infty}\tikzmark{p1r}} - \kl{\f{1}{-c-s} \cdot \tikzmark{p2l}\e^{\kl{-c-s}0}\tikzmark{p2r}}} \\[1.5em]
+                    % line 5
+                    &= \ks{\kl{0} - \kl{\f{1}{-c-s}}} \\
+                    % line 6
+                    &= \f{1}{c+s}
+                \end{aligned}
+                \def\yshift{2pt}
+                \tikz[overlay, remember picture, decoration={brace, amplitude=3pt}] {
+                   \draw[decorate] ([yshift=\yshift]p1r.south) -- ([yshift=\yshift]p1l.south)
+                       node [midway,below=5pt] {$0$};
+                   \draw[decorate] ([yshift=\yshift]p2r.south) -- ([yshift=\yshift]p2l.south)
+                       node [midway,below=5pt] {$1$};
+                }$}
+            \end{tabular}
+        }
+        \item{\begin{tabular}[t]{l}
+                $f\kl{t} = g'\kl{t}$ \\ \\
+                {$\!\begin{aligned}[t]
+                    % line 1
+                    \int\limits_{0}^{\infty} \tikzmark{p1l}g'\kl{t}\tikzmark{p1r} \cdot \tikzmark{p2l} \e^{-st} \tikzmark{p2r} \cdot \ddt
+                    &= \ks{ \;
+                        \tikzmark{p3l}g\kl{t}\tikzmark{p3r} \cdot \tikzmark{p4l} \e^{-st} \tikzmark{p4r}
+                    \; }_{0}^{\infty} -
+                    \int\limits_{0}^{\infty} \tikzmark{p5l}g\kl{t}\tikzmark{p5r} \cdot \tikzmark{p6l} \kl{-s} \cdot \e^{-st} \tikzmark{p6r} \cdot \ddt \\
+                    % line 2
+                    &= \ks{\kl{ g\kl{\infty} \cdot \tikzmark{p7l}\e^{-s\infty}\tikzmark{p7r}} - \kl{ g\kl{0} \cdot \tikzmark{p8l}\e^{-s0}\tikzmark{p8r}}} + s \cdot \int\limits_{0}^{\infty} g\kl{t} \cdot \e^{-st} \cdot \ddt \\[1em]
+                    % line 3
+                    &= - g\kl{0} + s \cdot \lap \kq{g}\kl{s}
+                \end{aligned}
+                \def\yshift{2pt}
+                \tikz[overlay, remember picture, decoration={brace, amplitude=3pt}] {
+                   \draw[decorate] ([yshift=\yshift]p1r.south) -- ([yshift=\yshift]p1l.south)
+                       node [midway,below=2pt] {$u'$};
+                   \draw[decorate] ([yshift=\yshift]p2r.south) -- ([yshift=\yshift]p2l.south)
+                       node [midway,below=5pt] {$v$};
+                   \draw[decorate] ([yshift=\yshift]p3r.south) -- ([yshift=\yshift]p3l.south)
+                       node [midway,below=5pt] {$u$};
+                   \draw[decorate] ([yshift=\yshift]p4r.south) -- ([yshift=\yshift]p4l.south)
+                       node [midway,below=5pt] {$v$};
+                   \draw[decorate] ([yshift=\yshift]p5r.south) -- ([yshift=\yshift]p5l.south)
+                       node [midway,below=5pt] {$u$};
+                   \draw[decorate] ([yshift=\yshift]p6r.south) -- ([yshift=\yshift]p6l.south)
+                       node [midway,below=2pt] {$v'$};
+                   \draw[decorate] ([yshift=\yshift]p7r.south) -- ([yshift=\yshift]p7l.south)
+                       node [midway,below=5pt] {$0$};
+                   \draw[decorate] ([yshift=\yshift]p8r.south) -- ([yshift=\yshift]p8l.south)
+                       node [midway,below=5pt] {$1$};
+                }$}
+            \end{tabular}
+        }
+    \end{enumerate}
 
     %===================================================================================
     \newpage
