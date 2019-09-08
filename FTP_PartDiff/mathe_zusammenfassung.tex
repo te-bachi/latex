@@ -99,7 +99,13 @@
 \NewDocumentCommand{\dx}{ O{} }{{\Delta x^{#1}}}
 \NewDocumentCommand{\dy}{ O{} }{{\Delta y^{#1}}}
 \NewDocumentCommand{\dt}{ O{} }{{\Delta t^{#1}}}
-\NewDocumentCommand{\gp}{ O{} }{}
+\NewDocumentCommand{\du}{ O{} }{{\Delta u^{#1}}}
+\NewDocumentCommand{\px}{ O{} }{{\partial x^{#1}}}
+\NewDocumentCommand{\py}{ O{} }{{\partial y^{#1}}}
+\NewDocumentCommand{\pt}{ O{} }{{\partial t^{#1}}}
+\NewDocumentCommand{\pu}{ O{} }{{\partial u^{#1}}}
+\NewDocumentCommand{\p}{ O{} }{{\partial^{#1}}}
+\NewDocumentCommand{\re}{ O{} }{{\mathbb{R}^{#1}}}
 
 \NewDocumentCommand{\xyz}{ O{x} O{y} O{z} }{#1 #2 #3}
 % 1: Value
@@ -179,6 +185,9 @@
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\lap}{\mathcal{L}}
 \newcommand{\ddt}{\mathrm{d}t}
+\newcommand{\aligntab}[1]{{$\!\begin{aligned}[t] #1 \end{aligned}$}}
+
+
 
 %-------------------------------------------------------------------------------
 % Dokument
@@ -298,7 +307,218 @@
                 }$}
             \end{tabular}
         }
+        \item{\begin{tabular}[t]{l}
+                $f\kl{t} = g^{\kl{4}}\kl{t}$ \\ \\
+                {$\!\begin{aligned}[t]
+                    % line 1
+                    \int\limits_{0}^{\infty} \tikzmark{p1l}g^{\kl{4}}\kl{t}\tikzmark{p1r} \cdot \tikzmark{p2l} \e^{-st} \tikzmark{p2r} \cdot \ddt
+                    &= \ks{ \;
+                        \tikzmark{p3l}g^{\kl{3}}\kl{t}\tikzmark{p3r} \cdot \tikzmark{p4l} \e^{-st} \tikzmark{p4r}
+                    \; }_{0}^{\infty} -
+                    \int\limits_{0}^{\infty} \tikzmark{p5l}g^{\kl{3}}\kl{t}\tikzmark{p5r} \cdot \tikzmark{p6l} \kl{-s} \cdot \e^{-st} \tikzmark{p6r} \cdot \ddt \\
+                    % line 2
+                    &= \ks{0 - g^{\kl{3}}\kl{0}} + s \cdot \int\limits_{0}^{\infty} g^{\kl{3}}\kl{t} \cdot \e^{-st} \cdot \ddt \\
+                    % line 3
+                    &= - g^{\kl{3}}\kl{0} + s \cdot \ks{
+                        \ks{ \; g^{\kl{2}}\kl{t} \cdot \e^{-st} \; }_{0}^{\infty} -
+                        \int\limits_{0}^{\infty} g^{\kl{2}}\kl{t} \cdot \kl{-s} \cdot \e^{-st} \cdot \ddt
+                    } \\
+                    % line 4
+                    &= - g^{\kl{3}}\kl{0} -
+                        s \cdot g^{\kl{2}}\kl{0} +
+                        s^2 \cdot \int\limits_{0}^{\infty} g^{\kl{2}}\kl{t} \cdot \e^{-st} \cdot \ddt
+                    \\
+                    % line 5
+                    &= - g^{\kl{3}}\kl{0} -
+                        s \cdot g^{\kl{2}}\kl{0} -
+                        s^2 \cdot g^{\kl{1}}\kl{0} +
+                        s^3 \cdot \int\limits_{0}^{\infty} g^{\kl{1}}\kl{t} \cdot \e^{-st} \cdot \ddt
+                    \\
+                    % line 6
+                    &= - g^{\kl{3}}\kl{0} -
+                        s \cdot g^{\kl{2}}\kl{0} -
+                        s^2 \cdot g^{\kl{1}}\kl{0} -
+                        s^3 \cdot g\kl{0} +
+                        s^4 \cdot \int\limits_{0}^{\infty} g\kl{t} \cdot \e^{-st} \cdot \ddt
+                    \\
+                    % line 6
+                    &= - g^{\kl{3}}\kl{0} -
+                        s \cdot g^{\kl{2}}\kl{0} -
+                        s^2 \cdot g^{\kl{1}}\kl{0} -
+                        s^3 \cdot g\kl{0} +
+                        s^4 \cdot G\kl{s}
+                    \\
+                \end{aligned}
+                \def\yshift{2pt}
+                \tikz[overlay, remember picture, decoration={brace, amplitude=3pt}] {
+                   \draw[decorate] ([yshift=\yshift]p1r.south) -- ([yshift=\yshift]p1l.south)
+                       node [midway,below=2pt] {$u'$};
+                   \draw[decorate] ([yshift=\yshift]p2r.south) -- ([yshift=\yshift]p2l.south)
+                       node [midway,below=5pt] {$v$};
+                   \draw[decorate] ([yshift=\yshift]p3r.south) -- ([yshift=\yshift]p3l.south)
+                       node [midway,below=5pt] {$u$};
+                   \draw[decorate] ([yshift=\yshift]p4r.south) -- ([yshift=\yshift]p4l.south)
+                       node [midway,below=5pt] {$v$};
+                   \draw[decorate] ([yshift=\yshift]p5r.south) -- ([yshift=\yshift]p5l.south)
+                       node [midway,below=5pt] {$u$};
+                   \draw[decorate] ([yshift=\yshift]p6r.south) -- ([yshift=\yshift]p6l.south)
+                       node [midway,below=2pt] {$v'$};
+                }$}
+            \end{tabular}
+        }
     \end{enumerate}
+
+    %===================================================================================
+    \newpage
+
+    {\renewcommand{\arraystretch}{1.5}
+    \begin{tabular}[t]{p{1.9cm}l}
+        DGL:    & \aligntab{\f{\pu}{\tfillgr{$\pt$}} = \kappa \cdot \f{\p[2]u}{\px[2]}} \\
+        Domain: & \aligntab{\dom = \kl{0,l} \times \re^{+}} \\
+        Boundary Condition:     & \aligntab{
+            u\kl{x,\tfillgr{$0$}} &= f\kl{x} \\
+            u\kl{\tfillg{$0$},\tfillgr{$t$}} &= g_0\kl{\tfillgr{$t$}} \\
+            \f{\p}{\px}u\kl{\tfilly{$l$},\tfillgr{$t$}} &= g_1\kl{\tfillgr{$t$}} \\
+        } \\
+        Laplace: & \aligntab{
+            -u\kl{x,\tfillgr{$0$}} + s \cdot \lap u\kl{x,\tfillo{$s$}} &= \f{\p[2]}{\px[2]} \lap u\kl{x,\tfillo{$s$}} \\
+            \f{\p[2]}{\px[2]} \lap u\kl{x,\tfillo{$s$}} - s \cdot \lap u\kl{x,\tfillo{$s$}} &= -u\kl{x,\tfillgr{$0$}} \\
+            u\kl{x,\tfillgr{$0$}} &= f\kl{x} \\
+            \lap u\kl{\tfillg{$0$},\tfillo{$s$}} &= \lap g_0\kl{\tfillo{$s$}} = G_0\kl{\tfillo{$s$}} \\
+            \f{\p}{\px}\lap u\kl{\tfilly{$l$},\tfillo{$s$}} &= \lap g_1\kl{\tfillo{$s$}} = G_1\kl{\tfillo{$s$}} \\
+            y_s''\kl{x} - s \cdot y_s\kl{x} &= -f\kl{x} \\
+            y_s\kl{\tfillg{$0$}} &= G_0\kl{\tfillo{$s$}} \\
+            y_s\kl{\tfilly{$l$}} &= G_1\kl{\tfillo{$s$}}
+        } \\
+        Values: & \begin{tabular}[t]{ll}
+            \aligntab{u\kl{x,\tfillgr{$0$}} &= f\kl{x} = 0}                             & \aligntab{\Rightarrow y_s''\kl{x} - s \cdot y_s\kl{x} = 0} \\
+            \aligntab{u\kl{\tfillg{$0$},\tfillgr{$t$}} &= g_0\kl{\tfillgr{$t$}} = 0}           & \aligntab{\Rightarrow y_s\kl{\tfillg{$0$}} = 0} \\
+            \aligntab{\f{\p}{\px}u\kl{\tfilly{$l$},\tfillgr{$t$}} &= g_1\kl{\tfillgr{$t$}} = 1} & \aligntab{\Rightarrow y_s'\kl{\tfilly{$l$}} = \f{1}{s}}
+        \end{tabular} \\
+        General Solution:& \begin{tabular}[t]{l}
+            \texttt{deSolve($y''-s \cdot  y = 0$, x, y) $\mid$ s > 0} \\
+            \aligntab{
+                y_s\kl{x} &= A_s \cdot \e^{\sqrt{s} \cdot x} + B_s \cdot \e^{-\sqrt{s} \cdot x}\\
+                &= \f{\tfillb{$k_1$} + \tfillr{$k_2$}}{2} \cdot \e^{\sqrt{s} \cdot x} + \f{\tfillb{$k_1$} - \tfillr{$k_2$}}{2} \cdot \e^{-\sqrt{s} \cdot x}\\
+                &= \f{\tfillb{$k_1$} \cdot \e^{\sqrt{s} \cdot x} + \tfillr{$k_2$} \cdot \e^{\sqrt{s} \cdot x} + \tfillb{$k_1$} \cdot \e^{-\sqrt{s} \cdot x} - \tfillr{$k_2$} \cdot \e^{-\sqrt{s} \cdot x}}{2}\\
+                &= \tfillb{$k_1$} \cdot \f{1}{2} \kl{\e^{\sqrt{s} \cdot x} + \e^{-\sqrt{s} \cdot x}} + \tfillr{$k_2$} \cdot \f{1}{2} \kl{\e^{\sqrt{s} \cdot x} - \e^{-\sqrt{s} \cdot x}}\\
+                &= \tfillb{$k_1$} \cdot \cosh\kl{\sqrt{s} \cdot x} + \tfillr{$k_2$} \cdot \sinh\kl{\sqrt{s} \cdot x}
+            }
+        \end{tabular} \\
+        Particular Solution:& \aligntab{
+                y_s\kl{x} &= k_1 \cdot \cosh\kl{\sqrt{s} \cdot x} + k_2 \cdot \sinh\kl{\sqrt{s} \cdot x} \\
+                y_s\kl{\tfillg{$0$}} &= k_1 \cdot \tikzmark{p1l}\cosh\kl{\sqrt{s} \cdot \tfillg{$0$}}\tikzmark{p1r} + k_2 \cdot \tikzmark{p2l}\sinh\kl{\sqrt{s} \cdot \tfillg{$0$}} \tikzmark{p2r} = 0\\[1em]
+                &\Rightarrow k_1 = 0 \\
+                y_s\kl{x} &= k_2 \cdot \sinh\kl{\sqrt{s} \cdot x} \\
+                y_s'\kl{x} &= k_2 \cdot \sqrt{s} \cdot \sinh\kl{\sqrt{s} \cdot x} \\
+                y_s\kl{\tfilly{$l$}} &= k_2 \cdot \sqrt{s} \cdot \sinh\kl{\sqrt{s} \cdot \tfilly{$l$}} = \f{1}{s}\\
+                &\Rightarrow k_2 = \f{1}{s \cdot \sqrt{s} \cdot \sinh\kl{\sqrt{s} \cdot \tfilly{$l$}}} \\
+                y_s\kl{x} &= \f{1}{s \cdot \sqrt{s} \cdot \sinh\kl{\sqrt{s} \cdot \tfilly{$l$}}} \cdot \sinh\kl{\sqrt{s} \cdot x} = \lap u\kl{x,s}
+        }{$\!
+            \def\yshift{4pt}
+            \tikz[overlay, remember picture, decoration={brace, amplitude=3pt}] {
+               \draw[decorate] ([yshift=\yshift]p1r.south) -- ([yshift=\yshift]p1l.south)
+                   node [midway,below=5pt] {$1$};
+               \draw[decorate] ([yshift=\yshift]p2r.south) -- ([yshift=\yshift]p2l.south)
+                   node [midway,below=5pt] {$0$};
+            }
+        $}
+    \end{tabular}
+
+    %===================================================================================
+    \newpage
+
+    {\renewcommand{\arraystretch}{1.5}
+    \begin{tabular}[t]{p{1.9cm}l}
+        DGL:                & \aligntab{ \f{\pu}{\px} + \f{\pu}{\tfillgr{$\pt$}} = 1} \\
+        Domain:             & \aligntab{\dom = \kq{\kl{x,t} \mid t > 0}} \\
+        Boundary Condition: & \aligntab{u\kl{x,\tfillgr{$0$}} &= g\kl{x}} \\
+        Laplace: & \aligntab{
+            \tikzmark{p1l} \f{\p}{\px} \lap u\kl{x,s}\tikzmark{p1r} + s \cdot \tikzmark{p2l}\lap u\kl{x,s} \tikzmark{p2r} -u \kl{x,\tfillgr{$0$}} &= \lap\kq{1} \\[1.5em]
+        }{$\!
+            \def\yshift{0pt}
+            \tikz[overlay, remember picture, decoration={brace, amplitude=3pt}] {
+               \draw[decorate] ([yshift=\yshift]p1r.south) -- ([yshift=\yshift]p1l.south)
+                   node [midway,below=2pt] {$y_s'$};
+               \draw[decorate] ([yshift=\yshift]p2r.south) -- ([yshift=\yshift]p2l.south)
+                   node [midway,below=5pt] {$y_s$};
+            }
+        $} \\
+        & \aligntab{
+            y_s'\kl{x} + s \cdot y_s\kl{x} - g\kl{x} &= \f{1}{s}
+        } \\
+        General Solution:   & \begin{tabular}[t]{l}
+            \texttt{deSolve($y'' + s \cdot  y = \f{1}{s} + g\kl{x}$, x, y) $\mid$ s > 0}\\
+            \aligntab{
+                y_s\kl{x} &= A_s \cdot \e^{- s \cdot x} + \f{g\kl{x} \cdot s}{s^2} + \f{1}{s^2}
+            }
+        \end{tabular} \\
+        Charakter.: & \begin{tabular}[t]{lll}
+            \multicolumn{3}{l}{\aligntab{\tfillr{$u_0$} = u\kl{\tfillg{$x_0$},\tfillb{$0$}} = g\kl{x_0}\\[0.5em]}}\\
+            \aligntab{c = 
+            \begin{pmatrix}
+                1 \\
+                1 \\
+                1 
+            \end{pmatrix}} &{\arraycolsep=2pt
+            \aligntab{\begin{array}{rl}
+                \dot{x} &= 1 \\
+                \dot{t} &= 1 \\
+                \dot{u} &= 1
+            \end{array}}} &{\arraycolsep=2pt
+            \aligntab{\begin{array}{rll}
+                x &= \tau + \tfillg{$x_0$} &= \tau + x_0 \\
+                t &= \tau + \tfillb{$t_0$} &= \tau\\
+                u &= \tau + \tfillr{$u_0$} &= \tau + g\kl{x_0}
+            \end{array}}} \\
+            \multicolumn{3}{l}{{\arraycolsep=2pt
+            \aligntab{\begin{array}{rl}
+                \tau &= t\\
+                x_0  &= x - t\\
+                u    &= t + g\kl{x - t}
+            \end{array}}}}
+        \end{tabular}\\
+            Insert \; \; Solution: &
+            \aligntab{
+                u\kl{x,t} &= t + g\kl{x - t} \\
+                \p_x u\kl{x,t} &= g'\kl{x - t} \\
+                y_s\kl{x} &=
+                    \int\limits_{0}^{\infty} \kl{t + g\kl{x - t}} \cdot \e^{-st} \cdot \ddt \\
+                    &= \int\limits_{0}^{\infty} t \cdot \e^{-st} \cdot \ddt +
+                    \int\limits_{0}^{\infty} g\kl{x - t} \cdot \e^{-st} \cdot \ddt \\
+                y_s'\kl{x} &=
+                    \int\limits_{0}^{\infty} \tikzmark{p1l}g'\kl{x - t}\tikzmark{p1r} \cdot \tikzmark{p2l} \e^{-st} \tikzmark{p2r} \cdot \ddt \\
+                    &= \ks{ \;
+                        \tikzmark{p3l} - g\kl{x - t}\tikzmark{p3r} \cdot \tikzmark{p4l} \e^{-st} \tikzmark{p4r}
+                    \; }_{0}^{\infty} -
+                    \int\limits_{0}^{\infty} \tikzmark{p5l} - g\kl{x - t}\tikzmark{p5r} \cdot \tikzmark{p6l} \kl{-s} \cdot \e^{-st} \tikzmark{p6r} \cdot \ddt \\
+                    &= \ks{ \; 0 - \kl{- g\kl{x - 0}} \; } -
+                    s \cdot \int\limits_{0}^{\infty} g\kl{x - t} \cdot \e^{-st} \cdot \ddt \\
+            }{$\!
+            \def\yshift{0pt}
+            \tikz[overlay, remember picture, decoration={brace, amplitude=3pt}] {
+               \draw[decorate] ([yshift=\yshift]p1r.south) -- ([yshift=\yshift]p1l.south)
+                   node [midway,below=2pt] {$u'$};
+               \draw[decorate] ([yshift=\yshift]p2r.south) -- ([yshift=\yshift]p2l.south)
+                   node [midway,below=5pt] {$v$};
+               \draw[decorate] ([yshift=\yshift]p3r.south) -- ([yshift=\yshift]p3l.south)
+                   node [midway,below=5pt] {$u$};
+               \draw[decorate] ([yshift=\yshift]p4r.south) -- ([yshift=\yshift]p4l.south)
+                   node [midway,below=5pt] {$v$};
+               \draw[decorate] ([yshift=\yshift]p5r.south) -- ([yshift=\yshift]p5l.south)
+                   node [midway,below=5pt] {$u$};
+               \draw[decorate] ([yshift=\yshift]p6r.south) -- ([yshift=\yshift]p6l.south)
+                   node [midway,below=2pt] {$v'$};
+            }
+        $} \\
+        \multicolumn{2}{l}{\aligntab{
+                & \tfillr{$y_s'\kl{x}$} + s \cdot \tfillg{$y_s\kl{x}$} - \tfillb{$g\kl{x}$} = &\\
+                & \tdrawr{$g\kl{x} - s \cdot \int\limits_{0}^{\infty} g\kl{x - t} \cdot \e^{-st} \cdot \ddt$} +
+                s \tdrawg{$\int\limits_{0}^{\infty} t \cdot \e^{-st} \cdot \ddt + \int\limits_{0}^{\infty} g\kl{x - t} \cdot \e^{-st} \cdot \ddt$} -
+                \tdrawb{$g\kl{x}$} &
+            }
+        }
+    \end{tabular}
 
     %===================================================================================
     \newpage
