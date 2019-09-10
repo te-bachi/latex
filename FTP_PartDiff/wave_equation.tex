@@ -128,9 +128,9 @@
         \node[fill=#3,anchor=base] (#2) {#1};
     }
 }
-\NewDocumentCommand{\tfillc}{ O{} O{} }{%
+\NewDocumentCommand{\tfillc}{ O{} O{} O{}}{%
     \tikz[baseline, every node/.style={inner sep=2pt,outer sep=0pt}]{
-        \node[fill=#2,anchor=base] {#1};
+        \node[fill=#2,anchor=base,font=#3] {#1};
     }
 }
 
@@ -139,14 +139,23 @@
         \node[rectangle,draw=#2,anchor=base] {#1};
     }
 }
-\newcommand{\tfillb}[1]{\tfillc[#1][blue!20]}
-\newcommand{\tfillo}[1]{\tfillc[#1][orange!40]}
-\newcommand{\tfillg}[1]{\tfillc[#1][Green!20]}
-\newcommand{\tfilly}[1]{\tfillc[#1][yellow!40]}
-\newcommand{\tfillr}[1]{\tfillc[#1][red!20]}
-\newcommand{\tfillv}[1]{\tfillc[#1][Violet!20]}
-\newcommand{\tfillt}[1]{\tfillc[#1][Turquoise!20]}
-\newcommand{\tfillgr}[1]{\tfillc[#1][Gray!20]}
+\newcommand{\tfillb}[1]{\tfillc[#1][blue!20][\normalsize]}
+\newcommand{\tfillo}[1]{\tfillc[#1][orange!40][\normalsize]}
+\newcommand{\tfillg}[1]{\tfillc[#1][Green!20[\normalsize]]}
+\newcommand{\tfilly}[1]{\tfillc[#1][yellow!40][\normalsize]}
+\newcommand{\tfillr}[1]{\tfillc[#1][red!20][\normalsize]}
+\newcommand{\tfillv}[1]{\tfillc[#1][Violet!20][\normalsize]}
+\newcommand{\tfillt}[1]{\tfillc[#1][Turquoise!20][\normalsize]}
+\newcommand{\tfillgr}[1]{\tfillc[#1][Gray!20][\normalsize]}
+
+\newcommand{\tsfillb}[1]{\tfillc[#1][blue!20][\scriptsize]}
+\newcommand{\tsfillo}[1]{\tfillc[#1][orange!40][\scriptsize]}
+\newcommand{\tsfillg}[1]{\tfillc[#1][Green!20][\scriptsize]}
+\newcommand{\tsfilly}[1]{\tfillc[#1][yellow!40][\scriptsize]}
+\newcommand{\tsfillr}[1]{\tfillc[#1][red!20][\scriptsize]}
+\newcommand{\tsfillv}[1]{\tfillc[#1][Violet!20][\scriptsize]}
+\newcommand{\tsfillt}[1]{\tfillc[#1][Turquoise!20][\scriptsize]}
+\newcommand{\tsfillgr}[1]{\tfillc[#1][Gray!20][\scriptsize]}
 
 
 \newcommand{\tdrawb}[1]{\tdrawc[#1][blue!40]}
@@ -213,7 +222,13 @@
 
     \begin{minipage}{0.05\textwidth}
         \begin{align*}
-             & u_{j,1} = f\kl{j \cdot \dx}  \; \tfillgr{$+$} \; g\kl{j \cdot \dx} \cdot \tfillr{$\dt$} \; \tfillgr{$+$}  \; f''\kl{j \cdot \dx} \cdot \tfillr{$\fs{\dt[2]}{2}$}
+             r & = \f{\dt}{\dx} \quad r^2 = \f{\dt[2]}{\dx[2]} \\
+             u_{j,1} & = f\kl{j \cdot \dx}  \; \tfillgr{$+$} \; g\kl{j \cdot \dx} \cdot \tfillt{$\dt$} \; \tfillgr{$+$}  \; f''\kl{j \cdot \dx} \cdot \tfillt{$\fs{\dt[2]}{2}$} \\
+             %
+             u_{j,\tsfillr{$k+1$}} & = \tdrawgr{$r^2 \cdot u_{j-1,\tsfillb{$k$}}$} \tfillgr{$+$}
+                                       \tdrawgr{$2\cdot \kl{1 - r^2} \cdot u_{j,\tsfillb{$k$}}$} \tfillgr{$+$}
+                                       \tdrawgr{$r^2 \cdot u_{j+1,\tsfillb{$k$}}$} \tfillgr{$-$}
+                                       \tdrawgr{$u_{j,\tsfillg{$k-1$}}$}
         \end{align*}
     \end{minipage}
 
