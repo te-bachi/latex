@@ -1,0 +1,75 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers,
+    fleqn
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+
+\usepackage{lipsum}
+
+%-------------------------------------------------------------------------------
+% Schriftart setzen
+\setkomafont{pageheadfoot}{\sffamily\footnotesize}
+\setkomafont{pagehead}{\bfseries}
+\setkomafont{pagination}{}
+
+% Titel
+%\titlehead{Kopf }
+%\subject{Typisierung }
+%\title{Titel }
+%\subtitle{Untertitel }
+%\author{Autor }
+%\date{Datum }
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+    %\maketitle
+    \begin{titlepage}
+        \textbf{\Huge Me}
+    \end{titlepage}
+
+\setkomafont{section}{\sffamily}
+
+    \section{Einleitung}
+    \lipsum[1]
+
+\setkomafont{section}{\rmfamily}
+
+    \section{Hauptteil}
+    \lipsum
+
+    \section{Fazit}
+    \lipsum[5-7]
+    
+    \lipsum[2]
+
+\setkomafont{section}{\normalfont}
+
+    \section{Hinführung zum Thema}
+    \lipsum[3-5]
+
+    \section{Lösung des Problems}
+    \lipsum
+
+    \section{Folgerung}
+    \lipsum[1-3]
+
+    \lipsum
+
+\end{document}
