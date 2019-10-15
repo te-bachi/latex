@@ -1,0 +1,301 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=15mm,right=20mm,top=20mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% xcolor
+\usepackage[svgnames]{xcolor}
+
+%-------------------------------------------------------------------------------
+% tabularx
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{makecell}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, calc, fit}
+
+%-------------------------------------------------------------------------------
+% Listings
+\usepackage{listings}
+\newcommand{\listingMatlab}[2][]{
+	\lstset{
+		language=Matlab,
+		breaklines=true,
+		numbers=left,
+		numberstyle=\tiny,
+		numbersep=5pt,
+		captionpos=b,
+		basicstyle=\footnotesize\ttfamily,
+		stringstyle=\color{magenta},
+		identifierstyle=\color{black},
+		keywordstyle=\color{blue}, 
+		commentstyle=\color{DarkGreen}
+	}
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}
+}
+\lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+{
+    \lstset{ %this is the stype
+        mathescape=true,
+        frame=tB,
+        numbers=left, 
+        numberstyle=\tiny,
+        basicstyle=\scriptsize, 
+        keywordstyle=\color{black}\bfseries,
+        keywords={,input, output, return, datatype, function, in, if, else, foreach, while, begin, end, } 
+        numbers=left,
+        xleftmargin=.04\textwidth
+    }
+}
+{}
+
+%-------------------------------------------------------------------------------
+% 
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+% 
+\newcommand{\abs}[1]{{\vert #1 \vert}}
+
+\newcommand\addvmargin[1]{
+  \node[fit=(current bounding box),inner ysep=#1,inner xsep=0]{};
+}
+
+\def\tiktop{%
+    \def\xlines{25}
+    \def\ylines{15}
+    \def\raster{3.5mm}
+
+    \coordinate (P1S) at (0*\raster,14*\raster);
+    \coordinate (P1E) at (24*\raster,6*\raster);
+
+    \coordinate (P2S) at (1*\raster,7*\raster);
+    \coordinate (P2E) at (8*\raster,3*\raster);
+
+    \coordinate (P3S) at (5*\raster,6*\raster);
+    \coordinate (P3E) at (17*\raster,15*\raster);
+
+    \coordinate (P4S) at (6*\raster,9*\raster);
+    \coordinate (P4E) at (16*\raster,10*\raster);
+
+    \coordinate (P5S) at (7*\raster,1*\raster);
+    \coordinate (P5E) at (23*\raster,7*\raster);
+
+    \coordinate (P6S) at (18*\raster,6*\raster);
+    \coordinate (P6E) at (21*\raster,4*\raster);
+
+    % draw vertical lines
+    \foreach \x in {0,...,\xlines}
+    {
+        \draw[lightgray] (\x * \raster, 0mm) -- (\x * \raster, \ylines * \raster);
+    }
+
+    % draw horizontal lines
+    \foreach \y in {0,...,\ylines}
+    {
+        \draw[lightgray] (0mm, \y * \raster) -- (\xlines * \raster, \y * \raster);
+    }
+
+    % border
+    \draw[black] (0mm, 0mm) -- (\xlines * \raster, 0mm);
+    \draw[black] (0mm, 0mm) -- (0mm, \ylines * \raster);
+    \draw[black] (\xlines * \raster, 0mm) -- (\xlines * \raster, \ylines * \raster);
+    \draw[black] (0mm, \ylines * \raster) -- (\xlines * \raster, \ylines * \raster);
+
+    % status
+    \draw[black] (-1.5*\raster, 0mm) rectangle (-0.25*\raster, \ylines * \raster);
+
+    % event queue
+    \draw[black] (-1.5*\raster, -1.5*\raster) rectangle (\xlines * \raster, -0.25*\raster);
+}
+
+\def\Lupper{\mathcal{L}_{\mathrm{upper}}}
+\def\Llower{\mathcal{L}_{\mathrm{lower}}}
+
+\def\pich{7cm}
+\def\picb{10cm}
+
+\begin{document}
+
+    \begin{tabularx}{\textwidth}{ll}
+        % --- LINE 1 --------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+            
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+
+                \draw[black,fill=black,line width=0.4mm]
+                    (\start) circle (0.5mm)
+                    (\end)   circle (0.5mm)
+                    (\start) -- (\end);
+
+                \draw[black,line width=0.2mm, densely dashed]
+                    let
+                        \p1 = (\start),
+                        \p2 = (\end)
+                    in
+                        (\x1, \y1) -- (\x1, 0)
+                        (\x2, \y2) -- (\x2, 0);
+            }
+
+            -- start- / end-points
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
+                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
+            }
+
+            -- events
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+                \path
+                    let
+                        \p1 = (\start),
+                        \p2 = (\end)
+                    in 
+                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle p_{\i} $}
+                        node at (\x2,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle q_{\i} $};
+            }
+        \end{tikzpicture}} &
+        {$\!\begin{aligned}[t]
+            & Q = \kq{ p_1, p_2, p_3, p_4, p_5, q_2, q_4, q_3, p_6, q_6, q_5, q_1 } \\
+            & \text{aa aa a a a a a a a a aa a a a a a a a a a}
+        \end{aligned}
+        $} \\
+        % --- LINE 2 --------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+            
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+
+                \draw[black,fill=black,line width=0.4mm]
+                    (\start) circle (0.5mm)
+                    (\end)   circle (0.5mm)
+                    (\start) -- (\end);
+
+                \draw[black,line width=0.2mm, densely dashed]
+                    let
+                        \p1 = (\start),
+                        \p2 = (\end)
+                    in
+                        (\x1, \y1) -- (\x1, 0)
+                        (\x2, \y2) -- (\x2, 0);
+            }
+
+
+            -- start- / end-points
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
+                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
+            }
+
+            -- events
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+                \path
+                    let
+                        \p1 = (\start),
+                        \p2 = (\end)
+                    in 
+                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle p_{\i} $}
+                        node at (\x2,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle q_{\i} $};
+            }
+
+            -- status
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+                \path
+                    let
+                        \p1 = (\start),
+                        \p2 = (\end)
+                    in 
+                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
+            }
+        \end{tikzpicture}} &
+        {$\!\begin{aligned}[t]
+            & Q = \kq{ p_1, p_2, p_3, p_4, p_5, q_2, q_4, q_3, p_6, q_6, q_5, q_1 } \\
+            & \text{aa aa a a a a a a a a aa a a a a a a a a a}
+        \end{aligned}
+        $} \\
+        
+   \end{tabularx}
+\end{document}
