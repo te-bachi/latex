@@ -16,7 +16,7 @@
 % Packete nutzen
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[left=15mm,right=20mm,top=20mm,bottom=25mm]{geometry}
+\usepackage[left=15mm,right=20mm,top=15mm,bottom=15mm]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
@@ -144,7 +144,7 @@
 \def\Lupper{\mathcal{L}_{\mathrm{upper}}}
 \def\Llower{\mathcal{L}_{\mathrm{lower}}}
 
-\def\pich{7cm}
+\def\pich{6.5cm}
 \def\picb{10cm}
 
 \begin{document}
@@ -178,19 +178,6 @@
                         (\x2, \y2) -- (\x2, 0);
             }
 
-            -- start- / end-points
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P1S/P1E/1/above right/below left/red,
-                P2S/P2E/2/above/above right/red,
-                P3S/P3E/3/above left/below right/black,
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
-            {
-                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
-                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
-            }
-
             -- events
             \foreach \start/\end/\i/\astart/\aend/\co in {
                 P1S/P1E/1/above right/below left/red,
@@ -208,10 +195,27 @@
                         node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle p_{\i} $}
                         node at (\x2,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle q_{\i} $};
             }
+
+            -- start- / end-point text
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
+                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
+            }
         \end{tikzpicture}} &
-        {$\!\begin{aligned}[t]
-            & Q = \kq{ p_1, p_2, p_3, p_4, p_5, q_2, q_4, q_3, p_6, q_6, q_5, q_1 } \\
-            & \text{aa aa a a a a a a a a aa a a a a a a a a a}
+        \makecell[l]{$\!\begin{aligned}[t]
+            s_i     &= \text{Line segment} \\
+            p_i     &= \text{Upper endpoint} \\
+            q_i     &= \text{Lower endpoint} \\
+            r_{ij}  &= \text{Intersection point} \\
+            Q       &= \kq{ p_1, p_2, p_3, p_4, p_5, q_2, q_4, q_3, p_6, q_6, q_5, q_1 } \\
+            S       &= \kq{\;}
         \end{aligned}
         $} \\
         % --- LINE 2 --------------------------------------------------------
@@ -242,23 +246,8 @@
                         (\x2, \y2) -- (\x2, 0);
             }
 
-
-            -- start- / end-points
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P1S/P1E/1/above right/below left/red,
-                P2S/P2E/2/above/above right/red,
-                P3S/P3E/3/above left/below right/black,
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
-            {
-                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
-                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
-            }
-
             -- events
             \foreach \start/\end/\i/\astart/\aend/\co in {
-                P1S/P1E/1/above right/below left/red,
                 P2S/P2E/2/above/above right/red,
                 P3S/P3E/3/above left/below right/black,
                 P4S/P4E/4/above left/right/black,
@@ -276,8 +265,85 @@
 
             -- status
             \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red}
+            {
+                \path
+                    let
+                        \p1 = (\start),
+                        \p2 = (\end)
+                    in 
+                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
+            }
+
+            -- sweep line
+            \foreach \event in {P1S}
+            {
+                \draw[red,line width=0.4mm]
+                    let
+                        \p1 = (\event)
+                    in 
+                        (\x1, 0) -- (\x1, \ylines * \raster);
+                \draw[black,fill=black,line width=0.4mm]
+                    (\event) circle (0.5mm);
+            }
+
+            -- start- / end-point text
+            \foreach \start/\end/\i/\astart/\aend/\co in {
                 P1S/P1E/1/above right/below left/red,
                 P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
+                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
+            }
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $p_1$ & from  & $Q$ \\
+            Add segment     & $s_1$ & to    & $S$ \\
+            \multicolumn{4}{@{}l}{No upper or lower neighbours}
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ p_2, p_3, p_4, p_5, q_2, q_4, q_3, p_6, q_6, q_5, q_1 } \\
+            S       &= \kq{ s_1 }
+        \end{aligned}
+        $} \\
+        % --- LINE 3 --------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+            
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+
+                \draw[black,fill=black,line width=0.4mm]
+                    (\start) circle (0.5mm)
+                    (\end)   circle (0.5mm)
+                    (\start) -- (\end);
+
+                \draw[black,line width=0.2mm, densely dashed]
+                    let
+                        \p1 = (\start),
+                        \p2 = (\end)
+                    in
+                        (\x1, \y1) -- (\x1, 0)
+                        (\x2, \y2) -- (\x2, 0);
+            }
+
+            -- events
+            \foreach \start/\end/\i/\astart/\aend/\co in {
                 P3S/P3E/3/above left/below right/black,
                 P4S/P4E/4/above left/right/black,
                 P5S/P5E/5/above left/above right/black,
@@ -288,12 +354,172 @@
                         \p1 = (\start),
                         \p2 = (\end)
                     in 
+                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle p_{\i} $}
+                        node at (\x2,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle q_{\i} $};
+            }
+
+            -- status
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above right/below left/red}
+            {
+                \path
+                    let
+                        \p1 = (\start),
+                        \p2 = (\end)
+                    in 
                         node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
             }
+
+            -- sweep line
+            \foreach \event in {P2S}
+            {
+                \draw[red,line width=0.4mm]
+                    let
+                        \p1 = (\event)
+                    in 
+                        (\x1, 0) -- (\x1, \ylines * \raster);
+                \draw[black,fill=black,line width=0.4mm]
+                    (\event) circle (0.5mm);
+            }
+
+
+            -- start- / end-point text
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
+                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
+            }
+            
         \end{tikzpicture}} &
-        {$\!\begin{aligned}[t]
-            & Q = \kq{ p_1, p_2, p_3, p_4, p_5, q_2, q_4, q_3, p_6, q_6, q_5, q_1 } \\
-            & \text{aa aa a a a a a a a a aa a a a a a a a a a}
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $p_2$ & from  & $Q$ \\
+            Add segment     & $s_2$ & to    & $S$ below $s_1$ \\
+            \multicolumn{4}{@{}l}{Check intersection:}
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            \text{above}       &= \kq{ s_1 } \\
+            \text{below}       &= \kq{ \; }
+        \end{aligned}
+        $ \\
+        $ \text{intersection}\kl{s_1, s_2} = \text{false} $ \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ p_3, p_4, p_5, q_2, q_4, q_3, p_6, q_6, q_5, q_1 } \\
+            S       &= \kq{ s_1, s_2 }
+        \end{aligned}
+        $} \\
+        % --- LINE 3 --------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+            
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+
+                \draw[black,fill=black,line width=0.4mm]
+                    (\start) circle (0.5mm)
+                    (\end)   circle (0.5mm)
+                    (\start) -- (\end);
+
+                \draw[black,line width=0.2mm, densely dashed]
+                    let
+                        \p1 = (\start),
+                        \p2 = (\end)
+                    in
+                        (\x1, \y1) -- (\x1, 0)
+                        (\x2, \y2) -- (\x2, 0);
+            }
+
+            -- events
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+                \path
+                    let
+                        \p1 = (\start),
+                        \p2 = (\end)
+                    in 
+                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle p_{\i} $}
+                        node at (\x2,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle q_{\i} $};
+            }
+
+            -- status
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above right/below left/red,
+                P3S/P3E/3/above left/below right/black}
+            {
+                \path
+                    let
+                        \p1 = (\start),
+                        \p2 = (\end)
+                    in 
+                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
+            }
+
+            -- sweep line
+            \foreach \event in {P3S}
+            {
+                \draw[red,line width=0.4mm]
+                    let
+                        \p1 = (\event)
+                    in 
+                        (\x1, 0) -- (\x1, \ylines * \raster);
+                \draw[black,fill=black,line width=0.4mm]
+                    (\event) circle (0.5mm);
+            }
+
+
+            -- start- / end-point text
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
+            {
+                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
+                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
+            }
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $p_3$ & from  & $Q$ \\
+            Add segment     & $s_3$ & to    & $S$ below $s_2$ \\
+            \multicolumn{4}{@{}l}{Check intersection:}
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            \text{above}       &= \kq{ s_2 } \\
+            \text{below}       &= \kq{ \; }
+        \end{aligned}
+        $ \\
+        $ \text{intersection}\kl{s_2, s_3} = \text{false} $ \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ p_4, p_5, q_2, q_4, q_3, p_6, q_6, q_5, q_1 } \\
+            S       &= \kq{ s_1, s_2, s_3 }
         \end{aligned}
         $} \\
         
