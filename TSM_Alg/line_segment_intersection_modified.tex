@@ -35,7 +35,7 @@
 %-------------------------------------------------------------------------------
 % TikZ
 \usepackage{tikz}
-\usetikzlibrary{positioning, arrows, decorations, calc, fit, intersections}
+\usetikzlibrary{positioning, arrows, decorations, calc, fit}
 
 %-------------------------------------------------------------------------------
 % Listings
@@ -101,20 +101,20 @@
     \coordinate (P1S) at (0*\raster,14*\raster);
     \coordinate (P1E) at (24*\raster,6*\raster);
 
-    \coordinate (P2S) at (1*\raster,6*\raster);
-    \coordinate (P2E) at (11*\raster,4*\raster);
+    \coordinate (P2S) at (1*\raster,7*\raster);
+    \coordinate (P2E) at (8*\raster,3*\raster);
 
-    \coordinate (P3S) at (3*\raster,7*\raster);
-    \coordinate (P3E) at (16*\raster,15*\raster);
+    \coordinate (P3S) at (5*\raster,6*\raster);
+    \coordinate (P3E) at (17*\raster,15*\raster);
 
-    \coordinate (P4S) at (5*\raster,9*\raster);
-    \coordinate (P4E) at (14*\raster,10*\raster);
+    \coordinate (P4S) at (6*\raster,9*\raster);
+    \coordinate (P4E) at (16*\raster,10*\raster);
 
-    \coordinate (P5S) at (8*\raster,1*\raster);
-    \coordinate (P5E) at (23*\raster,8*\raster);
+    \coordinate (P5S) at (7*\raster,1*\raster);
+    \coordinate (P5E) at (23*\raster,7*\raster);
 
-    \coordinate (P6S) at (17*\raster,6*\raster);
-    \coordinate (P6E) at (19*\raster,4*\raster);
+    \coordinate (P6S) at (18*\raster,6*\raster);
+    \coordinate (P6E) at (21*\raster,4*\raster);
 
     % draw vertical lines
     \foreach \x in {0,...,\xlines}
@@ -145,7 +145,7 @@
 \def\Llower{\mathcal{L}_{\mathrm{lower}}}
 
 \def\pich{6.5cm}
-\def\picb{9cm}
+\def\picb{10cm}
 
 \begin{document}
 
@@ -155,62 +155,45 @@
         \begin{tikzpicture}[baseline=0]
             \tiktop
             
-            -- lines
-            \foreach \start/\end in {
-                P1S/P1E,
-                P2S/P2E,
-                P3S/P3E,
-                P4S/P4E,
-                P5S/P5E,
-                P6S/P6E}
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
             {
-                \draw[black,fill=black,line width=0.4mm]
-                    (\start) -- (\end);
-            }
 
-            -- dashed lines
-            \foreach \point in {
-                P1S,P1E,
-                P2S,P2E,
-                P3S,P3E,
-                P4S,P4E,
-                P5S,P5E,
-                P6S,P6E}
-            {
+                \draw[black,fill=black,line width=0.4mm]
+                    (\start) circle (0.5mm)
+                    (\end)   circle (0.5mm)
+                    (\start) -- (\end);
+
                 \draw[black,line width=0.2mm, densely dashed]
                     let
-                        \p1 = (\point)
+                        \p1 = (\start),
+                        \p2 = (\end)
                     in
-                        (\x1, \y1) -- (\x1, 0);
-            }
-
-            -- start- / end-point
-            \foreach \point in {
-                P1S,P1E,
-                P2S,P2E,
-                P3S,P3E,
-                P4S,P4E,
-                P5S,P5E,
-                P6S,P6E}
-            {
-                \draw[black,fill=black,line width=0.4mm]
-                    (\point) circle (0.5mm);
+                        (\x1, \y1) -- (\x1, 0)
+                        (\x2, \y2) -- (\x2, 0);
             }
 
             -- events
-            \foreach \event/\name/\i in {
-                P1S/p/1,P1E/q/1,
-                P2S/p/2,P2E/q/2,
-                P3S/p/3,P3E/q/3,
-                P4S/p/4,P4E/q/4,
-                P5S/p/5,P5E/q/5,
-                P6S/p/6,P6E/q/6}
+            \foreach \start/\end/\i/\astart/\aend/\co in {
+                P1S/P1E/1/above right/below left/red,
+                P2S/P2E/2/above/above right/red,
+                P3S/P3E/3/above left/below right/black,
+                P4S/P4E/4/above left/right/black,
+                P5S/P5E/5/above left/above right/black,
+                P6S/P6E/6/above left/below right/black}
             {
                 \path
                     let
-                        \p1 = (\event)
+                        \p1 = (\start),
+                        \p2 = (\end)
                     in 
-                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle \name_{\i} $};
+                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle p_{\i} $}
+                        node at (\x2,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle q_{\i} $};
             }
 
             -- start- / end-point text
@@ -440,7 +423,6 @@
         \begin{tikzpicture}[baseline=0]
             \tiktop
             
-            --- segments and points
             \foreach \start/\end/\i/\astart/\aend/\co in {
                 P1S/P1E/1/above right/below left/red,
                 P2S/P2E/2/above/above right/red,
@@ -452,9 +434,7 @@
 
                 \draw[black,fill=black,line width=0.4mm]
                     (\start) circle (0.5mm)
-                    (\end)   circle (0.5mm);
-
-                \draw[black,fill=black,line width=0.4mm, name path global/.expanded=s\i]
+                    (\end)   circle (0.5mm)
                     (\start) -- (\end);
 
                 \draw[black,line width=0.2mm, densely dashed]
@@ -465,16 +445,6 @@
                         (\x1, \y1) -- (\x1, 0)
                         (\x2, \y2) -- (\x2, 0);
             }
-
-            -- intersection
-            \path [name intersections={of=s1 and s3,by=r13}];
-            \draw[blue,line width=0.4mm, densely dashed]
-                    let
-                        \p1 = (r13),
-                    in
-                        (\x1, \y1) -- (\x1, 0);
-            \draw[blue, fill=white, line width=0.4mm]
-                (r13) circle (0.75mm);
 
             -- events
             \foreach \start/\end/\i/\astart/\aend/\co in {
@@ -536,17 +506,20 @@
         \makecell[l]{
         \begin{tabular}[t]{@{}llll@{}}
             Remove event    & $p_3$ & from  & $Q$ \\
-            Add segment     & $s_3$ & to    & $S$ between $s_1$ and $s_2$ \\
-            \multicolumn{4}{@{}l}{Check intersection:} \\
-            above           & \multicolumn{3}{@{}l}{$= \kq{ s_1 }$} \\
-            below           & \multicolumn{3}{@{}l}{$= \kq{ s_2\; }$} \\
-            intersection$\kl{s_1, s_3}$   & \multicolumn{3}{@{}l}{$=$ true $\to	\textcolor{blue}{r_{13}}$} \\
-            intersection$\kl{s_2, s_3}$   & \multicolumn{3}{@{}l}{$=$ false }
+            Add segment     & $s_3$ & to    & $S$ below $s_2$ \\
+            \multicolumn{4}{@{}l}{Check intersection:}
         \end{tabular} \\
         $
         \begin{aligned}[t]
+            \text{above}       &= \kq{ s_2 } \\
+            \text{below}       &= \kq{ \; }
+        \end{aligned}
+        $ \\
+        $ \text{intersection}\kl{s_2, s_3} = \text{false} $ \\
+        $
+        \begin{aligned}[t]
             Q       &= \kq{ p_4, p_5, q_2, q_4, q_3, p_6, q_6, q_5, q_1 } \\
-            S       &= \kq{ s_1, s_3, s_2 }
+            S       &= \kq{ s_1, s_2, s_3 }
         \end{aligned}
         $} \\
         
