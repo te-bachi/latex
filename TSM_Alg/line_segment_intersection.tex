@@ -105,7 +105,7 @@
     \coordinate (P2E) at (11*\raster,4*\raster);
 
     \coordinate (P3S) at (3*\raster,7*\raster);
-    \coordinate (P3E) at (16*\raster,15*\raster);
+    \coordinate (P3E) at (15*\raster,15*\raster);
 
     \coordinate (P4S) at (5*\raster,9*\raster);
     \coordinate (P4E) at (14*\raster,10*\raster);
@@ -113,8 +113,8 @@
     \coordinate (P5S) at (8*\raster,1*\raster);
     \coordinate (P5E) at (23*\raster,8*\raster);
 
-    \coordinate (P6S) at (17*\raster,6*\raster);
-    \coordinate (P6E) at (19*\raster,4*\raster);
+    \coordinate (P6S) at (16*\raster,6*\raster);
+    \coordinate (P6E) at (20*\raster,5*\raster);
 
     % draw vertical lines
     \foreach \x in {0,...,\xlines}
@@ -155,7 +155,7 @@
         \begin{tikzpicture}[baseline=0]
             \tiktop
             
-            -- lines
+            -- line segments
             \foreach \start/\end in {
                 P1S/P1E,
                 P2S/P2E,
@@ -185,15 +185,15 @@
             }
 
             -- start- / end-point
-            \foreach \point in {
-                P1S,P1E,
-                P2S,P2E,
-                P3S,P3E,
-                P4S,P4E,
-                P5S,P5E,
-                P6S,P6E}
+            \foreach \point/\co in {
+                P1S/black,P1E/black,
+                P2S/black,P2E/black,
+                P3S/black,P3E/black,
+                P4S/black,P4E/black,
+                P5S/black,P5E/black,
+                P6S/black,P6E/black}
             {
-                \draw[black,fill=black,line width=0.4mm]
+                \draw[\co,fill=\co,line width=0.4mm]
                     (\point) circle (0.5mm);
             }
 
@@ -214,16 +214,15 @@
             }
 
             -- start- / end-point text
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P1S/P1E/1/above right/below left/red,
-                P2S/P2E/2/above/above right/red,
-                P3S/P3E/3/above left/below right/black,
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
+            \foreach \point/\name/\i/\align/\co in {
+                P1S/p/1/above right/black, P1E/q/1/below left/black,
+                P2S/p/2/above/black,       P2E/q/2/above right/black,
+                P3S/p/3/above left/black,  P3E/q/3/below right/black,
+                P4S/p/4/above left/black,  P4E/q/4/right/black,
+                P5S/p/5/above left/black,  P5E/q/5/above right/black,
+                P6S/p/6/above left/black,  P6E/q/6/below right/black}
             {
-                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
-                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
+                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
             }
         \end{tikzpicture}} &
         \makecell[l]{$\!\begin{aligned}[t]
@@ -240,44 +239,72 @@
         \begin{tikzpicture}[baseline=0]
             \tiktop
             
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P1S/P1E/1/above right/below left/red,
-                P2S/P2E/2/above/above right/red,
-                P3S/P3E/3/above left/below right/black,
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
+            -- line segments
+            \foreach \start/\end in {
+                P1S/P1E,
+                P2S/P2E,
+                P3S/P3E,
+                P4S/P4E,
+                P5S/P5E,
+                P6S/P6E}
             {
-
                 \draw[black,fill=black,line width=0.4mm]
-                    (\start) circle (0.5mm)
-                    (\end)   circle (0.5mm)
                     (\start) -- (\end);
+            }
 
+            -- dashed lines
+            \foreach \point in {
+                    P1E,
+                P2S,P2E,
+                P3S,P3E,
+                P4S,P4E,
+                P5S,P5E,
+                P6S,P6E}
+            {
                 \draw[black,line width=0.2mm, densely dashed]
                     let
-                        \p1 = (\start),
-                        \p2 = (\end)
+                        \p1 = (\point)
                     in
-                        (\x1, \y1) -- (\x1, 0)
-                        (\x2, \y2) -- (\x2, 0);
+                        (\x1, \y1) -- (\x1, 0);
+            }
+
+            -- sweep line
+            \foreach \event in {P1S}
+            {
+                \draw[red,line width=0.4mm]
+                    let
+                        \p1 = (\event)
+                    in 
+                        (\x1, 0) -- (\x1, \ylines * \raster);
+            }
+
+            -- start- / end-point
+            \foreach \point/\co in {
+                P1S/red,P1E/black,
+                P2S/black,P2E/black,
+                P3S/black,P3E/black,
+                P4S/black,P4E/black,
+                P5S/black,P5E/black,
+                P6S/black,P6E/black}
+            {
+                \draw[\co,fill=\co,line width=0.4mm]
+                    (\point) circle (0.5mm);
             }
 
             -- events
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P2S/P2E/2/above/above right/red,
-                P3S/P3E/3/above left/below right/black,
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
+            \foreach \event/\name/\i in {
+                P1E/q/1,
+                P2S/p/2,P2E/q/2,
+                P3S/p/3,P3E/q/3,
+                P4S/p/4,P4E/q/4,
+                P5S/p/5,P5E/q/5,
+                P6S/p/6,P6E/q/6}
             {
                 \path
                     let
-                        \p1 = (\start),
-                        \p2 = (\end)
+                        \p1 = (\event)
                     in 
-                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle p_{\i} $}
-                        node at (\x2,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle q_{\i} $};
+                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle \name_{\i} $};
             }
 
             -- status
@@ -292,29 +319,16 @@
                         node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
             }
 
-            -- sweep line
-            \foreach \event in {P1S}
-            {
-                \draw[red,line width=0.4mm]
-                    let
-                        \p1 = (\event)
-                    in 
-                        (\x1, 0) -- (\x1, \ylines * \raster);
-                \draw[black,fill=black,line width=0.4mm]
-                    (\event) circle (0.5mm);
-            }
-
             -- start- / end-point text
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P1S/P1E/1/above right/below left/red,
-                P2S/P2E/2/above/above right/red,
-                P3S/P3E/3/above left/below right/black,
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
+            \foreach \point/\name/\i/\align/\co in {
+                P1S/p/1/above right/black, P1E/q/1/below left/black,
+                P2S/p/2/above/black,       P2E/q/2/above right/black,
+                P3S/p/3/above left/black,  P3E/q/3/below right/black,
+                P4S/p/4/above left/black,  P4E/q/4/right/black,
+                P5S/p/5/above left/black,  P5E/q/5/above right/black,
+                P6S/p/6/above left/black,  P6E/q/6/below right/black}
             {
-                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
-                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
+                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
             }
             
         \end{tikzpicture}} &
@@ -335,44 +349,73 @@
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
-            
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P1S/P1E/1/above right/below left/red,
-                P2S/P2E/2/above/above right/red,
-                P3S/P3E/3/above left/below right/black,
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
+
+            -- line segments
+            \foreach \start/\end in {
+                P1S/P1E,
+                P2S/P2E,
+                P3S/P3E,
+                P4S/P4E,
+                P5S/P5E,
+                P6S/P6E}
             {
-
                 \draw[black,fill=black,line width=0.4mm]
-                    (\start) circle (0.5mm)
-                    (\end)   circle (0.5mm)
                     (\start) -- (\end);
+            }
 
+            -- dashed lines
+            \foreach \point in {
+                    P1E,
+                P2S,P2E,
+                P3S,P3E,
+                P4S,P4E,
+                P5S,P5E,
+                P6S,P6E}
+            {
                 \draw[black,line width=0.2mm, densely dashed]
                     let
-                        \p1 = (\start),
-                        \p2 = (\end)
+                        \p1 = (\point)
                     in
-                        (\x1, \y1) -- (\x1, 0)
-                        (\x2, \y2) -- (\x2, 0);
+                        (\x1, \y1) -- (\x1, 0);
+            }
+
+            -- sweep line
+            \foreach \event in {P2S}
+            {
+                \draw[red,line width=0.4mm]
+                    let
+                        \p1 = (\event)
+                    in 
+                        (\x1, 0) -- (\x1, \ylines * \raster);
+            }
+
+            -- start- / end-point
+            \foreach \point/\co in {
+                P1E/black,
+                P2S/red,P2E/black,
+                P3S/black,P3E/black,
+                P4S/black,P4E/black,
+                P5S/black,P5E/black,
+                P6S/black,P6E/black}
+            {
+                \draw[\co,fill=\co,line width=0.4mm]
+                    (\point) circle (0.5mm);
             }
 
             -- events
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P3S/P3E/3/above left/below right/black,
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
+            \foreach \event/\name/\i in {
+                P1E/q/1,
+                P2E/q/2,
+                P3S/p/3,P3E/q/3,
+                P4S/p/4,P4E/q/4,
+                P5S/p/5,P5E/q/5,
+                P6S/p/6,P6E/q/6}
             {
                 \path
                     let
-                        \p1 = (\start),
-                        \p2 = (\end)
+                        \p1 = (\event)
                     in 
-                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle p_{\i} $}
-                        node at (\x2,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle q_{\i} $};
+                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle \name_{\i} $};
             }
 
             -- status
@@ -388,30 +431,17 @@
                         node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
             }
 
-            -- sweep line
-            \foreach \event in {P2S}
-            {
-                \draw[red,line width=0.4mm]
-                    let
-                        \p1 = (\event)
-                    in 
-                        (\x1, 0) -- (\x1, \ylines * \raster);
-                \draw[black,fill=black,line width=0.4mm]
-                    (\event) circle (0.5mm);
-            }
-
 
             -- start- / end-point text
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P1S/P1E/1/above right/below left/red,
-                P2S/P2E/2/above/above right/red,
-                P3S/P3E/3/above left/below right/black,
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
+            \foreach \point/\name/\i/\align/\co in {
+                P1E/q/1/below left/black,
+                P2S/p/2/above/black,       P2E/q/2/above right/black,
+                P3S/p/3/above left/black,  P3E/q/3/below right/black,
+                P4S/p/4/above left/black,  P4E/q/4/right/black,
+                P5S/p/5/above left/black,  P5E/q/5/above right/black,
+                P6S/p/6/above left/black,  P6E/q/6/below right/black}
             {
-                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
-                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
+                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
             }
             
         \end{tikzpicture}} &
@@ -435,35 +465,60 @@
             S       &= \kq{ s_1, s_2 }
         \end{aligned}
         $} \\
-        % --- LINE 3 --------------------------------------------------------
+        % --- LINE 4 --------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
-            
-            --- segments and points
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P1S/P1E/1/above right/below left/red,
-                P2S/P2E/2/above/above right/red,
-                P3S/P3E/3/above left/below right/black,
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
+            -- line segments
+            \foreach \start/\end/\i in {
+                P1S/P1E/1,
+                P2S/P2E/2,
+                P3S/P3E/3,
+                P4S/P4E/4,
+                P5S/P5E/5,
+                P6S/P6E/6}
             {
-
-                \draw[black,fill=black,line width=0.4mm]
-                    (\start) circle (0.5mm)
-                    (\end)   circle (0.5mm);
-
                 \draw[black,fill=black,line width=0.4mm, name path global/.expanded=s\i]
                     (\start) -- (\end);
+            }
 
+            -- dashed lines
+            \foreach \point in {
+                    P1E,
+                P2S,P2E,
+                P3S,P3E,
+                P4S,P4E,
+                P5S,P5E,
+                P6S,P6E}
+            {
                 \draw[black,line width=0.2mm, densely dashed]
                     let
-                        \p1 = (\start),
-                        \p2 = (\end)
+                        \p1 = (\point)
                     in
-                        (\x1, \y1) -- (\x1, 0)
-                        (\x2, \y2) -- (\x2, 0);
+                        (\x1, \y1) -- (\x1, 0);
+            }
+
+            -- sweep line
+            \foreach \event in {P3S}
+            {
+                \draw[red,line width=0.4mm]
+                    let
+                        \p1 = (\event)
+                    in 
+                        (\x1, 0) -- (\x1, \ylines * \raster);
+            }
+
+            -- start- / end-point
+            \foreach \point/\co in {
+                P1E/black,
+                P2E/black,
+                P3S/red,P3E/black,
+                P4S/black,P4E/black,
+                P5S/black,P5E/black,
+                P6S/black,P6E/black}
+            {
+                \draw[\co,fill=\co,line width=0.4mm]
+                    (\point) circle (0.5mm);
             }
 
             -- intersection
@@ -477,18 +532,20 @@
                 (r13) circle (0.75mm);
 
             -- events
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
+            \foreach \event/\name/\i in {
+                P1E/q/1,
+                P2E/q/2,
+                P3E/q/3,
+                P4S/p/4,P4E/q/4,
+                P5S/p/5,P5E/q/5,
+                P6S/p/6,P6E/q/6,
+                r13/r/13}
             {
                 \path
                     let
-                        \p1 = (\start),
-                        \p2 = (\end)
+                        \p1 = (\event)
                     in 
-                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle p_{\i} $}
-                        node at (\x2,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle q_{\i} $};
+                        node at (\x1,0) [below, fill=white, inner sep=1, outer sep=5] {$\scriptstyle \name_{\i} $};
             }
 
             -- status
@@ -505,30 +562,16 @@
                         node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
             }
 
-            -- sweep line
-            \foreach \event in {P3S}
-            {
-                \draw[red,line width=0.4mm]
-                    let
-                        \p1 = (\event)
-                    in 
-                        (\x1, 0) -- (\x1, \ylines * \raster);
-                \draw[black,fill=black,line width=0.4mm]
-                    (\event) circle (0.5mm);
-            }
-
-
             -- start- / end-point text
-            \foreach \start/\end/\i/\astart/\aend/\co in {
-                P1S/P1E/1/above right/below left/red,
-                P2S/P2E/2/above/above right/red,
-                P3S/P3E/3/above left/below right/black,
-                P4S/P4E/4/above left/right/black,
-                P5S/P5E/5/above left/above right/black,
-                P6S/P6E/6/above left/below right/black}
+            \foreach \point/\name/\i/\align/\co in {
+                P1E/q/1/below left/black,
+                P2E/q/2/above right/black,
+                P3S/p/3/above left/black,  P3E/q/3/below right/black,
+                P4S/p/4/above left/black,  P4E/q/4/right/black,
+                P5S/p/5/above left/black,  P5E/q/5/above right/black,
+                P6S/p/6/above left/black,  P6E/q/6/below right/black}
             {
-                \node[\astart, fill=white, inner sep=1.25, outer sep=2] at (\start) {$\scriptstyle p_{\i} $};
-                \node[\aend, fill=white, inner sep=1.25, outer sep=2] at (\end) {$\scriptstyle q_{\i} $};
+                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
             }
             
         \end{tikzpicture}} &
