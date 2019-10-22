@@ -790,12 +790,251 @@
         \makecell[l]{
         \begin{tabular}[t]{@{}llll@{}}
             Remove event    & $r_{34}$ & from  & $Q$ \\
-            Swap segment    & $s_4$ & and    & $s_3$
+            Swap segment    & $s_3$ & and    & $s_4$
         \end{tabular} \\
         $
         \begin{aligned}[t]
             Q       &= \kq{ p_5, r_{13}, q_2, r_{14}, q_4, q_3, p_6, q_6, q_5, q_1 } \\
             S       &= \kq{ s_1, s_3, s_4, s_2 }
+        \end{aligned}
+        $} \\
+        % --- LINE 7 --------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- dashed lines
+            \foreach \point in {
+                P1E,
+                P2E,
+                P3E,
+                P4E,
+                P5E,
+                P6S,P6E}
+            {
+                \draw[black,line width=0.2mm, densely dashed]
+                    let
+                        \p1 = (\point)
+                    in
+                        (\x1, \y1) -- (\x1, 0);
+            }
+
+            -- sweep line
+            \foreach \event in {P5S}
+            {
+                \draw[red,line width=0.4mm]
+                    let
+                        \p1 = (\event)
+                    in 
+                        (\x1, 0) -- (\x1, \ylines * \raster);
+            }
+
+            -- start- / end-point
+            \foreach \point/\co in {
+                P1E/black,
+                P2E/black,
+                P3E/black,
+                P4E/black,
+                P5S/red,P5E/black,
+                P6S/black,P6E/black}
+            {
+                \draw[\co,fill=\co,line width=0.4mm]
+                    (\point) circle (0.5mm);
+            }
+
+            -- intersection
+            \foreach \intersect/\co/\dashline in {
+                    r13/blue/yes,
+                    r14/blue/yes,
+                    r34/black/no}{
+                \ifnum\pdfstrcmp{\dashline}{yes}=0
+                \draw[\co,line width=0.4mm, densely dashed]
+                        let
+                            \p1 = (\intersect)
+                        in
+                            (\x1, \y1) -- (\x1, 0);
+                \fi
+                \draw[\co, fill=white, line width=0.4mm]
+                    (\intersect) circle (0.75mm);
+            }
+
+            -- events
+            \foreach \event/\name/\i in {
+                P1E/q/1,
+                P2E/q/2,
+                P3E/q/3,
+                P4E/q/4,
+                P5E/q/5,
+                P6S/p/6,P6E/q/6,
+                r13/r/13,
+                r14/r/14}
+            {
+                \path
+                    let
+                        \p1 = (\event)
+                    in 
+                        node at (\x1,0) [below, fill=white, inner sep=1, outer sep=5] {$\scriptstyle \name_{\i} $};
+            }
+
+            -- status
+            \foreach \status/\i in {
+                P1S/1,
+                P2S/2,
+                P3S/4,
+                P4S/3,
+                P5S/5}
+            {
+                \path
+                    let
+                        \p1 = (\status)
+                    in 
+                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
+            }
+
+            -- start- / end-point text
+            \foreach \point/\name/\i/\align/\co in {
+                P1E/q/1/below left/black,
+                P2E/q/2/above right/black,
+                P3E/q/3/below right/black,
+                P4E/q/4/right/black,
+                P5S/p/5/above left/black,  P5E/q/5/above right/black,
+                P6S/p/6/above left/black,  P6E/q/6/below right/black}
+            {
+                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
+            }
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $p_5$ & from  & $Q$ \\
+            Add segment     & $s_5$ & to    & $S$ below $s_2$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above           & \multicolumn{3}{@{}l}{$= \kq{ s_2 }$} \\
+            below           & \multicolumn{3}{@{}l}{$= \kq{ \; }$} \\
+            intersection$\kl{s_2, s_5}$   & \multicolumn{3}{@{}l}{$=$ false }
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ r_{13}, q_2, r_{14}, q_4, q_3, p_6, q_6, q_5, q_1 } \\
+            S       &= \kq{ s_1, s_3, s_4, s_2, p_5 }
+        \end{aligned}
+        $} \\
+        % --- LINE 8 --------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- dashed lines
+            \foreach \point in {
+                P1E,
+                P2E,
+                P3E,
+                P4E,
+                P5E,
+                P6S,P6E}
+            {
+                \draw[black,line width=0.2mm, densely dashed]
+                    let
+                        \p1 = (\point)
+                    in
+                        (\x1, \y1) -- (\x1, 0);
+            }
+
+            -- sweep line
+            \foreach \event in {r13}
+            {
+                \draw[red,line width=0.4mm]
+                    let
+                        \p1 = (\event)
+                    in 
+                        (\x1, 0) -- (\x1, \ylines * \raster);
+            }
+
+            -- start- / end-point
+            \foreach \point/\co in {
+                P1E/black,
+                P2E/black,
+                P3E/black,
+                P4E/black,
+                P5E/black,
+                P6S/black,P6E/black}
+            {
+                \draw[\co,fill=\co,line width=0.4mm]
+                    (\point) circle (0.5mm);
+            }
+
+            -- intersection
+            \foreach \intersect/\co/\dashline in {
+                    r13/red/no,
+                    r14/blue/yes,
+                    r34/black/no}{
+                \ifnum\pdfstrcmp{\dashline}{yes}=0
+                \draw[\co,line width=0.4mm, densely dashed]
+                        let
+                            \p1 = (\intersect)
+                        in
+                            (\x1, \y1) -- (\x1, 0);
+                \fi
+                \draw[\co, fill=white, line width=0.4mm]
+                    (\intersect) circle (0.75mm);
+            }
+
+            -- events
+            \foreach \event/\name/\i in {
+                P1E/q/1,
+                P2E/q/2,
+                P3E/q/3,
+                P4E/q/4,
+                P5E/q/5,
+                P6S/p/6,P6E/q/6,
+                r14/r/14}
+            {
+                \path
+                    let
+                        \p1 = (\event)
+                    in 
+                        node at (\x1,0) [below, fill=white, inner sep=1, outer sep=5] {$\scriptstyle \name_{\i} $};
+            }
+
+            -- status
+            \foreach \status/\i in {
+                P1S/3,
+                P2S/2,
+                P3S/4,
+                P4S/1,
+                P5S/5}
+            {
+                \path
+                    let
+                        \p1 = (\status)
+                    in 
+                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
+            }
+
+            -- start- / end-point text
+            \foreach \point/\name/\i/\align/\co in {
+                P1E/q/1/below left/black,
+                P2E/q/2/above right/black,
+                P3E/q/3/below right/black,
+                P4E/q/4/right/black,
+                P5S/p/5/above left/black,  P5E/q/5/above right/black,
+                P6S/p/6/above left/black,  P6E/q/6/below right/black}
+            {
+                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
+            }
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $r_{13}$ & from  & $Q$ \\
+            Swap segment    & $s_1$ & and    & $s_3$
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ q_2, r_{14}, q_4, q_3, p_6, q_6, q_5, q_1 } \\
+            S       &= \kq{ s_3, s_1, s_4, s_2, p_5 }
         \end{aligned}
         $} \\
         
