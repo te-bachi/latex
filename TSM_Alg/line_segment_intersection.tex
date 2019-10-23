@@ -16,7 +16,7 @@
 % Packete nutzen
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[left=15mm,right=20mm,top=15mm,bottom=15mm]{geometry}
+\usepackage[left=15mm,right=20mm,top=17mm,bottom=17mm,footskip=0.7cm]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
@@ -25,6 +25,14 @@
 %-------------------------------------------------------------------------------
 % xcolor
 \usepackage[svgnames]{xcolor}
+
+%-------------------------------------------------------------------------------
+% scrlayer-scrpage
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\cfoot{\pagemark}
 
 %-------------------------------------------------------------------------------
 % tabularx
@@ -158,6 +166,81 @@
     \path [name intersections={of=s3 and s4,by=r34}];
 }
 
+
+\newcommand{\dashedlines}[1]{%
+    \foreach \point in {#1}
+    {
+        \draw[black,line width=0.2mm, densely dashed]
+            let
+                \p1 = (\point)
+            in
+                (\x1, \y1) -- (\x1, 0);
+    }
+}
+
+\newcommand{\startendpoints}[1]{%
+    \foreach \point/\co in {#1}
+    {
+        \draw[\co,fill=\co,line width=0.4mm]
+            (\point) circle (0.5mm);
+    }
+}
+
+\newcommand{\events}[1]{%
+    \foreach \event/\name/\i in {#1}
+    {
+        \path
+            let
+                \p1 = (\event)
+            in 
+                node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle \name_{\i} $};
+    }
+}
+
+\newcommand{\status}[1]{%
+    \foreach \status/\i in {#1}
+    {
+        \path
+            let
+                \p1 = (\status)
+            in 
+                node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
+    }
+}
+
+\newcommand{\startendpointtexts}[1]{%
+    \foreach \point/\name/\i/\align/\co in {#1}
+    {
+        \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
+    }
+}
+
+\newcommand{\sweepline}[1]{%
+    \foreach \event in {#1}
+    {
+        \draw[red,line width=0.4mm]
+            let
+                \p1 = (\event)
+            in 
+                (\x1, 0) -- (\x1, \ylines * \raster);
+    }
+}
+
+\newcommand{\intersection}[1]{%
+    \foreach \intersect/\co/\dashline in {#1}{
+        \ifnum\pdfstrcmp{\dashline}{yes}=0
+        \draw[\co,line width=0.4mm, densely dashed]
+                let
+                    \p1 = (\intersect)
+                in
+                    (\x1, \y1) -- (\x1, 0);
+        \fi
+        \draw[\co, fill=white, line width=0.4mm]
+            (\intersect) circle (0.75mm);
+    }
+}
+
+
 \def\Lupper{\mathcal{L}_{\mathrm{upper}}}
 \def\Llower{\mathcal{L}_{\mathrm{lower}}}
 
@@ -173,61 +256,40 @@
             \tiktop
 
             -- dashed lines
-            \foreach \point in {
+            \dashedlines{
                 P1S,P1E,
                 P2S,P2E,
                 P3S,P3E,
                 P4S,P4E,
                 P5S,P5E,
                 P6S,P6E}
-            {
-                \draw[black,line width=0.2mm, densely dashed]
-                    let
-                        \p1 = (\point)
-                    in
-                        (\x1, \y1) -- (\x1, 0);
-            }
 
-            -- start- / end-point
-            \foreach \point/\co in {
+            -- start- / end-points
+            \startendpoints{
                 P1S/black,P1E/black,
                 P2S/black,P2E/black,
                 P3S/black,P3E/black,
                 P4S/black,P4E/black,
                 P5S/black,P5E/black,
                 P6S/black,P6E/black}
-            {
-                \draw[\co,fill=\co,line width=0.4mm]
-                    (\point) circle (0.5mm);
-            }
 
             -- events
-            \foreach \event/\name/\i in {
+            \events{
                 P1S/p/1,P1E/q/1,
                 P2S/p/2,P2E/q/2,
                 P3S/p/3,P3E/q/3,
                 P4S/p/4,P4E/q/4,
                 P5S/p/5,P5E/q/5,
                 P6S/p/6,P6E/q/6}
-            {
-                \path
-                    let
-                        \p1 = (\event)
-                    in 
-                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle \name_{\i} $};
-            }
 
             -- start- / end-point text
-            \foreach \point/\name/\i/\align/\co in {
+            \startendpointtexts{
                 P1S/p/1/above right/black, P1E/q/1/below left/black,
                 P2S/p/2/above/black,       P2E/q/2/above right/black,
                 P3S/p/3/above left/black,  P3E/q/3/below right/black,
                 P4S/p/4/above left/black,  P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
                 P6S/p/6/above left/black,  P6E/q/6/below right/black}
-            {
-                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
-            }
         \end{tikzpicture}} &
         \makecell[l]{$\!\begin{aligned}[t]
             s_i     &= \text{Line segment} \\
@@ -244,82 +306,47 @@
             \tiktop
 
             -- dashed lines
-            \foreach \point in {
-                    P1E,
+            \dashedlines{
+                P1E,
                 P2S,P2E,
                 P3S,P3E,
                 P4S,P4E,
                 P5S,P5E,
                 P6S,P6E}
-            {
-                \draw[black,line width=0.2mm, densely dashed]
-                    let
-                        \p1 = (\point)
-                    in
-                        (\x1, \y1) -- (\x1, 0);
-            }
 
             -- sweep line
-            \foreach \event in {P1S}
-            {
-                \draw[red,line width=0.4mm]
-                    let
-                        \p1 = (\event)
-                    in 
-                        (\x1, 0) -- (\x1, \ylines * \raster);
-            }
+            \sweepline{P1S}
 
             -- start- / end-point
-            \foreach \point/\co in {
+            \startendpoints{
                 P1S/red,P1E/black,
                 P2S/black,P2E/black,
                 P3S/black,P3E/black,
                 P4S/black,P4E/black,
                 P5S/black,P5E/black,
                 P6S/black,P6E/black}
-            {
-                \draw[\co,fill=\co,line width=0.4mm]
-                    (\point) circle (0.5mm);
-            }
 
             -- events
-            \foreach \event/\name/\i in {
+            \events{
                 P1E/q/1,
                 P2S/p/2,P2E/q/2,
                 P3S/p/3,P3E/q/3,
                 P4S/p/4,P4E/q/4,
                 P5S/p/5,P5E/q/5,
                 P6S/p/6,P6E/q/6}
-            {
-                \path
-                    let
-                        \p1 = (\event)
-                    in 
-                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle \name_{\i} $};
-            }
 
             -- status
-            \foreach \status/\i in {
+            \status{
                 P1S/1}
-            {
-                \path
-                    let
-                        \p1 = (\status)
-                    in 
-                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
-            }
 
             -- start- / end-point text
-            \foreach \point/\name/\i/\align/\co in {
+            \startendpointtexts{
                 P1S/p/1/above right/black, P1E/q/1/below left/black,
                 P2S/p/2/above/black,       P2E/q/2/above right/black,
                 P3S/p/3/above left/black,  P3E/q/3/below right/black,
                 P4S/p/4/above left/black,  P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
                 P6S/p/6/above left/black,  P6E/q/6/below right/black}
-            {
-                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
-            }
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
@@ -341,83 +368,48 @@
             \tiktop
 
             -- dashed lines
-            \foreach \point in {
-                    P1E,
-                P2S,P2E,
+            \dashedlines{
+                P1E,
+                P2E,
                 P3S,P3E,
                 P4S,P4E,
                 P5S,P5E,
                 P6S,P6E}
-            {
-                \draw[black,line width=0.2mm, densely dashed]
-                    let
-                        \p1 = (\point)
-                    in
-                        (\x1, \y1) -- (\x1, 0);
-            }
 
             -- sweep line
-            \foreach \event in {P2S}
-            {
-                \draw[red,line width=0.4mm]
-                    let
-                        \p1 = (\event)
-                    in 
-                        (\x1, 0) -- (\x1, \ylines * \raster);
-            }
+            \sweepline{P2S}
 
             -- start- / end-point
-            \foreach \point/\co in {
+            \startendpoints{
                 P1E/black,
                 P2S/red,P2E/black,
                 P3S/black,P3E/black,
                 P4S/black,P4E/black,
                 P5S/black,P5E/black,
                 P6S/black,P6E/black}
-            {
-                \draw[\co,fill=\co,line width=0.4mm]
-                    (\point) circle (0.5mm);
-            }
 
             -- events
-            \foreach \event/\name/\i in {
+            \events{
                 P1E/q/1,
                 P2E/q/2,
                 P3S/p/3,P3E/q/3,
                 P4S/p/4,P4E/q/4,
                 P5S/p/5,P5E/q/5,
                 P6S/p/6,P6E/q/6}
-            {
-                \path
-                    let
-                        \p1 = (\event)
-                    in 
-                        node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle \name_{\i} $};
-            }
 
             -- status
-            \foreach \status/\i in {
+            \status{
                 P1S/1,
                 P2S/2}
-            {
-                \path
-                    let
-                        \p1 = (\status)
-                    in 
-                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
-            }
 
             -- start- / end-point text
-            \foreach \point/\name/\i/\align/\co in {
+            \startendpointtexts{
                 P1E/q/1/below left/black,
                 P2S/p/2/above/black,       P2E/q/2/above right/black,
                 P3S/p/3/above left/black,  P3E/q/3/below right/black,
                 P4S/p/4/above left/black,  P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
                 P6S/p/6/above left/black,  P6E/q/6/below right/black}
-            {
-                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
-            }
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
@@ -446,60 +438,32 @@
             \tiktop
 
             -- dashed lines
-            \foreach \point in {
-                    P1E,
-                    P2E,
-                P3S,P3E,
+            \dashedlines{
+                P1E,
+                P2E,
+                P3E,
                 P4S,P4E,
                 P5S,P5E,
                 P6S,P6E}
-            {
-                \draw[black,line width=0.2mm, densely dashed]
-                    let
-                        \p1 = (\point)
-                    in
-                        (\x1, \y1) -- (\x1, 0);
-            }
 
             -- sweep line
-            \foreach \event in {P3S}
-            {
-                \draw[red,line width=0.4mm]
-                    let
-                        \p1 = (\event)
-                    in 
-                        (\x1, 0) -- (\x1, \ylines * \raster);
-            }
+            \sweepline{P3S}
 
             -- start- / end-point
-            \foreach \point/\co in {
+            \startendpoints{
                 P1E/black,
                 P2E/black,
                 P3S/red,P3E/black,
                 P4S/black,P4E/black,
                 P5S/black,P5E/black,
                 P6S/black,P6E/black}
-            {
-                \draw[\co,fill=\co,line width=0.4mm]
-                    (\point) circle (0.5mm);
-            }
 
             -- intersection
-            \foreach \intersect/\co/\dashline in {
-                    r13/blue/yes}{
-                \ifnum\pdfstrcmp{\dashline}{yes}=0
-                \draw[\co,line width=0.4mm, densely dashed]
-                        let
-                            \p1 = (\intersect)
-                        in
-                            (\x1, \y1) -- (\x1, 0);
-                \fi
-                \draw[\co, fill=white, line width=0.4mm]
-                    (\intersect) circle (0.75mm);
-            }
+            \intersection{
+                    r13/blue/yes}
 
             -- events
-            \foreach \event/\name/\i in {
+            \events{
                 P1E/q/1,
                 P2E/q/2,
                 P3E/q/3,
@@ -507,38 +471,21 @@
                 P5S/p/5,P5E/q/5,
                 P6S/p/6,P6E/q/6,
                 r13/r/13}
-            {
-                \path
-                    let
-                        \p1 = (\event)
-                    in 
-                        node at (\x1,0) [below, fill=white, inner sep=1, outer sep=5] {$\scriptstyle \name_{\i} $};
-            }
 
             -- status
-            \foreach \status/\i in {
+            \status{
                 P1S/1,
                 P2S/2,
                 P3S/3}
-            {
-                \path
-                    let
-                        \p1 = (\status)
-                    in 
-                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
-            }
 
             -- start- / end-point text
-            \foreach \point/\name/\i/\align/\co in {
+            \startendpointtexts{
                 P1E/q/1/below left/black,
                 P2E/q/2/above right/black,
                 P3S/p/3/above left/black,  P3E/q/3/below right/black,
                 P4S/p/4/above left/black,  P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
                 P6S/p/6/above left/black,  P6E/q/6/below right/black}
-            {
-                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
-            }
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
@@ -564,62 +511,34 @@
             \tiktop
 
             -- dashed lines
-            \foreach \point in {
-                    P1E,
-                    P2E,
-                    P3E,
-                P4S,P4E,
+            \dashedlines{
+                P1E,
+                P2E,
+                P3E,
+                P4E,
                 P5S,P5E,
                 P6S,P6E}
-            {
-                \draw[black,line width=0.2mm, densely dashed]
-                    let
-                        \p1 = (\point)
-                    in
-                        (\x1, \y1) -- (\x1, 0);
-            }
 
             -- sweep line
-            \foreach \event in {P4S}
-            {
-                \draw[red,line width=0.4mm]
-                    let
-                        \p1 = (\event)
-                    in 
-                        (\x1, 0) -- (\x1, \ylines * \raster);
-            }
+            \sweepline{P4S}
 
             -- start- / end-point
-            \foreach \point/\co in {
+            \startendpoints{
                 P1E/black,
                 P2E/black,
                 P3E/black,
                 P4S/red,P4E/black,
                 P5S/black,P5E/black,
                 P6S/black,P6E/black}
-            {
-                \draw[\co,fill=\co,line width=0.4mm]
-                    (\point) circle (0.5mm);
-            }
 
             -- intersection
-            \foreach \intersect/\co/\dashline in {
+            \intersection{
                     r13/blue/yes,
                     r14/blue/yes,
-                    r34/blue/yes}{
-                \ifnum\pdfstrcmp{\dashline}{yes}=0
-                \draw[\co,line width=0.4mm, densely dashed]
-                        let
-                            \p1 = (\intersect)
-                        in
-                            (\x1, \y1) -- (\x1, 0);
-                \fi
-                \draw[\co, fill=white, line width=0.4mm]
-                    (\intersect) circle (0.75mm);
-            }
+                    r34/blue/yes}
 
             -- events
-            \foreach \event/\name/\i in {
+            \events{
                 P1E/q/1,
                 P2E/q/2,
                 P3E/q/3,
@@ -629,39 +548,22 @@
                 r13/r/13,
                 r14/r/14,
                 r34/r/34}
-            {
-                \path
-                    let
-                        \p1 = (\event)
-                    in 
-                        node at (\x1,0) [below, fill=white, inner sep=1, outer sep=5] {$\scriptstyle \name_{\i} $};
-            }
 
             -- status
-            \foreach \status/\i in {
+            \status{
                 P1S/1,
                 P2S/2,
                 P3S/3,
                 P4S/4}
-            {
-                \path
-                    let
-                        \p1 = (\status)
-                    in 
-                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
-            }
 
             -- start- / end-point text
-            \foreach \point/\name/\i/\align/\co in {
+            \startendpointtexts{
                 P1E/q/1/below left/black,
                 P2E/q/2/above right/black,
                 P3E/q/3/below right/black,
                 P4S/p/4/above left/black,  P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
                 P6S/p/6/above left/black,  P6E/q/6/below right/black}
-            {
-                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
-            }
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
@@ -687,62 +589,34 @@
             \tiktop
 
             -- dashed lines
-            \foreach \point in {
+            \dashedlines{
                 P1E,
                 P2E,
                 P3E,
                 P4E,
                 P5S,P5E,
                 P6S,P6E}
-            {
-                \draw[black,line width=0.2mm, densely dashed]
-                    let
-                        \p1 = (\point)
-                    in
-                        (\x1, \y1) -- (\x1, 0);
-            }
 
             -- sweep line
-            \foreach \event in {r34}
-            {
-                \draw[red,line width=0.4mm]
-                    let
-                        \p1 = (\event)
-                    in 
-                        (\x1, 0) -- (\x1, \ylines * \raster);
-            }
+            \sweepline{r34}
 
             -- start- / end-point
-            \foreach \point/\co in {
+            \startendpoints{
                 P1E/black,
                 P2E/black,
                 P3E/black,
                 P4E/black,
                 P5S/black,P5E/black,
                 P6S/black,P6E/black}
-            {
-                \draw[\co,fill=\co,line width=0.4mm]
-                    (\point) circle (0.5mm);
-            }
 
             -- intersection
-            \foreach \intersect/\co/\dashline in {
+            \intersection{
                     r13/blue/yes,
                     r14/blue/yes,
-                    r34/red/no}{
-                \ifnum\pdfstrcmp{\dashline}{yes}=0
-                \draw[\co,line width=0.4mm, densely dashed]
-                        let
-                            \p1 = (\intersect)
-                        in
-                            (\x1, \y1) -- (\x1, 0);
-                \fi
-                \draw[\co, fill=white, line width=0.4mm]
-                    (\intersect) circle (0.75mm);
-            }
+                    r34/red/no}
 
             -- events
-            \foreach \event/\name/\i in {
+            \events{
                 P1E/q/1,
                 P2E/q/2,
                 P3E/q/3,
@@ -751,39 +625,22 @@
                 P6S/p/6,P6E/q/6,
                 r13/r/13,
                 r14/r/14}
-            {
-                \path
-                    let
-                        \p1 = (\event)
-                    in 
-                        node at (\x1,0) [below, fill=white, inner sep=1, outer sep=5] {$\scriptstyle \name_{\i} $};
-            }
 
             -- status
-            \foreach \status/\i in {
+            \status{
                 P1S/1,
                 P2S/2,
                 P3S/4,
                 P4S/3}
-            {
-                \path
-                    let
-                        \p1 = (\status)
-                    in 
-                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
-            }
 
             -- start- / end-point text
-            \foreach \point/\name/\i/\align/\co in {
+            \startendpointtexts{
                 P1E/q/1/below left/black,
                 P2E/q/2/above right/black,
                 P3E/q/3/below right/black,
                 P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
                 P6S/p/6/above left/black,  P6E/q/6/below right/black}
-            {
-                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
-            }
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
@@ -804,62 +661,34 @@
             \tiktop
 
             -- dashed lines
-            \foreach \point in {
+            \dashedlines{
                 P1E,
                 P2E,
                 P3E,
                 P4E,
                 P5E,
                 P6S,P6E}
-            {
-                \draw[black,line width=0.2mm, densely dashed]
-                    let
-                        \p1 = (\point)
-                    in
-                        (\x1, \y1) -- (\x1, 0);
-            }
 
             -- sweep line
-            \foreach \event in {P5S}
-            {
-                \draw[red,line width=0.4mm]
-                    let
-                        \p1 = (\event)
-                    in 
-                        (\x1, 0) -- (\x1, \ylines * \raster);
-            }
+            \sweepline{P5S}
 
             -- start- / end-point
-            \foreach \point/\co in {
+            \startendpoints{
                 P1E/black,
                 P2E/black,
                 P3E/black,
                 P4E/black,
                 P5S/red,P5E/black,
                 P6S/black,P6E/black}
-            {
-                \draw[\co,fill=\co,line width=0.4mm]
-                    (\point) circle (0.5mm);
-            }
 
             -- intersection
-            \foreach \intersect/\co/\dashline in {
+            \intersection{
                     r13/blue/yes,
                     r14/blue/yes,
-                    r34/black/no}{
-                \ifnum\pdfstrcmp{\dashline}{yes}=0
-                \draw[\co,line width=0.4mm, densely dashed]
-                        let
-                            \p1 = (\intersect)
-                        in
-                            (\x1, \y1) -- (\x1, 0);
-                \fi
-                \draw[\co, fill=white, line width=0.4mm]
-                    (\intersect) circle (0.75mm);
-            }
+                    r34/black/no}
 
             -- events
-            \foreach \event/\name/\i in {
+            \events{
                 P1E/q/1,
                 P2E/q/2,
                 P3E/q/3,
@@ -868,40 +697,23 @@
                 P6S/p/6,P6E/q/6,
                 r13/r/13,
                 r14/r/14}
-            {
-                \path
-                    let
-                        \p1 = (\event)
-                    in 
-                        node at (\x1,0) [below, fill=white, inner sep=1, outer sep=5] {$\scriptstyle \name_{\i} $};
-            }
 
             -- status
-            \foreach \status/\i in {
+            \status{
                 P1S/1,
                 P2S/2,
                 P3S/4,
                 P4S/3,
                 P5S/5}
-            {
-                \path
-                    let
-                        \p1 = (\status)
-                    in 
-                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
-            }
 
             -- start- / end-point text
-            \foreach \point/\name/\i/\align/\co in {
+            \startendpointtexts{
                 P1E/q/1/below left/black,
                 P2E/q/2/above right/black,
                 P3E/q/3/below right/black,
                 P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
                 P6S/p/6/above left/black,  P6E/q/6/below right/black}
-            {
-                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
-            }
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
@@ -926,62 +738,34 @@
             \tiktop
 
             -- dashed lines
-            \foreach \point in {
+            \dashedlines{
                 P1E,
                 P2E,
                 P3E,
                 P4E,
                 P5E,
                 P6S,P6E}
-            {
-                \draw[black,line width=0.2mm, densely dashed]
-                    let
-                        \p1 = (\point)
-                    in
-                        (\x1, \y1) -- (\x1, 0);
-            }
 
             -- sweep line
-            \foreach \event in {r13}
-            {
-                \draw[red,line width=0.4mm]
-                    let
-                        \p1 = (\event)
-                    in 
-                        (\x1, 0) -- (\x1, \ylines * \raster);
-            }
+            \sweepline{r13}
 
             -- start- / end-point
-            \foreach \point/\co in {
+            \startendpoints{
                 P1E/black,
                 P2E/black,
                 P3E/black,
                 P4E/black,
                 P5E/black,
                 P6S/black,P6E/black}
-            {
-                \draw[\co,fill=\co,line width=0.4mm]
-                    (\point) circle (0.5mm);
-            }
 
             -- intersection
-            \foreach \intersect/\co/\dashline in {
+            \intersection{
                     r13/red/no,
                     r14/blue/yes,
-                    r34/black/no}{
-                \ifnum\pdfstrcmp{\dashline}{yes}=0
-                \draw[\co,line width=0.4mm, densely dashed]
-                        let
-                            \p1 = (\intersect)
-                        in
-                            (\x1, \y1) -- (\x1, 0);
-                \fi
-                \draw[\co, fill=white, line width=0.4mm]
-                    (\intersect) circle (0.75mm);
-            }
+                    r34/black/no}
 
             -- events
-            \foreach \event/\name/\i in {
+            \events{
                 P1E/q/1,
                 P2E/q/2,
                 P3E/q/3,
@@ -989,40 +773,23 @@
                 P5E/q/5,
                 P6S/p/6,P6E/q/6,
                 r14/r/14}
-            {
-                \path
-                    let
-                        \p1 = (\event)
-                    in 
-                        node at (\x1,0) [below, fill=white, inner sep=1, outer sep=5] {$\scriptstyle \name_{\i} $};
-            }
 
             -- status
-            \foreach \status/\i in {
+            \status{
                 P1S/3,
                 P2S/2,
                 P3S/4,
                 P4S/1,
                 P5S/5}
-            {
-                \path
-                    let
-                        \p1 = (\status)
-                    in 
-                        node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
-            }
 
             -- start- / end-point text
-            \foreach \point/\name/\i/\align/\co in {
+            \startendpointtexts{
                 P1E/q/1/below left/black,
                 P2E/q/2/above right/black,
                 P3E/q/3/below right/black,
                 P4E/q/4/right/black,
-                P5S/p/5/above left/black,  P5E/q/5/above right/black,
+                P5E/q/5/above right/black,
                 P6S/p/6/above left/black,  P6E/q/6/below right/black}
-            {
-                \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
-            }
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
