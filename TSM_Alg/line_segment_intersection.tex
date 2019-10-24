@@ -122,7 +122,7 @@
     \coordinate (P5E) at (23*\raster,8*\raster);
 
     \coordinate (P6S) at (16*\raster,6*\raster);
-    \coordinate (P6E) at (20*\raster,5*\raster);
+    \coordinate (P6E) at (19*\raster,5*\raster);
 
     % draw vertical lines
     \foreach \x in {0,...,\xlines}
@@ -164,6 +164,8 @@
     \path [name intersections={of=s1 and s3,by=r13}];
     \path [name intersections={of=s1 and s4,by=r14}];
     \path [name intersections={of=s3 and s4,by=r34}];
+    \path [name intersections={of=s1 and s5,by=r15}];
+    \path [name intersections={of=s5 and s6,by=r56}];
 }
 
 
@@ -250,7 +252,8 @@
 \begin{document}
 
     \begin{tabularx}{\textwidth}{ll}
-        % --- LINE 1 --------------------------------------------------------
+        % === PAGE 1 ========================================================
+        % --- IMAGE 1 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -284,12 +287,12 @@
 
             -- start- / end-point text
             \startendpointtexts{
-                P1S/p/1/above right/black, P1E/q/1/below left/black,
+                P1S/p/1/above right/black, P1E/q/1/above/black,
                 P2S/p/2/above/black,       P2E/q/2/above right/black,
                 P3S/p/3/above left/black,  P3E/q/3/below right/black,
                 P4S/p/4/above left/black,  P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
-                P6S/p/6/above left/black,  P6E/q/6/below right/black}
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
         \end{tikzpicture}} &
         \makecell[l]{$\!\begin{aligned}[t]
             s_i     &= \text{Line segment} \\
@@ -300,7 +303,7 @@
             S       &= \kq{\;}
         \end{aligned}
         $} \\
-        % --- LINE 2 --------------------------------------------------------
+        % --- IMAGE 2 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -341,12 +344,12 @@
 
             -- start- / end-point text
             \startendpointtexts{
-                P1S/p/1/above right/black, P1E/q/1/below left/black,
+                P1S/p/1/above right/black, P1E/q/1/above/black,
                 P2S/p/2/above/black,       P2E/q/2/above right/black,
                 P3S/p/3/above left/black,  P3E/q/3/below right/black,
                 P4S/p/4/above left/black,  P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
-                P6S/p/6/above left/black,  P6E/q/6/below right/black}
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
@@ -362,7 +365,7 @@
             S       &= \kq{ s_1 }
         \end{aligned}
         $} \\
-        % --- LINE 3 --------------------------------------------------------
+        % --- IMAGE 3 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -404,35 +407,30 @@
 
             -- start- / end-point text
             \startendpointtexts{
-                P1E/q/1/below left/black,
+                P1E/q/1/above/black,
                 P2S/p/2/above/black,       P2E/q/2/above right/black,
                 P3S/p/3/above left/black,  P3E/q/3/below right/black,
                 P4S/p/4/above left/black,  P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
-                P6S/p/6/above left/black,  P6E/q/6/below right/black}
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
         \makecell[l]{
         \begin{tabular}[t]{@{}llll@{}}
-            Remove event    & $p_2$ & from  & $Q$ \\
-            Add segment     & $s_2$ & to    & $S$ below $s_1$ \\
-            \multicolumn{4}{@{}l}{Check intersection:}
+            Remove event                  & $p_2$ & from  & $Q$ \\
+            Add segment                   & $s_2$ & to    & $S$ below $s_1$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_2} = \kq{ s_1 }$ & \multicolumn{3}{@{}l}{below$\kl{s_2} = \kq{ \; }$} \\
+            intersection$\kl{s_1, s_2}$   & \multicolumn{3}{@{}l}{$=$ false }
         \end{tabular} \\
-        $
-        \begin{aligned}[t]
-            \text{above}       &= \kq{ s_1 } \\
-            \text{below}       &= \kq{ \; }
-        \end{aligned}
-        $ \\
-        $ \text{intersection}\kl{s_1, s_2} = \text{false} $ \\
         $
         \begin{aligned}[t]
             Q       &= \kq{ p_3, p_4, p_5, q_2, q_4, q_3, p_6, q_6, q_5, q_1 } \\
             S       &= \kq{ s_1, s_2 }
         \end{aligned}
         $} \\
-        % --- LINE 4 --------------------------------------------------------
+        % --- IMAGE 4 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -480,12 +478,12 @@
 
             -- start- / end-point text
             \startendpointtexts{
-                P1E/q/1/below left/black,
+                P1E/q/1/above/black,
                 P2E/q/2/above right/black,
                 P3S/p/3/above left/black,  P3E/q/3/below right/black,
                 P4S/p/4/above left/black,  P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
-                P6S/p/6/above left/black,  P6E/q/6/below right/black}
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
@@ -494,8 +492,7 @@
             Remove event    & $p_3$ & from  & $Q$ \\
             Add segment     & $s_3$ & to    & $S$ between $s_1$ and $s_2$ \\
             \multicolumn{4}{@{}l}{Check intersection:} \\
-            above           & \multicolumn{3}{@{}l}{$= \kq{ s_1 }$} \\
-            below           & \multicolumn{3}{@{}l}{$= \kq{ s_2\; }$} \\
+            above$\kl{s_3} = \kq{ s_1 }$ & \multicolumn{3}{@{}l}{below$\kl{s_3} = \kq{ s_2 }$} \\
             intersection$\kl{s_1, s_3}$   & \multicolumn{3}{@{}l}{$=$ true $\to	\textcolor{blue}{r_{13}}$} \\
             intersection$\kl{s_2, s_3}$   & \multicolumn{3}{@{}l}{$=$ false }
         \end{tabular} \\
@@ -505,7 +502,8 @@
             S       &= \kq{ s_1, s_3, s_2 }
         \end{aligned}
         $} \\
-        % --- LINE 5 --------------------------------------------------------
+        % === PAGE 2 ========================================================
+        % --- IMAGE 1 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -558,12 +556,12 @@
 
             -- start- / end-point text
             \startendpointtexts{
-                P1E/q/1/below left/black,
+                P1E/q/1/above/black,
                 P2E/q/2/above right/black,
                 P3E/q/3/below right/black,
                 P4S/p/4/above left/black,  P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
-                P6S/p/6/above left/black,  P6E/q/6/below right/black}
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
@@ -572,8 +570,7 @@
             Remove event    & $p_4$ & from  & $Q$ \\
             Add segment     & $s_4$ & to    & $S$ between $s_1$ and $s_3$ \\
             \multicolumn{4}{@{}l}{Check intersection:} \\
-            above           & \multicolumn{3}{@{}l}{$= \kq{ s_1 }$} \\
-            below           & \multicolumn{3}{@{}l}{$= \kq{ s_3\; }$} \\
+            above$\kl{s_4} = \kq{ s_1 }$ & \multicolumn{3}{@{}l}{below$\kl{s_4} = \kq{ s_3 }$} \\
             intersection$\kl{s_1, s_4}$   & \multicolumn{3}{@{}l}{$=$ true $\to	\textcolor{blue}{r_{14}}$} \\
             intersection$\kl{s_3, s_4}$   & \multicolumn{3}{@{}l}{$=$ true $\to	\textcolor{blue}{r_{34}}$}
         \end{tabular} \\
@@ -583,7 +580,7 @@
             S       &= \kq{ s_1, s_4, s_3, s_2 }
         \end{aligned}
         $} \\
-        % --- LINE 6 --------------------------------------------------------
+        % --- IMAGE 2 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -635,19 +632,23 @@
 
             -- start- / end-point text
             \startendpointtexts{
-                P1E/q/1/below left/black,
+                P1E/q/1/above/black,
                 P2E/q/2/above right/black,
                 P3E/q/3/below right/black,
                 P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
-                P6S/p/6/above left/black,  P6E/q/6/below right/black}
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
         \makecell[l]{
         \begin{tabular}[t]{@{}llll@{}}
             Remove event    & $r_{34}$ & from  & $Q$ \\
-            Swap segment    & $s_3$ & and    & $s_4$
+            Swap segment    & $s_3$ & and    & $s_4$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_3} = \kq{ s_1 }$ & \multicolumn{3}{@{}l}{below$\kl{s_4} = \kq{ s_2 }$} \\
+            intersection$\kl{s_1, s_3}$   & \multicolumn{3}{@{}l}{$=$ true $\to	\textcolor{blue}{r_{13}}$ \textcolor{red}{(already present!)}} \\
+            intersection$\kl{s_2, s_4}$   & \multicolumn{3}{@{}l}{$=$ false}
         \end{tabular} \\
         $
         \begin{aligned}[t]
@@ -655,7 +656,7 @@
             S       &= \kq{ s_1, s_3, s_4, s_2 }
         \end{aligned}
         $} \\
-        % --- LINE 7 --------------------------------------------------------
+        % --- IMAGE 3 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -708,12 +709,12 @@
 
             -- start- / end-point text
             \startendpointtexts{
-                P1E/q/1/below left/black,
+                P1E/q/1/above/black,
                 P2E/q/2/above right/black,
                 P3E/q/3/below right/black,
                 P4E/q/4/right/black,
                 P5S/p/5/above left/black,  P5E/q/5/above right/black,
-                P6S/p/6/above left/black,  P6E/q/6/below right/black}
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
@@ -722,8 +723,7 @@
             Remove event    & $p_5$ & from  & $Q$ \\
             Add segment     & $s_5$ & to    & $S$ below $s_2$ \\
             \multicolumn{4}{@{}l}{Check intersection:} \\
-            above           & \multicolumn{3}{@{}l}{$= \kq{ s_2 }$} \\
-            below           & \multicolumn{3}{@{}l}{$= \kq{ \; }$} \\
+            above$\kl{s_5} = \kq{ s_2 }$ & \multicolumn{3}{@{}l}{below$\kl{s_5} = \kq{ \; }$} \\
             intersection$\kl{s_2, s_5}$   & \multicolumn{3}{@{}l}{$=$ false }
         \end{tabular} \\
         $
@@ -732,7 +732,7 @@
             S       &= \kq{ s_1, s_3, s_4, s_2, p_5 }
         \end{aligned}
         $} \\
-        % --- LINE 8 --------------------------------------------------------
+        % --- IMAGE 4 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -784,19 +784,22 @@
 
             -- start- / end-point text
             \startendpointtexts{
-                P1E/q/1/below left/black,
+                P1E/q/1/above/black,
                 P2E/q/2/above right/black,
                 P3E/q/3/below right/black,
                 P4E/q/4/right/black,
                 P5E/q/5/above right/black,
-                P6S/p/6/above left/black,  P6E/q/6/below right/black}
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
             
         \end{tikzpicture}} &
         \setlength{\tabcolsep}{2pt}
         \makecell[l]{
         \begin{tabular}[t]{@{}llll@{}}
             Remove event    & $r_{13}$ & from  & $Q$ \\
-            Swap segment    & $s_1$ & and    & $s_3$
+            Swap segment    & $s_1$ & and    & $s_3$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_3} = \kq{ \; }$ & \multicolumn{3}{@{}l}{below$\kl{s_1} = \kq{ s_4 }$} \\
+            intersection$\kl{s_4, s_1}$   & \multicolumn{3}{@{}l}{$=$ true $\to	\textcolor{blue}{r_{14}}$ \textcolor{red}{(already present!)}}
         \end{tabular} \\
         $
         \begin{aligned}[t]
@@ -804,6 +807,641 @@
             S       &= \kq{ s_3, s_1, s_4, s_2, p_5 }
         \end{aligned}
         $} \\
-        
+        % === PAGE 3 ========================================================
+        % --- IMAGE 1 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- dashed lines
+            \dashedlines{
+                P1E,
+                P2E,
+                P3E,
+                P4E,
+                P5E,
+                P6S,P6E}
+
+            -- sweep line
+            \sweepline{P2E}
+
+            -- start- / end-point
+            \startendpoints{
+                P1E/black,
+                P2E/red,
+                P3E/black,
+                P4E/black,
+                P5E/black,
+                P6S/black,P6E/black}
+
+            -- intersection
+            \intersection{
+                    r13/black/no,
+                    r14/blue/yes,
+                    r34/black/no}
+
+            -- events
+            \events{
+                P1E/q/1,
+                P3E/q/3,
+                P4E/q/4,
+                P5E/q/5,
+                P6S/p/6,P6E/q/6,
+                r14/r/14}
+
+            -- status
+            \status{
+                P1S/3,
+                P3S/4,
+                P4S/1,
+                P5S/5}
+
+            -- start- / end-point text
+            \startendpointtexts{
+                P1E/q/1/above/black,
+                P2E/q/2/above right/black,
+                P3E/q/3/below right/black,
+                P4E/q/4/right/black,
+                P5E/q/5/above right/black,
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $q_2$ & from  & $Q$ \\
+            Remove segment  & $s_2$ & from & $S$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_2} = \kq{ s_4 }$ & \multicolumn{3}{@{}l}{below$\kl{s_2} = \kq{ s_5 }$} \\
+            intersection$\kl{s_4, s_5}$   & \multicolumn{3}{@{}l}{$=$ false }
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ r_{14}, q_4, q_3, p_6, q_6, q_5, q_1 } \\
+            S       &= \kq{ s_3, s_1, s_4, p_5 }
+        \end{aligned}
+        $} \\
+        % --- IMAGE 2 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- dashed lines
+            \dashedlines{
+                P1E,
+                P3E,
+                P4E,
+                P5E,
+                P6S,P6E}
+
+            -- sweep line
+            \sweepline{r14}
+
+            -- start- / end-point
+            \startendpoints{
+                P1E/black,
+                P3E/black,
+                P4E/black,
+                P5E/black,
+                P6S/black,P6E/black}
+
+            -- intersection
+            \intersection{
+                    r13/black/no,
+                    r14/red/no,
+                    r15/blue/yes,
+                    r34/black/no}
+
+            -- events 
+            \events{
+                P1E/q/1,
+                P3E/q/3,
+                P4E/q/4,
+                P5E/q/5,
+                r15/r/15,
+                P6S/p/6,P6E/q/6}
+
+            -- status
+            \status{
+                P1S/3,
+                P3S/1,
+                P4S/4,
+                P5S/5}
+
+            -- start- / end-point text
+            \startendpointtexts{
+                P1E/q/1/above/black,
+                P3E/q/3/below right/black,
+                P4E/q/4/right/black,
+                P5E/q/5/above right/black,
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $r_{14}$ & from  & $Q$ \\
+            Swap segment    & $s_1$ & and    & $s_4$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_4} = \kq{ s_3 }$ & \multicolumn{3}{@{}l}{below$\kl{s_1} = \kq{ s_5 }$} \\
+            intersection$\kl{s_3, s_4}$   & \multicolumn{3}{@{}l}{$=$ false} \\
+            intersection$\kl{s_5, s_1}$   & \multicolumn{3}{@{}l}{$=$ true $\to	\textcolor{blue}{r_{15}}$}
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ q_4, q_3, p_6, q_6, r_{15}, q_5, q_1 } \\
+            S       &= \kq{ s_3, s_4, s_1, p_5 }
+        \end{aligned}
+        $} \\
+        % --- IMAGE 3 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- dashed lines
+            \dashedlines{
+                P1E,
+                P3E,
+                P5E,
+                P6S,P6E}
+
+            -- sweep line
+            \sweepline{P4E}
+
+            -- start- / end-point
+            \startendpoints{
+                P1E/black,
+                P3E/black,
+                P4E/red,
+                P5E/black,
+                P6S/black,P6E/black}
+
+            -- intersection
+            \intersection{
+                    r13/black/no,
+                    r14/black/no,
+                    r15/blue/yes,
+                    r34/black/no}
+
+            -- events 
+            \events{
+                P1E/q/1,
+                P3E/q/3,
+                P5E/q/5,
+                r15/r/15,
+                P6S/p/6,P6E/q/6}
+
+            -- status
+            \status{
+                P1S/3,
+                P3S/1,
+                P5S/5}
+
+            -- start- / end-point text
+            \startendpointtexts{
+                P1E/q/1/above/black,
+                P3E/q/3/below right/black,
+                P4E/q/4/right/black,
+                P5E/q/5/above right/black,
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $q_4$ & from  & $Q$ \\
+            Remove segment  & $s_4$ & from & $S$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_4} = \kq{ s_3 }$ & \multicolumn{3}{@{}l}{below$\kl{s_4} = \kq{ s_1 }$} \\
+            intersection$\kl{s_3, s_1}$   & \multicolumn{3}{@{}l}{$=$ true $\to	\textcolor{blue}{r_{13}}$ \textcolor{red}{(but in the past)} }
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ q_3, p_6, q_6, r_{15}, q_5, q_1 } \\
+            S       &= \kq{ s_3, s_1, p_5 }
+        \end{aligned}
+        $} \\
+        % --- IMAGE 4 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- dashed lines
+            \dashedlines{
+                P1E,
+                P5E,
+                P6S,P6E}
+
+            -- sweep line
+            \sweepline{P3E}
+
+            -- start- / end-point
+            \startendpoints{
+                P1E/black,
+                P3E/red,
+                P5E/black,
+                P6S/black,P6E/black}
+
+            -- intersection
+            \intersection{
+                    r13/black/no,
+                    r14/black/no,
+                    r15/blue/yes,
+                    r34/black/no}
+
+            -- events 
+            \events{
+                P1E/q/1,
+                P5E/q/5,
+                r15/r/15,
+                P6S/p/6,P6E/q/6}
+
+            -- status
+            \status{
+                P3S/1,
+                P5S/5}
+
+            -- start- / end-point text
+            \startendpointtexts{
+                P1E/q/1/above/black,
+                P3E/q/3/below right/black,
+                P5E/q/5/above right/black,
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $q_3$ & from  & $Q$ \\
+            Remove segment  & $s_3$ & from & $S$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_3} = \kq{ \; }$ & \multicolumn{3}{@{}l}{below$\kl{s_3} = \kq{ s_1 }$} \\
+            \multicolumn{4}{@{}l}{No two points to check intersection!}
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ p_6, q_6, r_{15}, q_5, q_1 } \\
+            S       &= \kq{ s_1, p_5 }
+        \end{aligned}
+        $} \\
+        % === PAGE 4 ========================================================
+        % --- IMAGE 1 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- dashed lines
+            \dashedlines{
+                P1E,
+                P5E,
+                P6E}
+
+            -- sweep line
+            \sweepline{P6S}
+
+            -- start- / end-point
+            \startendpoints{
+                P1E/black,
+                P5E/black,
+                P6S/red,P6E/black}
+
+            -- intersection
+            \intersection{
+                    r13/black/no,
+                    r14/black/no,
+                    r34/black/no,
+                    r15/blue/yes,
+                    r56/blue/yes}
+
+            -- events 
+            \events{
+                P1E/q/1,
+                P5E/q/5,
+                P6E/q/6,
+                r15/r/15,
+                r56/r/56}
+
+            -- status
+            \status{
+                P3S/1,
+                P5S/5,
+                P6S/6}
+
+            -- start- / end-point text
+            \startendpointtexts{
+                P1E/q/1/above/black,
+                P5E/q/5/above right/black,
+                P6S/p/6/above left/black,  P6E/q/6/above right/black}
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $p_6$ & from  & $Q$ \\
+            Add segment     & $s_6$ & to    & $S$ between $s_1$ and $s_5$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_6} = \kq{ s_1 }$ & \multicolumn{3}{@{}l}{below$\kl{s_6} = \kq{ s_5 }$} \\
+            intersection$\kl{s_1, s_6}$   & \multicolumn{3}{@{}l}{$=$ false } \\
+            intersection$\kl{s_5, s_6}$   & \multicolumn{3}{@{}l}{$=$ true $\to	\textcolor{blue}{r_{56}}$}
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ r_{56}, q_6, r_{15}, q_5, q_1 } \\
+            S       &= \kq{ s_1, s_6, p_5 }
+        \end{aligned}
+        $} \\
+        % --- IMAGE 2 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- dashed lines
+            \dashedlines{
+                P1E,
+                P5E,
+                P6E}
+
+            -- sweep line
+            \sweepline{r56}
+
+            -- start- / end-point
+            \startendpoints{
+                P1E/black,
+                P5E/black,
+                P6E/black}
+
+            -- intersection
+            \intersection{
+                    r13/black/no,
+                    r14/black/no,
+                    r34/black/no,
+                    r15/blue/yes,
+                    r56/red/no}
+
+            -- events 
+            \events{
+                P1E/q/1,
+                P5E/q/5,
+                r15/r/15,
+                P6E/q/6}
+
+            -- status
+            \status{
+                P3S/1,
+                P5S/6,
+                P6S/5}
+
+            -- start- / end-point text
+            \startendpointtexts{
+                P1E/q/1/above/black,
+                P5E/q/5/above right/black,
+                P6E/q/6/above right/black}
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $r_{56}$ & from  & $Q$ \\
+            Swap segment    & $s_5$ & and    & $s_6$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_5} = \kq{ s_1 }$ & \multicolumn{3}{@{}l}{below$\kl{s_6} = \kq{ \; }$} \\
+            intersection$\kl{s_1, s_5}$  & \multicolumn{3}{@{}l}{$=$ true $\to	\textcolor{blue}{r_{15}}$ \textcolor{red}{(already present!)}}
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ q_6, r_{15}, q_5, q_1 } \\
+            S       &= \kq{ s_1, s_5, p_6 }
+        \end{aligned}
+        $} \\
+        % --- IMAGE 3 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- dashed lines
+            \dashedlines{
+                P1E,
+                P5E}
+
+            -- sweep line
+            \sweepline{P6E}
+
+            -- start- / end-point
+            \startendpoints{
+                P1E/black,
+                P5E/black,
+                P6E/red}
+
+            -- intersection
+            \intersection{
+                    r13/black/no,
+                    r14/black/no,
+                    r34/black/no,
+                    r15/blue/yes,
+                    r56/black/no}
+
+            -- events 
+            \events{
+                P1E/q/1,
+                P5E/q/5,
+                r15/r/15}
+
+            -- status
+            \status{
+                P3S/1,
+                P6S/5}
+
+            -- start- / end-point text
+            \startendpointtexts{
+                P1E/q/1/above/black,
+                P5E/q/5/above right/black,
+                P6E/q/6/above right/black}
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $q_6$ & from  & $Q$ \\
+            Remove segment  & $s_6$ & from & $S$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_6} = \kq{ s_5 }$ & \multicolumn{3}{@{}l}{below$\kl{s_6} = \kq{ \; }$} \\
+            \multicolumn{4}{@{}l}{No two points to check intersection!}
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ r_{15}, q_5, q_1 } \\
+            S       &= \kq{ s_1, s_5 }
+        \end{aligned}
+        $} \\
+        % --- IMAGE 4 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- dashed lines
+            \dashedlines{
+                P1E,
+                P5E}
+
+            -- sweep line
+            \sweepline{r15}
+
+            -- start- / end-point
+            \startendpoints{
+                P1E/black,
+                P5E/black}
+
+            -- intersection
+            \intersection{
+                    r13/black/no,
+                    r14/black/no,
+                    r34/black/no,
+                    r15/red/no,
+                    r56/black/no}
+
+            -- events 
+            \events{
+                P1E/q/1,
+                P5E/q/5}
+
+            -- status
+            \status{
+                P6S/1,
+                P3S/5}
+
+            -- start- / end-point text
+            \startendpointtexts{
+                P1E/q/1/above/black,
+                P5E/q/5/above right/black}
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $r_{15}$ & from  & $Q$ \\
+            Swap segment    & $s_1$ & and    & $s_5$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_5} = \kq{ \; }$ & \multicolumn{3}{@{}l}{below$\kl{s_1} = \kq{ \; }$} \\
+            \multicolumn{4}{@{}l}{No two points to check intersection!}
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ q_5, q_1 } \\
+            S       &= \kq{ s_5, s_1 }
+        \end{aligned}
+        $} \\
+        % === PAGE 5 ========================================================
+        % --- IMAGE 1 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- dashed lines
+            \dashedlines{
+                P1E}
+
+            -- sweep line
+            \sweepline{P5E}
+
+            -- start- / end-point
+            \startendpoints{
+                P1E/black,
+                P5E/red}
+
+            -- intersection
+            \intersection{
+                    r13/black/no,
+                    r14/black/no,
+                    r34/black/no,
+                    r15/black/no,
+                    r56/black/no}
+
+            -- events 
+            \events{
+                P1E/q/1}
+
+            -- status
+            \status{
+                P6S/1}
+
+            -- start- / end-point text
+            \startendpointtexts{
+                P1E/q/1/above/black,
+                P5E/q/5/above right/black}
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $q_5$ & from  & $Q$ \\
+            Remove segment  & $s_5$ & from & $S$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_5} = \kq{ \; }$ & \multicolumn{3}{@{}l}{below$\kl{s_5} = \kq{ s_1 }$} \\
+            \multicolumn{4}{@{}l}{No two points to check intersection!}
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ q_1 } \\
+            S       &= \kq{ s_1 }
+        \end{aligned}
+        $} \\
+        % --- IMAGE 2 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- sweep line
+            \sweepline{P1E}
+
+            -- start- / end-point
+            \startendpoints{
+                P1E/red}
+
+            -- intersection
+            \intersection{
+                    r13/black/no,
+                    r14/black/no,
+                    r34/black/no,
+                    r15/black/no,
+                    r56/black/no}
+
+            -- start- / end-point text
+            \startendpointtexts{
+                P1E/q/1/above/black}
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+        \begin{tabular}[t]{@{}llll@{}}
+            Remove event    & $q_1$ & from  & $Q$ \\
+            Remove segment  & $s_1$ & from & $S$ \\
+            \multicolumn{4}{@{}l}{Check intersection:} \\
+            above$\kl{s_1} = \kq{ \; }$ & \multicolumn{3}{@{}l}{below$\kl{s_1} = \kq{ \; }$} \\
+            \multicolumn{4}{@{}l}{No two points to check intersection!}
+        \end{tabular} \\
+        $
+        \begin{aligned}[t]
+            Q       &= \kq{ \; } \\
+            S       &= \kq{ \; }
+        \end{aligned}
+        $} \\
+        % --- IMAGE 3 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- intersection
+            \intersection{
+                    r13/black/no,
+                    r14/black/no,
+                    r34/black/no,
+                    r15/black/no,
+                    r56/black/no}
+            
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{
+            Finish!
+        }
    \end{tabularx}
 \end{document}
