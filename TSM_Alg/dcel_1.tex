@@ -1,0 +1,111 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=15mm,right=20mm,top=17mm,bottom=17mm,footskip=0.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% xcolor
+\usepackage[svgnames]{xcolor}
+
+%-------------------------------------------------------------------------------
+% scrlayer-scrpage
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\cfoot{\pagemark}
+
+%-------------------------------------------------------------------------------
+% tabularx
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{makecell}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, calc, fit, intersections}
+
+%-------------------------------------------------------------------------------
+% 
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+% 
+\newcommand{\abs}[1]{{\vert #1 \vert}}
+
+% Syntax:
+% \DoublLine[half of the double line distance]{first node}{second node}{options line 1}{label line 1}{options line 2}{label line 2}
+\newcommand\DoubleLine[7][4pt]{%
+    \path(#2)--(#3)coordinate[at start](h1)coordinate[at end](h2);
+    \draw[#4]($(h1)!#1!90:(h2)$)-- node [auto=left] {#5} ($(h2)!#1!-90:(h1)$); 
+    \draw[#6]($(h1)!#1!-90:(h2)$)-- node [auto=right] {#7} ($(h2)!#1!90:(h1)$);
+    }
+
+
+\def\pich{6.5cm}
+\def\picb{9cm}
+
+\begin{document}
+
+    \begin{tabularx}{\textwidth}{ll}
+        % === PAGE 1 ========================================================
+        % --- IMAGE 1 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[myn/.style={circle,very thick,draw,inner sep=0.25cm,outer sep=3pt}]
+        
+            \node[myn] (s) at (0,2) {s};
+            \node[myn] (a) at (2,4) {a};
+            \node[myn] (b) at (2,0) {b};
+            \node[myn] (c) at (5,4) {c};
+            \node[myn] (d) at (5,0) {d};
+            \node[myn] (t) at (7,2) {t};
+            
+            \DoubleLine{s}{a}{<-,very thick,black}{1}{->,very thick,red}{7}
+            \DoubleLine{s}{b}{<-,very thick,black}{2}{->,very thick,red}{6}
+            \DoubleLine{a}{b}{<-,very thick,black}{3}{->,very thick,red}{5}
+            \DoubleLine{a}{c}{<-,very thick,black}{4}{->,very thick,red}{4}
+            \DoubleLine{b}{d}{<-,very thick,black}{5}{->,very thick,red}{3}
+            \DoubleLine{c}{t}{<-,very thick,black}{6}{->,very thick,red}{2}
+            \DoubleLine{d}{t}{<-,very thick,black}{7}{->,very thick,red}{1}
+        
+        \end{tikzpicture}} &
+        \makecell[l]{$\!\begin{aligned}[t]
+            s_i     &= \text{Line segment} \\
+            p_i     &= \text{Upper endpoint} \\
+            q_i     &= \text{Lower endpoint} \\
+            r_{ij}  &= \text{Intersection point} \\
+            Q       &= \kq{ p_1, p_2, p_3, p_4, p_5, q_2, q_4, q_3, p_6, q_6, q_5, q_1 } \\
+            S       &= \kq{\;}
+        \end{aligned}
+        $}
+   \end{tabularx}
+\end{document}
