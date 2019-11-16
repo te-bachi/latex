@@ -1,0 +1,300 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=15mm,right=20mm,top=17mm,bottom=17mm,footskip=0.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% xcolor
+\usepackage[svgnames]{xcolor}
+
+%-------------------------------------------------------------------------------
+% scrlayer-scrpage
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\cfoot{\pagemark}
+
+%-------------------------------------------------------------------------------
+% tabularx
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{makecell}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, calc, fit, intersections}
+
+%-------------------------------------------------------------------------------
+% Listings
+\usepackage{listings}
+\newcommand{\listingMatlab}[2][]{
+	\lstset{
+		language=Matlab,
+		breaklines=true,
+		numbers=left,
+		numberstyle=\tiny,
+		numbersep=5pt,
+		captionpos=b,
+		basicstyle=\footnotesize\ttfamily,
+		stringstyle=\color{magenta},
+		identifierstyle=\color{black},
+		keywordstyle=\color{blue}, 
+		commentstyle=\color{DarkGreen}
+	}
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}
+}
+\lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+{
+    \lstset{ %this is the stype
+        mathescape=true,
+        frame=tB,
+        numbers=left, 
+        numberstyle=\tiny,
+        basicstyle=\scriptsize, 
+        keywordstyle=\color{black}\bfseries,
+        keywords={,input, output, return, datatype, function, in, if, else, foreach, while, begin, end, } 
+        numbers=left,
+        xleftmargin=.04\textwidth
+    }
+}
+{}
+
+%-------------------------------------------------------------------------------
+% 
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+% 
+\newcommand{\abs}[1]{{\vert #1 \vert}}
+
+\newcommand\addvmargin[1]{
+  \node[fit=(current bounding box),inner ysep=#1,inner xsep=0]{};
+}
+
+\def\tiktop{%
+    \def\xlines{25}
+    \def\ylines{15}
+    \def\raster{3.5mm}
+
+    \coordinate (P1)  at ( 4*\raster,13*\raster);
+    \coordinate (P2)  at ( 5*\raster, 9*\raster);
+    \coordinate (P3)  at ( 3*\raster, 7*\raster);
+    \coordinate (P4)  at ( 2*\raster, 3*\raster);
+    \coordinate (P5)  at ( 8*\raster, 1*\raster);
+    \coordinate (P6)  at (10*\raster,13*\raster);
+    \coordinate (P7)  at (11*\raster, 4*\raster);
+    \coordinate (P8)  at (14*\raster,10*\raster);
+    \coordinate (P9)  at (16*\raster, 6*\raster);
+    \coordinate (P10) at (19*\raster, 5*\raster);
+    \coordinate (P11) at (22*\raster, 12*\raster);
+    \coordinate (P12) at (23*\raster, 7*\raster);
+
+    % draw vertical lines
+    \foreach \x in {0,...,\xlines}
+    {
+        \draw[lightgray] (\x * \raster, 0mm) -- (\x * \raster, \ylines * \raster);
+    }
+
+    % draw horizontal lines
+    \foreach \y in {0,...,\ylines}
+    {
+        \draw[lightgray] (0mm, \y * \raster) -- (\xlines * \raster, \y * \raster);
+    }
+
+    % border
+    \draw[black] (0mm, 0mm) -- (\xlines * \raster, 0mm);
+    \draw[black] (0mm, 0mm) -- (0mm, \ylines * \raster);
+    \draw[black] (\xlines * \raster, 0mm) -- (\xlines * \raster, \ylines * \raster);
+    \draw[black] (0mm, \ylines * \raster) -- (\xlines * \raster, \ylines * \raster);
+}
+
+
+\newcommand{\dashedlines}[1]{%
+    \foreach \point in {#1}
+    {
+        \draw[black,line width=0.2mm, densely dashed]
+            let
+                \p1 = (\point)
+            in
+                (\x1, \y1) -- (\x1, 0);
+    }
+}
+
+\newcommand{\points}[1]{%
+    \foreach \point/\co in {#1}
+    {
+        \draw[\co,fill=\co,line width=0.4mm]
+            (\point) circle (0.5mm);
+    }
+}
+
+\newcommand{\events}[1]{%
+    \foreach \event/\name/\i in {#1}
+    {
+        \path
+            let
+                \p1 = (\event)
+            in 
+                node at (\x1,0) [below, fill=white, inner sep=1.25, outer sep=5] {$\scriptstyle \name_{\i} $};
+    }
+}
+
+\newcommand{\status}[1]{%
+    \foreach \status/\i in {#1}
+    {
+        \path
+            let
+                \p1 = (\status)
+            in 
+                node at (0,\y1) [left, fill=white, inner sep=1.25, outer sep=3.5] {$\scriptstyle s_{\i} $};
+    }
+}
+
+\newcommand{\pointtexts}[1]{%
+    \foreach \point/\name/\i/\align/\co in {#1}
+    {
+        \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
+    }
+}
+
+\newcommand{\sweepline}[1]{%
+    \foreach \event in {#1}
+    {
+        \draw[red,line width=0.4mm]
+            let
+                \p1 = (\event)
+            in 
+                (\x1, 0) -- (\x1, \ylines * \raster);
+    }
+}
+
+\newcommand{\intersection}[1]{%
+    \foreach \intersect/\co/\dashline in {#1}{
+        \ifnum\pdfstrcmp{\dashline}{yes}=0
+        \draw[\co,line width=0.4mm, densely dashed]
+                let
+                    \p1 = (\intersect)
+                in
+                    (\x1, \y1) -- (\x1, 0);
+        \fi
+        \draw[\co, fill=white, line width=0.4mm]
+            (\intersect) circle (0.75mm);
+    }
+}
+
+
+\def\Lupper{\mathcal{L}_{\mathrm{upper}}}
+\def\Llower{\mathcal{L}_{\mathrm{lower}}}
+
+\def\pich{6.5cm}
+\def\picb{9cm}
+
+\begin{document}
+
+    \begin{tabularx}{\textwidth}{ll}
+        % === PAGE 1 ========================================================
+        % --- IMAGE 1 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black,
+                P9/black,
+                P10/black,
+                P11/black,
+                P12/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above right/black,
+                P2/p/2/above/black,
+                P3/p/3/above/black,
+                P4/p/4/above right/black,
+                P5/p/5/above left/black, 
+                P6/p/6/below right/black,
+                P7/p/7/above left/black,
+                P8/p/8/right/black,
+                P9/p/9/above left/black,
+                P10/p/10/above right/black,
+                P11/p/11/above left/black,
+                P12/p/12/above right/black}
+        \end{tikzpicture}} &
+        \makecell[l]{A} \\
+        % --- IMAGE 2 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black,
+                P9/black,
+                P10/black,
+                P11/black,
+                P12/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above right/black,
+                P2/q/1/above/black,
+                P3/p/2/above/black,
+                P4/q/2/above right/black,
+                P5/p/3/above left/black, 
+                P6/q/3/below right/black,
+                P7/p/4/above left/black,
+                P8/q/4/right/black,
+                P9/p/5/above left/black,
+                P10/q/5/above right/black,
+                P11/p/6/above left/black,
+                P12/q/6/above right/black}
+        \end{tikzpicture}} &
+        \setlength{\tabcolsep}{2pt}
+        \makecell[l]{A}
+   \end{tabularx}
+\end{document}
