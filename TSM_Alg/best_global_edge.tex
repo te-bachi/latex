@@ -149,8 +149,7 @@
     }
 }
 
-
-\newcommand{\lines}[1]{%
+\newcommand{\textlines}[1]{%
     \foreach \a/\b/\c/\t/\xs/\ys in {#1}
     {
         \draw[\c, line width=0.3mm]
@@ -167,6 +166,15 @@
 }
 
 
+
+\newcommand{\lines}[1]{%
+    \foreach \a/\b/\c in {#1}
+    {
+        \draw[\c, line width=0.3mm]
+            (\a) -- (\b);
+    }
+}
+
 \def\Lupper{\mathcal{L}_{\mathrm{upper}}}
 \def\Llower{\mathcal{L}_{\mathrm{lower}}}
 
@@ -182,7 +190,7 @@
         \begin{tikzpicture}[baseline=0]
             \tiktop
 
-            \lines{
+            \textlines{
                 P1/P2/blue/5.4/0/0,
                 P1/P3/blue/8.0/0/0,
                 P1/P4/blue/13.4/0/0,
@@ -218,7 +226,7 @@
         \begin{tikzpicture}[baseline=0]
             \tiktop
 
-            \lines{
+            \textlines{
                 P2/P3/blue/3.6/-4/0,
                 P2/P4/blue/10.6/0/0,
                 P2/P5/blue/15.8/0/0,
@@ -253,7 +261,7 @@
         \begin{tikzpicture}[baseline=0]
             \tiktop
 
-            \lines{
+            \textlines{
                 P3/P4/blue/7.2/0/0,
                 P3/P5/blue/13.2/0/0,
                 P3/P6/blue/16.0/0/0,
@@ -287,7 +295,7 @@
         \begin{tikzpicture}[baseline=0]
             \tiktop
 
-            \lines{
+            \textlines{
                 P4/P5/blue/7.3/4/-2,
                 P4/P6/blue/11.2/0/0,
                 P4/P7/blue/13.6/14/20,
@@ -320,7 +328,7 @@
         \begin{tikzpicture}[baseline=0]
             \tiktop
 
-            \lines{
+            \textlines{
                 P5/P6/blue/4.2/0/0,
                 P5/P7/blue/9.1/0/0,
                 P5/P8/blue/5.0/0/0}
@@ -352,7 +360,7 @@
         \begin{tikzpicture}[baseline=0]
             \tiktop
 
-            \lines{
+            \textlines{
                 P6/P7/blue/6.3/0/0,
                 P6/P8/blue/6.1/0/0}
 
@@ -383,7 +391,7 @@
         \begin{tikzpicture}[baseline=0]
             \tiktop
 
-            \lines{
+            \textlines{
                 P7/P8/blue/6.4/0/0}
 
             -- start- / end-points
@@ -415,6 +423,331 @@
             n       &= 8 \\
             l       &= \sum_{i=1}^{n-1} i = 7 + 6 + 5 + 4 + 3 + 2 + 1 = 28
         \end{aligned}
-        $} 
+        $} \\
+        % --- IMAGE 5 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/blue/3.6/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/above left/black,
+                P3/p/3/below right/black,
+                P4/p/4/above/black,
+                P5/p/5/above/black, 
+                P6/p/6/above/black,
+                P7/p/7/above/black,
+                P8/p/8/above/black}
+            
+        \end{tikzpicture}} &
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/black/3.6/0/0,
+                P5/P6/blue/4.2/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/above left/black,
+                P3/p/3/below right/black,
+                P4/p/4/above/black,
+                P5/p/5/below/black, 
+                P6/p/6/above/black,
+                P7/p/7/above/black,
+                P8/p/8/above/black}
+            
+        \end{tikzpicture}} \\
+        % --- IMAGE 6 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/black/3.6/0/0,
+                P5/P6/black/4.2/0/0,
+                P5/P8/blue/5.0/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/above left/black,
+                P3/p/3/below right/black,
+                P4/p/4/above/black,
+                P5/p/5/below/black, 
+                P6/p/6/above/black,
+                P7/p/7/above/black,
+                P8/p/8/above/black}
+            
+        \end{tikzpicture}} &
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/black/3.6/0/0,
+                P5/P6/black/4.2/0/0,
+                P5/P8/black/5.0/0/0,
+                P1/P2/blue/5.4/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/left/black,
+                P3/p/3/below right/black,
+                P4/p/4/above/black,
+                P5/p/5/below/black, 
+                P6/p/6/above/black,
+                P7/p/7/above/black,
+                P8/p/8/above/black}
+            
+        \end{tikzpicture}} \\
+        % --- IMAGE 7 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/black/3.6/0/0,
+                P5/P6/black/4.2/0/0,
+                P5/P8/black/5.0/0/0,
+                P1/P2/black/5.4/0/0,
+                P6/P8/gray/6.1/0/0,
+                P6/P7/blue/6.3/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/left/black,
+                P3/p/3/below right/black,
+                P4/p/4/above/black,
+                P5/p/5/below/black, 
+                P6/p/6/right/black,
+                P7/p/7/above/black,
+                P8/p/8/above/black}
+            
+        \end{tikzpicture}} &
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/black/3.6/0/0,
+                P5/P6/black/4.2/0/0,
+                P5/P8/black/5.0/0/0,
+                P1/P2/black/5.4/0/0,
+                P6/P7/black/6.3/0/0,
+                P7/P8/gray/6.4/0/0,
+                P4/P8/blue/7.2/0/0,
+                P3/P4/blue/7.2/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/left/black,
+                P3/p/3/below left/black,
+                P4/p/4/below/black,
+                P5/p/5/below/black, 
+                P6/p/6/right/black,
+                P7/p/7/above/black,
+                P8/p/8/above left/black}
+            
+        \end{tikzpicture}} \\
+        % --- IMAGE 8 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/black/3.6/-4/0,
+                P5/P6/black/4.2/0/0,
+                P5/P8/black/5.0/0/0,
+                P1/P2/black/5.4/0/0,
+                P6/P7/black/6.3/0/0,
+                P4/P8/black/7.2/0/0,
+                P3/P4/black/7.2/-4/0,
+                P4/P5/gray/7.3/0/0,
+                P1/P3/gray/8.0/0/0,
+                P5/P7/gray/9.1/0/0,
+                P3/P8/gray/10.2/0/0,
+                P2/P4/gray/10.6/4/0,
+                P4/P6/gray/11.2/0/0,
+                P1/P8/gray/11.7/0/0,
+                P2/P8/gray/12.0/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/left/black,
+                P3/p/3/below left/black,
+                P4/p/4/below/black,
+                P5/p/5/below/black, 
+                P6/p/6/right/black,
+                P7/p/7/above/black,
+                P8/p/8/above left/black}
+            
+        \end{tikzpicture}} &
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/black/3.6/-4/0,
+                P4/P7/gray/13.6/20/30,
+                P5/P6/black/4.2/0/0,
+                P5/P8/black/5.0/0/0,
+                P1/P2/black/5.4/0/0,
+                P6/P7/black/6.3/0/0,
+                P4/P8/black/7.2/0/4,
+                P3/P4/black/7.2/-4/0,
+                P3/P5/gray/13.2/36/-6,
+                P1/P4/gray/13.4/0/0,
+                P1/P7/blue/14.0/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/left/black,
+                P3/p/3/below left/black,
+                P4/p/4/below/black,
+                P5/p/5/below/black, 
+                P6/p/6/right/black,
+                P7/p/7/above/black,
+                P8/p/8/above left/black}
+            
+        \end{tikzpicture}} \\
+        % --- IMAGE 8 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/black/3.6/-4/0,
+                P5/P6/black/4.2/0/0,
+                P5/P8/black/5.0/0/0,
+                P1/P2/black/5.4/0/0,
+                P6/P7/black/6.3/0/0,
+                P4/P8/black/7.2/0/4,
+                P3/P4/black/7.2/-4/0,
+                P1/P7/black/14.0/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/left/black,
+                P3/p/3/below left/black,
+                P4/p/4/below/black,
+                P5/p/5/below/black, 
+                P6/p/6/right/black,
+                P7/p/7/above/black,
+                P8/p/8/above left/black}
+            
+        \end{tikzpicture}} &
+        
    \end{tabularx}
 \end{document}
