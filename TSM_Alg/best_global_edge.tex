@@ -24,7 +24,7 @@
 
 %-------------------------------------------------------------------------------
 % xcolor
-\usepackage[svgnames]{xcolor}
+\usepackage[svgnames,table]{xcolor}
 
 %-------------------------------------------------------------------------------
 % scrlayer-scrpage
@@ -193,11 +193,12 @@
 
 \begin{document}
 
+
+    % === PAGE 1 ============================================================
     \section*{Best Global Edge}
     \subsection*{Calculate Distances}
 
     \begin{tabularx}{\textwidth}{ll}
-        % === PAGE 1 ========================================================
         % --- IMAGE 1 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
@@ -439,7 +440,98 @@
         $}
     \end{tabularx}
 
-    \subsection*{Calculate Distances}
+
+    % === PAGE 2 ============================================================
+    \subsection*{Distances Table}
+
+    \begin{minipage}[t]{.5\linewidth}
+        \begin{center}
+            \begin{tabular}[t]{|r|c|c|r|}
+                \hline
+                \textbf{Id} & \textbf{Start} & \textbf{End} & \textbf{Distance} \\
+                \hline
+                1 & $p_{1}$ & $p_{2}$ & 5.4 \\
+                2 & $p_{1}$ & $p_{3}$ & 8.0 \\
+                3 & $p_{1}$ & $p_{4}$ & 13.4 \\
+                4 & $p_{1}$ & $p_{5}$ & 16.4 \\
+                5 & $p_{1}$ & $p_{6}$ & 17.5 \\
+                6 & $p_{1}$ & $p_{7}$ & 14.0 \\
+                7 & $p_{1}$ & $p_{8}$ & 11.7 \\
+                \hline
+                8 & $p_{2}$ & $p_{3}$ & 3.6 \\
+                9 & $p_{2}$ & $p_{4}$ & 10.6 \\
+                10 & $p_{2}$ & $p_{5}$ & 15.8 \\
+                11 & $p_{2}$ & $p_{6}$ & 18.1 \\
+                12 & $p_{2}$ & $p_{7}$ & 16.5 \\
+                13 & $p_{2}$ & $p_{8}$ & 12.0 \\
+                \hline
+                14 & $p_{3}$ & $p_{4}$ & 7.2 \\
+                15 & $p_{3}$ & $p_{5}$ & 13.2 \\
+                16 & $p_{3}$ & $p_{6}$ & 16.0 \\
+                17 & $p_{3}$ & $p_{7}$ & 15.7 \\
+                18 & $p_{3}$ & $p_{8}$ & 10.2 \\
+                \hline
+                19 & $p_{4}$ & $p_{5}$ & 7.3 \\
+                20 & $p_{4}$ & $p_{6}$ & 11.2 \\
+                21 & $p_{4}$ & $p_{7}$ & 13.6 \\
+                22 & $p_{4}$ & $p_{8}$ & 7.2 \\
+                \hline
+                23 & $p_{5}$ & $p_{6}$ & 4.2 \\
+                24 & $p_{5}$ & $p_{7}$ & 9.1 \\
+                25 & $p_{5}$ & $p_{8}$ & 5.0 \\
+                \hline
+                26 & $p_{6}$ & $p_{7}$ & 6.3 \\
+                27 & $p_{6}$ & $p_{8}$ & 6.1 \\
+                \hline
+                28 & $p_{7}$ & $p_{8}$ & 6.4 \\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[t]{.5\linewidth}
+        \begin{center}
+            \begin{tabular}[t]{|r|c|c|r|}
+                \hline
+                \textbf{Id} & \textbf{Start} & \textbf{End} & \textbf{Distance} \\
+                \hline
+                1 & $p_{2}$ & $p_{3}$ & 3.6 \\
+                2 & $p_{5}$ & $p_{6}$ & 4.2 \\
+                3 & $p_{5}$ & $p_{8}$ & 5.0 \\
+                4 & $p_{1}$ & $p_{2}$ & 5.4 \\
+                \rowcolor[HTML]{DDDDDD} 5 & $p_{6}$ & $p_{8}$ & 6.1 \\
+                6 & $p_{6}$ & $p_{7}$ & 6.3 \\
+                \rowcolor[HTML]{DDDDDD} 7 & $p_{7}$ & $p_{8}$ & 6.4 \\
+                8 & $p_{3}$ & $p_{4}$ & 7.2 \\
+                9 & $p_{4}$ & $p_{8}$ & 7.2 \\
+                \rowcolor[HTML]{DDDDDD} 10 & $p_{4}$ & $p_{5}$ & 7.3 \\
+                \rowcolor[HTML]{DDDDDD} 11 & $p_{1}$ & $p_{3}$ & 8.0 \\
+                \rowcolor[HTML]{DDDDDD} 12 & $p_{5}$ & $p_{7}$ & 9.1 \\
+                \rowcolor[HTML]{DDDDDD} 13 & $p_{3}$ & $p_{8}$ & 10.2 \\
+                \rowcolor[HTML]{DDDDDD} 14 & $p_{2}$ & $p_{4}$ & 10.6 \\
+                \rowcolor[HTML]{DDDDDD} 15 & $p_{4}$ & $p_{6}$ & 11.2 \\
+                \rowcolor[HTML]{DDDDDD} 16 & $p_{1}$ & $p_{8}$ & 11.7 \\
+                \rowcolor[HTML]{DDDDDD} 17 & $p_{2}$ & $p_{8}$ & 12.0 \\
+                \rowcolor[HTML]{DDDDDD} 18 & $p_{3}$ & $p_{5}$ & 13.2 \\
+                \rowcolor[HTML]{DDDDDD} 19 & $p_{1}$ & $p_{4}$ & 13.4 \\
+                \rowcolor[HTML]{DDDDDD} 20 & $p_{4}$ & $p_{7}$ & 13.6 \\
+                21 & $p_{1}$ & $p_{7}$ & 14.0 \\
+                \rowcolor[HTML]{999999} 22 & $p_{3}$ & $p_{7}$ & 15.7 \\
+                \rowcolor[HTML]{999999} 23 & $p_{2}$ & $p_{5}$ & 15.8 \\
+                \rowcolor[HTML]{999999} 24 & $p_{3}$ & $p_{6}$ & 16.0 \\
+                \rowcolor[HTML]{999999} 25 & $p_{1}$ & $p_{5}$ & 16.4 \\
+                \rowcolor[HTML]{999999} 26 & $p_{2}$ & $p_{7}$ & 16.5 \\
+                \rowcolor[HTML]{999999} 27 & $p_{1}$ & $p_{6}$ & 17.5 \\
+                \rowcolor[HTML]{999999} 28 & $p_{2}$ & $p_{6}$ & 18.1 \\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{minipage}
+
+    \newpage
+
+
+    % === PAGE 3 ============================================================
+    \subsection*{Calculate Path}
 
     \begin{tabularx}{\textwidth}{ll}
         % --- IMAGE 5 -------------------------------------------------------
@@ -728,6 +820,8 @@
                 P8/p/8/above left/black}
             
         \end{tikzpicture}} \\
+
+    % === PAGE 4 ============================================================
         % --- IMAGE 8 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
