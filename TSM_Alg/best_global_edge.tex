@@ -20,7 +20,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
-\usepackage{mathtools}
 
 %-------------------------------------------------------------------------------
 % xcolor
@@ -200,6 +199,20 @@
 
     \begin{tabularx}{\textwidth}{ll}
         % --- IMAGE 1 -------------------------------------------------------
+
+        \makecell[l]{
+            \begin{tabular}[t]{@{} r @{\hskip 1mm} c @{\hskip 1mm} l @{}}
+                \multicolumn{3}{@{}l}{No starting point specified.} \\
+                \multicolumn{3}{@{}l}{Using the shortest edge.} \\
+                         $S$ & $=$ & $\varnothing$\\
+                         $R$ & $=$ & Set of edges that can be added to $S$ \\
+                             &     & - No cycle is created \\
+                             &     & - No vertex with degree > 2 is created \\
+                $c\kl{S, e}$ & $=$ & length of edge $e$ \\
+                     $n_{v}$ & $=$ & $8$\\
+                     $n_{e}$ & $=$ & $\sum_{i=1}^{n_{V}-1} i = 7 + 6 + \cdots + 2 + 1 = 28$
+            \end{tabular}
+        } &
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -235,7 +248,8 @@
                 P7/p/7/above right/black,
                 P8/p/8/below right/black}
 
-        \end{tikzpicture}} &
+        \end{tikzpicture}} \\
+        % --- IMAGE 2 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -269,8 +283,7 @@
                 P6/p/6/below right/black,
                 P7/p/7/above right/black,
                 P8/p/8/above right/black}
-        \end{tikzpicture}} \\
-        % --- IMAGE 2 -------------------------------------------------------
+        \end{tikzpicture}} &
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -304,7 +317,8 @@
                 P7/p/7/above right/black,
                 P8/p/8/right/black}
             
-        \end{tikzpicture}} &
+        \end{tikzpicture}} \\
+        % --- IMAGE 3 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -336,8 +350,7 @@
                 P6/p/6/above right/black,
                 P7/p/7/above right/black,
                 P8/p/8/above/black}
-        \end{tikzpicture}} \\
-        % --- IMAGE 3 -------------------------------------------------------
+        \end{tikzpicture}} &
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -369,7 +382,8 @@
                 P7/p/7/above/black,
                 P8/p/8/above left/black}
             
-        \end{tikzpicture}} &
+        \end{tikzpicture}} \\
+        % --- IMAGE 4 -------------------------------------------------------
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -399,8 +413,7 @@
                 P6/p/6/below right/black,
                 P7/p/7/above left/black,
                 P8/p/8/above left/black}
-        \end{tikzpicture}} \\
-        % --- IMAGE 4 -------------------------------------------------------
+        \end{tikzpicture}} &
         \noindent\parbox[c][\pich]{\picb}{
         \begin{tikzpicture}[baseline=0]
             \tiktop
@@ -430,14 +443,7 @@
                 P7/p/7/above right/black,
                 P8/p/8/below left/black}
             
-        \end{tikzpicture}} &
-        \makecell[l]{
-        $
-        \begin{aligned}[t]
-            n_{V}       &= 8 \\
-            n_{E}       &= \sum_{i=1}^{n_{V}-1} i = 7 + 6 + 5 + 4 + 3 + 2 + 1 = 28
-        \end{aligned}
-        $}
+        \end{tikzpicture}}
     \end{tabularx}
 
 
