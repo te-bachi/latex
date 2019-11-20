@@ -1,0 +1,421 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=15mm,right=20mm,top=17mm,bottom=17mm,footskip=0.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% xcolor
+\usepackage[svgnames,table]{xcolor}
+
+%-------------------------------------------------------------------------------
+% scrlayer-scrpage
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\cfoot{\pagemark}
+
+%-------------------------------------------------------------------------------
+% tabularx
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{makecell}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, calc, fit, intersections}
+
+%-------------------------------------------------------------------------------
+% Listings
+\usepackage{listings}
+\newcommand{\listingMatlab}[2][]{
+	\lstset{
+		language=Matlab,
+		breaklines=true,
+		numbers=left,
+		numberstyle=\tiny,
+		numbersep=5pt,
+		captionpos=b,
+		basicstyle=\footnotesize\ttfamily,
+		stringstyle=\color{magenta},
+		identifierstyle=\color{black},
+		keywordstyle=\color{blue}, 
+		commentstyle=\color{DarkGreen}
+	}
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}
+}
+\lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+{
+    \lstset{ %this is the stype
+        mathescape=true,
+        frame=tB,
+        numbers=left, 
+        numberstyle=\tiny,
+        basicstyle=\scriptsize, 
+        keywordstyle=\color{black}\bfseries,
+        keywords={,input, output, return, datatype, function, in, if, else, foreach, while, begin, end, } 
+        numbers=left,
+        xleftmargin=.04\textwidth
+    }
+}
+{}
+
+
+%-------------------------------------------------------------------------------
+
+\RedeclareSectionCommand[
+  afterindent=false,
+  beforeskip=0.8\baselineskip,
+  afterskip=0.4\baselineskip]{section}
+\RedeclareSectionCommand[
+  afterindent=false,
+  beforeskip=0.8\baselineskip,
+  afterskip=0.4\baselineskip]{subsection}
+
+%-------------------------------------------------------------------------------
+% 
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+% 
+\newcommand{\abs}[1]{{\vert #1 \vert}}
+
+\newcommand\addvmargin[1]{
+  \node[fit=(current bounding box),inner ysep=#1,inner xsep=0]{};
+}
+
+\def\tiktop{%
+    \def\xlines{22}
+    \def\ylines{15}
+    \def\raster{3.5mm}
+
+    \coordinate (P1) at ( 4*\raster,13*\raster);
+    \coordinate (P2) at ( 2*\raster, 8*\raster);
+    \coordinate (P3) at ( 4*\raster, 5*\raster);
+    \coordinate (P4) at (10*\raster, 1*\raster);
+    \coordinate (P5) at (17*\raster, 3*\raster);
+    \coordinate (P6) at (20*\raster, 6*\raster);
+    \coordinate (P7) at (18*\raster,12*\raster);
+    \coordinate (P8) at (14*\raster, 7*\raster);
+
+    % draw vertical lines
+    \foreach \x in {0,...,\xlines}
+    {
+        \draw[lightgray] (\x * \raster, 0mm) -- (\x * \raster, \ylines * \raster);
+    }
+
+    % draw horizontal lines
+    \foreach \y in {0,...,\ylines}
+    {
+        \draw[lightgray] (0mm, \y * \raster) -- (\xlines * \raster, \y * \raster);
+    }
+
+    % border
+    \draw[black] (0mm, 0mm) -- (\xlines * \raster, 0mm);
+    \draw[black] (0mm, 0mm) -- (0mm, \ylines * \raster);
+    \draw[black] (\xlines * \raster, 0mm) -- (\xlines * \raster, \ylines * \raster);
+    \draw[black] (0mm, \ylines * \raster) -- (\xlines * \raster, \ylines * \raster);
+}
+
+\newcommand{\points}[1]{%
+    \foreach \point/\co in {#1}
+    {
+        \draw[\co,fill=\co,line width=0.4mm]
+            (\point) circle (0.5mm);
+    }
+}
+
+\newcommand{\pointtexts}[1]{%
+    \foreach \point/\name/\i/\align/\co in {#1}
+    {
+        \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
+    }
+}
+
+\newcommand{\textlines}[1]{%
+    \foreach \a/\b/\c/\t/\xs/\ys in {#1}
+    {
+        \draw[\c, line width=0.3mm]
+            let
+                \p1 = (\a),
+                \p2 = (\b)
+            in 
+                (\x1,\y1) -- node[midway,
+                                  fill=white,
+                                  xshift=\xs, yshift=\ys,
+                                  inner sep=1.25, outer sep=2] {\scriptsize \t} ++(\x2 - \x1, \y2 - \y1) ;
+        
+    }
+}
+
+\newcommand{\lines}[1]{%
+    \foreach \a/\b/\c in {#1}
+    {
+        \draw[\c, line width=0.3mm]
+            (\a) -- (\b);
+    }
+}
+
+\def\Lupper{\mathcal{L}_{\mathrm{upper}}}
+\def\Llower{\mathcal{L}_{\mathrm{lower}}}
+
+\def\pich{6cm}
+\def\picb{8cm}
+
+\begin{document}
+
+
+    % === PAGE 1 ============================================================
+
+    \begin{minipage}[t]{.5\linewidth}
+        \section*{Best Insertion}
+
+        \subsection*{Calculate Path}
+    \end{minipage}
+    \begin{minipage}[t]{.5\linewidth}
+            \begin{tabular}[t]{@{} r @{\hskip 1mm} c @{\hskip 1mm} l @{}}
+                         $S$ & $=$ & Tour on 2 closest vertices \\
+                         $R$ & $=$ & Set of vertices not yet visited $S$ \\
+                $c\kl{S, e}$ & $=$ & Minimum insertion cost of vertex $e$ \\
+                             &     & between 2 vertices of partial tour $S$
+            \end{tabular}
+    \end{minipage}
+
+    \begin{tabularx}{\textwidth}{ll}
+        % --- IMAGE 1 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/blue/3.6/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/below left/black,
+                P3/p/3/below left/black,
+                P4/p/4/below right/black,
+                P5/p/5/below right/black, 
+                P6/p/6/below right/black,
+                P7/p/7/above right/black,
+                P8/p/8/below right/black}
+        \end{tikzpicture}} &
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/black/3.6/-5/0,
+                P1/P2/blue/5.4/0/0,
+                P1/P3/blue/8.0/0/0,
+                P4/P2/gray/10.6/20/-10,
+                P4/P3/gray/7.2/-15/5,
+                P5/P2/gray/15.8/-10/5,
+                P5/P3/gray/13.2/0/0,
+                P6/P2/gray/18.1/5/0,
+                P6/P3/gray/16.0/5/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/below left/black,
+                P3/p/3/below left/black,
+                P4/p/4/below right/black,
+                P5/p/5/below right/black, 
+                P6/p/6/below right/black,
+                P7/p/7/above right/black,
+                P8/p/8/below right/black}
+        \end{tikzpicture}} \\
+        % --- IMAGE 2 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/black/3.6/-5/0,
+                P8/P2/gray/12.0/-10/0,
+                P8/P3/gray/10.2/0/0,
+                P7/P2/gray/16.5/0/0,
+                P7/P3/gray/15.7/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/below left/black,
+                P3/p/3/below left/black,
+                P4/p/4/below right/black,
+                P5/p/5/below right/black, 
+                P6/p/6/below right/black,
+                P7/p/7/above right/black,
+                P8/p/8/below right/black}
+        \end{tikzpicture}} &
+        \begin{tabular}{|l|rcl|}
+            \hline
+            \textbf{Path} & \multicolumn{3}{l|}{\textbf{Min. Insertion Cost}} \\
+            \hline
+            $p_2$ - $p_1$ - $p_3$ & $5.4 + 8.0$  & $=$ & $13.4$ \\
+            $p_2$ - $p_4$ - $p_3$ & $10.6 + 7.2$ & $=$ & $17.8$ \\
+            $p_2$ - $p_5$ - $p_3$ & $15.8 + 13.2$ & $=$ & $29.0$ \\
+            $p_2$ - $p_6$ - $p_3$ & $18.1 + 16.0$ & $=$ & $34.1$ \\
+            $p_2$ - $p_7$ - $p_3$ & $16.5 + 15.7$ & $=$ & $32.2$ \\
+            $p_2$ - $p_8$ - $p_3$ & $12.0 + 10.5$ & $=$ & $22.5$ \\
+            \hline
+        \end{tabular} \\
+        % --- IMAGE 3 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P2/P3/black/3.6/-5/0,
+                P4/P2/blue/10.6/15/-10,
+                P8/P2/gray/12.0/15/0,
+                P1/P2/black/5.4/0/0,
+                P1/P3/black/8.0/0/0,
+                P4/P1/gray/13.4/-5/15,
+                P4/P3/blue/7.2/-15/5,
+                P8/P1/gray/11.7/0/0,
+                P8/P3/gray/10.2/0/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/below left/black,
+                P3/p/3/below left/black,
+                P4/p/4/below right/black,
+                P5/p/5/below right/black, 
+                P6/p/6/below right/black,
+                P7/p/7/above right/black,
+                P8/p/8/below right/black}
+        \end{tikzpicture}} &
+        \begin{tabular}{|l|rcl|}
+            \hline
+            \textbf{Path} & \multicolumn{3}{l|}{\textbf{Min. Insertion Cost}} \\
+            \hline
+            $p_2$ - $p_4$ - $p_3$ & $10.6 + 7.2$  & $=$ & $17.8$ \\
+            $p_1$ - $p_4$ - $p_3$ & $13.4 + 7.2$  & $=$ & $20.6$ \\
+            $p_1$ - $p_4$ - $p_2$ & $13.4 + 10.6$  & $=$ & $24.0$ \\
+            \hline
+            $p_2$ - $p_8$ - $p_3$ & $12.0 + 10.5$ & $=$ & $22.5$ \\
+            $p_1$ - $p_8$ - $p_3$ & $11.7 + 12.0$ & $=$ & $23.7$ \\
+            $p_1$ - $p_8$ - $p_2$ & $11.7 + 10.2$ & $=$ & $21.9$ \\
+            \hline
+            $\cdots$              &               &     &        \\
+            \hline
+        \end{tabular} \\
+        % --- IMAGE 4 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+
+            \textlines{
+                P4/P2/black/10.6/-5/10,
+                P1/P2/black/5.4/0/0,
+                P1/P3/black/8.0/0/0,
+                P4/P3/black/7.2/-5/0}
+
+            -- start- / end-points
+            \points{
+                P1/black,
+                P2/black,
+                P3/black,
+                P4/black,
+                P5/black,
+                P6/black,
+                P7/black,
+                P8/black}
+
+            -- start- / end-point text
+            \pointtexts{
+                P1/p/1/above/black,
+                P2/p/2/below left/black,
+                P3/p/3/below left/black,
+                P4/p/4/below right/black,
+                P5/p/5/below right/black, 
+                P6/p/6/below right/black,
+                P7/p/7/above right/black,
+                P8/p/8/below right/black}
+        \end{tikzpicture}} &
+        \begin{tabular}{|l|rcl|}
+            \hline
+            \textbf{Path} & \multicolumn{3}{l|}{\textbf{Min. Insertion Cost}} \\
+            \hline
+            $\cdots$              &               &     &        \\
+            \hline
+        \end{tabular}
+    \end{tabularx}
+\end{document}
