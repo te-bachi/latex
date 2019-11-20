@@ -198,14 +198,15 @@
 
     \begin{minipage}[t]{.5\linewidth}
         \section*{Nearest Neighbour}
-
+        
         \subsection*{Calculate Path}
     \end{minipage}
     \begin{minipage}[t]{.5\linewidth}
             \begin{tabular}[t]{@{} r @{\hskip 1mm} c @{\hskip 1mm} l @{}}
                          $S$ & $=$ & $\kq{p_1}$ \\
-                         $R$ & $=$ & Set of edges that can be added to $S$ \\
-                $c\kl{S, e}$ & $=$ & length of edge $e$
+                         $R$ & $=$ & Set of vertices not yet vistied \\
+                $c\kl{S, e}$ & $=$ & length of edge going from last \\
+                             &     & vertex of $S$ to $e$
             \end{tabular}
     \end{minipage}
 
