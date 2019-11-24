@@ -1,0 +1,186 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=15mm,right=20mm,top=17mm,bottom=17mm,footskip=0.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% xcolor
+\usepackage[svgnames,table]{xcolor}
+
+%-------------------------------------------------------------------------------
+% scrlayer-scrpage
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\cfoot{\pagemark}
+
+%-------------------------------------------------------------------------------
+% tabularx
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{makecell}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, calc, fit, intersections}
+
+%-------------------------------------------------------------------------------
+% Listings
+\usepackage{listings}
+\newcommand{\listingMatlab}[2][]{
+	\lstset{
+		language=Matlab,
+		breaklines=true,
+		numbers=left,
+		numberstyle=\tiny,
+		numbersep=5pt,
+		captionpos=b,
+		basicstyle=\footnotesize\ttfamily,
+		stringstyle=\color{magenta},
+		identifierstyle=\color{black},
+		keywordstyle=\color{blue}, 
+		commentstyle=\color{DarkGreen}
+	}
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}
+}
+\lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+{
+    \lstset{ %this is the stype
+        mathescape=true,
+        frame=tB,
+        numbers=left, 
+        numberstyle=\tiny,
+        basicstyle=\scriptsize, 
+        keywordstyle=\color{black}\bfseries,
+        keywords={,input, output, return, datatype, function, in, if, else, foreach, while, begin, end, } 
+        numbers=left,
+        xleftmargin=.04\textwidth
+    }
+}
+{}
+
+
+%-------------------------------------------------------------------------------
+
+\RedeclareSectionCommand[
+  afterindent=false,
+  beforeskip=0.2\baselineskip,
+  afterskip=0.1\baselineskip]{section}
+\RedeclareSectionCommand[
+  afterindent=false,
+  beforeskip=0.2\baselineskip,
+  afterskip=0.1\baselineskip]{subsection}
+
+%-------------------------------------------------------------------------------
+% 
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+% 
+\newcommand{\abs}[1]{{\vert #1 \vert}}
+
+\newcommand\addvmargin[1]{
+  \node[fit=(current bounding box),inner ysep=#1,inner xsep=0]{};
+}
+
+\def\tiktop{%
+    \def\xlines{22}
+    \def\ylines{15}
+    \def\raster{3.5mm}
+
+    \coordinate (P1) at ( 4*\raster,13*\raster);
+    \coordinate (P2) at ( 2*\raster, 8*\raster);
+    \coordinate (P3) at ( 4*\raster, 5*\raster);
+    \coordinate (P4) at (10*\raster, 1*\raster);
+    \coordinate (P5) at (17*\raster, 3*\raster);
+    \coordinate (P6) at (20*\raster, 6*\raster);
+    \coordinate (P7) at (18*\raster,12*\raster);
+    \coordinate (P8) at (14*\raster, 7*\raster);
+
+    % draw vertical lines
+    \foreach \x in {0,...,\xlines}
+    {
+        \draw[lightgray] (\x * \raster, 0mm) -- (\x * \raster, \ylines * \raster);
+    }
+
+    % draw horizontal lines
+    \foreach \y in {0,...,\ylines}
+    {
+        \draw[lightgray] (0mm, \y * \raster) -- (\xlines * \raster, \y * \raster);
+    }
+
+    % border
+    \draw[black] (0mm, 0mm) -- (\xlines * \raster, 0mm);
+    \draw[black] (0mm, 0mm) -- (0mm, \ylines * \raster);
+    \draw[black] (\xlines * \raster, 0mm) -- (\xlines * \raster, \ylines * \raster);
+    \draw[black] (0mm, \ylines * \raster) -- (\xlines * \raster, \ylines * \raster);
+}
+
+\def\pich{6cm}
+\def\picb{8cm}
+
+\begin{document}
+
+
+    % === PAGE 1 ============================================================
+    \section*{Pilot Method}
+
+    \begin{tabularx}{\textwidth}{ll}
+        % --- IMAGE 1 -------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0,scale=.5,every node/.style={circle,fill=blue!20}]
+            \node (n6) at (1,10) {6};
+            \node (n4) at (4,8)  {4};
+            \node (n5) at (8,9)  {5};
+            \node (n1) at (11,8) {1};
+            \node (n2) at (9,6)  {2};
+            \node (n3) at (5,5)  {3};
+            
+            \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4}
+                \draw (\from) -- (\to);
+        \end{tikzpicture}} &
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0,scale=.5,every node/.style={circle,fill=blue!20}]
+            \node (n6) at (1,10) {6};
+            \node (n4) at (4,8)  {4};
+            \node (n5) at (8,9)  {5};
+            \node (n1) at (11,8) {1};
+            \node (n2) at (9,6)  {2};
+            \node (n3) at (5,5)  {3};
+            
+            \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4}
+                \draw (\from) -- (\to);
+        \end{tikzpicture}}
+
+
+    \end{tabularx}
+\end{document}
