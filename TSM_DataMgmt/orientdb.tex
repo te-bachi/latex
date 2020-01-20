@@ -1,0 +1,353 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=half,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers,
+    fleqn
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% Für enumerate
+\usepackage{enumitem}
+\setlist[enumerate]{
+    wide=0pt,
+    leftmargin=*,
+    topsep=0ex,
+    partopsep=0ex,
+    itemsep=-1ex,
+    parsep=2ex,
+    labelsep=1ex,
+    label=$\bullet$
+}
+
+
+%-------------------------------------------------------------------------------
+%
+\usepackage[autostyle=true,german=quotes]{csquotes}
+
+%-------------------------------------------------------------------------------
+% Für multicol
+\usepackage{multicol}
+\setlength\columnsep{20pt}
+
+%-------------------------------------------------------------------------------
+% 
+
+\RedeclareSectionCommand[
+  beforeskip=-.5\baselineskip,
+  afterskip=.1\baselineskip]{section}
+
+\RedeclareSectionCommand[
+  beforeskip=-.5\baselineskip,
+  afterskip=.1\baselineskip]{subsection}
+
+\RedeclareSectionCommand[
+  beforeskip=-.5\baselineskip,
+  afterskip=.1\baselineskip]{subsubsection}
+
+
+%-------------------------------------------------------------------------------
+% 
+\newcommand{\brand}[1]{\textbf{\textit{#1}}}
+\newcommand{\mytextquote}[1]{\textit{\textquote{#1}}}
+
+
+\begin{document}
+\begin{multicols*}{2}
+
+    \section{What Are NoSQL Databases?}
+
+        \subsection{Why the Modern Enterprise Needs NoSQL}
+
+            Traditionally, enterprises would store data in SQL-based relational database management systems (RDBMS). All of that data was structured data—like financial statements, personnel files, product information and company records.
+
+            While SQL-based RDBMS are very capable pieces of technology in many ways, the proliferation of the internet and mobile devices has led to a surge in unstructured or unorganized data which RDBMSs can’t accommodate easily.
+
+            To meet the needs of the modern enterprise that generates enormous amounts of unstructured data in the age of big data, NoSQL databases have emerged.
+
+            Despite how the name might sound, these databases weren’t designed to displace SQL databases. In fact, some NoSQL databases -- like OrientDB -- actually support SQL language. A better way of thinking about NoSQL is that it’s the database designed to get developers and business professionals to \mytextquote{open their minds and consider new possibilities beyond the classic relational approach to data persistence.}
+
+            Whereas traditional RDBMSs are schema-oriented -- which means that data stored in them needs to be structured or classified in way that adheres to the database’s \mytextquote{rules} -- NoSQL databases can process unstructured data (e.g., blogs, videos, pictures, audio files and texts). In the age of big data, when organizations are collecting more and more data than ever before, this is no small feat.
+
+            \subsubsection{The Benefits of NoSQL}
+
+                So what, specifically, sets NoSQL apart from its RDBMS counterparts?
+
+                \begin{enumerate}
+                    \item{
+                        \brand{Scalability.} NoSQL databases are designed to process big data. To do this, they need to be able to scale out efficiently and significantly.
+                    }
+                    \item{
+                        \brand{Performance.} Unlocking the full potential of your data requires speed, which NoSQL databases are known for. Many of these databases can also process data in real time—which SQL databases simply cannot.
+                    }
+                    \item{
+                        \brand{Flexibility.} In SQL databases, data is typically stored in table format. In NoSQL databases, data can be stored in a number of different ways, including in graphs, documents and key-value, geospatial and reactive models.
+                    }
+                    \item{
+                        \brand{Simplicity.} NoSQL databases easily scale out horizontally. Scaling SQL databases—while not impossible—is a much more difficult endeavor.
+                    }
+                \end{enumerate}
+
+            \subsubsection{The Challenges of NoSQL}
+
+                While NoSQL boasts a number of benefits, it is not without its difficulties. Still, partnering with the right NoSQL vendor can help you overcome these challenges with ease.
+
+
+                \begin{enumerate}
+                    \item{
+                        \brand{Support.} NoSQL databases tend to be open source projects. When something goes wrong, you may have luck reaching out to the community of developers and finding your answer. Unfortunately, today’s strongest enterprises can’t afford to roll the dice on products that are less-established and lack comprehensive support. Good news: Today’s leading NoSQL companies tend to offer free commercial products as well as premium products designed for organizations which tend to include enterprise-level support.
+                    }
+                    \item{
+                        \brand{Maturity.} While NoSQL has been around for quite some time, it wasn’t until recently that NoSQL databases started making serious inroads into the modern enterprise. As such, many of the NoSQL solutions that are out there aren’t as mature as many organizations would like—particularly when compared to their RDBMS counterparts. If you’re looking for a mature NoSQL database, look no further than OrientDB, which was the first multi-model database released—way back in 2011.
+                    }
+                    \item{
+                        \brand{ACID compliance.} Companies, and e-commerce organizations in particular, care a great deal about what’s called ACID compliance. Databases are said to be ACID-compliant when they can ensure atomicity, consistency, isolation and durability in each transaction. Essentially, ACID compliance ensures that databases process transactions as expected. While a number of NoSQL databases aren’t ACID-compliant, several—including OrientDB—are.
+                    }
+                \end{enumerate}
+
+        \subsection{NoSQL Models}
+            
+            Whereas SQL databases usually store data in table format, NoSQL databases—which are much more versatile by design—open themselves up to multiple formats. Some of the more common data models found in NoSQL databases include:
+
+            \begin{enumerate}
+                \item{
+                    \brand{Key/value databases.} Data models are reduced to tables consisting of key/value pairs that are often distributed across servers.
+                }
+                \item{
+                    \brand{Column-oriented databases.} In these databases, data is stored in columns to allow for flexibility and aggregation.
+                }
+                \item{
+                    \brand{Document databases.} Here, the data model consists of document collections. Each document can have multiple fields without needing to have a defined schema.
+                }
+                \item{
+                    \brand{Graph databases.} Like the name suggests, graph databases store data in a model that consists of vertices interconnected by edges.
+                }
+            \end{enumerate}
+
+    \section{Why OrientDB}
+    
+        \brand{OrientDB} is the world’s leading open-source NoSQL multi-model database that powers today’s strongest enterprises and the applications they build. OrientDB allows organizations to unlock the true power of graph databases without having to deploy multiple systems to handle other data types, which increases performance and security while supporting scalability. To learn why enterprises are increasingly migrating to OrientDB, check out how our platform stacks up against other popular databases, like MongoDB and Neoj4. While you’re at it, read some of our customer success stories and see what our community of developers is up to.
+        
+    \section{Why a Multi-Model Database?}
+        
+        \subsection{The Multi-Model Open Source NoSQL Database Focused on Scalability and High Performance}
+
+            OrientDB is the first multi-model open source NoSQL database management system that combines the power of graphs with document, key/value, reactive, object-oriented, and geospatial models into a single scalable, high-performance operational database.
+    
+            In the age of big data, enterprises need databases that support more than just a single data model. Otherwise, it’s impossible for them to unlock the true power of their data in an efficient manner.
+            As a direct response to polyglot persistence—or the idea that different kinds of data benefit from being stored in different formats—multi-model databases have emerged to meet the need for multiple data models, combining them to reduce operational complexity and maintain data consistency. Though graph databases have grown in popularity in recent years, they don’t go far enough. Most NoSQL products are still used to enable applications built on relational DBMSs to scale.
+    
+            Advanced second-generation NoSQL products like OrientDB are the future. The modern multi-model database provides more functionality and flexibility while being powerful enough to replace traditional DBMSs.
+
+        \subsection{OrientDB: Lightning-Fast Performance}
+
+            OrientDB was engineered from the ground up to meet the modern developer’s need for high performance. To this end, it’s fast on both read and write operations:
+
+            \begin{enumerate}
+                \item Stores up to 120,000 records each second*
+                \item Relationships are physical links to the records; there’s no need for joins
+                \item The all-in-one solution ensures better RAM usage
+                \item Traverses parts of or entire trees and graphs of records in milliseconds
+                \item Speed is not affected by the database size; large datasets are easily accommodated
+            \end{enumerate}
+
+        \subsection{Your Applications Deserve a Multi-Model Database}
+            
+            Most NoSQL DBMSs are used as secondary databases. OrientDB, on the other hand, is powerful and flexible enough to be used as an operational DBMS.
+            Though OrientDB is free for commercial use, robust applications need enterprise-level functionalities to guarantee data security and flawless performance.For organizations with higher requirements, OrientDB Enterprise Edition provides all the features of our community edition plus:
+
+            \begin{enumerate}
+                \item Incremental backups
+                \item Unmatched security
+                \item 24x7 support
+                \item Query profiler
+                \item Distributed clustering configuration
+                \item Metrics recording
+                \item Live monitoring with configurable alerts
+            \end{enumerate}
+	
+            To learn more about how your organization can benefit from OrientDB Enterprise Edition, watch our video. Keep in mind that you'll get OrientDB Enterprise Edition for free with the purchase of professional support, developer support, or consultancy services.
+
+        \subsection{Zero-Configuration Multi-Master Architecture}
+
+            The master often becomes the bottleneck in master-slave architectures. With OrientDB, throughput is not limited by a single server, which enables data to be processed much faster.
+
+            \begin{enumerate}
+                \item Multi-master and sharded architecture
+                \item Elastic linear scalability
+                \item Restore the database content using write-ahead logging
+            \end{enumerate}
+
+            With zero-config multi-master architecture, OrientDB is the perfect database solution for the cloud. Hundreds of servers can share workloads by scaling horizontally across distributed data centers.
+
+        \subsection{A Single, Unified System}
+
+            Replacing a DBMS, once it no longer meets your requirements, can be a prohibitively expensive and time-consuming endeavor.
+
+            OrientDB is a powerful, scalable and flexible database that can grow with you—while eliminating your need to support multiple products to achieve your goals.
+
+        \subsection{Get Up and Running in Minutes}
+
+            OrientDB is written entirely in Java and can run on any platform without configuration or installation. It's a drop-in, turnkey replacement for the most common graph databases in use today.
+
+            \begin{enumerate}
+                \item Multiple programming language bindings
+                \item Extended SQL with graph functionality
+                \item TinkerPop API
+            \end{enumerate}
+
+            OrientDB Teleporter to import your data into OrientDB from a relational database and get started right away.
+
+            Coming From Neo4j? Our Neo4j Importer makes the migration easy.
+
+        \subsection{Low Total Cost of Ownership}
+
+            There is absolutely no cost associated with using OrientDB Community Edition:
+
+            \begin{enumerate}
+                \item OrientDB Community is free for commercial use—no questions asked
+                \item It comes with an Apache 2 Open Source License
+                \item OrientDB eliminates the need for multiple products and multiple licenses to manage your data
+            \end{enumerate}
+
+            OrientDB Ltd., the company behind OrientDB, offers optional services such as developer and production support, consultancy and training. These reasonably priced services will ensure you’re maximizing OrientDB’s capabilities for your particular use case. OrientDB Enterprise Edition is included with the purchase of any of these services.
+
+        \subsection{Constant Innovation through Global Engagement}
+
+            Which is more likely to have better quality: A DBMS created and tested by a handful of developers working for the same company or one built and tested by over 100,000 developers globally.
+
+            Open source projects move much faster than solutions that emerge from the proprietary world. When source code is public, everyone can scrutinize, test, report and resolve issues. Nobody has to wait for a key engineer to return from their three-week vacation to roll out new features or fix bugs, for example.
+
+            Because of the speed in which open source projects move—and the fact that engaged developers freely contribute to the projects—it comes as no surprise that the most popular databases are now open source, according to DB-Engines. In fact, Gartner predicts that 70\% of new applications will run on open source databases by 2018.
+
+            OrientDB Ltd. leads the OrientDB open source project and defines the product roadmap. Years before being brought onto the team, the members of the OrientDB development team contributed to the open source project freely as engaged developers. Their expert product knowledge—coupled with the passion they bring to the table every day—ensures we build high-quality products and deliver exceptional support and consultancy work.
+
+    \section{What is a Graph Database?}
+
+        \subsection{Optimizing Graph Data with a Multi-Model Engine}
+
+            \subsubsection{What Are Graph Databases?}
+
+                Graph databases are NoSQL databases which use the graph data model comprised of vertices, which is an entity such as a person, place, object or relevant piece of data and edges, which represent the relationship between two nodes.
+                
+                Graph databases are particularly helpful because they highlight the links and relationships between relevant data similarly to how we do so ourselves.
+                
+                Even though graph databases are awesome, they’re not enough on their own.
+                
+                Advanced second-generation NoSQL products like OrientDB are the future. The modern multi-model database provides more functionality and flexibility while being powerful enough to replace traditional DBMSs.
+
+            \subsubsection{TinkerPop}
+
+                As part of Apache’s TinkerPop API, Gremlin is the open source standard language for graph databases. It creates a shared set of basic interfaces to abstract the graph, vertex, edge and property concepts.
+                Both OrientDB Community and OrientDB Enterprise editions are compatible with TinkerPop.
+                As an official OrientDB partner, TinkerPop and OrientDB staff worked together to build the OrientDB implementation of Blueprints.
+
+            \subsubsection{SQL/NoSQL}
+
+                OrientDB focuses on standards and is a NoSQL multi-model database that supports SQL. Why?
+                Not only is SQL more readable and concise than most mapreduce scripts, we believe you shouldn’t have to learn a new query language in order to utilize graphs.
+                With an SQL-based query language extended to support trees and graphs, OrientDB makes moving to the NoSQL world familiar to those coming to it for the first time.
+
+            \subsubsection{JDBC}
+
+                The custom Java Database Connectivity (JDBC) driver for OrientDB enables applications to connect to remote servers using the standard and consolidated way of interacting with databases in the Java world. Simply add a dependency inside your project and you are ready to connect.
+                Our JDBC driver is compatible with most tools that support the standard. Take a look at our integrations for a complete list of compatible tools and drivers.
+
+        \subsection{Advantages of Native Graph Databases}
+
+            Unlike relational databases, a graph database doesn’t utilize foreign keys or JOIN operations. Instead, all relationships are natively stored within vertices (as documents in OrientDB). This results in deep traversal capabilities, increased flexibility and enhanced agility.
+    
+            Native graph databases are equipped to easily accommodate rapidly scaling data—something particularly useful as organizations generate more and more data each day.
+    
+            Modern day applications—like recommendation engines, social media, fraud detection, forensic analysis and medical research platforms—all use graphs to process highly connected data.
+    
+            Native graph databases that apply index-free adjacency report reduced latency in create, read, update and delete (CRUD) operations.
+    
+            OrientDB connects documents using fast, direct links from the graph database world.
+
+        \subsection{Applying Multiple Data Models to One System}
+
+            Aside from incorporating multiple data models within their core engine, true multi-model databases are those which not only make use of several models, but also:
+
+            \begin{enumerate}
+                \item Facilitate integration between other database systems
+                \item Help standardize differences in query languages
+                \item Remove restrictions imposed by data model standards
+            \end{enumerate}
+
+            The overall strategy of multi-model databases is to act as drop-in replacements for relational, graph or document databases. However, multi-model databases can also work alongside them to synchronize data first. Real-world scenarios rarely present opportunities to simply substitute databases; these changes occur gradually. Multi-model databases acknowledge these challenges and help make that process easier. As a result, inefficient systems can be gradually removed without compromising the data integrity of production environments.
+            
+            Multi-model databases such as OrientDB allow for relational and other graph data to be either synchronized or migrated into them. Although it supports embedding documents, the ability to connect them removes duplicate information—making data processing that much more efficient.
+            
+            Systems such as OrientDB exploit the advantages of graph databases but add transactional complexity, query optimization, SQL familiarity and the data integrity needed to run stable, secure environments and process massive data sets quickly.
+
+        \subsection{Graph Databases vs. Polyglot Persistence}
+
+            Though graph databases allow for large amounts of highly connected data to be retrieved quickly, most production environments are comprised of multiple systems. These systems lack common standards, making data synchronization costly and inefficient.
+            
+            This causes most popular graph databases (such as Neo4j*) to be utilized as stores for large data sets and adds another layer of complexity to administration. Production environments generally utilize graph databases solely to resolve complex relationships, with remaining data still residing on other databases. For example. while graph databases might store recommendations for an application, financial data is still stored in relational database and product data is typically stored in a document database.
+            
+            Multi-model databases, on the other hand, allow all data to be stored in a single system. Not only does this optimize performance, it also reduces licensing and operational costs.
+            
+            OrientDB eliminates the need for multiple systems.
+            
+            Polyglot persistence requires multiple systems, which hurts performance and increases costs.
+
+        \subsection{Multi-Model Databases for Optimized Graph Performance}
+
+            By exploiting multiple data models and integrating multiple systems, OrientDB optimizes graph data. The platform, which combines spatial awareness and graph data, enables applications to harness graph database speeds with transactional data for many modern-day use cases.
+            
+            OrientDB can be used as a single system. But it’s also equipped to make integration with multiple systems easier. As a result, production environments aren’t impacted while enterprises transition to modern-day applications.
+            
+            True multi-model databases like OrientDB also eliminate restrictions imposed by data models and database vendors by harnessing graph data relationships with document metadata for better RAM use and improved caching. What’s more, OrientDB’s Reactive Model optimizes resources by pushing query results when changes occur—instead of regularly polling the database to spot changes.
+            
+            When compared to Neo4j’s* graph database, an independent benchmark by the Tokyo Institute of Technology* and IBM Research*shows that OrientDB is 10x faster on graph operations among all workloads.
+            
+            OrientDB is fully customizable; users decide which constraints are set and when to enforce schemas. Lacking schema restrictions, database managers and developers can choose schema-full, schema-less or schema-mixed modes.
+
+        \subsection{Multi-Model Database Use Cases}
+
+            By combining the power of graphs with the flexibility of documents, multi-model databases such as OrientDB are suitable for virtually any use case. Some of the uses include:
+            
+            \begin{enumerate}
+                \item{
+                    \brand{Recommendation engines:} Graphs naturally lend themselves to quickly form links between data sets and analyze large amounts of data. Recommendation engines are one of the main examples of how graphs can find relationships between distinct datasets to provide the best matches.
+                }
+                \item{
+                    \brand{Banking and financial applications:} RDBM systems are simply not capable of quickly exploring relationships to uncover crimes like fraud rings or identity theft or protect sensitive banking data. Graph databases, on the other hand, can navigate connections in real time in order to discover patterns, match data and stop fraud before it happens.
+                }
+                \item{
+                    \brand{Biotech and pharmaceutical applications:} Universities, governments and pharmaceutical companies are turning to graph databases to create innovative applications, study DNA sequencing and discover new treatments for diseases.
+                }
+                \item{
+                    \brand{Online retail applications:} In today’s world of rapidly expanding data, staying ahead of the curve means providing the fastest and most efficient method to handle online purchases. Multi-model databases exploit the advantages of graphs to quickly find links between data but also maximize the efficient of the application itself by handling financial, product, user session and search engine data.
+                }
+            \end{enumerate}
+            
+            For additional use cases, take a look at our case studies, use cases and success stories to find out more about specific OrientDB applications and how multi-model databases are being used for everything from traffic management to forensic analysis to fraud prevention.
+
+            
+            
+            
+
+
+\end{multicols*}
+ 
+\end{document}

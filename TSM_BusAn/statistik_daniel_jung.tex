@@ -1,0 +1,329 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{ngerman}
+\usepackage[left=15mm,right=20mm,top=17mm,bottom=17mm,footskip=0.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathtools}
+\usepackage{bm}
+
+
+%-------------------------------------------------------------------------------
+% xcolor
+\usepackage[svgnames,table]{xcolor}
+
+%-------------------------------------------------------------------------------
+% scrlayer-scrpage
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\cfoot{\pagemark}
+
+%-------------------------------------------------------------------------------
+% array
+\usepackage{array}
+\newcolumntype{A}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{B}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\newcolumntype{D}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{E}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{F}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcolumntype{G}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}b{#1}}
+\newcolumntype{H}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}b{#1}}
+\newcolumntype{I}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}b{#1}}
+
+
+%-------------------------------------------------------------------------------
+% tabularx
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{makecell}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, calc, fit, intersections}
+
+%-------------------------------------------------------------------------------
+% Listings
+\usepackage{listings}
+\newcommand{\listingMatlab}[2][]{
+	\lstset{
+		language=Matlab,
+		breaklines=true,
+		numbers=left,
+		numberstyle=\tiny,
+		numbersep=5pt,
+		captionpos=b,
+		basicstyle=\footnotesize\ttfamily,
+		stringstyle=\color{magenta},
+		identifierstyle=\color{black},
+		keywordstyle=\color{blue}, 
+		commentstyle=\color{DarkGreen}
+	}
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}
+}
+\lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+{
+    \lstset{ %this is the stype
+        mathescape=true,
+        frame=tB,
+        numbers=left, 
+        numberstyle=\tiny,
+        basicstyle=\scriptsize, 
+        keywordstyle=\color{black}\bfseries,
+        keywords={,input, output, return, datatype, function, in, if, else, foreach, while, begin, end, } 
+        numbers=left,
+        xleftmargin=.04\textwidth
+    }
+}
+{}
+
+
+%-------------------------------------------------------------------------------
+
+\RedeclareSectionCommand[
+  afterindent=false,
+  beforeskip=0.8\baselineskip,
+  afterskip=0.4\baselineskip]{section}
+\RedeclareSectionCommand[
+  afterindent=false,
+  beforeskip=0.8\baselineskip,
+  afterskip=0.4\baselineskip]{subsection}
+
+%-------------------------------------------------------------------------------
+% 
+
+\newcommand{\colouredcircle}{%
+    \tikz{
+        \useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em);
+        \draw[line width=0.03em] (0,0) circle(0.10em);
+    }}
+
+
+
+%-------------------------------------------------------------------------------
+% enumitem
+\usepackage{enumitem}
+\newlist{tabenum}{enumerate}{3}
+\setlist[tabenum,1]{
+    leftmargin=*,
+    label=\protect\colouredcircle,
+    topsep=0ex,
+    partopsep=0ex,
+    noitemsep
+}
+\setlist[tabenum,2]{
+    leftmargin=*,
+    label=\protect\colouredcircle,
+    topsep=0ex,
+    partopsep=0ex,
+    noitemsep
+}
+\setlist[tabenum,3]{
+    leftmargin=*,
+    label=\protect\colouredcircle,
+    topsep=0ex,
+    partopsep=0ex,
+    noitemsep
+}
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+% 
+\newcommand{\abs}[1]{{\vert #1 \vert}}
+
+\begin{document}
+    \section{Stochastik Übersicht}
+
+    \begin{tabularx}{\textwidth}{lll}
+        Wahrscheinlichkeitsrechnung & Beschreibende Statistik & Beurteilende Statistik
+    \end{tabularx}
+
+    \colouredcircle
+
+    \begin{tabular}{A{5cm}|A{5cm}|A{5cm}}
+        Wahrscheinlichkeitsrechnung & Beschreibende Statistik & Beurteilende Statistik \\
+        \hline
+       \begin{tabenum}
+            \item{Kombinatorik}
+            \begin{tabenum}
+                \item{Abzählverfahren}
+            \end{tabenum}
+            \item{Urnenmodell}
+            \item{Diskrete Verteilung}
+            \begin{tabenum}
+                \item{Baumdiagramm}
+                \item{Pfadregel}
+                \item{Was ist eine Wahrscheinlichkeit}
+            \end{tabenum}
+            \item{Gesetz grosser Zahlen}
+            \item{Normalverteilung}
+            \begin{tabenum}
+                \item{stetig}
+            \end{tabenum}
+            \item{Binomialverteilung}
+            \item{Grenzwertsätze}
+        \end{tabenum} &
+        \begin{tabenum}
+            \item{Häufigkeitsverteilung}
+            \begin{tabenum}
+                \item{1 oder 2 Merkmale}
+            \end{tabenum}
+            \item{Statistische Abhängigkeit}
+            \begin{tabenum}
+                \item{Korrelation}
+                \begin{tabenum}
+                    \item{Korrelationskoeffizient}
+                \end{tabenum}
+                \item{Regression}
+                \begin{tabenum}
+                    \item{Regressionsgerade}
+                \end{tabenum}
+            \end{tabenum}
+            \item{Mit Daten arbeiten}
+            \item{Viele Datenerhebungen}
+        \end{tabenum} &
+        \begin{tabenum}
+            \item{Tests, Thesen}
+            \begin{tabenum}
+                \item{Nachweisen, Widerlegen}
+            \end{tabenum}
+            \item{Hypothesentest}
+            \item{Alternativtest}
+
+            \item{$\text{Chi}^2$}
+        \end{tabenum}
+    \end{tabular}
+
+
+    \subsection{Zufallsexperiment}
+    
+    \begin{tabenum}
+        \item{Wird unter genau festgelegten Versuchsbedingungen durchgeführt}
+        \item{Hat einen zufälligen Ausgang}
+        \item{Versteht man einen Vorgang, bei dem}
+        \begin{tabenum}
+            \item{mehrere Ergebnisse eintreten können}
+            \item{bei dem ein nicht vorhersagbares, erfassbares Ergebnis eintritt}
+            \item{zum Beispiel das Werfen einer Münze oder eines Spielwürfels}
+        \end{tabenum}
+        \item{Obwohl das Ergebnis jedes einzelnen Versuchs zufällig ist, lassen sich}
+        \begin{tabenum}
+            \item{Gesetzmäßigkeiten erkennen, die mathematisch erfasst werden können}
+            \item{Die interessierenden Größen eines Zufallsexperiments nennt man Zufallsvariablen}
+        \end{tabenum}
+    \end{tabenum}
+
+    \begin{tabenum}
+        \item{Ein Laplace-Experiment ist ein Zufallsexperiment, bei dem die unterschiedlichen Elementarereignisse alle gleich wahrscheinlich sind}
+    \end{tabenum}
+
+
+    \begin{tabular}{cll}
+        $\Omega$                    & Ergebnisraum, Ergebnismenge   & $\Omega = \kq{ \; 1, \; 2, \; 3, \; 4, \; 5, \; 6 \; }$ \\
+        $\omega \in \Omega$         & Ergebnis, Elementarergebnis   & $\omega_1 = 1, \; \omega_2 = 2, \; \ldots, \; \omega_6 = 6$ \\
+        $\Sigma$                    & Ereignisraum                  & $\Sigma = \kq{ \; \varnothing,
+                                                                                     \; \kq{1}, \; \kq{2}, \; \kq{3},
+                                                                                     \; \kq{1, \; 2}, \; \ldots, \; \kq{\; 2, \; 4, \; 6 \; }, \; \ldots,
+                                                                                     \; \Omega }$ \\
+        $ A,E \in \Sigma$           & Ereignis                      & $A = \kq{\; 2, \; 4, \; 6 \; }$ \\
+        $ \kl{\Omega, \Sigma, P}$   & Wahrscheinlichkeitsraum       & \\
+    \end{tabular}
+
+    Besondere Ereignisse
+
+    \begin{tabular}{lll}
+        Unmögliches Ereignis        & ${E:} \text{Augenzahl grösser als 6}$ & $E = \kq{ \; }$ \\
+        Elementarereignis           & $E: \text{Augenzahl grösser als 6}$ & $\omega_1 = 1, \; \omega_2 = 2, \; \ldots, \; \omega_6 = 6$ \\
+        Zusammengesetztes Ereignis  & $E: \text{Augenzahl grösser als 6}$ & \\
+        Sicheres Ereignis           & $E: \text{Augenzahl grösser als 6}$ & $A = \kq{\; 2, \; 4, \; 6 \; }$ \\
+    \end{tabular}
+    
+
+    \subsection{Zufallsvariable, Zufallsgrösse}
+
+    \begin{tabenum}
+        \item{Größe, deren Wert vom Zufall abhängig ist}
+        \item{Zuordnungsvorschrift, die jedem möglichen Ergebnis eines Zufallsexperiments eine Größe zuordnet}
+        \item{Versteht man einen Vorgang, bei dem}
+        \begin{tabenum}
+            \item{mehrere Ergebnisse eintreten können}
+            \item{bei dem ein nicht vorhersagbares, erfassbares Ergebnis eintritt}
+            \item{zum Beispiel das Werfen einer Münze oder eines Spielwürfels}
+        \end{tabenum}
+        \item{Obwohl das Ergebnis jedes einzelnen Versuchs zufällig ist, lassen sich}
+        \begin{tabenum}
+            \item{Gesetzmäßigkeiten erkennen, die mathematisch erfasst werden können}
+            \item{Die interessierenden Größen eines Zufallsexperiments nennt man Zufallsvariablen}
+        \end{tabenum}
+    \end{tabenum}
+
+    \begin{tabular}{ll}
+        \textbf{Funktion} $\bm{f}$  & \textbf{Zufallsvariable} $\bm{X}$ \\
+        $f: D \rightarrow W $       & $X: \Omega \rightarrow \mathbb{R}$ \\
+        $f: x \mapsto y $           & $X: \omega \mapsto x $ \\
+        $y = f\kl{x} $              & $x = X\kl{\omega}$ \\
+    \end{tabular}
+
+
+    \begin{tabular}{cll}
+        $X$             & Zufallsvariable                   & (= Funktion) \\
+        $\Omega$        & Ergebnisraum                      & (= Definitionsmenge) \\
+        $\mathbb{R}$    & Menge der reellen Zahlen          & (= Wertemenge) \\
+        $\omega$        & Ergebnis eines Zufallsexperiments & (= Element der Definitionsmenge) \\
+        $x$             & Reelle Zahl                       & (= Element der Wertemenge) \\
+        $X\kl{\omega}$  & Zuordnungsvorschrift              & (= Funktionsgleichung) \\
+    \end{tabular}
+
+    \section{Statistisches Testverfahren}
+
+    \begin{tabenum}
+        \item{Mit einem Gerichtsverfahren vergleichbar}
+        \item{Verfahren hat den Zweck festzustellen}
+        \begin{tabenum}
+            \item{Ob es ausreichende Beweise gibt, den Angeklagten zu verurteilen}
+            \item{Immer von der Unschuld des Verdächtigten ausgegangen}
+            \item{Solange grosse Zweifel an Belegung für Vergehen bestehen, wird Angeklagter freigesprochen}
+            \item{Nur wenn Indizien für die Schuld des Angeklagten deutlich überwiegen, kommt es zur Verurteilung}
+        \end{tabenum}
+    \end{tabenum}
+
+    \begin{tabular}{lll}
+        Hyphothese $H_0$ & Nullhypothese       & Verdächtige ist unschuldig \\
+        Hyphothese $H_1$ & Alternativhypothese & Verdächtige ist schuldig \\
+        Fehler 1. Art    &                     & Verurteilung eines Unschuldigen \\
+        Fehler 2. Art    &                     & Freispruch eines Schuldigen \\
+    \end{tabular}
+    
+\end{document}

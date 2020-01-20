@@ -1,0 +1,44 @@
+\documentclass[
+   paper = a5,
+   BCOR = 1mm,
+   DIV = 14,
+   headinclude,
+   fontsize = 10pt,
+]{scrbook}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{mathpazo}
+\usepackage[scaled=0.9]{helvet}
+
+\usepackage{scrlayer-scrpage}
+
+\clearpairofpagestyles
+
+\chead{\headmark}
+\cfoot*{\pagemark}
+
+\setkomafont{pageheadfoot}{\sffamily}
+\setkomafont{pagination}{}
+
+\usepackage{lipsum}
+
+\begin{document}
+\chapter{Erstes Kapitel}
+\section{Erster Unterabschnitt}
+\lipsum
+\section{Zweiter Unterabschnitt}
+\lipsum
+\lipsum
+\section{Dritter Unterabschnitt}
+\lipsum
+\chapter{Zweites Kapitel}
+\section{Erster Unterabschnitt}
+\lipsum
+\section{Zweiter Unterabschnitt}
+\lipsum
+\lipsum
+\section{Dritter Unterabschnitt}
+\lipsum
+\end{document}

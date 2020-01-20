@@ -1,0 +1,203 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=25mm,top=20mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% xcolor
+\usepackage[svgnames]{xcolor}
+
+%-------------------------------------------------------------------------------
+% tabularx
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{makecell}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, calc, fit}
+
+%-------------------------------------------------------------------------------
+% Listings
+\usepackage{listings}
+\newcommand{\listingMatlab}[2][]{
+	\lstset{
+		language=Matlab,
+		breaklines=true,
+		numbers=left,
+		numberstyle=\tiny,
+		numbersep=5pt,
+		captionpos=b,
+		basicstyle=\footnotesize\ttfamily,
+		stringstyle=\color{magenta},
+		identifierstyle=\color{black},
+		keywordstyle=\color{blue}, 
+		commentstyle=\color{DarkGreen}
+	}
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}
+}
+\lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+{
+    \lstset{ %this is the stype
+        mathescape=true,
+        frame=tB,
+        numbers=left, 
+        numberstyle=\tiny,
+        basicstyle=\scriptsize, 
+        keywordstyle=\color{black}\bfseries,
+        keywords={,input, output, return, datatype, function, in, if, else, foreach, while, begin, end, } 
+        numbers=left,
+        xleftmargin=.04\textwidth
+    }
+}
+{}
+
+%-------------------------------------------------------------------------------
+% 
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+% 
+\newcommand{\abs}[1]{{\vert #1 \vert}}
+
+\newcommand\addvmargin[1]{
+  \node[fit=(current bounding box),inner ysep=#1,inner xsep=0]{};
+}
+
+\def\tiktop{%
+    \def\xlines{12}
+    \def\ylines{7}
+    \def\raster{5mm}
+
+    \coordinate (p1) at (0*\raster,5*\raster);
+    \coordinate (p3) at (2*\raster,1*\raster);
+    \coordinate (p5) at (4*\raster,6*\raster);
+    \coordinate (p6) at (5*\raster,0*\raster);
+    \coordinate (p8) at (6*\raster,5*\raster);
+    \coordinate (p9) at (7*\raster,7*\raster);
+    \coordinate (p11) at (9*\raster,6*\raster);
+    \coordinate (p12) at (10*\raster,1*\raster);
+    \coordinate (p14) at (12*\raster,5*\raster);
+
+    % draw vertical lines
+    \foreach \x in {0,...,\xlines}
+    {
+        \draw[lightgray] (\x * \raster, 0mm) -- (\x * \raster, \ylines * \raster);
+    }
+
+    % draw horizontal lines
+    \foreach \y in {0,...,\ylines}
+    {
+        \draw[lightgray] (0mm, \y * \raster) -- (\xlines * \raster, \y * \raster);
+    }
+
+    % border
+    \draw[black] (0mm, 0mm) -- (\xlines * \raster, 0mm);
+    \draw[black] (0mm, 0mm) -- (0mm, \ylines * \raster);
+    \draw[black] (\xlines * \raster, 0mm) -- (\xlines * \raster, \ylines * \raster);
+    \draw[black] (0mm, \ylines * \raster) -- (\xlines * \raster, \ylines * \raster);
+}
+
+\def\Lupper{\mathcal{L}_{\mathrm{upper}}}
+\def\Llower{\mathcal{L}_{\mathrm{lower}}}
+
+\def\pich{6cm}
+\def\picb{8cm}
+
+\begin{document}
+
+    \begin{tabularx}{\textwidth}{rl}
+        % --- LINE 1 --------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+            
+            \foreach \point/\a/\b/\i/\align/\co in {
+                p1/0/5/1/above right/red,
+                p3/2/1/3/above/red,
+                p5/4/6/5/above/black,
+                p6/5/0/6/above/black,
+                p8/7/5/8/above/black,
+                p9/7/7/9/above/black,
+                p11/9/6/11/above/black,
+                p12/10/1/12/above/black,
+                p14/12/5/14/above/black}
+            {
+
+                \draw[black,fill=black]
+                    (\point) circle (0.5mm);
+                \node[\align, fill=white, inner sep=1.5, outer sep=1.5] at (\point) {$\scriptstyle p_{\i} \; \left( \a, \b \right) $};
+            }
+        \end{tikzpicture}} &
+        {$\!\begin{aligned}[t]
+            
+        \end{aligned}
+        $} \\
+        % --- LINE 2 --------------------------------------------------------
+        \noindent\parbox[c][\pich]{\picb}{
+        \begin{tikzpicture}[baseline=0]
+            \tiktop
+            
+            \draw[blue, line width=0.4mm]
+                (p1) -- (p3);
+
+            \foreach \point/\a/\b/\i/\align/\co in {
+                p1/0/5/1/above right/red,
+                p3/2/1/3/above/red,
+                p5/4/6/5/above/black,
+                p6/5/0/6/above/black,
+                p8/7/5/8/above/black,
+                p9/7/7/9/above/black,
+                p11/9/6/11/above/black,
+                p12/10/1/12/above/black,
+                p14/12/5/14/above/black}
+            {
+
+                \draw[black,fill=\co]
+                    (\point) circle (0.5mm);
+            }
+            \foreach \point/\a/\b/\i/\align in {
+                p1/7/0/1/above right}
+            {
+
+                \node[\align, fill=white, inner sep=1.5, outer sep=1.5] at (\point) {$\scriptstyle p_{\i} $};
+            }
+        \end{tikzpicture}} &
+        \makecell[l]{$\!\begin{aligned}
+            & \Lupper = \kq{p_1,p_2} \\
+            & \text{Append } p_3 \text{ to } \Lupper \\
+            & \abs{\Lupper} > 2 \text{: contains more than two points} \rightarrow \text{true} \\
+            & \text{last three points in } \Lupper \text{ do not make right turn} \rightarrow \text{true} \\
+            & \text{Delete middle point } p_2
+        \end{aligned}$}
+   \end{tabularx}
+\end{document}

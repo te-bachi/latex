@@ -1,0 +1,99 @@
+\documentclass[
+   fontsize = 11pt,
+   twoside = true,
+]{scrreprt}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{lmodern}
+
+\usepackage{geometry}
+\geometry{
+%   showframe,
+   papersize={190mm,280mm},
+   includeheadfoot,
+   top = 20mm,
+   left = \dimexpr28mm+2mm\relax,
+   right = 28mm,
+   lines = 45,
+   headsep = \baselineskip,
+   footskip = \dimexpr2\baselineskip+3mm\relax,
+}
+
+
+\usepackage{scrlayer-scrpage}
+
+\clearpairofpagestyles
+
+\setkomafont{pageheadfoot}{\sffamily\footnotesize}
+\setkomafont{pagehead}{\bfseries}
+\setkomafont{pagination}{}
+
+\KOMAoptions{
+   headsepline = true,
+   footsepline = false,
+   plainfootsepline = true,
+}
+
+\automark[chapter]{chapter}
+
+\ohead{\headmark 666}
+\ihead{\authormark 999}
+\ofoot*{Seite~\pagemark}
+\ifoot[%
+   Super-Zeit-Schrift -- Nr. 4 (2015) --
+   \textbf{Dieser Artikel darf nicht kopiert werden!}%
+]{%
+   Super-Zeit-Schrift -- Nr. 4 (2015)%
+}
+
+\makeatletter
+\newcommand*{\authormark}{}
+\newcommand*{\markauthor}[1]{%
+   \renewcommand{\authormark}{#1}%
+   \ignorespaces
+}
+\newcommand*{\chapterauthor}[1]{%
+   \par\vspace{-\baselineskip}%
+   \textsf{von~#1}%
+   \markauthor{#1}%
+   \par\vspace{2\baselineskip}%
+   \@afterheading
+}
+\makeatother
+
+\usepackage{lipsum}
+
+\begin{document}
+\chapter{Der erste Artikel}
+\chapterauthor{Max Mustermann}
+\section{Einleitung}
+\lipsum[1]
+\section{Hauptteil}
+\lipsum
+\section{Fazit}
+\lipsum[5-7]
+
+\chapter{Noch ein Artikel}
+\chapterauthor{Susi Sorglos}
+\lipsum[2]
+\section{Hinführung zum Thema}
+\lipsum[3-5]
+\section{Lösung des Problems}
+\lipsum
+
+
+\KOMAoptions{
+   headsepline = true,
+   footsepline = true,
+   plainfootsepline = true,
+}
+
+\ohead{\headmark}
+\ihead{\authormark}
+
+\section{Folgerung}
+\lipsum[1-3]
+\lipsum
+\end{document}

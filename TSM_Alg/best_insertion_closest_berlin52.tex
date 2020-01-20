@@ -1,0 +1,424 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=15mm,right=20mm,top=17mm,bottom=17mm,footskip=0.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% xcolor
+\usepackage[svgnames,table]{xcolor}
+
+%-------------------------------------------------------------------------------
+% scrlayer-scrpage
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\cfoot{\pagemark}
+
+%-------------------------------------------------------------------------------
+% tabularx
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{makecell}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, calc, fit, intersections}
+
+%-------------------------------------------------------------------------------
+% Listings
+\usepackage{listings}
+\newcommand{\listingMatlab}[2][]{
+	\lstset{
+		language=Matlab,
+		breaklines=true,
+		numbers=left,
+		numberstyle=\tiny,
+		numbersep=5pt,
+		captionpos=b,
+		basicstyle=\footnotesize\ttfamily,
+		stringstyle=\color{magenta},
+		identifierstyle=\color{black},
+		keywordstyle=\color{blue}, 
+		commentstyle=\color{DarkGreen}
+	}
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}
+}
+\lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+{
+    \lstset{ %this is the stype
+        mathescape=true,
+        frame=tB,
+        numbers=left, 
+        numberstyle=\tiny,
+        basicstyle=\scriptsize, 
+        keywordstyle=\color{black}\bfseries,
+        keywords={,input, output, return, datatype, function, in, if, else, foreach, while, begin, end, } 
+        numbers=left,
+        xleftmargin=.04\textwidth
+    }
+}
+{}
+
+
+%-------------------------------------------------------------------------------
+
+\RedeclareSectionCommand[
+  afterindent=false,
+  beforeskip=0.8\baselineskip,
+  afterskip=0.4\baselineskip]{section}
+\RedeclareSectionCommand[
+  afterindent=false,
+  beforeskip=0.8\baselineskip,
+  afterskip=0.4\baselineskip]{subsection}
+
+%-------------------------------------------------------------------------------
+% 
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+% 
+\newcommand{\abs}[1]{{\vert #1 \vert}}
+
+\newcommand\addvmargin[1]{
+  \node[fit=(current bounding box),inner ysep=#1,inner xsep=0]{};
+}
+
+\def\tiktop{%
+    \def\xlines{36}
+    \def\ylines{24}
+    \def\raster{0.1mm}
+    \def\gridraster{5mm}
+
+    \coordinate (P0)  at ( 565*\raster, 575*\raster);
+    \coordinate (P22) at ( 480*\raster, 415*\raster);
+    \coordinate (P19) at ( 560*\raster, 365*\raster);
+    \coordinate (P49) at ( 595*\raster, 360*\raster);
+    \coordinate (P29) at ( 410*\raster, 250*\raster);
+    \coordinate (P28) at ( 660*\raster, 180*\raster);
+    \coordinate (P15) at ( 725*\raster, 370*\raster);
+    \coordinate (P45) at ( 830*\raster, 485*\raster);
+    \coordinate (P43) at ( 700*\raster, 500*\raster);
+    \coordinate (P33) at ( 700*\raster, 580*\raster);
+    \coordinate (P34) at ( 685*\raster, 595*\raster);
+    \coordinate (P35) at ( 685*\raster, 610*\raster);
+    \coordinate (P38) at ( 720*\raster, 635*\raster);
+    \coordinate (P39) at ( 760*\raster, 650*\raster);
+    \coordinate (P36) at ( 770*\raster, 610*\raster);
+    \coordinate (P37) at ( 795*\raster, 645*\raster);
+    \coordinate (P47) at ( 830*\raster, 610*\raster);
+    \coordinate (P23) at ( 835*\raster, 625*\raster);
+    \coordinate (P4)  at ( 845*\raster, 655*\raster);
+    \coordinate (P14) at ( 845*\raster, 680*\raster);
+    \coordinate (P5)  at ( 880*\raster, 660*\raster);
+    \coordinate (P3)  at ( 945*\raster, 685*\raster);
+    \coordinate (P24) at ( 975*\raster, 580*\raster);
+    \coordinate (P11) at (1220*\raster, 580*\raster);
+    \coordinate (P27) at (1250*\raster, 400*\raster);
+    \coordinate (P25) at (1215*\raster, 245*\raster);
+    \coordinate (P46) at (1170*\raster,  65*\raster);
+    \coordinate (P26) at (1320*\raster, 315*\raster);
+    \coordinate (P12) at (1465*\raster, 200*\raster);
+    \coordinate (P13) at (1530*\raster,   5*\raster);
+    \coordinate (P51) at (1740*\raster, 245*\raster);
+    \coordinate (P10) at (1605*\raster, 620*\raster);
+    \coordinate (P50) at (1340*\raster, 725*\raster);
+    \coordinate (P32) at (1150*\raster,1160*\raster);
+    \coordinate (P42) at ( 875*\raster, 920*\raster);
+    \coordinate (P9)  at ( 650*\raster,1130*\raster);
+    \coordinate (P8)  at ( 580*\raster,1175*\raster);
+    \coordinate (P7)  at ( 525*\raster,1000*\raster);
+    \coordinate (P40) at ( 475*\raster, 960*\raster);
+    \coordinate (P18) at ( 510*\raster, 875*\raster);
+    \coordinate (P44) at ( 555*\raster, 815*\raster);
+    \coordinate (P2)  at ( 345*\raster, 750*\raster);
+    \coordinate (P16) at ( 145*\raster, 665*\raster);
+    \coordinate (P6)  at (  25*\raster, 230*\raster);
+    \coordinate (P1)  at (  25*\raster, 185*\raster);
+    \coordinate (P41) at (  95*\raster, 260*\raster);
+    \coordinate (P20) at ( 300*\raster, 465*\raster);
+    \coordinate (P30) at ( 420*\raster, 555*\raster);
+    \coordinate (P17) at ( 415*\raster, 635*\raster);
+    \coordinate (P21) at ( 520*\raster, 585*\raster);
+    \coordinate (P31) at ( 575*\raster, 665*\raster);
+    \coordinate (P48) at ( 605*\raster, 625*\raster);
+
+    % draw vertical lines
+    \foreach \x in {0,...,\xlines}
+    {
+        \draw[lightgray] (\x * \gridraster, 0mm) -- (\x * \gridraster, \ylines * \gridraster);
+    }
+
+    % draw horizontal lines
+    \foreach \y in {0,...,\ylines}
+    {
+        \draw[lightgray] (0mm, \y * \gridraster) -- (\xlines * \gridraster, \y * \gridraster);
+    }
+
+    % border
+    \draw[black] (0mm, 0mm) -- (\xlines * \gridraster, 0mm);
+    \draw[black] (0mm, 0mm) -- (0mm, \ylines * \gridraster);
+    \draw[black] (\xlines * \gridraster, 0mm) -- (\xlines * \gridraster, \ylines * \gridraster);
+    \draw[black] (0mm, \ylines * \gridraster) -- (\xlines * \gridraster, \ylines * \gridraster);
+}
+
+\newcommand{\points}[1]{%
+    \foreach \point/\co in {#1}
+    {
+        \draw[\co,fill=\co,line width=0.4mm]
+            (\point) circle (0.5mm);
+    }
+}
+
+\newcommand{\pointtexts}[1]{%
+    \foreach \point/\name/\i/\align/\co in {#1}
+    {
+        \node[\align, \co, fill=white, inner sep=1.25, outer sep=2] at (\point) {$\scriptstyle \name_{\i} $};
+    }
+}
+
+\newcommand{\textlines}[1]{%
+    \foreach \a/\b/\c/\t/\xs/\ys in {#1}
+    {
+        \draw[\c, line width=0.3mm]
+            let
+                \p1 = (\a),
+                \p2 = (\b)
+            in 
+                (\x1,\y1) -- node[midway,
+                                  fill=white,
+                                  xshift=\xs, yshift=\ys,
+                                  inner sep=1.25, outer sep=2] {\scriptsize \t} ++(\x2 - \x1, \y2 - \y1) ;
+        
+    }
+}
+
+\newcommand{\lines}[1]{%
+    \foreach \a/\b/\c in {#1}
+    {
+        \draw[\c, line width=0.3mm]
+            (\a) -- (\b);
+    }
+}
+
+\def\Lupper{\mathcal{L}_{\mathrm{upper}}}
+\def\Llower{\mathcal{L}_{\mathrm{lower}}}
+
+\def\pich{6cm}
+\def\picb{8cm}
+
+\begin{document}
+
+
+    % === PAGE 1 ============================================================
+
+    \begin{minipage}[t]{.5\linewidth}
+        \section*{Best Insertion}
+
+        \subsection*{berlin52}
+    \end{minipage}
+    \begin{minipage}[t]{.5\linewidth}
+            %
+    \end{minipage}
+
+    \begin{tikzpicture}[baseline=0]
+        \tiktop
+
+
+        -- lines
+        \lines{
+            P0/P22/black,
+            P22/P19/black,
+            P19/P49/black,
+            P49/P29/black,
+            P29/P28/black,
+            P28/P15/black,
+            P15/P45/black,
+            P45/P43/black,
+            P43/P33/black,
+            P33/P34/black,
+            P34/P35/black,
+            P35/P38/black,
+            P38/P39/black,
+            P39/P36/black,
+            P36/P37/black,
+            P37/P47/black,
+            P47/P23/black,
+            P23/P4/black,
+            P4/P14/black,
+            P14/P5/black,
+            P5/P3/black,
+            P3/P24/black,
+            P24/P11/black,
+            P11/P27/black,
+            P27/P25/black,
+            P25/P46/black,
+            P46/P26/black,
+            P26/P12/black,
+            P12/P13/black,
+            P13/P51/black,
+            P51/P10/black,
+            P10/P50/black,
+            P50/P32/black,
+            P32/P42/black,
+            P42/P9/black,
+            P9/P8/black,
+            P8/P7/black,
+            P7/P40/black,
+            P40/P18/black,
+            P18/P44/black,
+            P44/P2/black,
+            P2/P16/black,
+            P16/P6/black,
+            P6/P1/black,
+            P1/P41/black,
+            P41/P20/black,
+            P20/P30/black,
+            P30/P17/black,
+            P17/P21/black,
+            P21/P31/black,
+            P31/P48/black,
+            P48/P0/black}
+
+        -- start- / end-points
+        \points{
+            P0/red,
+            P22/black,
+            P19/black,
+            P49/black,
+            P29/black,
+            P28/black,
+            P15/black,
+            P45/black,
+            P43/black,
+            P33/black,
+            P34/black,
+            P35/black,
+            P38/black,
+            P39/black,
+            P36/black,
+            P37/black,
+            P47/black,
+            P23/black,
+            P4/black,
+            P14/black,
+            P5/black,
+            P3/black,
+            P24/black,
+            P11/black,
+            P27/black,
+            P25/black,
+            P46/black,
+            P26/black,
+            P12/black,
+            P13/black,
+            P51/black,
+            P10/black,
+            P50/black,
+            P32/black,
+            P42/black,
+            P9/black,
+            P8/black,
+            P7/black,
+            P40/black,
+            P18/black,
+            P44/black,
+            P2/black,
+            P16/black,
+            P6/black,
+            P1/blue,
+            P41/black,
+            P20/black,
+            P30/black,
+            P17/black,
+            P21/black,
+            P31/black,
+            P48/black}
+
+
+        -- start- / end-point text
+        \pointtexts{
+            P0/p/0/right/red,
+            P22/p/22/right/black,
+            P19/p/19/right/black,
+            P49/p/49/right/black,
+            P29/p/29/right/black,
+            P28/p/28/right/black,
+            P15/p/15/right/black,
+            P45/p/45/right/black,
+            P43/p/43/right/black,
+            P33/p/33/right/black,
+            P34/p/34/right/black,
+            P35/p/35/right/black,
+            P38/p/38/right/black,
+            P39/p/39/right/black,
+            P36/p/36/right/black,
+            P37/p/37/right/black,
+            P47/p/47/right/black,
+            P23/p/23/right/black,
+            P4/p/4/right/black,
+            P14/p/14/right/black,
+            P5/p/5/right/black,
+            P3/p/3/right/black,
+            P24/p/24/right/black,
+            P11/p/11/right/black,
+            P27/p/27/right/black,
+            P25/p/25/right/black,
+            P46/p/46/right/black,
+            P26/p/26/right/black,
+            P12/p/12/right/black,
+            P13/p/13/right/black,
+            P51/p/51/right/black,
+            P10/p/10/right/black,
+            P50/p/50/right/black,
+            P32/p/32/right/black,
+            P42/p/42/right/black,
+            P9/p/9/right/black,
+            P8/p/8/right/black,
+            P7/p/7/right/black,
+            P40/p/40/right/black,
+            P18/p/18/right/black,
+            P44/p/44/right/black,
+            P2/p/2/right/black,
+            P16/p/16/right/black,
+            P6/p/6/right/black,
+            P1/p/1/right/blue,
+            P41/p/41/right/black,
+            P20/p/20/right/black,
+            P30/p/30/right/black,
+            P17/p/17/right/black,
+            P21/p/21/right/black,
+            P31/p/31/right/black,
+            P48/p/48/right/black}
+
+    \end{tikzpicture}
+\end{document}
