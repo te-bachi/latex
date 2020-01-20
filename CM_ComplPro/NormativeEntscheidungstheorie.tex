@@ -1,0 +1,251 @@
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% Für enumerate
+\usepackage{enumitem}
+
+%-------------------------------------------------------------------------------
+% Andere Schriftart
+\usepackage{lmodern}
+
+%-------------------------------------------------------------------------------
+% Color
+\usepackage{color}
+\usepackage{xcolor}
+
+% Farbige Tabellen (\rowcolor)
+\usepackage{colortbl}
+
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{darkred}{rgb}{0.3,0,0}
+\definecolor{darkgreen}{rgb}{0,0.3,0}
+\definecolor{darkblue}{rgb}{0,0,0.3}
+\definecolor{pink}{rgb}{0.78,0.09,0.51}
+\definecolor{purple}{rgb}{0.28,0.24,0.55}
+\definecolor{orange}{rgb}{1,0.6,0.0}
+\definecolor{grey}{rgb}{0.4,0.4,0.4}
+\definecolor{lightgrey}{rgb}{0.85,0.85,0.85}
+\definecolor{rechungsgrau}{rgb}{0.95, 0.95, 0.95}
+\definecolor{aquamarine}{rgb}{0.4,0.8,0.65}
+\definecolor{backgroundgreen}{rgb}{0.2, 0.8, 0.6}
+\definecolor{backgroundred}{rgb}{1.0, 0.6, 0.6}
+\definecolor{fazitgreen}{rgb}{0.0 0.6 0.2}
+
+
+%-------------------------------------------------------------------------------
+% Paragraph settings
+\setlength{\parindent}{0em} 
+\setlength{\parskip}{0.3em} 
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+%\usetikzlibrary{positioning, arrows, decorations}
+\usetikzlibrary{
+    trees,
+    shapes,
+    arrows,
+    backgrounds,
+    positioning,
+    fit,
+    petri,
+    decorations,
+    decorations.pathmorphing,
+    decorations.pathreplacing
+}
+
+\newcommand{\tikzcircle}[1]{\; \tikz[overlay, remember picture, anchor=base] \node[draw,circle,minimum size=4mm,inner sep=0pt, fill=black!20] {$#1$}; \;}
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture,baseline=(#1.base)] \node (#1) {\strut};}
+
+\newcommand{\txb}[1]{{\color{blue}#1}}
+\newcommand{\txr}[1]{{\color{red}#1}}
+\newcommand{\txo}[1]{{\color{orange}#1}}
+\newcommand{\txgr}[1]{{\color{grey}#1}}
+
+
+\newcommand{\tc}[1]{\multicolumn{1}{r|}{#1}}
+
+\begin{document}
+	
+    \section*{Normative Entscheidungstheorie}
+
+
+    \begin{enumerate}[label=$\bullet$]
+        \setlength{\parskip}{1mm}
+        \item Entscheidungen mit \txb{mehreren} Zielen
+        \item Entscheidung unter \txb{Ungewissheit}
+        \item Entscheidung unter \txb{Risiko}
+    \end{enumerate}
+
+	\subsection*{Grundlagen der Entscheidungstheorie}
+        Angenommen ein Mineralölkonzernstrebe nach \textbf{Gewinnmaximierungund} überprüfe die
+        Eröffnung einer neuen Tankstelle. In Frage kommen zwei Standorte
+
+        \begin{tabular}{| l | l | }
+            \hline
+                                 & Erwarteter Gewinn \\ \hline
+            $a_1$ (Stadtzentrum) & \tc{CHF 125’000.-} \\ \hline
+            $a_2$ (Stadtrand)    & \tc{CHF 150’000.-} \\ \hline
+        \end{tabular}
+
+	\subsection*{Zielkonflikt}
+
+        Angenommen der Mineralölkonzernstrebe nach \textbf{Gewinnmaximierung} sowie
+        \textbf{Umsatzmaximierung} und
+        überprüfe die Eröffnung der beiden potenziellen Standorte
+
+        \begin{tabular}{| l | l | l |}
+            \hline
+                                 & Erwarteter Gewinn & Erwarteter Umsatz \\ \hline
+            $a_1$ (Stadtzentrum) & \tc{CHF 125’000.-} & \tc{CHF 2’000’000.-} \\ \hline
+            $a_2$ (Stadtrand)    & \tc{CHF 150’000.-} & \tc{CHF 1’800’000.-} \\ \hline
+        \end{tabular}
+
+    \subsection*{Entscheidung unter Unsicherheit}
+
+        Hauptsächliche Beschäftigungsgebiet der \txgr{Entscheidungstheorie} ist \txr{nicht} der
+        \txb{Zielkonflikt} sondern die \txb{Unsicherheit}.
+
+        \minisec{Umweltzustände}
+        Faktoren, die eine \txgr{Entscheidungsalternative} beeinflussen,
+        auf die man selber aber \txr{keinen Einfluss} hat.
+
+        Bei \txgr{Entscheidungssituationen} in denen eine bestimmte \txgr{Entscheidung} \txr{nicht
+        mit einem einzigen} möglichen \txb{Ereignis} verbunden ist,
+        spricht man von einer \txgr{Entscheidung unter Unsicherheit}.
+	
+	\subsection*{Darstellung des Entscheidungsproblems}
+
+        \minisec{Beispiel}
+
+        Dem Mineralölkonzern ist bekannt, dass eine weiträumige Umgehungsstrasse
+        geplant ist, die aber \txr{höchst umstritten} ist.
+
+        \begin{enumerate}[label=$\bullet$]
+            \setlength{\parskip}{1mm}
+            \item Diese würden den Verkehr im \txgr{Stadtzentrum} \txr{nicht}
+                  tangieren und der \txb{Gewinn} auf CHF 125’000.- belassen.
+            \item Am \txgr{Stadtrand} würde sich aber eine \txr{drastische Veränderung} ergeben,
+                  die den erwarteten \txb{Gewinn} auf CHF 80’000.- schmilz liesse.
+        \end{enumerate}
+
+        Welcher Standort wäre unter der Prämisse der Gewinnmaximierung nun zu präferieren?
+
+        \minisec{Ergebnismatrix}
+        Darstellungsform für
+
+        \begin{enumerate}[label=$\bullet$]
+            \setlength{\parskip}{1mm}
+            \item \txgr{Entscheidungen unter Unsicherheit} wobei die
+            \item \txb{Handlungsalternativen} ($a_i$) in den \txr{Zeilen} und die verschiedenen
+            \item \txb{Umweltzustände} ($z_i$) in den \txr{Spalten} dargestellt werden.
+        \end{enumerate}
+        
+
+        \begin{tabular}{| l | l | l |}
+            \hline
+                                 & $z_1$ (keine Umgehungsstrasse) & $z_2$ (Umgehungsstrasse) \\ \hline
+            $a_1$ (Stadtzentrum) & \tc{$e_{11}$ = CHF 125’000.-} & \tc{$e_{12}$ = CHF 125’000.-} \\ \hline
+            $a_2$ (Stadtrand)    & \tc{$e_{21}$ = CHF 150’000.-} & \tc{$e_{22}$ = CHF 80’000.-} \\ \hline
+        \end{tabular}
+
+
+        \minisec{Zustandsraum}
+        Raum aller möglicher Entscheidungsergebnisse.
+
+        Die \txgr{Entscheidungsmatrix} beschreibt die \txgr{Entscheidungssituation} nur dann
+        \txr{hinreichend}, wenn der \txb{Zustandsraum} \txr{vollständig erfasst wird}, d.h.
+        wenn über den \txb{Ergebnisraum} \txr{vollkommene Information} vorhanden ist.
+    
+        Dies wird vielen Entscheidungssituationen zwar unterstellt,
+        ist aber in der Realität oft nicht gegeben.
+
+	\subsection*{Klassifikation von Entscheidungssituationen unter Unsicherheit}
+
+        \minisec{Entscheidung unter Risiko}
+        Falls den \txgr{Umweltzuständen} \txr{Eintrittswahrscheinlichkeiten} zugeordnet werden können.
+
+        \minisec{Entscheidung unter Ungewissheit}
+        Falls den \txgr{Umweltzuständen} \txr{keine Wahrscheinlichkeiten} zugeordnet werden können.
+
+        In der Ergebnismatrix trägt man bei Risikosituationen zusätzlich die Wahrscheinlichkeiten
+        für die einzelnen Umweltzustände ein.
+
+        \minisec{Beispiel}
+
+        Angenommen der Ölkonzern schätzt die Wahrscheinlichkeit für den
+        Bau der Umgehungsstrasse auf 30\%        
+
+        \begin{tabular}{| l | l | l | l |}
+            \hline
+                                 & $z_1$ (keine Umgehungsstrasse) & $z_2$ (Umgehungsstrasse)      & \\ \hline
+            $a_1$ (Stadtzentrum) & \tc{$e_{11}$ = CHF 125’000.-}  & \tc{$e_{12}$ = CHF 125’000.-} & \\ \hline
+            $a_2$ (Stadtrand)    & \tc{$e_{21}$ = CHF 150’000.-}  & \tc{$e_{22}$ = CHF 80’000.-}  & \\ \hline
+            WSK                  & \tc{$p_1 = 0.7$}               & \tc{$p_2 = 0.3$}              & $1.0$ \\ \hline
+        \end{tabular}
+        
+
+	\subsection*{Gefangenendilemma}
+        In einer Auszahlungsmatrix eingetragen ergibt sich inklusive
+        des Gesamtergebnisses folgendes Bild:
+
+        \begin{tabular}{| l | l | l | l |}
+            \hline
+                                 & $z_1$ (keine Umgehungsstrasse) & $z_2$ (Umgehungsstrasse)      & \\ \hline
+            $a_1$ (Stadtzentrum) & \tc{$e_{11}$ = CHF 125’000.-}  & \tc{$e_{12}$ = CHF 125’000.-} & \\ \hline
+            $a_2$ (Stadtrand)    & \tc{$e_{21}$ = CHF 150’000.-}  & \tc{$e_{22}$ = CHF 80’000.-}  & \\ \hline
+            WSK                  & \tc{$p_1 = 0.7$}               & \tc{$p_2 = 0.3$}              & $1.0$ \\ \hline
+        \end{tabular}
+        
+        
+
+	\subsection*{a}
+    
+        -
+
+	\subsection*{Superzeichen}
+
+	\subsection*{Dynamik mentaler Modelle}
+
+        -
+
+	\subsection*{Mentale Modelle und Vorurteile}
+
+        -
+
+	\subsection*{Scheinsicherheit - das Ziegenproblem}
+
+        -
+
+	\subsection*{Kausalität vs. Korrelation}
+
+
+	\subsection*{Problematik mentaler Modelle}
+	\subsection*{Falsifikationismus}
+
+	\subsection*{Mentale Modelle: Erkenntnisse}
+
+
+\end{document}

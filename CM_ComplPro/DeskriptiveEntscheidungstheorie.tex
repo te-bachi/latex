@@ -1,0 +1,248 @@
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% Für enumerate
+\usepackage{enumitem}
+
+%-------------------------------------------------------------------------------
+% Andere Schriftart
+\usepackage{lmodern}
+
+%-------------------------------------------------------------------------------
+% Color
+\usepackage{color}
+\usepackage{xcolor}
+
+% Farbige Tabellen (\rowcolor)
+\usepackage{colortbl}
+
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{darkred}{rgb}{0.3,0,0}
+\definecolor{darkgreen}{rgb}{0,0.3,0}
+\definecolor{darkblue}{rgb}{0,0,0.3}
+\definecolor{pink}{rgb}{0.78,0.09,0.51}
+\definecolor{purple}{rgb}{0.28,0.24,0.55}
+\definecolor{orange}{rgb}{1,0.6,0.0}
+\definecolor{grey}{rgb}{0.4,0.4,0.4}
+\definecolor{lightgrey}{rgb}{0.85,0.85,0.85}
+\definecolor{rechungsgrau}{rgb}{0.95, 0.95, 0.95}
+\definecolor{aquamarine}{rgb}{0.4,0.8,0.65}
+\definecolor{backgroundgreen}{rgb}{0.2, 0.8, 0.6}
+\definecolor{backgroundred}{rgb}{1.0, 0.6, 0.6}
+\definecolor{fazitgreen}{rgb}{0.0 0.6 0.2}
+
+
+%-------------------------------------------------------------------------------
+% Paragraph settings
+\setlength{\parindent}{0em} 
+\setlength{\parskip}{0.3em} 
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+%\usetikzlibrary{positioning, arrows, decorations}
+\usetikzlibrary{
+    trees,
+    shapes,
+    arrows,
+    backgrounds,
+    positioning,
+    fit,
+    petri,
+    decorations,
+    decorations.pathmorphing,
+    decorations.pathreplacing
+}
+
+\newcommand{\tikzcircle}[1]{\; \tikz[overlay, remember picture, anchor=base] \node[draw,circle,minimum size=4mm,inner sep=0pt, fill=black!20] {$#1$}; \;}
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture,baseline=(#1.base)] \node (#1) {\strut};}
+
+\newcommand{\txb}[1]{{\color{blue}#1}}
+\newcommand{\txr}[1]{{\color{red}#1}}
+\newcommand{\txo}[1]{{\color{orange}#1}}
+\newcommand{\txgr}[1]{{\color{grey}#1}}
+
+\begin{document}
+	
+    \section*{Deskriptive Entscheidungstheorie}
+
+
+    \begin{enumerate}[label=$\bullet$]
+        \setlength{\parskip}{1mm}
+        \item Intuitive Entscheidungen
+        \item Rationale Entscheidungen
+        \item Mentale Modelle
+    \end{enumerate}
+
+	\subsection*{Rationales Entscheiden}
+        Eine Entscheidung ist rational, wenn der Entscheidungsprozess folgende
+        Merkmale aufweist:
+
+        \begin{enumerate}[label=$\bullet$]
+            \setlength{\parskip}{1mm}
+            \item Der \txgr{Entscheidungsprozess} ist durchgängig \txb{zielgerichtet} und
+                  orientiert sich konsequent an \txr{Zielen}.
+            \item Die im \txgr{Entscheidungsprozess} angestellten Überlegungen basieren
+                  auf möglichst \txb{objektiven} Informationen.
+            \item Der \txgr{Entscheidungsprozess} folgt einem systematischen Vorgehen
+                  und verwendet \txb{klare methodische} Regeln, die für Nichtbeteiligte
+                  \txb{nachvollziehbar} sind.
+        \end{enumerate}
+	
+	\subsection*{Intuitives Entscheiden}
+    
+        -
+
+	\subsection*{Mentales Modell}
+
+        Ein mentales Modell ist eine vereinfachte mentale Abbildung
+        der subjektiv wahrgenommenen Aussenwelt mit dem Zweck
+
+        \begin{enumerate}[label=$\bullet$]
+            \setlength{\parskip}{1mm}
+            \item die durch die Sinnesorgane aufgenommene
+                  grosse Informationsmenge zu bewältigen
+            \item und um Entscheidungen schnell fällen zu können.
+        \end{enumerate}
+    
+        Beispiele
+
+        \begin{enumerate}[label=$\bullet$]
+            \setlength{\parskip}{1mm}
+            \item Duschwasser einstellen
+            \item Strasse überqueren
+            \item Schuhe binden
+        \end{enumerate}
+
+        Diese mentalen Prozessmodelle sind
+
+        \begin{enumerate}[label=$\bullet$]
+            \setlength{\parskip}{1mm}
+            \item unbewusst,
+            \item mittels Erfahrung gewonnen
+            \item und werden sofort angepasst.
+        \end{enumerate}
+
+        Mentale Modelle zur Alltagsbewältigung
+
+        \begin{enumerate}[label=$\bullet$]
+            \setlength{\parskip}{1mm}
+            \item Informationsverarbeitung
+            \item Effizienzsteigerung
+            \item Notwendig um komplexe Sachverhalte zu interpretieren
+        \end{enumerate}
+
+	\subsection*{Gefahr Mentale Modelle}
+    
+        -
+
+	\subsection*{Superzeichen}
+    
+        Lernen heisst, Superzeichen zu bilden. Lesen wird effizienter, wenn Superzeichen
+        als solche erkannt und interpretiert werden. Gelegentlich geschieht das vorschnell
+        und führt dann zu Problemen.
+
+        Ent-Lernen bedeutet, die Superzeichenbildung wieder rückgängig zu machen und
+        wieder langsam zu lesen.
+
+	\subsection*{Dynamik mentaler Modelle}
+
+        -
+
+	\subsection*{Mentale Modelle und Vorurteile}
+
+        -
+
+	\subsection*{Scheinsicherheit - das Ziegenproblem}
+
+        -
+
+	\subsection*{Kausalität vs. Korrelation}
+
+        \minisec{Korrelation}
+            Zwei Grössen sind korreliert, wenn sich statistisch eine mathematische
+            Abhängigkeit nachweisen lässt.
+
+        \minisec{Kausalität}
+            Zwischen zwei Grössen besteht ein kausaler Zusammenhang, wenn
+            zwischen Ihnen eine Ursache-Wirkungsbeziehung besteht.
+
+	\subsection*{Problematik mentaler Modelle}
+
+
+        \begin{enumerate}[label=\arabic*.]
+            \setlength{\parskip}{1mm}
+            \item Aberglaube (Ticket-Automat im Bus)
+            \item Vorurteile (Rosenhan-Experiment)
+            \item Mentale Modelle können eine
+                  Eigendynamik entwickeln (selektive
+                  Suche nach Bestätigung)
+            \item Konservativismus: Mentale Modelle entwickeln sich mit der
+                  Erfahrung
+            \item Scheinsicherheit: Wenn mentale Modelle nicht als solche
+                  wahrgenommen werden, werden sie nicht hinterfragt
+        \end{enumerate}
+
+        Problematik entschärfen: mentale Modelle plausibilisieren
+
+
+        \begin{enumerate}[label=\arabic*.]
+            \setlength{\parskip}{1mm}
+            \item sich der eigenen mentalen Modelle bewusst werden
+            \item mentale Modelle explizit machen
+            \item kritisches Hinterfragen
+            \item sich über mentale Modelle austauschen
+        \end{enumerate}
+
+        Mentale Modelle lassen sich \txr{nicht verifizieren}!
+
+	\subsection*{Falsifikationismus}
+
+        Damit eine Aussage wissenschaftlich ist, muss sie falsifizierbar sein.
+
+        Bei Eintreffen eines bestimmten experimentellen Befunds wird die
+        Hypothese verworfen.
+
+        Hypothese: "`Alle Schwäne sind weiss"'
+        
+        Noch so viele weisse Schwäne beweisen die Aussage nicht.
+
+        Wissenschaftliche Arbeit:\\
+        Suche nach einem allfälligen schwarzen Schwan.
+
+	\subsection*{Mentale Modelle: Erkenntnisse}
+
+        \begin{enumerate}[label=$\bullet$]
+            \setlength{\parskip}{1mm}
+            \item Mentale Modelle sind \txb{überlebenswichtig}.
+            \item Mentale Modelle sind \txb{Superzeichen}.
+            \item Sie können zu vorschnellen Schlüssen verleiten.
+            \item Mentale Modelle sind i.a. \txb{implizit}. Das macht sie so gefährlich.
+            \item Wenn immer möglich: \txb{genau hinschauen}.
+        \end{enumerate}
+        
+
+
+\end{document}
