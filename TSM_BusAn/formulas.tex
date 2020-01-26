@@ -1,0 +1,181 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{ngerman}
+\usepackage[left=15mm,right=20mm,top=17mm,bottom=17mm,footskip=0.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathtools}
+\usepackage{bm}
+
+
+%-------------------------------------------------------------------------------
+% xcolor
+\usepackage[svgnames,table]{xcolor}
+
+%-------------------------------------------------------------------------------
+% scrlayer-scrpage
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\cfoot{}
+
+%-------------------------------------------------------------------------------
+% array
+\usepackage{array}
+\newcolumntype{A}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{B}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\newcolumntype{D}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{E}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{F}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcolumntype{G}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}b{#1}}
+\newcolumntype{H}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}b{#1}}
+\newcolumntype{I}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}b{#1}}
+
+
+%-------------------------------------------------------------------------------
+% tabularx
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{makecell}
+
+%-------------------------------------------------------------------------------
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, calc, fit, intersections}
+
+%-------------------------------------------------------------------------------
+% Listings
+\usepackage{listings}
+\newcommand{\listingMatlab}[2][]{
+	\lstset{
+		language=Matlab,
+		breaklines=true,
+		numbers=left,
+		numberstyle=\tiny,
+		numbersep=5pt,
+		captionpos=b,
+		basicstyle=\footnotesize\ttfamily,
+		stringstyle=\color{magenta},
+		identifierstyle=\color{black},
+		keywordstyle=\color{blue}, 
+		commentstyle=\color{DarkGreen}
+	}
+	\lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{#2}
+}
+\lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+{
+    \lstset{ %this is the stype
+        mathescape=true,
+        frame=tB,
+        numbers=left, 
+        numberstyle=\tiny,
+        basicstyle=\scriptsize, 
+        keywordstyle=\color{black}\bfseries,
+        keywords={,input, output, return, datatype, function, in, if, else, foreach, while, begin, end, } 
+        numbers=left,
+        xleftmargin=.04\textwidth
+    }
+}
+{}
+
+
+%-------------------------------------------------------------------------------
+
+\RedeclareSectionCommand[
+  afterindent=false,
+  beforeskip=0.8\baselineskip,
+  afterskip=0.4\baselineskip]{section}
+\RedeclareSectionCommand[
+  afterindent=false,
+  beforeskip=0.8\baselineskip,
+  afterskip=0.4\baselineskip]{subsection}
+
+%-------------------------------------------------------------------------------
+% 
+
+\newcommand{\colouredcircle}{%
+    \tikz{
+        \useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em);
+        \draw[line width=0.03em] (0,0) circle(0.10em);
+    }}
+
+
+
+%-------------------------------------------------------------------------------
+% enumitem
+\usepackage{enumitem}
+\newlist{tabenum}{enumerate}{3}
+\setlist[tabenum,1]{
+    leftmargin=*,
+    label=\protect\colouredcircle,
+    topsep=0ex,
+    partopsep=0ex,
+    noitemsep
+}
+\setlist[tabenum,2]{
+    leftmargin=*,
+    label=\protect\colouredcircle,
+    topsep=0ex,
+    partopsep=0ex,
+    noitemsep
+}
+\setlist[tabenum,3]{
+    leftmargin=*,
+    label=\protect\colouredcircle,
+    topsep=0ex,
+    partopsep=0ex,
+    noitemsep
+}
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+% 
+\newcommand{\abs}[1]{{\vert #1 \vert}}
+
+\begin{document}
+    
+    \begin{align*}
+        CLV_k = \sum_{t=0}^{\infty} E_k \cdot \f{\kl{1 - p_k}^t}{\kl{1 + r}^t}
+              =  E_k \cdot \f{1 + r}{r + p_k} = E_k \cdot m_k
+    \end{align*}
+    \begin{align*}
+        p_k = 1 - \sqrt[12]{1 - p_k^*}
+    \end{align*}
+    \begin{align*}
+        p_k   &= 0.01 \\
+        r     &= 0.01 \\
+        CLV_k &= E_k \cdot \f{1 + r}{r + p_k} = E_k \cdot \f{1 + 0.01}{r + 0.01} = E_k \cdot 50.5
+    \end{align*}
+    
+\end{document}
