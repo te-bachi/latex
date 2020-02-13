@@ -1,0 +1,72 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%------------------------------------------------
+% Gantt
+\usepackage{pgfgantt}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\ganttset{
+    group/.append style={orange},
+    milestone/.append style={red},
+    progress label node anchor/.append style={text=red}
+}
+
+\begin{document}
+
+     \begin{ganttchart}[%Specs
+         y unit title=0.5cm,
+         y unit chart=0.7cm,
+         vgrid,hgrid,
+         title height=1,
+         title label font=\bfseries\footnotesize,
+         bar/.style={fill=blue},
+         bar height=0.7,
+         group right shift=0,
+         group top shift=0.7,
+         group height=.3,
+         group peaks width={0.2},
+         inline
+    ]{1}{14}
+        %labels
+        \gantttitle{Projektplan}{14} \\
+        \gantttitlelist{38,...,51}{1} \\
+        \gantttitlelist{1,...,14}{1} \\
+        % Setting group if any
+        \ganttbar[inline=false]{Planung}{1}{2}\\
+        \ganttgroup[inline=false]{Mikrocontroller}{3}{7}  \\
+        \ganttbar[inline=false]{Frame Design}{3}{3}\\
+        \ganttbar[inline=false]{Prüfsumme}{4}{5}\\
+        \ganttbar[inline=false]{Sequenznummer}{4}{5}\\
+        \ganttbar[inline=false]{Senden}{5}{5}\\
+        \ganttbar[inline=false]{Empfangen}{6}{6}\\
+        \ganttbar[inline=false]{Display}{6}{7}\\
+        \ganttgroup[inline=false]{GUI}{8}{14}  \\
+        \ganttbar[inline=false]{Design}{8}{10}\\
+        \ganttbar[inline=false]{Kommunikation}{11}{12}\\
+        \ganttbar[inline=false]{Persistenz}{13}{14}
+    \end{ganttchart}
+
+\end{document}

@@ -1,0 +1,191 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers
+]{scrartcl}
+
+%------------------------------------------------
+% Packete nutzen
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+
+%-------------------------------------------------
+% UML
+\usepackage{tikz}
+\usepackage{ifthen}
+\usepackage{xstring}
+\usepackage{calc}
+\usepackage{pgfopts}
+
+\pgfdeclarelayer{background,foreground}
+\pgfsetlayers{background,main,foreground}
+
+\usepackage{tikz-uml}
+
+%-------------------------------------------------
+% METAPOST pictures\textbf{}
+\usepackage[shellescape,latex]{gmp}
+
+\gmpoptions{everymp={input expressg;}}
+\usempxpackage[T1]{fontenc}
+\usempxpackage[utf8]{inputenc}
+
+%-------------------------------------------------
+% enumerate
+\usepackage{enumitem}
+\setlist[enumerate]{
+    wide=0pt,
+    leftmargin=*,
+    itemsep=-1ex,
+    parsep=2ex,
+    labelsep=1ex,
+    label=\alph*)
+}
+
+% Einzug mit Dimension (z.B. 1cm)
+\newenvironment{myindent}[1]{% 
+    \parskip=6pt \parindent=0pt \raggedright 
+    \def\lititem{\hangindent=#1 \hangafter=1}
+}{%
+    \par\ignorespaces
+}
+
+
+\begin{document}
+    
+    \section{Qt}
+
+    \subsection{Meta-Objekt System}
+    QObject ist die Basis-Klasse für alle Qt Objekte, die
+
+    \begin{enumerate}[label=\arabic*)]
+        \item{
+            signals and slots mechanism
+        }
+        \item{
+            inter-object communication
+        }
+        \item{
+            run-time type information
+        }
+        \item{
+            dynamic property system
+        }
+    \end{enumerate}
+
+    Diese Mechanismen sind nicht direkt in C++ verfügbar oder werden
+    anders gemacht wie Qt es möchte. Qt benutzt einen eigenen Precompiler,
+    den Meta-Object Compiler (moc), um den spezifischen Qt-eingefärbten C++-Code
+    in Standard C++-Code umzuwandeln damit der C++-Compiler ihn versteht.
+
+    Schwere QObjects
+
+    Dabei gibt es Einschränkungen, die in Standard C++ vorhanden sind
+
+    \begin{enumerate}[label=\arabic*)]
+        \item{
+            Keine Mehrfachvererbung (Multiple inheritance)
+        }
+        \item{
+            Keine Templates
+        }
+    \end{enumerate}
+
+    \subsection{Model-View}
+
+    Objekt Hierarchie Patient -- 1:n -- Timepoint -- 1:n -- Measurement.
+    Keine QObjects. Leichtgewicht Klassen.
+    
+
+    Das Model-View Konzept von Qt 
+
+    Das Model ist die Quelle der Information. Von ihn können verschiedene View
+    abgebildet werden. So kann von einem einzigen Model zum Beispiel eine QComboBox
+    und eine QListView angezeigt werden.
+
+    Ein Model ist bei Qt wie eine 2-dimensionale Struktur mit Zeilen und Spalten.
+    Ursprünglich wurde dies implementiert für eine tabellenkalkulatorische Weise (QTableView),
+    wurde aber auf 1-dimensionale Views (QComboBox, QListView) adaptiert.
+
+    Ein Problem besteht, dass diese Objekt Hierarchie über Model-Klassen in der View angezeigt werden.
+    Automatisches einfügen einer Zeile im Model wenn 
+
+    \newpage
+
+    \begin{tikzpicture}
+        \umlclass{namespace::A}{
+            + n : uint
+        }{
+            + setA(i : int) : void
+        }
+    \end{tikzpicture}
+
+
+
+    \begin{figure}
+        \centering
+        \begin{mpost}[name=1a]
+z0 = (0,0);
+z1 = (300,0);
+z2 = (0,-75);
+
+for xi = 0.025 step 0.05 until 1:
+	pickup pencircle scaled 0.5pt;
+	draw z0--(300*(xi,xi * (xi - 1)))--z1 withcolor (1,0.5,0.5);
+	pickup pencircle scaled 2pt;
+	draw 300*(xi,xi * (xi - 1)) withcolor (1,0.5,0.5);
+endfor;
+
+pickup pencircle scaled 1pt;
+
+drawarrow (-0.03[z0,z1])--(1.03[z0,z1]);
+drawarrow ((-0.1)[z2,z0])--(1.1[z2,z0]);
+
+draw (z0 shifted (0,2))--(z0 shifted (0,-2));
+draw (z1 shifted (0,2))--(z1 shifted (0,-2));
+
+label.llft(btex $0$ etex, z0);
+label.top(btex $G(x,\xi)$ etex, 1.1[z2,z0]);
+label.lrt(btex $1$ etex, z1);
+label.urt(btex $x$ etex, 1.03[z0,z1]);
+
+pickup pencircle scaled 1pt;
+draw z0--(300*(0.325,0.325*(0.325-1)))--z1 withcolor (1,0,0);
+
+pickup pencircle scaled 0.2pt;
+draw (300*(0.325,0))--(300*(0.325,-0.325*(1-0.325)));
+label.top(btex $\xi$ etex, 300*(0.325,0));
+pickup pencircle scaled 2pt;
+draw 300*(0.325,0);
+draw 300*(0.325,0.325*(0.325-1)) withcolor (1,0,0);
+        \end{mpost}
+        \caption{A class diagram}
+    \end{figure}
+
+\begin{figure}
+        \centering
+\begin{mpost}
+z0 = origin;
+drawroundedbox(0, 2.5cm, 3cm, 5mm)(
+  \btex {\begin{tabular}{@{}c@{}} a b c \end{tabular}} etex
+);
+\end{mpost}
+        \caption{A class diagram}
+    \end{figure}
+
+
+\end{document}
