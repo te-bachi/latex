@@ -1,0 +1,159 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=half,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers,
+    fleqn
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% scrlayer-scrpage
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\cfoot{}
+
+%-------------------------------------------------------------------------------
+% Für enumerate
+\usepackage{enumitem}
+\setlist[enumerate]{
+    wide=0pt,
+    leftmargin=*,
+    topsep=0ex,
+    partopsep=0ex,
+    itemsep=-1ex,
+    parsep=2ex,
+    labelsep=1ex,
+    label=$\bullet$
+}
+
+
+%-------------------------------------------------------------------------------
+%
+\usepackage[autostyle=true,german=quotes]{csquotes}
+
+%-------------------------------------------------------------------------------
+% Für multicol
+\usepackage{multicol}
+\setlength\columnsep{20pt}
+
+%-------------------------------------------------------------------------------
+% 
+
+\RedeclareSectionCommand[
+  beforeskip=-.5\baselineskip,
+  afterskip=.1\baselineskip]{section}
+
+\RedeclareSectionCommand[
+  beforeskip=-.5\baselineskip,
+  afterskip=.1\baselineskip]{subsection}
+
+\RedeclareSectionCommand[
+  beforeskip=-.5\baselineskip,
+  afterskip=.1\baselineskip]{subsubsection}
+
+
+%-------------------------------------------------------------------------------
+% 
+\newcommand{\brand}[1]{\textbf{\textit{#1}}}
+\newcommand{\mytextquote}[1]{\textit{\textquote{#1}}}
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\fs}[2]{{\tfrac{#1}{#2}}}
+
+% kl = ()
+\newcommand{\kl}[1]{{\left( #1 \right)}}
+
+% kq = {}
+\newcommand{\kq}[1]{{\left\{ #1 \right\}}}
+
+% ks = []
+\newcommand{\ks}[1]{{\left[ #1 \right]}}
+
+% 
+\newcommand{\abs}[1]{{\vert #1 \vert}}
+
+\begin{document}
+    \begin{align*}
+        I &= \kq{ \; i_1, \; i_2, \; \ldots, \; i_n \; } \\
+        R: \kq{ \; i_j, \; \ldots, \; i_k \; } &\to \kq{ \; i_l, \; \ldots, \; i_m \; } \\
+        R: LS &\to RS \\
+          & LS, RS \subseteq I \qquad LS \cap RS = \varnothing
+    \end{align*}
+
+    {\renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{ll}
+        % 2-itemset: A -> B
+        \multicolumn{2}{@{}l}{2-itemset $ A \to B$ \; count $\begin{pmatrix}
+            2 \\
+            1
+        \end{pmatrix} = 2$} \\
+        $ R1: L \to B $ & $ \fs{0.50}{0.66} = 0.75$ \\
+        $ R2: B \to L $ & $ \fs{0.50}{0.50} = 1.00$ \\
+        $ R3: L \to D $ & $ \fs{0.33}{0.66} = 0.50$ \\
+        $ R4: D \to L $ & $ \fs{0.33}{0.50} = 0.66$ \\
+        $ R5: B \to D $ & $ \fs{0.33}{0.50} = 0.66$ \\
+        $ R6: D \to B $ & $ \fs{0.33}{0.50} = 0.66$ \\
+        % 3-itemset: A, B -> C
+        \multicolumn{2}{@{}l}{3-itemset $ A,B \to C$ \; count $\begin{pmatrix}
+            3 \\
+            1
+        \end{pmatrix} = 3$} \\
+        $ R7: L, B \to D $ & $ \fs{0.33}{0.50} = 0.75$ \\
+        $ R8: L, D \to B $ & $ \fs{0.33}{0.33} = 1.00$ \\
+        $ R9: B, D \to L $ & $ \fs{0.33}{0.33} = 1.00$ \\
+        % 3-itemset: A -> B, C
+        \multicolumn{2}{@{}l}{2-itemset $ A \to B,C$ \; count $\begin{pmatrix}
+            3 \\
+            2
+        \end{pmatrix} = 3$} \\
+        $ R10: L \to B, D $ & $ \fs{0.33}{0.66} = 0.50$ \\
+        $ R11: B \to L, D $ & $ \fs{0.33}{0.50} = 0.66$ \\
+        $ R12: D \to L, B $ & $ \fs{0.33}{0.50} = 0.66$ \\
+    \end{tabular}}
+
+    \begin{align*}
+        I\ks{s_1, s_n, \ldots, s_n} &= \f{-\kl{\sum_{i} s_i \cdot \log_2\kl{s_i}} +
+                                       \kl{ \kl{\sum_{i} s_i} \cdot \log_2 \kl{\sum_{i} s_i}}}
+                                       {\sum_{i} s_i} \\
+        I\ks{a, b, \ldots, n}       &= \f{\kl{- a \log_2\kl{a} - b \log_2\kl{b} - \ldots - n \log_2\kl{n}} +
+                                       \kl{ \kl{a + b + \ldots + n} \cdot \log_2 \kl{\kl{a + b + \ldots + n}}}}
+                                       {\kl{a + b + \ldots + n}} \\
+        I\ks{a, b}                  &= \f{\kl{- a \log_2\kl{a} - b \log_2\kl{b}} +
+                                       \kl{ \kl{a + b} \cdot \log_2 \kl{\kl{a + b}}}}
+                                       {\kl{a + b}} \\
+        E\ks{x, y, z}               &= \f{x}{S} \cdot I \ks{a_x, b_x} + \f{y}{S} \cdot I \ks{a_y, b_y} + \f{z}{S} \cdot I \ks{a_z, b_z}, \; S = x + y + z \\
+        H                           &= I\ks{p} - E\ks{c_1, c_2, c_3} \\
+        H                           &= I\ks{a,b} - E\ks{x,y,z}
+    \end{align*}
+
+    \newpage
+
+    \begin{align*}
+        I\ks{9, 6}                  &= \f{-28.5 - 15.5 + 58.6}{15} = 0.97 \\
+        E\ks{x, y, z}               &= \f{x}{S} \cdot I \ks{a_x, b_x} + \f{y}{S} \cdot I \ks{a_y, b_y} + \f{z}{S} \cdot I \ks{a_z, b_z}, \; S = x + y + z \\
+        H                           &= I\ks{p} - E\ks{c_1, c_2, c_3} \\
+        H                           &= I\ks{a,b} - E\ks{x,y,z}
+    \end{align*}
+
+
+    
+\end{document}
