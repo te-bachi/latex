@@ -1,0 +1,51 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers,
+    pagesize,
+    fleqn
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=20mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage{printlen}
+\uselengthunit{mm}
+
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+    % String Variablen
+    \newcommand{\mys}{\; Hallo Welt}
+
+    % Integer Variablen
+    \newcounter{myc}
+    \setcounter{myc}{1}
+
+    % Float-Variablen (mit Einheit!)
+    \newlength{\myf}
+    \setlength{\myf}{12.5mm}
+    
+    \themyc \; \Roman{myc} \mys \; \printlength{\myf}
+    
+    \renewcommand{\mys}{\; Hello World}
+    \stepcounter{myc}
+    
+    \themyc \; \Roman{myc} \mys
+
+\end{document}

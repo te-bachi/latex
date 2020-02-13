@@ -1,0 +1,86 @@
+
+
+%-------------------------------------------------------------------------------
+% Dokumenten Klasse
+\documentclass[
+	final,
+	a4paper,
+	oneside,
+	parskip=full,
+	headings=standardclasses,
+	headings=big,
+	pointednumbers,
+    pagesize,
+    fleqn
+]{scrartcl}
+
+%-------------------------------------------------------------------------------
+
+%\def\pageleft{5mm}
+%\def\pageright{5mm}
+%\def\pagetop{5mm}
+%\def\pagebottom{5mm}
+
+%-------------------------------------------------------------------------------
+% Packete nutzen
+\usepackage{ngerman,palatino,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[left=\pageleft,right=\pageright,top=\pagetop,bottom=\pagebottom]{geometry}
+%\usepackage[usegeometry]{typearea}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage[showframe,left=20mm,right=5mm,top=5mm,bottom=5mm]{geometry}
+\usepackage{functions}
+\usepackage{pdflscape}
+
+%\input{functions}
+\makeatletter
+\newcommand*{\gmshow@textheight}{\textheight}
+\newdimen\gmshow@@textheight
+\g@addto@macro\landscape{%
+  \gmshow@@textheight=\hsize
+  \renewcommand*{\gmshow@textheight}{\gmshow@@textheight}%
+}
+\def\Gm@vrule{%
+  \vrule width 0.2pt height\gmshow@textheight depth\z@
+}%
+\makeatother
+%-------------------------------------------------------------------------------
+% Dokument
+\begin{document}
+    %\portrait
+
+    asdasdads aa
+    
+    %\KOMAoptions{paper=a4,pagesize,paper=landscape,DIV=20}
+    %\newpage
+
+    \begin{landscape}
+      \Huge
+      \noindent
+      top left\hfill top right\par
+      \vfill
+      \noindent
+      bottom left\hfill bottom right
+    \end{landscape}
+
+    %\landscape
+
+    sadfsadf
+
+    %$\bound$
+    %\tfillb{$f$}
+    b bb
+
+    asf
+
+    sdafsaf
+
+    asdsdfsa
+
+    sdf sadfsd asdf sdfad sdf sd fsdf sdfsdf sdf sdafsdf safsdaf sadf asdf asfsd
+
+\end{document}
